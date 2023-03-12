@@ -47,3 +47,6 @@
 *.idb
 *.txt
 *.pdb
+*.ap
+*.aps
+*.rc
