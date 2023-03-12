@@ -32,6 +32,7 @@ int main(int argc, char* args[]) {
 	SDL_FillRect(screenSurface, NULL, 0xFF0000);
 	SDL_UpdateWindowSurface(window);
 
+//TODO: Tot el joc
 
 #pragma region AudioManager
 	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024);
