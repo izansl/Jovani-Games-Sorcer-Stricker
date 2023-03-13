@@ -1,5 +1,43 @@
 #include "AudioManager.h"
 
+/*
+CARREGAR EN CADA ESCENA ELS SEUS PROPIS SONS
+
+void AudioManager::Init()
+{
+	Mix_Chunk* temporal = Mix_LoadWAV("../Assets/Sounds/salto_2.wav");
+	vectorAudio.push_back(temporal);
+	Mix_Chunk* temporal = Mix_LoadWAV("../Assets/Sounds/muerte.wav");
+	vectorAudio.push_back(temporal);
+	Mix_Chunk* temporal = Mix_LoadWAV("../Assets/Sounds/intro.wav");
+	vectorAudio.push_back(temporal);
+	Mix_Chunk* temporal = Mix_LoadWAV("../Assets/Sounds/gameover.wav");
+	vectorAudio.push_back(temporal);
+	Mix_Chunk* temporal = Mix_LoadWAV("../Assets/Sounds/gameplay.wav");
+	vectorAudio.push_back(temporal);
+}
+
+*/
+
+/*
+AudioManager::~AudioManager()
+{
+	SDL_CloseAudioDevice(deviceID);
+	SDL_FreeWAV(wavBuffer);
+}
+void AudioManager::load(const char* filename)
+{
+	SDL_LoadWAV(filename, &wavSpec, &wavBuffer, &wavLength);
+	deviceID = SDL_OpenAudioDevice(NULL, 0, &wavSpec, NULL, 0);
+
+}
+void AudioManager::play()
+{
+	SDL_QueueAudio(deviceID, wavBuffer, wavLength);
+	SDL_PauseAudioDevice(deviceID, 0);
+}
+*/
+
 #pragma region PUBLIC
 
 AudioManager::~AudioManager()

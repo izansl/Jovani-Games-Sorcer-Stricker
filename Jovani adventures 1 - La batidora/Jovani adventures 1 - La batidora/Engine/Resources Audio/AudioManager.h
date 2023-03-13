@@ -43,3 +43,16 @@ private:
 };
 
 #endif
+/*
+public:
+	~AudioManager();
+	void load(const char* filename);
+	void play();
+	void Init();
+private:
+	SDL_AudioSpec wavSpec;
+	Uint32 wavLength;
+	Uint8* wavBuffer;
+	SDL_AudioDeviceID deviceID;
+	std::vector<Mix_Chunk*> vectorAudio;
+	*/
