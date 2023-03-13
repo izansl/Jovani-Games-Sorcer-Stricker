@@ -51,3 +51,56 @@ SDL_Quit();
 
 return 0;
 */
+
+/*
+Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024);
+int result = Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024);
+// Check
+if (result != 0)
+std::cout << "Failed to open audio: " << Mix_GetError() << std::endl;
+
+Mix_AllocateChannels(128);
+
+Mix_Chunk* sound1 = Mix_LoadWAV("../Assets/Sounds/salto_2.wav");
+
+// Check loads
+if (!sound1)
+std::cout << "Failed to load music or sound: " << Mix_GetError() << std::endl;
+
+int canalActual = 0;
+bool resume = false;
+int tecla = 0;
+
+std::cout << "Utilitza les fletxes per reproduir els sons" << std::endl;
+
+while (tecla != KB_ESCAPE)
+{
+	tecla = ConsoleInKey();
+
+	switch (tecla)
+	{
+	case KB_UP:
+		canalActual = Mix_PlayChannel(-1, sound1, 0);
+		std::cout << "Reproduint so 1." << std::endl;
+		break;
+	case KB_SPACE:
+		if (resume)
+		{
+			Mix_Pause(canalActual);
+			resume = false;
+		}
+		else {
+			Mix_Resume(canalActual);
+			resume = true;
+		}
+		break;
+	default:
+		break;
+	}
+
+}
+
+Mix_FreeChunk(sound1);
+
+Mix_Quit();
+*/

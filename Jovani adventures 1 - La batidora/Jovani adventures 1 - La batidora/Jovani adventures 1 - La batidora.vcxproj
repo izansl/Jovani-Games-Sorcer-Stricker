@@ -132,19 +132,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Project1\Project1\ConsoleControl.cpp" />
-    <ClCompile Include="Haspas.cpp" />
+    <ClCompile Include="Engine\Control\ControlManager.cpp" />
+    <ClCompile Include="Engine\Resources Audio\AudioManager.cpp" />
+    <ClCompile Include="Engine\Video - Screen - Console\ConsoleControl.cpp" />
+    <ClCompile Include="Engine\Control\Gamepad.cpp" />
+    <ClCompile Include="Game\Haspas.cpp" />
+    <ClCompile Include="Game\Player.cpp" />
+    <ClCompile Include="Engine\Resources Image\ImageManager.cpp" />
+    <ClCompile Include="Engine\Control\Keyboard.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Engine\Video - Screen - Console\VideoManager.cpp" />
+    <ClCompile Include="Engine\Timer\TimerManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Project1\Project1\ConsoleControl.h" />
-    <ClInclude Include="Haspas.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="resource.h" />
+    <ClInclude Include="Engine\Control\ControlManager.h" />
+    <ClInclude Include="Engine\Resources Audio\AudioManager.h" />
+    <ClInclude Include="Engine\Video - Screen - Console\ConsoleControl.h" />
+    <ClInclude Include="Engine\Control\Gamepad.h" />
+    <ClInclude Include="Game\Haspas.h" />
+    <ClInclude Include="Game\Player.h" />
+    <ClInclude Include="Engine\Video - Screen - Console\VideoManager.h" />
+    <ClInclude Include="Engine\Resources Image\ImageManager.h" />
+    <ClInclude Include="Engine\Control\Keyboard.h" />
+    <ClInclude Include="Engine\Timer\TimerManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="Jovani adventures 1 - La batidora.rc" />
+    <None Include="SDL2.dll" />
+    <None Include="SDL2_image.dll" />
+    <None Include="SDL2_mixer.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
