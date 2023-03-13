@@ -1,14 +1,61 @@
 #include "AudioManager.h"
 
+#pragma region PUBLIC
+
+AudioManager::~AudioManager()
+{
+}
+
+void AudioManager::removeChunck(const char* fitxer)
+{
+}
+
+Sint32 AudioManager::loadAndGetChunckID(const char* fitxer)
+{
+	return Sint32();
+}
+
+std::string AudioManager::getChunckPathByID(Sint32 ID)
+{
+	return std::string();
+}
+
+Mix_Chunk* AudioManager::getChunckByID(Sint32 ID)
+{
+	return nullptr;
+}
+
+void AudioManager::printChuncksLoaded()
+{
+}
+
+#pragma endregion
 
 
 
+#pragma region PROTECTED
+
+
+AudioManager::AudioManager()
+{
+}
+
+#pragma endregion
 
 
 
+#pragma region PRIVATE
 
+Sint32 AudioManager::addChunk(const char* file)
+{
+	return Sint32();
+}
 
+void AudioManager::updateFirstFreeSlotChunk()
+{
+}
 
+#pragma endregion
 
 
 

@@ -36,16 +36,19 @@
     <ClCompile Include="Engine\Resources Image\ImageManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Control\ControlManager.cpp">
+    <ClCompile Include="Engine\Input\ControlManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Control\Gamepad.cpp">
+    <ClCompile Include="Engine\Input\Gamepad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\Control\Keyboard.cpp">
+    <ClCompile Include="Engine\Input\Keyboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Engine\Timer\TimerManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine\Resources Image\AnimationManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -68,16 +71,25 @@
     <ClInclude Include="Engine\Resources Image\ImageManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Control\ControlManager.h">
+    <ClInclude Include="Engine\Input\ControlManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Control\Gamepad.h">
+    <ClInclude Include="Engine\Input\Gamepad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\Control\Keyboard.h">
+    <ClInclude Include="Engine\Input\Keyboard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Engine\Timer\TimerManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Resources Image\AnimationManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Definitions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Directions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
