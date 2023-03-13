@@ -24,17 +24,17 @@ int Helice::direccion(int variable)
 
 int Helice::changespeed(int newspeed)
 {
-	speed = speed + newspeed;
+	return speed = speed + newspeed;
 }
 
 int Helice::changehigh(int newhigh)
 {
-	high = high + newhigh;
+	return high = high + newhigh;
 }
 
 int Helice::changewidth(int newwidth)
 {
-	width = width + newwidth;
+	return width = width + newwidth;
 }
 
 bool Helice::Init()
