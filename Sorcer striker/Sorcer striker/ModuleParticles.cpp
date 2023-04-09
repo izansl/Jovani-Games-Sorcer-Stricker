@@ -21,26 +21,21 @@ ModuleParticles::~ModuleParticles()
 bool ModuleParticles::Start()
 {
 	LOG("Loading particles");
-	texture = App->textures->Load("../Assets/particles.png");
+	texture = App->textures->Load("../Assets/Explosion.png");
 
 	// Explosion particle
-	explosion.anim.PushBack({274, 296, 33, 30});
-	explosion.anim.PushBack({313, 296, 33, 30});
-	explosion.anim.PushBack({346, 296, 33, 30});
-	explosion.anim.PushBack({382, 296, 33, 30});
-	explosion.anim.PushBack({419, 296, 33, 30});
-	explosion.anim.PushBack({457, 296, 33, 30});
+	explosion.anim.PushBack({168, 764, 267, 248});
+	explosion.anim.PushBack({164, 445, 277, 292});
+	explosion.anim.PushBack({531, 301, 820, 857});
+	explosion.anim.PushBack({1355, 133, 1117, 1145});
 	explosion.anim.loop = false;
-	explosion.anim.speed = 0.3f;
+	explosion.anim.speed = 1.0f;
 
-	// TODO 2:	Create the template for a new particle "laser"
-	//			Remember: not all the code goes here!
-	//			Follow the example with the "explosion" particle
 	laser.anim.PushBack({ 104, 171, 80, 14 });
 	laser.anim.PushBack({ 185, 170, 80, 16 });
 	laser.speed = iPoint(5, 0);
 	laser.lifetime = 
-	laser.anim.speed = 0.3f;
+	laser.anim.speed = 1.0f;
 
 	return true;
 }

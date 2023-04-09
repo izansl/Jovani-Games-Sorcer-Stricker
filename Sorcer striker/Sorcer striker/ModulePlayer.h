@@ -44,8 +44,8 @@ public:
 
 	// A set of animations
 	Animation idleAnim;
-	Animation upAnim;
-	Animation downAnim;
+	Animation rightAnim;
+	Animation leftAnim;
 };
 
 #endif //!__MODULE_PLAYER_H__
