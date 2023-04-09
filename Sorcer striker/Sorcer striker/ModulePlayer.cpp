@@ -48,7 +48,7 @@ bool ModulePlayer::Start()
 update_status ModulePlayer::Update()
 {
 	// Moving the player with the camera scroll
-	App->player->position.x += 1;
+	App->player->position.y -= 1;
 
 	if (App->input->keys[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
 	{

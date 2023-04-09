@@ -23,14 +23,14 @@ bool ModuleScene::Start()
 
 	bool ret = true;
 
-	bgTexture = App->textures->Load("../Assets/fondos.png");
+	bgTexture = App->textures->Load("../Assets/Fondos-1.0.png");
 
 	return ret;
 }
 
 update_status ModuleScene::Update()
 {
-	//App->render->camera.y -= 3;
+	App->render->camera.y -= 3;
 
 	return update_status::UPDATE_CONTINUE;
 }
@@ -39,7 +39,7 @@ update_status ModuleScene::Update()
 update_status ModuleScene::PostUpdate()
 {
 	// Draw everything --------------------------------------
-	App->render->Blit(bgTexture, 0, 0);
+	App->render->Blit(bgTexture, 45, -5300);
 
 	return update_status::UPDATE_CONTINUE;
 }
