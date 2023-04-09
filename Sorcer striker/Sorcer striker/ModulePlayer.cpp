@@ -11,19 +11,19 @@
 
 ModulePlayer::ModulePlayer()
 {
-	position.x = 0;
-	position.y = 0;
+	position.x = 150;
+	position.y = 120;
 
 	// idle animation - just one sprite
-	idleAnim.PushBack({ 424, 285, 168, 188});
+	idleAnim.PushBack({ 245, 309, 42, 45 });
 
 	// move right
-	rightAnim.PushBack({ 425, 294, 119, 196 });
+	rightAnim.PushBack({ 285, 308, 35, 49});
 	rightAnim.loop = false;
 	rightAnim.speed = 0.1f;
 
 	// Move left
-	leftAnim.PushBack({ 257, 294, 119, 196 });
+	leftAnim.PushBack({ 210, 307, 37, 50});
 	leftAnim.loop = false;
 	leftAnim.speed = 0.1f;
 }
@@ -39,7 +39,7 @@ bool ModulePlayer::Start()
 
 	bool ret = true;
 
-	texture = App->textures->Load("../Assets/Nave.png"); // arcade version
+	texture = App->textures->Load("../Assets/sprites.png"); // arcade version
 	currentAnimation = &idleAnim;
 
 	return ret;
@@ -50,17 +50,17 @@ update_status ModulePlayer::Update()
 	// Moving the player with the camera scroll
 	App->player->position.x += 1;
 
-	if (App->input->keys[SDL_SCANCODE_UP] == KEY_STATE::KEY_REPEAT)
+	if (App->input->keys[SDL_SCANCODE_W] == KEY_STATE::KEY_REPEAT)
 	{
 		position.y -= speed;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_DOWN] == KEY_STATE::KEY_REPEAT)
+	if (App->input->keys[SDL_SCANCODE_S] == KEY_STATE::KEY_REPEAT)
 	{
 		position.y += speed;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_RIGHT] == KEY_STATE::KEY_REPEAT)
+	if (App->input->keys[SDL_SCANCODE_D] == KEY_STATE::KEY_REPEAT)
 	{
 		position.x += speed;
 		if (currentAnimation != &rightAnim)
@@ -70,7 +70,7 @@ update_status ModulePlayer::Update()
 		}
 	}
 
-	if (App->input->keys[SDL_SCANCODE_LEFT] == KEY_STATE::KEY_REPEAT)
+	if (App->input->keys[SDL_SCANCODE_A] == KEY_STATE::KEY_REPEAT)
 	{
 		position.x -= speed;
 		if (currentAnimation != &leftAnim)
@@ -80,20 +80,16 @@ update_status ModulePlayer::Update()
 		}
 	}
 
-	// TODO 3: Shoot lasers when the player hits SPACE
 	if (App->input->keys[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 	{
-		App->particles->AddParticle(App->particles->laser, position.x + 10, position.y - 25, 0);
-		App->particles->AddParticle(App->particles->laser, position.x + 10, position.y - 5, 0);
+		App->particles->AddParticle(App->particles->laser, position.x + 29, position.y-45, 0);
+		App->particles->AddParticle(App->particles->laser, position.x+7, position.y-45, 0);
 	}
 
 	// Spawn explosion particles when pressing B
 	if (App->input->keys[SDL_SCANCODE_X] == KEY_STATE::KEY_DOWN)
 	{
-		App->particles->AddParticle(App->particles->explosion, position.x, position.y);
-		App->particles->AddParticle(App->particles->explosion, position.x, position.y+25);
-		App->particles->AddParticle(App->particles->explosion, position.x, position.y+25);
-		App->particles->AddParticle(App->particles->explosion, position.x, position.y+25);
+		App->particles->AddParticle(App->particles->explosion, position.x+15, position.y-50);
 	}
 
 	// If no up/down movement detected, set the current animation back to idle
