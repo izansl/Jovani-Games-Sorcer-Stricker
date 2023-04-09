@@ -29,11 +29,11 @@ bool ModuleParticles::Start()
 	explosion.anim.PushBack({210, 209, 76, 75});
 	explosion.anim.PushBack({288, 194, 99, 98});
 	explosion.anim.loop = false;
-	explosion.speed = iPoint(1, -1);
-	explosion.anim.speed = 0.01f;
+	explosion.speed = iPoint(0, -1);
+	explosion.anim.speed = 0.05f;
 
 	laser.anim.PushBack({155, 239, 8, 18});
-	laser.speed = iPoint(1, -2);
+	laser.speed = iPoint(0, -2);
 	laser.lifetime = 1000;
 	laser.anim.speed = 0.01f;
 
