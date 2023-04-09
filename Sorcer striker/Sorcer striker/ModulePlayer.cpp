@@ -83,13 +83,14 @@ update_status ModulePlayer::Update()
 	if (App->input->keys[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 	{
 		App->particles->AddParticle(App->particles->laser, position.x + 29, position.y-45, 0);
-		App->particles->AddParticle(App->particles->laser, position.x+7, position.y-45, 0);
+		App->particles->AddParticle(App->particles->laser, position.x + 7, position.y - 45, 0);
 	}
 
 	// Spawn explosion particles when pressing B
 	if (App->input->keys[SDL_SCANCODE_X] == KEY_STATE::KEY_DOWN)
 	{
 		App->particles->AddParticle(App->particles->explosion, position.x+15, position.y-50);
+		App->particles->AddParticle(App->particles->explosion2, position.x + 5, position.y-200, 60);
 	}
 
 	// If no up/down movement detected, set the current animation back to idle
