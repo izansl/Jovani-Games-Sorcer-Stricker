@@ -7,6 +7,7 @@
 #include "ModulePlayer.h"
 #include "ModuleScene.h"
 #include "ModuleParticles.h"
+#include "ModuleCollisions.h"
 #include "ModuleRender.h"
 
 Application::Application()
@@ -22,7 +23,8 @@ Application::Application()
 	modules[4] = player = new ModulePlayer();
 
 	modules[5] = particles = new ModuleParticles();
-	modules[6] = render = new ModuleRender();
+	modules[6] = collisions = new ModuleCollisions();
+	modules[7] = render = new ModuleRender();
 }
 
 Application::~Application()

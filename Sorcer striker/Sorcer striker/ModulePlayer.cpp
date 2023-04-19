@@ -5,6 +5,7 @@
 #include "ModuleInput.h"
 #include "ModuleRender.h"
 #include "ModuleParticles.h"
+#include "ModuleCollisions.h"	
 
 #include "../SDLs/SDL/include/SDL_scancode.h"
 
@@ -43,6 +44,8 @@ bool ModulePlayer::Start()
 	currentAnimation = &idleAnim;
 
 	return ret;
+
+	collider = App->collisions->AddCollider({ position.x, position.y, 36, 42 }, Collider::Type::PLAYER, this);
 }
 
 update_status ModulePlayer::Update()
@@ -82,22 +85,23 @@ update_status ModulePlayer::Update()
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
 	{
-		App->particles->AddParticle(App->particles->laser, position.x + 29, position.y-45, 0);
-		App->particles->AddParticle(App->particles->laser, position.x + 7, position.y - 45, 0);
+		App->particles->AddParticle(App->particles->laser, position.x + 29, position.y-45,Collider::Type::PLAYER_SHOT, 0);
+		App->particles->AddParticle(App->particles->laser, position.x + 7, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
 	}
 
 	// Spawn explosion particles when pressing B
 	if (App->input->keys[SDL_SCANCODE_X] == KEY_STATE::KEY_DOWN)
 	{
 		App->particles->AddParticle(App->particles->explosion, position.x+15, position.y-50);
-		App->particles->AddParticle(App->particles->explosion2, position.x + 5, position.y-200, 60);
+		App->particles->AddParticle(App->particles->explosion2, position.x + 5, position.y-200);
 	}
 
 	// If no up/down movement detected, set the current animation back to idle
 	if (App->input->keys[SDL_SCANCODE_A] == KEY_STATE::KEY_IDLE
 		&& App->input->keys[SDL_SCANCODE_D] == KEY_STATE::KEY_IDLE)
 		currentAnimation = &idleAnim;
-
+	//update collider
+	collider->SetPos(position.x, position.y);
 	currentAnimation->Update();
 
 	return update_status::UPDATE_CONTINUE;
@@ -109,4 +113,20 @@ update_status ModulePlayer::PostUpdate()
 	App->render->Blit(texture, position.x, position.y - rect.h, &rect);
 
 	return update_status::UPDATE_CONTINUE;
+}
+void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
+{
+	// TODO 5: Detect collision with a wall. If so, go back to intro screen.
+	if (c1 == collider && destroyed == false)
+	{
+		App->particles->AddParticle(App->particles->explosion, position.x, position.y, Collider::Type::NONE, 9);
+		App->particles->AddParticle(App->particles->explosion, position.x + 8, position.y + 11, Collider::Type::NONE, 14);
+		App->particles->AddParticle(App->particles->explosion, position.x - 7, position.y + 12, Collider::Type::NONE, 40);
+		App->particles->AddParticle(App->particles->explosion, position.x + 5, position.y - 5, Collider::Type::NONE, 28);
+		App->particles->AddParticle(App->particles->explosion, position.x - 4, position.y - 4, Collider::Type::NONE, 21);
+
+		
+
+		destroyed = true;
+	}
 }

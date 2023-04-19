@@ -4,6 +4,7 @@
 
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
+#include "ModuleCollisions.h"
 
 #include "../SDLs/SDL/include/SDL_timer.h"
 
@@ -61,7 +62,22 @@ bool ModuleParticles::CleanUp()
 
 	return true;
 }
+void ModuleParticles::OnCollision(Collider* c1, Collider* c2)
+{
+	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
+	{
+		// Always destroy particles that collide
+		if (particles[i] != nullptr && particles[i]->collider == c1)
+		{
+			// TODO 6: Make so every time a particle hits a wall it triggers an explosion particle
+			AddParticle(explosion, particles[i]->position.x, particles[i]->position.y);
 
+			delete particles[i];
+			particles[i] = nullptr;
+			break;
+		}
+	}
+}
 update_status ModuleParticles::Update()
 {
 	for(uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
@@ -97,7 +113,7 @@ update_status ModuleParticles::PostUpdate()
 	return update_status::UPDATE_CONTINUE;
 }
 
-void ModuleParticles::AddParticle(const Particle& particle, int x, int y, uint delay)
+void ModuleParticles::AddParticle(const Particle& particle, int x, int y, Collider::Type colliderType, uint delay)
 {
 	Particle* p = new Particle(particle);
 	
@@ -105,6 +121,9 @@ void ModuleParticles::AddParticle(const Particle& particle, int x, int y, uint d
 	p->position.x = x;						// so when frameCount reaches 0 the particle will be activated
 	p->position.y = y;						
 
+	//Adding the particle's collider
+	if (colliderType != Collider::Type::NONE)
+		p->collider = App->collisions->AddCollider(p->anim.GetCurrentFrame(), colliderType, this);
 	particles[lastParticle++] = p;
 	lastParticle %= MAX_ACTIVE_PARTICLES;
 }

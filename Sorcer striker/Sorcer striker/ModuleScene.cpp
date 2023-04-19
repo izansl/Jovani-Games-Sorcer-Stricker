@@ -23,7 +23,7 @@ bool ModuleScene::Start()
 
 	bool ret = true;
 
-	bgTexture = App->textures->Load("../Assets/Fondo.png");
+	bgTexture = App->textures->Load("../Assets/Playa.png");
 
 	return ret;
 }
