@@ -1,7 +1,7 @@
 #include "ModuleRender.h"
 
 #include "Application.h"
-
+#include <iostream>
 #include "ModuleWindow.h"
 #include "ModuleTextures.h"
 #include "ModuleInput.h"
@@ -35,6 +35,7 @@ bool ModuleRender::Init()
 	if (renderer == nullptr)
 	{
 		LOG("Renderer could not be created! SDL_Error: %s\n", SDL_GetError());
+		std::cout << "Error al cargar: " << SDL_GetError() << std::endl;
 		ret = false;
 	}
 

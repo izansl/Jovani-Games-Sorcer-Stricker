@@ -42,10 +42,10 @@ bool ModulePlayer::Start()
 
 	texture = App->textures->Load("../Assets/sprites.png"); // arcade version
 	currentAnimation = &idleAnim;
-
+	collider = App->collisions->AddCollider({ position.x, position.y, 36, 42 }, Collider::Type::PLAYER, this);
 	return ret;
 
-	collider = App->collisions->AddCollider({ position.x, position.y, 36, 42 }, Collider::Type::PLAYER, this);
+	
 }
 
 update_status ModulePlayer::Update()
