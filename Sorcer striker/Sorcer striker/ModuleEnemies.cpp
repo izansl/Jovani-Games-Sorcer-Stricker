@@ -131,7 +131,23 @@ void ModuleEnemies::HandleEnemiesDespawn()
 
 void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info)
 {
-	
+	for (uint i = 0; i < MAX_ENEMIES; ++i)
+	{
+		if (enemies[i] == nullptr)
+		{
+			switch (info.type)
+			{
+			case ENEMY_TYPE::REDBIRD:
+				enemies[i] = new Enemy_RedBird(info.x, info.y);
+				break;
+			case ENEMY_TYPE::BROWNSHIP:
+				enemies[i] = new Enemy_BrownShip(info.x, info.y);
+				break;
+			}
+			enemies[i]->texture = texture;
+			break;
+		}
+	}
 }
 
 void ModuleEnemies::OnCollision(Collider* c1, Collider* c2)
