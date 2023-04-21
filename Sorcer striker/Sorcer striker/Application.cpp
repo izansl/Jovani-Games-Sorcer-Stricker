@@ -7,6 +7,7 @@
 #include "ModulePlayer.h"
 #include "ModuleScene.h"
 #include "ModuleParticles.h"
+#include "ModuleCollisions.h"
 #include "ModuleRender.h"
 
 Application::Application()
@@ -15,14 +16,16 @@ Application::Application()
 	// It will define the order in which Pre/Update/Post will be called
 	// Render should always be last, as our last action should be updating the screen
 	modules[0] = window = new ModuleWindow();
-	modules[1] = input = new ModuleInput();
-	modules[2] = textures = new ModuleTextures();
+	modules[1] = render = new ModuleRender();
+	modules[2] = input = new ModuleInput();
+	modules[3] = textures = new ModuleTextures();
 
-	modules[3] = scene = new ModuleScene();
-	modules[4] = player = new ModulePlayer();
+	modules[4] = scene = new ModuleScene();
+	modules[5] = player = new ModulePlayer();
 
-	modules[5] = particles = new ModuleParticles();
-	modules[6] = render = new ModuleRender();
+	modules[6] = particles = new ModuleParticles();
+	modules[7] = collisions = new ModuleCollisions();
+	
 }
 
 Application::~Application()

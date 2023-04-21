@@ -1,5 +1,4 @@
 #include "ModuleTextures.h"
-
 #include "Application.h"
 #include "ModuleRender.h"
 
@@ -62,6 +61,7 @@ SDL_Texture* const ModuleTextures::Load(const char* path)
 	if (surface == NULL)
 	{
 		LOG("Could not load surface with path: %s. IMG_Load: %s", path, IMG_GetError());
+		
 	}
 	else
 	{
@@ -70,6 +70,7 @@ SDL_Texture* const ModuleTextures::Load(const char* path)
 		if (texture == NULL)
 		{
 			LOG("Unable to create texture from surface! SDL Error: %s\n", SDL_GetError());
+			
 		}
 		else
 		{

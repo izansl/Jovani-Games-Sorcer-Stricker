@@ -12,6 +12,7 @@ class ModuleTextures;
 class ModulePlayer;
 class ModuleScene;
 class ModuleParticles;
+class ModuleCollisions;
 class ModuleRender;
 
 class Application
@@ -46,7 +47,9 @@ public:
 	ModulePlayer* player = nullptr;
 	ModuleScene* scene = nullptr;
 	ModuleParticles* particles = nullptr;
-
+	
+	ModuleCollisions* collisions = nullptr;
+	
 	ModuleRender* render = nullptr;
 };
 

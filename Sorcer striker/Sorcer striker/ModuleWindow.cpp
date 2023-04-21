@@ -48,6 +48,7 @@ bool ModuleWindow::Init()
 		}
 		else
 		{
+			App->window->window = window;
 			screenSurface = SDL_GetWindowSurface(window);
 		}
 	}
