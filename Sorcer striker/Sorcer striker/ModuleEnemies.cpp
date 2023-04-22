@@ -24,7 +24,8 @@ ModuleEnemies::~ModuleEnemies()
 
 bool ModuleEnemies::Start()
 {
-	texture = App->textures->Load("../Assets/Enemigos_version_1.png");
+	texture = App->textures->Load("../Assets/Entidades.png");
+
 
 	return true;
 }
