@@ -25,6 +25,7 @@ bool ModuleScene::Start()
 
 	bgTexture = App->textures->Load("../Assets/Playa.png");
 
+
 	return ret;
 }
 
