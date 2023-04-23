@@ -14,14 +14,19 @@ public:
 	// The enemy is going to perform a sinusoidal movement
 	void Update() override;
 
+	void OnCollision(Collider* c1, Collider* c2);
+
 private: //BROWNSHIP
 	// A set of steps that define the position in the screen
 		// And an animation for each step
-	Path path;
+	Path path1;
+	Path path2;
+	Path* currentPath;
 
 	// This enemy has one sprite and one frame
 	// We are keeping it an animation for consistency with other enemies
-	Animation fly;
+	Animation blue;
+	Animation red;
 };
 
 #endif // __ENEMY_CHESS_H__

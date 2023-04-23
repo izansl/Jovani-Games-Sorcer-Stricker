@@ -6,6 +6,7 @@
 #include "ModuleRender.h"
 #include "ModuleParticles.h"
 #include "ModuleCollisions.h"	
+#include "Enemy_CHEST.h"
 
 #include "../SDLs/SDL/include/SDL_scancode.h"
 
@@ -128,5 +129,40 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		
 
 		destroyed = true;
+	}
+	else if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect))
+	{
+		// Change sprite
+		idleAnim.PushBack({ 1595, 63, 62, 43 });
+		idleAnim.PushBack({ 268, 63, 70, 43 });
+		idleAnim.speed = 1.0f;
+
+		//Move right
+		rightAnim.PushBack({ 242, 61, 68, 44 });
+		rightAnim.loop = false;
+		rightAnim.speed = 0.1f;
+
+		// Move left
+		leftAnim.PushBack({ 9, 61, 68, 44 });
+		leftAnim.loop = false;
+		leftAnim.speed = 0.1f;
+
+		
+
+		//Change laser
+		if (App->input->keys[SDL_SCANCODE_SPACE] == KEY_STATE::KEY_DOWN)
+		{
+			App->particles->AddParticle(App->particles->laser, position.x + 29, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser, position.x + 7, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser, position.x + 15, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->ice, position.x + 29, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->ice, position.x + 7, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->ice, position.x + 15, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->ice, position.x + 29, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->ice, position.x + 7, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->ice, position.x + 15, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
+		}
+
+
 	}
 }

@@ -61,6 +61,7 @@ public:
 	Particle explosion2;
 	//Template particle for a laser
 	Particle laser;
+	Particle ice;
 };
 
 #endif // !__MODULEPARTICLES_H__
