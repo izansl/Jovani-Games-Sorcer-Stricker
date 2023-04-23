@@ -13,6 +13,7 @@ enum class ENEMY_TYPE
 	CHEST,
 	REDWIZARD,
 	DRAGON,
+	RED_BALL,
 
 };
 
