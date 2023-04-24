@@ -80,6 +80,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\SDLs\SDL\include;..\SDLs\SDL_image\include;..\SDLs\SDL_mixer\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\SDLs\SDL\lib\x64;..\SDLs\SDL_image\lib\x64;..\SDLs\SDL_mixer\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -123,6 +125,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -150,20 +153,58 @@
     <ClCompile Include="Application\Application.cpp" />
     <ClCompile Include="Application\Globals.cpp" />
     <ClCompile Include="Application\Main.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_BrownShip.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Mech.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_RedBird.cpp" />
+    <ClCompile Include="Entities\Particle.cpp" />
     <ClCompile Include="Modules\Core\Module.cpp" />
+    <ClCompile Include="Modules\Core\ModuleAudio.cpp" />
+    <ClCompile Include="Modules\Core\ModuleCollisions.cpp" />
+    <ClCompile Include="Modules\Core\ModuleFadeToBlack.cpp" />
+    <ClCompile Include="Modules\Core\ModuleFonts.cpp" />
+    <ClCompile Include="Modules\Core\ModuleInput.cpp" />
+    <ClCompile Include="Modules\Core\ModuleParticles.cpp" />
     <ClCompile Include="Modules\Core\ModuleRender.cpp" />
     <ClCompile Include="Modules\Core\ModuleTextures.cpp" />
     <ClCompile Include="Modules\Core\ModuleWindow.cpp" />
+    <ClCompile Include="Modules\Gameplay\ModuleEnemies.cpp" />
+    <ClCompile Include="Modules\Gameplay\ModulePlayer.cpp" />
+    <ClCompile Include="Modules\Gameplay\SceneIntro.cpp" />
+    <ClCompile Include="Modules\Gameplay\SceneLevel1.cpp" />
+    <ClCompile Include="Modules\Module.cpp" />
+    <ClCompile Include="Utils\Collider.cpp" />
+    <ClCompile Include="Utils\Path.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application\Application.h" />
     <ClInclude Include="Application\FileNames.h" />
     <ClInclude Include="Application\Globals.h" />
     <ClInclude Include="Application\MemLeaks.h" />
+    <ClInclude Include="Entities\Enemies\Enemy.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_BrownShip.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Mech.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_RedBird.h" />
+    <ClInclude Include="Entities\Particle.h" />
     <ClInclude Include="Modules\Core\Module.h" />
+    <ClInclude Include="Modules\Core\ModuleAudio.h" />
+    <ClInclude Include="Modules\Core\ModuleCollisions.h" />
+    <ClInclude Include="Modules\Core\ModuleFadeToBlack.h" />
+    <ClInclude Include="Modules\Core\ModuleFonts.h" />
+    <ClInclude Include="Modules\Core\ModuleInput.h" />
+    <ClInclude Include="Modules\Core\ModuleParticles.h" />
     <ClInclude Include="Modules\Core\ModuleRender.h" />
     <ClInclude Include="Modules\Core\ModuleTextures.h" />
     <ClInclude Include="Modules\Core\ModuleWindow.h" />
+    <ClInclude Include="Modules\Gameplay\ModuleEnemies.h" />
+    <ClInclude Include="Modules\Gameplay\ModulePlayer.h" />
+    <ClInclude Include="Modules\Gameplay\SceneIntro.h" />
+    <ClInclude Include="Modules\Gameplay\SceneLevel1.h" />
+    <ClInclude Include="Modules\Module.h" />
+    <ClInclude Include="Utils\Animation.h" />
+    <ClInclude Include="Utils\Collider.h" />
+    <ClInclude Include="Utils\p2Point.h" />
+    <ClInclude Include="Utils\Path.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

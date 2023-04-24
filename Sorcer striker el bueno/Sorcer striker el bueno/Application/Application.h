@@ -3,23 +3,28 @@
 
 #include "Globals.h"
 
-#define NUM_MODULES 1
+#define NUM_MODULES 13
 
 class Module;
 class ModuleWindow;
-class ModuleRender;
-/*class ModuleInput;
+class ModuleInput;
 class ModuleTextures;
+class ModuleAudio;
 class ModulePlayer;
-class ModuleScene;
+class SceneIntro;
+class SceneLevel1;
 class ModuleParticles;
 class ModuleCollisions;
+class ModuleEnemies;
+class ModuleFadeToBlack;
+class ModuleFonts;
+class ModuleRender;
 
-class ModuleEnemies;*/
-
-class Application {
+class Application
+{
 
 public:
+
 	//Constructor. Creates all necessary modules for the application
 	Application();
 
@@ -30,11 +35,10 @@ public:
 	bool Init();
 
 	//Updates all modules (PreUpdate, Update and PostUpdate)
-	update_status Update();
+	Update_Status Update();
 
 	//Releases all the application data
 	bool CleanUp();
-
 
 public:
 	// An array to store all modules
@@ -42,18 +46,23 @@ public:
 
 	// All the modules stored individually
 	ModuleWindow* window = nullptr;
-	ModuleRender* render = nullptr;
-	/*ModuleInput* input = nullptr;
+	ModuleInput* input = nullptr;
 	ModuleTextures* textures = nullptr;
+	ModuleAudio* audio = nullptr;
 
 	ModulePlayer* player = nullptr;
-	ModuleScene* scene = nullptr;
+
+	SceneIntro* sceneIntro = nullptr;
+	SceneLevel1* sceneLevel_1 = nullptr;
+
 	ModuleEnemies* enemies = nullptr;
 	ModuleParticles* particles = nullptr;
 
 	ModuleCollisions* collisions = nullptr;
+	ModuleFadeToBlack* fade = nullptr;
+	ModuleFonts* fonts = nullptr;
 
-	*/
+	ModuleRender* render = nullptr;
 };
 
 // Global var made extern for Application ---

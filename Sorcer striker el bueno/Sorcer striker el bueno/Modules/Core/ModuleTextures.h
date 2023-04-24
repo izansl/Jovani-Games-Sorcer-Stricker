@@ -1,17 +1,17 @@
 #ifndef __MODULE_TEXTURES_H__
 #define __MODULE_TEXTURES_H__
 
-#include "Module.h"
+#include "../../Modules/Module.h"
 
 #define MAX_TEXTURES 50
 
 struct SDL_Texture;
 
-class ModuleTextures : public Module {
-
+class ModuleTextures : public Module
+{
 public:
 	//Constructor
-	ModuleTextures();
+	ModuleTextures(bool startEnabled);
 
 	//Destructor
 	~ModuleTextures();
@@ -30,6 +30,11 @@ public:
 	// Returns nullptr if the texture could not be created
 	SDL_Texture* const Load(const char* path);
 
+	// Removes the memory from SDL_Texture and removes it from the array
+	bool Unload(SDL_Texture* texture);
+
+	// Retrieve size of a texture by modifying parameters with and height
+	void GetTextureSize(const SDL_Texture* texture, uint& width, uint& height) const;
 
 public:
 	// An array of all the loaded textures
