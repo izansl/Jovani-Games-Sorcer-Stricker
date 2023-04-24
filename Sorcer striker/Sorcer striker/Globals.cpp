@@ -1,5 +1,6 @@
 #include <windows.h>
 #include <stdio.h>
+#include <iostream>
 
 void log(const char file[], int line, const char* format, ...)
 {
@@ -15,4 +16,6 @@ void log(const char file[], int line, const char* format, ...)
 
 	// TODO: esbrinar perque peta en aquest projecte
 	//OutputDebugString(tmp_string2);
+
+	std::cout << tmp_string2 << std::endl;
 }
