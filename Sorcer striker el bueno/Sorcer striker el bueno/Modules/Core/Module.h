@@ -4,10 +4,9 @@
 #include "../../Application/Globals.h"
 struct Collider;
 
-class Module
-{
-public:
+class Module {
 
+public:
 	//Called at the beginning of the application execution
 	virtual bool Init();
 

@@ -17,11 +17,9 @@ class ModuleCollisions;
 
 class ModuleEnemies;*/
 
-class Application
-{
+class Application {
 
 public:
-
 	//Constructor. Creates all necessary modules for the application
 	Application();
 
@@ -37,6 +35,7 @@ public:
 	//Releases all the application data
 	bool CleanUp();
 
+
 public:
 	// An array to store all modules
 	Module* modules[NUM_MODULES];
@@ -51,9 +50,9 @@ public:
 	ModuleScene* scene = nullptr;
 	ModuleEnemies* enemies = nullptr;
 	ModuleParticles* particles = nullptr;
-	
+
 	ModuleCollisions* collisions = nullptr;
-	
+
 	*/
 };
 

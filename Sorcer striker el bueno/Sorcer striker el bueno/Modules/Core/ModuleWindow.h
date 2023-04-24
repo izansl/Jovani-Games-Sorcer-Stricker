@@ -7,8 +7,8 @@
 struct SDL_Window;
 struct SDL_Surface;
 
-class ModuleWindow : public Module
-{
+class ModuleWindow : public Module {
+
 public:
 	//Constructor
 	ModuleWindow();
@@ -24,6 +24,7 @@ public:
 	// Destroys the window and uninitializes the SDL library
 	bool CleanUp() override;
 
+
 public:
 	//The window we'll be rendering to
 	SDL_Window* window = nullptr;
@@ -33,4 +34,3 @@ public:
 };
 
 #endif // !__MODULE_WINDOW_H__
-

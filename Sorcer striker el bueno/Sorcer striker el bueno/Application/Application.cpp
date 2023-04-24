@@ -12,8 +12,7 @@
 #include "ModuleEnemies.h"
 */
 
-Application::Application()
-{
+Application::Application() {
 	// The order in which the modules are added is very important.
 	// It will define the order in which Pre/Update/Post will be called
 	// Render should always be last, as our last action should be updating the screen
@@ -27,13 +26,11 @@ Application::Application()
 	modules[6] = enemies = new ModuleEnemies();
 	modules[7] = particles = new ModuleParticles();
 	modules[8] = collisions = new ModuleCollisions();*/
-	
+
 }
 
-Application::~Application()
-{
-	for (int i = 0; i < NUM_MODULES; ++i)
-	{
+Application::~Application() {
+	for (int i = 0; i < NUM_MODULES; ++i) {
 		//Important: when deleting a pointer, set it to nullptr afterwards
 		//It allows us for null check in other parts of the code
 		delete modules[i];
@@ -41,8 +38,7 @@ Application::~Application()
 	}
 }
 
-bool Application::Init()
-{
+bool Application::Init() {
 	bool ret = true;
 
 	for (int i = 0; i < NUM_MODULES && ret; ++i)
@@ -55,8 +51,7 @@ bool Application::Init()
 	return ret;
 }
 
-update_status Application::Update()
-{
+update_status Application::Update() {
 	update_status ret = update_status::UPDATE_CONTINUE;
 
 	for (int i = 0; i < NUM_MODULES && ret == update_status::UPDATE_CONTINUE; ++i)
@@ -70,9 +65,8 @@ update_status Application::Update()
 
 	return ret;
 }
- 
-bool Application::CleanUp()
-{
+
+bool Application::CleanUp() {
 	bool ret = true;
 
 	for (int i = NUM_MODULES - 1; i >= 0 && ret; --i)

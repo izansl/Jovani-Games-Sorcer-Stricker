@@ -7,8 +7,8 @@
 
 struct SDL_Texture;
 
-class ModuleTextures : public Module
-{
+class ModuleTextures : public Module {
+
 public:
 	//Constructor
 	ModuleTextures();
@@ -29,6 +29,7 @@ public:
 	// First creates an SDL_Surface, then converts it into SDL_Texture
 	// Returns nullptr if the texture could not be created
 	SDL_Texture* const Load(const char* path);
+
 
 public:
 	// An array of all the loaded textures

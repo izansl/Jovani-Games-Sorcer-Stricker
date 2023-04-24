@@ -4,19 +4,17 @@
 
 #include "../../../SDLs/SDL/include/SDL.h"
 #include "../../../SDLs/SDL_Image/include/SDL_image.h"
-#pragma comment( lib, "../../../SDLs/SDL_Image/lib/x64/SDL2_image.lib" )
+//#pragma comment( lib, "../../../SDLs/SDL_Image/lib/x64/SDL2_image.lib" )
 
-ModuleTextures::ModuleTextures() : Module()
-{
+ModuleTextures::ModuleTextures() : Module() {
 	for (uint i = 0; i < MAX_TEXTURES; ++i)
 		textures[i] = nullptr;
 }
 
-ModuleTextures::~ModuleTextures()
-{}
+ModuleTextures::~ModuleTextures() {
+}
 
-bool ModuleTextures::Init()
-{
+bool ModuleTextures::Init() {
 	LOG("Init Image library");
 	bool ret = true;
 
@@ -25,8 +23,7 @@ bool ModuleTextures::Init()
 	int init = IMG_Init(flags);
 
 	// Check if all flags were initialized correctly
-	if((init & flags) != flags)
-	{
+	if ((init & flags) != flags) {
 		LOG("Could not initialize Image lib. IMG_Init: %s", IMG_GetError());
 		ret = false;
 	}
@@ -34,15 +31,13 @@ bool ModuleTextures::Init()
 	return ret;
 }
 
-bool ModuleTextures::CleanUp()
-{
+bool ModuleTextures::CleanUp() {
 	LOG("Freeing textures and Image library");
 
 	//Free all textures sill existing in the textures array
 	for (uint i = 0; i < MAX_TEXTURES; ++i)
 	{
-		if (textures[i] != nullptr)
-		{
+		if (textures[i] != nullptr) {
 			SDL_DestroyTexture(textures[i]);
 			textures[i] = nullptr;
 		}
@@ -53,31 +48,22 @@ bool ModuleTextures::CleanUp()
 	return true;
 }
 
-SDL_Texture* const ModuleTextures::Load(const char* path)
-{
+SDL_Texture* const ModuleTextures::Load(const char* path) {
 	SDL_Texture* texture = nullptr;
 	SDL_Surface* surface = IMG_Load(path);
 
-	if (surface == NULL)
-	{
+	if (surface == NULL) {
 		LOG("Could not load surface with path: %s. IMG_Load: %s", path, IMG_GetError());
-		
 	}
-	else
-	{
+	else {
 		texture = SDL_CreateTextureFromSurface(App->render->renderer, surface);
 
-		if (texture == NULL)
-		{
+		if (texture == NULL) {
 			LOG("Unable to create texture from surface! SDL Error: %s\n", SDL_GetError());
-			
 		}
-		else
-		{
-			for (uint i = 0; i < MAX_TEXTURES; ++i)
-			{
-				if (textures[i] == nullptr)
-				{
+		else {
+			for (uint i = 0; i < MAX_TEXTURES; ++i) {
+				if (textures[i] == nullptr) {
 					textures[i] = texture;
 					break;
 				}
