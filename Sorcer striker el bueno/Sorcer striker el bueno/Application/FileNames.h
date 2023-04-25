@@ -42,6 +42,7 @@ const char* FA_menu_ruido1 = "../Assets/Sounds/ruido.wav";
 const char* FTI_sprites_enemies = "Assets/Sprites/enemies.png";
 const char* FTI_sprites_ship = "Assets/Sprites/ship.png";
 const char* FTI_sprites_startScreen = "Assets/Sprites/startScreen.png";
+const char* FTI_sprites_background = "Assets/Sprites/background.png";
 
 const char* FTI_font_font3 = "Assets/Fonts/rtype_font3.png";
 
@@ -50,5 +51,6 @@ const char* FTA_fx_explosion = "Assets/Fx/explosion.wav";
 const char* FTA_fx_laser = "Assets/Fx/laser.wav";
 
 const char* FTA_Music_introTitle = "Assets/Music/introTitle.ogg";
+const char* FTA_Music_stage1 = "Assets/Music/stage1.ogg";
 
 #pragma endregion
