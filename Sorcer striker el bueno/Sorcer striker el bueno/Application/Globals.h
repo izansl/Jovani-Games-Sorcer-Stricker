@@ -9,8 +9,7 @@ void log(const char file[], int line, const char* format, ...);
 #define EXIT_FAILURE 1
 #define EXIT_SUCCESS 0
 
-enum class Update_Status
-{
+enum class Update_Status {
 	UPDATE_CONTINUE = 1,
 	UPDATE_STOP,
 	UPDATE_ERROR

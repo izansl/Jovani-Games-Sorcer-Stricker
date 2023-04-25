@@ -2,26 +2,21 @@
 
 #include "Animation.h"
 
-void Path::PushBack(fPoint speed, uint frames, Animation* animation)
-{
+void Path::PushBack(fPoint speed, uint frames, Animation* animation) {
 	steps[totalSteps].animation = animation;
 	steps[totalSteps].framesDuration = frames;
 	steps[totalSteps].speed = speed;
 	totalSteps++;
 }
 
-void Path::Update()
-{
+void Path::Update() {
 	currentStepFrame += 1;
 
-	if (currentStepFrame > steps[currentStep].framesDuration)
-	{
-		if (currentStep < totalSteps - 1) // If it is not the last step, advance
-		{
+	if (currentStepFrame > steps[currentStep].framesDuration) {
+		if (currentStep < totalSteps - 1) { // If it is not the last step, advance
 			currentStep++;
 		}
-		else if (loop) // Otherwise, if the path loops, go back to the beginning
-		{
+		else if (loop) {// Otherwise, if the path loops, go back to the beginning
 			currentStep = 0;
 		}
 		currentStepFrame = 0;
@@ -30,18 +25,15 @@ void Path::Update()
 	relativePosition += steps[currentStep].speed;
 }
 
-iPoint Path::GetRelativePosition() const
-{
+iPoint Path::GetRelativePosition() const {
 	return iPoint((int)relativePosition.x, (int)relativePosition.y);
 }
 
-Animation* Path::GetCurrentAnimation()
-{
+Animation* Path::GetCurrentAnimation() {
 	return steps[currentStep].animation;
 }
 
-void Path::Reset()
-{
+void Path::Reset() {
 	currentStepFrame = 0;
 	currentStep = 0;
 }

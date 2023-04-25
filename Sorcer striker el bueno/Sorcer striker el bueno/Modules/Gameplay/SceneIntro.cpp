@@ -7,19 +7,14 @@
 #include "../../Modules/Core/ModuleInput.h"
 #include "../../Modules/Core/ModuleFadeToBlack.h"
 
-SceneIntro::SceneIntro(bool startEnabled) : Module(startEnabled)
-{
-
+SceneIntro::SceneIntro(bool startEnabled) : Module(startEnabled) {
 }
 
-SceneIntro::~SceneIntro()
-{
-
+SceneIntro::~SceneIntro() {
 }
 
 // Load assets
-bool SceneIntro::Start()
-{
+bool SceneIntro::Start() {
 	LOG("Loading background assets");
 
 	bool ret = true;
@@ -33,10 +28,8 @@ bool SceneIntro::Start()
 	return ret;
 }
 
-Update_Status SceneIntro::Update()
-{
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
-	{
+Update_Status SceneIntro::Update() {
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);
 	}
 
@@ -44,8 +37,7 @@ Update_Status SceneIntro::Update()
 }
 
 // Update: draw background
-Update_Status SceneIntro::PostUpdate()
-{
+Update_Status SceneIntro::PostUpdate() {
 	// Draw everything --------------------------------------
 	App->render->Blit(bgTexture, 0, 0, NULL);
 

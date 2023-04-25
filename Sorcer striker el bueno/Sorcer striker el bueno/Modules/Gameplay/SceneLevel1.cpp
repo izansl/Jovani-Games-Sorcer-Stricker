@@ -9,19 +9,14 @@
 #include "ModuleEnemies.h"
 #include "ModulePlayer.h"
 
-SceneLevel1::SceneLevel1(bool startEnabled) : Module(startEnabled)
-{
-
+SceneLevel1::SceneLevel1(bool startEnabled) : Module(startEnabled) {
 }
 
-SceneLevel1::~SceneLevel1()
-{
-
+SceneLevel1::~SceneLevel1() {
 }
 
 // Load assets
-bool SceneLevel1::Start()
-{
+bool SceneLevel1::Start() {
 	LOG("Loading background assets");
 
 	bool ret = true;
@@ -63,24 +58,21 @@ bool SceneLevel1::Start()
 	return ret;
 }
 
-Update_Status SceneLevel1::Update()
-{
+Update_Status SceneLevel1::Update() {
 	App->render->camera.x += 3;
 
 	return Update_Status::UPDATE_CONTINUE;
 }
 
 // Update: draw background
-Update_Status SceneLevel1::PostUpdate()
-{
+Update_Status SceneLevel1::PostUpdate() {
 	// Draw everything --------------------------------------
 	App->render->Blit(bgTexture, 0, 0, NULL);
 
 	return Update_Status::UPDATE_CONTINUE;
 }
 
-bool SceneLevel1::CleanUp()
-{
+bool SceneLevel1::CleanUp() {
 	App->player->Disable();
 	App->enemies->Disable();
 

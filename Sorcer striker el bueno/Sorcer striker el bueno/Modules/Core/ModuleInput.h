@@ -8,16 +8,15 @@
 
 #define MAX_KEYS 256
 
-enum Key_State
-{
+enum Key_State {
 	KEY_IDLE,
 	KEY_DOWN,
 	KEY_REPEAT,
 	KEY_UP
 };
 
-class ModuleInput : public Module
-{
+class ModuleInput : public Module {
+
 public:
 	// Constructor
 	ModuleInput(bool startEnabled);
@@ -36,6 +35,7 @@ public:
 	// Called on application exit.
 	// Uninitializes the SDL system for input detection
 	bool CleanUp() override;
+
 
 public:
 	// An array to fill in the state of all the keyboard keys

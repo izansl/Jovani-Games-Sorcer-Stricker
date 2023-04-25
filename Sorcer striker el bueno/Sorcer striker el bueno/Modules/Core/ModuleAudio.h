@@ -10,8 +10,8 @@ struct _Mix_Music;
 struct Mix_Chunk;
 typedef struct _Mix_Music Mix_Music;
 
-class ModuleAudio : public Module
-{
+class ModuleAudio : public Module {
+
 public:
 	//Constructor
 	ModuleAudio(bool startEnabled);
@@ -42,6 +42,7 @@ public:
 	// Plays a previously loaded WAV
 	// Receives an index from the sound fx array
 	bool PlayFx(uint index, int repeat = 0);
+
 
 private:
 	// The current playing music

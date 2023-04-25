@@ -7,8 +7,8 @@
 struct SDL_Texture;
 struct SDL_Renderer;
 
-class ModuleRender : public Module
-{
+class ModuleRender : public Module {
+
 public:
 	//Constructor
 	ModuleRender(bool startEnabled);
@@ -45,6 +45,7 @@ public:
 	bool Blit(SDL_Texture* texture, int x, int y, const SDL_Rect* section = nullptr, float speed = 1.0f, bool useCamera = true);
 
 	bool DrawQuad(const SDL_Rect& rect, Uint8 r, Uint8 g, Uint8 b, Uint8 a, float speed = 1.0f, bool useCamera = true);
+
 
 public:
 	// Rendering context used for any rendering action

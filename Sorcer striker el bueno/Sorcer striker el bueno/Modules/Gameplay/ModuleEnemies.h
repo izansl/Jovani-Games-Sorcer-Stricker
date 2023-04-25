@@ -5,16 +5,14 @@
 
 #define MAX_ENEMIES 100
 
-enum class Enemy_Type
-{
+enum class Enemy_Type {
 	NO_TYPE,
 	REDBIRD,
 	BROWNSHIP,
 	MECH,
 };
 
-struct EnemySpawnpoint
-{
+struct EnemySpawnpoint {
 	Enemy_Type type = Enemy_Type::NO_TYPE;
 	int x, y;
 };
@@ -22,8 +20,8 @@ struct EnemySpawnpoint
 class Enemy;
 struct SDL_Texture;
 
-class ModuleEnemies : public Module
-{
+class ModuleEnemies : public Module {
+
 public:
 	// Constructor
 	ModuleEnemies(bool startEnabled);
@@ -64,9 +62,11 @@ public:
 	// Destroys any enemies that have moved outside the camera limits
 	void HandleEnemiesDespawn();
 
+
 private:
 	// Spawns a new enemy using the data from the queue
 	void SpawnEnemy(const EnemySpawnpoint& info);
+
 
 private:
 	// A queue with all spawn points information

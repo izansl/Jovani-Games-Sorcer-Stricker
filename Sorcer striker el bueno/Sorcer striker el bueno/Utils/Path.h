@@ -6,15 +6,14 @@
 #define MAX_STEPS 25
 
 class Animation;
-struct Step
-{
+struct Step {
 	uint framesDuration = 1;
 	fPoint speed;
 	Animation* animation = nullptr;
 };
 
-class Path
-{
+class Path {
+
 public:
 	// Adds a new frame to the array
 	void PushBack(fPoint speed, uint frames, Animation* animation = nullptr);
@@ -32,12 +31,14 @@ public:
 	// Resets the path to the first step
 	void Reset();
 
+
 public:
 	// Defines wether the path should go back to the beginning when finished
 	bool loop = true;
 
 	// The set of steps that will define the path
 	Step steps[MAX_STEPS];
+
 
 private:
 	// Total amount of steps

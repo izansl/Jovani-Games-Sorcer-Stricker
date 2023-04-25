@@ -5,8 +5,8 @@
 
 struct Collider;
 
-class Module
-{
+class Module {
+
 public:
 	Module(bool startEnabled);
 

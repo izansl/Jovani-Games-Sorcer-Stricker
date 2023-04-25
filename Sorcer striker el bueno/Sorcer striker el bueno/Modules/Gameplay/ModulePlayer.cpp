@@ -12,8 +12,7 @@
 
 #include <stdio.h>
 
-ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
-{
+ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 	// idle animation - just one sprite
 	idleAnim.PushBack({ 66, 1, 32, 14 });
 
@@ -30,13 +29,10 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled)
 	downAnim.speed = 0.1f;
 }
 
-ModulePlayer::~ModulePlayer()
-{
-
+ModulePlayer::~ModulePlayer() {
 }
 
-bool ModulePlayer::Start()
-{
+bool ModulePlayer::Start() {
 	LOG("Loading player textures");
 
 	bool ret = true;
@@ -65,43 +61,28 @@ bool ModulePlayer::Start()
 	return ret;
 }
 
-Update_Status ModulePlayer::Update()
-{
+Update_Status ModulePlayer::Update() {
 	// Moving the player with the camera scroll
 	App->player->position.x += 1;
 
-	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
-	{
-		position.x -= speed;
+	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)position.x -= speed;
+	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)position.x += speed;
+	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT)position.y += speed;
+
+	if (currentAnimation != &downAnim) {
+		downAnim.Reset();
+		currentAnimation = &downAnim;
 	}
 
-	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
-	{
-		position.x += speed;
-	}
-
-	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT)
-	{
-		position.y += speed;
-		if (currentAnimation != &downAnim)
-		{
-			downAnim.Reset();
-			currentAnimation = &downAnim;
-		}
-	}
-
-	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT)
-	{
+	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT) {
 		position.y -= speed;
-		if (currentAnimation != &upAnim)
-		{
+		if (currentAnimation != &upAnim) {
 			upAnim.Reset();
 			currentAnimation = &upAnim;
 		}
 	}
 
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
-	{
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
 		Particle* newParticle = App->particles->AddParticle(App->particles->laser, position.x + 20, position.y, Collider::Type::PLAYER_SHOT);
 		newParticle->collider->AddListener(this);
 		App->audio->PlayFx(laserFx);
@@ -119,10 +100,8 @@ Update_Status ModulePlayer::Update()
 	return Update_Status::UPDATE_CONTINUE;
 }
 
-Update_Status ModulePlayer::PostUpdate()
-{
-	if (!destroyed)
-	{
+Update_Status ModulePlayer::PostUpdate() {
+	if (!destroyed) {
 		SDL_Rect rect = currentAnimation->GetCurrentFrame();
 		App->render->Blit(texture, position.x, position.y, &rect);
 	}
@@ -138,10 +117,8 @@ Update_Status ModulePlayer::PostUpdate()
 	return Update_Status::UPDATE_CONTINUE;
 }
 
-void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
-{
-	if (c1 == collider && destroyed == false)
-	{
+void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
+	if (c1 == collider && destroyed == false) {
 		App->particles->AddParticle(App->particles->explosion, position.x, position.y, Collider::Type::NONE, 9);
 		App->particles->AddParticle(App->particles->explosion, position.x + 8, position.y + 11, Collider::Type::NONE, 14);
 		App->particles->AddParticle(App->particles->explosion, position.x - 7, position.y + 12, Collider::Type::NONE, 40);
@@ -154,8 +131,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2)
 		destroyed = true;
 	}
 
-	if (c1->type == Collider::Type::PLAYER_SHOT && c2->type == Collider::Type::ENEMY)
-	{
+	if (c1->type == Collider::Type::PLAYER_SHOT && c2->type == Collider::Type::ENEMY) {
 		score += 23;
 	}
 }

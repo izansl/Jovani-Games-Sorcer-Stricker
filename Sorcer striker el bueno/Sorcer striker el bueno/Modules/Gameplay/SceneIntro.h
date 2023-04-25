@@ -6,8 +6,8 @@
 
 struct SDL_Texture;
 
-class SceneIntro : public Module
-{
+class SceneIntro : public Module {
+
 public:
 	//Constructor
 	SceneIntro(bool startEnabled);
@@ -26,6 +26,7 @@ public:
 	// Called at the end of the application loop.
 	// Performs the render call of all the parts of the scene's background
 	Update_Status PostUpdate() override;
+
 
 public:
 	// The scene sprite sheet loaded into an SDL_Texture

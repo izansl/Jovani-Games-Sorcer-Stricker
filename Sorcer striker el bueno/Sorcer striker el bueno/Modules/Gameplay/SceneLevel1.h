@@ -6,8 +6,8 @@
 
 struct SDL_Texture;
 
-class SceneLevel1 : public Module
-{
+class SceneLevel1 : public Module {
+
 public:
 	//Constructor
 	SceneLevel1(bool startEnabled);
@@ -30,8 +30,8 @@ public:
 	// Disables the player and the enemies
 	bool CleanUp();
 
+
 public:
-	
 	// The scene sprite sheet loaded into an SDL_Texture
 	SDL_Texture* bgTexture = nullptr;
 };

@@ -3,8 +3,7 @@
 #include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"
 
-Enemy_Mech::Enemy_Mech(int x, int y) : Enemy(x, y)
-{
+Enemy_Mech::Enemy_Mech(int x, int y) : Enemy(x, y) {
 	front.PushBack({ 5, 108, 31, 29 });
 	front.PushBack({ 4, 141, 31, 29 });
 	front.PushBack({ 38, 108, 31, 29 });
@@ -23,8 +22,7 @@ Enemy_Mech::Enemy_Mech(int x, int y) : Enemy(x, y)
 	collider = App->collisions->AddCollider({ 0, 0, 24, 24 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
-void Enemy_Mech::Update()
-{
+void Enemy_Mech::Update() {
 	path.Update();
 	position = spawnPos + path.GetRelativePosition();
 	currentAnim = path.GetCurrentAnimation();

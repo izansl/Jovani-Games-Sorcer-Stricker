@@ -13,8 +13,8 @@
 struct SDL_Texture;
 struct Collider;
 
-class ModuleParticles : public Module
-{
+class ModuleParticles : public Module {
+
 public:
 	// Constructor
 	// Initializes all the particles in the array to nullptr
@@ -53,12 +53,14 @@ public:
 	// Param delay		- Delay time from the moment the function is called until the particle is displayed in screen
 	Particle* AddParticle(const Particle& particle, int x, int y, Collider::Type colliderType = Collider::Type::NONE, uint delay = 0);
 
+
 public:
 	//Template particle for an explosion
 	Particle explosion;
 
 	//Template particle for a laser
 	Particle laser;
+
 
 private:
 	// Particles spritesheet loaded into an SDL Texture

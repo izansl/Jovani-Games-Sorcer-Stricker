@@ -9,8 +9,7 @@
 
 struct SDL_Texture;
 
-struct Font
-{
+struct Font {
 	// Lookup table. All characters displayed in the same order as the texture
 	char table[MAX_FONT_CHARS];
 
@@ -23,10 +22,9 @@ struct Font
 	uint char_w, char_h;
 };
 
-class ModuleFonts : public Module
-{
-public:
+class ModuleFonts : public Module {
 
+public:
 	// Constructor
 	ModuleFonts(bool isEnabled);
 
@@ -46,6 +44,7 @@ public:
 
 	// Create a surface from text
 	void BlitText(int x, int y, int fontIndex, const char* text) const;
+
 
 private:
 	// An array to keep track and store all loaded fonts

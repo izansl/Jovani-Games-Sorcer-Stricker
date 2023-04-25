@@ -6,8 +6,8 @@
 
 struct Collider;
 
-struct Particle
-{
+struct Particle {
+
 public:
 	// Constructor
 	Particle();
@@ -25,6 +25,7 @@ public:
 
 	// Sets flag for deletion and for the collider aswell
 	void SetToDelete();
+
 
 public:
 	// Defines the position in the screen

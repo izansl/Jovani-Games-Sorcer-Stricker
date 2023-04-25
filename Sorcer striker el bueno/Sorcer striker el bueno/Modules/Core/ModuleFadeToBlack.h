@@ -5,8 +5,8 @@
 #include "../../Modules/Module.h"
 #include "../../../SDLs/SDL/include/SDL_rect.h"
 
-class ModuleFadeToBlack : public Module
-{
+class ModuleFadeToBlack : public Module {
+
 public:
 	//Constructor
 	ModuleFadeToBlack(bool startEnabled);
@@ -31,10 +31,9 @@ public:
 	// After the first step, the modules should be switched
 	bool FadeToBlack(Module* toDisable, Module* toEnable, float frames = 60);
 
-private:
 
-	enum Fade_Step
-	{
+private:
+	enum Fade_Step {
 		NONE,
 		TO_BLACK,
 		FROM_BLACK

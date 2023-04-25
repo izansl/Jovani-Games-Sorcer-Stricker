@@ -6,8 +6,8 @@
 #include "../../Modules/Module.h"
 #include "../../Utils/Collider.h"
 
-class ModuleCollisions : public Module
-{
+class ModuleCollisions : public Module {
+
 public:
 	// Constructor
 	// Fills all collision matrix data
@@ -40,6 +40,7 @@ public:
 
 	// Draws all existing colliders with some transparency
 	void DebugDraw();
+
 
 private:
 	// All existing colliders in the scene

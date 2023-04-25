@@ -20,11 +20,9 @@ class ModuleFadeToBlack;
 class ModuleFonts;
 class ModuleRender;
 
-class Application
-{
+class Application {
 
 public:
-
 	//Constructor. Creates all necessary modules for the application
 	Application();
 
@@ -39,6 +37,7 @@ public:
 
 	//Releases all the application data
 	bool CleanUp();
+
 
 public:
 	// An array to store all modules

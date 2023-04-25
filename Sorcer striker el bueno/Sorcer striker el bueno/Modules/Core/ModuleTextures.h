@@ -7,8 +7,8 @@
 
 struct SDL_Texture;
 
-class ModuleTextures : public Module
-{
+class ModuleTextures : public Module {
+
 public:
 	//Constructor
 	ModuleTextures(bool startEnabled);
@@ -35,6 +35,7 @@ public:
 
 	// Retrieve size of a texture by modifying parameters with and height
 	void GetTextureSize(const SDL_Texture* texture, uint& width, uint& height) const;
+
 
 public:
 	// An array of all the loaded textures

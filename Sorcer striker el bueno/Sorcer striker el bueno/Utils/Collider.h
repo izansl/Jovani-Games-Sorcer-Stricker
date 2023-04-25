@@ -1,16 +1,14 @@
 #ifndef __COLLIDER_H__
 #define __COLLIDER_H__
 
-#include "SDL/include/SDL_Rect.h"
+#include "../../SDLs/SDL/include/SDL_rect.h"
 
 #define MAX_LISTENERS 5
 
 class Module;
 
-struct Collider
-{
-	enum Type
-	{
+struct Collider {
+	enum Type {
 		NONE = -1,
 		WALL,
 		PLAYER,

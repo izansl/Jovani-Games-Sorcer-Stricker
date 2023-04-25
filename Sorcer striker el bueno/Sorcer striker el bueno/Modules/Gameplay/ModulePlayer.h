@@ -8,8 +8,8 @@
 struct SDL_Texture;
 struct Collider;
 
-class ModulePlayer : public Module
-{
+class ModulePlayer : public Module {
+
 public:
 	// Constructor
 	ModulePlayer(bool startEnabled);
@@ -32,6 +32,7 @@ public:
 	// Collision callback, called when the player intersects with another collider
 	void OnCollision(Collider* c1, Collider* c2) override;
 
+
 public:
 	// Position of the player in the map
 	iPoint position;
@@ -41,7 +42,7 @@ public:
 
 	// The player spritesheet loaded into an SDL_Texture
 	SDL_Texture* texture = nullptr;
-	
+
 	// The pointer to the current player animation
 	// It will be switched depending on the player's movement direction
 	Animation* currentAnimation = nullptr;
