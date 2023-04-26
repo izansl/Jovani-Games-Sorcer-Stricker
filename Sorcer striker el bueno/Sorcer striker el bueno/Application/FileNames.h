@@ -12,18 +12,22 @@
 #pragma region IMAGES -> FI
 // Backgrounds
 const std::string FI_background_beach = "../Assets/Images/Playa.png";
-const std::string FI_background_sea = "../Assets/Images/Playa.png";
-const std::string FI_background_forest1 = "../Assets/Images/Playa.png";
-const std::string FI_background_forest2 = "../Assets/Images/Playa.png";
-const std::string FI_background_castle = "../Assets/Images/Playa.png";
+const std::string FI_background_sea = "../Assets/Images/Mar.png";
+const std::string FI_background_forest1 = "../Assets/Images/Bosque_1.png";
+const std::string FI_background_forest2 = "../Assets/Images/Bosque_2.png";
+const std::string FI_background_castle = "../Assets/Images/Castillo.png";
 
 // Sprites player
-const std::string FI_spritePlayer_player1 = "../Assets/Images/Playa.png";
-const std::string FI_spritePlayer_player2 = "../Assets/Images/Playa.png";
+const std::string FI_spritePlayer_player1 = "../Assets/Images/Character.png";
+const std::string FI_spritePlayer_player2 = "../Assets/Images/Character.png";
 
 // Sprites enemys
-const std::string FI_spriteEnemy_red = "../Assets/Images/Playa.png";
-const std::string FI_spriteEnemy_brown = "../Assets/Images/Playa.png";
+const std::string FI_spriteEnemy_1 = "../Assets/Images/1st_enemy.png";
+const std::string FI_spriteEnemy_2 = "../Assets/Images/2nd_enemy.png";
+const std::string FI_spriteEnemy_3 = "../Assets/Images/3rd_enemy.png";
+
+//Sprites chest
+const std::string FI_spritechest_blue = "../Assets/Images/Chests.png";
 
 // Sprites Bosses
 const std::string FI_spriteBoss_boss1 = "../Assets/Images/Playa.png";
