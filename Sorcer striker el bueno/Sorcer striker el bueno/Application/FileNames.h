@@ -11,20 +11,22 @@
 #pragma region IMAGES -> FI
 
 // Backgrounds
-const std::string FI_background_playa = "../Assets/Images/Playa.png";
-const std::string FI_background_mar = "../Assets/Images/Playa.png";
-const std::string FI_background_bosque1 = "../Assets/Images/Playa.png";
-const std::string FI_background_bosque2 = "../Assets/Images/Playa.png";
-const std::string FI_background_castillo = "../Assets/Images/Playa.png";
+const std::string FI_background_beach = "../Assets/Images/Playa.png";
+const std::string FI_background_sea = "../Assets/Images/Playa.png";
+const std::string FI_background_forest1 = "../Assets/Images/Playa.png";
+const std::string FI_background_forest2 = "../Assets/Images/Playa.png";
+const std::string FI_background_castle = "../Assets/Images/Playa.png";
 
 // Sprites player
 const std::string FI_spritePlayer_player1 = "../Assets/Images/Playa.png";
+const std::string FI_spritePlayer_player2 = "../Assets/Images/Playa.png";
 
 // Sprites enemys
 const std::string FI_spriteEnemy_red = "../Assets/Images/Playa.png";
+const std::string FI_spriteEnemy_brown = "../Assets/Images/Playa.png";
 
 // Sprites Bosses
-const std::string FI_spriteBoss_drake = "../Assets/Images/Playa.png";
+const std::string FI_spriteBoss_boss1 = "../Assets/Images/Playa.png";
 
 
 #pragma endregion
@@ -33,7 +35,8 @@ const std::string FI_spriteBoss_drake = "../Assets/Images/Playa.png";
 #pragma region AUDIOS -> FA
 
 // Inicio
-const std::string FA_menu_ruido1 = "../Assets/Sounds/ruido.wav";
+const std::string FA_menu_noise1 = "../Assets/Sounds/ruido.wav";
+const std::string FA_menu_noise2 = "../Assets/Sounds/ruido.wav";
 
 // Nivel 1
 

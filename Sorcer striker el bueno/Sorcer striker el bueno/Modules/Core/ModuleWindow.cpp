@@ -29,7 +29,7 @@ bool ModuleWindow::Init() {
 		if (WIN_RESIZABLE == true) flags |= SDL_WINDOW_RESIZABLE;
 		if (WIN_FULLSCREEN_DESKTOP == true) flags |= SDL_WINDOW_FULLSCREEN_DESKTOP;
 
-		window = SDL_CreateWindow("Project 9 - Fonts", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH * SCREEN_SIZE, SCREEN_HEIGHT * SCREEN_SIZE, flags);
+		window = SDL_CreateWindow("Sorcer striker - Jovanis", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH * SCREEN_SIZE, SCREEN_HEIGHT * SCREEN_SIZE, flags);
 
 		if (window == nullptr) {
 			LOG("Window could not be created! SDL_Error: %s\n", SDL_GetError());
