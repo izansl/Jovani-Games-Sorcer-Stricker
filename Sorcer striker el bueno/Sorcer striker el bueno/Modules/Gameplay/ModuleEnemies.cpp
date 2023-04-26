@@ -1,6 +1,7 @@
 #include "ModuleEnemies.h"
 
 #include "../../Application/Application.h"
+#include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Modules/Core/ModuleAudio.h"
@@ -22,8 +23,8 @@ ModuleEnemies::~ModuleEnemies() {
 }
 
 bool ModuleEnemies::Start() {
-	texture = App->textures->Load(FTI_sprites_enemies);
-	enemyDestroyedFx = App->audio->LoadFx(FTA_fx_explosion);
+	texture = App->textures->Load(FTI_sprites_enemies.c_str());
+	enemyDestroyedFx = App->audio->LoadFx(FTA_fx_explosion.c_str());
 
 	return true;
 }

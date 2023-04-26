@@ -1,6 +1,7 @@
 #include "SceneIntro.h"
 
 #include "../../Application/Application.h"
+#include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include "../../Modules/Core/ModuleAudio.h"
@@ -19,8 +20,8 @@ bool SceneIntro::Start() {
 
 	bool ret = true;
 
-	bgTexture = App->textures->Load(FTI_sprites_startScreen);
-	App->audio->PlayMusic(FTA_Music_introTitle, 1.0f);
+	bgTexture = App->textures->Load(FTI_sprites_startScreen.c_str());
+	App->audio->PlayMusic(FTA_Music_introTitle.c_str(), 1.0f);
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;

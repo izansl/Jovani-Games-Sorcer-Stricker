@@ -1,6 +1,7 @@
 #include "ModuleParticles.h"
 
 #include "../../Application/Application.h"
+#include "../../Application/FileNames.h"
 
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
@@ -18,7 +19,7 @@ ModuleParticles::~ModuleParticles() {
 
 bool ModuleParticles::Start() {
 	LOG("Loading particles");
-	texture = App->textures->Load("../../Assets/Sprites/particles.png");
+	texture = App->textures->Load(FTI_sprites_particles.c_str());
 
 	// Explosion particle
 	explosion.anim.PushBack({ 274, 296, 33, 30 });

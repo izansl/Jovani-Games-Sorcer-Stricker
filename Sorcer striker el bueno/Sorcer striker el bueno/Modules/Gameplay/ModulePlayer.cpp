@@ -1,6 +1,7 @@
 #include "ModulePlayer.h"
 
 #include "../../Application/Application.h"
+#include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Modules/Core/ModuleInput.h"
 #include "../../Modules/Core/ModuleRender.h"
@@ -37,11 +38,11 @@ bool ModulePlayer::Start() {
 
 	bool ret = true;
 
-	texture = App->textures->Load(FTI_sprites_ship);
+	texture = App->textures->Load(FTI_sprites_ship.c_str());
 	currentAnimation = &idleAnim;
 
-	laserFx = App->audio->LoadFx(FTA_fx_laser);
-	explosionFx = App->audio->LoadFx(FTA_fx_explosion);
+	laserFx = App->audio->LoadFx(FTA_fx_laser.c_str());
+	explosionFx = App->audio->LoadFx(FTA_fx_explosion.c_str());
 
 	position.x = 150;
 	position.y = 120;
@@ -56,7 +57,7 @@ bool ModulePlayer::Start() {
 
 	// TODO 4: Try loading "rtype_font3.png" that has two rows to test if all calculations are correct
 	char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyz" };
-	scoreFont = App->fonts->Load(FTI_font_font3, lookupTable, 2);
+	scoreFont = App->fonts->Load(FTI_font_font3.c_str(), lookupTable, 2);
 
 	return ret;
 }

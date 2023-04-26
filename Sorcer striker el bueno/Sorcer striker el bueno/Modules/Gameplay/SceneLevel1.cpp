@@ -1,6 +1,7 @@
 #include "SceneLevel1.h"
 
 #include "../../Application/Application.h"
+#include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include "../../Modules/Core/ModuleAudio.h"
@@ -21,8 +22,8 @@ bool SceneLevel1::Start() {
 
 	bool ret = true;
 
-	bgTexture = App->textures->Load(FTI_sprites_background);
-	App->audio->PlayMusic(FTA_Music_stage1, 1.0f);
+	bgTexture = App->textures->Load(FTI_sprites_background.c_str());
+	App->audio->PlayMusic(FTA_Music_stage1.c_str(), 1.0f);
 
 	//Bottomside collider
 	App->collisions->AddCollider({ 0, 224, 3930, 16 }, Collider::Type::WALL);
@@ -75,8 +76,6 @@ Update_Status SceneLevel1::PostUpdate() {
 bool SceneLevel1::CleanUp() {
 	App->player->Disable();
 	App->enemies->Disable();
-
-	// TODO 5 (old): Remove All Memory Leaks - no solution here guys ;)
 
 	return true;
 }

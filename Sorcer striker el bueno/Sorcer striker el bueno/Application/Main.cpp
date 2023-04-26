@@ -3,6 +3,11 @@
 #include "MemLeaks.h"
 
 #include "../../SDLs/SDL/include/SDL.h"
+
+#include "../Modules/Core/ModuleRender.h"
+#include "../../../SDLs/SDL_Image/include/SDL_image.h"
+#include <iostream>
+
 //#pragma comment( lib, "SDL/libx86/SDL2.lib")
 //#pragma comment( lib, "SDL/libx86/SDL2main.lib")
 
@@ -19,6 +24,21 @@ Application* App = nullptr;
 
 int main(int argc, char* argv[]) {
 	ReportMemoryLeaks();
+
+	//SDL_Texture* texture = nullptr;
+	//SDL_Surface* surface = IMG_Load("../Assets/Sprites/startScreen.png");
+
+	//if (surface == NULL) {
+	//	//LOG("Could not load surface with path: %s. IMG_Load: %s", path, IMG_GetError());
+	//	std::cout << "NOPE" << std::endl;
+	//}
+	//else {
+	//	texture = SDL_CreateTextureFromSurface(App->render->renderer, surface);
+
+	//	if (texture == NULL) {
+	//		LOG("Unable to create texture from surface! SDL Error: %s\n", SDL_GetError());
+	//	}
+	//}
 
 	int main_return = EXIT_FAILURE;
 	Main_States state = Main_States::MAIN_CREATION;
