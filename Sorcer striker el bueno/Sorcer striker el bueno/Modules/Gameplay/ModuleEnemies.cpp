@@ -7,9 +7,6 @@
 #include "../../Modules/Core/ModuleAudio.h"
 
 #include "../../Entities/Enemies/Enemy.h"
-#include "../../Entities/Enemies/Enemy_RedBird.h"
-#include "../../Entities/Enemies/Enemy_BrownShip.h"
-#include "../../Entities/Enemies/Enemy_Mech.h"
 
 #define SPAWN_MARGIN 50
 
@@ -129,10 +126,10 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 	for (uint i = 0; i < MAX_ENEMIES; ++i) {
 		if (enemies[i] == nullptr) {
 			switch (info.type) {
-			case Enemy_Type::REDBIRD: enemies[i] = new Enemy_RedBird(info.x, info.y); break;
+			/*case Enemy_Type::REDBIRD: enemies[i] = new Enemy_RedBird(info.x, info.y); break;
 			case Enemy_Type::BROWNSHIP: enemies[i] = new Enemy_BrownShip(info.x, info.y); break;
 			case Enemy_Type::MECH: enemies[i] = new Enemy_Mech(info.x, info.y); break;
-			}
+			*/}
 			enemies[i]->texture = texture;
 			enemies[i]->destroyedFx = enemyDestroyedFx;
 			break;

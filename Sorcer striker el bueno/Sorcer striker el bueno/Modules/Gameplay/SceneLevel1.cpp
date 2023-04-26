@@ -33,7 +33,8 @@ bool SceneLevel1::Start() {
 	App->collisions->AddCollider({ 1375, 145, 111, 96 }, Collider::Type::WALL);
 
 	// Enemies ---
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 600, 80);
+	// TODO: Posar tots els enemics que toquin
+	/*App->enemies->AddEnemy(Enemy_Type::REDBIRD, 600, 80);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 625, 80);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 640, 80);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 665, 80);
@@ -48,7 +49,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 870, 100);
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 890, 100);
 
-	App->enemies->AddEnemy(Enemy_Type::MECH, 900, 195);
+	App->enemies->AddEnemy(Enemy_Type::MECH, 900, 195);*/
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -68,6 +69,7 @@ Update_Status SceneLevel1::Update() {
 // Update: draw background
 Update_Status SceneLevel1::PostUpdate() {
 	// Draw everything --------------------------------------
+	// TODO: Posar les textures de forma fluida
 	App->render->Blit(bgTexture, 0, 0, NULL);
 
 	return Update_Status::UPDATE_CONTINUE;
@@ -76,6 +78,5 @@ Update_Status SceneLevel1::PostUpdate() {
 bool SceneLevel1::CleanUp() {
 	App->player->Disable();
 	App->enemies->Disable();
-
 	return true;
 }

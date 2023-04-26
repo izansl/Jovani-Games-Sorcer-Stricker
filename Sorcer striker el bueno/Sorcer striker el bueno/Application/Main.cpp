@@ -8,7 +8,7 @@
 #include "../../../SDLs/SDL_Image/include/SDL_image.h"
 #include <iostream>
 
-//#pragma comment( lib, "SDL/libx86/SDL2.lib")
+//#pragma comment( lib, "../../SDLs/SDL/lib/x64/SDL2.lib")
 //#pragma comment( lib, "SDL/libx86/SDL2main.lib")
 
 

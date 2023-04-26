@@ -20,7 +20,9 @@ ModuleParticles::~ModuleParticles() {
 bool ModuleParticles::Start() {
 	LOG("Loading particles");
 	texture = App->textures->Load(FTI_sprites_particles.c_str());
+	// TODO: Posar be particles, comprobar que es mostri correctament i llavors borrar OLD + Els_Region
 
+#pragma region OLD
 	// Explosion particle
 	explosion.anim.PushBack({ 274, 296, 33, 30 });
 	explosion.anim.PushBack({ 313, 296, 33, 30 });
@@ -36,6 +38,34 @@ bool ModuleParticles::Start() {
 	laser.speed.x = 5;
 	laser.lifetime = 180;
 	laser.anim.speed = 0.2f;
+#pragma endregion
+
+#pragma region NEW
+	//LOG("Loading particles");
+	//texture = App->textures->Load("../Assets/Sprites.png");
+
+	//// Explosion particle
+	//explosion.anim.PushBack({ 171, 243, 11, 10 });
+	//explosion.anim.PushBack({ 193, 241, 12, 14 });
+
+	//explosion.anim.loop = false;
+	//explosion.speed = iPoint(0, -2);
+	//explosion.anim.speed = 0.05f;
+
+	//explosion2.anim.PushBack({ 210, 209, 76, 75 });
+	//explosion2.anim.PushBack({ 288, 194, 99, 98 });
+	//explosion2.anim.loop = false;
+	//explosion2.speed = iPoint(0, -1);
+	//explosion2.anim.speed = 0.03f;
+
+	//laser.anim.PushBack({ 155, 239, 8, 18 });
+	//laser.speed = iPoint(0, -2);
+	//laser.lifetime = 1000;
+	//laser.anim.speed = 0.01f;
+#pragma endregion
+
+
+	
 
 	return true;
 }

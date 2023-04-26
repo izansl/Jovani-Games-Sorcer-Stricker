@@ -12,7 +12,8 @@ frameCount(p.frameCount), lifetime(p.lifetime) {
 }
 
 Particle::~Particle() {
-	if (collider != nullptr) collider->pendingToDelete = true;
+	if (collider != nullptr)
+		collider->pendingToDelete = true;
 }
 
 bool Particle::Update() {
@@ -20,7 +21,8 @@ bool Particle::Update() {
 	frameCount++;
 
 	// The particle is set to 'alive' when the delay has been reached
-	if (!isAlive && frameCount >= 0) isAlive = true;
+	if (!isAlive && frameCount >= 0)
+		isAlive = true;
 
 	if (isAlive) {
 		anim.Update();
@@ -36,7 +38,8 @@ bool Particle::Update() {
 		position.x += speed.x;
 		position.y += speed.y;
 
-		if (collider != nullptr) collider->SetPos(position.x, position.y);
+		if (collider != nullptr)
+			collider->SetPos(position.x, position.y);
 	}
 
 	return ret;
@@ -45,5 +48,6 @@ bool Particle::Update() {
 void Particle::SetToDelete() {
 	pendingToDelete = true;
 
-	if (collider != nullptr)collider->pendingToDelete = true;
+	if (collider != nullptr)
+		collider->pendingToDelete = true;
 }

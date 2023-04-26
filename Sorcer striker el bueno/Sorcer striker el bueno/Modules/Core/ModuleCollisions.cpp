@@ -60,23 +60,27 @@ Update_Status ModuleCollisions::PreUpdate() {
 
 	for (uint i = 0; i < MAX_COLLIDERS; ++i) {
 		// skip empty colliders
-		if (colliders[i] == nullptr) continue;
+		if (colliders[i] == nullptr) 
+			continue;
 
 		c1 = colliders[i];
 
 		// avoid checking collisions already checked
 		for (uint k = i + 1; k < MAX_COLLIDERS; ++k) {
 			// skip empty colliders
-			if (colliders[k] == nullptr) continue;
+			if (colliders[k] == nullptr) 
+				continue;
 
 			c2 = colliders[k];
 
 			if (matrix[c1->type][c2->type] && c1->Intersects(c2->rect)) {
 				for (uint i = 0; i < MAX_LISTENERS; ++i)
-					if (c1->listeners[i] != nullptr) c1->listeners[i]->OnCollision(c1, c2);
+					if (c1->listeners[i] != nullptr)
+						c1->listeners[i]->OnCollision(c1, c2);
 
 				for (uint i = 0; i < MAX_LISTENERS; ++i)
-					if (c2->listeners[i] != nullptr) c2->listeners[i]->OnCollision(c2, c1);
+					if (c2->listeners[i] != nullptr) 
+						c2->listeners[i]->OnCollision(c2, c1);
 			}
 		}
 	}
@@ -85,13 +89,15 @@ Update_Status ModuleCollisions::PreUpdate() {
 }
 
 Update_Status ModuleCollisions::Update() {
-	if (App->input->keys[SDL_SCANCODE_F1] == KEY_DOWN) debug = !debug;
+	if (App->input->keys[SDL_SCANCODE_F1] == KEY_DOWN) 
+		debug = !debug;
 
 	return Update_Status::UPDATE_CONTINUE;
 }
 
 Update_Status ModuleCollisions::PostUpdate() {
-	if (debug) DebugDraw();
+	if (debug) 
+		DebugDraw();
 
 	return Update_Status::UPDATE_CONTINUE;
 }
