@@ -33,7 +33,10 @@ Update_Status SceneIntro::Update() {
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);
 	}
-
+	if (App->input->keys[SDL_SCANCODE_LSHIFT] == Key_State::KEY_DOWN)
+	{
+		tokenFx = App->audio->LoadFx(FTA_fx_token.c_str());
+	};
 	return Update_Status::UPDATE_CONTINUE;
 }
 
