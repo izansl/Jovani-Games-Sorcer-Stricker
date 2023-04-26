@@ -58,9 +58,12 @@ public:
 	//Template particle for an explosion
 	Particle explosion;
 	Particle explosion2;
+	Particle explosionfinal;
 
 	//Template particle for a laser
 	Particle laser;
+
+	//Template for extra shots
 	Particle ice;
 
 

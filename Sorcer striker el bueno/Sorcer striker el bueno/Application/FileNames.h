@@ -12,18 +12,61 @@
 #pragma region IMAGES -> FI
 // Backgrounds
 const std::string FI_background_beach = "../Assets/Images/Playa.png";
-const std::string FI_background_sea = "../Assets/Images/Playa.png";
-const std::string FI_background_forest1 = "../Assets/Images/Playa.png";
-const std::string FI_background_forest2 = "../Assets/Images/Playa.png";
-const std::string FI_background_castle = "../Assets/Images/Playa.png";
+const std::string FI_background_sea = "../Assets/Images/Mar.png";
+const std::string FI_background_forest1 = "../Assets/Images/Bosque_1.png";
+const std::string FI_background_forest2 = "../Assets/Images/Bosque_2.png";
+const std::string FI_background_castle = "../Assets/Images/Castillo.png";
 
 // Sprites player
-const std::string FI_spritePlayer_player1 = "../Assets/Images/Playa.png";
-const std::string FI_spritePlayer_player2 = "../Assets/Images/Playa.png";
+const std::string FI_spritePlayer_player1 = "../Assets/Images/Character.png";
+const std::string FI_spritePlayer_player2 = "../Assets/Images/Character.png";
 
 // Sprites enemys
-const std::string FI_spriteEnemy_red = "../Assets/Images/Playa.png";
-const std::string FI_spriteEnemy_brown = "../Assets/Images/Playa.png";
+const std::string FI_spriteEnemy_1 = "../Assets/Images/1st_enemy.png";
+/*-Movement
+1 - ({ 43, 12, 32, 32 })
+2 - ({ 73, 12, 32, 32 })
+- Explosion
+1 - ({ 7, 50, 32, 32 })
+2 - ({ 42, 50, 32, 32 })
+3 - ({ 77, 51, 32, 32 })
+4 - ({ 111, 52, 32, 32 })
+*/
+const std::string FI_spriteEnemy_2 = "../Assets/Images/2nd_enemy.png";
+/*-Movement
+		1-({4, 22, 36, 36})
+		2-({41, 22, 36, 36 })
+	-Explosion
+		1-({3, 71, 36, 36})
+		2-({39, 72, 36, 36 })
+		3-({75, 72, 36, 36 })
+		4-({111, 71, 36, 36})
+	Atack
+		1-({82, 30 , 20, 20})
+		2-({102, 31, 20, 20})
+		3-({121, 30, 20, 20})	*/
+const std::string FI_spriteEnemy_3 = "../Assets/Images/3rd_enemy.png";
+/*	-Movement
+		1-({15, 24, 90, 90})
+		2-({115, 24, 90, 90})
+	-Explosion
+		1-({17, 121, 90, 90})
+		2-({111, 124, 90, 90})
+		3-({204, 123, 90, 90})
+	Atack
+		1-({229, 77, 15, 15})
+		2-({245, 77, 15, 15})*/
+//Sprites chest
+const std::string FI_spritechest_blue = "../Assets/Images/Chests.png";
+/*	-Bluechest
+		-Hada con cofre
+			1-({2, 7, 43, 39 })
+			2-({47, 7, 43, 39 })
+			3-({94, 7, 43, 39 })
+		-Librobuff
+			1-({58, 20, 15, 20 })
+			2-({72, 54, 15, 20})
+*/
 
 // Sprites Bosses
 const std::string FI_spriteBoss_boss1 = "../Assets/Images/Playa.png";

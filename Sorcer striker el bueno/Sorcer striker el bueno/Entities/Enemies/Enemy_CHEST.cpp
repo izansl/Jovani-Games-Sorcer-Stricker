@@ -3,12 +3,15 @@
 #include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Gameplay/ModuleEnemies.h"
+#include "../../Application/FileNames.h"
+#include"../../Modules/Core/ModuleTextures.h"
 
 
 Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
-	blue.PushBack({ 59, 51, 96, 84 });
-	blue.PushBack({ 53, 120, 96, 84 });
-	blue.PushBack({ 51, 197, 96, 84 });
+	texture= App->textures->Load(FI_spritechest_blue.c_str());
+	blue.PushBack({ 2, 7, 43, 39 });
+	blue.PushBack({ 47, 7, 43, 39 });
+	blue.PushBack({ 94, 7, 43, 39 });
 	currentAnim = &blue;
 
 	// Path 1
@@ -48,8 +51,8 @@ void Enemy_CHESS::Update() {
 void Enemy_CHESS::OnCollision(Collider* c1, Collider* c2) {
 	if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect)) {
 		// Change sprite
-		red.PushBack({ 155, 268, 32, 41 });
-		red.PushBack({ 186, 268, 32, 41 });
+		red.PushBack({ 58, 20, 15, 20 });
+		red.PushBack({ 72, 54, 15, 20 });
 		currentAnim = &red;
 
 		//Change collider
