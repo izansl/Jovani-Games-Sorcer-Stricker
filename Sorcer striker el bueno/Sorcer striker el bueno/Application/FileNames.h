@@ -68,6 +68,7 @@ const std::string FI_spritechest_blue = "../Assets/Images/Chests.png";
 			2-({72, 54, 15, 20})
 */
 
+
 // Sprites Bosses
 const std::string FI_spriteBoss_boss1 = "../Assets/Images/Playa.png";
 #pragma endregion
