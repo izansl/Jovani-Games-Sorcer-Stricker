@@ -81,11 +81,27 @@ const std::string FI_spriteBoss_boss1 = "../Assets/Images/Playa.png";
 
 
 #pragma region AUDIOS -> FA
-// Inicio
-const std::string FA_menu_noise1 = "../Assets/Sounds/ruido.wav";
-const std::string FA_menu_noise2 = "../Assets/Sounds/ruido.wav";
+// General
+const std::string FA_Fx_token = "../Assets/Audios/FX/token-insertado.wav";
 
-// Nivel 1
+// Init
+const std::string FA_Music_introTitle = "../Assets/Audios/Hud-music/musica-menu.ogg";
+
+// Level 1
+const std::string FA_Music_stage1 = "../Assets/Audios/Stage-1/stage1.ogg";
+
+// Level 2
+
+// Level 3
+
+// Level 4
+
+// Level 5
+
+// Level 6
+
+// Level 7
+
 #pragma endregion
 
 
@@ -103,8 +119,6 @@ const std::string FTI_font_font3 = "../Assets/Fonts/rtype_font3.png";
 const std::string FTA_fx_explosion = "../Assets/Fx/explosion.wav";
 const std::string FTA_fx_laser = "../Assets/Fx/laser.wav";
 
-const std::string FTA_Music_introTitle = "../Assets/Music/introTitle.ogg";
-const std::string FTA_Music_stage1 = "../Assets/Music/stage1.ogg";
 #pragma endregion
 
 #endif
