@@ -67,7 +67,7 @@ bool ModulePlayer::Start() {
 	explosionFx = App->audio->LoadFx(FI_spritePlayer_player1.c_str());
 
 	position.x = 150;
-	position.y = 120;
+	position.y = 150;
 
 	destroyed = false;
 
@@ -124,7 +124,7 @@ Update_Status ModulePlayer::Update() {
 
 #pragma region NEW -> VERTICAL
 	// Moving the player with the camera scroll
-	App->player->position.y -= 1;
+	App->player->position.y -= 2;
 
 	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT)
 	{

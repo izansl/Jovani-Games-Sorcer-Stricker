@@ -59,7 +59,7 @@ bool SceneLevel1::Start() {
 
 	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;
-	App->render->camera.y = 3000 - SCREEN_HEIGHT;
+	App->render->camera.y = 0;
 
 	App->player->Enable();
 	App->enemies->Enable();
@@ -76,11 +76,11 @@ Update_Status SceneLevel1::Update() {
 // Update: draw background
 Update_Status SceneLevel1::PostUpdate() {
 	// Draw everything --------------------------------------
-	App->render->Blit(texture_beach, 0, 0, NULL);
-	App->render->Blit(texture_sea, 0, -3000, NULL);
-	App->render->Blit(texture_forest1, 0, (Height_background_beach + Height_background_sea) * -1, NULL);
-	App->render->Blit(texture_forest2, 0, (Height_background_beach + Height_background_sea + Height_background_forest1) * -1, NULL);
-	App->render->Blit(texture_castle, 0, (Height_background_beach + Height_background_sea + Height_background_forest1 + Height_background_forest2) * -1, NULL);
+	App->render->Blit(texture_beach, 0, (Height_background_beach - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_sea, 0, (Height_background_beach + Height_background_sea - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_forest1, 0, (Height_background_beach + Height_background_sea + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_forest2, 0, (Height_background_beach + Height_background_sea + Height_background_forest1 + Height_background_forest2 - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_castle, 0, (Height_background_beach + Height_background_sea + Height_background_forest1 + Height_background_forest2 + Height_background_castle - SCREEN_HEIGHT) * -1, NULL);
 
 	return Update_Status::UPDATE_CONTINUE;
 }
