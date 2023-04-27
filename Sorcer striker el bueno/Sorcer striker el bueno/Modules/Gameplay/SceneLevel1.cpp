@@ -23,7 +23,7 @@ bool SceneLevel1::Start() {
 	bool ret = true;
 
 	bgTexture = App->textures->Load(FTI_sprites_background.c_str());
-	App->audio->PlayMusic(FTA_Music_stage1.c_str(), 1.0f);
+	App->audio->PlayMusic(FA_Music_stage1.c_str(), 1.0f);
 
 	//Bottomside collider
 	App->collisions->AddCollider({ 0, 224, 3930, 16 }, Collider::Type::WALL);

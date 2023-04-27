@@ -21,7 +21,7 @@ bool SceneIntro::Start() {
 	bool ret = true;
 
 	bgTexture = App->textures->Load(FTI_sprites_startScreen.c_str());
-	App->audio->PlayMusic(FTA_Music_introTitle.c_str(), 1.0f);
+	App->audio->PlayMusic(FA_Music_introTitle.c_str(), 1.0f);
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -35,7 +35,7 @@ Update_Status SceneIntro::Update() {
 	}
 	if (App->input->keys[SDL_SCANCODE_LSHIFT] == Key_State::KEY_DOWN)
 	{
-		tokenFx = App->audio->LoadFx(FTA_fx_token.c_str());
+		tokenFx = App->audio->LoadFx(FA_Fx_token.c_str());
 	};
 	return Update_Status::UPDATE_CONTINUE;
 }
