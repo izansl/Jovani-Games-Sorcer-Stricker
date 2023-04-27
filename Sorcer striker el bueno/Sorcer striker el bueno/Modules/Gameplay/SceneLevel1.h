@@ -33,8 +33,12 @@ public:
 
 public:
 	// The scene sprite sheet loaded into an SDL_Texture
-	SDL_Texture* bgTexture = nullptr;
-	// Carregar i guardar les diferents textures
+	SDL_Texture* texture_beach = nullptr;
+	SDL_Texture* texture_sea = nullptr;
+	SDL_Texture* texture_forest1 = nullptr;	
+	SDL_Texture* texture_forest2 = nullptr;	
+	SDL_Texture* texture_castle = nullptr;	
+	
 };
 
 #endif
