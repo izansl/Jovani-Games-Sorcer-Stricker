@@ -22,7 +22,12 @@ bool SceneLevel1::Start() {
 
 	bool ret = true;
 
-	bgTexture = App->textures->Load(FTI_sprites_background.c_str());
+	texture_beach = App->textures->Load(FI_background_beach.c_str());
+	texture_sea = App->textures->Load(FI_background_sea.c_str());
+	texture_forest1 = App->textures->Load(FI_background_forest1.c_str());
+	texture_forest2 = App->textures->Load(FI_background_forest2.c_str());
+	texture_castle = App->textures->Load(FI_background_castle.c_str());
+
 	App->audio->PlayMusic(FTA_Music_stage1.c_str(), 1.0f);
 
 	//Bottomside collider
@@ -51,8 +56,10 @@ bool SceneLevel1::Start() {
 
 	App->enemies->AddEnemy(Enemy_Type::MECH, 900, 195);*/
 
+
+	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;
-	App->render->camera.y = 0;
+	App->render->camera.y = 3000 - SCREEN_HEIGHT;
 
 	App->player->Enable();
 	App->enemies->Enable();
@@ -69,8 +76,11 @@ Update_Status SceneLevel1::Update() {
 // Update: draw background
 Update_Status SceneLevel1::PostUpdate() {
 	// Draw everything --------------------------------------
-	// TODO: Posar les textures de forma fluida
-	App->render->Blit(bgTexture, 0, 0, NULL);
+	App->render->Blit(texture_beach, 0, 0, NULL);
+	App->render->Blit(texture_sea, 0, -3000, NULL);
+	App->render->Blit(texture_forest1, 0, (Height_background_beach + Height_background_sea) * -1, NULL);
+	App->render->Blit(texture_forest2, 0, (Height_background_beach + Height_background_sea + Height_background_forest1) * -1, NULL);
+	App->render->Blit(texture_castle, 0, (Height_background_beach + Height_background_sea + Height_background_forest1 + Height_background_forest2) * -1, NULL);
 
 	return Update_Status::UPDATE_CONTINUE;
 }

@@ -16,6 +16,11 @@ const std::string FI_background_sea = "../Assets/Images/Mar.png";
 const std::string FI_background_forest1 = "../Assets/Images/Bosque_1.png";
 const std::string FI_background_forest2 = "../Assets/Images/Bosque_2.png";
 const std::string FI_background_castle = "../Assets/Images/Castillo.png";
+const int Height_background_beach = 3000;
+const int Height_background_sea = 4500;
+const int Height_background_forest1 = 3000;
+const int Height_background_forest2 = 3000;
+const int Height_background_castle = 4500;
 
 // Sprites player
 const std::string FI_spritePlayer_player1 = "../Assets/Images/Character.png";
@@ -90,7 +95,7 @@ const std::string FTI_sprites_enemies = "../Assets/Sprites/enemies.png";
 const std::string FTI_sprites_ship = "../Assets/Sprites/ship.png";
 const std::string FTI_sprites_startScreen = "../Assets/Sprites/startScreen.png";
 const std::string FTI_sprites_background = "../Assets/Sprites/background.png";
-const std::string FTI_sprites_particles = "../../Assets/Sprites/particles.png";
+const std::string FTI_sprites_particles = "../Assets/Sprites/particles.png";
 
 const std::string FTI_font_font3 = "../Assets/Fonts/rtype_font3.png";
 

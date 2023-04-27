@@ -199,9 +199,9 @@ Update_Status ModulePlayer::PostUpdate() {
 
 	// TODO: BORRAR i posar-ho en un altre lloc
 	// Draw UI (score) --------------------------------------
-	sprintf_s(scoreText, 10, "%7d", score);
+	/*sprintf_s(scoreText, 10, "%7d", score);
 	App->fonts->BlitText(58, 248, scoreFont, scoreText);
-	App->fonts->BlitText(150, 248, scoreFont, "this is just a font test");
+	App->fonts->BlitText(150, 248, scoreFont, "this is just a font test");*/
 
 	return Update_Status::UPDATE_CONTINUE;
 }
