@@ -51,11 +51,11 @@ void Enemy_CHESS::Update() {
 	Enemy::Update();
 }
 
-void Enemy_CHESS::Draw()
-{
-	if (currentAnim != nullptr)
-		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));
-}
+//void Enemy_CHESS::Draw()
+//{
+//	if (currentAnim != nullptr)
+//		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));
+//}
 
 void Enemy_CHESS::OnCollision(Collider* c1, Collider* c2) 
 {

@@ -69,6 +69,12 @@ bool ModuleParticles::Start() {
 	laser.speed = iPoint(0, -3);
 	laser.lifetime = 100;
 	laser.anim.speed = 0.01f;
+
+	ice.anim.PushBack({423, 73, 20, 20});
+	ice.anim.PushBack({440, 73, 20, 20});
+	ice.anim.PushBack({457, 73, 20, 20});
+	ice.speed.x=-1;
+	ice.anim.speed = 0.02f;
 #pragma endregion
 
 

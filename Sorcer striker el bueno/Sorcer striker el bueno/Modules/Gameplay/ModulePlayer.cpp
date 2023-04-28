@@ -241,7 +241,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 
 		destroyed = true;
 	}
-	else if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect) && c1->type == Collider::Type::PLAYER || c2->type == Collider::Type::ENEMY)
+	else if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect))
 	{
 		// Change sprite
 		idleAnim.PushBack({ 1595, 63, 62, 43 });
@@ -265,13 +265,13 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		{
 			App->particles->AddParticle(App->particles->laser, position.x + 29, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
 			App->particles->AddParticle(App->particles->laser, position.x + 7, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->laser, position.x + 15, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x + 29, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x + 7, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x + 15, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x + 29, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x + 7, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x + 15, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser, position.x + 13, position.y + 5, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->ice, position.x, position.y - 5, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->ice, position.x, position.y - 10, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->ice, position.x, position.y - 15, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->ice, position.x + 16, position.y + 5, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->ice, position.x + 16, position.y + 10, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->ice, position.x + 16, position.y + 15, Collider::Type::PLAYER_SHOT, 0);
 		}
 	}
 #pragma endregion
