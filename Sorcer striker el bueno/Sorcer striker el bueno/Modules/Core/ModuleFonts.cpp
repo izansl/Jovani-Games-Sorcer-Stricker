@@ -49,7 +49,7 @@ int ModuleFonts::Load(const char* texture_path, const char* characters, uint row
 	// char_h --------	Height of each character
 
 	strcpy_s(fonts[id].table, MAX_FONT_CHARS, characters);
-	font.totalLength = strlen(characters);
+	font.totalLength = static_cast<uint>(strlen(characters));
 	font.columns = fonts[id].totalLength / rows;
 
 	uint tex_w, tex_h;
@@ -78,7 +78,7 @@ void ModuleFonts::BlitText(int x, int y, int font_id, const char* text) const {
 
 	const Font* font = &fonts[font_id];
 	SDL_Rect spriteRect;
-	uint len = strlen(text);
+	uint len = static_cast<uint>(strlen(text));
 
 	spriteRect.w = font->char_w;
 	spriteRect.h = font->char_h;
