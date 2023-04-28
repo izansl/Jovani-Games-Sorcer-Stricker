@@ -46,27 +46,33 @@ bool ModuleParticles::Start() {
 	texture = App->textures->Load(FI_spritePlayer_player1.c_str());
 
 	// Explosion particle
-	explosion.anim.PushBack({8, 318, 12, 12});
-	explosion.anim.PushBack({31, 317, 12, 12 });
+	explosion.anim.PushBack({9, 273, 88, 89});
+	explosion.anim.PushBack({109, 273, 88, 89 });
+	explosion.anim.PushBack({ 211, 273, 88, 89 });
+	explosion.anim.PushBack({ 312, 273, 89, 90 });
 	explosion.anim.loop = false;
-	explosion.speed = iPoint(0, -2);
-	explosion2.lifetime = 100;
-	explosion.anim.speed = 0.02f;
+	explosion.speed = iPoint(0, -5);
+	explosion.lifetime = 100;
+	explosion.anim.speed = 0.05f;
 
-	explosion2.anim.PushBack({ 49, 283, 76, 75 });
-	explosion2.anim.loop = false;
-	explosion2.speed = iPoint(0, -2);
-	explosion2.frameCount = -100;
-	explosion2.lifetime = 100;
+	//explosion2.anim.PushBack({ 49, 283, 76, 75 });
+	//explosion2.anim.PushBack({ 129, 272, 93, 93 });
+	//explosion2.anim.loop = false;
+	//explosion2.speed = iPoint(0, -3);
+	///*explosion2.frameCount = 10;*/
+	//explosion2.lifetime = 100;
+	//explosion.anim.speed = 0.03f;
 
 
-	explosionfinal.anim.PushBack({ 95, 94, 129, 271 });
+
+	/*explosionfinal.anim.PushBack({ 95, 94, 129, 271 });
 	explosionfinal.anim.loop = false;
 	explosionfinal.speed = iPoint(0, -1);
-	explosionfinal.anim.speed = 0.03f;
+	explosionfinal.lifetime = 100;
+	explosionfinal.anim.speed = 0.03f;*/
 
 	laser.anim.PushBack({ 331, 23, 12, 30 });
-	laser.speed = iPoint(0, -3);
+	laser.speed = iPoint(0, -6);
 	laser.lifetime = 100;
 	laser.anim.speed = 0.01f;
 #pragma endregion
@@ -123,7 +129,7 @@ Update_Status ModuleParticles::Update() {
 		// Call particle Update. If it has reached its lifetime, destroy it
 		if (particle->Update() == false) particles[i]->SetToDelete();
 	}
-	if (App->particles->explosion.anim.speed==0)
+	/*if (App->particles->explosion.anim.lifetime )
 	{
 		explosion2.anim.PushBack({ 49, 283, 76, 75 });
 		explosion2.anim.loop = false;
@@ -137,7 +143,7 @@ Update_Status ModuleParticles::Update() {
 			explosionfinal.speed = iPoint(0, -1);
 			explosionfinal.anim.speed = 0.03f;
 		}
-	}
+	}*/
 	return Update_Status::UPDATE_CONTINUE;
 }
 
