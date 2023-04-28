@@ -135,8 +135,7 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 				enemies[i] = new Enemy_CHESS(info.x, info.y); 
 				break;
 			}
-			enemies[i]->texture = texture;
-			enemies[i]->destroyedFx = enemyDestroyedFx;
+			/*enemies[i]->destroyedFx = enemyDestroyedFx;*/
 			break;
 		}
 	}

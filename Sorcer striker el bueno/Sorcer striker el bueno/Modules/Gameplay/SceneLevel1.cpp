@@ -39,7 +39,7 @@ bool SceneLevel1::Start() {
 
 	// Enemies ---
 	// TODO: Posar tots els enemics que toquin
-	App->enemies->AddEnemy(Enemy_Type::CHEST, 40, 100);
+	App->enemies->AddEnemy(Enemy_Type::CHEST, 40, -1500);
 	/*App->enemies->AddEnemy(Enemy_Type::REDBIRD, 600, 80);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 625, 80);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 640, 80);

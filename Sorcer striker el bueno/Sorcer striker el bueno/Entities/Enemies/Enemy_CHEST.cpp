@@ -12,8 +12,9 @@ Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spritechest_blue.c_str());
 
 	blue.PushBack({ 2, 7, 43, 39 });
-	//blue.PushBack({ 47, 7, 43, 39 });
-	//blue.PushBack({ 94, 7, 43, 39 });
+	blue.PushBack({ 47, 7, 43, 39 });
+	blue.PushBack({ 94, 7, 43, 39 });
+	blue.speed = 0.05f;
 	currentAnim = &blue;
 
 	// Path 1
@@ -38,7 +39,7 @@ Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
 	path2.PushBack({ -0.5f, 3.0f }, 50);
 
 	currentPath = &path1;
-	collider = App->collisions->AddCollider({ 0, 0, 43, 39 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0, 43, 39 }, Collider::Type:: ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_CHESS::Update() {
@@ -56,23 +57,22 @@ void Enemy_CHESS::Draw()
 		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));
 }
 
-void Enemy_CHESS::OnCollision(Collider* c1, Collider* c2) {
+void Enemy_CHESS::OnCollision(Collider* c1, Collider* c2) 
+{
 	if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect)) {
+		//Change type
+		collider = App->collisions->AddCollider({ 0, 0, 15, 20 }, Collider::Type::OBJECT, (Module*)App->enemies);
 		// Change sprite
 		red.PushBack({ 58, 20, 15, 20 });
 		red.PushBack({ 72, 54, 15, 20 });
+		red.speed = 0.05f;
 		currentAnim = &red;
 
 		//Change collider
-		collider->rect.x = 32;
-		collider->rect.w = 41;
+		collider->rect.x = 15;
+		collider->rect.w = 20;
 
 		// Change path
-		if (currentPath == &path1) {
-			currentPath = &path2;
-		}
-		else {
-			currentPath = &path1;
-		}
+		currentPath = &path2;
 	}
 }
