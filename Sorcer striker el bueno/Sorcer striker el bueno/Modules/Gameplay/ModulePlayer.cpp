@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
-	// TODO: Posar noves posicions player i borrar OLD
+	// TODO: ---> Posar noves posicions player i borrar OLD
 
 #pragma region OLD
 	//// idle animation - just one sprite
@@ -74,7 +74,7 @@ bool ModulePlayer::Start() {
 	collider = App->collisions->AddCollider({ position.x, position.y, 38, 44 }, Collider::Type::PLAYER, this);
 
 
-	// TODO: Per més endavant i en un altre lloc, servirà per fer les puntuacions
+	// TODO: ---> Per més endavant i en un altre lloc, servirà per fer les puntuacions
 	/*char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyz" };
 	scoreFont = App->fonts->Load(FTI_font_font3.c_str(), lookupTable, 2);*/
 
@@ -197,7 +197,7 @@ Update_Status ModulePlayer::PostUpdate() {
 		App->render->Blit(texture, position.x, position.y, &rect);
 	}
 
-	// TODO: BORRAR i posar-ho en un altre lloc
+	// TODO: ---> BORRAR i posar-ho en un altre lloc
 	// Draw UI (score) --------------------------------------
 	/*sprintf_s(scoreText, 10, "%7d", score);
 	App->fonts->BlitText(58, 248, scoreFont, scoreText);
@@ -207,7 +207,7 @@ Update_Status ModulePlayer::PostUpdate() {
 }
 
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2) { 
-	// TODO: Actualizar i cambiar colisions
+	// TODO: ---> Actualizar i cambiar colisions
 
 #pragma region OLD
 	//if (c1 == collider && destroyed == false) {

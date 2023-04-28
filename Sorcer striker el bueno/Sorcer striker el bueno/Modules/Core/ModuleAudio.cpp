@@ -20,7 +20,7 @@ bool ModuleAudio::Init() {
 
 	//Initialize audio subsystem
 	if (SDL_InitSubSystem(SDL_INIT_AUDIO) < 0) {
-		LOG("SDL_INIT_AUDIO could not initialize! SDL_Error: %s\n", SDL_GetError());
+		LOG("!---> SDL_INIT_AUDIO could not initialize! SDL_Error: %s\n", SDL_GetError());
 		ret = false;
 	}
 
@@ -29,13 +29,13 @@ bool ModuleAudio::Init() {
 	int init = Mix_Init(flags);
 
 	if ((init & flags) != flags) {
-		LOG("Could not initialize Mixer lib. Mix_Init: %s", Mix_GetError());
+		LOG("!---> Could not initialize Mixer lib. Mix_Init: %s", Mix_GetError());
 		ret = false;
 	}
 
 	//Initialize SDL_mixer
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0) {
-		LOG("SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError());
+		LOG("--> SDL_mixer could not initialize! SDL_mixer Error: %s\n", Mix_GetError());
 		ret = false;
 	}
 
@@ -79,25 +79,25 @@ bool ModuleAudio::PlayMusic(const char* path, float fade_time) {
 	music = Mix_LoadMUS(path);
 
 	if (music == NULL) {
-		LOG("Cannot load music %s. Mix_GetError(): %s\n", path, Mix_GetError());
+		LOG("!---> Cannot load music %s. Mix_GetError(): %s\n", path, Mix_GetError());
 		ret = false;
 	}
 	else {
 		if (fade_time > 0.0f) {
 			if (Mix_FadeInMusic(music, -1, (int)(fade_time * 1000.0f)) < 0) {
-				LOG("Cannot fade in music %s. Mix_GetError(): %s", path, Mix_GetError());
+				LOG("!---> Cannot fade in music %s. Mix_GetError(): %s", path, Mix_GetError());
 				ret = false;
 			}
 		}
 		else {
 			if (Mix_PlayMusic(music, -1) < 0) {
-				LOG("Cannot play in music %s. Mix_GetError(): %s", path, Mix_GetError());
+				LOG("!---> Cannot play in music %s. Mix_GetError(): %s", path, Mix_GetError());
 				ret = false;
 			}
 		}
 	}
 
-	LOG("Successfully playing %s", path);
+	LOG("Play music --->%s", path);
 	return ret;
 }
 
@@ -106,7 +106,7 @@ uint ModuleAudio::LoadFx(const char* path) {
 	Mix_Chunk* chunk = Mix_LoadWAV(path);
 
 	if (chunk == nullptr) {
-		LOG("Cannot load wav %s. Mix_GetError(): %s", path, Mix_GetError());
+		LOG("!---> Cannot load wav %s. Mix_GetError(): %s", path, Mix_GetError());
 	}
 	else {
 		for (ret = 0; ret < MAX_FX; ++ret) {

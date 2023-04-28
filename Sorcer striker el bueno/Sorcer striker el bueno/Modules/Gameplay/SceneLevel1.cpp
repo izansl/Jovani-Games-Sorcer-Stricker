@@ -18,7 +18,7 @@ SceneLevel1::~SceneLevel1() {
 
 // Load assets
 bool SceneLevel1::Start() {
-	LOG("Loading background assets");
+	LOG("Loading background assets SCENE 1");
 
 	bool ret = true;
 
@@ -38,7 +38,7 @@ bool SceneLevel1::Start() {
 	App->collisions->AddCollider({ 1375, 145, 111, 96 }, Collider::Type::WALL);
 
 	// Enemies ---
-	// TODO: Posar tots els enemics que toquin
+	// TODO: ---> Posar tots els enemics que toquin
 	/*App->enemies->AddEnemy(Enemy_Type::REDBIRD, 600, 80);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 625, 80);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 640, 80);
