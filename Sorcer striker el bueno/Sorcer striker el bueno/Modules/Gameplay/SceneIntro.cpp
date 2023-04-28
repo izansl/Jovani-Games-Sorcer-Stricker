@@ -20,7 +20,7 @@ bool SceneIntro::Start() {
 
 	bool ret = true;
 
-	bgTexture = App->textures->Load(FTI_sprites_startScreen.c_str());
+	bgTexture = App->textures->Load(FI_Introimage_1.c_str());
 	App->audio->PlayMusic(FA_Music_introTitle.c_str(), 1.0f);
 
 	App->render->camera.x = 0;
