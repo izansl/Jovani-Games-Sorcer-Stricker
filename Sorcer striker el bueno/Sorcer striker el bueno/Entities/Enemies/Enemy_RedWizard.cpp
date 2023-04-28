@@ -2,10 +2,14 @@
 
 #include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"
+#include "../../Modules/Core/ModuleRender.h"
+#include "../../Modules/Core/ModuleTextures.h"
+#include "../../Application/FileNames.h"
 
 Enemy_RedWizard::Enemy_RedWizard(int x, int y) : Enemy(x, y) {
-	fly.PushBack({ 58,1219,102,95 });
-	fly.PushBack({ 163,1216,102,95 });
+	texture = App->textures->Load(FI_spriteEnemy_2.c_str());
+	fly.PushBack({ 48, 12, 22,31 });
+	fly.PushBack({ 114,32 ,26, 32 });
 	currentAnim = &fly;
 	fly.speed = 0.01f;
 

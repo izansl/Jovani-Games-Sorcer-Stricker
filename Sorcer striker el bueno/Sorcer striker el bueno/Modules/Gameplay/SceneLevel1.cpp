@@ -55,7 +55,8 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 890, 100);
 
 	App->enemies->AddEnemy(Enemy_Type::MECH, 900, 195);*/
-
+	App->enemies->AddEnemy(Enemy_Type::DRAGON, 100, 3000);
+	App->enemies->AddEnemy(Enemy_Type::DRAGON, 150, 3000);
 
 	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;
