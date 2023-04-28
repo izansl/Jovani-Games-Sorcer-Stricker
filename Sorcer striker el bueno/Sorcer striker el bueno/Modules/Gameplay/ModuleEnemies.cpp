@@ -7,6 +7,7 @@
 #include "../../Modules/Core/ModuleAudio.h"
 
 #include "../../Entities/Enemies/Enemy.h"
+#include "../../Entities/Enemies/Enemy_CHEST.h"
 
 #define SPAWN_MARGIN 50
 
@@ -20,7 +21,7 @@ ModuleEnemies::~ModuleEnemies() {
 }
 
 bool ModuleEnemies::Start() {
-	texture = App->textures->Load(FTI_sprites_enemies.c_str());
+	/*texture = App->textures->Load(FTI_sprites_enemies.c_str());*/
 	enemyDestroyedFx = App->audio->LoadFx(FTA_fx_explosion.c_str());
 
 	return true;
@@ -129,7 +130,11 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 			/*case Enemy_Type::REDBIRD: enemies[i] = new Enemy_RedBird(info.x, info.y); break;
 			case Enemy_Type::BROWNSHIP: enemies[i] = new Enemy_BrownShip(info.x, info.y); break;
 			case Enemy_Type::MECH: enemies[i] = new Enemy_Mech(info.x, info.y); break;
-			*/}
+			*/
+			case Enemy_Type::CHEST: 
+				enemies[i] = new Enemy_CHESS(info.x, info.y); 
+				break;
+			}
 			enemies[i]->texture = texture;
 			enemies[i]->destroyedFx = enemyDestroyedFx;
 			break;

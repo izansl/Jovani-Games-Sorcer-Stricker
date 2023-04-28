@@ -4,25 +4,27 @@
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Gameplay/ModuleEnemies.h"
 #include "../../Application/FileNames.h"
+#include "../../Modules/Core/ModuleRender.h"
 #include"../../Modules/Core/ModuleTextures.h"
 
 
 Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
-	texture= App->textures->Load(FI_spritechest_blue.c_str());
+	texture = App->textures->Load(FI_spritechest_blue.c_str());
+
 	blue.PushBack({ 2, 7, 43, 39 });
-	blue.PushBack({ 47, 7, 43, 39 });
-	blue.PushBack({ 94, 7, 43, 39 });
+	//blue.PushBack({ 47, 7, 43, 39 });
+	//blue.PushBack({ 94, 7, 43, 39 });
 	currentAnim = &blue;
 
 	// Path 1
-	path1.PushBack({ -1.0f, -0.5f }, 100);
-	path1.PushBack({ -1.0f, 0.0f }, 30);
-	path1.PushBack({ -0.5f, 0.5f }, 30);
-	path1.PushBack({ 0.0f, 1.0f }, 30);
-	path1.PushBack({ 0.5f, 0.5f }, 30);
-	path1.PushBack({ 1.0f, 0.0f }, 30);
-	path1.PushBack({ 1.0f, -0.5f }, 30);
-	path1.PushBack({ 1.0f, -1.0f }, 50);
+	path1.PushBack({ -1.0f, -0.5f }, 10);
+	path1.PushBack({ -1.0f, 0.0f }, 10);
+	path1.PushBack({ -0.5f, 0.5f }, 10);
+	path1.PushBack({ 0.0f, 1.0f }, 10);
+	path1.PushBack({ 0.5f, 0.5f }, 10);
+	path1.PushBack({ 1.0f, 0.0f }, 10);
+	path1.PushBack({ 1.0f, -0.5f }, 10);
+	path1.PushBack({ 1.0f, -1.0f }, 10);
 
 	// Path 2
 	path2.PushBack({ -0.5f, -1.0f }, 100);
@@ -36,7 +38,7 @@ Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
 	path2.PushBack({ -0.5f, 3.0f }, 50);
 
 	currentPath = &path1;
-	collider = App->collisions->AddCollider({ 0, 0, 96, 84 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0, 43, 39 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_CHESS::Update() {
@@ -46,6 +48,12 @@ void Enemy_CHESS::Update() {
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position 
 	Enemy::Update();
+}
+
+void Enemy_CHESS::Draw()
+{
+	if (currentAnim != nullptr)
+		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));
 }
 
 void Enemy_CHESS::OnCollision(Collider* c1, Collider* c2) {

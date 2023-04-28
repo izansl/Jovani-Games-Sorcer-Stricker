@@ -39,6 +39,7 @@ bool SceneLevel1::Start() {
 
 	// Enemies ---
 	// TODO: Posar tots els enemics que toquin
+	App->enemies->AddEnemy(Enemy_Type::CHEST, 40, 100);
 	/*App->enemies->AddEnemy(Enemy_Type::REDBIRD, 600, 80);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 625, 80);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 640, 80);
@@ -81,6 +82,8 @@ Update_Status SceneLevel1::PostUpdate() {
 	App->render->Blit(texture_forest1, 0, (Height_background_beach + Height_background_sea + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
 	App->render->Blit(texture_forest2, 0, (Height_background_beach + Height_background_sea + Height_background_forest1 + Height_background_forest2 - SCREEN_HEIGHT) * -1, NULL);
 	App->render->Blit(texture_castle, 0, (Height_background_beach + Height_background_sea + Height_background_forest1 + Height_background_forest2 + Height_background_castle - SCREEN_HEIGHT) * -1, NULL);
+	
+	
 
 	return Update_Status::UPDATE_CONTINUE;
 }
