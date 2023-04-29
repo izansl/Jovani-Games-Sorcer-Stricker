@@ -56,8 +56,8 @@ bool SceneLevel1::Start() {
 
 	App->enemies->AddEnemy(Enemy_Type::MECH, 900, 195);*/
 	//add dragon
-	App->enemies->AddEnemy(Enemy_Type::DRAGON, 20, -300);
-	App->enemies->AddEnemy(Enemy_Type::DRAGON, 200, -400);
+	App->enemies->AddEnemy(Enemy_Type::DRAGON, 20, -4000);
+	App->enemies->AddEnemy(Enemy_Type::DRAGON, 200, -4700);
 	//add red ball
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -500);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -530);
@@ -77,17 +77,84 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -940);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -970);
 	//add red ball 3
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1600);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1650);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1700);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1750);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1800);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1850);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1900);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1950);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -1600);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -1650);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -1700);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -1750);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -1800);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -1850);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -1900);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -1950);
+	//add red ball 4
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -2100);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -2150);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -2200);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -2250);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -2300);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -2350);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -2400);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -2450);
+	//add red ball 4
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2300);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2350);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2400);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2450);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2500);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2550);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2600);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2650);
+	//add red ball 4
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 200, -2600);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 200, -2650);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 200, -2700);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 200, -2750);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 200, -2800);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 200, -2850);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 200, -2900);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 200, -2950);
+	//add red ball 5
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -4000);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -4150);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -4200);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -4250);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -4300);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -4350);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -4400);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -4450);
+	//add red ball 6
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -4800);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -4850);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -4900);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -4950);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -5000);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -5050);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -5100);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -5150);
+	//add red ball 4
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -5300);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -5350);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -5400);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -5450);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -5500);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -5550);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -5600);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -5650);
 	//add Wizard
-	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 200, -1900);
-	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 225, -1900);
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 170, -2300);
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 215, -2300);
+	//add Wizard 2
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 70, -2600);
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 115, -2600);
+	//add wizard 3
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 170, -2900);
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 215, -2900);
+	//add wizard 4
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 70, -3100);
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 115, -3100);
+	//add wizard 5
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 170, -3400);
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 215, -3400);
+
 
 	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;

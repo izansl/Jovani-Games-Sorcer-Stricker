@@ -16,7 +16,7 @@ Enemy_Dragon::Enemy_Dragon(int x, int y) : Enemy(x, y) {
 	fly.speed = 0.1f;
 
 	// Describe a path in the screen
-	path.PushBack({ 0, -2.0f }, 100);
+	path.PushBack({ 0, 0.5f }, 100);
 	
 
 	collider = App->collisions->AddCollider({ 0, 0, 85, 89 }, Collider::Type::ENEMY, (Module*)App->enemies);

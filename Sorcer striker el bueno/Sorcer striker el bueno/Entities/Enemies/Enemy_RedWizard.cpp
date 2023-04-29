@@ -12,12 +12,11 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y) : Enemy(x, y) {
 	fly.PushBack({ 4, 22 , 36, 36 });
 	fly.PushBack({ 41, 22 ,36, 36 });
 	currentAnim = &fly;
-	fly.speed = 0.001f;
+	fly.speed = 0.01f;
 	fly.loop = true;
 
-	path.PushBack({ 0.0, 0.5 }, 300);
-	path.PushBack({ 0.0, -3.0 }, 100);
-	path.PushBack({ 1.5, -5.0 }, 400);
+	path.PushBack({ 0.0, 0.5 }, 600);
+	
 
 	collider = App->collisions->AddCollider({ 0, 0, 36, 36 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
