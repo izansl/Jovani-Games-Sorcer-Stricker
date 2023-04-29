@@ -31,11 +31,19 @@ bool SceneLevel1::Start() {
 	App->audio->PlayMusic(FA_Music_stage1.c_str(), 1.0f);
 
 	//Bottomside collider
-	App->collisions->AddCollider({ 0, 224, 3930, 16 }, Collider::Type::WALL);
+	App->collisions->AddCollider({ 0, 200, 300, 10 }, Collider::Type::WALL);
+
+	if (texture_forest2 != nullptr) {
+		int x = 0; // posición x del collider
+		int y = -1100;
+		int w = 300;
+		int h = 10;
+		Collider* collider_castle = App->collisions->AddCollider({ x, y, w, h }, Collider::Type::WALL);
+	}
 
 	//First two columns colliders
-	App->collisions->AddCollider({ 1375, 0, 111, 96 }, Collider::Type::WALL);
-	App->collisions->AddCollider({ 1375, 145, 111, 96 }, Collider::Type::WALL);
+	//App->collisions->AddCollider({ 1375, 0, 111, 96 }, Collider::Type::WALL);
+	//App->collisions->AddCollider({ 1375, 145, 111, 96 }, Collider::Type::WALL);
 
 	// Enemies ---
 	// TODO: ---> Posar tots els enemics que toquin
@@ -76,10 +84,10 @@ Update_Status SceneLevel1::Update() {
 // Update: draw background
 Update_Status SceneLevel1::PostUpdate() {
 	// Draw everything --------------------------------------
-	App->render->Blit(texture_forest1, 0, (Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
-	App->render->Blit(texture_beach, 0, (Height_background_forest1 + Height_background_beach - SCREEN_HEIGHT) * -1, NULL);
-	App->render->Blit(texture_sea, 0, (Height_background_forest1 + Height_background_beach + Height_background_sea - SCREEN_HEIGHT) * -1, NULL);
-	App->render->Blit(texture_castle, 0, (Height_background_forest1 + Height_background_beach + Height_background_sea + Height_background_castle - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_forest1, +40, (Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_beach, +40, (Height_background_forest1 + Height_background_beach - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_sea, +40, (Height_background_forest1 + Height_background_beach + Height_background_sea - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_castle, +40, (Height_background_forest1 + Height_background_beach + Height_background_sea + Height_background_castle - SCREEN_HEIGHT) * -1, NULL);
 
 	return Update_Status::UPDATE_CONTINUE;
 }
