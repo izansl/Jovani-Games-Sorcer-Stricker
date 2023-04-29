@@ -55,8 +55,39 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 890, 100);
 
 	App->enemies->AddEnemy(Enemy_Type::MECH, 900, 195);*/
-	App->enemies->AddEnemy(Enemy_Type::DRAGON, 100, 3000);
-	App->enemies->AddEnemy(Enemy_Type::DRAGON, 150, 3000);
+	//add dragon
+	App->enemies->AddEnemy(Enemy_Type::DRAGON, 20, -300);
+	App->enemies->AddEnemy(Enemy_Type::DRAGON, 200, -400);
+	//add red ball
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -500);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -530);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -560);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -590);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -620);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -650);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -680);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 10, -710);
+	//add red ball 2
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -760);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -790);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -820);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -850);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -880);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -910);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -940);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -970);
+	//add red ball 3
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1600);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1650);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1700);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1750);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1800);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1850);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1900);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 250, -1950);
+	//add Wizard
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 200, -1900);
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 225, -1900);
 
 	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;

@@ -8,16 +8,17 @@
 
 Enemy_RedBall::Enemy_RedBall(int x, int y) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_1.c_str());
-	fly.PushBack({ 3, 21 , 36, 36 });
-	fly.PushBack({ 41, 21 ,34, 37 });
+	fly.PushBack({ 48, 12, 22,31 });
+	fly.PushBack({ 76,12 ,26, 32 });
 	currentAnim = &fly;
-
+	fly.speed = 0.2;
+	fly.loop = true;
 	// Sescribe a path in the screen
-	path.PushBack({ 0, -0.5f }, 100);
-	path.PushBack({ 0, 0.5f }, 80);
-	path.PushBack({ 0, 1.0f }, 80);
+	path.PushBack({ 0, 0.5f }, 100);
+	
+	
 
-	collider = App->collisions->AddCollider({ 0, 0, 56, 76 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0,22, 32 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_RedBall::Update() {

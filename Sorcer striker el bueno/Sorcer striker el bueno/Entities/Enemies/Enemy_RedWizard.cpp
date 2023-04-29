@@ -8,15 +8,18 @@
 
 Enemy_RedWizard::Enemy_RedWizard(int x, int y) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_2.c_str());
-	fly.PushBack({ 48, 12, 22,31 });
-	fly.PushBack({ 114,32 ,26, 32 });
+	
+	fly.PushBack({ 4, 22 , 36, 36 });
+	fly.PushBack({ 41, 22 ,36, 36 });
 	currentAnim = &fly;
-	fly.speed = 0.01f;
+	fly.speed = 0.001f;
+	fly.loop = true;
 
-	path.PushBack({ 0.0, -0.3 }, 20);
-	path.PushBack({ 0.0, 0.5 }, 100);
+	path.PushBack({ 0.0, 0.5 }, 300);
+	path.PushBack({ 0.0, -3.0 }, 100);
+	path.PushBack({ 1.5, -5.0 }, 400);
 
-	collider = App->collisions->AddCollider({ 0, 0, 102, 95 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0, 36, 36 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_RedWizard::Update() {
