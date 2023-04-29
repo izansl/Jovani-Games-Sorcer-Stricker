@@ -165,7 +165,7 @@ Update_Status ModulePlayer::Update() {
 	// Spawn explosion particles when pressing X
 	if (App->input->keys[SDL_SCANCODE_X] == Key_State::KEY_DOWN)
 	{
-		App->particles->AddParticle(App->particles->explosion, position.x+ 13, position.y+5);
+		/*App->particles->AddParticle(App->particles->explosion, position.x+ 13, position.y+5);
 		if (App->particles->explosion.lifetime==0)
 		{
 			App->particles->AddParticle(App->particles->explosion2, position.x - 20, position.y-105);
@@ -173,7 +173,9 @@ Update_Status ModulePlayer::Update() {
 			{
 				App->particles->AddParticle(App->particles->explosionfinal, position.x + 5, position.y - 200);
 			}
-		}
+		}*/
+		App->particles->AddParticle(App->particles->explosion, position.x + 15, position.y - 50);
+		/*App->particles->AddParticle(App->particles->explosion2, position.x + 5, position.y - 200);*/
 
 	}
 
