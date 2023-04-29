@@ -16,7 +16,7 @@ public:
 	void Update() override;
 	//void Draw() override;
 
-	void OnCollision(Collider* c1, Collider* c2);
+	void OnCollision(Collider* collider)override;
 
 
 private: //BROWNSHIP
