@@ -6,7 +6,7 @@
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Application/FileNames.h"
 
-Enemy_Dragon::Enemy_Dragon(int x, int y) : Enemy(x, y) {
+Enemy_Dragon::Enemy_Dragon(int x, int y, int wave) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_3.c_str());
 
 	fly.PushBack({ 16, 24 , 85, 89 });
@@ -14,7 +14,23 @@ Enemy_Dragon::Enemy_Dragon(int x, int y) : Enemy(x, y) {
 	fly.loop = true;
 	currentAnim = &fly;
 	fly.speed = 0.1f;
+	if (wave == 1)
+	{
+		path.PushBack({ 0, 1.0 }, 1050);
+		path.PushBack({ 0, -3.0 }, 100);
+		path.PushBack({ 1, -3.0 }, 20);
+		path.PushBack({ 0, -3.0 }, 50);
+		path.PushBack({ -0.75, -5.0 }, 50);
+		path.PushBack({ 0, -3.0 },50);
+		path.PushBack({ -0.25, 1.0 }, 50);
+		path.PushBack({ 0, -3.0 }, 50);
+		path.PushBack({ -1, -6.0 }, 100);
 
+	}
+	else if (wave == 2)
+	{
+
+	}
 	// Describe a path in the screen
 	path.PushBack({ 0, 0.5f }, 100);
 	
@@ -39,11 +55,11 @@ void Enemy_Dragon::Update() {
 //}
 void Enemy_Dragon::OnCollision(Collider* c1, Collider* c2) {
 	if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect)) {
-		texture = App->textures->Load(FI_spriteEnemy_3.c_str());
 		explosion.PushBack({ 17, 121, 90, 90 });
 		explosion.PushBack({ 111, 124, 90, 90 });
 		explosion.PushBack({ 204, 123, 90, 90 });
 		explosion.speed = 0.3;
+		currentAnim = &explosion;
 		
 		
 	}
