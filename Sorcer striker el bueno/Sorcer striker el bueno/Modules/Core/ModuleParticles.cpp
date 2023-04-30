@@ -51,7 +51,7 @@ bool ModuleParticles::Start() {
 	explosion.anim.PushBack({ 211, 273, 88, 89 });
 	explosion.anim.PushBack({ 312, 273, 89, 90 });
 	explosion.anim.loop = false;
-	explosion.speed = iPoint(0, -5);
+	explosion.speed = iPoint(0, -10);
 	explosion.lifetime = 100;
 	explosion.anim.speed = 0.05f;
 
@@ -72,7 +72,7 @@ bool ModuleParticles::Start() {
 	explosionfinal.anim.speed = 0.03f;*/
 
 	laser.anim.PushBack({ 331, 23, 12, 30 });
-	laser.speed = iPoint(0, -6);
+	laser.speed = iPoint(0, -15);
 	laser.lifetime = 100;
 	laser.anim.speed = 0.01f;
 #pragma endregion

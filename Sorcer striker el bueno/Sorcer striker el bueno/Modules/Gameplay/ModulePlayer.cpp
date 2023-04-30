@@ -124,7 +124,7 @@ Update_Status ModulePlayer::Update() {
 
 #pragma region NEW -> VERTICAL
 	// Moving the player with the camera scroll
-	App->player->position.y -= 2;
+	App->player->position.y -= 8;
 
 	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT)
 	{
@@ -174,7 +174,7 @@ Update_Status ModulePlayer::Update() {
 				App->particles->AddParticle(App->particles->explosionfinal, position.x + 5, position.y - 200);
 			}
 		}*/
-		App->particles->AddParticle(App->particles->explosion, position.x + 15, position.y - 50);
+		App->particles->AddParticle(App->particles->explosion, position.x-25, position.y, Collider::Type::PLAYER_SHOT,0);
 		/*App->particles->AddParticle(App->particles->explosion2, position.x + 5, position.y - 200);*/
 
 	}

@@ -35,9 +35,9 @@ bool SceneLevel1::Start() {
 
 	if (texture_forest2 != nullptr) {
 		int x = 0; // posición x del collider
-		int y = -1100;
+		int y = -11000;
 		int w = 300;
-		int h = 10;
+		int h = 10;	
 		Collider* collider_castle = App->collisions->AddCollider({ x, y, w, h }, Collider::Type::WALL);
 	}
 
@@ -76,7 +76,7 @@ bool SceneLevel1::Start() {
 }
 
 Update_Status SceneLevel1::Update() {
-	App->render->camera.y -= 3;
+	App->render->camera.y -= 8;
 
 	return Update_Status::UPDATE_CONTINUE;
 }
