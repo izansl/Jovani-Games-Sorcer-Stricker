@@ -25,6 +25,8 @@ private: //BROWNSHIP
 	Path path1;
 	Path path2;
 	Path* currentPath;
+	bool activePart2 = false;
+
 
 	// This enemy has one sprite and one frame
 	// We are keeping it an animation for consistency with other enemies

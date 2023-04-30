@@ -37,16 +37,21 @@ Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
 	path2.PushBack({ -0.5f, -1.0f }, 60); // se mueve hacia abajo durante 60 milisegundos
 
 	currentPath = &path1;
-	collider = App->collisions->AddCollider({ 0, 0, 43, 39 }, Collider::Type:: ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0, 43, 39 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_CHESS::Update() {
-	path1.Update();
+	if (!activePart2) 
+		path1.Update();
+	else 
+		path2.Update();
+
 	position = spawnPos + currentPath->GetRelativePosition();
 
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position 
 	Enemy::Update();
+
 }
 
 //void Enemy_CHESS::Draw()
@@ -55,8 +60,8 @@ void Enemy_CHESS::Update() {
 //		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));
 //}
 
-void Enemy_CHESS::OnCollision(Collider* c1){
-	if (c1->type == Collider::Type::PLAYER_SHOT) 
+void Enemy_CHESS::OnCollision(Collider* c1) {
+	if (c1->type == Collider::Type::PLAYER_SHOT)
 	{
 		// Change sprite
 		red.PushBack({ 58, 20, 15, 20 });
@@ -70,5 +75,8 @@ void Enemy_CHESS::OnCollision(Collider* c1){
 		//Change Collider type
 		collider->type = static_cast<Collider::Type>(Collider::Type::OBJECT);
 		collider->rect = { 0, 0, 15, 20 };
+
+		// Active path2 update
+		activePart2 = true;
 	}
 }
