@@ -30,8 +30,14 @@ public:
 
 public:
 	// The scene sprite sheet loaded into an SDL_Texture
-	SDL_Texture* bgTexture = nullptr;
-	SDL_Texture* SecondTexture = nullptr;///////////////////////////
+	SDL_Texture* Intro1 = nullptr;
+	SDL_Texture* Intro2 = nullptr;
+	SDL_Texture* Intro3 = nullptr;
+	SDL_Texture* Intro4 = nullptr;
+	SDL_Texture* Intro5 = nullptr;
+	SDL_Texture* Intro6 = nullptr;
+	SDL_Texture* Intro7 = nullptr;
+
 	uint tokenFx = 0;
 };
 

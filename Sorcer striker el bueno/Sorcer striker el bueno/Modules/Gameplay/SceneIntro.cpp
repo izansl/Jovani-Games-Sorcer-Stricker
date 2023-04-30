@@ -20,8 +20,8 @@ bool SceneIntro::Start() {
 
 	bool ret = true;
 	//Carga de texturas(imagenes)
-	bgTexture = App->textures->Load(FI_Introimage_1.c_str());
-	SecondTexture = App->textures->Load(FI_Introimage_1.c_str());
+	Intro1 = App->textures->Load(FI_Introimage_1.c_str());
+	Intro2 = App->textures->Load(FI_Introimage_2.c_str());
 
 	//Carga de Audio ////TURMO MUY IMPORTANTE, TIENES QUE CUADRAR EL AUDIO CON LA INTRO SEGUN LAS IMAGENES QUE APAREZCAN///
 	App->audio->PlayMusic(FA_Music_introTitle.c_str(), 1.0f);//esta musica hay que cambiarla turmo
@@ -49,12 +49,12 @@ Update_Status SceneIntro::PostUpdate() {
 	// Draw everything --------------------------------------
 	float timer = 0.0f;
 
-	App->render->Blit(bgTexture, 0, 0, NULL);
+	App->render->Blit(Intro1, 0, 0, NULL);
 	if (timer < 3.0f) {
-		App->render->Blit(SecondTexture, 0, 0, NULL);
+		App->render->Blit(Intro2, 0, 0, NULL);
 	}
 	//A CONTINUAR
-	timer += App->getdeltatime();
 
+												
 	return Update_Status::UPDATE_CONTINUE;
 }
