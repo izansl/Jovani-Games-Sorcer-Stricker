@@ -18,7 +18,6 @@ Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
 	currentAnim = &blue;
 
 	// Path 1
-	/*&path1.steps[1]->animation = blue;*/
 	path1.PushBack({ -1.0f, -0.5f }, 10);
 	path1.PushBack({ -1.0f, 0.0f }, 10);
 	path1.PushBack({ -0.5f, 0.5f }, 10);
@@ -53,12 +52,6 @@ void Enemy_CHESS::Update() {
 	Enemy::Update();
 
 }
-
-//void Enemy_CHESS::Draw()
-//{
-//	if (currentAnim != nullptr)
-//		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));
-//}
 
 void Enemy_CHESS::OnCollision(Collider* c1) {
 	if (c1->type == Collider::Type::PLAYER_SHOT)
