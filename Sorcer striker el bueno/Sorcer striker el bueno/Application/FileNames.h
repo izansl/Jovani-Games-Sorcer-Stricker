@@ -11,11 +11,11 @@
 
 #pragma region IMAGES -> FI
 // Backgrounds
-const std::string FI_background_beach = "../Assets/Images/Playa.png";
-const std::string FI_background_sea = "../Assets/Images/Mar.png";
-const std::string FI_background_forest1 = "../Assets/Images/Bosque_1.png";
-const std::string FI_background_forest2 = "../Assets/Images/Bosque_2.png";
-const std::string FI_background_castle = "../Assets/Images/Castillo.png";
+const std::string FI_background_beach = "../Assets/Images/Beach.png";
+const std::string FI_background_sea = "../Assets/Images/Sea.png";
+const std::string FI_background_forest1 = "../Assets/Images/Forest_1.png";
+const std::string FI_background_forest2 = "../Assets/Images/Forest_2.png";
+const std::string FI_background_castle = "../Assets/Images/Castle.png";
 const int Height_background_beach = 3000;
 const int Height_background_sea = 4500;
 const int Height_background_forest1 = 3000;
@@ -75,7 +75,7 @@ const std::string FI_spritechest_blue = "../Assets/Images/Chests.png";
 
 
 // Sprites Bosses
-const std::string FI_spriteBoss_boss1 = "../Assets/Images/Playa.png";
+const std::string FI_spriteBoss_boss1 = "../Assets/Images/Beach.png";
 #pragma endregion
 
 
