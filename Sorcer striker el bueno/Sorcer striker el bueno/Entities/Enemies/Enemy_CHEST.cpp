@@ -40,9 +40,9 @@ Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
 }
 
 void Enemy_CHESS::Update() {
-	if (!activePart2) 
+	if (!activePart2)
 		path1.Update();
-	else 
+	else
 		path2.Update();
 
 	position = spawnPos + currentPath->GetRelativePosition();
@@ -66,7 +66,6 @@ void Enemy_CHESS::OnCollision(Collider* c1) {
 		currentPath = &path2;
 
 		//Change Collider type
-		collider->type = static_cast<Collider::Type>(Collider::Type::OBJECT);
 		collider->rect = { 0, 0, 15, 20 };
 
 		// Active path2 update
