@@ -6,7 +6,7 @@
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Application/FileNames.h"
 
-Enemy_Dragon::Enemy_Dragon(int x, int y, int wave) : Enemy(x, y) {
+Enemy_Dragon::Enemy_Dragon(int x, int y, int wave, int miem) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_3.c_str());
 
 	fly.PushBack({ 16, 24 , 85, 89 });
@@ -16,20 +16,35 @@ Enemy_Dragon::Enemy_Dragon(int x, int y, int wave) : Enemy(x, y) {
 	fly.speed = 0.1f;
 	if (wave == 1)
 	{
-		path.PushBack({ 0, 1.0 }, 1050);
-		path.PushBack({ 0, -3.0 }, 100);
-		path.PushBack({ 1, -3.0 }, 20);
-		path.PushBack({ 0, -3.0 }, 50);
-		path.PushBack({ -0.75, -5.0 }, 50);
-		path.PushBack({ 0, -3.0 },50);
-		path.PushBack({ -0.25, 1.0 }, 50);
-		path.PushBack({ 0, -3.0 }, 50);
-		path.PushBack({ -1, -6.0 }, 100);
+		if (miem == 0)
+		{
+			path.PushBack({ 0, 1.0 }, 1050);
+			path.PushBack({ 0, -3.0 }, 100);
+			path.PushBack({ 1, -3.0 }, 20);
+			path.PushBack({ 0, -3.0 }, 50);
+			path.PushBack({ -0.75, -5.0 }, 50);
+			path.PushBack({ 0, -3.0 }, 50);
+			path.PushBack({ -0.25, 1.0 }, 50);
+			path.PushBack({ 0, -3.0 }, 50);
+			path.PushBack({ -1, -6.0 }, 100);
+		}
+		
 
 	}
 	else if (wave == 2)
 	{
-
+		if (miem == 0)
+		{
+			path.PushBack({ 0, 1.0 }, 1050);
+			path.PushBack({ 0, -3.0 }, 100);
+			path.PushBack({ -1, -3.0 }, 20);
+			path.PushBack({ 0, -3.0 }, 50);
+			path.PushBack({ 0.75, -5.0 }, 50);
+			path.PushBack({ 0, -3.0 }, 50);
+			path.PushBack({ 0.25, 1.0 }, 50);
+			path.PushBack({ 0, -3.0 }, 50);
+			path.PushBack({ 1, -6.0 }, 100);
+		}
 	}
 	// Describe a path in the screen
 	path.PushBack({ 0, 0.5f }, 100);
