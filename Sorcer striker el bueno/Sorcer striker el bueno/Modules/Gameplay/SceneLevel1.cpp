@@ -144,7 +144,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 70, -2600, 2, 0);
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 115, -2600, 2, 0);
 	//add wizard 3
-	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 110, -2900, 3, 0);
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 120, -2900, 3, 0);
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 165, -2900, 3, 0);
 	//add wizard 4
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 70, -3100, 4, 0);
