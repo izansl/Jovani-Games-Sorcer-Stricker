@@ -89,6 +89,9 @@ const std::string FI_spritechest_blue = "../Assets/Images/Chests.png";
 
 // Sprites Bosses
 const std::string FI_spriteBoss_boss1 = "../Assets/Images/Beach.png";
+
+//explosion enemiga
+const std::string FI_spriteExplosion_enemies = "../Assets/Images/2nd_enemy.png";
 #pragma endregion
 
 
@@ -103,6 +106,11 @@ const std::string FA_Music_introTitle = "../Assets/Audios/Hud-music/musica-menu.
 // Level 1
 const std::string FA_Music_stage1 = "../Assets/Audios/Stage-1/stage1.ogg";
 
+// Explosion enemiga
+const std::string FA_Fx_explosion = "../Assets/Audios/FX/explosion-muerte-enemiga.wav";
+
+//Explosion jugador
+const std::string FA_Fx_explosionJ = "../Assets/Audios/FX/explosion(jugador-muerto).wav";
 // Level 2
 
 // Level 3

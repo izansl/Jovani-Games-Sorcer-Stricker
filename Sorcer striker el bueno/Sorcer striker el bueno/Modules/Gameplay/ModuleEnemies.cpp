@@ -25,7 +25,7 @@ ModuleEnemies::~ModuleEnemies() {
 
 bool ModuleEnemies::Start() {
 	/*texture = App->textures->Load(FTI_sprites_enemies.c_str());*/
-	/*enemyDestroyedFx = App->audio->LoadFx(FTA_fx_explosion.c_str());*/
+	enemyDestroyedFx = App->audio->LoadFx(FA_Fx_explosion.c_str());
 
 	return true;
 }
