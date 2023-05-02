@@ -11,15 +11,17 @@
 
 #pragma region IMAGES -> FI
 //IntroImages
+//cambiar a png //cambiar ruta a ImagenesIntro2
 const std::string FI_Introimage_1 = "../Assets/Images/ImagenesIntro/intro1.bmp";
 const std::string FI_Introimage_2 = "../Assets/Images/ImagenesIntro/intro2.bmp";
 const std::string FI_Introimage_3 = "../Assets/Images/ImagenesIntro/intro3.bmp";
 const std::string FI_Introimage_4 = "../Assets/Images/ImagenesIntro/intro4.bmp";
 const std::string FI_Introimage_5 = "../Assets/Images/ImagenesIntro/intro5.bmp";
-const std::string FI_Introimage_6 = "../Assets/Images/ImagenesIntro/intro6.bmp";
-const std::string FI_Introimage_7 = "../Assets/Images/ImagenesIntro/intro7.bmp";
-const std::string FI_Introimage_8 = "../Assets/Images/ImagenesIntro/intro8.bmp";
-const std::string FI_Introimage_9 = "../Assets/Images/ImagenesIntro/intro9.bmp";
+
+const std::string FI_Introimage_6 = "../Assets/Images/ImagenesIntro/intro6.png";
+const std::string FI_Introimage_7 = "../Assets/Images/ImagenesIntro/intro7.png";
+const std::string FI_Introimage_8 = "../Assets/Images/ImagenesIntro/intro8.png";
+const std::string FI_Introimage_9 = "../Assets/Images/ImagenesIntro/intro9.png";
 
 
 // Backgrounds
