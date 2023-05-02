@@ -18,15 +18,14 @@ Enemy_Dragon::Enemy_Dragon(int x, int y, int wave, int miem) : Enemy(x, y) {
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0, 1.0 }, 1050);
-			path.PushBack({ 0, -3.0 }, 100);
-			path.PushBack({ 1, -3.0 }, 20);
+			path.PushBack({ 0, 1 }, 462);
+			path.PushBack({ 0, -8.0 }, 100);
+			path.PushBack({ 2, -8.0 }, 10);
+			path.PushBack({ 0, -8.0 }, 50);
+			path.PushBack({ -0.75, -10.0 }, 50);
+			path.PushBack({ 0, -8.0 }, 10);
 			path.PushBack({ 0, -3.0 }, 50);
-			path.PushBack({ -0.75, -5.0 }, 50);
-			path.PushBack({ 0, -3.0 }, 50);
-			path.PushBack({ -0.25, 1.0 }, 50);
-			path.PushBack({ 0, -3.0 }, 50);
-			path.PushBack({ -1, -6.0 }, 100);
+			path.PushBack({ -1, -12.0 }, 100);
 		}
 		
 
@@ -35,15 +34,15 @@ Enemy_Dragon::Enemy_Dragon(int x, int y, int wave, int miem) : Enemy(x, y) {
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0, 1.0 }, 1050);
-			path.PushBack({ 0, -3.0 }, 100);
-			path.PushBack({ -1, -3.0 }, 20);
+			
+			path.PushBack({ 0, 1 }, 535);
+			path.PushBack({ 0, -8.0 }, 100);
+			path.PushBack({ -2, -8.0 }, 10);
+			path.PushBack({ 0, -8.0 }, 50);
+			path.PushBack({ 0.75, -10.0 }, 50);
+			path.PushBack({ 0, -8.0 }, 10);
 			path.PushBack({ 0, -3.0 }, 50);
-			path.PushBack({ 0.75, -5.0 }, 50);
-			path.PushBack({ 0, -3.0 }, 50);
-			path.PushBack({ 0.25, 1.0 }, 50);
-			path.PushBack({ 0, -3.0 }, 50);
-			path.PushBack({ 1, -6.0 }, 100);
+			path.PushBack({ 1, -12.0 }, 100);
 		}
 	}
 	// Describe a path in the screen
