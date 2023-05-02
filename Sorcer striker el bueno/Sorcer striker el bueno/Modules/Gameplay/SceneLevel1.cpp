@@ -30,14 +30,12 @@ bool SceneLevel1::Start() {
 
 	App->audio->PlayMusic(FA_Music_stage1.c_str(), 1.0f);
 
-	////Bottomside collider
-	//App->collisions->AddCollider({ 0, 200, 300, 10 }, Collider::Type::WALL);
-
+	//Bottomside collider
 	if (texture_forest2 != nullptr) {
 		int x = 0; // posición x del collider
 		int y = -11000;
 		int w = 300;
-		int h = 10;	
+		int h = 10;
 		Collider* collider_castle = App->collisions->AddCollider({ x, y, w, h }, Collider::Type::WALL);
 	}
 
@@ -53,28 +51,11 @@ bool SceneLevel1::Start() {
 	int hb = 10;
 	botcoll = App->collisions->AddCollider({ xb, yb, wb, hb }, Collider::Type::WALL_PLAYER);
 
-	// Enemies ---
-	// TODO: ---> Posar tots els enemics que toquin
+#pragma region ENEMIES
+	// add chest
+	App->enemies->AddEnemy(Enemy_Type::CHEST, 40, -1500, 1, 1);
 
-  App->enemies->AddEnemy(Enemy_Type::CHEST, 40, -1500);
-
-	/*App->enemies->AddEnemy(Enemy_Type::REDBIRD, 600, 80);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 625, 80);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 640, 80);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 665, 80);
-
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 735, 120);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 750, 120);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 775, 120);
-	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 790, 120);
-
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 830, 100);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 850, 100);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 870, 100);
-	App->enemies->AddEnemy(Enemy_Type::BROWNSHIP, 890, 100);
-
-	App->enemies->AddEnemy(Enemy_Type::MECH, 900, 195);*/
-	
+#pragma region Red ball
 	//add red ball
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -500, 1, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -530, 1, 2);
@@ -84,6 +65,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -650, 1, 6);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -680, 1, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -710, 1, 8);
+
 	//add red ball 2
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -760, 2, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -790, 2, 2);
@@ -93,6 +75,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -910, 2, 6);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -940, 2, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -970, 2, 8);
+
 	//add red ball 3
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 110, -1600, 3, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 110, -1650, 3, 2);
@@ -102,6 +85,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 110, -1850, 3, 6);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 110, -1900, 3, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 110, -1950, 3, 8);
+
 	//add red ball 4
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -2100, 4, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -2150, 4, 2);
@@ -111,6 +95,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -2350, 4, 6);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -2400, 4, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -2450, 4, 8);
+
 	//add red ball 5
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2300, 5, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2350, 5, 2);
@@ -120,7 +105,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2550, 5, 6);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2600, 5, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2650, 5, 8);
-	
+
 	//add red ball 6
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4100, 6, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4150, 6, 2);
@@ -130,6 +115,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4350, 6, 6);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4400, 6, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4450, 6, 8);
+
 	//add red ball 7
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -4800, 7, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -4850, 7, 2);
@@ -139,6 +125,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -5050, 7, 6);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -5100, 7, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -5150, 7, 8);
+
 	//add red ball 8
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 150, -5300, 8, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 150, -5350, 8, 2);
@@ -148,25 +135,35 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 150, -5550, 8, 6);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 150, -5600, 8, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 150, -5650, 8, 8);
+#pragma endregion
+
+#pragma region Wizard
 	//add Wizard
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 170, -2300, 1, 0);
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 215, -2300, 1, 0);
+
 	//add Wizard 2
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 70, -2600, 2, 0);
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 115, -2600, 2, 0);
+
 	//add wizard 3
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 120, -2900, 3, 0);
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 165, -2900, 3, 0);
+
 	//add wizard 4
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 70, -3100, 4, 0);
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 115, -3100, 4, 0);
+
 	//add wizard 5
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 170, -3400, 5, 0);
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 215, -3400, 5, 0);
+#pragma endregion
 
 	//add dragon
 	App->enemies->AddEnemy(Enemy_Type::DRAGON, 50, -4000, 1, 0);
 	App->enemies->AddEnemy(Enemy_Type::DRAGON, 200, -4700, 2, 0);
+#pragma endregion
+
 
 	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;
@@ -180,14 +177,13 @@ bool SceneLevel1::Start() {
 
 Update_Status SceneLevel1::Update() {
 	App->render->camera.y -= 8;
-	
+
 	topcoll->rect.y += -8;
 	botcoll->rect.y += -8;
 
 	return Update_Status::UPDATE_CONTINUE;
 }
 
-// Update: draw background
 Update_Status SceneLevel1::PostUpdate() {
 	// Draw everything --------------------------------------
 	App->render->Blit(texture_forest1, +40, (Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
