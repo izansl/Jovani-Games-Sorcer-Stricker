@@ -6,6 +6,7 @@
 
 struct SDL_Texture;
 
+
 class SceneIntro : public Module {
 
 public:
@@ -30,7 +31,19 @@ public:
 
 public:
 	// The scene sprite sheet loaded into an SDL_Texture
-	SDL_Texture* bgTexture = nullptr;
+
+	
+	
+	const int NUM_IMAGES = 10;
+	SDL_Texture* Intro[10];
+	float timer = 0.0f;
+	int currentImage = 0;	
+
+	//Prueba efecto fade en imagenes
+	bool fadingOut = false;
+	float fadeTimer = 0.0f;
+	const float FADE_TIME = 1.0f;//duración del DESVANECIMIENTO en segundos
+
 	uint tokenFx = 0;
 };
 

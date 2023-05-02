@@ -10,6 +10,19 @@
 
 
 #pragma region IMAGES -> FI
+//IntroImages
+//cambiar a png //cambiar ruta a ImagenesIntro2
+const std::string FI_Introimage_1 = "../Assets/Images/ImagenesIntro2/intro1.png";
+const std::string FI_Introimage_2 = "../Assets/Images/ImagenesIntro2/intro2.png";
+const std::string FI_Introimage_3 = "../Assets/Images/ImagenesIntro2/intro3.png";
+const std::string FI_Introimage_4 = "../Assets/Images/ImagenesIntro2/intro4.png";
+const std::string FI_Introimage_5 = "../Assets/Images/ImagenesIntro2/intro5.png";
+const std::string FI_Introimage_6 = "../Assets/Images/ImagenesIntro2/intro6.png";
+const std::string FI_Introimage_7 = "../Assets/Images/ImagenesIntro2/intro7.png";
+const std::string FI_Introimage_8 = "../Assets/Images/ImagenesIntro2/intro8.png";
+const std::string FI_Introimage_9 = "../Assets/Images/ImagenesIntro2/intro9.png";
+const std::string FI_Introimage_10 = "../Assets/Images/ImagenesIntro2/intro10.png";
+
 // Backgrounds
 const std::string FI_background_beach = "../Assets/Images/Beach.png";
 const std::string FI_background_sea = "../Assets/Images/Sea.png";
@@ -107,15 +120,15 @@ const std::string FA_Music_stage1 = "../Assets/Audios/Stage-1/stage1.ogg";
 
 
 #pragma region TEMPORAL (NO BORRAR, NI POSAR RES, util per fer proves) -> FT
-const std::string FTI_sprites_enemies = "../Assets/Sprites/enemies.png";
-const std::string FTI_sprites_ship = "../Assets/Sprites/ship.png";
-const std::string FTI_sprites_startScreen = "../Assets/Sprites/startScreen.png";
-const std::string FTI_sprites_background = "../Assets/Sprites/background.png";
-const std::string FTI_sprites_particles = "../Assets/Sprites/particles.png";
-const std::string FTI_font_font3 = "../Assets/Fonts/rtype_font3.png";
-
-const std::string FTA_fx_explosion = "../Assets/Fx/explosion.wav";
-const std::string FTA_fx_laser = "../Assets/Fx/laser.wav";
+//const std::string FTI_sprites_enemies = "../Assets/Sprites/enemies.png";
+//const std::string FTI_sprites_ship = "../Assets/Sprites/ship.png";
+//const std::string FTI_sprites_startScreen = "../Assets/Sprites/startScreen.png";
+//const std::string FTI_sprites_background = "../Assets/Sprites/background.png";
+//const std::string FTI_sprites_particles = "../Assets/Sprites/particles.png";
+//const std::string FTI_font_font3 = "../Assets/Fonts/rtype_font3.png";
+//
+//const std::string FTA_fx_explosion = "../Assets/Fx/explosion.wav";
+//const std::string FTA_fx_laser = "../Assets/Fx/laser.wav";
 #pragma endregion
 
 #endif

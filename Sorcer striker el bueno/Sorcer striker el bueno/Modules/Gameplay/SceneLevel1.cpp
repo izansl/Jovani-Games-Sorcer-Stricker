@@ -30,8 +30,8 @@ bool SceneLevel1::Start() {
 
 	App->audio->PlayMusic(FA_Music_stage1.c_str(), 1.0f);
 
-	//Bottomside collider
-	App->collisions->AddCollider({ 0, 200, 300, 10 }, Collider::Type::WALL);
+	////Bottomside collider
+	//App->collisions->AddCollider({ 0, 200, 300, 10 }, Collider::Type::WALL);
 
 	if (texture_forest2 != nullptr) {
 		int x = 0; // posición x del collider
@@ -42,8 +42,16 @@ bool SceneLevel1::Start() {
 	}
 
 	//First two columns colliders
-	//App->collisions->AddCollider({ 1375, 0, 111, 96 }, Collider::Type::WALL);
-	//App->collisions->AddCollider({ 1375, 145, 111, 96 }, Collider::Type::WALL);
+	int xt = 0;
+	int yt = 0;
+	int wt = 400;
+	int ht = 10;
+	topcoll = App->collisions->AddCollider({ xt, yt, wt, ht }, Collider::Type::WALL_PLAYER);
+	int xb = 0;
+	int yb = 590;
+	int wb = 400;
+	int hb = 10;
+	botcoll = App->collisions->AddCollider({ xb, yb, wb, hb }, Collider::Type::WALL_PLAYER);
 
 	// Enemies ---
 	// TODO: ---> Posar tots els enemics que toquin
@@ -169,6 +177,9 @@ bool SceneLevel1::Start() {
 
 Update_Status SceneLevel1::Update() {
 	App->render->camera.y -= 8;
+	
+	topcoll->rect.y += -8;
+	botcoll->rect.y += -8;
 
 	return Update_Status::UPDATE_CONTINUE;
 }

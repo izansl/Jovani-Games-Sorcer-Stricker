@@ -56,7 +56,7 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave, int miem) : Enemy(x, y)
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0.0, 0.75 }, 850);
+			path.PushBack({ 0.0, 0.75 }, 400);
 			path.PushBack({ 0.0, -8.0 }, 75);
 			path.PushBack({ 3, -12.0 }, 650);
 		}
