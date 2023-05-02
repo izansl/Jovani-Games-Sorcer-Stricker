@@ -71,7 +71,7 @@ bool ModuleParticles::Start() {
 	explosionfinal.lifetime = 100;
 	explosionfinal.anim.speed = 0.03f;*/
 
-	laser.anim.PushBack({ 331, 23, 12, 30 });
+	laser.anim.PushBack({ 330, 25, 15, 28 });
 	laser.speed = iPoint(0, -15);
 	laser.lifetime = 100;
 	laser.anim.speed = 0.01f;

@@ -176,10 +176,10 @@ bool SceneLevel1::Start() {
 }
 
 Update_Status SceneLevel1::Update() {
-	//App->render->camera.y -= 1;
+	App->render->camera.y -= 8;
 	
-	topcoll->rect.y += App->render->camera.y;
-	botcoll->rect.y += App->render->camera.y;
+	topcoll->rect.y += -8;
+	botcoll->rect.y += -8;
 
 	return Update_Status::UPDATE_CONTINUE;
 }
