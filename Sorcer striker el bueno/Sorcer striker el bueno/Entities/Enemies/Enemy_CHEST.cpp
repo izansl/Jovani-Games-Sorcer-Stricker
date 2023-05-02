@@ -57,8 +57,8 @@ void Enemy_CHESS::OnCollision(Collider* c1) {
 	if (c1->type == Collider::Type::PLAYER_SHOT)
 	{
 		// Change sprite
-		red.PushBack({ 58, 20, 15, 20 });
-		red.PushBack({ 72, 54, 15, 20 });
+		red.PushBack({ 58, 60, 14, 18 });
+		red.PushBack({ 74, 60, 14, 18 });
 		red.speed = 0.1f;
 		currentAnim = &red;
 
