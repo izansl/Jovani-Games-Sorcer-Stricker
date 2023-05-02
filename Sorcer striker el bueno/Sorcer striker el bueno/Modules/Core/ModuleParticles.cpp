@@ -20,7 +20,7 @@ ModuleParticles::~ModuleParticles() {
 
 bool ModuleParticles::Start() {
 	LOG("Loading particles");
-	texture = App->textures->Load(FTI_sprites_particles.c_str());
+	/*texture = App->textures->Load(FTI_sprites_particles.c_str());*/
 	// TODO: ---> Posar be particles, comprobar que es mostri correctament i llavors borrar OLD + Els_Region
 
 #pragma region OLD

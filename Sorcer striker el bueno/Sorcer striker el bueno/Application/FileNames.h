@@ -107,15 +107,15 @@ const std::string FA_Music_stage1 = "../Assets/Audios/Stage-1/stage1.ogg";
 
 
 #pragma region TEMPORAL (NO BORRAR, NI POSAR RES, util per fer proves) -> FT
-const std::string FTI_sprites_enemies = "../Assets/Sprites/enemies.png";
-const std::string FTI_sprites_ship = "../Assets/Sprites/ship.png";
-const std::string FTI_sprites_startScreen = "../Assets/Sprites/startScreen.png";
-const std::string FTI_sprites_background = "../Assets/Sprites/background.png";
-const std::string FTI_sprites_particles = "../Assets/Sprites/particles.png";
-const std::string FTI_font_font3 = "../Assets/Fonts/rtype_font3.png";
-
-const std::string FTA_fx_explosion = "../Assets/Fx/explosion.wav";
-const std::string FTA_fx_laser = "../Assets/Fx/laser.wav";
+//const std::string FTI_sprites_enemies = "../Assets/Sprites/enemies.png";
+//const std::string FTI_sprites_ship = "../Assets/Sprites/ship.png";
+//const std::string FTI_sprites_startScreen = "../Assets/Sprites/startScreen.png";
+//const std::string FTI_sprites_background = "../Assets/Sprites/background.png";
+//const std::string FTI_sprites_particles = "../Assets/Sprites/particles.png";
+//const std::string FTI_font_font3 = "../Assets/Fonts/rtype_font3.png";
+//
+//const std::string FTA_fx_explosion = "../Assets/Fx/explosion.wav";
+//const std::string FTA_fx_laser = "../Assets/Fx/laser.wav";
 #pragma endregion
 
 #endif
