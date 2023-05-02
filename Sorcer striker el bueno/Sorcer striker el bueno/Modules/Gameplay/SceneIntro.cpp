@@ -1,4 +1,5 @@
 #include "SceneIntro.h"
+#include <SDL_image.h>
 
 #include "../../Application/Application.h"
 #include "../../Application/FileNames.h"
@@ -41,7 +42,7 @@ bool SceneIntro::Start() {
 	return ret;
 } 
 
-//NO TOCAR NADA
+//NO TOCAR NADA //FadeToBlack de Intro -> Juego
 Update_Status SceneIntro::Update() {
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);
@@ -65,9 +66,20 @@ Update_Status SceneIntro::PostUpdate() {
 		}
 		timer = 0.0f;
 	}
+
+
+	//Calculamos el valor alpha en función del tiempo
+	Uint8 alpha = static_cast<Uint8>((timer / 3.0f) * 255);
+	SDL_SetTextureAlphaMod(Intro[currentImage], alpha);
+
 	App->render->Blit(Intro[currentImage], 0, 0, NULL);
 
+	//Restauramos el valor alpha a 255 para la próxima imagen
+	SDL_SetTextureAlphaMod(Intro[currentImage], 255);
+	
+
 	//A CONTINUAR
+
 
 												
 	return Update_Status::UPDATE_CONTINUE;
