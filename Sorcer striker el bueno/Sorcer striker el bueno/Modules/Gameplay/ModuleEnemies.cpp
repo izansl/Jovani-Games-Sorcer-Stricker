@@ -8,9 +8,11 @@
 
 #include "../../Entities/Enemies/Enemy.h"
 #include "../../Entities/Enemies/Enemy_CHEST.h"
+#include "../../Entities/Enemies/Enemy_Dragon.h"
+#include "../../Entities/Enemies/Enemy_RedWizard.h"
+#include "../../Entities/Enemies/Enemy_RedBall.h"
 
 #define SPAWN_MARGIN 50
-
 
 ModuleEnemies::ModuleEnemies(bool startEnabled) : Module(startEnabled) {
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
@@ -21,9 +23,7 @@ ModuleEnemies::~ModuleEnemies() {
 }
 
 bool ModuleEnemies::Start() {
-	/*texture = App->textures->Load(FTI_sprites_enemies.c_str());*/
-	enemyDestroyedFx = App->audio->LoadFx(FTA_fx_explosion.c_str());
-
+	enemyDestroyedFx = App->audio->LoadFx(FA_Fx_explosion.c_str());
 	return true;
 }
 
@@ -76,7 +76,7 @@ bool ModuleEnemies::CleanUp() {
 	return true;
 }
 
-bool ModuleEnemies::AddEnemy(Enemy_Type type, int x, int y)
+bool ModuleEnemies::AddEnemy(Enemy_Type type, int x, int y, int wave, int miem)
 {
 	bool ret = false;
 
@@ -85,6 +85,8 @@ bool ModuleEnemies::AddEnemy(Enemy_Type type, int x, int y)
 			spawnQueue[i].type = type;
 			spawnQueue[i].x = x;
 			spawnQueue[i].y = y;
+			spawnQueue[i].wave = wave;
+			spawnQueue[i].miem = miem;
 			ret = true;
 			break;
 		}
@@ -127,15 +129,19 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 	for (uint i = 0; i < MAX_ENEMIES; ++i) {
 		if (enemies[i] == nullptr) {
 			switch (info.type) {
-			/*case Enemy_Type::REDBIRD: enemies[i] = new Enemy_RedBird(info.x, info.y); break;
-			case Enemy_Type::BROWNSHIP: enemies[i] = new Enemy_BrownShip(info.x, info.y); break;
-			case Enemy_Type::MECH: enemies[i] = new Enemy_Mech(info.x, info.y); break;
-			*/
 			case Enemy_Type::CHEST: 
 				enemies[i] = new Enemy_CHESS(info.x, info.y); 
 				break;
+			case Enemy_Type::DRAGON: enemies[i] = new Enemy_Dragon(info.x, info.y, info.wave, info.miem);
+				break;
+			case Enemy_Type::REDWIZARD: enemies[i] = new Enemy_RedWizard(info.x, info.y, info.wave, info.miem);
+				break;
+			case Enemy_Type::RED_BALL: enemies[i] = new Enemy_RedBall(info.x, info.y, info.wave, info.miem);
+				break;
 			}
-			/*enemies[i]->destroyedFx = enemyDestroyedFx;*/
+		
+			enemies[i]->destroyedFx = enemyDestroyedFx;
+      
 			break;
 		}
 	}

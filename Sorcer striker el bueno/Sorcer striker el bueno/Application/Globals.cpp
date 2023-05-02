@@ -15,5 +15,6 @@ void log(const char file[], int line, const char* format, ...) {
 
 	//OutputDebugString(tmp_string2);
 
-	std::cout << tmp_string2 << std::endl;
+	std::cout << tmp_string << std::endl;
+	//std::cout << tmp_string2 << std::endl;
 }

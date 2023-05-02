@@ -25,7 +25,7 @@ bool ModuleTextures::Init() {
 
 	// Check if all flags were initialized correctly
 	if ((init & flags) != flags) {
-		LOG("Could not initialize Image lib. IMG_Init: %s", IMG_GetError());
+		LOG("!---> Could not initialize Image lib. IMG_Init: %s", IMG_GetError());
 		ret = false;
 	}
 
@@ -53,13 +53,13 @@ SDL_Texture* const ModuleTextures::Load(const char* path) {
 	SDL_Surface* surface = IMG_Load(path);
 
 	if (surface == NULL) {
-		LOG("Could not load surface with path: %s. IMG_Load: %s", path, IMG_GetError());
+		LOG("!---> Could not load surface with path: %s. IMG_Load: %s", path, IMG_GetError());
 	}
 	else {
 		texture = SDL_CreateTextureFromSurface(App->render->renderer, surface);
 
 		if (texture == NULL) {
-			LOG("Unable to create texture from surface! SDL Error: %s\n", SDL_GetError());
+			LOG("!---> Unable to create texture from surface! SDL Error: %s\n", SDL_GetError());
 		}
 		else {
 			for (uint i = 0; i < MAX_TEXTURES; ++i) {
