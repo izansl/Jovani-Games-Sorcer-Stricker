@@ -19,36 +19,36 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave, int miem) : Enemy(x, y)
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0.0, 1 }, 600);
-			path.PushBack({ 0.0, -3.0 }, 150);
-			path.PushBack({ 2, -5.0 }, 650);
+			path.PushBack({ 0.0, 0.75 }, 270);
+			path.PushBack({ 0.0, -8.0 }, 75);
+			path.PushBack({ 3, -12.0 }, 650);
 		}
 	}
 	else if (wave == 2)
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0.0, 1 }, 700);
-			path.PushBack({ 0.0, -3.0 }, 150);
-			path.PushBack({ -3, -5.0 }, 650);
+			path.PushBack({ 0.0, 0.75 }, 310);
+			path.PushBack({ 0.0, -8.0 }, 75);
+			path.PushBack({ -3, -12.0 }, 650);
 		}
 	}
 	else if (wave == 3)
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0.0, 1 }, 750);
-			path.PushBack({ 0.0, -3.0 }, 150);
-			path.PushBack({ 3, -5.0 }, 650);
+			path.PushBack({ 0.0, 0.75}, 340);
+			path.PushBack({ 0.0, -8.0 }, 75);
+			path.PushBack({ 3, -12.0 }, 650);
 		}
 	}
 	else if (wave == 4)
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0.0, 1 }, 800);
-			path.PushBack({ 0.0, -3.0 }, 150);
-			path.PushBack({ -3, -5.0 }, 650);
+			path.PushBack({ 0.0, 0.75 }, 370);
+			path.PushBack({ 0.0, -8.0 }, 75);
+			path.PushBack({ -3, -12.0 }, 650);
 		}
 		
 	}
@@ -56,9 +56,9 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave, int miem) : Enemy(x, y)
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0.0, 1 }, 850);
-			path.PushBack({ 0.0, -3.0 }, 150);
-			path.PushBack({ 3, -5.0 }, 650);
+			path.PushBack({ 0.0, 0.75 }, 400);
+			path.PushBack({ 0.0, -8.0 }, 75);
+			path.PushBack({ 3, -12.0 }, 650);
 		}
 		
 	}
