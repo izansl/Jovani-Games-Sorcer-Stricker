@@ -124,7 +124,7 @@ Update_Status ModulePlayer::Update() {
 
 #pragma region NEW -> VERTICAL
 	// Moving the player with the camera scroll
-	App->player->position.y -= 8;
+	//App->player->position.y -= 1;
 
 	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT)
 	{
