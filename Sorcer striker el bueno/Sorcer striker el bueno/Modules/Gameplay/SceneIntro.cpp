@@ -32,7 +32,6 @@ bool SceneIntro::Start() {
 	Intro[7] = App->textures->Load(FI_Introimage_8.c_str());
 	Intro[8] = App->textures->Load(FI_Introimage_9.c_str());
 	Intro[9] = App->textures->Load(FI_Introimage_10.c_str());
-	
 
 	//Carga de Audio ////TURMO MUY IMPORTANTE, TIENES QUE CUADRAR EL AUDIO CON LA INTRO SEGUN LAS IMAGENES QUE APAREZCAN///
 	App->audio->PlayMusic(FA_Music_introTitle.c_str(), 1.0f);//esta musica hay que cambiarla turmo
@@ -57,7 +56,7 @@ Update_Status SceneIntro::Update() {
 
 // Update: draw background
 Update_Status SceneIntro::PostUpdate() {
-	//DIBUJADO DE LAS IMÁGENES DE LA INTRO
+	//DIBUJADO DE LAS IMï¿½GENES DE LA INTRO
 	
 	timer += 1.0f / 60.0f; // Suma 1 segundo//Funciona a 60 fps
 	if (timer >= 3.0f) { // Mostramos cada imagen durante 3 segundos
@@ -69,13 +68,13 @@ Update_Status SceneIntro::PostUpdate() {
 	}
 
 
-	//Calculamos el valor alpha en función del tiempo
+	//Calculamos el valor alpha en funciï¿½n del tiempo
 	Uint8 alpha = static_cast<Uint8>((timer / 3.0f) * 255);
 	SDL_SetTextureAlphaMod(Intro[currentImage], alpha);
 
 	App->render->Blit(Intro[currentImage], 0, 0, NULL);
 
-	//Restauramos el valor alpha a 255 para la próxima imagen
+	//Restauramos el valor alpha a 255 para la prï¿½xima imagen
 	SDL_SetTextureAlphaMod(Intro[currentImage], 255);
 	
 

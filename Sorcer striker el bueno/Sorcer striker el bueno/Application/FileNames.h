@@ -24,11 +24,11 @@ const std::string FI_Introimage_9 = "../Assets/Images/ImagenesIntro2/intro9.png"
 const std::string FI_Introimage_10 = "../Assets/Images/ImagenesIntro2/intro10.png";
 
 // Backgrounds
-const std::string FI_background_beach = "../Assets/Images/Playa.png";
-const std::string FI_background_sea = "../Assets/Images/Mar.png";
-const std::string FI_background_forest1 = "../Assets/Images/Bosque_1.png";
-const std::string FI_background_forest2 = "../Assets/Images/Bosque_2.png";
-const std::string FI_background_castle = "../Assets/Images/Castillo.png";
+const std::string FI_background_beach = "../Assets/Images/Beach.png";
+const std::string FI_background_sea = "../Assets/Images/Sea.png";
+const std::string FI_background_forest1 = "../Assets/Images/Forest_1.png";
+const std::string FI_background_forest2 = "../Assets/Images/Forest_2.png";
+const std::string FI_background_castle = "../Assets/Images/Castle.png";
 const int Height_background_beach = 3000;
 const int Height_background_sea = 4500;
 const int Height_background_forest1 = 3000;
@@ -88,7 +88,7 @@ const std::string FI_spritechest_blue = "../Assets/Images/Chests.png";
 
 
 // Sprites Bosses
-const std::string FI_spriteBoss_boss1 = "../Assets/Images/Playa.png";
+const std::string FI_spriteBoss_boss1 = "../Assets/Images/Beach.png";
 #pragma endregion
 
 
@@ -120,15 +120,15 @@ const std::string FA_Music_stage1 = "../Assets/Audios/Stage-1/stage1.ogg";
 
 
 #pragma region TEMPORAL (NO BORRAR, NI POSAR RES, util per fer proves) -> FT
-const std::string FTI_sprites_enemies = "../Assets/Sprites/enemies.png";
-const std::string FTI_sprites_ship = "../Assets/Sprites/ship.png";
-const std::string FTI_sprites_startScreen = "../Assets/Sprites/startScreen.png";
-const std::string FTI_sprites_background = "../Assets/Sprites/background.png";
-const std::string FTI_sprites_particles = "../Assets/Sprites/particles.png";
-const std::string FTI_font_font3 = "../Assets/Fonts/rtype_font3.png";
-
-const std::string FTA_fx_explosion = "../Assets/Fx/explosion.wav";
-const std::string FTA_fx_laser = "../Assets/Fx/laser.wav";
+//const std::string FTI_sprites_enemies = "../Assets/Sprites/enemies.png";
+//const std::string FTI_sprites_ship = "../Assets/Sprites/ship.png";
+//const std::string FTI_sprites_startScreen = "../Assets/Sprites/startScreen.png";
+//const std::string FTI_sprites_background = "../Assets/Sprites/background.png";
+//const std::string FTI_sprites_particles = "../Assets/Sprites/particles.png";
+//const std::string FTI_font_font3 = "../Assets/Fonts/rtype_font3.png";
+//
+//const std::string FTA_fx_explosion = "../Assets/Fx/explosion.wav";
+//const std::string FTA_fx_laser = "../Assets/Fx/laser.wav";
 #pragma endregion
 
 #endif

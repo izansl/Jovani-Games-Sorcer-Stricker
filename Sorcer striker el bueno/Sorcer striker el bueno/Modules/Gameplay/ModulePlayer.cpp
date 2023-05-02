@@ -10,6 +10,7 @@
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Core/ModuleFadeToBlack.h"
 #include "../../Modules/Core/ModuleFonts.h"
+#include "../../Modules/Gameplay/SceneLevel1.h"
 
 #include <stdio.h>
 
@@ -124,8 +125,8 @@ Update_Status ModulePlayer::Update() {
 
 #pragma region NEW -> VERTICAL
 	// Moving the player with the camera scroll
-	App->player->position.y -= 2;
-
+	App->player->position.y -= 8;
+	
 	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT)
 	{
 		position.y -= speed;
@@ -165,7 +166,7 @@ Update_Status ModulePlayer::Update() {
 	// Spawn explosion particles when pressing X
 	if (App->input->keys[SDL_SCANCODE_X] == Key_State::KEY_DOWN)
 	{
-		App->particles->AddParticle(App->particles->explosion, position.x+ 13, position.y+5);
+		/*App->particles->AddParticle(App->particles->explosion, position.x+ 13, position.y+5);
 		if (App->particles->explosion.lifetime==0)
 		{
 			App->particles->AddParticle(App->particles->explosion2, position.x - 20, position.y-105);
@@ -173,7 +174,9 @@ Update_Status ModulePlayer::Update() {
 			{
 				App->particles->AddParticle(App->particles->explosionfinal, position.x + 5, position.y - 200);
 			}
-		}
+		}*/
+		App->particles->AddParticle(App->particles->explosion, position.x-25, position.y, Collider::Type::PLAYER_SHOT,0);
+		/*App->particles->AddParticle(App->particles->explosion2, position.x + 5, position.y - 200);*/
 
 	}
 

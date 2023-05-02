@@ -1,4 +1,6 @@
 #include "Application.h"
+#include <iostream>
+#include "../../SDLs/SDL/include/SDL.h"
 
 #include "../Modules/Module.h"
 #include "../Modules/Core/ModuleWindow.h"
@@ -15,6 +17,12 @@
 #include "../Modules/Gameplay/SceneIntro.h"
 #include "../Modules/Gameplay/SceneLevel1.h"
 #include "../Modules/Gameplay/ModuleEnemies.h"
+
+int start_time = SDL_GetTicks();
+int last_frame_time = start_time;
+int frame_counter = 0;
+int elapsed_time = 0;
+int fps = 0;
 
 Application::Application() {
 	// The order in which the modules are added is very important.
@@ -71,6 +79,22 @@ Update_Status Application::Update() {
 
 	for (int i = 0; i < NUM_MODULES && ret == Update_Status::UPDATE_CONTINUE; ++i)
 		ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
+
+	// Control the FPS
+	elapsed_time = SDL_GetTicks() - last_frame_time;
+	if (elapsed_time < 1000 / 60) {
+		SDL_Delay(1000 / 60 - elapsed_time);
+	}
+
+	frame_counter++;
+	if (SDL_GetTicks() - start_time > 1000) {
+		fps = frame_counter * 1000 / (SDL_GetTicks() - start_time);
+		std::cout << "FPS: " << fps << std::endl;
+		start_time = SDL_GetTicks();
+		frame_counter = 0;
+	}
+
+	last_frame_time = SDL_GetTicks();
 
 	return ret;
 }
