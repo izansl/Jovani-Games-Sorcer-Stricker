@@ -18,7 +18,8 @@ Enemy_Dragon::Enemy_Dragon(int x, int y, int wave, int miem) : Enemy(x, y) {
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0, 1.0 }, 1050);
+			path.PushBack({ 0, 1 }, 462);
+			path.PushBack({ 0, -8 }, 600);
 			path.PushBack({ 0, -3.0 }, 100);
 			path.PushBack({ 1, -3.0 }, 20);
 			path.PushBack({ 0, -3.0 }, 50);
