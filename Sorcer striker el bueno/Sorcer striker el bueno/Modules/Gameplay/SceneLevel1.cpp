@@ -34,7 +34,7 @@ bool SceneLevel1::Start() {
 	//App->collisions->AddCollider({ 0, 200, 300, 10 }, Collider::Type::WALL);
 
 	if (texture_forest2 != nullptr) {
-		int x = 0; // posición x del collider
+		int x = 0; // posiciÃ³n x del collider
 		int y = -11000;
 		int w = 300;
 		int h = 10;	
@@ -55,6 +55,9 @@ bool SceneLevel1::Start() {
 
 	// Enemies ---
 	// TODO: ---> Posar tots els enemics que toquin
+
+  App->enemies->AddEnemy(Enemy_Type::CHEST, 40, -1500);
+
 	/*App->enemies->AddEnemy(Enemy_Type::REDBIRD, 600, 80);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 625, 80);
 	App->enemies->AddEnemy(Enemy_Type::REDBIRD, 640, 80);
@@ -191,7 +194,6 @@ Update_Status SceneLevel1::PostUpdate() {
 	App->render->Blit(texture_beach, +40, (Height_background_forest1 + Height_background_beach - SCREEN_HEIGHT) * -1, NULL);
 	App->render->Blit(texture_sea, +40, (Height_background_forest1 + Height_background_beach + Height_background_sea - SCREEN_HEIGHT) * -1, NULL);
 	App->render->Blit(texture_castle, +40, (Height_background_forest1 + Height_background_beach + Height_background_sea + Height_background_castle - SCREEN_HEIGHT) * -1, NULL);
-
 	return Update_Status::UPDATE_CONTINUE;
 }
 

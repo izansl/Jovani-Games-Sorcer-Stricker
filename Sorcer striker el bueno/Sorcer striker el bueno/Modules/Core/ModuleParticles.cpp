@@ -55,22 +55,6 @@ bool ModuleParticles::Start() {
 	explosion.lifetime = 100;
 	explosion.anim.speed = 0.05f;
 
-	//explosion2.anim.PushBack({ 49, 283, 76, 75 });
-	//explosion2.anim.PushBack({ 129, 272, 93, 93 });
-	//explosion2.anim.loop = false;
-	//explosion2.speed = iPoint(0, -3);
-	///*explosion2.frameCount = 10;*/
-	//explosion2.lifetime = 100;
-	//explosion.anim.speed = 0.03f;
-
-
-
-	/*explosionfinal.anim.PushBack({ 95, 94, 129, 271 });
-	explosionfinal.anim.loop = false;
-	explosionfinal.speed = iPoint(0, -1);
-	explosionfinal.lifetime = 100;
-	explosionfinal.anim.speed = 0.03f;*/
-
 	laser.anim.PushBack({ 330, 25, 15, 28 });
 	laser.speed = iPoint(0, -15);
 	laser.lifetime = 100;
