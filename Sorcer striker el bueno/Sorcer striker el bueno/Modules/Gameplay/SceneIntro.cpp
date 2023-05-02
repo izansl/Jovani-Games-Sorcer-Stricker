@@ -31,6 +31,7 @@ bool SceneIntro::Start() {
 	Intro[6] = App->textures->Load(FI_Introimage_7.c_str());
 	Intro[7] = App->textures->Load(FI_Introimage_8.c_str());
 	Intro[8] = App->textures->Load(FI_Introimage_9.c_str());
+	Intro[9] = App->textures->Load(FI_Introimage_10.c_str());
 	
 
 	//Carga de Audio ////TURMO MUY IMPORTANTE, TIENES QUE CUADRAR EL AUDIO CON LA INTRO SEGUN LAS IMAGENES QUE APAREZCAN///

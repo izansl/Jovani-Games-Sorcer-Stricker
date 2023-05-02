@@ -34,8 +34,8 @@ public:
 
 	
 	
-	const int NUM_IMAGES = 9;
-	SDL_Texture* Intro[9];
+	const int NUM_IMAGES = 10;
+	SDL_Texture* Intro[10];
 	float timer = 0.0f;
 	int currentImage = 0;	
 
