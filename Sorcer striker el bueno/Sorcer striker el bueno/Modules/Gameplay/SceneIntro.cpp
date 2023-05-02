@@ -55,9 +55,9 @@ Update_Status SceneIntro::Update() {
 
 // Update: draw background
 Update_Status SceneIntro::PostUpdate() {
-	// Draw everything --------------------------------------
+	//DIBUJADO DE LAS IMÁGENES DE LA INTRO
 	
-	timer += 1.0f / 60.0f; // Asumimos 60 FPS
+	timer += 1.0f / 60.0f; // Suma 1 segundo//Funciona a 60 fps
 	if (timer >= 3.0f) { // Mostramos cada imagen durante 3 segundos
 		currentImage++;
 		if (currentImage >= NUM_IMAGES) {
