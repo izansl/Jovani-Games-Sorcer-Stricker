@@ -40,9 +40,7 @@ public:
 	SDL_Texture* texture_castle = nullptr;	
 
 	Collider* botcoll = nullptr;
-
-	Collider* topcoll = nullptr;
-	
+	Collider* topcoll = nullptr;	
 };
 
 #endif

@@ -63,16 +63,8 @@ Update_Status ModulePlayer::Update() {
 	// Moving the player with the camera scroll
 	App->player->position.y -= 8;
 
-	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT)
-	{
-		position.y -= speed;
-	}
-
-	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT)
-	{
-		position.y += speed;
-	}
-
+	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT) position.y -= speed;
+	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT) position.y += speed;
 	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
 	{
 		position.x += speed;
@@ -82,7 +74,6 @@ Update_Status ModulePlayer::Update() {
 			currentAnimation = &rightAnim;
 		}
 	}
-
 	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x > 45)
 	{
 		position.x -= speed;
@@ -92,7 +83,7 @@ Update_Status ModulePlayer::Update() {
 			currentAnimation = &leftAnim;
 		}
 	}
-
+	
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{
 		App->particles->AddParticle(App->particles->laser, position.x, position.y, Collider::Type::PLAYER_SHOT, 0);
@@ -102,24 +93,13 @@ Update_Status ModulePlayer::Update() {
 	// Spawn explosion particles when pressing X
 	if (App->input->keys[SDL_SCANCODE_X] == Key_State::KEY_DOWN)
 	{
-		/*App->particles->AddParticle(App->particles->explosion, position.x+ 13, position.y+5);
-		if (App->particles->explosion.lifetime==0)
-		{
-			App->particles->AddParticle(App->particles->explosion2, position.x - 20, position.y-105);
-			if (App->particles->explosion2.lifetime==0)
-			{
-				App->particles->AddParticle(App->particles->explosionfinal, position.x + 5, position.y - 200);
-			}
-		}*/
 		App->particles->AddParticle(App->particles->explosion, position.x - 25, position.y, Collider::Type::PLAYER_SHOT, 0);
-		/*App->particles->AddParticle(App->particles->explosion2, position.x + 5, position.y - 200);*/
-
 	}
 
 	// If no up/down movement detected, set the current animation back to idle
-	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE
-		&& App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE)
+	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE && App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE)
 		currentAnimation = &idleAnim;
+
 	//update collider
 	collider->SetPos(position.x, position.y);
 	currentAnimation->Update();
@@ -142,12 +122,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 	if (c1 == collider && destroyed == false)
 	{
 		App->particles->AddParticle(App->particles->explosion2, position.x, position.y, Collider::Type::NONE, 9);
-		/*App->particles->AddParticle(App->particles->explosion, position.x + 8, position.y + 11, Collider::Type::NONE, 14);
-		App->particles->AddParticle(App->particles->explosion, position.x - 7, position.y + 12, Collider::Type::NONE, 40);
-		App->particles->AddParticle(App->particles->explosion, position.x + 5, position.y - 5, Collider::Type::NONE, 28);
-		App->particles->AddParticle(App->particles->explosion, position.x - 4, position.y - 4, Collider::Type::NONE, 21);*/
 		App->audio->PlayFx(explosionjugadorFx);
-
 
 		destroyed = true;
 	}

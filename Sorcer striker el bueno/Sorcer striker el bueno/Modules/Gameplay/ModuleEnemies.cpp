@@ -140,7 +140,7 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 				break;
 			}
 		
-			enemies[i]->destroyedFx = enemyDestroyedFx;
+			//enemies[i]->destroyedFx = enemyDestroyedFx;
       
 			break;
 		}
