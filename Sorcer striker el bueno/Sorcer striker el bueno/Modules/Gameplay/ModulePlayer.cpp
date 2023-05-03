@@ -236,8 +236,6 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		// Añadir partícula de muerte del jugador
 		App->particles->AddParticle(App->particles->playerdead, position.x, position.y, Collider::Type::NONE, 0);
 		collider->type = Collider::Type::NONE;
-		App->player->position.x = 1000000;
-		App->render->camera.y = 0;
 
 		destroyed = true;
 	}

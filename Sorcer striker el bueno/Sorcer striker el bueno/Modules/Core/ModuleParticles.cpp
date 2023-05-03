@@ -71,7 +71,7 @@ bool ModuleParticles::Start() {
 	playerdead.anim.PushBack({ 220, 196, 60, 60});
 	playerdead.speed.y = -8;
 	playerdead.anim.speed = 0.1f;
-	playerdead.lifetime = 100;
+	playerdead.lifetime = 80;
 
 	
 #pragma endregion
