@@ -15,7 +15,8 @@ struct Collider {
 		ENEMY,
 		PLAYER_SHOT,
 		ENEMY_SHOT,
-
+		OBJECTCHEST,
+		WALL_PLAYER,
 		MAX
 	};
 

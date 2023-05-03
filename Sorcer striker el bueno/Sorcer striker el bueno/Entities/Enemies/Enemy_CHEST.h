@@ -4,6 +4,7 @@
 #include "Enemy.h"
 #include "../../Utils/Path.h"
 
+
 class Enemy_CHESS : public Enemy {
 
 public:
@@ -13,8 +14,9 @@ public:
 
 	// The enemy is going to perform a sinusoidal movement
 	void Update() override;
+	//void Draw() override;
 
-	void OnCollision(Collider* c1, Collider* c2);
+	void OnCollision(Collider* collider)override;
 
 
 private: //BROWNSHIP
@@ -23,6 +25,8 @@ private: //BROWNSHIP
 	Path path1;
 	Path path2;
 	Path* currentPath;
+	bool activePart2 = false;
+
 
 	// This enemy has one sprite and one frame
 	// We are keeping it an animation for consistency with other enemies

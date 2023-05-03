@@ -45,7 +45,7 @@ public:
 	iPoint backupPosition;
 
 	// The speed in which we move the player (pixels per frame)
-	int speed = 2;
+	int speed = 4;
 
 	// The player spritesheet loaded into an SDL_Texture
 	SDL_Texture* texture = nullptr;
@@ -69,7 +69,8 @@ public:
 
 	// Sound effects indices
 	uint laserFx = 0;
-	uint explosionFx = 0;
+	uint explosionbombaFx = 0;
+	uint explosionjugadorFx = 0;
 	
 	// Font score index
 	uint score = 000;

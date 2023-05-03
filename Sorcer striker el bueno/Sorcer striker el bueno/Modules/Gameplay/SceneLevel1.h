@@ -38,7 +38,9 @@ public:
 	SDL_Texture* texture_forest1 = nullptr;	
 	SDL_Texture* texture_forest2 = nullptr;	
 	SDL_Texture* texture_castle = nullptr;	
-	
+
+	Collider* botcoll = nullptr;
+	Collider* topcoll = nullptr;	
 };
 
 #endif
