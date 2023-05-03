@@ -44,8 +44,6 @@ bool ModulePlayer::Start() {
 	texture = App->textures->Load(FI_spritePlayer_player1.c_str());
 	currentAnimation = &idleAnim;
 
-	//laserFx = App->audio->LoadFx(FI_spritePlayer_player1.c_str());
-	//explosionbombaFx = App->audio->LoadFx(FI_spritePlayer_player1.c_str());
 	explosionjugadorFx = App->audio->LoadFx(FA_Fx_explosionJ.c_str()); ;
 
 	position.x = 150;
@@ -83,7 +81,7 @@ Update_Status ModulePlayer::Update() {
 			currentAnimation = &leftAnim;
 		}
 	}
-	
+
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{
 		App->particles->AddParticle(App->particles->laser, position.x, position.y, Collider::Type::PLAYER_SHOT, 0);

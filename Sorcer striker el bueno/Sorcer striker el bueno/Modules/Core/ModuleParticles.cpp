@@ -1,14 +1,14 @@
 #include "ModuleParticles.h"
 
-#include "../../Application/Application.h"
-#include "../../Application/FileNames.h"
-
 #include "ModuleTextures.h"
 #include "ModuleRender.h"
 #include "ModuleCollisions.h"
+
+#include "../../Application/Application.h"
 #include "../../Application/FileNames.h"
 
 #include "../../../SDLs/SDL/include/SDL_timer.h"
+
 
 ModuleParticles::ModuleParticles(bool startEnabled) : Module(startEnabled) {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i)
@@ -20,34 +20,11 @@ ModuleParticles::~ModuleParticles() {
 
 bool ModuleParticles::Start() {
 	LOG("Loading particles");
-	/*texture = App->textures->Load(FTI_sprites_particles.c_str());*/
-	// TODO: ---> Posar be particles, comprobar que es mostri correctament i llavors borrar OLD + Els_Region
-
-#pragma region OLD
-	//// Explosion particle
-	//explosion.anim.PushBack({ 274, 296, 33, 30 });
-	//explosion.anim.PushBack({ 313, 296, 33, 30 });
-	//explosion.anim.PushBack({ 346, 296, 33, 30 });
-	//explosion.anim.PushBack({ 382, 296, 33, 30 });
-	//explosion.anim.PushBack({ 419, 296, 33, 30 });
-	//explosion.anim.PushBack({ 457, 296, 33, 30 });
-	//explosion.anim.loop = false;
-	//explosion.anim.speed = 0.3f;
-
-	//laser.anim.PushBack({ 232, 103, 16, 12 });
-	//laser.anim.PushBack({ 249, 103, 16, 12 });
-	//laser.speed.x = 5;
-	//laser.lifetime = 180;
-	//laser.anim.speed = 0.2f;
-#pragma endregion
-
-#pragma region NEW
-	LOG("Loading particles");
 	texture = App->textures->Load(FI_spritePlayer_player1.c_str());
 
 	// Explosion particle
-	explosion.anim.PushBack({9, 273, 88, 89});
-	explosion.anim.PushBack({109, 273, 88, 89 });
+	explosion.anim.PushBack({ 9, 273, 88, 89 });
+	explosion.anim.PushBack({ 109, 273, 88, 89 });
 	explosion.anim.PushBack({ 211, 273, 88, 89 });
 	explosion.anim.PushBack({ 312, 273, 89, 90 });
 	explosion.anim.loop = false;
@@ -68,11 +45,6 @@ bool ModuleParticles::Start() {
 	explosion2.anim.speed = 0.2f;
 	explosion2.anim.speed = 0.1;
 	explosion2.anim.loop = false;
-
-#pragma endregion
-
-
-	
 
 	return true;
 }
@@ -118,26 +90,14 @@ Update_Status ModuleParticles::Update() {
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i) {
 		Particle* particle = particles[i];
 
-		if (particle == nullptr)	continue;
+		if (particle == nullptr)
+			continue;
 
 		// Call particle Update. If it has reached its lifetime, destroy it
-		if (particle->Update() == false) particles[i]->SetToDelete();
+		if (particle->Update() == false)
+			particles[i]->SetToDelete();
 	}
-	/*if (App->particles->explosion.anim.lifetime )
-	{
-		explosion2.anim.PushBack({ 49, 283, 76, 75 });
-		explosion2.anim.loop = false;
-		explosion2.speed = iPoint(0, -1);
-		explosion2.anim.speed = 0.03f;
-		explosion2.lifetime = 100;
-		if (explosion2.lifetime == 0)
-		{
-			explosionfinal.anim.PushBack({ 95, 94, 129, 271 });
-			explosionfinal.anim.loop = false;
-			explosionfinal.speed = iPoint(0, -1);
-			explosionfinal.anim.speed = 0.03f;
-		}
-	}*/
+
 	return Update_Status::UPDATE_CONTINUE;
 }
 
