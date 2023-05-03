@@ -12,7 +12,6 @@ class SceneIntro : public Module {
 public:
 	//Constructor
 	SceneIntro(bool startEnabled);
-
 	//Destructor
 	~SceneIntro();
 
@@ -34,9 +33,10 @@ public:
 
 	
 	
-	const int NUM_IMAGES = 10;
-	SDL_Texture* Intro[10];
+	const int NUM_IMAGES = 12;
+	SDL_Texture* Intro[12];
 	float timer = 0.0f;
+	float timer2 = 0.0f;
 	int currentImage = 0;	
 
 	//Prueba efecto fade en imagenes

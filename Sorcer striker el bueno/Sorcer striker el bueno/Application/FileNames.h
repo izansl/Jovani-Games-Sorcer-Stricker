@@ -22,6 +22,8 @@ const std::string FI_Introimage_7 = "../Assets/Images/ImagenesIntro2/intro7.png"
 const std::string FI_Introimage_8 = "../Assets/Images/ImagenesIntro2/intro8.png";
 const std::string FI_Introimage_9 = "../Assets/Images/ImagenesIntro2/intro9.png";
 const std::string FI_Introimage_10 = "../Assets/Images/ImagenesIntro2/intro10.png";
+const std::string FI_Introimage_11 = "../Assets/Images/ImagenesIntro2/intro11.png";
+const std::string FI_Introimage_12 = "../Assets/Images/ImagenesIntro2/intro12.png";
 
 // Backgrounds
 const std::string FI_background_beach = "../Assets/Images/Beach.png";
