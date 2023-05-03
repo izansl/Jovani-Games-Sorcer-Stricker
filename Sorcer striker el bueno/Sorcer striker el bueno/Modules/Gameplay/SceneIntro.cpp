@@ -36,8 +36,8 @@ bool SceneIntro::Start() {
 	Intro[11] = App->textures->Load(FI_Introimage_12.c_str());
 
 	//Carga de Audio ////TURMO MUY IMPORTANTE, TIENES QUE CUADRAR EL AUDIO CON LA INTRO SEGUN LAS IMAGENES QUE APAREZCAN///
-	App->audio->PlayMusic(FA_Music_introTitle.c_str(), 1.0f);//esta musica hay que cambiarla turmo
-
+	musica = App->audio->LoadFx(FA_Music_introTitle.c_str());//esta musica hay que cambiarla turmo
+	
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
 
@@ -75,6 +75,10 @@ Update_Status SceneIntro::PostUpdate() {
 	SDL_SetTextureAlphaMod(Intro[currentImage], alpha);
 
 	App->render->Blit(Intro[currentImage], 0, 0, NULL);
+/*if (currentImage >= 5)
+	{
+		App->audio->PlayMusic(FA_Music_introTitle.c_str());
+	}*/	
 
 	SDL_SetTextureAlphaMod(Intro[currentImage], 255);
 	

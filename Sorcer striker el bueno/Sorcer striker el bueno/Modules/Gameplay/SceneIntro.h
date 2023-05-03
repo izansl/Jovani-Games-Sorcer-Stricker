@@ -38,7 +38,7 @@ public:
 	float timer = 0.0f;
 	float timer2 = 0.0f;
 	int currentImage = 0;	
-
+	uint musica = 0;
 	//Prueba efecto fade en imagenes
 	bool fadingOut = false;
 	float fadeTimer = 0.0f;
