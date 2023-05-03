@@ -3,6 +3,7 @@
 
 #include "Enemy.h"
 #include "../../Utils/Path.h"
+#include "../../Modules/Core/ModuleParticles.h"
 
 class Enemy_RedWizard : public Enemy {
 
@@ -15,6 +16,9 @@ public:
 	// Position will be updated depending on the speed defined at each step
 	void Update() override;
 
+	void OnCollision(Collider* c1, Collider* c2);
+
+	bool destroyed = false;
 
 private:
 	// A set of steps that define the position in the screen
@@ -24,6 +28,9 @@ private:
 	// This enemy has one sprite and one frame
 	// We are keeping it an animation for consistency with other enemies
 	Animation fly;
+
+	Particle deadwiz;
+
 };
 
 #endif // __ENEMY_BROWNSHIP_H__

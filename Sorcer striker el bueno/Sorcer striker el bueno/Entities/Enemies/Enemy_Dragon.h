@@ -15,7 +15,7 @@ public:
 	// Position will be updated depending on the speed defined at each step
 	void Update() override;
 
-	void OnCollision(Collider* c1, Collider* c2);
+	void OnCollision(Collider* c1) override;
 	/*void Draw() override;*/
 private:
 	// A set of steps that define the position in the screen

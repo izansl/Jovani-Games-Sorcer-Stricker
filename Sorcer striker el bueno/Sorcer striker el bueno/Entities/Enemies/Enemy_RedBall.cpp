@@ -8,8 +8,8 @@
 
 Enemy_RedBall::Enemy_RedBall(int x, int y, int wave, int miem) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_1.c_str());
-	fly.PushBack({ 48, 12, 22,31 });
-	fly.PushBack({ 76,12 ,26, 32 });
+	fly.PushBack({ 46, 12, 26,32 });
+	fly.PushBack({ 75,12 ,26, 32 });
 	currentAnim = &fly;
 	fly.speed = 0.2;
 	fly.loop = true;
@@ -529,4 +529,13 @@ void Enemy_RedBall::Update() {
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
 	Enemy::Update();
+}
+
+void Enemy_RedBall::OnCollision(Collider* c1) {
+	space.PushBack({ 15, 6, 22, 36 });
+	currentAnim = &space;
+
+	//Change collider
+	collider->rect.x = 0;
+	collider->rect.w = 0;
 }

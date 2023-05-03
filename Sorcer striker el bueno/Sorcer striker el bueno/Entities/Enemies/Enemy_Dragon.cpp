@@ -67,14 +67,12 @@ void Enemy_Dragon::Update() {
 //		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));
 //	}
 //}
-void Enemy_Dragon::OnCollision(Collider* c1, Collider* c2) {
-	if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect)) {
-		explosion.PushBack({ 17, 121, 90, 90 });
-		explosion.PushBack({ 111, 124, 90, 90 });
-		explosion.PushBack({ 204, 123, 90, 90 });
-		explosion.speed = 0.3;
-		currentAnim = &explosion;
-		
-		
-	}
+
+void Enemy_Dragon::OnCollision(Collider* c1) {
+	fly.PushBack({ 20, 121, 85, 89 });
+	fly.PushBack({ 113, 125, 85, 89});
+	fly.PushBack({ 207, 122, 85, 89 });
+	currentAnim = &fly;
+	fly.speed = 0.2;
+	fly.loop = false;
 }

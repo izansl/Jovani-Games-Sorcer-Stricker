@@ -111,6 +111,29 @@ Update_Status ModulePlayer::PostUpdate() {
 		SDL_Rect rect = currentAnimation->GetCurrentFrame();
 		App->render->Blit(texture, position.x, position.y, &rect);
 	}
+	else
+	{
+		if (destroyedCountdown <=0)
+		{
+			position.x = backupPosition.x;
+			position.y = backupPosition.y;
+			destroyed = false;
+		}
+		else
+		{
+			position.x = 50000;
+			position.y = -50000;
+			destroyedCountdown--;
+		}
+	}
+	if (kills==58)
+	{
+		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
+	}
+	if (lives==0)
+	{
+		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
+	}
 
 	return Update_Status::UPDATE_CONTINUE;
 }
@@ -119,12 +142,20 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 
 	if (c1 == collider && destroyed == false)
 	{
-		App->particles->AddParticle(App->particles->explosion2, position.x, position.y, Collider::Type::NONE, 9);
-		App->audio->PlayFx(explosionjugadorFx);
+		// A�adir part�cula de muerte del jugador
+		App->particles->AddParticle(App->particles->playerdead, position.x, position.y, Collider::Type::NONE, 0);
+		c1->type = Collider::Type::NONE;
+		//App->particles->AddParticle(App->particles->explosion2, position.x, position.y, Collider::Type::NONE, 9);
+		//App->audio->PlayFx(explosionjugadorFx);
 
 		destroyed = true;
 	}
-	else if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect))
+	else if (c1->type==Collider::Type::PLAYER && c2->type== Collider::Type::ENEMY && destroyed== false /*&& !godMode*/)//Cuando tengamos godmode se le dara uso
+	{
+		destroyed = true;
+		lives--;
+	}
+	else if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect) && c1->type == Collider::Type::PLAYER || c2->type == Collider::Type::ENEMY)
 	{
 		// Change sprite
 		idleAnim.PushBack({ 1595, 63, 62, 43 });

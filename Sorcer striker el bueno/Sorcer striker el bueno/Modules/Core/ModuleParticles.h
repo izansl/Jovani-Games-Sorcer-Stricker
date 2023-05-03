@@ -57,8 +57,6 @@ public:
 public:
 	//Template particle for an explosion
 	Particle explosion;
-	Particle explosion2;
-	/*Particle explosionfinal;*/
 
 	//Template particle for a laser
 	Particle laser;
@@ -66,6 +64,8 @@ public:
 	//Template for extra shots
 	Particle ice;
 
+	//Template for deads
+	Particle playerdead;
 
 private:
 	// Particles spritesheet loaded into an SDL Texture

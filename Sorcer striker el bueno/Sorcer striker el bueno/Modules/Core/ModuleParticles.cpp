@@ -32,11 +32,28 @@ bool ModuleParticles::Start() {
 	explosion.lifetime = 100;
 	explosion.anim.speed = 0.05f;
 
-	laser.anim.PushBack({ 330, 25, 15, 28 });
+	laser.anim.PushBack({ 331, 23, 12, 30 });
+	laser.anim.loop = false;
 	laser.speed = iPoint(0, -15);
 	laser.lifetime = 100;
 	laser.anim.speed = 0.01f;
 
+	/*laser.anim.PushBack({ 330, 25, 15, 28 });
+	laser.speed = iPoint(0, -15);
+	laser.lifetime = 100;
+	laser.anim.speed = 0.01f;*/
+
+	playerdead.anim.PushBack({ 20, 126, 60, 60 });
+	playerdead.anim.PushBack({ 85, 126, 60, 60 });
+	playerdead.anim.PushBack({ 155, 126, 60, 60 });
+	playerdead.anim.PushBack({ 220, 126, 60, 60 });
+	playerdead.anim.PushBack({ 18, 194, 60, 60 });
+	playerdead.anim.PushBack({ 86, 196, 60, 60 });
+	playerdead.anim.PushBack({ 156, 196, 60, 60});
+	playerdead.anim.PushBack({ 220, 196, 60, 60});
+	playerdead.speed.y = -8;
+	playerdead.anim.speed = 0.1f;
+	playerdead.lifetime = 80;
 
 	texture2 = App->textures->Load(FI_spriteExplosion_enemies.c_str());
 	explosion2.anim.PushBack({ 3, 71, 36, 36 });
