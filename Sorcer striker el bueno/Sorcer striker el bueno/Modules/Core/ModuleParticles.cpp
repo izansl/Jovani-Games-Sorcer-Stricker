@@ -37,7 +37,8 @@ bool ModuleParticles::Start() {
 	laser.lifetime = 100;
 	laser.anim.speed = 0.01f;
 
-	texture = App->textures->Load(FI_spriteExplosion_enemies.c_str());
+
+	texture2 = App->textures->Load(FI_spriteExplosion_enemies.c_str());
 	explosion2.anim.PushBack({ 3, 71, 36, 36 });
 	explosion2.anim.PushBack({ 39, 72, 36, 36 });
 	explosion2.anim.PushBack({ 75, 72, 36, 36 });
