@@ -57,6 +57,7 @@ public:
 public:
 	//Template particle for an explosion
 	Particle explosion;
+	Particle explosion2;
 
 	//Template particle for a laser
 	Particle laser;
