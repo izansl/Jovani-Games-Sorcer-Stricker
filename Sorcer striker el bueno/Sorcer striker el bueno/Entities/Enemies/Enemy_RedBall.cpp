@@ -18,57 +18,57 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave, int miem) : Enemy(x, y) {
 	{
 		if (miem == 1)
 		{
-			path.PushBack({ 0, 0.5f }, 60);
-			path.PushBack({ 5.0, 0.5 },45);
+			path.PushBack({ 0, -3 }, 105);
+			path.PushBack({ 4.0, -1 },55);
 			path.PushBack({ -3, -8.0 }, 55);
 			path.PushBack({ 2, -12.0 }, 600);
 		}
 		if (miem == 2)
 		{
-			path.PushBack({ 0, 0.5f }, 65);
-			path.PushBack({ 5.0, 0.5 }, 45);
+			path.PushBack({ 0, -3 }, 115);
+			path.PushBack({ 4.0, -1 }, 55);
 			path.PushBack({ -3, -8.0 }, 55);
 			path.PushBack({ 2, -12.0 }, 600);
 		}
 		if (miem == 3)
 		{
-			path.PushBack({ 0, 0.5f }, 70);
-			path.PushBack({ 5.0, 0.5 }, 45);
+			path.PushBack({ 0, -3 }, 125);
+			path.PushBack({ 4.0, -1 }, 55);
 			path.PushBack({ -3, -8.0 }, 55);
 			path.PushBack({ 2, -12.0 }, 600);
 		}
 		if (miem == 4)
 		{
-			path.PushBack({ 0, 0.5f }, 75);
-			path.PushBack({ 5.0, 0.5 }, 45);
+			path.PushBack({ 0, -3 }, 135);
+			path.PushBack({ 4.0, -1 }, 55);
 			path.PushBack({ -3, -8.0 }, 55);
 			path.PushBack({ 2, -12.0 }, 600);
 		}
 		if (miem == 5)
 		{
-			path.PushBack({ 0, 0.5f }, 80);
-			path.PushBack({ 5.0, 0.5 }, 45);
+			path.PushBack({ 0, -3 }, 145);
+			path.PushBack({ 4.0, -1 }, 55);
 			path.PushBack({ -3, -8.0 }, 55);
 			path.PushBack({ 2, -12.0 }, 600);
 		}
 		if (miem == 6)
 		{
-			path.PushBack({ 0, 0.5f }, 85);
-			path.PushBack({ 5.0, 0.5 }, 45);
+			path.PushBack({ 0, -3 }, 155);
+			path.PushBack({ 4.0, -1 }, 55);
 			path.PushBack({ -3, -8.0 }, 55);
 			path.PushBack({ 2, -12.0 }, 600);
 		}
 		if (miem == 7)
 		{
-			path.PushBack({ 0, 0.5f }, 90);
-			path.PushBack({ 5.0, 0.5 }, 45);
+			path.PushBack({ 0, -3 }, 165);
+			path.PushBack({ 4.0, -1 }, 55);
 			path.PushBack({ -3, -8.0 }, 55);
 			path.PushBack({ 2, -12.0 }, 600);
 		}
 		if (miem == 8)
 		{
-			path.PushBack({ 0, 0.5f }, 95);
-			path.PushBack({ 5.0, 0.5 }, 45);
+			path.PushBack({ 0, -3 }, 175);
+			path.PushBack({ 4.0, -1 }, 55);
 			path.PushBack({ -3, -8.0 }, 55);
 			path.PushBack({ 2, -12.0 }, 600);
 		}
@@ -78,58 +78,58 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave, int miem) : Enemy(x, y) {
 	{
 		if (miem == 1)
 		{
-			path.PushBack({ 0, 0.5f }, 95);
-			path.PushBack({ -4.0, 0.5 }, 50);
-			path.PushBack({ 2, -9.0 }, 60);
+			path.PushBack({ 0, -3 }, 175);
+			path.PushBack({ -4.0, -1 }, 55);
+			path.PushBack({ 3, -8.0 }, 55);
 			path.PushBack({ -2, -12.0 }, 600);
 		}
 		if (miem == 2)
 		{
-			path.PushBack({ 0, 0.5f }, 100);
-			path.PushBack({ -4.0, 0.5 }, 50);
-			path.PushBack({ 2, -9.0 }, 60);
+			path.PushBack({ 0, -3 }, 185);
+			path.PushBack({ -4.0, -1 }, 55);
+			path.PushBack({ 3, -8.0 }, 55);
 			path.PushBack({ -2, -12.0 }, 600);
 		}
 		if (miem == 3)
 		{
-			path.PushBack({ 0, 0.5f }, 105);
-			path.PushBack({ -4.0, 0.5 }, 50);
-			path.PushBack({ 2, -9.0 }, 60);
+			path.PushBack({ 0, -3 }, 195);
+			path.PushBack({ -4.0, -1 }, 55);
+			path.PushBack({ 3, -8.0 }, 55);
 			path.PushBack({ -2, -12.0 }, 600);
 		}
 		if (miem == 4)
 		{
-			path.PushBack({ 0, 0.5f }, 110);
-			path.PushBack({ -4.0, 0.5 }, 50);
-			path.PushBack({ 2, -9.0 }, 60);
+			path.PushBack({ 0, -3 }, 205);
+			path.PushBack({ -4.0, -1 }, 55);
+			path.PushBack({ 3, -8.0 }, 55);
 			path.PushBack({ -2, -12.0 }, 600);
 		}
 		if (miem == 5)
 		{
-			path.PushBack({ 0, 0.5f }, 115);
-			path.PushBack({ -4.0, 0.5 }, 50);
-			path.PushBack({ 2, -9.0 }, 60);
+			path.PushBack({ 0, -3 }, 215);
+			path.PushBack({ -4.0, -1 }, 55);
+			path.PushBack({ 3, -8.0 }, 55);
 			path.PushBack({ -2, -12.0 }, 600);
 		}
 		if (miem == 6)
 		{
-			path.PushBack({ 0, 0.5f }, 120);
-			path.PushBack({ -4.0, 0.5 }, 50);
-			path.PushBack({ 2, -9.0 }, 60);
+			path.PushBack({ 0, -3 }, 225);
+			path.PushBack({ -4.0, -1 }, 55);
+			path.PushBack({ 3, -8.0 }, 55);
 			path.PushBack({ -2, -12.0 }, 600);
 		}
 		if (miem == 7)
 		{
-			path.PushBack({ 0, 0.5f }, 125);
-			path.PushBack({ -4.0, 0.5 }, 50);
-			path.PushBack({ 2, -9.0 }, 60);
+			path.PushBack({ 0, -3 }, 235);
+			path.PushBack({ -4.0, -1 }, 55);
+			path.PushBack({ 3, -8.0 }, 55);
 			path.PushBack({ -2, -12.0 }, 600);
 		}
 		if (miem == 8)
 		{
-			path.PushBack({ 0, 0.5f }, 130);
-			path.PushBack({ -4.0, 0.5 }, 50);
-			path.PushBack({ 2, -9.0 }, 60);
+			path.PushBack({ 0, -3 }, 245);
+			path.PushBack({ -4.0, -1 }, 55);
+			path.PushBack({ 3, -8.0 }, 55);
 			path.PushBack({ -2, -12.0 }, 600);
 		}
 		path.PushBack({ 0, 0.5f }, 250);
@@ -142,67 +142,83 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave, int miem) : Enemy(x, y) {
 
 	if (miem == 1)
 	{
-		path.PushBack({ 0, 0.5f }, 170);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 30);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 100);
+		path.PushBack({ 0, -3 }, 350);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -2.0, -4 }, 100);
 	}
 	if (miem == 2)
 	{
-		path.PushBack({ 0, 0.75f }, 175);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 30);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 100);
+		path.PushBack({ 0, -3 }, 360);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -2.0, -4 }, 100);
 	}
 	if (miem == 3)
 	{
-		path.PushBack({ 0, 0.75f }, 180);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 30);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 100);
+		path.PushBack({ 0, -3 }, 370);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -2.0, -4 }, 100);
 	}
 	if (miem == 4)
 	{
-		path.PushBack({ 0, 0.75f }, 185);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 30);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 100);
+		path.PushBack({ 0, -3 }, 380);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -2.0, -4 }, 100);
 	}
 	if (miem == 5)
 	{
-		path.PushBack({ 0, 0.75f }, 190);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 30);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 100);
+		path.PushBack({ 0, -3 }, 390);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -2.0, -4 }, 100);
 	}
 	if (miem == 6)
 	{
-		path.PushBack({ 0, 0.75f }, 195);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 30);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 100);
+		path.PushBack({ 0, -3 }, 400);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -2.0, -4 }, 100);
 	}
 	if (miem == 7)
 	{
-		path.PushBack({ 0, 0.75f }, 200);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 30);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 100);
+		path.PushBack({ 0, -3 }, 410);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -2.0, -4 }, 100);
 	}
 	if (miem == 8)
 	{
-		path.PushBack({ 0, 0.75f }, 205);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 30);
-		path.PushBack({ 3.0, 0.5 }, 30);
-		path.PushBack({ -2.0, 0.5 }, 100);
+		path.PushBack({ 0, -3 }, 420);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -4.0, -4 }, 30);
+		path.PushBack({ 4.0, -4 }, 30);
+		path.PushBack({ -2.0, -4 }, 100);
 	}
 		
 	}
@@ -211,59 +227,59 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave, int miem) : Enemy(x, y) {
 
 	if (miem == 1)
 	{
-		path.PushBack({ 0, 1 }, 290);
+		path.PushBack({ 0, -3 }, 525);
 		path.PushBack({ -2.0, -8.0 }, 35);
-		path.PushBack({ 0, -13.0 }, 90);
-		path.PushBack({ -4, -2 }, 300);
+		path.PushBack({ 0, -13.0 }, 60);
+		path.PushBack({ -4, -4 }, 300);
 	}
 	if (miem == 2)
 	{
-		path.PushBack({ 0, 1 }, 295);
+		path.PushBack({ 0, -3 }, 535);
 		path.PushBack({ -2.0, -8.0 }, 35);
-		path.PushBack({ 0, -13.0 }, 90);
-		path.PushBack({ -4, -2 }, 300);
+		path.PushBack({ 0, -13.0 }, 60);
+		path.PushBack({ -4, -4 }, 300);
 	}
 	if (miem == 3)
 	{
-		path.PushBack({ 0, 1 }, 300);
+		path.PushBack({ 0, -3 }, 545);
 		path.PushBack({ -2.0, -8.0 }, 35);
-		path.PushBack({ 0, -13.0 }, 90);
-		path.PushBack({ -4, -2 }, 300);
+		path.PushBack({ 0, -13.0 }, 60);
+		path.PushBack({ -4, -4 }, 300);
 	}
 	if (miem == 4)
 	{
-		path.PushBack({ 0, 1 }, 305);
+		path.PushBack({ 0, -3 }, 555);
 		path.PushBack({ -2.0, -8.0 }, 35);
-		path.PushBack({ 0, -13.0 }, 90);
-		path.PushBack({ -4, -2 }, 300);
+		path.PushBack({ 0, -13.0 }, 60);
+		path.PushBack({ -4, -4 }, 300);
 	}
 	if (miem == 5)
 	{
-		path.PushBack({ 0, 1 }, 310);
+		path.PushBack({ 0, -3 }, 565);
 		path.PushBack({ -2.0, -8.0 }, 35);
-		path.PushBack({ 0, -13.0 }, 90);
-		path.PushBack({ -4, -2 }, 300);;
+		path.PushBack({ 0, -13.0 }, 60);
+		path.PushBack({ -4, -4 }, 300);
 	}
 	if (miem == 6)
 	{
-		path.PushBack({ 0, 1 }, 315);
+		path.PushBack({ 0, -3 }, 575);
 		path.PushBack({ -2.0, -8.0 }, 35);
-		path.PushBack({ 0, -13.0 }, 90);
-		path.PushBack({ -4, -2 }, 300);
+		path.PushBack({ 0, -13.0 }, 60);
+		path.PushBack({ -4, -4 }, 300);
 	}
 	if (miem == 7)
 	{
-		path.PushBack({ 0, 1 }, 320);
+		path.PushBack({ 0, -3 }, 575);
 		path.PushBack({ -2.0, -8.0 }, 35);
-		path.PushBack({ 0, -13.0 }, 90);
-		path.PushBack({ -4, -2 }, 300);
+		path.PushBack({ 0, -13.0 }, 60);
+		path.PushBack({ -4, -4 }, 300);
 	}
 	if (miem == 8)
 	{
-		path.PushBack({ 0, 1 }, 325);
+		path.PushBack({ 0, -3 }, 585);
 		path.PushBack({ -2.0, -8.0 }, 35);
-		path.PushBack({ 0, -13.0 }, 90);
-		path.PushBack({ -4, -2 }, 300);
+		path.PushBack({ 0, -13.0 }, 60);
+		path.PushBack({ -4, -4 }, 300);
 	}
 		
 	}
@@ -272,43 +288,43 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave, int miem) : Enemy(x, y) {
 
 	if (miem == 1)
 	{
-		path.PushBack({ 0, 0.5f }, 250);
-		path.PushBack({ 3.0, 2.0 }, 60);
+		path.PushBack({ 0, -2.75f }, 440);
+		path.PushBack({ 2.0, -2.0 }, 70);
 		path.PushBack({ -3, -8.0 }, 60);
 		path.PushBack({ 3, -12.0 }, 600);
 	}
 	if (miem == 2)
 	{
-		path.PushBack({ 0, 0.5f }, 255);
-		path.PushBack({ 3.0, 2.0 }, 60);
+		path.PushBack({ 0, -2.75f }, 450);
+		path.PushBack({ 2.0, -2.0 }, 70);
 		path.PushBack({ -3, -8.0 }, 60);
 		path.PushBack({ 3, -12.0 }, 600);
 	}
 	if (miem == 3)
 	{
-		path.PushBack({ 0, 0.5f }, 260);
-		path.PushBack({ 3.0, 2.0 }, 60);
+		path.PushBack({ 0, -2.75f }, 460);
+		path.PushBack({ 2.0, -2.0 }, 70);
 		path.PushBack({ -3, -8.0 }, 60);
 		path.PushBack({ 3, -12.0 }, 600);
 	}
 	if (miem == 4)
 	{
-		path.PushBack({ 0, 0.5f }, 265);
-		path.PushBack({ 3.0, 2.0 }, 60);
+		path.PushBack({ 0, -2.75f }, 470);
+		path.PushBack({ 2.0, -2.0 }, 70);
 		path.PushBack({ -3, -8.0 }, 60);
 		path.PushBack({ 3, -12.0 }, 600);
 	}
 	if (miem == 5)
 	{
-		path.PushBack({ 0, 0.5f }, 270);
-		path.PushBack({ 3.0, 2.0 }, 60);
+		path.PushBack({ 0, -2.75f }, 480);
+		path.PushBack({ 2.0, -2.0 }, 70);
 		path.PushBack({ -3, -8.0 }, 60);
 		path.PushBack({ 3, -12.0 }, 600);
 	}
 	if (miem == 6)
 	{
-		path.PushBack({ 0, 0.5f }, 275);
-		path.PushBack({ 3.0, 2.0 }, 60);
+		path.PushBack({ 0, -2.75f }, 490);
+		path.PushBack({ 2.0, -2.0 }, 70);
 		path.PushBack({ -3, -8.0 }, 60);
 		path.PushBack({ 3, -12.0 }, 600);
 	}
@@ -333,50 +349,50 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave, int miem) : Enemy(x, y) {
 
 	if (miem == 1)
 	{
-		path.PushBack({ 0, 1.0f }, 500);
-		path.PushBack({ -4.0, -8.0f }, 20);
+		path.PushBack({ 0, -3.0f }, 1125);
+		path.PushBack({ -2.0, -8.0f }, 40);
 		path.PushBack({ -3, -12 }, 1300);
 	}
 	if (miem == 2)
 	{
-		path.PushBack({ 0, 1.0f }, 505);
-		path.PushBack({ -4.0, -8.0f }, 20);
+		path.PushBack({ 0, -3.0f }, 1135);
+		path.PushBack({ -2.0, -8.0f }, 40);
 		path.PushBack({ -3, -12 }, 1300);
 	}
 	if (miem == 3)
 	{
-		path.PushBack({ 0, 1.0f }, 510);
-		path.PushBack({ -4.0, -8.0f }, 20);
+		path.PushBack({ 0, -3.0f }, 1145);
+		path.PushBack({ -2.0, -8.0f }, 40);
 		path.PushBack({ -3, -12 }, 1300);
 	}
 	if (miem == 4)
 	{
-		path.PushBack({ 0, 1.0f }, 515);
-		path.PushBack({ -4.0, -8.0f }, 20);
+		path.PushBack({ 0, -3.0f }, 1155);
+		path.PushBack({ -2.0, -8.0f }, 40);
 		path.PushBack({ -3, -12 }, 1300);
 	}
 	if (miem == 5)
 	{
-		path.PushBack({ 0, 1.0f }, 520);
-		path.PushBack({ -4.0, -8.0f }, 20);
+		path.PushBack({ 0, -3.0f }, 1165);
+		path.PushBack({ -2.0, -8.0f }, 40);
 		path.PushBack({ -3, -12 }, 1300);
 	}
 	if (miem == 6)
 	{
-		path.PushBack({ 0, 1.0f }, 525);
-		path.PushBack({ -4.0, -8.0f }, 20);
+		path.PushBack({ 0, -3.0f }, 1175);
+		path.PushBack({ -2.0, -8.0f }, 40);
 		path.PushBack({ -3, -12 }, 1300);
 	}
 	if (miem == 7)
 	{
-		path.PushBack({ 0, 1.0f }, 530);
-		path.PushBack({ -4.0, -8.0f }, 20);
+		path.PushBack({ 0, -3.0f }, 1185);
+		path.PushBack({ -2.0, -8.0f }, 40);
 		path.PushBack({ -3, -12 }, 1300);
 	}
 	if (miem == 8)
 	{
-		path.PushBack({ 0, 1.0f }, 535);
-		path.PushBack({ -4.0, -8.0f }, 20);
+		path.PushBack({ 0, -3.0f }, 1125);
+		path.PushBack({ -2.0, -8.0f }, 40);
 		path.PushBack({ -3, -12 }, 1300);
 	}
 		
@@ -386,51 +402,51 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave, int miem) : Enemy(x, y) {
 
 	if (miem == 1)
 	{
-		path.PushBack({ 0, 1.0f }, 540);
-		path.PushBack({ 4.0, -8.0f }, 20);
-		path.PushBack({ 3, -6 }, 1300);
+		path.PushBack({ 0, -3.0f }, 1270);
+		path.PushBack({ 2.0, -8.0f }, 40);
+		path.PushBack({ 3, -12 }, 1300);
 	}
 	if (miem == 2)
 	{
-		path.PushBack({ 0, 1.0f }, 545);
-		path.PushBack({ 4.0, -8.0f }, 20);
-		path.PushBack({ 3, -6 }, 1300);
+		path.PushBack({ 0, -3.0f }, 1280);
+		path.PushBack({ 2.0, -8.0f }, 40);
+		path.PushBack({ 3, -12 }, 1300);
 	}
 	if (miem == 3)
 	{
-		path.PushBack({ 0, 1.0f }, 550);
-		path.PushBack({ 4.0, -8.0f }, 20);
-		path.PushBack({ 3, -6 }, 1300);
+		path.PushBack({ 0, -3.0f }, 1290);
+		path.PushBack({ 2.0, -8.0f }, 40);
+		path.PushBack({ 3, -12 }, 1300);
 	}
 	if (miem == 4)
 	{
-		path.PushBack({ 0, 1.0f }, 555);
-		path.PushBack({ 4.0, -8.0f }, 20);
-		path.PushBack({ 3, -6 }, 1300);
+		path.PushBack({ 0, -3.0f }, 1300);
+		path.PushBack({ 2.0, -8.0f }, 40);
+		path.PushBack({ 3, -12 }, 1300);
 	}
 	if (miem == 5)
 	{
-		path.PushBack({ 0, 1.0f }, 560);
-		path.PushBack({ 4.0, -8.0f }, 20);
-		path.PushBack({ 3, -6 }, 1300);
+		path.PushBack({ 0, -3.0f }, 1310);
+		path.PushBack({ 2.0, -8.0f }, 40);
+		path.PushBack({ 3, -12 }, 1300);
 	}
 	if (miem == 6)
 	{
-		path.PushBack({ 0, 1.0f }, 565);
-		path.PushBack({ 4.0, -8.0f }, 20);
-		path.PushBack({ 3, -6 }, 1300);
+		path.PushBack({ 0, -3.0f }, 1320);
+		path.PushBack({ 2.0, -8.0f }, 40);
+		path.PushBack({ 3, -12 }, 1300);
 	}
 	if (miem == 7)
 	{
-		path.PushBack({ 0, 1.0f }, 570);
-		path.PushBack({ 4.0, -8.0f }, 20);
-		path.PushBack({ 3, -6 }, 1300);
+		path.PushBack({ 0, -3.0f }, 1270);
+		path.PushBack({ 2.0, -8.0f }, 40);
+		path.PushBack({ 3, -12 }, 1300);
 	}
 	if (miem == 8)
 	{
-		path.PushBack({ 0, 1.0f }, 575);
-		path.PushBack({ 4.0, -8.0f }, 20);
-		path.PushBack({ 3, -6 }, 1300);
+		path.PushBack({ 0, -3.0f }, 1270);
+		path.PushBack({ 2.0, -8.0f }, 40);
+		path.PushBack({ 3, -12 }, 1300);
 	}
 	path.PushBack({ 0, 1.0f }, 1305);
 	path.PushBack({ 1.0, -3.0f }, 60);

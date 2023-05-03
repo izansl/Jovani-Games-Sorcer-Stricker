@@ -38,7 +38,7 @@ public:
 	SDL_Texture* Intro[10];
 	float timer = 0.0f;
 	int currentImage = 0;	
-
+	uint musica = 0;
 	//Prueba efecto fade en imagenes
 	bool fadingOut = false;
 	float fadeTimer = 0.0f;
