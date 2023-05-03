@@ -32,10 +32,17 @@ public:
 	// Collision callback, called when the player intersects with another collider
 	void OnCollision(Collider* c1, Collider* c2) override;
 
+	int kills = 0;
+	int lives = 3;
+
+
+
 
 public:
 	// Position of the player in the map
-	iPoint position;
+	iPoint position;	
+	
+	iPoint backupPosition;
 
 	// The speed in which we move the player (pixels per frame)
 	int speed = 2;

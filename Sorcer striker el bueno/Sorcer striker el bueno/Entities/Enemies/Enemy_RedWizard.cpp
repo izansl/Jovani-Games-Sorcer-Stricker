@@ -76,3 +76,18 @@ void Enemy_RedWizard::Update() {
 	// It will update the collider depending on the position
 	Enemy::Update();
 }
+
+void Enemy_RedWizard::OnCollision(Collider* c1, Collider* c2) {
+
+	if (c1 == collider && destroyed == false)
+	{
+		deadwiz.anim.PushBack({ 3, 70, 36, 36 });
+		deadwiz.anim.PushBack({ 39, 71, 36, 36 });
+		deadwiz.anim.PushBack({ 75, 71, 36, 36 });
+		deadwiz.anim.PushBack({ 110, 71, 36, 36 });
+		deadwiz.anim.speed = 0.03f;
+		collider = App->collisions->AddCollider({ 0, 0, 36, 36 }, Collider::Type::NONE, (Module*)App->enemies);
+			
+		destroyed = true;
+	}
+}
