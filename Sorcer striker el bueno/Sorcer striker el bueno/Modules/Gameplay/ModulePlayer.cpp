@@ -156,7 +156,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 	else if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::ENEMY && destroyed == false /*&& !godMode*/)//Cuando tengamos godmode se le dara uso
 	{
 		destroyed = true;
-		lives--;
+		if (!godMode) lives--;
 	}
 	else if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect) && c1->type == Collider::Type::PLAYER || c2->type == Collider::Type::ENEMY)
 	{
