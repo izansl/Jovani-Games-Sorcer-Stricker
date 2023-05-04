@@ -37,6 +37,9 @@ const int Height_background_forest1 = 3000;
 const int Height_background_forest2 = 3000;
 const int Height_background_castle = 4500;
 
+//HUD
+
+
 // Sprites player
 const std::string FI_spritePlayer_player1 = "../Assets/Images/Character.png";
 const std::string FI_spritePlayer_player2 = "../Assets/Images/Character.png";
