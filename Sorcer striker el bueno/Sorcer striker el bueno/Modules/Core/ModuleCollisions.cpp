@@ -13,7 +13,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled) {
 
 	matrix[Collider::Type::WALL][Collider::Type::WALL] = false;
 	matrix[Collider::Type::WALL][Collider::Type::PLAYER] = true;
-	matrix[Collider::Type::WALL][Collider::Type::ENEMY] = true;
+	matrix[Collider::Type::WALL][Collider::Type::ENEMY] = false;
 	matrix[Collider::Type::WALL][Collider::Type::PLAYER_SHOT] = true;
 	matrix[Collider::Type::WALL][Collider::Type::ENEMY_SHOT] = true;
 	matrix[Collider::Type::WALL][Collider::Type::OBJECTCHEST] = true;
@@ -27,7 +27,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled) {
 	matrix[Collider::Type::PLAYER][Collider::Type::OBJECTCHEST] = true;
 	matrix[Collider::Type::PLAYER][Collider::Type::WALL_PLAYER] = true;
 
-	matrix[Collider::Type::ENEMY][Collider::Type::WALL] = true;
+	matrix[Collider::Type::ENEMY][Collider::Type::WALL] = false;
 	matrix[Collider::Type::ENEMY][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::ENEMY][Collider::Type::ENEMY] = false;
 	matrix[Collider::Type::ENEMY][Collider::Type::PLAYER_SHOT] = true;
@@ -41,7 +41,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled) {
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::PLAYER_SHOT] = false;
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::ENEMY_SHOT] = false;
 	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::OBJECTCHEST] = true;
-	matrix[Collider::Type::PLAYER_SHOT][Collider::Type:: WALL_PLAYER] = false;
+	matrix[Collider::Type::PLAYER_SHOT][Collider::Type::WALL_PLAYER] = false;
 
 	matrix[Collider::Type::ENEMY_SHOT][Collider::Type::WALL] = true;
 	matrix[Collider::Type::ENEMY_SHOT][Collider::Type::PLAYER] = true;
@@ -49,7 +49,7 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled) {
 	matrix[Collider::Type::ENEMY_SHOT][Collider::Type::PLAYER_SHOT] = false;
 	matrix[Collider::Type::ENEMY_SHOT][Collider::Type::ENEMY_SHOT] = false;
 	matrix[Collider::Type::ENEMY_SHOT][Collider::Type::OBJECTCHEST] = false;
-  matrix[Collider::Type::ENEMY_SHOT][Collider::Type::WALL_PLAYER] = false;
+	matrix[Collider::Type::ENEMY_SHOT][Collider::Type::WALL_PLAYER] = false;
 
 	matrix[Collider::Type::OBJECTCHEST][Collider::Type::WALL] = true;
 	matrix[Collider::Type::OBJECTCHEST][Collider::Type::PLAYER] = true;
@@ -57,14 +57,14 @@ ModuleCollisions::ModuleCollisions(bool startEnabled) : Module(startEnabled) {
 	matrix[Collider::Type::OBJECTCHEST][Collider::Type::PLAYER_SHOT] = false;
 	matrix[Collider::Type::OBJECTCHEST][Collider::Type::ENEMY_SHOT] = false;
 	matrix[Collider::Type::OBJECTCHEST][Collider::Type::OBJECTCHEST] = false;
-  matrix[Collider::Type::OBJECTCHEST][Collider::Type::WALL_PLAYER] = false;
+	matrix[Collider::Type::OBJECTCHEST][Collider::Type::WALL_PLAYER] = false;
 
 	matrix[Collider::Type::WALL_PLAYER][Collider::Type::WALL] = false;
 	matrix[Collider::Type::WALL_PLAYER][Collider::Type::PLAYER] = true;
 	matrix[Collider::Type::WALL_PLAYER][Collider::Type::ENEMY] = false;
 	matrix[Collider::Type::WALL_PLAYER][Collider::Type::PLAYER_SHOT] = false;
 	matrix[Collider::Type::WALL_PLAYER][Collider::Type::ENEMY_SHOT] = false;
-  matrix[Collider::Type::WALL_PLAYER][Collider::Type::OBJECTCHEST] = false;
+	matrix[Collider::Type::WALL_PLAYER][Collider::Type::OBJECTCHEST] = false;
 	matrix[Collider::Type::WALL_PLAYER][Collider::Type::WALL_PLAYER] = false;
 }
 
@@ -116,7 +116,7 @@ Update_Status ModuleCollisions::PreUpdate() {
 }
 
 Update_Status ModuleCollisions::Update() {
-	if (App->input->keys[SDL_SCANCODE_F1] == KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_F2] == KEY_DOWN)
 		debug = !debug;
 
 	return Update_Status::UPDATE_CONTINUE;

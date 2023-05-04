@@ -5,6 +5,7 @@
 #include "../../Modules/Core/ModuleRender.h"
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Application/FileNames.h"
+#include "../../Modules/Core/ModuleAudio.h"
 
 Enemy_Dragon::Enemy_Dragon(int x, int y, int wave, int miem) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_3.c_str());
@@ -18,12 +19,12 @@ Enemy_Dragon::Enemy_Dragon(int x, int y, int wave, int miem) : Enemy(x, y) {
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0, -3 }, 1050);
-			path.PushBack({ 0, -8.0 }, 100);
+			path.PushBack({ 0, -2.5 }, 1590);
+			path.PushBack({ 0, -8.0 }, 150);
 			path.PushBack({ 2, -8.0 }, 10);
-			path.PushBack({ 0, -8.0 }, 50);
+			path.PushBack({ 0, -8.0 }, 70);
 			path.PushBack({ -0.75, -10.0 }, 50);
-			path.PushBack({ 0, -8.0 }, 10);
+			path.PushBack({ 0, -8.0 }, 30);
 			path.PushBack({ 0, -3.0 }, 50);
 			path.PushBack({ -1, -12.0 }, 200);
 		}
@@ -35,7 +36,7 @@ Enemy_Dragon::Enemy_Dragon(int x, int y, int wave, int miem) : Enemy(x, y) {
 		if (miem == 0)
 		{
 			
-			path.PushBack({ 0, -3 }, 1200);
+			path.PushBack({ 0, -3 }, 1900);
 			path.PushBack({ 0, -8.0 }, 100);
 			path.PushBack({ -2, -8.0 }, 10);
 			path.PushBack({ 0, -8.0 }, 50);
@@ -68,11 +69,13 @@ void Enemy_Dragon::Update() {
 //	}
 //}
 
-void Enemy_Dragon::OnCollision(Collider* c1) {
-	fly.PushBack({ 20, 121, 85, 89 });
-	fly.PushBack({ 113, 125, 85, 89});
-	fly.PushBack({ 207, 122, 85, 89 });
-	currentAnim = &fly;
-	fly.speed = 0.2;
-	fly.loop = false;
+void Enemy_Dragon::OnCollision(Collider* c1) {	
+		fly.PushBack({ 20, 121, 85, 89 });
+		fly.PushBack({ 113, 125, 85, 89 });
+		fly.PushBack({ 207, 122, 85, 89 });
+		fly.PushBack({ 15,211,85,89 });
+		currentAnim = &fly;
+		fly.speed = 0.2;
+		fly.loop = false;
+		App->audio->PlayFx(destroyedFx);
 }

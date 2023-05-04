@@ -16,19 +16,16 @@
 
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 
-	position.x = 150;
-	position.y = 120;
-
 	// idle animation - just one sprite
-	idleAnim.PushBack({ 240, 16, 38, 44 });
+	idleAnim.PushBack({ 264, 16, 40, 42 });
 
 	// move right
-	rightAnim.PushBack({ 278, 17, 38, 44 });
+	rightAnim.PushBack({ 305, 16, 38, 44 });
 	rightAnim.loop = false;
 	rightAnim.speed = 0.1f;
 
 	// Move left
-	leftAnim.PushBack({ 200, 17, 38, 44 });
+	leftAnim.PushBack({ 226, 16, 38, 44 });
 	leftAnim.loop = false;
 	leftAnim.speed = 0.1f;
 
@@ -62,7 +59,7 @@ bool ModulePlayer::Start() {
 	explosionjugadorFx = App->audio->LoadFx(FA_Fx_explosionJ.c_str()); ;
 
 	position.x = 150;
-	position.y = 150;
+	position.y = 3150;
 
 	destroyed = false;
 
@@ -75,6 +72,8 @@ Update_Status ModulePlayer::Update() {
 
 	// Moving the player with the camera scroll
 	App->player->position.y -= 8;
+	if (App->input->keys[SDL_SCANCODE_F1] == KEY_DOWN)
+		godMode = !godMode;
 
 	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT) position.y -= speed;
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT) position.y += speed;
@@ -128,7 +127,7 @@ Update_Status ModulePlayer::PostUpdate() {
 	}
 	else
 	{
-		if (destroyedCountdown <=0)
+		if (destroyedCountdown <= 0)
 		{
 			position.x = backupPosition.x;
 			position.y = backupPosition.y;
@@ -141,11 +140,15 @@ Update_Status ModulePlayer::PostUpdate() {
 			destroyedCountdown--;
 		}
 	}
-	if (kills==58)
+
+	// WIN CONDITION
+	if (kills == 58 || App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
 	{
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
 	}
-	if (lives==0)
+
+	// LOSE CONDITION
+	if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
 	{
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
 	}
@@ -155,10 +158,43 @@ Update_Status ModulePlayer::PostUpdate() {
 
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 
-	if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect) && c1->type == Collider::Type::OBJECTCHEST)
+	// TODO: POWERUP, pendiente a resolver
+	//if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect) && c1->type == Collider::Type::OBJECTCHEST)
+	//{
+	//	// Change sprite
+	//	currentAnimation = &blueBUFF;
+
+	if (c1 == collider && destroyed == false)
+	{
+		// A�adir part�cula de muerte del jugador
+		App->particles->AddParticle(App->particles->playerdead, position.x, position.y, Collider::Type::NONE, 0);
+		c1->type = Collider::Type::PLAYER;
+		//App->particles->AddParticle(App->particles->explosion2, position.x, position.y, Collider::Type::NONE, 9);
+		//App->audio->PlayFx(explosionjugadorFx);
+
+		destroyed = true;
+	}
+	else if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::ENEMY && destroyed == false /*&& !godMode*/)//Cuando tengamos godmode se le dara uso
+	{
+		destroyed = true;
+		if (!godMode) lives--;
+	}
+	else if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect) && c1->type == Collider::Type::PLAYER || c2->type == Collider::Type::ENEMY)
 	{
 		// Change sprite
-		currentAnimation = &blueBUFF;
+		idleAnim.PushBack({ 337, 69, 66, 45 });
+		idleAnim.PushBack({ 343, 132, 66, 45 });
+		idleAnim.speed = 1.0f;
+
+		//Move right
+		rightAnim.PushBack({ 445, 134, 73, 46 });
+		rightAnim.loop = false;
+		rightAnim.speed = 0.1f;
+
+		// Move left
+		leftAnim.PushBack({ 14, 37, 73, 46 });
+		leftAnim.loop = false;
+		leftAnim.speed = 0.1f;
 
 		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
 		{
