@@ -16,14 +16,13 @@ public:
 	void Update() override;
 	//void Draw() override;
 
-	void OnCollision(Collider* collider)override;
+	void OnCollision(Collider* c1);
 
 
 private: //BROWNSHIP
 	// A set of steps that define the position in the screen
 		// And an animation for each step
-	Path path1;
-	Path path2;
+	Path pathchest;
 	Path* currentPath;
 	bool activePart2 = false;
 

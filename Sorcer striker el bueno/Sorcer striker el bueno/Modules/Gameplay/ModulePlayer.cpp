@@ -28,6 +28,21 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 	leftAnim.PushBack({ 226, 16, 38, 44 });
 	leftAnim.loop = false;
 	leftAnim.speed = 0.1f;
+
+	// Change sprite
+	blueBUFF.PushBack({ 1595, 63, 62, 43 });
+	blueBUFF.PushBack({ 268, 63, 70, 43 });
+	blueBUFF.speed = 1.0f;
+
+	//Move right
+	blueright.PushBack({ 242, 61, 68, 44 });
+	blueright.loop = false;
+	blueright.speed = 0.1f;
+
+	// Move left
+	blueleft.PushBack({ 9, 61, 68, 44 });
+	blueleft.loop = false;
+	blueleft.speed = 0.1f;
 }
 
 ModulePlayer::~ModulePlayer() {
@@ -143,6 +158,12 @@ Update_Status ModulePlayer::PostUpdate() {
 
 void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 
+	// TODO: POWERUP, pendiente a resolver
+	//if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect) && c1->type == Collider::Type::OBJECTCHEST)
+	//{
+	//	// Change sprite
+	//	currentAnimation = &blueBUFF;
+
 	if (c1 == collider && destroyed == false)
 	{
 		// A�adir part�cula de muerte del jugador
@@ -175,6 +196,24 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		leftAnim.loop = false;
 		leftAnim.speed = 0.1f;
 
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
+		{
+			position.x += speed;
+			if (currentAnimation != &blueright)
+			{
+				rightAnim.Reset();
+				currentAnimation = &blueright;
+			}
+		}
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x > 45)
+		{
+			position.x -= speed;
+			if (currentAnimation != &blueleft)
+			{
+				leftAnim.Reset();
+				currentAnimation = &blueleft;
+			}
+		}
 
 
 		//Change laser
@@ -190,5 +229,20 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 			App->particles->AddParticle(App->particles->ice, position.x + 16, position.y + 10, Collider::Type::PLAYER_SHOT, 0);
 			App->particles->AddParticle(App->particles->ice, position.x + 16, position.y + 15, Collider::Type::PLAYER_SHOT, 0);
 		}
+	}
+	else if (c1 == collider && destroyed == false)
+	{
+		// A�adir part�cula de muerte del jugador
+		App->particles->AddParticle(App->particles->playerdead, position.x, position.y, Collider::Type::NONE, 0);
+		c1->type = Collider::Type::NONE;
+		//App->particles->AddParticle(App->particles->explosion2, position.x, position.y, Collider::Type::NONE, 9);
+		//App->audio->PlayFx(explosionjugadorFx);
+
+		destroyed = true;
+	}
+	else if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::ENEMY && destroyed == false /*&& !godMode*/)//Cuando tengamos godmode se le dara uso
+	{
+		destroyed = true;
+		//	lives--;
 	}
 }
