@@ -3,6 +3,7 @@
 
 #include "Enemy.h"
 #include "../../Utils/Path.h"
+#include "../../Modules/Core/ModuleParticles.h"
 
 class Enemy_Dragon : public Enemy {
 
@@ -15,8 +16,9 @@ public:
 	// Position will be updated depending on the speed defined at each step
 	void Update() override;
 
-	void OnCollision(Collider* c1) override;
+	void OnCollision(Collider* c1);
 	/*void Draw() override;*/
+	bool destroyed = false;
 private:
 	// A set of steps that define the position in the screen
 	// And an animation for each step
@@ -25,7 +27,7 @@ private:
 	// This enemy has one sprite and one frame
 	// We are keeping it an animation for consistency with other enemies
 	Animation fly;
-	Animation explosion;
+	Particle dragondead;
 };
 
 #endif // __ENEMY_BROWNSHIP_H__

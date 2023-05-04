@@ -15,7 +15,7 @@ public:
 	// Position will be updated depending on the speed defined at each step
 	void Update() override;
 
-	void OnCollision(Collider* c1) override;
+	void OnCollision(Collider* c1);
 
 	bool destroyed = false;
 
@@ -29,9 +29,6 @@ private:
 	// We are keeping it an animation for consistency with other enemies
 	Animation fly;
 
-	Animation balldead;
-
-	Animation space;
 };
 
 #endif // __ENEMY_BROWNSHIP_H__

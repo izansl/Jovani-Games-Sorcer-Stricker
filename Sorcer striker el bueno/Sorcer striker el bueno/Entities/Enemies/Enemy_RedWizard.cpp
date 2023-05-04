@@ -77,17 +77,16 @@ void Enemy_RedWizard::Update() {
 	Enemy::Update();
 }
 
-void Enemy_RedWizard::OnCollision(Collider* c1, Collider* c2) {
 
-	if (c1 == collider && destroyed == false)
-	{
-		deadwiz.anim.PushBack({ 3, 70, 36, 36 });
-		deadwiz.anim.PushBack({ 39, 71, 36, 36 });
-		deadwiz.anim.PushBack({ 75, 71, 36, 36 });
-		deadwiz.anim.PushBack({ 110, 71, 36, 36 });
-		deadwiz.anim.speed = 0.03f;
-		collider = App->collisions->AddCollider({ 0, 0, 36, 36 }, Collider::Type::NONE, (Module*)App->enemies);
-			
-		destroyed = true;
-	}
+void Enemy_RedWizard::OnCollision(Collider* c1) {
+	fly.PushBack({ 3, 71, 36, 36 });
+	fly.PushBack({ 39, 72, 36, 36 });
+	fly.PushBack({ 75, 72, 36, 36 });
+	fly.PushBack({ 111, 71, 36, 36 });
+	fly.PushBack({ 111, 120, 36, 36 });
+
+	currentAnim = &fly;
+	fly.speed = 0.2;
+	fly.loop = false;
+
 }
