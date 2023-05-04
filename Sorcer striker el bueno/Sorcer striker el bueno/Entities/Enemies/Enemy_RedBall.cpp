@@ -9,8 +9,8 @@
 
 Enemy_RedBall::Enemy_RedBall(int x, int y, int wave, int miem) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_1.c_str());
-	fly.PushBack({ 46, 12, 26,32 });
-	fly.PushBack({ 75,12 ,26, 32 });
+	fly.PushBack({ 46, 12, 32,32 });
+	fly.PushBack({ 75,12 ,32, 32 });
 	currentAnim = &fly;
 	fly.speed = 0.2;
 	fly.loop = true;
@@ -520,7 +520,7 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave, int miem) : Enemy(x, y) {
 	
 	
 
-	collider = App->collisions->AddCollider({ 0, 0,22, 32 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0,32, 32 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_RedBall::Update() {
@@ -533,10 +533,13 @@ void Enemy_RedBall::Update() {
 }
 
 void Enemy_RedBall::OnCollision(Collider* c1) {
-	space.PushBack({ 15, 6, 22, 36 });
-	currentAnim = &space;
+	fly.PushBack({ 7, 50, 32, 32 });
+	fly.PushBack({ 42, 50, 32, 32 });
+	fly.PushBack({ 77, 51, 32, 32 });
+	fly.PushBack({ 111, 52, 32, 32 });
+	currentAnim = &fly;
+	fly.speed = 0.2;
+	fly.loop = false;
 	App->audio->PlayFx(destroyedFx);
-	//Change collider
-	collider->rect.x = 0;
-	collider->rect.w = 0;
+
 }
