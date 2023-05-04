@@ -16,9 +16,6 @@
 
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 
-	position.x = 150;
-	position.y = 120;
-
 	// idle animation - just one sprite
 	idleAnim.PushBack({ 240, 16, 38, 44 });
 
@@ -47,7 +44,7 @@ bool ModulePlayer::Start() {
 	explosionjugadorFx = App->audio->LoadFx(FA_Fx_explosionJ.c_str()); ;
 
 	position.x = 150;
-	position.y = 150;
+	position.y = 3150;
 
 	destroyed = false;
 
