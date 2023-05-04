@@ -5,6 +5,8 @@
 #include "../../Modules/Core/ModuleRender.h"
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Application/FileNames.h"
+#include "../../Modules/Core/ModuleAudio.h"
+#include "../../Modules/Core/ModuleParticles.h"
 
 Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave, int miem) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_2.c_str());
@@ -14,13 +16,15 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave, int miem) : Enemy(x, y)
 	currentAnim = &fly;
 	fly.speed = 0.01f;
 	fly.loop = true;
+	
+	
 
 	if (wave == 1)
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0.0, -2.75 }, 520);
-			path.PushBack({ 0.0, -8.0 }, 150);
+			path.PushBack({ 0.0, -0.25 }, 720);
+			path.PushBack({ 0.0, -8.0 }, 120);
 			path.PushBack({ 3, -12.0 }, 650);
 		}
 	}
@@ -28,8 +32,8 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave, int miem) : Enemy(x, y)
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0.0, -2.5}, 580);
-			path.PushBack({ 0.0, -8.0 }, 150);
+			path.PushBack({ 0.0, -0.5}, 835);
+			path.PushBack({ 0.0, -8.0 }, 120);
 			path.PushBack({ -3, -12.0 }, 650);
 		}
 	}
@@ -37,8 +41,8 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave, int miem) : Enemy(x, y)
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0.0, -2.75}, 680);
-			path.PushBack({ 0.0, -8.0 }, 150);
+			path.PushBack({ 0.0, -0.5}, 950);
+			path.PushBack({ 0.0, -8.0 }, 120);
 			path.PushBack({ 3, -12.0 }, 650);
 		}
 	}
@@ -46,8 +50,8 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave, int miem) : Enemy(x, y)
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0.0, -2.75 }, 770);
-			path.PushBack({ 0.0, -8.0 }, 150);
+			path.PushBack({ 0.0, -0.5 }, 1040);
+			path.PushBack({ 0.0, -8.0 }, 120);
 			path.PushBack({ -3, -12.0 }, 650);
 		}
 		
@@ -56,13 +60,13 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave, int miem) : Enemy(x, y)
 	{
 		if (miem == 0)
 		{
-			path.PushBack({ 0.0, -2.75 }, 850);
-			path.PushBack({ 0.0, -8.0 }, 150);
+			path.PushBack({ 0.0, -0.5 }, 1140);
+			path.PushBack({ 0.0, -8.0 }, 120);
 			path.PushBack({ 3, -12.0 }, 650);
 		}
 		
 	}
-	path.PushBack({ 0.0, 0.5 }, 600);
+	
 	
 
 	collider = App->collisions->AddCollider({ 0, 0, 36, 36 }, Collider::Type::ENEMY, (Module*)App->enemies);
@@ -86,8 +90,9 @@ void Enemy_RedWizard::OnCollision(Collider* c1, Collider* c2) {
 		deadwiz.anim.PushBack({ 75, 71, 36, 36 });
 		deadwiz.anim.PushBack({ 110, 71, 36, 36 });
 		deadwiz.anim.speed = 0.03f;
+		
 		collider = App->collisions->AddCollider({ 0, 0, 36, 36 }, Collider::Type::NONE, (Module*)App->enemies);
-			
+		App->audio->PlayFx(destroyedFx);
 		destroyed = true;
 	}
 }

@@ -147,7 +147,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 	{
 		// A�adir part�cula de muerte del jugador
 		App->particles->AddParticle(App->particles->playerdead, position.x, position.y, Collider::Type::NONE, 0);
-		c1->type = Collider::Type::NONE;
+		c1->type = Collider::Type::PLAYER;
 		//App->particles->AddParticle(App->particles->explosion2, position.x, position.y, Collider::Type::NONE, 9);
 		//App->audio->PlayFx(explosionjugadorFx);
 
