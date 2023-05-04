@@ -16,7 +16,7 @@ public:
 	// Position will be updated depending on the speed defined at each step
 	void Update() override;
 
-	void OnCollision(Collider* c1, Collider* c2);
+	void OnCollision(Collider* c1);
 
 	bool destroyed = false;
 
@@ -29,7 +29,6 @@ private:
 	// We are keeping it an animation for consistency with other enemies
 	Animation fly;
 
-	Particle deadwiz;
 
 };
 
