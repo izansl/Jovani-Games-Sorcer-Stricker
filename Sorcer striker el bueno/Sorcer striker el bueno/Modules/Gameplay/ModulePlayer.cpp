@@ -57,6 +57,8 @@ Update_Status ModulePlayer::Update() {
 
 	// Moving the player with the camera scroll
 	App->player->position.y -= 8;
+	if (App->input->keys[SDL_SCANCODE_F1] == KEY_DOWN)
+		godMode = !godMode;
 
 	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT) position.y -= speed;
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT) position.y += speed;

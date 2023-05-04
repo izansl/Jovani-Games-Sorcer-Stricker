@@ -34,6 +34,7 @@ public:
 
 	int kills = 0;
 	int lives = 3;
+	bool godMode = false;
 
 
 
