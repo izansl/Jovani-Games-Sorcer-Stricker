@@ -75,7 +75,7 @@ public:
 	
 	// Font score index
 	uint score = 000;
-	int scoreFont = -1;
+	int scoreFont = 10;
 	char scoreText[10] = { "\0" };
 
 	// A countdown to when the player gets destroyed. After a while, the game exits
