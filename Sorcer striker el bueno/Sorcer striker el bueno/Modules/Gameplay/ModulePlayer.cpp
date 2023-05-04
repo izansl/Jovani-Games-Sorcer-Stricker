@@ -17,15 +17,15 @@
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 
 	// idle animation - just one sprite
-	idleAnim.PushBack({ 240, 16, 38, 44 });
+	idleAnim.PushBack({ 264, 16, 40, 42 });
 
 	// move right
-	rightAnim.PushBack({ 278, 17, 38, 44 });
+	rightAnim.PushBack({ 305, 16, 38, 44 });
 	rightAnim.loop = false;
 	rightAnim.speed = 0.1f;
 
 	// Move left
-	leftAnim.PushBack({ 200, 17, 38, 44 });
+	leftAnim.PushBack({ 226, 16, 38, 44 });
 	leftAnim.loop = false;
 	leftAnim.speed = 0.1f;
 }
@@ -161,17 +161,17 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 	else if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect) && c1->type == Collider::Type::PLAYER || c2->type == Collider::Type::ENEMY)
 	{
 		// Change sprite
-		idleAnim.PushBack({ 1595, 63, 62, 43 });
-		idleAnim.PushBack({ 268, 63, 70, 43 });
+		idleAnim.PushBack({ 337, 69, 66, 45 });
+		idleAnim.PushBack({ 343, 132, 66, 45 });
 		idleAnim.speed = 1.0f;
 
 		//Move right
-		rightAnim.PushBack({ 242, 61, 68, 44 });
+		rightAnim.PushBack({ 445, 134, 73, 46 });
 		rightAnim.loop = false;
 		rightAnim.speed = 0.1f;
 
 		// Move left
-		leftAnim.PushBack({ 9, 61, 68, 44 });
+		leftAnim.PushBack({ 14, 37, 73, 46 });
 		leftAnim.loop = false;
 		leftAnim.speed = 0.1f;
 
