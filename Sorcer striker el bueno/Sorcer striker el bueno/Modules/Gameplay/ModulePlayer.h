@@ -61,6 +61,10 @@ public:
 	Animation rightAnim;
 	Animation leftAnim;
 
+	Animation blueBUFF;
+	Animation blueright;
+	Animation blueleft;
+
 	// The player's collider
 	Collider* collider = nullptr;
 
