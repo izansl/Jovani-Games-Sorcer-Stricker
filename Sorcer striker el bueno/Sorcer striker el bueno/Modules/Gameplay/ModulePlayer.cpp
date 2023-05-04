@@ -110,7 +110,7 @@ Update_Status ModulePlayer::PostUpdate() {
 	}
 	else
 	{
-		if (destroyedCountdown <=0)
+		if (destroyedCountdown <= 0)
 		{
 			position.x = backupPosition.x;
 			position.y = backupPosition.y;
@@ -123,11 +123,15 @@ Update_Status ModulePlayer::PostUpdate() {
 			destroyedCountdown--;
 		}
 	}
-	if (kills==58)
+
+	// WIN CONDITION
+	if (kills == 58 || App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
 	{
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
 	}
-	if (lives==0)
+
+	// LOSE CONDITION
+	if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
 	{
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
 	}
@@ -147,7 +151,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 
 		destroyed = true;
 	}
-	else if (c1->type==Collider::Type::PLAYER && c2->type== Collider::Type::ENEMY && destroyed== false /*&& !godMode*/)//Cuando tengamos godmode se le dara uso
+	else if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::ENEMY && destroyed == false /*&& !godMode*/)//Cuando tengamos godmode se le dara uso
 	{
 		destroyed = true;
 		lives--;
