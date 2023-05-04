@@ -150,6 +150,8 @@ void ModuleCollisions::DebugDraw() {
 			App->render->DrawQuad(colliders[i]->rect, 0, 255, 255, alpha); break;
 		case Collider::Type::WALL_PLAYER: // magenta
 			App->render->DrawQuad(colliders[i]->rect, 0, 255, 255, alpha); break;
+		case Collider::Type::OBJECTCHEST: // magenta
+			App->render->DrawQuad(colliders[i]->rect, 0, 255, 255, alpha); break;
 		}
 	}
 }

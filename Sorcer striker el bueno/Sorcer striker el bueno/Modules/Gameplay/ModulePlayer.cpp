@@ -155,7 +155,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		destroyed = true;
 		lives--;
 	}
-	else if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect) && c1->type == Collider::Type::PLAYER || c2->type == Collider::Type::ENEMY)
+	else if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect) && c1->type == Collider::Type::PLAYER || c2->type == Collider::Type::OBJECTCHEST)
 	{
 		// Change sprite
 		idleAnim.PushBack({ 1595, 63, 62, 43 });

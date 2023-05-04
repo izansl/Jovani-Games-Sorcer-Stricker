@@ -18,32 +18,40 @@ Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
 	currentAnim = &blue;
 
 	// Path 1
-	path1.PushBack({ -1.0f, -0.5f }, 10);
-	path1.PushBack({ -1.0f, 0.0f }, 10);
-	path1.PushBack({ -0.5f, 0.5f }, 10);
-	path1.PushBack({ 0.0f, 1.0f }, 10);
-	path1.PushBack({ 0.5f, 0.5f }, 10);
-	path1.PushBack({ 1.0f, 0.0f }, 10);
-	path1.PushBack({ 1.0f, -0.5f }, 10);
-	path1.PushBack({ 1.0f, -1.0f }, 10);
 
-	// Path 2
-	path2.PushBack({ -0.5f, -1.0f }, 60); // velocidad reducida a 60
-	path2.PushBack({ -0.5f, -1.0f }, 30); // permanece en su lugar durante 30 milisegundos
-	path2.PushBack({ -0.5f, -2.0f }, 30); // se mueve hacia arriba durante 30 milisegundos
-	path2.PushBack({ -0.5f, -3.0f }, 60); // se mueve hacia arriba durante 60 milisegundos
-	path2.PushBack({ -0.5f, -2.0f }, 30); // se mueve hacia abajo durante 30 milisegundos
-	path2.PushBack({ -0.5f, -1.0f }, 60); // se mueve hacia abajo durante 60 milisegundos
+	pathchest.PushBack({ -1.0f, -0.5f }, 10);
+	pathchest.PushBack({ -0.9f, -0.8f }, 10);
+	pathchest.PushBack({ -0.8f, -0.2f }, 10);
+	pathchest.PushBack({ -0.7f, -1.0f }, 10);
+	pathchest.PushBack({ -0.6f, -0.4f }, 10);
+	pathchest.PushBack({ -0.5f, -0.9f }, 10);
+	pathchest.PushBack({ -0.4f, -0.3f }, 10);
+	pathchest.PushBack({ -0.3f, -1.0f }, 10);
+	pathchest.PushBack({ -0.2f, -0.5f }, 10);
+	pathchest.PushBack({ -0.1f, -0.1f }, 10);
+	pathchest.PushBack({ 0.0f, -0.6f }, 10);
+	pathchest.PushBack({ 0.1f, -0.2f }, 10);
+	pathchest.PushBack({ 0.2f, -0.8f }, 10);
+	pathchest.PushBack({ 0.3f, -0.4f }, 10);
+	pathchest.PushBack({ 0.4f, -0.9f }, 10);
+	pathchest.PushBack({ 0.5f, -0.3f }, 10);
+	pathchest.PushBack({ 0.6f, -1.0f }, 10);
+	pathchest.PushBack({ 0.7f, -0.5f }, 10);
+	pathchest.PushBack({ 0.8f, -0.1f }, 10);
+	pathchest.PushBack({ 0.9f, -0.6f }, 10);
+	pathchest.PushBack({ 1.0f, -0.2f }, 10);
+	pathchest.PushBack({ 1.0f, -1.0f }, 0);
 
-	currentPath = &path1;
+	currentPath = &pathchest;
 	collider = App->collisions->AddCollider({ 0, 0, 43, 39 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_CHESS::Update() {
+	
 	if (!activePart2)
-		path1.Update();
+		pathchest.Update();
 	else
-		path2.Update();
+		pathchest.Update();
 
 	position = spawnPos + currentPath->GetRelativePosition();
 
@@ -56,19 +64,39 @@ void Enemy_CHESS::Update() {
 void Enemy_CHESS::OnCollision(Collider* c1) {
 	if (c1->type == Collider::Type::PLAYER_SHOT)
 	{
+		collider->type = Collider::Type::OBJECTCHEST;
 		// Change sprite
-		red.PushBack({ 58, 60, 14, 18 });
-		red.PushBack({ 74, 60, 14, 18 });
+		red.PushBack({ 49, 56, 25, 35 });
+		red.PushBack({ 73, 56, 25, 35 });
 		red.speed = 0.1f;
 		currentAnim = &red;
 
-		// Change path
-		currentPath = &path2;
+		////Change Collider type
+		collider->rect = { 0, 0, 25, 35 };
 
-		//Change Collider type
-		collider->rect = { 0, 0, 15, 20 };
+		pathchest.PushBack({ 0.0f, 0.5f }, 10);
+		pathchest.PushBack({ 0.0f, -2.0f }, 10);
+		pathchest.PushBack({ 0.0f, -2.5f }, 10);
+		pathchest.PushBack({ 0.0f, -2.0f }, 10);
+		pathchest.PushBack({ 0.0f, -1.5f }, 10);
+		pathchest.PushBack({ 0.0f, -2.0f }, 10);
+		pathchest.PushBack({ 0.0f, -2.5f }, 10);
+		pathchest.PushBack({ 0.0f, -2.0f }, 10);
+		pathchest.PushBack({ 0.0f, -1.5f }, 10);
+		pathchest.PushBack({ 0.0f, -2.0f }, 10);
+		pathchest.PushBack({ 0.0f, -2.5f }, 10);
+		pathchest.PushBack({ 0.0f, -2.0f }, 10);
+		pathchest.PushBack({ 0.0f, -1.5f }, 10);
+		pathchest.PushBack({ 0.0f, -2.0f }, 10);
+		pathchest.PushBack({ 0.0f, -2.5f }, 10);
+		pathchest.PushBack({ 0.0f, -2.0f }, 10);
+		pathchest.PushBack({ 0.0f, -1.5f }, 10);
+		pathchest.PushBack({ 0.0f, -2.0f }, 10);
+		pathchest.PushBack({ 0.0f, -2.5f }, 10);
+		pathchest.PushBack({ 0.0f, -2.0f }, 10);
+		pathchest.PushBack({ 0.0f, 0.5f }, 10);
 
-		// Active path2 update
+		//// Active path2 update
 		activePart2 = true;
 	}
 }
