@@ -19,6 +19,7 @@ It is an action-fantasy game where players take on the role of powerful sorcerer
    - Movement: Use WASD to move your character.
    - Attack: Press the Spacebar for the basic attack.
    - Special Abilities: Press X to deploy a bomb.
+   - Debug funcionality: Press F1 to enable God Mode, press F2 for the Debug mode, and F3/F4 for the instant win/lose.
 
 2. **Objective**
    - Defeat Enemies: Engage in fast-paced battles with various types of dark creatures. Aim your spells accurately and use your special abilities wisely to defeat them.
