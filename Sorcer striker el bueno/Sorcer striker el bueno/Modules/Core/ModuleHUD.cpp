@@ -142,6 +142,6 @@ void ModuleHUD::LoadVector()
 	vectorABC.push_back({ 'Z', 47 });
 }
 
-void ModuleHUD::WriteStringToScreen(char* sentenceToPaint, iPoint positionToPaint)
+void ModuleHUD::WriteStringToScreen(std::string sentenceToPaint, iPoint positionToPaint)
 {
 }

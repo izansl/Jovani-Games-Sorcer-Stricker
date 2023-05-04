@@ -34,9 +34,9 @@ private:
 	std::vector<abecedari> vectorABC;
 
 
-	int PosLetter(char lletraBuscar);
+	int PosLetter(char leterToSearch);
 	void LoadVector();
-	void WriteStringToScreen(char* fraseAPintar, iPoint posicioAPintar);
+	void WriteStringToScreen(std::string sentenceToPaint, iPoint positionToPaint);
 
 	//IMPRIMEIX ELS CARÀCTER DEL VECTOR 
 };
