@@ -23,7 +23,7 @@ private:
 	// A set of steps that define the position in the screen
 	// And an animation for each step
 	Path path;
-
+	int life = 5;
 	// This enemy has one sprite and one frame
 	// We are keeping it an animation for consistency with other enemies
 	Animation fly;

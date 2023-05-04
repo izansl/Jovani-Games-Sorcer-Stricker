@@ -61,7 +61,7 @@ bool ModuleParticles::Start() {
 	explosion2.anim.PushBack({ 75, 72, 36, 36 });
 	explosion2.anim.PushBack({ 111, 71, 36, 36 });
 	explosion2.anim.speed = 0.2f;
-	explosion2.anim.speed = 0.1;
+	
 	explosion2.anim.loop = false;
 
 	return true;
