@@ -95,6 +95,9 @@
     <ClCompile Include="Entities\Enemies\Enemy_RedWizard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Modules\Core\ModuleHUD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application\Application.h">
@@ -182,6 +185,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Entities\Enemies\Enemy_RedWizard.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Core\ModuleHUD.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
