@@ -531,15 +531,15 @@ void Enemy_RedBall::Update() {
 	// It will update the collider depending on the position
 	Enemy::Update();
 }
-
+//
 void Enemy_RedBall::OnCollision(Collider* c1) {
 	fly.PushBack({ 7, 50, 32, 32 });
 	fly.PushBack({ 42, 50, 32, 32 });
 	fly.PushBack({ 77, 51, 32, 32 });
 	fly.PushBack({ 111, 52, 32, 32 });
+
 	currentAnim = &fly;
 	fly.speed = 0.2;
 	fly.loop = false;
 	App->audio->PlayFx(destroyedFx);
-
 }

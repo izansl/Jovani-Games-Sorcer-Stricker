@@ -29,7 +29,6 @@ private:
 	// We are keeping it an animation for consistency with other enemies
 	Animation fly;
 
-	Particle deadwiz;
 
 };
 

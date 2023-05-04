@@ -69,8 +69,7 @@ void Enemy_Dragon::Update() {
 //	}
 //}
 
-void Enemy_Dragon::OnCollision(Collider* c1) {
-	
+void Enemy_Dragon::OnCollision(Collider* c1) {	
 		fly.PushBack({ 20, 121, 85, 89 });
 		fly.PushBack({ 113, 125, 85, 89 });
 		fly.PushBack({ 207, 122, 85, 89 });
@@ -79,7 +78,4 @@ void Enemy_Dragon::OnCollision(Collider* c1) {
 		fly.speed = 0.2;
 		fly.loop = false;
 		App->audio->PlayFx(destroyedFx);
-		
-	
-	
 }

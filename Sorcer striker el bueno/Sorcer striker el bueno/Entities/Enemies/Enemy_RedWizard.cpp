@@ -81,9 +81,8 @@ void Enemy_RedWizard::Update() {
 	Enemy::Update();
 }
 
-void Enemy_RedWizard::OnCollision(Collider* c1) 
-{
 
+void Enemy_RedWizard::OnCollision(Collider* c1) {
 	fly.PushBack({ 3, 71, 36, 36 });
 	fly.PushBack({ 39, 72, 36, 36 });
 	fly.PushBack({ 75, 72, 36, 36 });
