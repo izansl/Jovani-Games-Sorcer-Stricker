@@ -162,6 +162,7 @@
     <ClCompile Include="Entities\Enemies\Enemy_RedBall.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_RedWizard.cpp" />
     <ClCompile Include="Entities\Particle.cpp" />
+    <ClCompile Include="Modules\Core\ModuleHUD.cpp" />
     <ClCompile Include="Modules\Core\ModuleAudio.cpp" />
     <ClCompile Include="Modules\Core\ModuleCollisions.cpp" />
     <ClCompile Include="Modules\Core\ModuleFadeToBlack.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="Entities\Enemies\Enemy_RedBall.h" />
     <ClInclude Include="Entities\Enemies\Enemy_RedWizard.h" />
     <ClInclude Include="Entities\Particle.h" />
+    <ClInclude Include="Modules\Core\ModuleHUD.h" />
     <ClInclude Include="Modules\Core\Module.h" />
     <ClInclude Include="Modules\Core\ModuleAudio.h" />
     <ClInclude Include="Modules\Core\ModuleCollisions.h" />

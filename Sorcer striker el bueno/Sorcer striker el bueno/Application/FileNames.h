@@ -37,6 +37,11 @@ const int Height_background_forest1 = 3000;
 const int Height_background_forest2 = 3000;
 const int Height_background_castle = 4500;
 
+//HUD
+const std::string FI_HUD_font1 = "../Assets/Images/Fonts/rtype_font.png";
+const std::string FI_HUD_font2 = "../Assets/Images/Fonts/rtype_font2.png";
+const std::string FI_HUD_stage1 = "../Assets/Images/Fonts/stage1.png";
+
 // Sprites player
 const std::string FI_spritePlayer_player1 = "../Assets/Images/Character.png";
 const std::string FI_spritePlayer_player2 = "../Assets/Images/Character.png";
@@ -76,7 +81,8 @@ const std::string FI_spriteEnemy_3 = "../Assets/Images/3rd_enemy.png";
 	Atack
 		1-({229, 77, 15, 15})
 		2-({245, 77, 15, 15})*/
-		//Sprites chest
+
+//Sprites chest
 const std::string FI_spritechest_blue = "../Assets/Images/Chests.png";
 /*	-Bluechest
 		-Hada con cofre

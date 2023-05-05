@@ -12,7 +12,7 @@
 #include "../Modules/Core/ModuleFadeToBlack.h"
 #include "../Modules/Core/ModuleFonts.h"
 #include "../Modules/Core/ModuleRender.h"
-
+#include "../Modules/Core/ModuleHUD.h"
 #include "../Modules/Gameplay/ModulePlayer.h"
 #include "../Modules/Gameplay/SceneIntro.h"
 #include "../Modules/Gameplay/SceneLevel1.h"
@@ -43,6 +43,7 @@ Application::Application() {
 	modules[10] = fade = new ModuleFadeToBlack(true);
 	modules[11] = fonts = new ModuleFonts(true);
 	modules[12] = render = new ModuleRender(true);
+	modules[13] = hud = new ModuleHUD(true);
 }
 
 Application::~Application() {
