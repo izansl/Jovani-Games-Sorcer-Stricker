@@ -10,7 +10,7 @@ ModuleHUD::ModuleHUD(bool startEnabled) : Module(startEnabled) {
 	// Inicializa las variables de puntuación
 	score = 0;
 	highScore = 0;
-	sizeVector = LoadVector();	
+	sizeVector = LoadVector();
 }
 
 ModuleHUD::~ModuleHUD() {
@@ -42,7 +42,7 @@ Update_Status ModuleHUD::PostUpdate() {
 	return Update_Status();
 }
 
-int ModuleHUD::PosLetter(char leterToSearch){
+int ModuleHUD::PosLetter(char leterToSearch) {
 
 	char upperLetter = static_cast<char>(toupper(leterToSearch)); //  Converts the letter to uppercase
 
@@ -127,8 +127,9 @@ void ModuleHUD::PaintSentence(std::string sentenceToPaint, iPoint positionToPain
 
 	for (int i = 0; i < size; i++)
 	{
-		cutFont.x = writedLetters * widthLetter;
-		App->render->Blit(texture, positionToPaint.x + (writedLetters * widthLetter), App->render->camera.y + positionToPaint.y, &cutFont);
+		cutFont.x = widthLetter * posicions[i];
+		App->render->Blit(texture, positionToPaint.x + (writedLetters * widthLetter), positionToPaint.y, &cutFont);
+		writedLetters++;
 	}
 
 }
