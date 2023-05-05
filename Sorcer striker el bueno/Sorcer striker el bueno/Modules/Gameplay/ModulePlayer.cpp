@@ -50,9 +50,6 @@ bool ModulePlayer::Start() {
 
 	collider = App->collisions->AddCollider({ position.x, position.y, 38, 44 }, Collider::Type::PLAYER, this);
 
-	//HUD
-	char lookupTable[] = { "! @,_./0123456789$;< ?abcdefghijklmnopqrstuvwxyz" };
-	scoreFont = App->fonts->Load("../Assets/Images/Fonts/rtype_font.png", lookupTable, 2);
 	return ret;
 }
 
@@ -140,11 +137,6 @@ Update_Status ModulePlayer::PostUpdate() {
 	{
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
 	}
-	
-	//HUD
-	/*App->fonts->BlitText(58, 248, scoreFont, scoreText);
-	App->fonts->BlitText(150, 248, scoreFont, "this is just a font test");*/
-	App->fonts->BlitText(150, 248, scoreFont, "HOLA AAA");
 
 	return Update_Status::UPDATE_CONTINUE;
 }

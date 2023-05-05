@@ -8,9 +8,6 @@
 #include "../Module.h"
 #include "../../Utils/p2Point.h"
 
-#define NUM_LETTERS 50
-
-
 struct abecedari {
 	char lletra;
 	int posicio;
@@ -23,20 +20,29 @@ public:
 	ModuleHUD(bool startEnabled);
 	~ModuleHUD();
 
+	bool Start() override;
+
 	void UpdateScore(int newScore);
-	void UpdateHighScore(int newHighScore);
-	void Render(SDL_Renderer* renderer);
+	void UpdateHighScore(int newHighScore);	
 	Update_Status PostUpdate() override;
 
 private:
 	int score;
 	int highScore;
+	int sizeVector;
+
 	std::vector<abecedari> vectorABC;
+
+	std::string player1 = "Player 1";
+	std::string player2 = "Player 2";
+	std::string hlScore = "Hl-Score";
+
+	SDL_Texture* texture = nullptr;
 
 
 	int PosLetter(char leterToSearch);
-	void LoadVector();
-	void WriteStringToScreen(std::string sentenceToPaint, iPoint positionToPaint);
+	int LoadVector();
+	void PaintSentence(std::string sentenceToPaint, iPoint positionToPaint);
 
 	//IMPRIMEIX ELS CARÀCTER DEL VECTOR 
 };

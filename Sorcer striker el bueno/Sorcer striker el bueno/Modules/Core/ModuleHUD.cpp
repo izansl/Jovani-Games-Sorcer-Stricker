@@ -1,15 +1,27 @@
 #include "ModuleHUD.h"
+#include <cctype>
+#include "../../Application/Application.h"
+#include "../../Application/FileNames.h"
+#include "../../Modules/Core/ModuleTextures.h"
+#include "../../Modules/Core/ModuleInput.h"
+#include "../../Modules/Core/ModuleRender.h"
 
 ModuleHUD::ModuleHUD(bool startEnabled) : Module(startEnabled) {
 	// Inicializa las variables de puntuación
 	score = 0;
 	highScore = 0;
-
-	LoadVector();
+	sizeVector = LoadVector();	
 }
 
 ModuleHUD::~ModuleHUD() {
 	// Destructor
+}
+
+bool ModuleHUD::Start() {
+	LOG("Loading HUD textures");
+	bool ret = true;
+	texture = App->textures->Load(FI_HUD_font1.c_str());
+	return ret;
 }
 
 void ModuleHUD::UpdateScore(int newScore) {
@@ -22,72 +34,29 @@ void ModuleHUD::UpdateHighScore(int newHighScore) {
 	highScore = newHighScore;
 }
 
-void ModuleHUD::Render(SDL_Renderer* renderer) {
-	// Renderiza la HUD en pantalla
-	// Aquí puedes usar funciones de SDL para dibujar el high score y la puntuación actual
-	// en la posición deseada en la pantalla
+Update_Status ModuleHUD::PostUpdate() {
+	PaintSentence(player1, { 100,100 });
+	PaintSentence(player2, { 250,100 });
+	PaintSentence(hlScore, { 150,100 });
 
-	// Carga la imagen de la fuente (.png)
-	SDL_Surface* fontSurface = IMG_Load("../Assets/Images/Fonts/rtype_font.png");
-	if (fontSurface == nullptr) {
-		// Manejo de error si no se puede cargar la imagen de fuente
-		return;
-	}
-
-	// Crea una textura a partir de la superficie de la fuente
-	SDL_Texture* fontTexture = SDL_CreateTextureFromSurface(renderer, fontSurface);
-	if (fontTexture == nullptr) {
-		// Manejo de error si no se puede crear la textura de la fuente
-		SDL_FreeSurface(fontSurface);
-		return;
-	}
-
-	// Obtén el ancho y alto de cada carácter de la fuente
-	int charWidth = fontSurface->w;
-	int charHeight = fontSurface->h;
-
-	// Calcula la posición de renderizado del primer carácter (por ejemplo, en la esquina superior izquierda)
-	int xPos = 176;
-	int yPos = 1;
-
-	// Renderiza cada dígito de la puntuación en la posición calculada
-	std::string scoreString = std::to_string(score);
-	for (char digit : scoreString) {
-		int digitValue = digit - '0'; // Convierte el carácter a su valor entero correspondiente
-		int srcX = xPos * charWidth; // Calcula la posición en X del carácter en la imagen de la fuente
-
-		SDL_Rect srcRect = { srcX, 0, charWidth, charHeight };
-		SDL_Rect dstRect = { xPos, yPos, charWidth, charHeight };
-
-		SDL_RenderCopy(renderer, fontTexture, &srcRect, &dstRect);
-
-		xPos += charWidth; // Aumenta la posición X para el siguiente carácter
-	}
-
-	// Libera la textura y la superficie de la fuente
-	SDL_DestroyTexture(fontTexture);
-	SDL_FreeSurface(fontSurface);
-}
-
-Update_Status ModuleHUD::PostUpdate()
-{
 	return Update_Status();
 }
 
-int ModuleHUD::PosLetter(char leterToSearch)
-{
-	for (int i = 0; i < NUM_LETTERS; i++)
+int ModuleHUD::PosLetter(char leterToSearch){
+
+	char upperLetter = static_cast<char>(toupper(leterToSearch)); //  Converts the letter to uppercase
+
+	for (int i = 0; i < sizeVector; i++)
 	{
-		if (vectorABC[i].lletra == leterToSearch)
+		if (vectorABC[i].lletra == upperLetter)
 		{
 			return i;
-			break;
 		}
 	}
 	return 0;
 }
 
-void ModuleHUD::LoadVector()
+int ModuleHUD::LoadVector()
 {
 	vectorABC.push_back({ '!', 0 });
 	vectorABC.push_back({ '$', 1 });
@@ -140,8 +109,26 @@ void ModuleHUD::LoadVector()
 	vectorABC.push_back({ 'X', 45 });
 	vectorABC.push_back({ 'Y', 46 });
 	vectorABC.push_back({ 'Z', 47 });
+
+	return vectorABC.size();
 }
 
-void ModuleHUD::WriteStringToScreen(std::string sentenceToPaint, iPoint positionToPaint)
-{
+void ModuleHUD::PaintSentence(std::string sentenceToPaint, iPoint positionToPaint) {
+	int size = sentenceToPaint.size();
+	int writedLetters = 0;
+	int widthLetter = 8;
+	std::vector<int> posicions;
+	SDL_Rect cutFont = { 0, 0, 8, 7 };
+
+	for (int i = 0; i < size; i++)
+	{
+		posicions.push_back(PosLetter(sentenceToPaint[i]));
+	}
+
+	for (int i = 0; i < size; i++)
+	{
+		cutFont.x = writedLetters * widthLetter;
+		App->render->Blit(texture, positionToPaint.x + (writedLetters * widthLetter), App->render->camera.y + positionToPaint.y, &cutFont);
+	}
+
 }
