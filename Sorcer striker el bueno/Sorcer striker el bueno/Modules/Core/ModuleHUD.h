@@ -21,10 +21,10 @@ public:
 	~ModuleHUD();
 
 	bool Start() override;
-
-	void UpdateScore(int newScore);
-	void UpdateHighScore(int newHighScore);	
+	Update_Status Update() override;
 	Update_Status PostUpdate() override;
+	bool CleanUp();
+
 
 private:
 	int score;

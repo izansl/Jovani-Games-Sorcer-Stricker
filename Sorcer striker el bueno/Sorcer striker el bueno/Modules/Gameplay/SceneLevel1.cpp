@@ -22,6 +22,7 @@ bool SceneLevel1::Start() {
 
 	bool ret = true;
 
+	fkText = App->textures->Load(FI_HUD_font1.c_str());
 	texture_beach = App->textures->Load(FI_background_beach.c_str());
 	texture_sea = App->textures->Load(FI_background_sea.c_str());
 	texture_forest1 = App->textures->Load(FI_background_forest1.c_str());
@@ -198,6 +199,10 @@ Update_Status SceneLevel1::PostUpdate() {
 	App->render->Blit(texture_beach, +40, (Height_background_forest1 + Height_background_forest1 + Height_background_forest2 + Height_background_beach - SCREEN_HEIGHT) * -1, NULL);
 	App->render->Blit(texture_sea, +40, (Height_background_forest1 + Height_background_forest1 + Height_background_forest2 + Height_background_beach + Height_background_sea - SCREEN_HEIGHT) * -1, NULL);
 	App->render->Blit(texture_castle, +40, (Height_background_forest1 + Height_background_forest1 + Height_background_forest2 + Height_background_beach + Height_background_sea + Height_background_castle - SCREEN_HEIGHT) * -1, NULL);
+
+	//App->render->Blit(fkText, App->player->position.x, App->player->position.y, NULL);
+	//App->hud
+
 	return Update_Status::UPDATE_CONTINUE;
 }
 

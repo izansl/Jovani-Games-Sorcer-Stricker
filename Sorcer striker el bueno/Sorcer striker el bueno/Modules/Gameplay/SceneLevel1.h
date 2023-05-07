@@ -33,6 +33,7 @@ public:
 
 public:
 	// The scene sprite sheet loaded into an SDL_Texture
+	SDL_Texture* fkText = nullptr;
 	SDL_Texture* texture_beach = nullptr;
 	SDL_Texture* texture_sea = nullptr;
 	SDL_Texture* texture_forest1 = nullptr;	
