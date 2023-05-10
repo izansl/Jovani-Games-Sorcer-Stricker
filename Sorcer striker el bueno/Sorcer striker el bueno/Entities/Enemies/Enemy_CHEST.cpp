@@ -43,7 +43,8 @@ Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
 	pathchest.PushBack({ 1.0f, -1.0f }, 0);
 
 	currentPath = &pathchest;
-	collider = App->collisions->AddCollider({ 0, 0, 43, 39 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0, 43, 39 }, Collider::Type::CHEST, (Module*)App->enemies);
+	collider->pendingToDelete = false;
 }
 
 void Enemy_CHESS::Update() {
@@ -52,6 +53,11 @@ void Enemy_CHESS::Update() {
 		pathchest.Update();
 	else
 		pathchest.Update();
+
+	if (chestdestroy==true && collider->type != Collider::Type::CHEST)
+	{
+		collider->type = Collider::Type::POWER_UP;
+	}
 
 	position = spawnPos + currentPath->GetRelativePosition();
 
@@ -64,15 +70,17 @@ void Enemy_CHESS::Update() {
 void Enemy_CHESS::OnCollision(Collider* c1) {
 	if (c1->type == Collider::Type::PLAYER_SHOT)
 	{
-		collider->type = Collider::Type::OBJECTCHEST;
+		chestdestroy = true;
+
 		// Change sprite
 		red.PushBack({ 49, 56, 25, 35 });
 		red.PushBack({ 73, 56, 25, 35 });
 		red.speed = 0.1f;
 		currentAnim = &red;
 
+
 		////Change Collider type
-		collider->rect = { 0, 0, 25, 35 };
+		//collider->rect = { 0, 0, 25, 35 };
 
 		pathchest.PushBack({ 0.0f, 0.5f }, 10);
 		pathchest.PushBack({ 0.0f, -2.0f }, 10);

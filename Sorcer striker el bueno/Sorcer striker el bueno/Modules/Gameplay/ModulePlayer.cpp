@@ -179,7 +179,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		destroyed = true;
 		if (!godMode) lives--;
 	}
-	else if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect) && c1->type == Collider::Type::PLAYER || c2->type == Collider::Type::ENEMY)
+	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::POWER_UP)
 	{
 		// Change sprite
 		idleAnim.PushBack({ 337, 69, 66, 45 });
@@ -195,7 +195,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		leftAnim.PushBack({ 14, 37, 73, 46 });
 		leftAnim.loop = false;
 		leftAnim.speed = 0.1f;
-
+		
 		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
 		{
 			position.x += speed;
