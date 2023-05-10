@@ -200,8 +200,12 @@ Update_Status SceneLevel1::PostUpdate() {
 	App->render->Blit(texture_sea, +40, (Height_background_forest1 + Height_background_forest1 + Height_background_forest2 + Height_background_beach + Height_background_sea - SCREEN_HEIGHT) * -1, NULL);
 	App->render->Blit(texture_castle, +40, (Height_background_forest1 + Height_background_forest1 + Height_background_forest2 + Height_background_beach + Height_background_sea + Height_background_castle - SCREEN_HEIGHT) * -1, NULL);
 
-	//App->render->Blit(fkText, App->player->position.x, App->player->position.y, NULL);
-	//App->hud
+	SDL_Rect rec;
+	rec.x = 8;
+	rec.y = 0;
+	rec.w = 8;
+	rec.h = 7;
+	App->render->Blit(fkText, App->player->position.x, App->player->position.y, &rec);
 
 	return Update_Status::UPDATE_CONTINUE;
 }
