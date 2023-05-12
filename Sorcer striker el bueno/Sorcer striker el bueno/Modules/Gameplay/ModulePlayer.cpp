@@ -106,15 +106,17 @@ Update_Status ModulePlayer::Update() {
 		}
 		else if (Powerup==true)
 		{
-			App->particles->AddParticle(App->particles->laser, position.x + 29, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->laser, position.x + 7, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->laser, position.x + 13, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x, position.y - 5, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x, position.y - 10, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x, position.y - 15, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x + 16, position.y + 5, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x + 16, position.y + 10, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x + 16, position.y + 15, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser, position.x+15, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser, position.x + 25, position.y-5, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser, position.x + 35, position.y, Collider::Type::PLAYER_SHOT, 0);
+
+			App->particles->AddParticle(App->particles->iceleft, position.x-5, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->iceleft, position.x-15, position.y+20, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->iceleft, position.x-5, position.y+40, Collider::Type::PLAYER_SHOT, 0);
+
+			App->particles->AddParticle(App->particles->iceright, position.x+55, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->iceright, position.x+65, position.y+20, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->iceright, position.x+55, position.y+40, Collider::Type::PLAYER_SHOT, 0);
 		}
 	}
 
@@ -135,6 +137,8 @@ Update_Status ModulePlayer::Update() {
 	if (Powerup==true)
 	{
 		currentAnimation = &blueBUFF;
+		collider->rect.w = 66;
+		collider->rect.h = 45;
 
 		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
 		{
@@ -208,8 +212,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		// A�adir part�cula de muerte del jugador
 		App->particles->AddParticle(App->particles->playerdead, position.x, position.y, Collider::Type::NONE, 0);
 		c1->type = Collider::Type::PLAYER;
-		//App->particles->AddParticle(App->particles->explosion2, position.x, position.y, Collider::Type::NONE, 9);
-		//App->audio->PlayFx(explosionjugadorFx);
+		Powerup = false;
 
 		destroyed = true;
 	}
@@ -221,6 +224,5 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::POWER_UP)
 	{
 		Powerup = true;
-		collider->pendingToDelete = true;
 	}
 }

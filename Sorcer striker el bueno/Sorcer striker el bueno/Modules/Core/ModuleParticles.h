@@ -63,7 +63,9 @@ public:
 	Particle laser;
 
 	//Template for extra shots
-	Particle ice;
+	Particle iceright;
+	Particle iceleft;
+
 
 	//Template for deads
 	Particle playerdead;

@@ -43,6 +43,10 @@ bool SceneLevel1::Start() {
 	int hb = 10;
 	botcoll = App->collisions->AddCollider({ xb, yb, wb, hb }, Collider::Type::WALL_PLAYER);
 
+	leftcoll= App->collisions->AddCollider({ 25, 3000, 10, 600 }, Collider::Type::WALL);
+
+	raightcoll = App->collisions->AddCollider({ 345, 3000, 10, 600 }, Collider::Type::WALL);
+
 
 #pragma region ENEMIES
 
@@ -175,6 +179,8 @@ Update_Status SceneLevel1::Update() {
 
 	topcoll->rect.y += -8;
 	botcoll->rect.y += -8;
+	leftcoll->rect.y += -8;
+	raightcoll->rect.y += -8;
 
 	if (App->player->position.y + 50 >= botcoll->rect.y)
 	{
