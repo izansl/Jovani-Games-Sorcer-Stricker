@@ -36,6 +36,8 @@ public:
 	int lives = 3;
 	bool godMode = false;
 
+	bool Powerup = true;
+
 
 
 
@@ -68,6 +70,7 @@ public:
 
 	// The player's collider
 	Collider* collider = nullptr;
+	Collider* colliderblue = nullptr;
 
 	// A flag to detect when the player has been destroyed
 	bool destroyed = false;
