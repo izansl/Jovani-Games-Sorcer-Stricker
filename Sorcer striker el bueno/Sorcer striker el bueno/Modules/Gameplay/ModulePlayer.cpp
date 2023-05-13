@@ -145,12 +145,18 @@ Update_Status ModulePlayer::PostUpdate() {
 	if (kills == 58 || App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
 	{
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
+
+		//App->collisions->RemoveCollider(collider);
+		
 	}
 
 	// LOSE CONDITION
 	if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
 	{
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
+		//App->collisions->RemoveCollider(collider);
+		
+		
 	}
 
 	return Update_Status::UPDATE_CONTINUE;
