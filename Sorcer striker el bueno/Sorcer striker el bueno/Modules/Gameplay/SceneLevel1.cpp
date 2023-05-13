@@ -6,6 +6,7 @@
 #include "../../Modules/Core/ModuleRender.h"
 #include "../../Modules/Core/ModuleAudio.h"
 #include "../../Modules/Core/ModuleCollisions.h"
+#include "../../Modules/Core/ModuleInput.h"
 
 #include "ModuleEnemies.h"
 #include "ModulePlayer.h"
@@ -42,9 +43,7 @@ bool SceneLevel1::Start() {
 	int wb = 400;
 	int hb = 10;
 	botcoll = App->collisions->AddCollider({ xb, yb, wb, hb }, Collider::Type::WALL_PLAYER);
-
 	leftcoll= App->collisions->AddCollider({ 25, 3000, 10, 600 }, Collider::Type::WALL);
-
 	raightcoll = App->collisions->AddCollider({ 345, 3000, 10, 600 }, Collider::Type::WALL);
 
 
@@ -170,6 +169,7 @@ bool SceneLevel1::Start() {
 
 	App->player->Enable();
 	App->enemies->Enable();
+	App->collisions->Enable();
 
 	return ret;
 }
@@ -210,5 +210,6 @@ Update_Status SceneLevel1::PostUpdate() {
 bool SceneLevel1::CleanUp() {
 	App->player->Disable();
 	App->enemies->Disable();
+	App->collisions->Disable();
 	return true;
 }
