@@ -43,16 +43,7 @@ bool SceneLevel1::Start() {
 	int wb = 400;
 	int hb = 10;
 	botcoll = App->collisions->AddCollider({ xb, yb, wb, hb }, Collider::Type::WALL_PLAYER);
-	/*if (App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
-	{
-		App->collisions->RemoveCollider(topcoll);
-		App->collisions->RemoveCollider(botcoll);
-	}
-	if (App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
-	{
-		App->collisions->RemoveCollider(topcoll);
-		App->collisions->RemoveCollider(botcoll);
-	}*/
+	
 
 #pragma region ENEMIES
 
