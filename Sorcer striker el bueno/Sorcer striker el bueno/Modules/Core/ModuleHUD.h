@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __MODULE_HUD_H__
+#define __MODULE_HUD_H__
+
 #include <vector>
 #include <string>
 
@@ -46,3 +48,5 @@ private:
 
 	//IMPRIMEIX ELS CARÀCTER DEL VECTOR 
 };
+
+#endif

@@ -41,6 +41,15 @@ Update_Status ModuleHUD::PostUpdate() {
 	PaintSentence(player2, { 250,100 });
 	PaintSentence(hlScore, { 150,100 });
 
+	SDL_Texture* fkText = App->textures->Load(FI_HUD_font1.c_str());
+	SDL_Rect rec;
+	rec.x = 8;
+	rec.y = 0;
+	rec.w = 8;
+	rec.h = 7;
+	App->render->Blit(fkText, App->player->position.x, App->player->position.y, &rec);
+
+
 	return Update_Status::UPDATE_CONTINUE;
 }
 
