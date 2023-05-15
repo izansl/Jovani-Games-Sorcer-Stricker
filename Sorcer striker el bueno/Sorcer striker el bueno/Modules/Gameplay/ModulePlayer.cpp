@@ -161,13 +161,15 @@ Update_Status ModulePlayer::Update() {
 		}
 	}
 	LOG("Countdown % d", destroyedCountdown);
-	if (!alive)
+
+	if (destroyed)
 	{
 		destroyedCountdown--;
 		if (destroyedCountdown == 0)
 		{
-			alive = true;
+			destroyed = false;
 			destroyedCountdown = 120;
+			collider->type=Collider::Type::PLAYER;
 		}
 	}
 	return Update_Status::UPDATE_CONTINUE;
@@ -220,14 +222,14 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::ENEMY && !destroyed && !godMode)//Cuando tengamos godmode se le dara uso
 	{
 
+		App->particles->AddParticle(App->particles->playerdead, position.x, position.y, Collider::Type::NONE, 0);
+		collider->type = Collider::Type::NONE;
 		destroyed = true;
-		alive = false;
 		LOG("player dead");
 		position.x = 100;
-		position.y = position.y - SCREEN_HEIGHT;
-		collider->type = Collider::Type::NONE;
-		App->particles->AddParticle(App->particles->playerdead, position.x, position.y, Collider::Type::NONE, 0);
+		position.y = position.y + SCREEN_HEIGHT;
 		Powerup = false;
+		lives--;
 
 	}
 	 //Cuan colisiona amb Power up
