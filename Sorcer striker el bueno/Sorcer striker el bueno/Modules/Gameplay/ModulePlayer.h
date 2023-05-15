@@ -38,6 +38,8 @@ public:
 
 	bool Powerup = false;
 
+	bool alive = true;
+
 
 
 
