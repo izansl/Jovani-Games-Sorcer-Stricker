@@ -5,12 +5,10 @@
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Modules/Core/ModuleInput.h"
 #include "../../Modules/Core/ModuleRender.h"
+#include "../../Modules/Gameplay/ModulePlayer.h"
 
 ModuleHUD::ModuleHUD(bool startEnabled) : Module(startEnabled) {
-	// Inicializa las variables de puntuación
-	score = 0;
-	highScore = 0;
-	sizeVector = LoadVector();
+
 }
 
 ModuleHUD::~ModuleHUD() {
@@ -18,20 +16,24 @@ ModuleHUD::~ModuleHUD() {
 }
 
 bool ModuleHUD::Start() {
+	// Inicializa las variables de puntuación
+	score = 0;
+	highScore = 0;
+	sizeVector = LoadVector();
+
 	LOG("Loading HUD textures");
 	bool ret = true;
 	texture = App->textures->Load(FI_HUD_font1.c_str());
 	return ret;
 }
 
-void ModuleHUD::UpdateScore(int newScore) {
-	// Actualiza la puntuación del jugador
-	score = newScore;
-}
 
-void ModuleHUD::UpdateHighScore(int newHighScore) {
-	// Actualiza el high score
-	highScore = newHighScore;
+Update_Status ModuleHUD::Update()
+{
+	/*score = newScore;
+	highScore = newHighScore;*/
+
+	return Update_Status::UPDATE_CONTINUE;
 }
 
 Update_Status ModuleHUD::PostUpdate() {
@@ -39,7 +41,21 @@ Update_Status ModuleHUD::PostUpdate() {
 	PaintSentence(player2, { 250,100 });
 	PaintSentence(hlScore, { 150,100 });
 
-	return Update_Status();
+	SDL_Texture* fkText = App->textures->Load(FI_HUD_font1.c_str());
+	SDL_Rect rec;
+	rec.x = 8;
+	rec.y = 0;
+	rec.w = 8;
+	rec.h = 7;
+	App->render->Blit(fkText, App->player->position.x, App->player->position.y, &rec);
+
+
+	return Update_Status::UPDATE_CONTINUE;
+}
+
+bool ModuleHUD::CleanUp()
+{
+	return true;
 }
 
 int ModuleHUD::PosLetter(char leterToSearch) {
@@ -129,6 +145,7 @@ void ModuleHUD::PaintSentence(std::string sentenceToPaint, iPoint positionToPain
 	{
 		cutFont.x = widthLetter * posicions[i];
 		App->render->Blit(texture, positionToPaint.x + (writedLetters * widthLetter), positionToPaint.y, &cutFont);
+		//App->render->Blit(texture, App->player->position.x, App->player->position.y, &cutFont);
 		writedLetters++;
 	}
 

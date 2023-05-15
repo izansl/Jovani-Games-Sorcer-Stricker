@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __MODULE_HUD_H__
+#define __MODULE_HUD_H__
+
 #include <vector>
 #include <string>
 
@@ -21,10 +23,10 @@ public:
 	~ModuleHUD();
 
 	bool Start() override;
-
-	void UpdateScore(int newScore);
-	void UpdateHighScore(int newHighScore);	
+	Update_Status Update() override;
 	Update_Status PostUpdate() override;
+	bool CleanUp();
+
 
 private:
 	int score;
@@ -46,3 +48,5 @@ private:
 
 	//IMPRIMEIX ELS CARÀCTER DEL VECTOR 
 };
+
+#endif
