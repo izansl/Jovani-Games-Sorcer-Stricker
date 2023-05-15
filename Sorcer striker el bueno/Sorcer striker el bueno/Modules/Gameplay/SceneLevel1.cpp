@@ -6,6 +6,7 @@
 #include "../../Modules/Core/ModuleRender.h"
 #include "../../Modules/Core/ModuleAudio.h"
 #include "../../Modules/Core/ModuleCollisions.h"
+#include "../../Modules/Core/ModuleInput.h"
 
 #include "ModuleEnemies.h"
 #include "ModulePlayer.h"
@@ -43,12 +44,14 @@ bool SceneLevel1::Start() {
 	int wb = 400;
 	int hb = 10;
 	botcoll = App->collisions->AddCollider({ xb, yb, wb, hb }, Collider::Type::WALL_PLAYER);
+	leftcoll= App->collisions->AddCollider({ 25, 3000, 10, 600 }, Collider::Type::WALL);
+	raightcoll = App->collisions->AddCollider({ 345, 3000, 10, 600 }, Collider::Type::WALL);
 
 
 #pragma region ENEMIES
 
 	// add chest
-	App->enemies->AddEnemy(Enemy_Type::CHEST, 200, -1500, 1, 1);
+	App->enemies->AddEnemy(Enemy_Type::CHEST, 200, -500, 1, 1);
 
 #pragma region Red ball
 	//add red ball
@@ -167,6 +170,7 @@ bool SceneLevel1::Start() {
 
 	App->player->Enable();
 	App->enemies->Enable();
+	App->collisions->Enable();
 
 	return ret;
 }
@@ -176,6 +180,8 @@ Update_Status SceneLevel1::Update() {
 
 	topcoll->rect.y += -8;
 	botcoll->rect.y += -8;
+	leftcoll->rect.y += -8;
+	raightcoll->rect.y += -8;
 
 	if (App->player->position.y + 50 >= botcoll->rect.y)
 	{
@@ -213,5 +219,6 @@ Update_Status SceneLevel1::PostUpdate() {
 bool SceneLevel1::CleanUp() {
 	App->player->Disable();
 	App->enemies->Disable();
+	App->collisions->Disable();
 	return true;
 }

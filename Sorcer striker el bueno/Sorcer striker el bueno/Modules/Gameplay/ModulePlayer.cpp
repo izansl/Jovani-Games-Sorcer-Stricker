@@ -22,27 +22,28 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 	// move right
 	rightAnim.PushBack({ 305, 16, 38, 44 });
 	rightAnim.loop = false;
-	rightAnim.speed = 0.1f;
+	rightAnim.speed = 0.5f;
 
 	// Move left
 	leftAnim.PushBack({ 226, 16, 38, 44 });
 	leftAnim.loop = false;
-	leftAnim.speed = 0.1f;
+	leftAnim.speed = 0.5f;
 
+	//BLUE BUFF	
 	// Change sprite
-	blueBUFF.PushBack({ 1595, 63, 62, 43 });
-	blueBUFF.PushBack({ 268, 63, 70, 43 });
-	blueBUFF.speed = 1.0f;
+	blueBUFF.PushBack({ 337, 69, 66, 45 });
+	blueBUFF.speed = 0.1f;
 
 	//Move right
-	blueright.PushBack({ 242, 61, 68, 44 });
+	blueright.PushBack({ 445, 134, 73, 46 });
 	blueright.loop = false;
-	blueright.speed = 0.1f;
+	blueright.speed = 0.5f;
 
 	// Move left
-	blueleft.PushBack({ 9, 61, 68, 44 });
+	blueleft.PushBack({ 14, 37, 73, 46 });
 	blueleft.loop = false;
-	blueleft.speed = 0.1f;
+	blueleft.speed = 0.5f;
+
 }
 
 ModulePlayer::~ModulePlayer() {
@@ -98,8 +99,25 @@ Update_Status ModulePlayer::Update() {
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{
-		App->particles->AddParticle(App->particles->laser, position.x, position.y, Collider::Type::PLAYER_SHOT, 0);
-		App->particles->AddParticle(App->particles->laser, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+		if (Powerup==false)
+		{
+			App->particles->AddParticle(App->particles->laser, position.x, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+		}
+		else if (Powerup==true)
+		{
+			App->particles->AddParticle(App->particles->laser, position.x+15, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser, position.x + 25, position.y-5, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser, position.x + 35, position.y, Collider::Type::PLAYER_SHOT, 0);
+
+			App->particles->AddParticle(App->particles->iceleft, position.x-5, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->iceleft, position.x-15, position.y+20, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->iceleft, position.x-5, position.y+40, Collider::Type::PLAYER_SHOT, 0);
+
+			App->particles->AddParticle(App->particles->iceright, position.x+55, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->iceright, position.x+65, position.y+20, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->iceright, position.x+55, position.y+40, Collider::Type::PLAYER_SHOT, 0);
+		}
 	}
 
 	// Spawn explosion particles when pressing X
@@ -116,6 +134,31 @@ Update_Status ModulePlayer::Update() {
 	collider->SetPos(position.x, position.y);
 	currentAnimation->Update();
 
+	if (Powerup==true)
+	{
+		currentAnimation = &blueBUFF;
+		collider->rect.w = 66;
+		collider->rect.h = 45;
+
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
+		{
+			position.x += speed;
+			if (currentAnimation != &blueright)
+			{
+				blueright.Reset();
+				currentAnimation = &blueright;
+			}
+		}
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x > 45)
+		{
+			position.x -= speed;
+			if (currentAnimation != &blueleft)
+			{
+				blueleft.Reset();
+				currentAnimation = &blueleft;
+			}
+		}
+	}
 
 	return Update_Status::UPDATE_CONTINUE;
 }
@@ -145,12 +188,18 @@ Update_Status ModulePlayer::PostUpdate() {
 	if (kills == 58 || App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
 	{
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
+
+		
+		
 	}
 
 	// LOSE CONDITION
 	if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
 	{
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
+		
+		
+		
 	}
 
 	return Update_Status::UPDATE_CONTINUE;
@@ -164,13 +213,12 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 	//	// Change sprite
 	//	currentAnimation = &blueBUFF;
 
-	if (c1 == collider && destroyed == false)
+	if (c1 == collider && destroyed == false && c2->type != Collider::Type::POWER_UP)
 	{
 		// A�adir part�cula de muerte del jugador
 		App->particles->AddParticle(App->particles->playerdead, position.x, position.y, Collider::Type::NONE, 0);
 		c1->type = Collider::Type::PLAYER;
-		//App->particles->AddParticle(App->particles->explosion2, position.x, position.y, Collider::Type::NONE, 9);
-		//App->audio->PlayFx(explosionjugadorFx);
+		Powerup = false;
 
 		destroyed = true;
 	}
@@ -179,70 +227,8 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		destroyed = true;
 		if (!godMode) lives--;
 	}
-	else if (c1->Intersects(c2->rect) || c2->Intersects(c1->rect) && c1->type == Collider::Type::PLAYER || c2->type == Collider::Type::ENEMY)
+	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::POWER_UP)
 	{
-		// Change sprite
-		idleAnim.PushBack({ 337, 69, 66, 45 });
-		idleAnim.PushBack({ 343, 132, 66, 45 });
-		idleAnim.speed = 1.0f;
-
-		//Move right
-		rightAnim.PushBack({ 445, 134, 73, 46 });
-		rightAnim.loop = false;
-		rightAnim.speed = 0.1f;
-
-		// Move left
-		leftAnim.PushBack({ 14, 37, 73, 46 });
-		leftAnim.loop = false;
-		leftAnim.speed = 0.1f;
-
-		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
-		{
-			position.x += speed;
-			if (currentAnimation != &blueright)
-			{
-				rightAnim.Reset();
-				currentAnimation = &blueright;
-			}
-		}
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x > 45)
-		{
-			position.x -= speed;
-			if (currentAnimation != &blueleft)
-			{
-				leftAnim.Reset();
-				currentAnimation = &blueleft;
-			}
-		}
-
-
-		//Change laser
-		if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
-		{
-			App->particles->AddParticle(App->particles->laser, position.x + 29, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->laser, position.x + 7, position.y - 45, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->laser, position.x + 13, position.y + 5, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x, position.y - 5, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x, position.y - 10, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x, position.y - 15, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x + 16, position.y + 5, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x + 16, position.y + 10, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->ice, position.x + 16, position.y + 15, Collider::Type::PLAYER_SHOT, 0);
-		}
-	}
-	else if (c1 == collider && destroyed == false)
-	{
-		// A�adir part�cula de muerte del jugador
-		App->particles->AddParticle(App->particles->playerdead, position.x, position.y, Collider::Type::NONE, 0);
-		c1->type = Collider::Type::NONE;
-		//App->particles->AddParticle(App->particles->explosion2, position.x, position.y, Collider::Type::NONE, 9);
-		//App->audio->PlayFx(explosionjugadorFx);
-
-		destroyed = true;
-	}
-	else if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::ENEMY && destroyed == false /*&& !godMode*/)//Cuando tengamos godmode se le dara uso
-	{
-		destroyed = true;
-		//	lives--;
+		Powerup = true;
 	}
 }
