@@ -9,8 +9,8 @@
 
 Enemy_RedBall::Enemy_RedBall(int x, int y, int wave, int miem) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_1.c_str());
-	fly.PushBack({ 46, 12, 32,32 });
-	fly.PushBack({ 75,12 ,32, 32 });
+	fly.PushBack({ 29, 357, 82, 104 });
+	fly.PushBack({ 140, 357, 82, 104 });
 	currentAnim = &fly;
 	fly.speed = 0.2;
 	fly.loop = true;
@@ -520,7 +520,7 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave, int miem) : Enemy(x, y) {
 	
 	
 
-	collider = App->collisions->AddCollider({ 0, 0,32, 32 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0,82, 104 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_RedBall::Update() {
