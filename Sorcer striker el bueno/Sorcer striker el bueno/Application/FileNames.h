@@ -45,7 +45,7 @@ const std::string FI_HUD_stage1 = "../Assets/Images/Fonts/stage1.png";
 // Sprites player
 const std::string FI_spritePlayer_player1 = "../Assets/Images/Character.png";
 const std::string FI_spritePlayer_player2 = "../Assets/Images/Character.png";
-const std::string FI_spriteEnemy_1 = "../Assets/Images/SPRITES-1080/pre-castillo/naves.png";
+//const std::string FI_spriteEnemy_1 = "../Assets/Images/SPRITES-1080/pre-castillo/naves.png";
 // Sprites enemys
 //const std::string FI_spriteEnemy_1 = "../Assets/Images/1st_enemy.png";
 /*-Movement
@@ -134,7 +134,7 @@ const std::string FI_spritechest_blue = "../Assets/Images/Chests.png";
 
 // Sprites Bosses
 const std::string FI_spriteBoss_boss1 = "../Assets/Images/Beach.png";
-const std::string FI_spriteEnemy_3 = "../Assets/Images/SPRITES-1080/final-boss/finalboss.png";
+const std::string FI_spriteEnemy_boss = "../Assets/Images/SPRITES-1080/final-boss/finalboss.png";
 //warning
 // ({30, 13, 778, 113}) rojo
 // ({31, 150, 778, 113}) azul
