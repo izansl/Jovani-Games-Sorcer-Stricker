@@ -47,7 +47,15 @@ Update_Status SceneStart::Update() {
 Update_Status SceneStart::PostUpdate() {
 	//DIBUJADO DE LAS IMAGENES DE LA INTRO
 
-	
+	timer += 1.0f / 60.0f; // Suma 1 segundo//Funciona a 60 fps
+	timer2 += 0.1f / 60.0f;
+	if (timer >= 3.0f) { // Mostramos cada imagen durante 3 segundos
+		currentImage++;
+		if (currentImage >= 11) {
+			currentImage = 10;
+		}
+		timer = 0.0f;
+	}
 
 	Uint8 alpha = static_cast<Uint8>((timer / 3.0f) * 255);
 	SDL_SetTextureAlphaMod(Intro[currentImage], alpha);

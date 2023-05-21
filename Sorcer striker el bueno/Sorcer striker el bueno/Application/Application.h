@@ -13,6 +13,7 @@ class ModuleAudio;
 class ModulePlayer;
 class SceneIntro;
 class SceneLevel1;
+class SceneStart;
 class ModuleParticles;
 class ModuleCollisions;
 class ModuleEnemies;

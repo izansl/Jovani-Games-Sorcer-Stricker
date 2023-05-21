@@ -35,7 +35,7 @@ Application::Application() {
 	modules[3] = audio = new ModuleAudio(true);
 
 	modules[4] = sceneIntro = new SceneIntro(true);
-	modules[5] = sceneStart = new SceneStart(true);
+	modules[5] = sceneStart = new SceneStart(false);
 	modules[6] = sceneLevel_1 = new SceneLevel1(false);		//Gameplay scene starts disabled
 	modules[7] = player = new ModulePlayer(false);	//Player starts disabled
 	modules[8] = particles = new ModuleParticles(true);
@@ -44,7 +44,7 @@ Application::Application() {
 	modules[10] = collisions = new ModuleCollisions(false);
 	modules[11] = fade = new ModuleFadeToBlack(true);
 	modules[12] = fonts = new ModuleFonts(true);
-	modules[3] = hud = new ModuleHUD(true);
+	modules[13] = hud = new ModuleHUD(true);
 	modules[14] = render = new ModuleRender(true);
 	
 	
