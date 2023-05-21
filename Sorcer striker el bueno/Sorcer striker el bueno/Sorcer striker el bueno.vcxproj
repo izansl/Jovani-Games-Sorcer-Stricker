@@ -157,7 +157,7 @@
     <ClCompile Include="Application\Globals.cpp" />
     <ClCompile Include="Application\Main.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy.cpp" />
-    <ClCompile Include="Entities\Enemies\Enemy_CHEST.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_CHESTBLUE.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Dragon.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_RedBall.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_RedWizard.cpp" />
@@ -186,7 +186,7 @@
     <ClInclude Include="Application\Globals.h" />
     <ClInclude Include="Application\MemLeaks.h" />
     <ClInclude Include="Entities\Enemies\Enemy.h" />
-    <ClInclude Include="Entities\Enemies\Enemy_CHEST.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_CHESTBLUE.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Dragon.h" />
     <ClInclude Include="Entities\Enemies\Enemy_RedBall.h" />
     <ClInclude Include="Entities\Enemies\Enemy_RedWizard.h" />

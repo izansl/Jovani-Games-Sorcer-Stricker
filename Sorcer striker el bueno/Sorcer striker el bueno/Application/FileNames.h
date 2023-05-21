@@ -62,18 +62,13 @@ const std::string FI_HUD_stage1 = "../Assets/Images/Fonts/stage1.png";
 
 // Sprites player
 const std::string FI_spritePlayer_1 = "../Assets/Images/SPRITES_FINALES/pre-castillo/naves.png";//actual
+
 const std::string FI_spritePlayer_shoots = "../Assets/Images/SPRITES_FINALES/pre-castillo/disparos_nave.png";
-// Sprites enemys
-//const std::string FI_spriteEnemy_1 = "../Assets/Images/1st_enemy.png";
-/*-Movement
-1 - ({ 43, 12, 32, 32 })
-2 - ({ 73, 12, 32, 32 })
-- Explosion
-1 - ({ 7, 50, 32, 32 })
-2 - ({ 42, 50, 32, 32 })
-3 - ({ 77, 51, 32, 32 })
-4 - ({ 111, 52, 32, 32 })
-*/
+
+const std::string FI_spritePlayer_explosions = "../Assets/Images/SPRITES_FINALES/pre-castillo/Explosions.png";
+
+//Sprites enemies
+
 const std::string FI_spriteEnemy_reds = "../Assets/Images/SPRITES_FINALES/pre-castillo/enemies.png";
 //red ball
 //({29, 357, 82, 104})

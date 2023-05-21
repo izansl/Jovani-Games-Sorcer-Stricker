@@ -8,7 +8,7 @@
 #include "../../Modules/Core/ModuleAudio.h"
 
 Enemy_Dragon::Enemy_Dragon(int x, int y, int wave, int miem) : Enemy(x, y) {
-	texture = App->textures->Load(FI_spriteEnemy_3.c_str());
+	texture = App->textures->Load(FI_spriteEnemy_dragon.c_str());
 
 	fly.PushBack({ 16, 24 , 85, 89 });
 	fly.PushBack({ 117, 27 , 85, 89 });

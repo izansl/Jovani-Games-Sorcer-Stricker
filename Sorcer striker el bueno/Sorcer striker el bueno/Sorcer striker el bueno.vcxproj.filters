@@ -83,7 +83,7 @@
     <ClCompile Include="Modules\Module.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Entities\Enemies\Enemy_CHEST.cpp">
+    <ClCompile Include="Entities\Enemies\Enemy_CHESTBLUE.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Entities\Enemies\Enemy_Dragon.cpp">
@@ -175,7 +175,7 @@
     <ClInclude Include="Modules\Module.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\Enemies\Enemy_CHEST.h">
+    <ClInclude Include="Entities\Enemies\Enemy_CHESTBLUE.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Entities\Enemies\Enemy_Dragon.h">

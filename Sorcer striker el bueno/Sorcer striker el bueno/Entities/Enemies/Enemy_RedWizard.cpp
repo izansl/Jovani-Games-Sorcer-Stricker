@@ -9,10 +9,38 @@
 #include "../../Modules/Core/ModuleParticles.h"
 
 Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave, int miem) : Enemy(x, y) {
-	texture = App->textures->Load(FI_spriteEnemy_2.c_str());
+	texture = App->textures->Load(FI_spriteEnemy_reds.c_str());
 	
-	fly.PushBack({ 4, 22 , 36, 36 });
-	fly.PushBack({ 41, 22 ,36, 36 });
+	fly.PushBack({ 0, 798, 131, 132 });
+
+//mago
+//({0, 798, 131, 132})frente
+//({0, 955, 131, 132})frente
+//({159, 802, 131, 132})giro derecha inicio
+//({320, 801, 131, 132})giro derecha medio
+//({493, 802, 131, 132})giro derecha final
+//({197, 956, 131, 132}) giro izquierda inicio
+//({324, 956, 131, 132})giro izquierda medio
+//({491, 957, 131, 132})giro izquierda final
+// 
+//mago herido
+//({0, 487, 131, 132})frente
+//({0, 635, 131, 132}) frente
+//({170, 497, 131, 132})giro derecha inicio
+//({325, 647, 131, 132})giro derecha medio
+//({493, 648, 131, 132})giro derecha final
+//({167, 650, 131, 132})giro izquierda inicio
+//({329, 493, 131, 132})giro izquierda medio
+//({491, 495, 131, 132})giro izquierda final
+// 
+// disparo mago
+//({640, 521, 99, 79})
+//({861, 521, 99, 79 })
+//({1007, 528, 99, 79})
+//({933, 528, 99, 79 })
+//({731, 527, 99, 79})
+// 
+
 	currentAnim = &fly;
 	fly.speed = 0.01f;
 	fly.loop = true;
@@ -83,11 +111,12 @@ void Enemy_RedWizard::Update() {
 
 
 void Enemy_RedWizard::OnCollision(Collider* c1) {
-	fly.PushBack({ 3, 71, 36, 36 });
-	fly.PushBack({ 39, 72, 36, 36 });
-	fly.PushBack({ 75, 72, 36, 36 });
-	fly.PushBack({ 111, 71, 36, 36 });
-	fly.PushBack({ 111, 120, 36, 36 });
+	fly.PushBack({ 1, 136, 139, 137 });
+	fly.PushBack({ 155, 140, 139, 137 });
+	fly.PushBack({ 335, 142, 139, 137 });
+	fly.PushBack({ 586, 139, 139, 137 });
+	fly.PushBack({ 644, 142, 139, 137 });
+	fly.PushBack({ 798, 142, 139, 137 });
 
 	currentAnim = &fly;
 	fly.speed = 0.2;
