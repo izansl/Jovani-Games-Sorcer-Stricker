@@ -40,6 +40,7 @@ const std::string FI_choseplayer_1 = "../Assets/Images/SPRITES_FINALES/Intro/pla
 const std::string FI_choseplayer_2 = "../Assets/Images/SPRITES_FINALES/Intro/onepcolor.png";
 
 // Backgrounds
+//const std::string FI_background_beach = "../Assets/Images/Beach.png";//revisar
 const std::string FI_background_sea = "../Assets/Images/SPRITES_FINALES/pre-castillo/mar.png";
 const std::string FI_background_forest1 = "../Assets/Images/SPRITES_FINALES/pre-castillo/bosque.png";
 const std::string FI_background_castle = "../Assets/Images/SPRITES_FINALES/pre-castillo/castillo.png";
@@ -48,10 +49,10 @@ const std::string FI_background_precolumnas = "../Assets/Images/SPRITES_FINALES/
 const std::string FI_background_playerpick = "../Assets/Images/SPRITES_FINALES/pre-castillo/playerpick.png";
 const std::string FI_background_personas = "../Assets/Images/SPRITES_FINALES/pre-castillo/personas.png";
 
+//const int Height_background_beach = 3000;
 const int Height_background_sea = 10000;
 const int Height_background_forest1 = 3000;
 const int Height_background_castle = 10000;
-
 const int Height_background_pre = 2850;
 const int Height_background_precolumnas = 2850;
 
@@ -120,6 +121,32 @@ const std::string FI_spriteEnemy_dragon = "../Assets/Images/SPRITES_finales/pre-
 const std::string FI_spriteEnemy_enemiesvar_1 = "../Assets/Images/SPRITES_finales/castillo/enemigos_varios.png";
 
 const std::string FI_spriteEnemy_ = "../Assets/Images/SPRITES_finales/castillo/tanque.png";
+
+const std::string FI_spriteEnemy_2 = "../Assets/Images/2nd_enemy.png";
+/*-Movement
+		1-({4, 22, 36, 36})
+		2-({41, 22, 36, 36 })
+	-Explosion
+		1-({3, 71, 36, 36})
+		2-({39, 72, 36, 36 })
+		3-({75, 72, 36, 36 })
+		4-({111, 71, 36, 36})
+	Atack
+		1-({82, 30 , 20, 20})
+		2-({102, 31, 20, 20})
+		3-({121, 30, 20, 20})	*/
+//const std::string FI_spriteEnemy_3 = "../Assets/Images/3rd_enemy.png";
+/*	-Movement
+		1-({15, 24, 90, 90})
+		2-({115, 24, 90, 90})
+	-Explosion
+		1-({17, 121, 90, 90})
+		2-({111, 124, 90, 90})
+		3-({204, 123, 90, 90})
+	Atack
+		1-({229, 77, 15, 15})
+		2-({245, 77, 15, 15})*/
+
 //Sprites chest
 //const std::string FI_spritebonus_pickups = "../Assets/Images/Chests.png";
 /*	-Bluechest
@@ -157,9 +184,9 @@ const std::string FI_spritebonus_pickups = "../Assets/Images/SPRITES_finales/pre
 */
 
 // Sprites Bosses
-
 const std::string FI_spriteEnemy_boss = "../Assets/Images/SPRITES_FINALES/final-boss/finalbossnuevo.png";
 
+const std::string FI_spriteExplosion_enemies = "../Assets/Images/2nd_enemy.png";
 #pragma endregion
 
 

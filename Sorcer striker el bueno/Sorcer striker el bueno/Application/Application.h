@@ -13,6 +13,7 @@ class ModuleAudio;
 class ModulePlayer;
 class SceneIntro;
 class SceneLevel1;
+class SceneStart;
 class ModuleParticles;
 class ModuleCollisions;
 class ModuleEnemies;
@@ -52,6 +53,7 @@ public:
 	ModulePlayer* player = nullptr;
 	SceneIntro* sceneIntro = nullptr;
 	SceneLevel1* sceneLevel_1 = nullptr;
+	SceneStart* sceneStart = nullptr;
 	ModuleEnemies* enemies = nullptr;
 	ModuleParticles* particles = nullptr;
 	ModuleCollisions* collisions = nullptr;
