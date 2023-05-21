@@ -46,8 +46,6 @@ Application::Application() {
 	modules[12] = fonts = new ModuleFonts(true);
 	modules[13] = hud = new ModuleHUD(true);
 	modules[14] = render = new ModuleRender(true);
-	
-	
 }
 
 Application::~Application() {
@@ -83,7 +81,16 @@ Update_Status Application::Update() {
 		ret = modules[i]->IsEnabled() ? modules[i]->Update() : Update_Status::UPDATE_CONTINUE;
 
 	for (int i = 0; i < NUM_MODULES && ret == Update_Status::UPDATE_CONTINUE; ++i)
-		ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
+		// Only paint is Scene1 is eneabled
+		if (i == 12)
+		{
+			if (modules[5]->IsEnabled())
+				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
+		}
+		else
+			ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
+
+
 
 	// Control the FPS
 	elapsed_time = SDL_GetTicks() - last_frame_time;

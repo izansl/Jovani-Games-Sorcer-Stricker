@@ -24,30 +24,56 @@ bool ModuleHUD::Start() {
 	LOG("Loading HUD textures");
 	bool ret = true;
 	texture = App->textures->Load(FI_HUD_font1.c_str());
+
+	posPlayer1.x = 10 + App->render->camera.x;
+	posPlayer1.y = 10 + App->render->camera.y;
+	posScore1.x = 10 + App->render->camera.x;
+	posScore1.y = 30 + App->render->camera.y;
+
+	posPlayer2.x = 280 + App->render->camera.x;
+	posPlayer2.y = 10 + App->render->camera.y;
+	posScore2.x = 280 + App->render->camera.x;
+	posScore2.y = 30 + App->render->camera.y;
+
+	posHlScrore.x = 150 + App->render->camera.x;
+	posHlScrore.y = 10 + App->render->camera.y;
+	posScoreHl.x = 150 + App->render->camera.x;
+	posScoreHl.y = 30 + App->render->camera.y;
 	return ret;
 }
 
 
 Update_Status ModuleHUD::Update()
 {
-	/*score = newScore;
-	highScore = newHighScore;*/
+	posPlayer1.x = 10 + App->render->camera.x;
+	posPlayer1.y = 10 + App->render->camera.y;
+	posScore1.x = 10 + App->render->camera.x;
+	posScore1.y = 30 + App->render->camera.y;
+
+	posPlayer2.x = 280 + App->render->camera.x;
+	posPlayer2.y = 10 + App->render->camera.y;
+	posScore2.x = 280 + App->render->camera.x;
+	posScore2.y = 30 + App->render->camera.y;
+
+	posHlScrore.x = 150 + App->render->camera.x;
+	posHlScrore.y = 10 + App->render->camera.y;
+	posScoreHl.x = 150 + App->render->camera.x;
+	posScoreHl.y = 30 + App->render->camera.y;
 
 	return Update_Status::UPDATE_CONTINUE;
 }
 
 Update_Status ModuleHUD::PostUpdate() {
-	PaintSentence(player1, { 100,100 });
-	PaintSentence(player2, { 250,100 });
-	PaintSentence(hlScore, { 150,100 });
+	PaintSentence(player1, { posPlayer1.x, posPlayer1.y });
+	PaintSentence(std::to_string(App->player->score), { posScore1.x, posScore1.y });
 
-	SDL_Texture* fkText = App->textures->Load(FI_HUD_font1.c_str());
-	SDL_Rect rec;
-	rec.x = 8;
-	rec.y = 0;
-	rec.w = 8;
-	rec.h = 7;
-	App->render->Blit(fkText, App->player->position.x, App->player->position.y, &rec);
+	PaintSentence(player2, { posPlayer2.x, posPlayer2.y });
+	PaintSentence(std::to_string(App->player->score), { posScore2.x, posScore2.y });
+
+	PaintSentence(hlScore, { posHlScrore.x, posHlScrore.y });
+	PaintSentence(std::to_string(655000), { posScoreHl.x, posScoreHl.y });
+
+	//PaintSentence("LOADING...", { 150,550 });
 
 
 	return Update_Status::UPDATE_CONTINUE;

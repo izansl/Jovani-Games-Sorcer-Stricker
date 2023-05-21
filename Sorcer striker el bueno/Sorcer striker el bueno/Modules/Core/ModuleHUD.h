@@ -41,10 +41,12 @@ private:
 
 	SDL_Texture* texture = nullptr;
 
-
 	int PosLetter(char leterToSearch);
 	int LoadVector();
 	void PaintSentence(std::string sentenceToPaint, iPoint positionToPaint);
+
+	iPoint posPlayer1, posPlayer2, posHlScrore;
+	iPoint posScore1, posScore2, posScoreHl;
 
 	//IMPRIMEIX ELS CARÀCTER DEL VECTOR 
 };
