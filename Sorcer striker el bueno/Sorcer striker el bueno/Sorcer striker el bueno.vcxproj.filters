@@ -98,6 +98,9 @@
     <ClCompile Include="Modules\Core\ModuleHUD.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Modules\Gameplay\SceneStart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application\Application.h">
@@ -188,6 +191,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Modules\Core\ModuleHUD.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Gameplay\SceneStart.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
