@@ -57,14 +57,21 @@ public:
 public:
 	//Template particle for an explosion
 	Particle explosion;
-	Particle explosion2;
+	Particle bomb;
 
 	//Template particle for a laser
-	Particle laser;
+	Particle laser1;
+	Particle laser2;
 
 	//Template for extra shots
-	Particle iceright;
-	Particle iceleft;
+	Particle axeright;
+	Particle axeleft;
+
+	Particle kniferight;
+	Particle knifeleft;
+
+	Particle sword;
+	Particle greenpart;
 
 
 	//Template for deads
@@ -74,6 +81,8 @@ private:
 	// Particles spritesheet loaded into an SDL Texture
 	SDL_Texture* texture = nullptr;
 	SDL_Texture* texture2 = nullptr;
+	SDL_Texture* texture3 = nullptr;
+	SDL_Texture* texture4 = nullptr;
 
 	// An array to store and handle all the particles
 	Particle* particles[MAX_ACTIVE_PARTICLES] = { nullptr };

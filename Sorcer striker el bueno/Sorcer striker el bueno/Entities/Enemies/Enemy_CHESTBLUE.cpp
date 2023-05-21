@@ -1,4 +1,4 @@
-#include "Enemy_CHEST.h"
+#include "Enemy_CHESTBLUE.h"
 
 #include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"
@@ -9,13 +9,14 @@
 
 
 Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
-	texture = App->textures->Load(FI_spritechest_blue.c_str());
+	texture = App->textures->Load(FI_spritebonus_pickups.c_str());
 
-	blue.PushBack({ 2, 7, 43, 39 });
-	blue.PushBack({ 47, 7, 43, 39 });
-	blue.PushBack({ 94, 7, 43, 39 });
+	blue.PushBack({ 14, 251, 118, 99 });
+	blue.PushBack({ 140, 257, 118, 99 });
+	blue.PushBack({ 244, 246, 118, 99 });
 	blue.speed = 0.05f;
 	currentAnim = &blue;
+
 
 	// Path 1
 
@@ -75,11 +76,10 @@ void Enemy_CHESS::OnCollision(Collider* c1) {
 		collider = App->collisions->AddCollider({ 0, 0, 25, 35 }, Collider::Type::POWER_UP, (Module*)App->enemies);
 
 		// Change sprite
-		red.PushBack({ 49, 56, 25, 35 });
-		red.PushBack({ 73, 56, 25, 35 });
+		red.PushBack({ 42, 369, 62, 78 });
+		red.PushBack({ 161, 365, 62, 78 });
 		red.speed = 0.1f;
 		currentAnim = &red;
-
 
 		////Change Collider type
 		//collider->rect = { 0, 0, 25, 35 };

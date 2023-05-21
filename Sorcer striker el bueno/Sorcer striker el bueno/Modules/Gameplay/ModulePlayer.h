@@ -36,7 +36,7 @@ public:
 	int lives = 3;
 	bool godMode = false;
 
-	bool Powerup = false;
+	bool Powerup = true;
 
 	bool alive = true;
 
@@ -69,6 +69,14 @@ public:
 	Animation blueBUFF;
 	Animation blueright;
 	Animation blueleft;
+
+	Animation pinkBUFF;
+	Animation pinkright;
+	Animation pinkleft;
+
+	Animation greenBUFF;
+	Animation greenright;
+	Animation greenleft;
 
 	// The player's collider
 	Collider* collider = nullptr;

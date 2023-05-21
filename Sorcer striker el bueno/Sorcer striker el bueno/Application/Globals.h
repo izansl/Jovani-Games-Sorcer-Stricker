@@ -19,8 +19,8 @@ enum class Update_Status {
 typedef unsigned int uint;
 
 // Window Configuration -----------
-#define SCREEN_WIDTH 380
-#define SCREEN_HEIGHT 600
+#define SCREEN_WIDTH 1000
+#define SCREEN_HEIGHT 1080
 
 #define SCREEN_SIZE 1
 #define WIN_FULLSCREEN 0
