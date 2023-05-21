@@ -16,6 +16,7 @@
 #include "../Modules/Gameplay/ModulePlayer.h"
 #include "../Modules/Gameplay/SceneIntro.h"
 #include "../Modules/Gameplay/SceneLevel1.h"
+#include "../Modules/Gameplay/SceneStart.h"
 #include "../Modules/Gameplay/ModuleEnemies.h"
 
 int start_time = SDL_GetTicks();
@@ -44,6 +45,7 @@ Application::Application() {
 	modules[11] = fonts = new ModuleFonts(true);
 	modules[12] = hud = new ModuleHUD(true);
 	modules[13] = render = new ModuleRender(true);
+	modules[14] = sceneStart = new SceneStart(true);
 	
 }
 

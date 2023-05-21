@@ -47,7 +47,7 @@ bool SceneIntro::Start() {
 //NO TOCAR NADA //FadeToBlack de Intro -> Juego
 Update_Status SceneIntro::Update() {
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
-		App->fade->FadeToBlack(this, (Module*)App->/*scenestart, 90*/);
+		App->fade->FadeToBlack(this, (Module*)App->scenestart, 90);
 	}
 
 	if (App->input->keys[SDL_SCANCODE_LSHIFT] == Key_State::KEY_DOWN)
