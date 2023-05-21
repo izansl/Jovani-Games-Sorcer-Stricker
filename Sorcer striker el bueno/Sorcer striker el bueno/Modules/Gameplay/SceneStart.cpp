@@ -9,13 +9,13 @@
 #include "../../Modules/Core/ModuleInput.h"
 #include "../../Modules/Core/ModuleFadeToBlack.h"
 
-SceneIntro::SceneIntro(bool startEnabled) : Module(startEnabled) {
+SceneStart::SceneStart(bool startEnabled) : Module(startEnabled) {
 }
 
-SceneIntro::~SceneIntro() {
+SceneStart::~SceneStart() {
 }
 
-bool SceneIntro::Start() {
+bool SceneStart::Start() {
 	LOG("Loading background assets SCENE INTRO");
 
 	bool ret = true;
@@ -32,7 +32,7 @@ bool SceneIntro::Start() {
 }
 
 //NO TOCAR NADA //FadeToBlack de Intro -> Juego
-Update_Status SceneIntro::Update() {
+Update_Status SceneStart::Update() {
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
 		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);
 	}
@@ -44,7 +44,7 @@ Update_Status SceneIntro::Update() {
 }
 
 // Update: draw background
-Update_Status SceneIntro::PostUpdate() {
+Update_Status SceneStart::PostUpdate() {
 	//DIBUJADO DE LAS IMAGENES DE LA INTRO
 
 	

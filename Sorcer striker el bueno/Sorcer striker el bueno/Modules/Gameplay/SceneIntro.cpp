@@ -47,7 +47,7 @@ bool SceneIntro::Start() {
 //NO TOCAR NADA //FadeToBlack de Intro -> Juego
 Update_Status SceneIntro::Update() {
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
-		App->fade->FadeToBlack(this, (Module*)App->scenestart, 90);
+		App->fade->FadeToBlack(this, (Module*)App->sceneStart, 90);
 	}
 
 	if (App->input->keys[SDL_SCANCODE_LSHIFT] == Key_State::KEY_DOWN)
@@ -67,7 +67,7 @@ Update_Status SceneIntro::PostUpdate() {
 		currentImage++;
 		if (Intro[9])
 		{
-			App->fade->FadeToBlack((Module*)App->sceneIntro, (Module*)App -/*>scenestart, 60*/); //Menu start no intro
+			App->fade->FadeToBlack((Module*)App->sceneIntro, (Module*)App ->sceneStart, 60); //Menu start no intro
 		}
 		timer = 0.0f;
 	}
@@ -77,10 +77,6 @@ Update_Status SceneIntro::PostUpdate() {
 	SDL_SetTextureAlphaMod(Intro[currentImage], alpha);
 
 	App->render->Blit(Intro[currentImage], 0, 0, NULL);
-/*if (currentImage >= 5)
-	{
-		App->audio->PlayMusic(FA_Music_introTitle.c_str());
-	}*/	
 
 	SDL_SetTextureAlphaMod(Intro[currentImage], 255);
 	

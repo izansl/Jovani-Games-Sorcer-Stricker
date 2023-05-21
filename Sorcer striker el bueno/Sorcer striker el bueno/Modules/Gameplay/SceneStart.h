@@ -7,13 +7,13 @@
 struct SDL_Texture;
 
 
-class SceneIntro : public Module {
+class SceneStart : public Module {
 
 public:
 	//Constructor
-	SceneIntro(bool startEnabled);
+	SceneStart(bool startEnabled);
 	//Destructor
-	~SceneIntro();
+	~SceneStart();
 
 	// Called when the module is activated
 	// Loads the necessary textures for the map background
