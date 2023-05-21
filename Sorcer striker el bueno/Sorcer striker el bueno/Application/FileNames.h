@@ -124,8 +124,8 @@ const std::string FI_spriteEnemy_2 = "../Assets/Images/2nd_enemy.png";
 		1-({229, 77, 15, 15})
 		2-({245, 77, 15, 15})*/
 const std::string FI_spriteEnemy_dragon = "../Assets/Images/SPRITES_finales/pre-castillo/dragon.png";
-const std::string FI_spriteEnemy_dragon = "../Assets/Images/SPRITES_finales/castillo/enemigos_varios.png";
-const std::string FI_spriteEnemy_dragon = "../Assets/Images/SPRITES_finales/castillo/tanque.png";
+const std::string FI_spriteEnemy_castle = "../Assets/Images/SPRITES_finales/castillo/enemigos_varios.png";
+const std::string FI_spriteEnemy_tank= "../Assets/Images/SPRITES_finales/castillo/tanque.png";
 //Sprites chest
 //const std::string FI_spritebonus_pickups = "../Assets/Images/Chests.png";
 /*	-Bluechest

@@ -9,7 +9,7 @@
 
 
 Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
-	texture = App->textures->Load(FI_spritechest_blue.c_str());
+	texture = App->textures->Load(FI_spritebonus_pickups.c_str());
 
 	blue.PushBack({ 2, 7, 43, 39 });
 	blue.PushBack({ 47, 7, 43, 39 });

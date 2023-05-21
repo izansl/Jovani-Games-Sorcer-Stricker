@@ -9,10 +9,10 @@
 #include "../../Modules/Core/ModuleParticles.h"
 
 Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave, int miem) : Enemy(x, y) {
-	texture = App->textures->Load(FI_spriteEnemy_2.c_str());
+	texture = App->textures->Load(FI_spriteEnemy_reds.c_str());
 	
-	fly.PushBack({ 4, 22 , 36, 36 });
-	fly.PushBack({ 41, 22 ,36, 36 });
+	fly.PushBack({ 0, 798, 131, 132 });
+	fly.PushBack({ 0, 955, 131, 132 });
 	currentAnim = &fly;
 	fly.speed = 0.01f;
 	fly.loop = true;
