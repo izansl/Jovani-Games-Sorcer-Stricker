@@ -45,7 +45,7 @@ bool SceneIntro::Start() {
 //NO TOCAR NADA //FadeToBlack de Intro -> Juego
 Update_Status SceneIntro::Update() {
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
-		App->fade->FadeToBlack(this, (Module*)App->sceneStart, 90);
+		App->fade->FadeToBlack(this, (Module*)App->sceneStart, 60);
 	}
 
 	if (App->input->keys[SDL_SCANCODE_LSHIFT] == Key_State::KEY_DOWN)
@@ -63,7 +63,7 @@ Update_Status SceneIntro::PostUpdate() {
 	timer2 += 0.1f / 60.0f;
 	if (timer >= 3.0f) { // Mostramos cada imagen durante 3 segundos
 		currentImage++;
-		if (ArrayImagesIntro[8])
+		if (currentImage == NUM_IMAGES)
 		{
 			App->fade->FadeToBlack((Module*)App->sceneIntro, (Module*)App ->sceneStart, 60); //Menu start no intro
 		}

@@ -12,11 +12,11 @@
 #pragma region IMAGES -> FI
 //IntroImages
 //cambiar a png //cambiar ruta a ImagenesIntro2
-const std::string FI_Introimage_1 = "../Assets/Images/Intro/alienabajofondo.png";
-const std::string FI_Introimage_2 = "../Assets/Images/Intro/alienarribafondo.png";
-const std::string FI_Introimage_3 = "../Assets/Images/Intro/Batman.png";
-const std::string FI_Introimage_4 = "../Assets/Images/Intro/Caras_de_los_personajes.png";
-const std::string FI_Introimage_5 = "../Assets/Images/Intro/cuartotextoBlanco.png";
+const std::string FI_Introimage_1 = "../Assets/Images/Intro/jovani.png";
+const std::string FI_Introimage_2 = "../Assets/Images/Intro/Raizing.png";
+const std::string FI_Introimage_3 = "../Assets/Images/Intro/PrimertextoColor.png";
+const std::string FI_Introimage_4 = "../Assets/Images/Intro/primertextoBlanco.png";
+const std::string FI_Introimage_5 = "../Assets/Images/Intro/alienarribafondo.png";
 const std::string FI_Introimage_6 = "../Assets/Images/Intro/cuartotextoColor.png";
 const std::string FI_Introimage_7 = "../Assets/Images/Intro/explosiones.png";
 const std::string FI_Introimage_8 = "../Assets/Images/Intro/fondobatman.png";
