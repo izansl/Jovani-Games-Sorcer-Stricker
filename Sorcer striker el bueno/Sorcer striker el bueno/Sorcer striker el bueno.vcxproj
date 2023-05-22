@@ -156,6 +156,11 @@
     <ClCompile Include="Application\Application.cpp" />
     <ClCompile Include="Application\Globals.cpp" />
     <ClCompile Include="Application\Main.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_MiniDragon.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Turtle.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_GreenChess.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_RedChess.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Tank.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_CHESTBLUE.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Dragon.cpp" />
@@ -186,6 +191,11 @@
     <ClInclude Include="Application\FileNames.h" />
     <ClInclude Include="Application\Globals.h" />
     <ClInclude Include="Application\MemLeaks.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_MiniDragon.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Turtle.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_GreenChess.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_RedChess.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Tank.h" />
     <ClInclude Include="Entities\Enemies\Enemy.h" />
     <ClInclude Include="Entities\Enemies\Enemy_CHESTBLUE.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Dragon.h" />

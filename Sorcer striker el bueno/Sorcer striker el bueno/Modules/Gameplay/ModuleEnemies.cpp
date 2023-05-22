@@ -11,7 +11,11 @@
 #include "../../Entities/Enemies/Enemy_Dragon.h"
 #include "../../Entities/Enemies/Enemy_RedWizard.h"
 #include "../../Entities/Enemies/Enemy_RedBall.h"
-
+#include "../../Entities/Enemies/Enemy_Tank.h"
+#include "../../Entities/Enemies/Enemy_RedChess.h"
+#include "../../Entities/Enemies/Enemy_GreenChess.h"
+#include "../../Entities/Enemies/Enemy_Turtle.h"
+#include "../../Entities/Enemies/Enemy_MiniDragon.h"
 #define SPAWN_MARGIN 50
 
 ModuleEnemies::ModuleEnemies(bool startEnabled) : Module(startEnabled) {
@@ -100,7 +104,7 @@ void ModuleEnemies::HandleEnemiesSpawn() {
 	for (uint i = 0; i < MAX_ENEMIES; ++i) {
 		if (spawnQueue[i].type != Enemy_Type::NO_TYPE) {
 			// Spawn a new enemy if the screen has reached a spawn position
-			if (spawnQueue[i].x * SCREEN_SIZE < App->render->camera.x + (App->render->camera.w * SCREEN_SIZE) + SPAWN_MARGIN) {
+			if (spawnQueue[i].y > App->render->camera.y) {
 				//LOG("Spawning enemy at %d", spawnQueue[i].x * SCREEN_SIZE);
 
 				SpawnEnemy(spawnQueue[i]);
@@ -137,6 +141,12 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 			case Enemy_Type::REDWIZARD: enemies[i] = new Enemy_RedWizard(info.x, info.y, info.wave, info.miem);
 				break;
 			case Enemy_Type::RED_BALL: enemies[i] = new Enemy_RedBall(info.x, info.y, info.wave, info.miem);
+				break;
+			case Enemy_Type::TANK: enemies[i] = new Enemy_Tank(info.x, info.y, info.wave, info.miem);
+				break;
+			case Enemy_Type::TURTLE: enemies[i] = new Enemy_Turtle(info.x, info.y, info.wave, info.miem);
+				break;
+			case Enemy_Type::MINIDRAGON: enemies[i] = new Enemy_MiniDragon(info.x, info.y, info.wave, info.miem);
 				break;
 			}
 		

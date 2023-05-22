@@ -77,6 +77,9 @@ public:
 	//Template for deads
 	Particle playerdead;
 
+	//wizard shoot
+	Particle wizardshoot;
+
 private:
 	// Particles spritesheet loaded into an SDL Texture
 	SDL_Texture* texture = nullptr;

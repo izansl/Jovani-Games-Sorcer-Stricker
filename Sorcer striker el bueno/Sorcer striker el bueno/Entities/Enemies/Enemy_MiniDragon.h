@@ -1,16 +1,15 @@
-#ifndef __ENEMY_REDWIZARD_H__
-#define __ENEMY_REDWIZARD_H__
+#ifndef __ENEMY_MINIDRAGON_H__
+#define __ENEMY_MINIDRAGON_H__
 
 #include "Enemy.h"
 #include "../../Utils/Path.h"
-#include "../../Modules/Core/ModuleParticles.h"
 
-class Enemy_RedWizard : public Enemy {
+class Enemy_MiniDragon : public Enemy {
 
 public:
 	// Constructor (x y coordinates in the world)
 	// Creates animation and movement data and the collider
-	Enemy_RedWizard(int x, int y, int wave, int miem);
+	Enemy_MiniDragon(int x, int y, int wave, int miem);
 
 	// The enemy is going to follow the different steps in the path
 	// Position will be updated depending on the speed defined at each step
@@ -19,6 +18,7 @@ public:
 	void OnCollision(Collider* c1);
 
 	bool destroyed = false;
+
 
 private:
 	// A set of steps that define the position in the screen
@@ -29,7 +29,5 @@ private:
 	// We are keeping it an animation for consistency with other enemies
 	Animation fly;
 
-	int temp = 0;
 };
-
-#endif // __ENEMY_BROWNSHIP_H__
+#endif

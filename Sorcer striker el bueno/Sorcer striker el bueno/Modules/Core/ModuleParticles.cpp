@@ -83,7 +83,22 @@ bool ModuleParticles::Start() {
 	axeright.speed = iPoint(4, -13);
 	axeright.lifetime = 100;
 	
-	bomb.anim.loop = false;
+
+	explosion2.anim.loop = false;
+	
+	texture3 = App->textures->Load(FI_spriteEnemy_reds.c_str());
+	wizardshoot.anim.PushBack({ 640, 521, 99, 79 });
+	wizardshoot.anim.PushBack({ 861, 521, 99, 79 });
+	wizardshoot.anim.PushBack({ 1007, 528, 99, 79 });
+	wizardshoot.anim.PushBack({ 933, 528, 99, 79 });
+	wizardshoot.anim.PushBack({ 731, 527, 99, 79 });
+	wizardshoot.anim.speed = 0.2;
+	explosion.anim.loop = false;
+
+
+	
+	//bomb.anim.loop = false;
+
 
 	return true;
 }
