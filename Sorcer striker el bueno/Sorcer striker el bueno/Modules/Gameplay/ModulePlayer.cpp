@@ -112,7 +112,7 @@ Update_Status ModulePlayer::Update() {
 
 	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT) position.y -= speed;
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT) position.y += speed;
-	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
+	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
 	{
 		position.x += speed;
 		if (currentAnimation != &rightAnim)
@@ -121,7 +121,7 @@ Update_Status ModulePlayer::Update() {
 			currentAnimation = &rightAnim;
 		}
 	}
-	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x > 45)
+	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
 	{
 		position.x -= speed;
 		if (currentAnimation != &leftAnim)
