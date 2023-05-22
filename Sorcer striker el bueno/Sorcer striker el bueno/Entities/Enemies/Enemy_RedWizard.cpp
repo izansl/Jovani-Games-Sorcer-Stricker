@@ -76,6 +76,14 @@ void Enemy_RedWizard::Update() {
 	path.Update();
 	position = spawnPos + path.GetRelativePosition();
 
+	if (temp >= 30)
+	{
+		Particle* fireball = App->particles->AddParticle(App->particles->wizardshoot, position.x, position.y, Collider::Type::ENEMY_SHOOT, 0) ;
+			/*if (fireball == nullptr)
+			{
+
+			}*/
+	}
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
 	Enemy::Update();
