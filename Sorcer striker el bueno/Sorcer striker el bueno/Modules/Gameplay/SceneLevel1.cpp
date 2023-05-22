@@ -29,25 +29,6 @@ bool SceneLevel1::Start() {
 
 	App->audio->PlayMusic(FA_Music_stage1.c_str(), 1.0f);
 
-
-	////First two columns colliders
-	//int xt = 25;
-	//int yt = 3000;
-	//int wt = 820;
-	//int ht = 10;
-	//topcoll = App->collisions->AddCollider({ xt, yt, wt, ht }, Collider::Type::WALL_PLAYER);
-
-	//int xb = 25;
-	//int yb = 4025;
-	//int wb = 820;
-	//int hb = 10;
-	//botcoll = App->collisions->AddCollider({ xb, yb, wb, hb }, Collider::Type::WALL_PLAYER);
-	//leftcoll = App->collisions->AddCollider({ 25, 3000, 10, 1080 }, Collider::Type::WALL);
-	//raightcoll = App->collisions->AddCollider({ 845, 3000, 10, 1080 }, Collider::Type::WALL);
-
-
-
-
 	//Wall colliders
 	int xt = 0;
 	int yt = 3000;
