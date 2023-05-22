@@ -20,12 +20,12 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 	idleAnim.PushBack({ 97, 687, 119, 111});
 
 	// move right
-	rightAnim.PushBack({ 96, 364, 119, 111 });
+	rightAnim.PushBack({ 97, 363, 119, 111 });
 	rightAnim.loop = false;
 	rightAnim.speed = 0.5f;
 
 	// Move left
-	leftAnim.PushBack({ 2102, 522, 119, 111 });
+	leftAnim.PushBack({ 353, 523, 119, 111 });
 	leftAnim.loop = false;
 	leftAnim.speed = 0.5f;
 
@@ -35,12 +35,12 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 	blueBUFF.speed = 0.1f;
 
 	//Move right
-	blueright.PushBack({ 445, 134, 73, 46 });
+	blueright.PushBack({ 53, 363, 217, 118 });
 	blueright.loop = false;
 	blueright.speed = 0.5f;
 
 	// Move left
-	blueleft.PushBack({ 45, 360, 217, 118});
+	blueleft.PushBack({ 56, 520, 217, 118});
 	blueleft.loop = false;
 	blueleft.speed = 0.5f;
 
@@ -97,7 +97,7 @@ bool ModulePlayer::Start() {
 
 	destroyed = false;
 
-	collider = App->collisions->AddCollider({ position.x, position.y, 38, 44 }, Collider::Type::PLAYER, this);
+	collider = App->collisions->AddCollider({ position.x, position.y, 119, 111 }, Collider::Type::PLAYER, this);
 	backupPosition.x = 100;
 	backupPosition.y = position.y - SCREEN_HEIGHT;
 	return ret;
@@ -214,8 +214,8 @@ Update_Status ModulePlayer::Update() {
 	if (Powerupred == true)
 	{
 		currentAnimation = &blueBUFF;
-		collider->rect.w = 66;
-		collider->rect.h = 45;
+		collider->rect.w = 217;
+		collider->rect.h = 118;
 
 		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
 		{
@@ -304,6 +304,9 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		LOG("player dead");
 		position.x = 100;
 		position.y = position.y + SCREEN_HEIGHT;
+
+		//Powerup = false;
+		collider->rect.w = 119;
 		Powerupblue = false;
 		lives--;
 

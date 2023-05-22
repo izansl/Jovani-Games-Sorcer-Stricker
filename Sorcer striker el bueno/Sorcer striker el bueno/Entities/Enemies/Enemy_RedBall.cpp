@@ -540,6 +540,7 @@ void Enemy_RedBall::OnCollision(Collider* c1) {
 	fly.PushBack({ 586, 139, 139, 137 });
 	fly.PushBack({ 644, 142, 139, 137 });
 	fly.PushBack({ 798, 142, 139, 137 });
+	fly.PushBack({ 1000, 300, 139, 137 });
 
 	currentAnim = &fly;
 	fly.speed = 0.2;

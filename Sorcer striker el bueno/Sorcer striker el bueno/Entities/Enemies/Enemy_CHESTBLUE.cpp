@@ -45,6 +45,7 @@ Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
 
 	currentPath = &pathchest;
 	collider = App->collisions->AddCollider({ 0, 0, 118, 100 }, Collider::Type::CHEST, (Module*)App->enemies);
+
 }
 
 void Enemy_CHESS::Update() {
