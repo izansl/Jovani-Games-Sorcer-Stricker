@@ -20,66 +20,73 @@ ModuleParticles::~ModuleParticles() {
 
 bool ModuleParticles::Start() {
 	LOG("Loading particles");
-	texture = App->textures->Load(FI_spriteEnemy_reds.c_str());
+	texture = App->textures->Load(FI_particles_.c_str());
 
 	// Laser particle
-	laser1.anim.PushBack({ 741, 967, 59, 74 });
+	laser1.anim.PushBack({ 1951, 739, 65, 67 });
 	laser1.anim.loop = false;
 	laser1.speed = iPoint(0, -15);
 	laser1.lifetime = 100;
 	laser1.anim.speed = 0.01f;
 
-	laser2.anim.PushBack({ 826, 933, 106, 114 });
+	laser2.anim.PushBack({ 2048, 700, 85, 110 });
 	laser2.anim.loop = false;
 	laser2.speed = iPoint(0, -15);
 	laser2.lifetime = 100;
 	laser2.anim.speed = 0.01f;
 
-	texture2 = App->textures->Load(FI_spritePlayer_explosions.c_str());
 	//PLayer dead + bomb
-	playerdead.anim.PushBack({ 21, 0, 158, 167 });
-	playerdead.anim.PushBack({  218, 0, 158, 167});
-	playerdead.anim.PushBack({ 423, 0, 158, 167 });
-	playerdead.anim.PushBack({ 620, 0, 158, 167 });
-	playerdead.anim.PushBack({ 23, 200, 158, 167 });
-	playerdead.anim.PushBack({ 217, 199, 158, 167 });
-	playerdead.anim.PushBack({ 429, 191, 158, 167});
-	playerdead.anim.PushBack({ 628, 202, 158, 167});
+	playerdead.anim.PushBack({ 1926, 226, 160, 162 });
+	playerdead.anim.PushBack({ 2122, 223, 160, 162});
+	playerdead.anim.PushBack({ 2331, 223, 160, 162 });
+	playerdead.anim.PushBack({ 2525, 227, 160, 162 });
+	playerdead.anim.PushBack({ 1926, 427, 160, 162 });
+	playerdead.anim.PushBack({ 2121, 426, 160, 162 });
+	playerdead.anim.PushBack({ 2333, 426, 160, 162});
+	playerdead.anim.PushBack({ 2530, 433, 160, 162});
 	playerdead.speed.y = -8;
 	playerdead.anim.speed = 0.1f;
 	playerdead.lifetime = 80;
 
-	texture3 = App->textures->Load(FI_Introimage_7.c_str());
-	bomb.anim.PushBack({ 294, 1379, 468, 445 });
-	bomb.anim.PushBack({ 166, 863, 468, 445 });
-	bomb.anim.PushBack({ 351, 55, 468, 445 });
-	bomb.anim.PushBack({ 937, 778, 468, 445 });
-	bomb.anim.PushBack({ 1225, 1320, 468, 445 });
-	bomb.anim.speed = 0.2f; 
-	bomb.anim.loop = false;
+	bomb.anim.PushBack({ 289, 1420, 424, 421 });
+	bomb.anim.PushBack({ 149, 906, 424, 421 });
+	bomb.anim.PushBack({ 1467, 458, 424, 421 });
+	bomb.anim.PushBack({ 923, 829, 424, 421 });
+	bomb.anim.PushBack({ 1207, 1377, 424, 421 });
+	bomb.anim.speed = 0.2f;
 
-	texture4 = App->textures->Load(FI_spritePlayer_shoots.c_str());
+//	texture3 = App->textures->Load(FI_Introimage_7.c_str());
+//	bomb.anim.PushBack({ 294, 1379, 468, 445 });
+//	bomb.anim.PushBack({ 166, 863, 468, 445 });
+//	bomb.anim.PushBack({ 351, 55, 468, 445 });
+//	bomb.anim.PushBack({ 937, 778, 468, 445 });
+//	bomb.anim.PushBack({ 1225, 1320, 468, 445 });
+//	bomb.anim.speed = 0.2f; 
+//bomb.anim.loop = false;
+
+
 	//Powe up atacks
-	axeleft.anim.PushBack({24, 96, 98, 100});
-	axeleft.anim.PushBack({121, 96, 98, 100});
-	axeleft.anim.PushBack({ 215, 97, 98, 100 });
-	axeleft.anim.PushBack({ 317, 95, 98, 100 });
-	axeleft.anim.PushBack({ 407, 88, 98, 100 });
-	axeleft.anim.PushBack({ 486, 89, 98, 100 });
-	axeleft.anim.PushBack({ 577, 78, 98, 100 });
-	axeleft.anim.PushBack({ 673, 87, 98, 100 });
+	//Blue
+	axeleft.anim.PushBack({ 1940, 956, 93, 89 });
+	axeleft.anim.PushBack({ 2037, 962, 93, 89 });
+	axeleft.anim.PushBack({ 2129, 956, 93, 89 });
+	axeleft.anim.PushBack({ 2225, 956, 93, 89 });
+	axeleft.anim.PushBack({ 2317, 956, 93, 89 });
+	axeleft.anim.PushBack({ 2400, 956, 93, 89 });
+	axeleft.anim.PushBack({ 2488, 948, 93, 89 });
+	axeleft.anim.PushBack({ 2584, 956, 93, 89 });
 	axeleft.anim.speed = 0.1f;
 	axeleft.speed = iPoint(-4, -13);
 	axeleft.lifetime = 100;
 
-	axeright.anim.PushBack({ 679, 205, 98, 100 });
-	axeright.anim.PushBack({ 576, 210, 98, 100});
-	axeright.anim.PushBack({  486, 212, 98, 100});
-	axeright.anim.PushBack({ 389, 206, 98, 100 });
-	axeright.anim.PushBack({ 295, 204, 98, 100 });
-	axeright.anim.PushBack({ 218, 205, 98, 100 });
-	axeright.anim.PushBack({ 125, 198, 98, 100 });
-	axeright.anim.PushBack({ 30, 202, 98, 100 });
+	axeright.anim.PushBack({ 2587, 1074, 93, 89 });
+	axeright.anim.PushBack({ 2490, 1076, 93, 89});
+	axeright.anim.PushBack({ 2398, 1074, 93, 89 });
+	axeright.anim.PushBack({ 2301, 1071, 93, 89 });
+	axeright.anim.PushBack({ 2209, 1071, 93, 89 });
+	axeright.anim.PushBack({ 2131, 1071, 93, 89 });
+	axeright.anim.PushBack({ 2040, 1063, 93, 89 });
+	axeright.anim.PushBack({ 1944, 1073, 93, 89 });
 	axeright.anim.speed = 0.1f;
 	axeright.speed = iPoint(4, -13);
 	axeright.lifetime = 100;
@@ -101,6 +108,17 @@ bool ModuleParticles::Start() {
 	
 
 
+	//Pink
+	knifeleft.anim.PushBack({ 1938, 881, 34, 62 });
+
+	kniferight.anim.PushBack({ 2086, 883, 34, 62 });
+
+	//Green
+	sword.anim.PushBack({ 2276, 1220, 110, 550 });
+	sword.speed = iPoint(0, -13);
+
+	greenpart.anim.PushBack({ 2418, 1218, 110, 550 });
+	greenpart.speed = iPoint(0, -13);
 	return true;
 }
 
