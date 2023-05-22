@@ -72,6 +72,16 @@ bool ModuleParticles::Start() {
 	explosion2.anim.speed = 0.2f;
 	
 	explosion2.anim.loop = false;
+	
+	texture3 = App->textures->Load(FI_spriteEnemy_reds.c_str());
+	wizardshoot.anim.PushBack({ 640, 521, 99, 79 });
+	wizardshoot.anim.PushBack({ 861, 521, 99, 79 });
+	wizardshoot.anim.PushBack({ 1007, 528, 99, 79 });
+	wizardshoot.anim.PushBack({ 933, 528, 99, 79 });
+	wizardshoot.anim.PushBack({ 731, 527, 99, 79 });
+	wizardshoot.anim.speed = 0.2;
+	explosion.anim.loop = false;
+
 
 	return true;
 }

@@ -29,7 +29,7 @@ private:
 	// We are keeping it an animation for consistency with other enemies
 	Animation fly;
 
-
+	int temp = 0;
 };
 
 #endif // __ENEMY_BROWNSHIP_H__
