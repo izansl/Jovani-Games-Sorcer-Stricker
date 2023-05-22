@@ -55,7 +55,8 @@ bool ModuleParticles::Start() {
 	bomb.anim.PushBack({ 351, 55, 468, 445 });
 	bomb.anim.PushBack({ 937, 778, 468, 445 });
 	bomb.anim.PushBack({ 1225, 1320, 468, 445 });
-	bomb.anim.speed = 0.2f;
+	bomb.anim.speed = 0.2f; 
+	bomb.anim.loop = false;
 
 	texture4 = App->textures->Load(FI_spritePlayer_shoots.c_str());
 	//Powe up atacks
@@ -84,20 +85,20 @@ bool ModuleParticles::Start() {
 	axeright.lifetime = 100;
 	
 
-	explosion2.anim.loop = false;
 	
-	texture3 = App->textures->Load(FI_spriteEnemy_reds.c_str());
+	
+	texture5 = App->textures->Load(FI_spriteEnemy_reds.c_str());
 	wizardshoot.anim.PushBack({ 640, 521, 99, 79 });
 	wizardshoot.anim.PushBack({ 861, 521, 99, 79 });
 	wizardshoot.anim.PushBack({ 1007, 528, 99, 79 });
 	wizardshoot.anim.PushBack({ 933, 528, 99, 79 });
 	wizardshoot.anim.PushBack({ 731, 527, 99, 79 });
 	wizardshoot.anim.speed = 0.2;
-	explosion.anim.loop = false;
+	wizardshoot.anim.loop = false;
 
 
 	
-	//bomb.anim.loop = false;
+	
 
 
 	return true;

@@ -38,7 +38,7 @@ public:
 
 	bool Powerupblue = false;
 	bool Powerupred = false;
-	bool Powerupgreen 0 false;
+	bool Powerupgreen = false;
 
 	bool alive = true;
 
