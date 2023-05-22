@@ -32,7 +32,7 @@ private: //BROWNSHIP
 	// This enemy has one sprite and one frame
 	// We are keeping it an animation for consistency with other enemies
 	Animation blue;
-	Animation red;
+	Animation pickup;
 };
 
 #endif // __ENEMY_CHESS_H__
