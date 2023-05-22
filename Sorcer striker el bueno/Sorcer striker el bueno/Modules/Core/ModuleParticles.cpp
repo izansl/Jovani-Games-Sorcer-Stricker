@@ -55,6 +55,16 @@ bool ModuleParticles::Start() {
 	bomb.anim.PushBack({ 1207, 1377, 424, 421 });
 	bomb.anim.speed = 0.2f;
 
+//	texture3 = App->textures->Load(FI_Introimage_7.c_str());
+//	bomb.anim.PushBack({ 294, 1379, 468, 445 });
+//	bomb.anim.PushBack({ 166, 863, 468, 445 });
+//	bomb.anim.PushBack({ 351, 55, 468, 445 });
+//	bomb.anim.PushBack({ 937, 778, 468, 445 });
+//	bomb.anim.PushBack({ 1225, 1320, 468, 445 });
+//	bomb.anim.speed = 0.2f; 
+//bomb.anim.loop = false;
+
+
 	//Powe up atacks
 	//Blue
 	axeleft.anim.PushBack({ 1940, 956, 93, 89 });
@@ -81,7 +91,22 @@ bool ModuleParticles::Start() {
 	axeright.speed = iPoint(4, -13);
 	axeright.lifetime = 100;
 	
-	bomb.anim.loop = false;
+
+	
+	
+	texture5 = App->textures->Load(FI_spriteEnemy_reds.c_str());
+	wizardshoot.anim.PushBack({ 640, 521, 99, 79 });
+	wizardshoot.anim.PushBack({ 861, 521, 99, 79 });
+	wizardshoot.anim.PushBack({ 1007, 528, 99, 79 });
+	wizardshoot.anim.PushBack({ 933, 528, 99, 79 });
+	wizardshoot.anim.PushBack({ 731, 527, 99, 79 });
+	wizardshoot.anim.speed = 0.2;
+	wizardshoot.anim.loop = false;
+
+
+	
+	
+
 
 	//Pink
 	knifeleft.anim.PushBack({ 1938, 881, 34, 62 });

@@ -1,16 +1,16 @@
-#ifndef __ENEMY_CHESS_H__
-#define __ENEMY_CHESS_H__
+#ifndef __ENEMY_GREENCHESS_H__
+#define __ENEMY_GREENCHESS_H__
 
 #include "Enemy.h"
 #include "../../Utils/Path.h"
 
 
-class Enemy_CHESS : public Enemy {
+class Enemy_GreenChess : public Enemy {
 
 public:
 	// Constructor (x y coordinates in the world)
 	// Creates animation data and the collider
-	Enemy_CHESS(int x, int y);
+	Enemy_GreenChess(int x, int y);
 
 	// The enemy is going to perform a sinusoidal movement
 	void Update() override;
@@ -31,8 +31,9 @@ private: //BROWNSHIP
 
 	// This enemy has one sprite and one frame
 	// We are keeping it an animation for consistency with other enemies
-	Animation blue;
+	Animation green;
 	Animation pickup;
 };
 
 #endif // __ENEMY_CHESS_H__
+

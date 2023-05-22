@@ -1,4 +1,4 @@
-#include "Enemy_CHESTBLUE.h"
+#include "Enemy_RedChess.h"
 
 #include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"
@@ -7,16 +7,14 @@
 #include "../../Modules/Core/ModuleRender.h"
 #include"../../Modules/Core/ModuleTextures.h"
 
-
-Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
+Enemy_RedChess::Enemy_RedChess(int x, int y) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spritebonus_pickups.c_str());
 
-	blue.PushBack({ 14, 251, 118, 100 });
-	blue.PushBack({ 140, 257, 118, 100 });
-	blue.PushBack({ 244, 246, 118, 100});
-	blue.speed = 0.05f;
-	currentAnim = &blue;
-
+	red.PushBack({ 17, 501, 118, 101 });
+	red.PushBack({ 135, 498, 118, 101 });
+	red.PushBack({ 258, 493, 118, 101 });
+	red.speed = 0.05f;
+	currentAnim = &red;
 
 	// Path 1
 
@@ -43,13 +41,12 @@ Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
 	pathchest.PushBack({ 1.0f, -0.2f }, 10);
 	pathchest.PushBack({ 1.0f, -1.0f }, 0);
 
-	currentPath = &pathchest;
-	collider = App->collisions->AddCollider({ 0, 0, 118, 100 }, Collider::Type::CHEST, (Module*)App->enemies);
 
+	collider = App->collisions->AddCollider({ 0, 0, 118, 101 }, Collider::Type::CHEST, (Module*)App->enemies);
 }
 
-void Enemy_CHESS::Update() {
-	
+void Enemy_RedChess::Update() {
+
 	if (!activePart2)
 		pathchest.Update();
 	else
@@ -69,16 +66,16 @@ void Enemy_CHESS::Update() {
 
 }
 
-void Enemy_CHESS::OnCollision(Collider* c1) {
+void Enemy_RedChess::OnCollision(Collider* c1) {
 	if (c1->type == Collider::Type::PLAYER_SHOT)
 	{
 		//chestdestroy = true;
 
-		collider = App->collisions->AddCollider({ 0, 0, 62, 78 }, Collider::Type::POWER_UP, (Module*)App->enemies);
+		collider = App->collisions->AddCollider({ 0, 0, 63, 78 }, Collider::Type::POWER_UP, (Module*)App->enemies);
 
 		// Change sprite
-		pickup.PushBack({ 42, 369, 62, 78 });
-		pickup.PushBack({ 161, 365, 62, 78 });
+		pickup.PushBack({ 40, 137, 63, 78 });
+		pickup.PushBack({ 155, 138, 63, 78 });
 		pickup.speed = 0.1f;
 		currentAnim = &pickup;
 

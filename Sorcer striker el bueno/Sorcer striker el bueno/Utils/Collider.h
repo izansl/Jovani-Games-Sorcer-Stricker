@@ -14,7 +14,7 @@ struct Collider {
 		PLAYER,
 		ENEMY,
 		PLAYER_SHOT,
-		ENEMY_SHOT,
+		ENEMY_SHOOT,
 		CHEST,
 		POWER_UP,
 		WALL_PLAYER,

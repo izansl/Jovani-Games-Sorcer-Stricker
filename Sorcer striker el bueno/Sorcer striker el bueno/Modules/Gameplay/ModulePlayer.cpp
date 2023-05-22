@@ -133,11 +133,11 @@ Update_Status ModulePlayer::Update() {
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{
-		if (Powerup == false)
+		if (Powerupblue == false)
 		{
 			App->particles->AddParticle(App->particles->laser1, position.x, position.y, Collider::Type::PLAYER_SHOT, 0);
 		}
-		else if (Powerup == true)
+		else if (Powerupblue == true)
 		{
 			App->particles->AddParticle(App->particles->laser2, position.x + 15, position.y, Collider::Type::PLAYER_SHOT, 0);
 
@@ -161,7 +161,57 @@ Update_Status ModulePlayer::Update() {
 	collider->SetPos(position.x, position.y);
 	currentAnimation->Update();
 
-	if (Powerup == true)
+	if (Powerupblue == true)
+	{
+		currentAnimation = &blueBUFF;
+		collider->rect.w = 66;
+		collider->rect.h = 45;
+
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
+		{
+			position.x += speed;
+			if (currentAnimation != &blueright)
+			{
+				blueright.Reset();
+				currentAnimation = &blueright;
+			}
+		}
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x > 45)
+		{
+			position.x -= speed;
+			if (currentAnimation != &blueleft)
+			{
+				blueleft.Reset();
+				currentAnimation = &blueleft;
+			}
+		}
+	}
+	if (Powerupgreen == true)
+	{
+		currentAnimation = &blueBUFF;
+		collider->rect.w = 66;
+		collider->rect.h = 45;
+
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
+		{
+			position.x += speed;
+			if (currentAnimation != &blueright)
+			{
+				blueright.Reset();
+				currentAnimation = &blueright;
+			}
+		}
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x > 45)
+		{
+			position.x -= speed;
+			if (currentAnimation != &blueleft)
+			{
+				blueleft.Reset();
+				currentAnimation = &blueleft;
+			}
+		}
+	}
+	if (Powerupred == true)
 	{
 		currentAnimation = &blueBUFF;
 		collider->rect.w = 217;
@@ -254,15 +304,27 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		LOG("player dead");
 		position.x = 100;
 		position.y = position.y + SCREEN_HEIGHT;
-		Powerup = false;
+
+		//Powerup = false;
 		collider->rect.w = 119;
+		Powerupblue = false;
 		lives--;
 
 	}
 	 //Cuan colisiona amb Power up
 	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::POWER_UP)
 	{
-		Powerup = true;
-		LOG("POWERUP");
+		if (c2->rect.w=99)
+		{
+			Powerupgreen = true;
+		}
+		if (c2->rect.w=100)
+		{
+			Powerupblue = true;
+		}
+		if (c2->rect.w=101)
+		{
+			Powerupred = true;
+		}
 	}
 }
