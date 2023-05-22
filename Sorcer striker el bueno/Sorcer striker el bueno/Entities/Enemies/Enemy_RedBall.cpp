@@ -14,6 +14,7 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave, int miem) : Enemy(x, y) {
 	currentAnim = &fly;
 	fly.speed = 0.2;
 	fly.loop = true;
+
 	// Sescribe a path in the screen
 	if (wave == 1)
 	{
@@ -533,11 +534,12 @@ void Enemy_RedBall::Update() {
 }
 //
 void Enemy_RedBall::OnCollision(Collider* c1) {
-	fly.PushBack({ 7, 50, 32, 32 });
-	fly.PushBack({ 42, 50, 32, 32 });
-	fly.PushBack({ 77, 51, 32, 32 });
-	fly.PushBack({ 111, 52, 32, 32 });
-	fly.PushBack({ 200, 200, 32, 32 });
+	fly.PushBack({ 1, 136, 139, 137 });
+	fly.PushBack({ 155, 140, 139, 137 });
+	fly.PushBack({ 335, 142, 139, 137 });
+	fly.PushBack({ 586, 139, 139, 137 });
+	fly.PushBack({ 644, 142, 139, 137 });
+	fly.PushBack({ 798, 142, 139, 137 });
 
 	currentAnim = &fly;
 	fly.speed = 0.2;

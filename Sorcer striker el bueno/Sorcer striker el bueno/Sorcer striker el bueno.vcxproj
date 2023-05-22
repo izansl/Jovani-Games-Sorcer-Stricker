@@ -162,7 +162,7 @@
     <ClCompile Include="Entities\Enemies\Enemy_RedChess.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Tank.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy.cpp" />
-    <ClCompile Include="Entities\Enemies\Enemy_CHEST.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_CHESTBLUE.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Dragon.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_RedBall.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_RedWizard.cpp" />
@@ -182,6 +182,7 @@
     <ClCompile Include="Modules\Gameplay\SceneIntro.cpp" />
     <ClCompile Include="Modules\Gameplay\SceneLevel1.cpp" />
     <ClCompile Include="Modules\Module.cpp" />
+    <ClCompile Include="Modules\Gameplay\SceneStart.cpp" />
     <ClCompile Include="Utils\Collider.cpp" />
     <ClCompile Include="Utils\Path.cpp" />
   </ItemGroup>
@@ -196,7 +197,7 @@
     <ClInclude Include="Entities\Enemies\Enemy_RedChess.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Tank.h" />
     <ClInclude Include="Entities\Enemies\Enemy.h" />
-    <ClInclude Include="Entities\Enemies\Enemy_CHEST.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_CHESTBLUE.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Dragon.h" />
     <ClInclude Include="Entities\Enemies\Enemy_RedBall.h" />
     <ClInclude Include="Entities\Enemies\Enemy_RedWizard.h" />
@@ -217,6 +218,7 @@
     <ClInclude Include="Modules\Gameplay\SceneIntro.h" />
     <ClInclude Include="Modules\Gameplay\SceneLevel1.h" />
     <ClInclude Include="Modules\Module.h" />
+    <ClInclude Include="Modules\Gameplay\SceneStart.h" />
     <ClInclude Include="Utils\Animation.h" />
     <ClInclude Include="Utils\Collider.h" />
     <ClInclude Include="Utils\p2Point.h" />

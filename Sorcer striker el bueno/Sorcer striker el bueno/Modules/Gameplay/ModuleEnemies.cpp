@@ -7,7 +7,7 @@
 #include "../../Modules/Core/ModuleAudio.h"
 
 #include "../../Entities/Enemies/Enemy.h"
-#include "../../Entities/Enemies/Enemy_CHEST.h"
+#include "../../Entities/Enemies/Enemy_CHESTBLUE.h"
 #include "../../Entities/Enemies/Enemy_Dragon.h"
 #include "../../Entities/Enemies/Enemy_RedWizard.h"
 #include "../../Entities/Enemies/Enemy_RedBall.h"

@@ -20,57 +20,70 @@ ModuleParticles::~ModuleParticles() {
 
 bool ModuleParticles::Start() {
 	LOG("Loading particles");
-	texture = App->textures->Load(FI_spritePlayer_player1.c_str());
+	texture = App->textures->Load(FI_spriteEnemy_reds.c_str());
 
-	// Explosion particle
-	explosion.anim.PushBack({ 34, 273, 88, 89 });
-	explosion.anim.PushBack({ 132, 273, 88, 89 });
-	explosion.anim.PushBack({ 237, 273, 88, 89 });
-	explosion.anim.PushBack({ 337, 273, 89, 90 });
-	explosion.anim.loop = false;
-	explosion.speed = iPoint(0, -10);
-	explosion.lifetime = 100;
-	explosion.anim.speed = 0.05f;
+	// Laser particle
+	laser1.anim.PushBack({ 741, 967, 59, 74 });
+	laser1.anim.loop = false;
+	laser1.speed = iPoint(0, -15);
+	laser1.lifetime = 100;
+	laser1.anim.speed = 0.01f;
 
-	laser.anim.PushBack({ 356, 23, 12, 30 });
-	laser.anim.loop = false;
-	laser.speed = iPoint(0, -15);
-	laser.lifetime = 100;
-	laser.anim.speed = 0.01f;
+	laser2.anim.PushBack({ 826, 933, 106, 114 });
+	laser2.anim.loop = false;
+	laser2.speed = iPoint(0, -15);
+	laser2.lifetime = 100;
+	laser2.anim.speed = 0.01f;
 
-
-	playerdead.anim.PushBack({ 45, 128, 60, 60 });
-	playerdead.anim.PushBack({ 110, 123, 60, 60 });
-	playerdead.anim.PushBack({ 180, 125, 60, 60 });
-	playerdead.anim.PushBack({ 246, 125, 60, 60 });
-	playerdead.anim.PushBack({ 44, 193, 60, 60 });
-	playerdead.anim.PushBack({ 110, 193, 60, 60 });
-	playerdead.anim.PushBack({ 181, 193, 60, 60});
-	playerdead.anim.PushBack({ 246, 193, 60, 60});
+	texture2 = App->textures->Load(FI_spritePlayer_explosions.c_str());
+	//PLayer dead + bomb
+	playerdead.anim.PushBack({ 21, 0, 158, 167 });
+	playerdead.anim.PushBack({  218, 0, 158, 167});
+	playerdead.anim.PushBack({ 423, 0, 158, 167 });
+	playerdead.anim.PushBack({ 620, 0, 158, 167 });
+	playerdead.anim.PushBack({ 23, 200, 158, 167 });
+	playerdead.anim.PushBack({ 217, 199, 158, 167 });
+	playerdead.anim.PushBack({ 429, 191, 158, 167});
+	playerdead.anim.PushBack({ 628, 202, 158, 167});
 	playerdead.speed.y = -8;
 	playerdead.anim.speed = 0.1f;
 	playerdead.lifetime = 80;
 
-	iceleft.anim.PushBack({449, 72, 17, 19});
-	iceleft.anim.PushBack({467, 72, 17, 19});
-	iceleft.anim.speed = 0.1f;
-	iceleft.speed = iPoint(-4, -13);
-	iceleft.lifetime = 100;
+	texture3 = App->textures->Load(FI_Introimage_7.c_str());
+	bomb.anim.PushBack({ 294, 1379, 468, 445 });
+	bomb.anim.PushBack({ 166, 863, 468, 445 });
+	bomb.anim.PushBack({ 351, 55, 468, 445 });
+	bomb.anim.PushBack({ 937, 778, 468, 445 });
+	bomb.anim.PushBack({ 1225, 1320, 468, 445 });
+	bomb.anim.speed = 0.2f;
 
-	iceright.anim.PushBack({ 449, 72, 17, 19 });
-	iceright.anim.PushBack({ 467, 72, 17, 19 });
-	iceright.anim.speed = 0.1f;
-	iceright.speed = iPoint(4, -13);
-	iceright.lifetime = 100;
+	texture4 = App->textures->Load(FI_spritePlayer_shoots.c_str());
+	//Powe up atacks
+	axeleft.anim.PushBack({24, 96, 98, 100});
+	axeleft.anim.PushBack({121, 96, 98, 100});
+	axeleft.anim.PushBack({ 215, 97, 98, 100 });
+	axeleft.anim.PushBack({ 317, 95, 98, 100 });
+	axeleft.anim.PushBack({ 407, 88, 98, 100 });
+	axeleft.anim.PushBack({ 486, 89, 98, 100 });
+	axeleft.anim.PushBack({ 577, 78, 98, 100 });
+	axeleft.anim.PushBack({ 673, 87, 98, 100 });
+	axeleft.anim.speed = 0.1f;
+	axeleft.speed = iPoint(-4, -13);
+	axeleft.lifetime = 100;
 
-
-	texture2 = App->textures->Load(FI_spriteExplosion_enemies.c_str());
-	explosion2.anim.PushBack({ 3, 71, 36, 36 });
-	explosion2.anim.PushBack({ 39, 72, 36, 36 });
-	explosion2.anim.PushBack({ 75, 72, 36, 36 });
-	explosion2.anim.PushBack({ 111, 71, 36, 36 });
-	explosion2.anim.speed = 0.2f;
+	axeright.anim.PushBack({ 679, 205, 98, 100 });
+	axeright.anim.PushBack({ 576, 210, 98, 100});
+	axeright.anim.PushBack({  486, 212, 98, 100});
+	axeright.anim.PushBack({ 389, 206, 98, 100 });
+	axeright.anim.PushBack({ 295, 204, 98, 100 });
+	axeright.anim.PushBack({ 218, 205, 98, 100 });
+	axeright.anim.PushBack({ 125, 198, 98, 100 });
+	axeright.anim.PushBack({ 30, 202, 98, 100 });
+	axeright.anim.speed = 0.1f;
+	axeright.speed = iPoint(4, -13);
+	axeright.lifetime = 100;
 	
+
 	explosion2.anim.loop = false;
 	
 	texture3 = App->textures->Load(FI_spriteEnemy_reds.c_str());
@@ -81,6 +94,10 @@ bool ModuleParticles::Start() {
 	wizardshoot.anim.PushBack({ 731, 527, 99, 79 });
 	wizardshoot.anim.speed = 0.2;
 	explosion.anim.loop = false;
+
+
+	
+	//bomb.anim.loop = false;
 
 
 	return true;

@@ -17,21 +17,21 @@
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 
 	// idle animation - just one sprite
-	idleAnim.PushBack({ 264, 16, 40, 42 });
+	idleAnim.PushBack({ 97, 687, 119, 111});
 
 	// move right
-	rightAnim.PushBack({ 305, 16, 38, 44 });
+	rightAnim.PushBack({ 96, 364, 119, 111 });
 	rightAnim.loop = false;
 	rightAnim.speed = 0.5f;
 
 	// Move left
-	leftAnim.PushBack({ 226, 16, 38, 44 });
+	leftAnim.PushBack({ 2102, 522, 119, 111 });
 	leftAnim.loop = false;
 	leftAnim.speed = 0.5f;
 
 	//BLUE BUFF	
 	// Change sprite
-	blueBUFF.PushBack({ 337, 69, 66, 45 });
+	blueBUFF.PushBack({ 50, 683, 217, 118});
 	blueBUFF.speed = 0.1f;
 
 	//Move right
@@ -40,9 +40,42 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 	blueright.speed = 0.5f;
 
 	// Move left
-	blueleft.PushBack({ 14, 37, 73, 46 });
+	blueleft.PushBack({ 45, 360, 217, 118});
 	blueleft.loop = false;
 	blueleft.speed = 0.5f;
+
+	//PINK BUFF
+	// Change sprite
+	pinkBUFF.PushBack({ 300, 684, 217, 118 });
+	pinkBUFF.speed = 0.1f;
+
+	//Move right
+	pinkright.PushBack({ 300, 360, 217, 118 });
+	pinkright.loop = false;
+	pinkright.speed = 0.5f;
+
+	// Move left
+	pinkleft.PushBack({ 298, 522, 217, 118 });
+	pinkleft.loop = false;
+	pinkleft.speed = 0.5f;
+
+	pinkBUFF.PushBack({ 300, 684, 217, 118 });
+	pinkBUFF.speed = 0.1f;
+
+	//GREEN BUFF
+	// Change sprite
+	greenBUFF.PushBack({ 552, 618, 217, 188 });
+	greenBUFF.speed = 0.1f;
+
+	//Move right
+	greenright.PushBack({ 553, 363, 217, 118 });
+	greenright.loop = false;
+	greenright.speed = 0.5f;
+
+	// Move left
+	greenleft.PushBack({ 552, 518, 217, 118 });
+	greenleft.loop = false;
+	greenleft.speed = 0.5f;
 
 }
 
@@ -54,7 +87,7 @@ bool ModulePlayer::Start() {
 
 	bool ret = true;
 
-	texture = App->textures->Load(FI_spritePlayer_player1.c_str());
+	texture = App->textures->Load(FI_spritePlayer_1.c_str());
 	currentAnimation = &idleAnim;
 
 	explosionjugadorFx = App->audio->LoadFx(FA_Fx_explosionJ.c_str()); ;
@@ -102,29 +135,22 @@ Update_Status ModulePlayer::Update() {
 	{
 		if (Powerup == false)
 		{
-			App->particles->AddParticle(App->particles->laser, position.x, position.y, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->laser, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser1, position.x, position.y, Collider::Type::PLAYER_SHOT, 0);
 		}
 		else if (Powerup == true)
 		{
-			App->particles->AddParticle(App->particles->laser, position.x + 15, position.y, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->laser, position.x + 25, position.y - 5, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->laser, position.x + 35, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser2, position.x + 15, position.y, Collider::Type::PLAYER_SHOT, 0);
 
-			App->particles->AddParticle(App->particles->iceleft, position.x - 5, position.y, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->iceleft, position.x - 15, position.y + 20, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->iceleft, position.x - 5, position.y + 40, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->axeleft, position.x - 5, position.y, Collider::Type::PLAYER_SHOT, 0);
 
-			App->particles->AddParticle(App->particles->iceright, position.x + 55, position.y, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->iceright, position.x + 65, position.y + 20, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->iceright, position.x + 55, position.y + 40, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->axeright, position.x + 55, position.y, Collider::Type::PLAYER_SHOT, 0);
 		}
 	}
 
 	// Spawn explosion particles when pressing X
 	if (App->input->keys[SDL_SCANCODE_X] == Key_State::KEY_DOWN)
 	{
-		App->particles->AddParticle(App->particles->explosion, position.x - 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+		App->particles->AddParticle(App->particles->bomb, position.x - 25, position.y, Collider::Type::PLAYER_SHOT, 0);
 	}
 
 	// If no up/down movement detected, set the current animation back to idle

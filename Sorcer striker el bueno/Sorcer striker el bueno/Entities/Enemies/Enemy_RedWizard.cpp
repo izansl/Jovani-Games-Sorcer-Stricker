@@ -91,11 +91,12 @@ void Enemy_RedWizard::Update() {
 
 
 void Enemy_RedWizard::OnCollision(Collider* c1) {
-	fly.PushBack({ 3, 71, 36, 36 });
-	fly.PushBack({ 39, 72, 36, 36 });
-	fly.PushBack({ 75, 72, 36, 36 });
-	fly.PushBack({ 111, 71, 36, 36 });
-	fly.PushBack({ 111, 120, 36, 36 });
+	fly.PushBack({ 1, 136, 139, 137 });
+	fly.PushBack({ 155, 140, 139, 137 });
+	fly.PushBack({ 335, 142, 139, 137 });
+	fly.PushBack({ 586, 139, 139, 137 });
+	fly.PushBack({ 644, 142, 139, 137 });
+	fly.PushBack({ 798, 142, 139, 137 });
 
 	currentAnim = &fly;
 	fly.speed = 0.2;
