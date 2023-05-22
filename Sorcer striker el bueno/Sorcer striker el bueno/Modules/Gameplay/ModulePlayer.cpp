@@ -25,7 +25,7 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 	rightAnim.speed = 0.5f;
 
 	// Move left
-	leftAnim.PushBack({ 2102, 522, 119, 111 });
+	leftAnim.PushBack({ 98, 519, 119, 111 });
 	leftAnim.loop = false;
 	leftAnim.speed = 0.5f;
 
@@ -112,7 +112,7 @@ Update_Status ModulePlayer::Update() {
 
 	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT) position.y -= speed;
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT) position.y += speed;
-	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
+	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 800)
 	{
 		position.x += speed;
 		if (currentAnimation != &rightAnim)

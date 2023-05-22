@@ -80,7 +80,7 @@ bool ModuleEnemies::CleanUp() {
 	return true;
 }
 
-bool ModuleEnemies::AddEnemy(Enemy_Type type, int x, int y, int wave, int miem)
+bool ModuleEnemies::AddEnemy(Enemy_Type type, int x, int y, int wave)
 {
 	bool ret = false;
 
@@ -90,7 +90,7 @@ bool ModuleEnemies::AddEnemy(Enemy_Type type, int x, int y, int wave, int miem)
 			spawnQueue[i].x = x;
 			spawnQueue[i].y = y;
 			spawnQueue[i].wave = wave;
-			spawnQueue[i].miem = miem;
+			
 			ret = true;
 			break;
 		}
@@ -136,17 +136,17 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 			case Enemy_Type::CHEST: 
 				enemies[i] = new Enemy_CHESS(info.x, info.y); 
 				break;
-			case Enemy_Type::DRAGON: enemies[i] = new Enemy_Dragon(info.x, info.y, info.wave, info.miem);
+			case Enemy_Type::DRAGON: enemies[i] = new Enemy_Dragon(info.x, info.y, info.wave);
 				break;
-			case Enemy_Type::REDWIZARD: enemies[i] = new Enemy_RedWizard(info.x, info.y, info.wave, info.miem);
+			case Enemy_Type::REDWIZARD: enemies[i] = new Enemy_RedWizard(info.x, info.y, info.wave);
 				break;
-			case Enemy_Type::RED_BALL: enemies[i] = new Enemy_RedBall(info.x, info.y, info.wave, info.miem);
+			case Enemy_Type::RED_BALL: enemies[i] = new Enemy_RedBall(info.x, info.y, info.wave);
 				break;
-			case Enemy_Type::TANK: enemies[i] = new Enemy_Tank(info.x, info.y, info.wave, info.miem);
+			case Enemy_Type::TANK: enemies[i] = new Enemy_Tank(info.x, info.y, info.wave);
 				break;
-			case Enemy_Type::TURTLE: enemies[i] = new Enemy_Turtle(info.x, info.y, info.wave, info.miem);
+			case Enemy_Type::TURTLE: enemies[i] = new Enemy_Turtle(info.x, info.y, info.wave);
 				break;
-			case Enemy_Type::MINIDRAGON: enemies[i] = new Enemy_MiniDragon(info.x, info.y, info.wave, info.miem);
+			case Enemy_Type::MINIDRAGON: enemies[i] = new Enemy_MiniDragon(info.x, info.y, info.wave);
 				break;
 			}
 		
