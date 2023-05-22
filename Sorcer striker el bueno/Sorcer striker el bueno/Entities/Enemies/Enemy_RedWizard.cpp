@@ -97,7 +97,7 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave, int miem) : Enemy(x, y)
 	
 	
 
-	collider = App->collisions->AddCollider({ 0, 0, 36, 36 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0, 131, 132 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_RedWizard::Update() {
@@ -117,6 +117,7 @@ void Enemy_RedWizard::OnCollision(Collider* c1) {
 	fly.PushBack({ 586, 139, 139, 137 });
 	fly.PushBack({ 644, 142, 139, 137 });
 	fly.PushBack({ 798, 142, 139, 137 });
+	fly.PushBack({ 1000, 400, 139, 137 });
 
 	currentAnim = &fly;
 	fly.speed = 0.2;

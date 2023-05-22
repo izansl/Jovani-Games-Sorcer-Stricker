@@ -97,7 +97,7 @@ bool ModulePlayer::Start() {
 
 	destroyed = false;
 
-	collider = App->collisions->AddCollider({ position.x, position.y, 38, 44 }, Collider::Type::PLAYER, this);
+	collider = App->collisions->AddCollider({ position.x, position.y, 119, 111 }, Collider::Type::PLAYER, this);
 	backupPosition.x = 100;
 	backupPosition.y = position.y - SCREEN_HEIGHT;
 	return ret;
@@ -164,8 +164,8 @@ Update_Status ModulePlayer::Update() {
 	if (Powerup == true)
 	{
 		currentAnimation = &blueBUFF;
-		collider->rect.w = 66;
-		collider->rect.h = 45;
+		collider->rect.w = 217;
+		collider->rect.h = 118;
 
 		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
 		{
