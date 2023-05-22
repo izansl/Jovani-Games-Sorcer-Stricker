@@ -255,6 +255,7 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		position.x = 100;
 		position.y = position.y + SCREEN_HEIGHT;
 		Powerup = false;
+		collider->rect.w = 119;
 		lives--;
 
 	}
