@@ -35,12 +35,12 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 	blueBUFF.speed = 0.1f;
 
 	//Move right
-	blueright.PushBack({ 445, 134, 73, 46 });
+	blueright.PushBack({ 53, 363, 217, 118 });
 	blueright.loop = false;
 	blueright.speed = 0.5f;
 
 	// Move left
-	blueleft.PushBack({ 45, 360, 217, 118});
+	blueleft.PushBack({ 56, 520, 217, 118});
 	blueleft.loop = false;
 	blueleft.speed = 0.5f;
 
