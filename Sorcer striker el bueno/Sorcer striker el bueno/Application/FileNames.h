@@ -118,6 +118,8 @@ const std::string FI_spriteEnemy_enemiesvar_1 = "../Assets/Images/castillo/enemi
 const std::string FI_spriteEnemy_ = "../Assets/Images/castillo/tanque.png";
 
 const std::string FI_spritebonus_pickups = "../Assets/Images/pre-castillo/allprops.png";
+
+const std::string FI_particles_ = "../Assets/Images/castillo/particulas.png";
 /*
 * -cofreverde
 1-({15, 25, 118, 99}) oscuro

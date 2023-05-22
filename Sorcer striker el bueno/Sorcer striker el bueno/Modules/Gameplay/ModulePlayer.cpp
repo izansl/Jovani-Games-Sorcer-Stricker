@@ -20,12 +20,12 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 	idleAnim.PushBack({ 97, 687, 119, 111});
 
 	// move right
-	rightAnim.PushBack({ 96, 364, 119, 111 });
+	rightAnim.PushBack({ 97, 363, 119, 111 });
 	rightAnim.loop = false;
 	rightAnim.speed = 0.5f;
 
 	// Move left
-	leftAnim.PushBack({ 2102, 522, 119, 111 });
+	leftAnim.PushBack({ 353, 523, 119, 111 });
 	leftAnim.loop = false;
 	leftAnim.speed = 0.5f;
 
