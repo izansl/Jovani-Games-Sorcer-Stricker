@@ -12,42 +12,42 @@
 #pragma region IMAGES -> FI
 //IntroImages
 //cambiar a png //cambiar ruta a ImagenesIntro2
-const std::string FI_Introimage_1 = "../Assets/Images/SPRITES_FINALES/Intro/alienabajofondo.png";
-const std::string FI_Introimage_2 = "../Assets/Images/SPRITES_FINALES/Intro/alienarribafondo.png";
-const std::string FI_Introimage_3 = "../Assets/Images/SPRITES_FINALES/Intro/Batman.png";
-const std::string FI_Introimage_4 = "../Assets/Images/SPRITES_FINALES/Intro/Caras_de_los_personajes.png";
-const std::string FI_Introimage_5 = "../Assets/Images/SPRITES_FINALES/Intro/cuatrotextoBlanco.png";
-const std::string FI_Introimage_6 = "../Assets/Images/SPRITES_FINALES/Intro/cuartotextoColor.png";
-const std::string FI_Introimage_7 = "../Assets/Images/SPRITES_FINALES/Intro/explosiones.png";
-const std::string FI_Introimage_8 = "../Assets/Images/SPRITES_FINALES/Intro/fondobatman.png";
-const std::string FI_Introimage_9 = "../Assets/Images/SPRITES_FINALES/Intro/jovani.png";
-const std::string FI_Introimage_10 = "../Assets/Images/SPRITES_FINALES/Intro/primertextoblanco.png";
-const std::string FI_Introimage_11 = "../Assets/Images/SPRITES_FINALES/Intro/PrimertextoColor.png";
-const std::string FI_Introimage_12 = "../Assets/Images/SPRITES_FINALES/Intro/quintotextoBlanco.png";
-const std::string FI_Introimage_13 = "../Assets/Images/SPRITES_FINALES/Intro/quintotextoColor.png";
-const std::string FI_Introimage_14 = "../Assets/Images/SPRITES_FINALES/Intro/Raizing.png";
-const std::string FI_Introimage_15 = "../Assets/Images/SPRITES_FINALES/Intro/segundotextoBlanco.png";
-const std::string FI_Introimage_16 = "../Assets/Images/SPRITES_FINALES/Intro/segundotextoColor.png";
-const std::string FI_Introimage_17 = "../Assets/Images/SPRITES_FINALES/Intro/tercertextoBlanco.png";
-const std::string FI_Introimage_18 = "../Assets/Images/SPRITES_FINALES/Intro/tercertextoColor.png";
+const std::string FI_Introimage_1 = "../Assets/Images/Intro/alienabajofondo.png";
+const std::string FI_Introimage_2 = "../Assets/Images/Intro/alienarribafondo.png";
+const std::string FI_Introimage_3 = "../Assets/Images/Intro/Batman.png";
+const std::string FI_Introimage_4 = "../Assets/Images/Intro/Caras_de_los_personajes.png";
+const std::string FI_Introimage_5 = "../Assets/Images/Intro/cuartotextoBlanco.png";
+const std::string FI_Introimage_6 = "../Assets/Images/Intro/cuartotextoColor.png";
+const std::string FI_Introimage_7 = "../Assets/Images/Intro/explosiones.png";
+const std::string FI_Introimage_8 = "../Assets/Images/Intro/fondobatman.png";
+const std::string FI_Introimage_9 = "../Assets/Images/Intro/jovani.png";
+const std::string FI_Introimage_10 = "../Assets/Images/Intro/primertextoblanco.png";
+const std::string FI_Introimage_11 = "../Assets/Images/Intro/PrimertextoColor.png";
+const std::string FI_Introimage_12 = "../Assets/Images/Intro/quintotextoBlanco.png";
+const std::string FI_Introimage_13 = "../Assets/Images/Intro/quintotextoColor.png";
+const std::string FI_Introimage_14 = "../Assets/Images/Intro/Raizing.png";
+const std::string FI_Introimage_15 = "../Assets/Images/Intro/segundotextoBlanco.png";
+const std::string FI_Introimage_16 = "../Assets/Images/Intro/segundotextoColor.png";
+const std::string FI_Introimage_17 = "../Assets/Images/Intro/tercertextoBlanco.png";
+const std::string FI_Introimage_18 = "../Assets/Images/Intro/tercertextoColor.png";
 
 //Start
-const std::string FI_Start_1 = "../Assets/Images/SPRITES_FINALES/Intro/pantallainiciouno.png";
-const std::string FI_Start_2 = "../Assets/Images/SPRITES_FINALES/Intro/pantallainiciodos.png";
+const std::string FI_Start_1 = "../Assets/Images/Intro/pantallainiciouno.png";
+const std::string FI_Start_2 = "../Assets/Images/Intro/pantallainiciodos.png";
 
 //Menu Player
-const std::string FI_choseplayer_1 = "../Assets/Images/SPRITES_FINALES/Intro/playerpcik.png";
-const std::string FI_choseplayer_2 = "../Assets/Images/SPRITES_FINALES/Intro/onepcolor.png";
+const std::string FI_choseplayer_1 = "../Assets/Images/Intro/playerpcik.png";
+const std::string FI_choseplayer_2 = "../Assets/Images/Intro/onepcolor.png";
 
 // Backgrounds
 //const std::string FI_background_beach = "../Assets/Images/Beach.png";//revisar
-const std::string FI_background_sea = "../Assets/Images/SPRITES_FINALES/pre-castillo/mar.png";
-const std::string FI_background_forest1 = "../Assets/Images/SPRITES_FINALES/pre-castillo/bosque.png";
-const std::string FI_background_castle = "../Assets/Images/SPRITES_FINALES/pre-castillo/castillo.png";
-const std::string FI_background_pre = "../Assets/Images/SPRITES_FINALES/pre-castillo/comienzodeljuegofondo.png";
-const std::string FI_background_precolumnas = "../Assets/Images/SPRITES_FINALES/pre-castillo/columnas-inicio.png";
-const std::string FI_background_playerpick = "../Assets/Images/SPRITES_FINALES/pre-castillo/playerpick.png";
-const std::string FI_background_personas = "../Assets/Images/SPRITES_FINALES/pre-castillo/personas.png";
+const std::string FI_background_sea = "../Assets/Images/pre-castillo/mar.png";
+const std::string FI_background_forest1 = "../Assets/Images/pre-castillo/bosque.png";
+const std::string FI_background_castle = "../Assets/Images/pre-castillo/castillo.png";
+const std::string FI_background_pre = "../Assets/Images/pre-castillo/comienzodeljuegofondo.png";
+const std::string FI_background_precolumnas = "../Assets/Images/pre-castillo/columnas-inicio.png";
+const std::string FI_background_playerpick = "../Assets/Images/pre-castillo/playerpick.png";
+const std::string FI_background_personas = "../Assets/Images/pre-castillo/personas.png";
 
 //const int Height_background_beach = 3000;
 const int Height_background_sea = 10000;
@@ -62,15 +62,15 @@ const std::string FI_HUD_font2 = "../Assets/Images/Fonts/rtype_font2.png";
 const std::string FI_HUD_stage1 = "../Assets/Images/Fonts/stage1.png";
 
 // Sprites player
-const std::string FI_spritePlayer_1 = "../Assets/Images/SPRITES_FINALES/pre-castillo/naves.png";//actual
+const std::string FI_spritePlayer_1 = "../Assets/Images/pre-castillo/naves.png";//actual
 
-const std::string FI_spritePlayer_shoots = "../Assets/Images/SPRITES_FINALES/pre-castillo/disparos_nave.png";
+const std::string FI_spritePlayer_shoots = "../Assets/Images/pre-castillo/disparos_nave.png";
 
-const std::string FI_spritePlayer_explosions = "../Assets/Images/SPRITES_FINALES/pre-castillo/Explosions.png";
+const std::string FI_spritePlayer_explosions = "../Assets/Images/pre-castillo/Explosions.png";
 
 //Sprites enemies
 
-const std::string FI_spriteEnemy_reds = "../Assets/Images/SPRITES_FINALES/pre-castillo/enemies.png";
+const std::string FI_spriteEnemy_reds = "../Assets/Images/pre-castillo/enemies.png";
 //red ball
 //({29, 357, 82, 104})
 //({140, 357, 82, 104})
@@ -111,11 +111,11 @@ const std::string FI_spriteEnemy_reds = "../Assets/Images/SPRITES_FINALES/pre-ca
 //({798, 142, 139, 137})
 
 
-const std::string FI_spriteEnemy_dragon = "../Assets/Images/SPRITES_finales/pre-castillo/dragon.png";
+const std::string FI_spriteEnemy_dragon = "../Assets/Images/pre-castillo/dragon.png";
 
-const std::string FI_spriteEnemy_enemiesvar_1 = "../Assets/Images/SPRITES_finales/castillo/enemigos_varios.png";
+const std::string FI_spriteEnemy_enemiesvar_1 = "../Assets/Images/castillo/enemigos_varios.png";
 
-const std::string FI_spriteEnemy_ = "../Assets/Images/SPRITES_finales/castillo/tanque.png";
+const std::string FI_spriteEnemy_ = "../Assets/Images/castillo/tanque.png";
 
 const std::string FI_spriteEnemy_2 = "../Assets/Images/2nd_enemy.png";
 /*-Movement
@@ -153,7 +153,7 @@ const std::string FI_spriteEnemy_2 = "../Assets/Images/2nd_enemy.png";
 			1-({58, 20, 15, 20 })
 			2-({72, 54, 15, 20})
 */
-const std::string FI_spritebonus_pickups = "../Assets/Images/SPRITES_finales/pre-castillo/allprops.png";
+const std::string FI_spritebonus_pickups = "../Assets/Images/pre-castillo/allprops.png";
 /*
 * -cofreverde
 1-({15, 25, 118, 99}) oscuro
@@ -179,7 +179,7 @@ const std::string FI_spritebonus_pickups = "../Assets/Images/SPRITES_finales/pre
 */
 
 // Sprites Bosses
-const std::string FI_spriteEnemy_boss = "../Assets/Images/SPRITES_FINALES/final-boss/finalbossnuevo.png";
+const std::string FI_spriteEnemy_boss = "../Assets/Images/final-boss/finalbossnuevo.png";
 
 const std::string FI_spriteExplosion_enemies = "../Assets/Images/2nd_enemy.png";
 #pragma endregion

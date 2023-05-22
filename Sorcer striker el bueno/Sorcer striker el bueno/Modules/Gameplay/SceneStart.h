@@ -33,8 +33,8 @@ public:
 
 
 
-	const int NUM_IMAGES = 12;
-	SDL_Texture* Intro[12];
+	#define NUM_IMAGES 2
+	SDL_Texture* ArrayImagesStart[NUM_IMAGES];
 	float timer = 0.0f;
 	float timer2 = 0.0f;
 	int currentImage = 0;

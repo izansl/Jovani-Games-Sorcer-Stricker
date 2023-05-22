@@ -22,18 +22,16 @@ bool SceneIntro::Start() {
 	bool ret = true;
 	//Carga de texturas(imagenes)
 
-	Intro[0] = App->textures->Load(FI_Introimage_1.c_str());
-	Intro[1] = App->textures->Load(FI_Introimage_2.c_str());
-	Intro[2] = App->textures->Load(FI_Introimage_3.c_str());
-	Intro[3] = App->textures->Load(FI_Introimage_4.c_str());
-	Intro[4] = App->textures->Load(FI_Introimage_5.c_str());
-	Intro[5] = App->textures->Load(FI_Introimage_6.c_str());
-	Intro[6] = App->textures->Load(FI_Introimage_7.c_str());
-	Intro[7] = App->textures->Load(FI_Introimage_8.c_str());
-	Intro[8] = App->textures->Load(FI_Introimage_9.c_str());
-	Intro[9] = App->textures->Load(FI_Introimage_10.c_str());
-	Intro[10] = App->textures->Load(FI_Introimage_11.c_str());
-	Intro[11] = App->textures->Load(FI_Introimage_12.c_str());
+	ArrayImagesIntro[0] = App->textures->Load(FI_Introimage_1.c_str());
+	ArrayImagesIntro[1] = App->textures->Load(FI_Introimage_2.c_str());
+	ArrayImagesIntro[2] = App->textures->Load(FI_Introimage_3.c_str());
+	ArrayImagesIntro[3] = App->textures->Load(FI_Introimage_4.c_str());
+	ArrayImagesIntro[4] = App->textures->Load(FI_Introimage_5.c_str());
+	ArrayImagesIntro[5] = App->textures->Load(FI_Introimage_6.c_str());
+	ArrayImagesIntro[6] = App->textures->Load(FI_Introimage_7.c_str());
+	ArrayImagesIntro[7] = App->textures->Load(FI_Introimage_8.c_str());
+	ArrayImagesIntro[8] = App->textures->Load(FI_Introimage_9.c_str());
+	ArrayImagesIntro[9] = App->textures->Load(FI_Introimage_10.c_str());
 
 	//Carga de Audio ////TURMO MUY IMPORTANTE, TIENES QUE CUADRAR EL AUDIO CON LA INTRO SEGUN LAS IMAGENES QUE APAREZCAN///
 	App->audio->PlayMusic(FA_Music_introTitle.c_str());//esta musica hay que cambiarla turmo
@@ -65,7 +63,7 @@ Update_Status SceneIntro::PostUpdate() {
 	timer2 += 0.1f / 60.0f;
 	if (timer >= 3.0f) { // Mostramos cada imagen durante 3 segundos
 		currentImage++;
-		if (Intro[9])
+		if (ArrayImagesIntro[8])
 		{
 			App->fade->FadeToBlack((Module*)App->sceneIntro, (Module*)App ->sceneStart, 60); //Menu start no intro
 		}
@@ -74,11 +72,11 @@ Update_Status SceneIntro::PostUpdate() {
 
 
 	Uint8 alpha = static_cast<Uint8>((timer / 3.0f) * 255);
-	SDL_SetTextureAlphaMod(Intro[currentImage], alpha);
+	SDL_SetTextureAlphaMod(ArrayImagesIntro[currentImage], alpha);
 
-	App->render->Blit(Intro[currentImage], 0, 0, NULL);
+	App->render->Blit(ArrayImagesIntro[currentImage], 0, 0, NULL);
 
-	SDL_SetTextureAlphaMod(Intro[currentImage], 255);
+	SDL_SetTextureAlphaMod(ArrayImagesIntro[currentImage], 255);
 	
 	return Update_Status::UPDATE_CONTINUE;
 	
