@@ -117,42 +117,6 @@ const std::string FI_spriteEnemy_enemiesvar_1 = "../Assets/Images/castillo/enemi
 
 const std::string FI_spriteEnemy_ = "../Assets/Images/castillo/tanque.png";
 
-const std::string FI_spriteEnemy_2 = "../Assets/Images/2nd_enemy.png";
-/*-Movement
-		1-({4, 22, 36, 36})
-		2-({41, 22, 36, 36 })
-	-Explosion
-		1-({3, 71, 36, 36})
-		2-({39, 72, 36, 36 })
-		3-({75, 72, 36, 36 })
-		4-({111, 71, 36, 36})
-	Atack
-		1-({82, 30 , 20, 20})
-		2-({102, 31, 20, 20})
-		3-({121, 30, 20, 20})	*/
-//const std::string FI_spriteEnemy_3 = "../Assets/Images/3rd_enemy.png";
-/*	-Movement
-		1-({15, 24, 90, 90})
-		2-({115, 24, 90, 90})
-	-Explosion
-		1-({17, 121, 90, 90})
-		2-({111, 124, 90, 90})
-		3-({204, 123, 90, 90})
-	Atack
-		1-({229, 77, 15, 15})
-		2-({245, 77, 15, 15})*/
-
-//Sprites chest
-//const std::string FI_spritebonus_pickups = "../Assets/Images/Chests.png";
-/*	-Bluechest
-		-Hada con cofre
-			1-({2, 7, 43, 39 })
-			2-({47, 7, 43, 39 })
-			3-({94, 7, 43, 39 })
-		-Librobuff
-			1-({58, 20, 15, 20 })
-			2-({72, 54, 15, 20})
-*/
 const std::string FI_spritebonus_pickups = "../Assets/Images/pre-castillo/allprops.png";
 /*
 * -cofreverde
