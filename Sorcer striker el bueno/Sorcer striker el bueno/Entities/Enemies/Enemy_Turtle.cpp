@@ -7,7 +7,7 @@
 #include"../../Modules/Core/ModuleTextures.h"
 #include"../../Modules/Core/ModuleAudio.h"
 
-Enemy_Turtle::Enemy_Turtle(int x, int y, int wave, int miem) : Enemy(x, y) {
+Enemy_Turtle::Enemy_Turtle(int x, int y, int wave) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_reds.c_str());
 	fly.PushBack({ 29, 357, 82, 104 });
 	fly.PushBack({ 140, 357, 82, 104 });
