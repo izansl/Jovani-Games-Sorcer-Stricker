@@ -29,20 +29,30 @@ bool SceneLevel1::Start() {
 
 	App->audio->PlayMusic(FA_Music_stage1.c_str(), 1.0f);
 
-	//First two columns colliders
-	int xt = 25;
+	//Wall colliders
+	int xt = 0;
 	int yt = 3000;
-	int wt = 820;
+	int wt = SCREEN_WIDTH;
 	int ht = 10;
 	topcoll = App->collisions->AddCollider({ xt, yt, wt, ht }, Collider::Type::WALL_PLAYER);
 
-	int xb = 25;
-	int yb = 4025;
-	int wb = 820;
+	int xb = 0;
+	int yb = 4070;
+	int wb = SCREEN_WIDTH;
 	int hb = 10;
 	botcoll = App->collisions->AddCollider({ xb, yb, wb, hb }, Collider::Type::WALL_PLAYER);
-	leftcoll = App->collisions->AddCollider({ 25, 3000, 10, 1080 }, Collider::Type::WALL);
-	raightcoll = App->collisions->AddCollider({ 845, 3000, 10, 1080 }, Collider::Type::WALL);
+
+	int xl = 0;
+	int yl = 3000;
+	int wl = 10;
+	int hl = SCREEN_HEIGHT;
+	leftcoll = App->collisions->AddCollider({ xl, yl, wl, hl }, Collider::Type::WALL_PLAYER);
+
+	int xr = SCREEN_WIDTH -10;
+	int yr = 3000;
+	int wr = 10;
+	int hr = SCREEN_HEIGHT;
+	raightcoll = App->collisions->AddCollider({ xr, yr, wr, hr }, Collider::Type::WALL_PLAYER);
 
 
 #pragma region ENEMIES
@@ -173,12 +183,22 @@ bool SceneLevel1::Start() {
 }
 
 Update_Status SceneLevel1::Update() {
-	App->render->camera.y -= 8;
+	App->render->camera.y += velocitatNivell;
 
-	topcoll->rect.y += -8;
-	botcoll->rect.y += -8;
-	leftcoll->rect.y += -8;
-	raightcoll->rect.y += -8;
+	topcoll->rect.y += velocitatNivell;
+	botcoll->rect.y += velocitatNivell;
+	leftcoll->rect.y += velocitatNivell;
+	raightcoll->rect.y += velocitatNivell;
+
+	if (App->player->position.x + 50 >= raightcoll->rect.x)
+	{
+		App->player->position.x = raightcoll->rect.x - 50;
+	}
+
+	if (App->player->position.x - 50 <= leftcoll->rect.x)
+	{
+		App->player->position.x = leftcoll->rect.x + 50;
+	}
 
 	if (App->player->position.y + 50 >= botcoll->rect.y)
 	{
@@ -195,12 +215,12 @@ Update_Status SceneLevel1::Update() {
 
 Update_Status SceneLevel1::PostUpdate() {
 	// Draw everything --------------------------------------
-	App->render->Blit(texture_forest1, +40, -SCREEN_HEIGHT * -1, NULL);
-	App->render->Blit(texture_forest1, +40, (Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
-	App->render->Blit(texture_forest1, +40, (Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
-	App->render->Blit(texture_forest1, +40, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
-	App->render->Blit(texture_sea, +40, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea - SCREEN_HEIGHT) * -1, NULL);
-	App->render->Blit(texture_castle, +40, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea + Height_background_castle - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_forest1, 0, -SCREEN_HEIGHT * -1, NULL);
+	App->render->Blit(texture_forest1, 0, (Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_forest1, 0, (Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_forest1, 0, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_sea, 0, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_castle, 0, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea + Height_background_castle - SCREEN_HEIGHT) * -1, NULL);
 
 	return Update_Status::UPDATE_CONTINUE;
 }
