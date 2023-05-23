@@ -164,8 +164,8 @@ Update_Status ModulePlayer::Update() {
 	if (Powerupblue == true)
 	{
 		currentAnimation = &blueBUFF;
-		collider->rect.w = 66;
-		collider->rect.h = 45;
+		collider->rect.w = 217;
+		collider->rect.h = 118;
 
 		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
 		{
