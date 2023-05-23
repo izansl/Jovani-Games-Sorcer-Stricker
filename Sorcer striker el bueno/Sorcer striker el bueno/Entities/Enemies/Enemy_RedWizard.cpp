@@ -22,7 +22,7 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave) : Enemy(x, y) {
 	if (wave == 1)
 	{
 		
-			path.PushBack({ 0.0, -0.25 }, 720);
+			path.PushBack({ 0.0, -0.25 }, 20);
 			path.PushBack({ 0.0, -8.0 }, 120);
 			path.PushBack({ 3, -12.0 }, 650);
 		
@@ -30,7 +30,7 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave) : Enemy(x, y) {
 	else if (wave == 2)
 	{
 		
-			path.PushBack({ 0.0, -0.5}, 835);
+			path.PushBack({ 0.0, -0.25}, 20);
 			path.PushBack({ 0.0, -8.0 }, 120);
 			path.PushBack({ -3, -12.0 }, 650);
 		
@@ -38,7 +38,7 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave) : Enemy(x, y) {
 	else if (wave == 3)
 	{
 		
-			path.PushBack({ 0.0, -0.5}, 950);
+			path.PushBack({ 0.0, -0.25}, 20);
 			path.PushBack({ 0.0, -8.0 }, 120);
 			path.PushBack({ 3, -12.0 }, 650);
 		
@@ -46,7 +46,7 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave) : Enemy(x, y) {
 	else if (wave == 4)
 	{
 		
-			path.PushBack({ 0.0, -0.5 }, 1040);
+			path.PushBack({ 0.0, -0.25 }, 20);
 			path.PushBack({ 0.0, -8.0 }, 120);
 			path.PushBack({ -3, -12.0 }, 650);
 		
@@ -55,7 +55,7 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave) : Enemy(x, y) {
 	else if (wave == 5)
 	{
 		
-			path.PushBack({ 0.0, -0.5 }, 1140);
+			path.PushBack({ 0.0, -0.25 }, 20);
 			path.PushBack({ 0.0, -8.0 }, 120);
 			path.PushBack({ 3, -12.0 }, 650);
 		

@@ -29,8 +29,8 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 	{
 		
 			path.PushBack({ 0, -3 }, 20);
-			path.PushBack({ -5.0, -1 }, 100);
-			path.PushBack({ 4, -8.0 }, 80);
+			path.PushBack({ -7.0, 0 }, 80);
+			path.PushBack({ 5, -8.0 }, 80);
 			path.PushBack({ -5, -16.0 }, 600);
 		
 		
@@ -39,13 +39,13 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 	{
 
 	
-		path.PushBack({ 0, -3 }, 20);
-		path.PushBack({ 6.0, -4 }, 50);
-		path.PushBack({ -6.0, -4 }, 50);
-		path.PushBack({ 6.0, -4 }, 50);
-		path.PushBack({ -6.0, -4 }, 50);
-		path.PushBack({ 6.0, -4 }, 50);
-		path.PushBack({ -6.0, -4 }, 100);
+		path.PushBack({ 0, -3 }, 10);
+		path.PushBack({ 8.0, -4 }, 60);
+		path.PushBack({ -8.0, -4 }, 60);
+		path.PushBack({ 8.0, -4 }, 60);
+		path.PushBack({ -8.0, -4 }, 60);
+		path.PushBack({ 8.0, -4 }, 60);
+		path.PushBack({ -8.0, -4 }, 100);
 	
 		
 	}
@@ -53,10 +53,10 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 	{
 
 	
-		path.PushBack({ 0, 1 }, 625);
-		path.PushBack({ -2.0, -8.0 }, 35);
-		path.PushBack({ 0, -13.0 }, 60);
-		path.PushBack({ -4, -4 }, 300);
+		path.PushBack({ 0, 2 }, 90);
+		path.PushBack({ -6.0, -8.0 }, 20);
+		path.PushBack({ 0, -16.0 }, 60);
+		path.PushBack({ -8, -4 }, 300);
 		
 	}
 	else if (wave == 5)
