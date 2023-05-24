@@ -48,7 +48,7 @@ Update_Status SceneStart::PostUpdate() {
 	//DIBUJADO DE LAS IMAGENES DE LA INTRO
 
 	timer += 1.0f / 60.0f; // Suma 1 segundo//Funciona a 60 fps
-	/*timer2 += 0.1f / 60.0f;*/
+
 	if (timer >= 0.05f) { // Mostramos cada imagen durante 3 segundos
 		currentImage++;
 		if (currentImage == NUM_IMAGES) {
@@ -57,12 +57,9 @@ Update_Status SceneStart::PostUpdate() {
 		timer = 0.0f;
 	}
 
-	//Uint8 alpha = static_cast<Uint8>((timer / 3.0f) * 255);
-	//SDL_SetTextureAlphaMod(ArrayImagesStart[currentImage], alpha);
-
 	App->render->Blit(ArrayImagesStart[currentImage], 0, 0, NULL);
 
-	/*SDL_SetTextureAlphaMod(ArrayImagesStart[currentImage], 255);*/
+	
 
 	return Update_Status::UPDATE_CONTINUE;
 

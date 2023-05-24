@@ -68,7 +68,7 @@ Update_Status SceneIntro::PostUpdate() {
 	//DIBUJADO DE LAS IMAGENES DE LA INTRO
 	
 	timer += 1.0f / 60.0f; // Suma 1 segundo//Funciona a 60 fps
-	/*timer2 += 0.1f / 60.0f;*/
+	
 	if (timer >= 3.0f) { // Mostramos cada imagen durante 3 segundos
 		currentImage++;
 		if (currentImage == NUM_IMAGES)//si les imatges no estan texturitzades per x motiu, no funciona.
