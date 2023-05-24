@@ -32,6 +32,14 @@ bool SceneIntro::Start() {
 	ArrayImagesIntro[7] = App->textures->Load(FI_Introimage_8.c_str());
 	ArrayImagesIntro[8] = App->textures->Load(FI_Introimage_9.c_str());
 	ArrayImagesIntro[9] = App->textures->Load(FI_Introimage_10.c_str());
+	ArrayImagesIntro[10] = App->textures->Load(FI_Introimage_11.c_str());
+	ArrayImagesIntro[11] = App->textures->Load(FI_Introimage_12.c_str());
+	ArrayImagesIntro[12] = App->textures->Load(FI_Introimage_13.c_str());
+	ArrayImagesIntro[13] = App->textures->Load(FI_Introimage_14.c_str());
+	ArrayImagesIntro[14] = App->textures->Load(FI_Introimage_15.c_str());
+	ArrayImagesIntro[15] = App->textures->Load(FI_Introimage_16.c_str());
+	ArrayImagesIntro[16] = App->textures->Load(FI_Introimage_17.c_str());
+	ArrayImagesIntro[17] = App->textures->Load(FI_Introimage_18.c_str());
 
 	//Carga de Audio ////TURMO MUY IMPORTANTE, TIENES QUE CUADRAR EL AUDIO CON LA INTRO SEGUN LAS IMAGENES QUE APAREZCAN///
 	App->audio->PlayMusic(FA_Music_introTitle.c_str());//esta musica hay que cambiarla turmo
@@ -60,12 +68,13 @@ Update_Status SceneIntro::PostUpdate() {
 	//DIBUJADO DE LAS IMAGENES DE LA INTRO
 	
 	timer += 1.0f / 60.0f; // Suma 1 segundo//Funciona a 60 fps
-	timer2 += 0.1f / 60.0f;
+	/*timer2 += 0.1f / 60.0f;*/
 	if (timer >= 3.0f) { // Mostramos cada imagen durante 3 segundos
 		currentImage++;
-		if (currentImage == NUM_IMAGES)
+		if (currentImage == NUM_IMAGES)//si les imatges no estan texturitzades per x motiu, no funciona.
 		{
-			App->fade->FadeToBlack((Module*)App->sceneIntro, (Module*)App ->sceneStart, 60); //Menu start no intro
+			currentImage = 17;
+			App->fade->FadeToBlack((Module*)App->sceneIntro, (Module*)App ->sceneStart, 60); //Menu start
 		}
 		timer = 0.0f;
 	}
