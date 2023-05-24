@@ -17,7 +17,7 @@
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 
 	// idle animation - just one sprite
-	idleAnim.PushBack({ 97, 687, 119, 111});
+	idleAnim.PushBack({ 97, 687, 119, 111 });
 
 	// move right
 	rightAnim.PushBack({ 97, 363, 119, 111 });
@@ -32,7 +32,7 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 
 	//BLUE BUFF	
 	// Change sprite
-	blueBUFF.PushBack({ 50, 683, 217, 118});
+	blueBUFF.PushBack({ 50, 683, 217, 118 });
 	blueBUFF.speed = 0.1f;
 
 	//Move right
@@ -41,7 +41,7 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 	blueright.speed = 0.5f;
 
 	// Move left
-	blueleft.PushBack({ 56, 520, 217, 118});
+	blueleft.PushBack({ 56, 520, 217, 118 });
 	blueleft.loop = false;
 	blueleft.speed = 0.5f;
 
@@ -113,7 +113,7 @@ Update_Status ModulePlayer::Update() {
 
 	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT) position.y -= speed;
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT) position.y += speed;
-  if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
+	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
 
 	{
 		position.x += speed;
@@ -169,7 +169,7 @@ Update_Status ModulePlayer::Update() {
 		collider->rect.w = 217;
 		collider->rect.h = 118;
 
-		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
 		{
 			position.x += speed;
 			if (currentAnimation != &blueright)
@@ -178,7 +178,7 @@ Update_Status ModulePlayer::Update() {
 				currentAnimation = &blueright;
 			}
 		}
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x > 45)
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
 		{
 			position.x -= speed;
 			if (currentAnimation != &blueleft)
@@ -194,7 +194,7 @@ Update_Status ModulePlayer::Update() {
 		collider->rect.w = 66;
 		collider->rect.h = 45;
 
-		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
 		{
 			position.x += speed;
 			if (currentAnimation != &blueright)
@@ -203,7 +203,7 @@ Update_Status ModulePlayer::Update() {
 				currentAnimation = &blueright;
 			}
 		}
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x > 45)
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
 		{
 			position.x -= speed;
 			if (currentAnimation != &blueleft)
@@ -219,7 +219,7 @@ Update_Status ModulePlayer::Update() {
 		collider->rect.w = 217;
 		collider->rect.h = 118;
 
-		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
 		{
 			position.x += speed;
 			if (currentAnimation != &blueright)
@@ -228,7 +228,7 @@ Update_Status ModulePlayer::Update() {
 				currentAnimation = &blueright;
 			}
 		}
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x > 45)
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
 		{
 			position.x -= speed;
 			if (currentAnimation != &blueleft)
@@ -238,7 +238,7 @@ Update_Status ModulePlayer::Update() {
 			}
 		}
 	}
-	LOG("Countdown % d", destroyedCountdown);
+	//LOG("Countdown % d", destroyedCountdown);
 
 	if (destroyed)
 	{
@@ -247,7 +247,7 @@ Update_Status ModulePlayer::Update() {
 		{
 			destroyed = false;
 			destroyedCountdown = 120;
-			collider->type=Collider::Type::PLAYER;
+			collider->type = Collider::Type::PLAYER;
 		}
 	}
 	return Update_Status::UPDATE_CONTINUE;
@@ -313,18 +313,18 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		lives--;
 
 	}
-	 //Cuan colisiona amb Power up
+	//Cuan colisiona amb Power up
 	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::POWER_UP)
 	{
-		if (c2->rect.w=99)
+		if (c2->rect.w = 99)
 		{
 			Powerupgreen = true;
 		}
-		if (c2->rect.w=100)
+		if (c2->rect.w = 100)
 		{
 			Powerupblue = true;
 		}
-		if (c2->rect.w=101)
+		if (c2->rect.w = 101)
 		{
 			Powerupred = true;
 		}
