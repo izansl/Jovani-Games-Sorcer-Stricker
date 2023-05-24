@@ -36,9 +36,9 @@ public:
 	int lives = 3;
 	bool godMode = false;
 
-	bool Powerupblue = true;
+	bool Powerupblue = false;
 	bool Powerupred = false;
-	bool Powerupgreen = false;
+	bool Powerupgreen = true;
 
 	bool alive = true;
 

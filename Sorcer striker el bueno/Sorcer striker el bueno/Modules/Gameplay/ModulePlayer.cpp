@@ -64,7 +64,7 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 
 	//GREEN BUFF
 	// Change sprite
-	greenBUFF.PushBack({ 552, 618, 217, 188 });
+	greenBUFF.PushBack({ 551, 684, 217, 118 });
 	greenBUFF.speed = 0.1f;
 
 	//Move right
@@ -133,24 +133,54 @@ Update_Status ModulePlayer::Update() {
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{
-		if (Powerupblue == false)
+		if (Powerupred)
 		{
-			App->particles->AddParticle(App->particles->laser1, position.x, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->knifeleft, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->kniferight, position.x + 150, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->knifeleft, position.x + 0, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->kniferight, position.x + 175, position.y, Collider::Type::PLAYER_SHOT, 0);
 		}
-		else if (Powerupblue == true)
+		if (Powerupblue)
 		{
-			App->particles->AddParticle(App->particles->laser2, position.x + 15, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y-50, Collider::Type::PLAYER_SHOT, 0);
 
 			App->particles->AddParticle(App->particles->axeleft, position.x - 5, position.y, Collider::Type::PLAYER_SHOT, 0);
 
-			App->particles->AddParticle(App->particles->axeright, position.x + 55, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->axeright, position.x + 140, position.y, Collider::Type::PLAYER_SHOT, 0);
 		}
+		//if (Powerupgreen)//Arreglarlo
+		//{
+		//	App->particles->AddParticle(App->particles->sword, position.x - 5, position.y-500, Collider::Type::PLAYER_SHOT, 0);
+		//	App->particles->AddParticle(App->particles->sword, position.x + 140, position.y-500, Collider::Type::PLAYER_SHOT, 0);
+		//}
+		if (!Powerupred && !Powerupblue && Powerupgreen)
+		{
+			App->particles->AddParticle(App->particles->sword, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->sword, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+
+		}
+	
 	}
 
 	// Spawn explosion particles when pressing X
 	if (App->input->keys[SDL_SCANCODE_X] == Key_State::KEY_DOWN)
 	{
-		App->particles->AddParticle(App->particles->bomb, position.x - 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+		if (Powerupblue)
+		{
+			App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+		}
+		if (Powerupred)
+		{
+			App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+		}
+		if (Powerupgreen)
+		{
+			App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+		}
+		else
+		{
+			App->particles->AddParticle(App->particles->bomb, position.x - 150, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+		}
 	}
 
 	// If no up/down movement detected, set the current animation back to idle
@@ -188,51 +218,51 @@ Update_Status ModulePlayer::Update() {
 	}
 	if (Powerupgreen == true)
 	{
-		currentAnimation = &blueBUFF;
-		collider->rect.w = 66;
-		collider->rect.h = 45;
-
-		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
-		{
-			position.x += speed;
-			if (currentAnimation != &blueright)
-			{
-				blueright.Reset();
-				currentAnimation = &blueright;
-			}
-		}
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x > 45)
-		{
-			position.x -= speed;
-			if (currentAnimation != &blueleft)
-			{
-				blueleft.Reset();
-				currentAnimation = &blueleft;
-			}
-		}
-	}
-	if (Powerupred == true)
-	{
-		currentAnimation = &blueBUFF;
+		currentAnimation = &greenBUFF;
 		collider->rect.w = 217;
 		collider->rect.h = 118;
 
 		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
 		{
 			position.x += speed;
-			if (currentAnimation != &blueright)
+			if (currentAnimation != &greenright)
 			{
 				blueright.Reset();
-				currentAnimation = &blueright;
+				currentAnimation = &greenright;
 			}
 		}
 		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x > 45)
 		{
 			position.x -= speed;
-			if (currentAnimation != &blueleft)
+			if (currentAnimation != &greenleft)
 			{
 				blueleft.Reset();
-				currentAnimation = &blueleft;
+				currentAnimation = &greenleft;
+			}
+		}
+	}
+	if (Powerupred == true)
+	{
+		currentAnimation = &pinkBUFF;
+		collider->rect.w = 217;
+		collider->rect.h = 118;
+
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
+		{
+			position.x += speed;
+			if (currentAnimation != &pinkright)
+			{
+				blueright.Reset();
+				currentAnimation = &pinkright;
+			}
+		}
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x > 45)
+		{
+			position.x -= speed;
+			if (currentAnimation != &pinkleft)
+			{
+				blueleft.Reset();
+				currentAnimation = &pinkleft;
 			}
 		}
 	}
@@ -308,6 +338,8 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		//Powerup = false;
 		collider->rect.w = 119;
 		Powerupblue = false;
+		Powerupgreen = false;
+		Powerupred = false;
 		lives--;
 
 	}
@@ -317,14 +349,20 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		if (c2->rect.w=99)
 		{
 			Powerupgreen = true;
+			Powerupblue = false;
+			Powerupred = false;
 		}
 		if (c2->rect.w=100)
 		{
 			Powerupblue = true;
+			Powerupgreen = false;
+			Powerupred = false;
 		}
 		if (c2->rect.w=101)
 		{
 			Powerupred = true;
+			Powerupgreen = false;
+			Powerupblue = false;
 		}
 	}
 }
