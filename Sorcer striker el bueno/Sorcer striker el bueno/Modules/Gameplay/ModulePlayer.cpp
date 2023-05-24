@@ -153,10 +153,10 @@ Update_Status ModulePlayer::Update() {
 		//	App->particles->AddParticle(App->particles->sword, position.x - 5, position.y-500, Collider::Type::PLAYER_SHOT, 0);
 		//	App->particles->AddParticle(App->particles->sword, position.x + 140, position.y-500, Collider::Type::PLAYER_SHOT, 0);
 		//}
-		if (!Powerupred && !Powerupblue && Powerupgreen)
+		else
 		{
-			App->particles->AddParticle(App->particles->sword, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->sword, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser1, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser1, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
 
 		}
 	
@@ -346,19 +346,19 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 	 //Cuan colisiona amb Power up
 	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::POWER_UP)
 	{
-		if (c2->rect.w=99)
+		if (c2->rect.w==78)
 		{
 			Powerupgreen = true;
 			Powerupblue = false;
 			Powerupred = false;
 		}
-		if (c2->rect.w=100)
+		if (c2->rect.w==79)
 		{
 			Powerupblue = true;
 			Powerupgreen = false;
 			Powerupred = false;
 		}
-		if (c2->rect.w=101)
+		if (c2->rect.w==80)
 		{
 			Powerupred = true;
 			Powerupgreen = false;
