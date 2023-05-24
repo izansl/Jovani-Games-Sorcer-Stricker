@@ -148,18 +148,15 @@ Update_Status ModulePlayer::Update() {
 
 			App->particles->AddParticle(App->particles->axeright, position.x + 140, position.y, Collider::Type::PLAYER_SHOT, 0);
 		}
-		//if (Powerupgreen)//Arreglarlo
-		//{
-		//	App->particles->AddParticle(App->particles->sword, position.x - 5, position.y-500, Collider::Type::PLAYER_SHOT, 0);
-		//	App->particles->AddParticle(App->particles->sword, position.x + 140, position.y-500, Collider::Type::PLAYER_SHOT, 0);
-		//}
-		else
+		if (Powerupgreen)//Arreglarlo
+		{
+			App->particles->AddParticle(App->particles->sword, position.x -50, position.y-450, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->sword, position.x + 120, position.y-450, Collider::Type::PLAYER_SHOT, 0);
+		}
+		if (!Powerupblue && !Powerupgreen && !Powerupred)
 		{
 			App->particles->AddParticle(App->particles->laser1, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->laser1, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
-
 		}
-	
 	}
 
 	// Spawn explosion particles when pressing X
@@ -177,7 +174,7 @@ Update_Status ModulePlayer::Update() {
 		{
 			App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
 		}
-		else
+		if (!Powerupblue && !Powerupgreen && !Powerupred)
 		{
 			App->particles->AddParticle(App->particles->bomb, position.x - 150, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
 		}
@@ -346,19 +343,19 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 	 //Cuan colisiona amb Power up
 	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::POWER_UP)
 	{
-		if (c2->rect.w==78)
+		if (c2->rect.w == 63)
 		{
 			Powerupgreen = true;
 			Powerupblue = false;
 			Powerupred = false;
 		}
-		if (c2->rect.w==79)
+		if (c2->rect.w==62)
 		{
 			Powerupblue = true;
 			Powerupgreen = false;
 			Powerupred = false;
 		}
-		if (c2->rect.w==80)
+		if (c2->rect.w==64)
 		{
 			Powerupred = true;
 			Powerupgreen = false;

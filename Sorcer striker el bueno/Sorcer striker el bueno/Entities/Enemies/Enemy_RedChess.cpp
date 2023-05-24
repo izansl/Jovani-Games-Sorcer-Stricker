@@ -13,7 +13,8 @@ Enemy_RedChess::Enemy_RedChess(int x, int y) : Enemy(x, y) {
 	red.PushBack({ 17, 501, 118, 99 });
 	red.PushBack({ 135, 498, 118, 99 });
 	red.PushBack({ 258, 493, 118, 99 });
-	red.speed = 0.25f;
+	red.PushBack({ 135, 498, 118, 99 });
+	red.speed = 0.1f;
 	currentAnim = &red;
 
 	// Path 1
@@ -41,6 +42,7 @@ Enemy_RedChess::Enemy_RedChess(int x, int y) : Enemy(x, y) {
 	pathchest.PushBack({ 1.0f, -0.2f }, 10);
 	pathchest.PushBack({ 1.0f, -1.0f }, 0);
 
+	currentPath = &pathchest;
 
 	collider = App->collisions->AddCollider({ 0, 0, 118, 99 }, Collider::Type::CHEST, (Module*)App->enemies);
 }
@@ -71,11 +73,11 @@ void Enemy_RedChess::OnCollision(Collider* c1) {
 	{
 		//chestdestroy = true;
 
-		collider = App->collisions->AddCollider({ 0, 0, 63, 80 }, Collider::Type::POWER_UP, (Module*)App->enemies);
+		collider = App->collisions->AddCollider({ 0, 0, 64, 78 }, Collider::Type::POWER_UP, (Module*)App->enemies);
 
 		// Change sprite
-		pickup.PushBack({ 40, 137, 63, 80 });
-		pickup.PushBack({ 155, 138, 63, 80 });
+		pickup.PushBack({ 40, 137, 64, 78 });
+		pickup.PushBack({ 155, 138, 64, 78 });
 		pickup.speed = 0.1f;
 		currentAnim = &pickup;
 

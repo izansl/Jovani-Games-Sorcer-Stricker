@@ -14,7 +14,8 @@ Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
 	blue.PushBack({ 14, 251, 118, 99 });
 	blue.PushBack({ 140, 257, 118, 99 });
 	blue.PushBack({ 244, 246, 118, 99});
-	blue.speed = 0.25f;
+	blue.PushBack({ 140, 257, 118, 99 });
+	blue.speed = 0.1f;
 	currentAnim = &blue;
 
 
@@ -74,11 +75,11 @@ void Enemy_CHESS::OnCollision(Collider* c1) {
 	{
 		//chestdestroy = true;
 
-		collider = App->collisions->AddCollider({ 0, 0, 62, 79 }, Collider::Type::POWER_UP, (Module*)App->enemies);
+		collider = App->collisions->AddCollider({ 0, 0, 62, 78 }, Collider::Type::POWER_UP, (Module*)App->enemies);
 
 		// Change sprite
-		pickup.PushBack({ 42, 369, 62, 79 });
-		pickup.PushBack({ 161, 365, 62, 79 });
+		pickup.PushBack({ 42, 369, 62, 78 });
+		pickup.PushBack({ 161, 365, 62, 78 });
 		pickup.speed = 0.1f;
 		currentAnim = &pickup;
 

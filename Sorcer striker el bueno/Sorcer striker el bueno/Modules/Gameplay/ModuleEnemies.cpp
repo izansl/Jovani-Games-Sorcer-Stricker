@@ -142,6 +142,7 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 			case Enemy_Type::RedChess:
 				enemies[i] = new Enemy_RedChess(info.x, info.y);
 				break;
+
 			case Enemy_Type::DRAGON: enemies[i] = new Enemy_Dragon(info.x, info.y, info.wave, info.miem);
 				break;
 			case Enemy_Type::REDWIZARD: enemies[i] = new Enemy_RedWizard(info.x, info.y, info.wave, info.miem);
@@ -155,7 +156,7 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 			case Enemy_Type::MINIDRAGON: enemies[i] = new Enemy_MiniDragon(info.x, info.y, info.wave, info.miem);
 				break;
 			}
-		
+
 			enemies[i]->destroyedFx = enemyDestroyedFx;
       
 			break;

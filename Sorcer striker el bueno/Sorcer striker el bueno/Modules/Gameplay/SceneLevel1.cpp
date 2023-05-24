@@ -58,7 +58,7 @@ bool SceneLevel1::Start() {
 #pragma region ENEMIES
 
 //	// add chest
-	App->enemies->AddEnemy(Enemy_Type::GreenChess, 200, -500, 1, 1);
+	App->enemies->AddEnemy(Enemy_Type::RedChess, 200, -500, 1, 1);
 //
 //#pragma region Red ball
 //	//add red ball

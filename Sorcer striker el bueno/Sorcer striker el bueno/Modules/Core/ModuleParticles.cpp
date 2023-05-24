@@ -106,11 +106,11 @@ bool ModuleParticles::Start() {
 	kniferight.speed = iPoint(0, -16);
 
 	//Green
-	//sword.anim.PushBack({ 2276, 1220, 110, 550 });//Arreglarlo
-	//sword.speed = iPoint(0, -13);
+	sword.anim.PushBack({ 2276, 1220, 110, 550 });//Arreglarlo
+	sword.speed = iPoint(0, -15);
 
-	//greenpart.anim.PushBack({ 2418, 1218, 110, 550 });
-	//greenpart.speed = iPoint(0, -13);
+	greenpart.anim.PushBack({ 2418, 1218, 110, 550 });
+	greenpart.speed = iPoint(0, -13);
 	return true;
 }
 
