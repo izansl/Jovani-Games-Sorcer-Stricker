@@ -265,7 +265,6 @@ Update_Status ModulePlayer::Update() {
 			}
 		}
 	}
-	LOG("Countdown % d", destroyedCountdown);
 
 	if (destroyed)
 	{
