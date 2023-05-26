@@ -76,8 +76,9 @@ void Enemy_RedChess::OnCollision(Collider* c1) {
 		collider = App->collisions->AddCollider({ 0, 0, 64, 78 }, Collider::Type::POWER_UP, (Module*)App->enemies);
 
 		// Change sprite
-		pickup.PushBack({ 40, 137, 64, 78 });
-		pickup.PushBack({ 155, 138, 64, 78 });
+		pickup.PushBack({ 44, 608, 63, 78 });
+		pickup.PushBack({ 160, 606, 63, 78 });
+
 		pickup.speed = 0.1f;
 		currentAnim = &pickup;
 

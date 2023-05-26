@@ -13,6 +13,7 @@
 #include "../../Modules/Gameplay/SceneLevel1.h"
 
 #include <stdio.h>
+#include <SDL_timer.h>
 
 ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 
@@ -133,52 +134,70 @@ Update_Status ModulePlayer::Update() {
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
 	{
-		if (Powerupred)
+		if (canshootlaser)
 		{
-			App->particles->AddParticle(App->particles->knifeleft, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->kniferight, position.x + 150, position.y, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->knifeleft, position.x + 0, position.y, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->kniferight, position.x + 175, position.y, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
-		}
-		if (Powerupblue)
-		{
-			App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y-50, Collider::Type::PLAYER_SHOT, 0);
+			start_time = SDL_GetTicks();
+			canshootlaser = false;
+			if (Powerupred)
+			{
+				App->particles->AddParticle(App->particles->knifeleft, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->kniferight, position.x + 150, position.y, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->knifeleft, position.x + 0, position.y, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->kniferight, position.x + 175, position.y, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
+			}
+			if (Powerupblue)
+			{
+				App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
 
-			App->particles->AddParticle(App->particles->axeleft, position.x - 5, position.y, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->axeleft, position.x - 5, position.y, Collider::Type::PLAYER_SHOT, 0);
 
-			App->particles->AddParticle(App->particles->axeright, position.x + 140, position.y, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->axeright, position.x + 140, position.y, Collider::Type::PLAYER_SHOT, 0);
+			}
+			if (Powerupgreen)
+			{
+				App->particles->AddParticle(App->particles->sword, position.x - 20, position.y - 720, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->sword, position.x + 160, position.y - 720, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
+			}
+			if (!Powerupblue && !Powerupgreen && !Powerupred)
+			{
+				App->particles->AddParticle(App->particles->laser1, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+			}
 		}
-		if (Powerupgreen)//Arreglarlo
+		if (SDL_GetTicks() - start_time >= 500)
 		{
-			App->particles->AddParticle(App->particles->sword, position.x-20, position.y-720, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->sword, position.x + 160, position.y-720, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
-		}
-		if (!Powerupblue && !Powerupgreen && !Powerupred)
-		{
-			App->particles->AddParticle(App->particles->laser1, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+			canshootlaser = true;
 		}
 	}
 
 	// Spawn explosion particles when pressing X
 	if (App->input->keys[SDL_SCANCODE_X] == Key_State::KEY_DOWN)
 	{
-		if (Powerupblue)
+		if (canshootbomb)
 		{
-			App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+			start_time = SDL_GetTicks();
+			canshootbomb = false;
+			if (Powerupblue)
+			{
+				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+			}
+			if (Powerupred)
+			{
+				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+			}
+			if (Powerupgreen)
+			{
+				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+			}
+			if (!Powerupblue && !Powerupgreen && !Powerupred)
+			{
+				App->particles->AddParticle(App->particles->bomb, position.x - 150, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+			}
 		}
-		if (Powerupred)
+		if (SDL_GetTicks()-start_time>=3000)
 		{
-			App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
-		}
-		if (Powerupgreen)
-		{
-			App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
-		}
-		if (!Powerupblue && !Powerupgreen && !Powerupred)
-		{
-			App->particles->AddParticle(App->particles->bomb, position.x - 150, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+			canshootbomb = true;
 		}
 	}
 

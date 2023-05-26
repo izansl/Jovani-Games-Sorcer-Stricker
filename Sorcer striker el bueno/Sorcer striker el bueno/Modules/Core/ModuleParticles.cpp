@@ -133,7 +133,7 @@ bool ModuleParticles::Start() {
 	sword.anim.PushBack({ 1855, 1136, 86, 815 });
 	sword.anim.PushBack({ 1855, 1136, 86, 815 });
 	sword.speed = iPoint(0, -15);
-	sword.anim.speed = 0.35af;
+	sword.anim.speed = 0.35f;
 	sword.lifetime = 80;
 
 
