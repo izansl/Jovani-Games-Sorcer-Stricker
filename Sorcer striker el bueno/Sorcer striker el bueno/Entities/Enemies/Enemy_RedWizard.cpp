@@ -10,56 +10,66 @@
 
 Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_reds.c_str());
-	
+	//vuelo frente
 	fly.PushBack({ 0, 798, 131, 132 });
 	fly.PushBack({ 0, 955, 131, 132 });
 	currentAnim = &fly;
-	fly.speed = 0.001f;
+	fly.speed = 0.2f;
 	fly.loop = true;
-	
-	
+	//vuelo izquierda
+	izquierda.PushBack({ 197, 956, 131, 132 });// giro izquierda inicio
+	izquierda.PushBack({ 324, 956, 131, 132 }); //giro izquierda medio
+	izquierda.PushBack({ 491, 957, 131, 132 });//giro izquierda final
+	izquierda.speed = 0.2f;
+	izquierda.loop = false;
+	//vuelo derecha
+	derecha.PushBack({ 159, 802, 131, 132 });// giro derecha inicio
+	derecha.PushBack({ 320, 801, 131, 132 });//giro derecha medio
+	derecha.PushBack({ 493, 802, 131, 132 });//giro derecha final
+	derecha.speed = 0.2f;
+	derecha.loop = false;
 
 	if (wave == 1)
 	{
 		
-			path.PushBack({ 0.0, -0.25 }, 20);
-			path.PushBack({ 0.0, -8.0 }, 120);
-			path.PushBack({ 3, -12.0 }, 650);
+			de.PushBack({ 0.0, -0.25 }, 20, &fly);
+			de.PushBack({ 0.0, -8.0 }, 120, &fly);
+			de.PushBack({ 3, -12.0 }, 650, &derecha);
 		
 	}
 	else if (wave == 2)
 	{
 		
-			path.PushBack({ 0.0, -0.25}, 20);
-			path.PushBack({ 0.0, -8.0 }, 120);
-			path.PushBack({ -3, -12.0 }, 650);
+			de.PushBack({ 0.0, -0.25}, 20, &fly);
+			de.PushBack({ 0.0, -8.0 }, 120, &fly);
+			de.PushBack({ -3, -12.0 }, 650, &izquierda);
 		
 	}
-	else if (wave == 3)
+	/*else if (wave == 3)
 	{
 		
-			path.PushBack({ 0.0, -0.25}, 20);
-			path.PushBack({ 0.0, -8.0 }, 120);
-			path.PushBack({ 3, -12.0 }, 650);
+			de.PushBack({ 0.0, -0.25}, 20);
+			de.PushBack({ 0.0, -8.0 }, 120);
+			de.PushBack({ 3, -12.0 }, 650);
 		
 	}
 	else if (wave == 4)
 	{
 		
-			path.PushBack({ 0.0, -0.25 }, 20);
-			path.PushBack({ 0.0, -8.0 }, 120);
-			path.PushBack({ -3, -12.0 }, 650);
+			iz.PushBack({ 0.0, -0.25 }, 20);
+			iz.PushBack({ 0.0, -8.0 }, 120);
+			iz.PushBack({ -3, -12.0 }, 650);
 		
 		
 	}
 	else if (wave == 5)
 	{
 		
-			path.PushBack({ 0.0, -0.25 }, 20);
-			path.PushBack({ 0.0, -8.0 }, 120);
-			path.PushBack({ 3, -12.0 }, 650);
+			de.PushBack({ 0.0, -0.25 }, 20);
+			de.PushBack({ 0.0, -8.0 }, 120);
+			de.PushBack({ 3, -12.0 }, 650);
 		
-	}
+	}*/
 	
 	
 
@@ -67,9 +77,12 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave) : Enemy(x, y) {
 }
 
 void Enemy_RedWizard::Update() {
-	path.Update();
-	position = spawnPos + path.GetRelativePosition();
+	
+	de.Update();
+	position = spawnPos + de.GetRelativePosition();
+	currentAnim = de.GetCurrentAnimation();
 
+	
 	if (temp >= 30)
 	{
 		Particle* fireball = App->particles->AddParticle(App->particles->wizardshoot, position.x, position.y, Collider::Type::ENEMY_SHOOT, 0) ;

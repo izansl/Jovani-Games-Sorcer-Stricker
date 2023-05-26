@@ -105,7 +105,7 @@ bool ModulePlayer::Start() {
 }
 
 Update_Status ModulePlayer::Update() {
-
+	LOG("%d", position.x);
 	// Moving the player with the camera scroll
 	App->player->position.y -= 8;
 	if (App->input->keys[SDL_SCANCODE_F1] == KEY_DOWN)
@@ -169,7 +169,7 @@ Update_Status ModulePlayer::Update() {
 		collider->rect.w = 217;
 		collider->rect.h = 118;
 
-		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x < 300)
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT && position.x)
 		{
 			position.x += speed;
 			if (currentAnimation != &blueright)
@@ -178,7 +178,7 @@ Update_Status ModulePlayer::Update() {
 				currentAnimation = &blueright;
 			}
 		}
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x > 45)
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT && position.x)
 		{
 			position.x -= speed;
 			if (currentAnimation != &blueleft)
