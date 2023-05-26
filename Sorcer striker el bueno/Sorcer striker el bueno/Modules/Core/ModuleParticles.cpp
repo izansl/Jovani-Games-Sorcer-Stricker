@@ -108,13 +108,34 @@ bool ModuleParticles::Start() {
 	kniferight.lifetime = 115;
 
 	//Green
-	sword.anim.PushBack({ 2276, 1220, 110, 550 });//Arreglarlo
+	sword.anim.PushBack({ 1840, 592, 86, 815 });
+	sword.anim.PushBack({ 1843, 704, 86, 815});
+	sword.anim.PushBack({  1849, 815, 86, 815});
+	sword.anim.PushBack({ 1846, 940, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
 	sword.speed = iPoint(0, -15);
-	sword.lifetime = 115;
+	sword.anim.speed = 0.35f;
+	sword.lifetime = 80;
 
-	greenpart.anim.PushBack({ 2418, 1218, 110, 550 });
-	greenpart.speed = iPoint(0, -13);
-	greenpart.lifetime = 115;
 
 	return true;
 }

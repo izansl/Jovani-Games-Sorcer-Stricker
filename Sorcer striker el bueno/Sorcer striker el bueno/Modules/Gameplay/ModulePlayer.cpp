@@ -139,6 +139,7 @@ Update_Status ModulePlayer::Update() {
 			App->particles->AddParticle(App->particles->kniferight, position.x + 150, position.y, Collider::Type::PLAYER_SHOT, 0);
 			App->particles->AddParticle(App->particles->knifeleft, position.x + 0, position.y, Collider::Type::PLAYER_SHOT, 0);
 			App->particles->AddParticle(App->particles->kniferight, position.x + 175, position.y, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
 		}
 		if (Powerupblue)
 		{
@@ -150,8 +151,9 @@ Update_Status ModulePlayer::Update() {
 		}
 		if (Powerupgreen)//Arreglarlo
 		{
-			App->particles->AddParticle(App->particles->sword, position.x -50, position.y-450, Collider::Type::PLAYER_SHOT, 0);
-			App->particles->AddParticle(App->particles->sword, position.x + 120, position.y-450, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->sword, position.x-20, position.y-720, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->sword, position.x + 160, position.y-720, Collider::Type::PLAYER_SHOT, 0);
+			App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
 		}
 		if (!Powerupblue && !Powerupgreen && !Powerupred)
 		{
