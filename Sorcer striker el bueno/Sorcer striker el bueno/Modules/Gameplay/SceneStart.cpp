@@ -31,10 +31,10 @@ bool SceneStart::Start() {
 	return ret;
 }
 
-//NO TOCAR NADA //FadeToBlack de Intro -> Juego
+//NO TOCAR NADA //FadeToBlack de Intro -> primera escena
 Update_Status SceneStart::Update() {
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
-		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 90);
+		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 60);
 	}
 	if (App->input->keys[SDL_SCANCODE_LSHIFT] == Key_State::KEY_DOWN)
 	{
@@ -48,21 +48,18 @@ Update_Status SceneStart::PostUpdate() {
 	//DIBUJADO DE LAS IMAGENES DE LA INTRO
 
 	timer += 1.0f / 60.0f; // Suma 1 segundo//Funciona a 60 fps
-	timer2 += 0.1f / 60.0f;
-	if (timer >= 3.0f) { // Mostramos cada imagen durante 3 segundos
+
+	if (timer >= 0.05f) { // Mostramos cada imagen durante 3 segundos
 		currentImage++;
-		if (currentImage >= NUM_IMAGES) {
-			currentImage = NUM_IMAGES - 1;
+		if (currentImage == NUM_IMAGES) {
+			currentImage = 0;
 		}
 		timer = 0.0f;
 	}
 
-	Uint8 alpha = static_cast<Uint8>((timer / 3.0f) * 255);
-	SDL_SetTextureAlphaMod(ArrayImagesStart[currentImage], alpha);
-
 	App->render->Blit(ArrayImagesStart[currentImage], 0, 0, NULL);
 
-	SDL_SetTextureAlphaMod(ArrayImagesStart[currentImage], 255);
+	
 
 	return Update_Status::UPDATE_CONTINUE;
 

@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -156,6 +156,7 @@
     <ClCompile Include="Application\Application.cpp" />
     <ClCompile Include="Application\Globals.cpp" />
     <ClCompile Include="Application\Main.cpp" />
+    <ClCompile Include="Entities\Enemies\Boss_BreathDragon.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_MiniDragon.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Turtle.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_GreenChess.cpp" />
@@ -191,6 +192,7 @@
     <ClInclude Include="Application\FileNames.h" />
     <ClInclude Include="Application\Globals.h" />
     <ClInclude Include="Application\MemLeaks.h" />
+    <ClInclude Include="Entities\Enemies\Boss_BreathDragon.h" />
     <ClInclude Include="Entities\Enemies\Enemy_MiniDragon.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Turtle.h" />
     <ClInclude Include="Entities\Enemies\Enemy_GreenChess.h" />
