@@ -105,7 +105,7 @@ bool ModulePlayer::Start() {
 }
 
 Update_Status ModulePlayer::Update() {
-	LOG("%d", position.x);
+	
 	// Moving the player with the camera scroll
 	App->player->position.y -= 8;
 	if (App->input->keys[SDL_SCANCODE_F1] == KEY_DOWN)

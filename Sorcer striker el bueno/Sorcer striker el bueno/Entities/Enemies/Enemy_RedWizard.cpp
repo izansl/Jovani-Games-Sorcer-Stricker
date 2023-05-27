@@ -45,31 +45,31 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave) : Enemy(x, y) {
 			de.PushBack({ -3, -12.0 }, 650, &izquierda);
 		
 	}
-	/*else if (wave == 3)
+	else if (wave == 3)
 	{
 		
-			de.PushBack({ 0.0, -0.25}, 20);
-			de.PushBack({ 0.0, -8.0 }, 120);
-			de.PushBack({ 3, -12.0 }, 650);
+			de.PushBack({ 0.0, -0.25}, 20, &fly);
+			de.PushBack({ 0.0, -8.0 }, 120, &fly);
+			de.PushBack({ 3, -12.0 }, 650, &derecha);
 		
 	}
 	else if (wave == 4)
 	{
 		
-			iz.PushBack({ 0.0, -0.25 }, 20);
-			iz.PushBack({ 0.0, -8.0 }, 120);
-			iz.PushBack({ -3, -12.0 }, 650);
+			de.PushBack({ 0.0, -0.25 }, 20, &fly);
+			de.PushBack({ 0.0, -8.0 }, 120, &fly);
+			de.PushBack({ -3, -12.0 }, 650, &izquierda);
 		
 		
 	}
 	else if (wave == 5)
 	{
 		
-			de.PushBack({ 0.0, -0.25 }, 20);
-			de.PushBack({ 0.0, -8.0 }, 120);
-			de.PushBack({ 3, -12.0 }, 650);
+			de.PushBack({ 0.0, -0.25 }, 20, &fly);
+			de.PushBack({ 0.0, -8.0 }, 120, &fly);
+			de.PushBack({ 3, -12.0 }, 650, &derecha);
 		
-	}*/
+	}
 	
 	
 
