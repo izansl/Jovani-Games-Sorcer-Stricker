@@ -32,7 +32,7 @@ public:
 	// The scene sprite sheet loaded into an SDL_Texture
 
 	
-	#define NUM_IMAGES 10		
+	#define NUM_IMAGES 18		
 	SDL_Texture* ArrayImagesIntro[NUM_IMAGES];
 	float timer = 0.0f;
 	float timer2 = 0.0f;
