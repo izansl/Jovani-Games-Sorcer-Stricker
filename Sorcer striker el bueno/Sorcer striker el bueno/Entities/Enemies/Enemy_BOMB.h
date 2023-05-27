@@ -37,6 +37,5 @@ private: //BROWNSHIP
 };
 
 #endif // __ENEMY_CHESS_H__class Bomb
-{
-};
+
 

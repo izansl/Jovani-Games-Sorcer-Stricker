@@ -1,4 +1,4 @@
-#include "Bomb.h"
+#include "Enemy_Bomb.h"
 
 #include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"

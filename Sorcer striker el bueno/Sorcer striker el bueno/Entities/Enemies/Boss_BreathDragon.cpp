@@ -1,8 +1,8 @@
 #include "Boss_BreathDragon.h"
 
-Boss_BreathDragon::Boss_BreathDragon(int x, int y)
-{
-}
+//Boss_BreathDragon::Boss_BreathDragon(int x, int y)
+//{
+//}
 
 void Boss_BreathDragon::Update()
 {
