@@ -7,9 +7,9 @@
 
 enum class Enemy_Type {
 	NO_TYPE,
-	CHESTBLUE,
-	GreenChess,
-	RedChess,
+	CHEST_BLUE,
+	CHEST_GREEN,
+	CHEST_RED,
 	REDWIZARD,
 	DRAGON,
 	RED_BALL,
