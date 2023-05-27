@@ -14,7 +14,8 @@ Enemy_GreenChess::Enemy_GreenChess(int x, int y) : Enemy(x, y) {
 	green.PushBack({ 15, 25, 118, 99 });
 	green.PushBack({ 132, 20, 118, 99 });
 	green.PushBack({ 260, 17, 118, 99 });
-	green.speed = 0.05f;
+	green.PushBack({ 132, 20, 118, 99 });
+	green.speed = 0.1f;
 	currentAnim = &green;
 
 	// Path 1

@@ -11,10 +11,11 @@
 Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spritebonus_pickups.c_str());
 
-	blue.PushBack({ 14, 251, 118, 100 });
-	blue.PushBack({ 140, 257, 118, 100 });
-	blue.PushBack({ 244, 246, 118, 100});
-	blue.speed = 0.05f;
+	blue.PushBack({ 14, 251, 118, 99 });
+	blue.PushBack({ 140, 257, 118, 99 });
+	blue.PushBack({ 244, 246, 118, 99});
+	blue.PushBack({ 140, 257, 118, 99 });
+	blue.speed = 0.1f;
 	currentAnim = &blue;
 
 
@@ -44,7 +45,7 @@ Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
 	pathchest.PushBack({ 1.0f, -1.0f }, 0);
 
 	currentPath = &pathchest;
-	collider = App->collisions->AddCollider({ 0, 0, 118, 100 }, Collider::Type::CHEST, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0, 118, 99 }, Collider::Type::CHEST, (Module*)App->enemies);
 
 }
 
