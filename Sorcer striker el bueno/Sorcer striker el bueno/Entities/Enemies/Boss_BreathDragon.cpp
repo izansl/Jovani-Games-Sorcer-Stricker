@@ -2,6 +2,7 @@
 
 Boss_BreathDragon::Boss_BreathDragon(int x, int y)
 {
+
 }
 
 void Boss_BreathDragon::Update()

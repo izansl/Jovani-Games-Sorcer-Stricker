@@ -8,13 +8,15 @@
 #include"../../Modules/Core/ModuleAudio.h"
 
 Enemy_Tank::Enemy_Tank(int x, int y, int wave) : Enemy(x, y) {
-	texture = App->textures->Load(FI_spriteEnemy_reds.c_str());
-	fly.PushBack({ 29, 357, 82, 104 });
-	fly.PushBack({ 140, 357, 82, 104 });
+	texture = App->textures->Load(FI_spriteEnemy_tank.c_str());
+	fly.PushBack({ 634, 935, 133, 128 });
 	currentAnim = &fly;
 	fly.speed = 0.2;
 	fly.loop = true;
-	
+	if (wave == 1)
+	{
+		path.PushBack({4, -8}, 100);
+	}
 
 
 	collider = App->collisions->AddCollider({ 0, 0,82, 104 }, Collider::Type::ENEMY, (Module*)App->enemies);
@@ -34,7 +36,7 @@ void Enemy_Tank::OnCollision(Collider* c1) {
 	fly.PushBack({ 42, 50, 32, 32 });
 	fly.PushBack({ 77, 51, 32, 32 });
 	fly.PushBack({ 111, 52, 32, 32 });
-	fly.PushBack({ 200, 200, 32, 32 });
+	fly.PushBack({ 350, 36, 133, 128 });
 
 	currentAnim = &fly;
 	fly.speed = 0.2;

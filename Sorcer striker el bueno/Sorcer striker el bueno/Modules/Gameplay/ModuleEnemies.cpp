@@ -16,6 +16,7 @@
 #include "../../Entities/Enemies/Enemy_GreenChess.h"
 #include "../../Entities/Enemies/Enemy_Turtle.h"
 #include "../../Entities/Enemies/Enemy_MiniDragon.h"
+#include "../../Entities/Enemies/Enemy_FlyTank.h"
 #define SPAWN_MARGIN 50
 
 ModuleEnemies::ModuleEnemies(bool startEnabled) : Module(startEnabled) {
@@ -154,7 +155,10 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 				break;
 			case Enemy_Type::MINIDRAGON: enemies[i] = new Enemy_MiniDragon(info.x, info.y, info.wave);
 				break;
+			case Enemy_Type::FLYTANK: enemies[i] = new Enemy_FlyTank(info.x, info.y, info.wave);
+				break;
 			}
+			
 
 			enemies[i]->destroyedFx = enemyDestroyedFx;
       

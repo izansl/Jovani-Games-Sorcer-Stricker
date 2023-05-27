@@ -57,26 +57,26 @@ bool SceneLevel1::Start() {
 
 #pragma region ENEMIES
 	// add chest
-	App->enemies->AddEnemy(Enemy_Type::CHEST, 200, -500, 1);
+	App->enemies->AddEnemy(Enemy_Type::CHESTBLUE, 200, -500, 1);
 
 #pragma region Red ball
 	//add red ball
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -340, 1);
+	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -340, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -440, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -540, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -640, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -740, 1);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -840, 1);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -840, 1);*/
 	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -680, 1, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -710, 1, 8);*/
 
 	//add red ball 2
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -1680, 2);
+	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -1680, 2);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -1780, 2);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -1880, 2);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -1980, 2);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -2080, 2);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -2180, 2);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -2180, 2);*/
 	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -940, 2, 7);
 	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -970, 2, 8);
 
@@ -168,8 +168,13 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::DRAGON, 200, -9500, 2);*/
 
 #pragma endregion
+#pragma region goblin
+	App->enemies->AddEnemy(Enemy_Type::FLYTANK, 100, -13000, 1);
+#pragma endregion
 
-
+#pragma region tanks
+	App->enemies->AddEnemy(Enemy_Type::TANK, 0, -1000, 1);
+#pragma endregion
 	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;
 	App->render->camera.y = 3000;

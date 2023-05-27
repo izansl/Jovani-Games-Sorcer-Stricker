@@ -119,6 +119,9 @@
     <ClCompile Include="Entities\Enemies\Boss_BreathDragon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Entities\Enemies\Enemy_FlyTank.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application\Application.h">
@@ -230,6 +233,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Entities\Enemies\Boss_BreathDragon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\Enemies\Enemy_FlyTank.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

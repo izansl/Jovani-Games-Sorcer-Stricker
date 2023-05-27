@@ -76,7 +76,7 @@ public:
 
 	//Template for deads
 	Particle playerdead;
-
+	Particle FlyTankdead;
 	//wizard shoot
 	Particle wizardshoot;
 
