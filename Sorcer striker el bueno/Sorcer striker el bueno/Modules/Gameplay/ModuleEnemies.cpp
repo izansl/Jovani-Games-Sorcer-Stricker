@@ -133,8 +133,14 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 	for (uint i = 0; i < MAX_ENEMIES; ++i) {
 		if (enemies[i] == nullptr) {
 			switch (info.type) {
-			case Enemy_Type::CHEST: 
+			case Enemy_Type::CHESTBLUE: 
 				enemies[i] = new Enemy_CHESS(info.x, info.y); 
+				break;
+			case Enemy_Type::GreenChess:
+				enemies[i] = new Enemy_GreenChess(info.x, info.y);
+				break;
+			case Enemy_Type::RedChess:
+				enemies[i] = new Enemy_RedChess(info.x, info.y);
 				break;
 			case Enemy_Type::DRAGON: enemies[i] = new Enemy_Dragon(info.x, info.y, info.wave);
 				break;
@@ -149,7 +155,7 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 			case Enemy_Type::MINIDRAGON: enemies[i] = new Enemy_MiniDragon(info.x, info.y, info.wave);
 				break;
 			}
-		
+
 			enemies[i]->destroyedFx = enemyDestroyedFx;
       
 			break;

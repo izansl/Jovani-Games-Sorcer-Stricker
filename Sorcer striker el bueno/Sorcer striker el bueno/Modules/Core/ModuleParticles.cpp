@@ -49,21 +49,14 @@ bool ModuleParticles::Start() {
 	playerdead.lifetime = 80;
 
 	bomb.anim.PushBack({ 289, 1420, 424, 421 });
+	bomb.anim.PushBack({ 289, 1420, 424, 421 });
 	bomb.anim.PushBack({ 149, 906, 424, 421 });
 	bomb.anim.PushBack({ 1467, 458, 424, 421 });
 	bomb.anim.PushBack({ 923, 829, 424, 421 });
 	bomb.anim.PushBack({ 1207, 1377, 424, 421 });
-	bomb.anim.speed = 0.2f;
-
-//	texture3 = App->textures->Load(FI_Introimage_7.c_str());
-//	bomb.anim.PushBack({ 294, 1379, 468, 445 });
-//	bomb.anim.PushBack({ 166, 863, 468, 445 });
-//	bomb.anim.PushBack({ 351, 55, 468, 445 });
-//	bomb.anim.PushBack({ 937, 778, 468, 445 });
-//	bomb.anim.PushBack({ 1225, 1320, 468, 445 });
-//	bomb.anim.speed = 0.2f; 
-//bomb.anim.loop = false;
-
+	bomb.speed = iPoint(0, -12);
+	bomb.anim.speed = 0.05f;
+	bomb.lifetime = 115;
 
 	//Powe up atacks
 	//Blue
@@ -105,20 +98,45 @@ bool ModuleParticles::Start() {
 
 
 	
-	
-
-
 	//Pink
 	knifeleft.anim.PushBack({ 1938, 881, 34, 62 });
+	knifeleft.speed = iPoint(0, -16);
+	knifeleft.lifetime = 115;
 
 	kniferight.anim.PushBack({ 2086, 883, 34, 62 });
+	kniferight.speed = iPoint(0, -16);
+	kniferight.lifetime = 115;
 
 	//Green
-	sword.anim.PushBack({ 2276, 1220, 110, 550 });
-	sword.speed = iPoint(0, -13);
+	sword.anim.PushBack({ 1840, 592, 86, 815 });
+	sword.anim.PushBack({ 1843, 704, 86, 815});
+	sword.anim.PushBack({  1849, 815, 86, 815});
+	sword.anim.PushBack({ 1846, 940, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.anim.PushBack({ 1855, 1136, 86, 815 });
+	sword.speed = iPoint(0, -15);
+	sword.anim.speed = 0.35f;
+	sword.lifetime = 80;
 
-	greenpart.anim.PushBack({ 2418, 1218, 110, 550 });
-	greenpart.speed = iPoint(0, -13);
+
 	return true;
 }
 

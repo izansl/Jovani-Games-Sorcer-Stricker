@@ -48,7 +48,7 @@ bool SceneLevel1::Start() {
 	int hl = SCREEN_HEIGHT;
 	leftcoll = App->collisions->AddCollider({ xl, yl, wl, hl }, Collider::Type::WALL_PLAYER);
 
-	int xr = SCREEN_WIDTH -10;
+	int xr = SCREEN_WIDTH - 10;
 	int yr = 3000;
 	int wr = 10;
 	int hr = SCREEN_HEIGHT;
@@ -56,7 +56,6 @@ bool SceneLevel1::Start() {
 
 
 #pragma region ENEMIES
-
 	// add chest
 	App->enemies->AddEnemy(Enemy_Type::CHEST, 200, -500, 1);
 
@@ -190,24 +189,24 @@ Update_Status SceneLevel1::Update() {
 	leftcoll->rect.y += velocitatNivell;
 	raightcoll->rect.y += velocitatNivell;
 
-	if (App->player->position.x + 50 >= raightcoll->rect.x)
+	if ((App->player->position.x + 5 + App->player->collider->rect.w) >= raightcoll->rect.x)
 	{
-		App->player->position.x = raightcoll->rect.x - 50;
+		App->player->position.x = raightcoll->rect.x - (5 + App->player->collider->rect.w);
 	}
 
-	if (App->player->position.x - 50 <= leftcoll->rect.x)
+	if (App->player->position.x - 5 <= leftcoll->rect.x)
 	{
-		App->player->position.x = leftcoll->rect.x + 50;
+		App->player->position.x = leftcoll->rect.x + 5;
 	}
 
-	if (App->player->position.y + 50 >= botcoll->rect.y)
+	if ((App->player->position.y + 5 + App->player->collider->rect.h) >= botcoll->rect.y)
 	{
-		App->player->position.y = botcoll->rect.y - 50;
+		App->player->position.y = botcoll->rect.y - (5 + App->player->collider->rect.h);
 	}
 
-	if (App->player->position.y - 50 <= topcoll->rect.y)
+	if (App->player->position.y - 5 <= topcoll->rect.y)
 	{
-		App->player->position.y = topcoll->rect.y + 50;
+		App->player->position.y = topcoll->rect.y + 5;
 	}
 	if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
 	{
