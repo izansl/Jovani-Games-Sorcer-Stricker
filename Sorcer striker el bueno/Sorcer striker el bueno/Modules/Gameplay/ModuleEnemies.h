@@ -10,6 +10,8 @@ enum class Enemy_Type {
 	CHESTBLUE,
 	GreenChess,
 	RedChess,
+	BOMB,
+	GOLD,
 	REDWIZARD,
 	DRAGON,
 	RED_BALL,

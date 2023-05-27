@@ -156,6 +156,7 @@
     <ClCompile Include="Application\Application.cpp" />
     <ClCompile Include="Application\Globals.cpp" />
     <ClCompile Include="Application\Main.cpp" />
+    <ClCompile Include="Entities\Enemies\Bomb.cpp" />
     <ClCompile Include="Entities\Enemies\Boss_BreathDragon.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_MiniDragon.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Turtle.cpp" />
@@ -192,6 +193,7 @@
     <ClInclude Include="Application\FileNames.h" />
     <ClInclude Include="Application\Globals.h" />
     <ClInclude Include="Application\MemLeaks.h" />
+    <ClInclude Include="Entities\Enemies\Bomb.h" />
     <ClInclude Include="Entities\Enemies\Boss_BreathDragon.h" />
     <ClInclude Include="Entities\Enemies\Enemy_MiniDragon.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Turtle.h" />
