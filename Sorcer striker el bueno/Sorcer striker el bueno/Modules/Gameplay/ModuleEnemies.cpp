@@ -16,7 +16,9 @@
 #include "../../Entities/Enemies/Enemy_GreenChess.h"
 #include "../../Entities/Enemies/Enemy_Turtle.h"
 #include "../../Entities/Enemies/Enemy_MiniDragon.h"
-#define SPAWN_MARGIN 50
+#include "../../Entities/Enemies/Boss_BreathDragon.h"
+
+#define SPAWN_MARGIN 100
 
 ModuleEnemies::ModuleEnemies(bool startEnabled) : Module(startEnabled) {
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
@@ -90,7 +92,7 @@ bool ModuleEnemies::AddEnemy(Enemy_Type type, int x, int y, int wave)
 			spawnQueue[i].x = x;
 			spawnQueue[i].y = y;
 			spawnQueue[i].wave = wave;
-			
+
 			ret = true;
 			break;
 		}
@@ -133,31 +135,20 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 	for (uint i = 0; i < MAX_ENEMIES; ++i) {
 		if (enemies[i] == nullptr) {
 			switch (info.type) {
-			case Enemy_Type::CHEST_BLUE: 
-				enemies[i] = new Enemy_CHESS(info.x, info.y); 
-				break;
-			case Enemy_Type::CHEST_GREEN:
-				enemies[i] = new Enemy_GreenChess(info.x, info.y);
-				break;
-			case Enemy_Type::CHEST_RED:
-				enemies[i] = new Enemy_RedChess(info.x, info.y);
-				break;
-			case Enemy_Type::DRAGON: enemies[i] = new Enemy_Dragon(info.x, info.y, info.wave);
-				break;
-			case Enemy_Type::REDWIZARD: enemies[i] = new Enemy_RedWizard(info.x, info.y, info.wave);
-				break;
-			case Enemy_Type::RED_BALL: enemies[i] = new Enemy_RedBall(info.x, info.y, info.wave);
-				break;
-			case Enemy_Type::TANK: enemies[i] = new Enemy_Tank(info.x, info.y, info.wave);
-				break;
-			case Enemy_Type::TURTLE: enemies[i] = new Enemy_Turtle(info.x, info.y, info.wave);
-				break;
-			case Enemy_Type::MINIDRAGON: enemies[i] = new Enemy_MiniDragon(info.x, info.y, info.wave);
-				break;
+			case Enemy_Type::CHEST_BLUE: enemies[i] = new Enemy_CHESS(info.x, info.y); break;
+			case Enemy_Type::CHEST_GREEN: enemies[i] = new Enemy_GreenChess(info.x, info.y); break;
+			case Enemy_Type::CHEST_RED: enemies[i] = new Enemy_RedChess(info.x, info.y); break;
+			case Enemy_Type::DRAGON: enemies[i] = new Enemy_Dragon(info.x, info.y, info.wave); break;
+			case Enemy_Type::REDWIZARD: enemies[i] = new Enemy_RedWizard(info.x, info.y, info.wave); break;
+			case Enemy_Type::RED_BALL: enemies[i] = new Enemy_RedBall(info.x, info.y, info.wave); break;
+			case Enemy_Type::TANK: enemies[i] = new Enemy_Tank(info.x, info.y, info.wave); break;
+			case Enemy_Type::TURTLE: enemies[i] = new Enemy_Turtle(info.x, info.y, info.wave); break;
+			case Enemy_Type::MINIDRAGON: enemies[i] = new Enemy_MiniDragon(info.x, info.y, info.wave); break;
+			case Enemy_Type::BOSS: enemies[i] = new Boss_BreathDragon(info.x, info.y, info.wave); break;
 			}
 
 			enemies[i]->destroyedFx = enemyDestroyedFx;
-      
+
 			break;
 		}
 	}

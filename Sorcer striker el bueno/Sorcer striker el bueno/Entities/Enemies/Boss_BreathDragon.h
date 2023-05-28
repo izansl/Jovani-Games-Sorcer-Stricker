@@ -3,19 +3,20 @@
 
 #include "Enemy.h"
 #include "../../Utils/Path.h"
+#include "../Particle.h"
 
 
 class Boss_BreathDragon : public Enemy {
 
 public:
-	Boss_BreathDragon(int x, int y);
+	Boss_BreathDragon(int x, int y, int wave);
 
 	void Update() override;
 
-	void OnCollisionGeneral(Collider* c1);
-	void OnCollisionHead1(Collider* c1);
-	void OnCollisionHead2(Collider* c1);
-	void OnCollisionHead3(Collider* c1);
+	void OnCollisionGeneral(Collider* colisionEntrante);
+	void OnCollisionHead1(Collider* colisionEntrante);
+	void OnCollisionHead2(Collider* colisionEntrante);
+	void OnCollisionHead3(Collider* colisionEntrante);
 
 
 private:
@@ -25,8 +26,16 @@ private:
 	bool headDestroy = false;
 	bool headDestroy2 = false;
 
+	SDL_Rect bodyCenter;
+	SDL_Rect bodyCenter_Dead;
+	SDL_Rect head1;
+	SDL_Rect head1_Dead;
+	SDL_Rect head2;
+	SDL_Rect  head2_Dead;
+
 	Animation head;
 	Animation fan;
+	Particle fire;
 };
 
 #endif
