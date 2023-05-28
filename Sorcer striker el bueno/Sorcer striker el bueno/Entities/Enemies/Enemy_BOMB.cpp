@@ -11,7 +11,7 @@
 Enemy_BOMB::Enemy_BOMB(int x, int y) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spritebonus_pickups.c_str());
 
-	blue.PushBack({ 27, 898, 116, 122});
+	blue.PushBack({ 27, 898, 116, 122 });
 	blue.PushBack({ 194, 899, 116, 122 });
 	blue.speed = 0.1f;
 	currentAnim = &blue;

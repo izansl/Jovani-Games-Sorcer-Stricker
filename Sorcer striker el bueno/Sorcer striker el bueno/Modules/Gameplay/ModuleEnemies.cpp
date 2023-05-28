@@ -16,7 +16,7 @@
 #include "../../Entities/Enemies/Enemy_GreenChess.h"
 #include "../../Entities/Enemies/Enemy_Turtle.h"
 #include "../../Entities/Enemies/Enemy_MiniDragon.h"
-#include "../../Entities/Enemies/Enemy_BOMB.h"
+#include "../../Entities/Enemies/Enemy_Bomb.h"
 
 #define SPAWN_MARGIN 100
 

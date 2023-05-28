@@ -1,6 +1,6 @@
 
-#ifndef __ENEMY_CHESS_H__
-#define __ENEMY_CHESS_H__
+#ifndef __ENEMY_BOMB_H__
+#define __ENEMY_BOMB_H__
 
 #include "Enemy.h"
 #include "../../Utils/Path.h"
@@ -37,5 +37,3 @@ private: //BROWNSHIP
 };
 
 #endif // __ENEMY_CHESS_H__class Bomb
-
-
