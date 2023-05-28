@@ -7,6 +7,8 @@
 
 enum class Enemy_Type {
 	NO_TYPE,
+	BOMB,
+	GOLD,
 	CHEST_BLUE,
 	CHEST_GREEN,
 	CHEST_RED,
