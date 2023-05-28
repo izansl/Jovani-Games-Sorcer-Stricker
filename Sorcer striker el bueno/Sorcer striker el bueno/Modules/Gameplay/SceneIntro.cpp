@@ -23,7 +23,8 @@ bool SceneIntro::Start() {
 
 	startTime = SDL_GetTicks();
 	//Carga de texturas(imagenes)
-
+	// 
+	//Carga imagenes carpeta Intro
 	ArrayImagesIntro[0] = App->textures->Load(FI_Introimage_1.c_str());
 	ArrayImagesIntro[1] = App->textures->Load(FI_Introimage_2.c_str());
 	ArrayImagesIntro[2] = App->textures->Load(FI_Introimage_3.c_str());
@@ -42,7 +43,15 @@ bool SceneIntro::Start() {
 	ArrayImagesIntro[15] = App->textures->Load(FI_Introimage_16.c_str());
 	ArrayImagesIntro[16] = App->textures->Load(FI_Introimage_17.c_str());
 	ArrayImagesIntro[17] = App->textures->Load(FI_Introimage_18.c_str());
-
+	//Carga imagenes carpeta sprites-lluc-intro
+	ArrayImagesIntro2[0] = App->textures->Load(FI_Introimage_19.c_str());
+	ArrayImagesIntro2[0] = App->textures->Load(FI_Introimage_20.c_str());
+	ArrayImagesIntro2[0] = App->textures->Load(FI_Introimage_21.c_str());
+	ArrayImagesIntro2[0] = App->textures->Load(FI_Introimage_22.c_str());
+	ArrayImagesIntro2[0] = App->textures->Load(FI_Introimage_23.c_str());
+	ArrayImagesIntro2[0] = App->textures->Load(FI_Introimage_24.c_str());
+	ArrayImagesIntro2[0] = App->textures->Load(FI_Introimage_25.c_str());
+	ArrayImagesIntro2[0] = App->textures->Load(FI_Introimage_26.c_str());
 	//Carga de Audio ////TURMO MUY IMPORTANTE, TIENES QUE CUADRAR EL AUDIO CON LA INTRO SEGUN LAS IMAGENES QUE APAREZCAN///
 	App->audio->PlayMusic(FA_Music_introTitle.c_str());//esta musica hay que cambiarla turmo
 	
@@ -76,7 +85,7 @@ Update_Status SceneIntro::PostUpdate() {
 	if ((SDL_GetTicks() - startTime) >= 3000) {
 	
 		App->render->Blit(ArrayImagesIntro[0], 0, 0, NULL);
-	
+		/*Blit(SDL_Texture * texture, int x, int y, const SDL_Rect * section, float speed, bool useCamera)*/
 	}
 
 	if ((SDL_GetTicks() - startTime) >= 6000) {

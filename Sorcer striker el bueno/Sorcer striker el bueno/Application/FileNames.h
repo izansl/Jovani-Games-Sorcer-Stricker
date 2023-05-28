@@ -11,7 +11,7 @@
 
 #pragma region IMAGES -> FI
 //IntroImages
-//cambiar a png //cambiar ruta a ImagenesIntro2
+//primera carpeta
 const std::string FI_Introimage_1 = "../Assets/Images/Intro/jovani.png";
 const std::string FI_Introimage_2 = "../Assets/Images/Intro/Raizing.png";
 const std::string FI_Introimage_3 = "../Assets/Images/Intro/PrimertextoColor.png";
@@ -30,6 +30,16 @@ const std::string FI_Introimage_15 = "../Assets/Images/Intro/quintotextoBlanco.p
 const std::string FI_Introimage_16 = "../Assets/Images/Intro/fondobatman.png";
 const std::string FI_Introimage_17 = "../Assets/Images/Intro/Batman.png";
 const std::string FI_Introimage_18 = "../Assets/Images/Intro/explosiones.png";
+//segunda carpeta (sin fondo)
+const std::string FI_Introimage_19 = "../Assets/Images/sprites-lluc-intro/alienarribafondo.png";
+const std::string FI_Introimage_20 = "../Assets/Images/sprites-lluc-intro/alienepicardo.png";
+const std::string FI_Introimage_21 = "../Assets/Images/sprites-lluc-intro/alientocho.png";
+const std::string FI_Introimage_22 = "../Assets/Images/sprites-lluc-intro/caracuatro.png";
+const std::string FI_Introimage_23 = "../Assets/Images/sprites-lluc-intro/carados.png";
+const std::string FI_Introimage_24 = "../Assets/Images/sprites-lluc-intro/caratres.png";
+const std::string FI_Introimage_25 = "../Assets/Images/sprites-lluc-intro/carauno.png";
+const std::string FI_Introimage_26 = "../Assets/Images/sprites-lluc-intro/holalluc.png";
+
 
 //Start
 const std::string FI_Start_1 = "../Assets/Images/Intro/pantallainiciouno.png";
