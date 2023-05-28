@@ -39,7 +39,7 @@ const std::string FI_Introimage_23 = "../Assets/Images/sprites-lluc-intro/carado
 const std::string FI_Introimage_24 = "../Assets/Images/sprites-lluc-intro/caratres.png";
 const std::string FI_Introimage_25 = "../Assets/Images/sprites-lluc-intro/carauno.png";
 const std::string FI_Introimage_26 = "../Assets/Images/sprites-lluc-intro/holalluc.png";
-
+const std::string FI_Introimage_27 = "../Assets/Images/sprites-lluc-intro/fondonegro.png";
 
 //Start
 const std::string FI_Start_1 = "../Assets/Images/Intro/pantallainiciouno.png";
