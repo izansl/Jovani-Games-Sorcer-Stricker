@@ -1,16 +1,16 @@
-#ifndef __ENEMY_BOMB_H__
-#define __ENEMY_BOMB_H__
+#ifndef __ENEMY_GOLD_H__
+#define __ENEMY_GOLD_H__
 
 #include "Enemy.h"
 #include "../../Utils/Path.h"
 
 
-class Enemy_BOMB : public Enemy {
+class Enemy_Gold : public Enemy {
 
 public:
 	// Constructor (x y coordinates in the world)
 	// Creates animation data and the collider
-	Enemy_BOMB(int x, int y);
+	Enemy_Gold(int x, int y);
 
 	// The enemy is going to perform a sinusoidal movement
 	void Update() override;

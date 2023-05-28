@@ -17,6 +17,7 @@
 #include "../../Entities/Enemies/Enemy_Turtle.h"
 #include "../../Entities/Enemies/Enemy_MiniDragon.h"
 #include "../../Entities/Enemies/Enemy_Bomb.h"
+#include "../../Entities/Enemies/Enemy_Gold.h"
 
 #define SPAWN_MARGIN 100
 
@@ -148,6 +149,10 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 			case Enemy_Type::BOMB:
 				enemies[i] = new Enemy_BOMB(info.x, info.y);
 				break;
+			case Enemy_Type::GOLD:
+				enemies[i] = new Enemy_Gold(info.x, info.y);
+				break;
+
 			//Enemies
 			case Enemy_Type::DRAGON: enemies[i] = new Enemy_Dragon(info.x, info.y, info.wave);
 				break;

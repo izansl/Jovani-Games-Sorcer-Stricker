@@ -42,7 +42,7 @@ Enemy_BOMB::Enemy_BOMB(int x, int y) : Enemy(x, y) {
 	pathchest.PushBack({ 0.0f, 0.5f }, 10);
 
 	currentPath = &pathchest;
-	collider = App->collisions->AddCollider({ 0, 0, 118, 99 }, Collider::Type::CHEST, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0, 116, 122 }, Collider::Type::POWER_UP, (Module*)App->enemies);
 
 }
 
@@ -70,7 +70,9 @@ void Enemy_BOMB::Update() {
 void Enemy_BOMB::OnCollision(Collider* c1) {
 	if (c1->type == Collider::Type::PLAYER)
 	{
-		LOG("+1");
+		pickup.PushBack({ 10000, 10000, 116, 122 });
+
+		currentAnim = &pickup;
 	}
 }
 

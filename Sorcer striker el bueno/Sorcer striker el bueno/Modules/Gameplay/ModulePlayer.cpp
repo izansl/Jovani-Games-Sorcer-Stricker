@@ -387,5 +387,13 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 			Powerupgreen = false;
 			Powerupblue = false;
 		}
+		if (c2->rect.w == 122)
+		{
+			LOG("Turmo");
+		}
+		if (c2->rect.w == 45)
+		{
+			LOG("Turmo");
+		}
 	}
 }

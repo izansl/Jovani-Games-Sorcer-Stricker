@@ -118,11 +118,11 @@
     </ClCompile>
     <ClCompile Include="Entities\Enemies\Boss_BreathDragon.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Entities\Enemies\Bomb.cpp">
+    </ClCompile>    
+    <ClCompile Include="Entities\Enemies\Enemy_Bomb.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Entities\Enemies\Enemy_Bomb.cpp">
+    <ClCompile Include="Entities\Enemies\Enemy_Gold.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -237,11 +237,11 @@
     </ClInclude>
     <ClInclude Include="Entities\Enemies\Boss_BreathDragon.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Entities\Enemies\Bomb.h">
+    </ClInclude>   
+    <ClInclude Include="Entities\Enemies\Enemy_Bomb.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Entities\Enemies\Enemy_Bomb.h">
+    <ClInclude Include="Entities\Enemies\Enemy_Gold.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
