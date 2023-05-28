@@ -20,6 +20,8 @@ bool SceneIntro::Start() {
 	LOG("Loading background assets SCENE INTRO");
 
 	bool ret = true;
+
+	startTime = SDL_GetTicks();
 	//Carga de texturas(imagenes)
 
 	ArrayImagesIntro[0] = App->textures->Load(FI_Introimage_1.c_str());
@@ -60,33 +62,34 @@ Update_Status SceneIntro::Update() {
 	{
 		tokenFx = App->audio->LoadFx(FA_Fx_token.c_str());
 	};
+
+	
 	return Update_Status::UPDATE_CONTINUE;
+
 }
 
 // Update: draw background
 Update_Status SceneIntro::PostUpdate() {
 	//DIBUJADO DE LAS IMAGENES DE LA INTRO
 	
-	timer += 1.0f / 60.0f; // Suma 1 segundo//Funciona a 60 fps
 	
-	if (timer >= 3.0f) { // Mostramos cada imagen durante 3 segundos
-		currentImage++;
-		if (currentImage == NUM_IMAGES)//si les imatges no estan texturitzades per x motiu, no funciona.
-		{
-			currentImage = 17;
-			App->fade->FadeToBlack((Module*)App->sceneIntro, (Module*)App ->sceneStart, 60); //Menu start
-		}
-		timer = 0.0f;
+	if ((SDL_GetTicks() - startTime) >= 3000) {
+	
+		App->render->Blit(ArrayImagesIntro[0], 0, 0, NULL);
+	
 	}
 
+	if ((SDL_GetTicks() - startTime) >= 6000) {
 
-	Uint8 alpha = static_cast<Uint8>((timer / 3.0f) * 255);
-	SDL_SetTextureAlphaMod(ArrayImagesIntro[currentImage], alpha);
+		App->render->Blit(ArrayImagesIntro[1], 0, 0, NULL);
 
-	App->render->Blit(ArrayImagesIntro[currentImage], 0, 0, NULL);
-
-	SDL_SetTextureAlphaMod(ArrayImagesIntro[currentImage], 255);
+	}
 	
+	if ((SDL_GetTicks() - startTime) >= 9000) {
+
+		App->render->Blit(ArrayImagesIntro[2], 0, 0, NULL);
+
+	}
 	return Update_Status::UPDATE_CONTINUE;
 	
 }
