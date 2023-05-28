@@ -136,14 +136,14 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 	for (uint i = 0; i < MAX_ENEMIES; ++i) {
 		if (enemies[i] == nullptr) {
 			switch (info.type) {
-			//Props
-			case Enemy_Type::CHESTBLUE: 
+
+			case Enemy_Type::CHEST_BLUE: 
 				enemies[i] = new Enemy_CHESS(info.x, info.y); 
 				break;
-			case Enemy_Type::GreenChess:
+			case Enemy_Type::CHEST_GREEN:
 				enemies[i] = new Enemy_GreenChess(info.x, info.y);
 				break;
-			case Enemy_Type::RedChess:
+			case Enemy_Type::CHEST_RED:
 				enemies[i] = new Enemy_RedChess(info.x, info.y);
 				break;
 			case Enemy_Type::BOMB:
