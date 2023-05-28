@@ -16,11 +16,9 @@ public:
 	void OnCollisionGeneral(Collider* colisionEntrante);
 	void OnCollisionHead1(Collider* colisionEntrante);
 	void OnCollisionHead2(Collider* colisionEntrante);
-	void OnCollisionHead3(Collider* colisionEntrante);
 
 
 private:
-	Path pathchest;
 	Path* currentPath;
 
 	bool headDestroy = false;
@@ -36,6 +34,8 @@ private:
 	Animation head;
 	Animation fan;
 	Particle fire;
+
+	int vides[3];
 };
 
 #endif

@@ -22,7 +22,7 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	head2_Dead = {};
 
 
-	
+
 
 	fan.PushBack({ 1100, 282, 108, 94 });
 	fan.PushBack({ 1210, 280, 114, 96 });
@@ -38,7 +38,7 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	fire.speed = iPoint(0, -12);
 	fire.anim.speed = 0.05f;
 	fire.lifetime = 115;
-	
+
 	currentAnim = &fan;
 
 
@@ -71,22 +71,38 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 
 }
 
-void Boss_BreathDragon::Update()
-{
+void Boss_BreathDragon::Update() {
+
 }
 
-void Boss_BreathDragon::OnCollisionGeneral(Collider* c1)
-{
+void Boss_BreathDragon::OnCollisionGeneral(Collider* c1) {
+	if (c1->type == Collider::Type::PLAYER_SHOT)
+	{
+		if (vides[0] <= 0 && vides[1] <= 0 && vides[2] <= 0)
+			this->SetToDelete();
+		else
+			vides[0] -= 1;
+	}
 }
 
-void Boss_BreathDragon::OnCollisionHead1(Collider* c1)
-{
+void Boss_BreathDragon::OnCollisionHead1(Collider* c1) {
+	if (c1->type == Collider::Type::PLAYER_SHOT)
+	{
+		// Eliminar cap si arrriba a 0
+		if (vides[0] <= 0 && vides[1] <= 0 && vides[2] <= 0)
+			this->SetToDelete();
+		else
+			vides[0] -= 1;
+	}
 }
 
-void Boss_BreathDragon::OnCollisionHead2(Collider* c1)
-{
-}
-
-void Boss_BreathDragon::OnCollisionHead3(Collider* c1)
-{
+void Boss_BreathDragon::OnCollisionHead2(Collider* c1) {
+	if (c1->type == Collider::Type::PLAYER_SHOT)
+	{
+		// Eliminar cap si arrriba a 0
+		if (vides[0] <= 0 && vides[1] <= 0 && vides[2] <= 0)
+			this->SetToDelete();
+		else
+			vides[0] -= 1;
+	}
 }
