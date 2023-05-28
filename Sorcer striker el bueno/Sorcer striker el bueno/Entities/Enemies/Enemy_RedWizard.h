@@ -32,6 +32,7 @@ private:
 	Animation derecha;
 	Animation izquierda;
 
+	bool life = true;
 	int temp = 0;
 };
 
