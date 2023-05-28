@@ -109,4 +109,6 @@ void Enemy_RedWizard::OnCollision(Collider* c1) {
 	currentAnim = &fly;
 	fly.speed = 0.2;
 	fly.loop = false;
+	App->audio->PlayFx(destroyedFx);
+	
 }

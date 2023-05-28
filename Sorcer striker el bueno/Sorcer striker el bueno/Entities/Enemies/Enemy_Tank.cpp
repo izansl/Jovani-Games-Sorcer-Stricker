@@ -15,11 +15,11 @@ Enemy_Tank::Enemy_Tank(int x, int y, int wave) : Enemy(x, y) {
 	fly.loop = true;
 	if (wave == 1)
 	{
-		path.PushBack({4, -8}, 100);
+		path.PushBack({4, -6}, 100);
 	}
 
 
-	collider = App->collisions->AddCollider({ 0, 0,82, 104 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0,133, 128 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_Tank::Update() {

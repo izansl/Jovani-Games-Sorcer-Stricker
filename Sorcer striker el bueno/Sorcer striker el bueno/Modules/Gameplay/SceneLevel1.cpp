@@ -169,11 +169,15 @@ bool SceneLevel1::Start() {
 
 #pragma endregion
 #pragma region goblin
-	App->enemies->AddEnemy(Enemy_Type::FLYTANK, 100, -13000, 1);
+	App->enemies->AddEnemy(Enemy_Type::FLYTANK, 100, -16000, 1);
 #pragma endregion
 
 #pragma region tanks
-	App->enemies->AddEnemy(Enemy_Type::TANK, 0, -1000, 1);
+	App->enemies->AddEnemy(Enemy_Type::TANK, 0, -500, 1);
+
+	App->enemies->AddEnemy(Enemy_Type::TANK, 0, -19250, 1);
+	App->enemies->AddEnemy(Enemy_Type::TANK, 800, -19112, 1);
+	
 #pragma endregion
 	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;
