@@ -21,6 +21,7 @@
 
 #define SPAWN_MARGIN 100
 
+
 ModuleEnemies::ModuleEnemies(bool startEnabled) : Module(startEnabled) {
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
 		enemies[i] = nullptr;
@@ -166,7 +167,10 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 				break;
 			case Enemy_Type::MINIDRAGON: enemies[i] = new Enemy_MiniDragon(info.x, info.y, info.wave);
 				break;
+			case Enemy_Type::FLYTANK: enemies[i] = new Enemy_FlyTank(info.x, info.y, info.wave);
+				break;
 			}
+			
 
 			enemies[i]->destroyedFx = enemyDestroyedFx;
       
@@ -180,6 +184,12 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2) {
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1) {
 			enemies[i]->OnCollision(c2); //Notify the enemy of a collision
 			c1->pendingToDelete = true;
+			/*if (c2->type == Collider::Type::PLAYER_SHOT)
+			{
+
+				delete enemies[i];
+				enemies[i] = nullptr;
+			}*/
 			break;
 		}
 	}

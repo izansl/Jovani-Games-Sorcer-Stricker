@@ -115,7 +115,7 @@ const std::string FI_spriteEnemy_dragon = "../Assets/Images/pre-castillo/dragon.
 
 const std::string FI_spriteEnemy_enemiesvar_1 = "../Assets/Images/castillo/enemigos_varios.png";
 
-const std::string FI_spriteEnemy_ = "../Assets/Images/castillo/tanque.png";
+const std::string FI_spriteEnemy_tank = "../Assets/Images/castillo/tanque.png";
 
 const std::string FI_spritebonus_pickups = "../Assets/Images/pre-castillo/allprops.png";
 

@@ -1,6 +1,8 @@
 #include "Boss_BreathDragon.h"
 
+
 Boss_BreathDragon::Boss_BreathDragon(int x, int y) : Enemy(x, y) {
+
 }
 
 

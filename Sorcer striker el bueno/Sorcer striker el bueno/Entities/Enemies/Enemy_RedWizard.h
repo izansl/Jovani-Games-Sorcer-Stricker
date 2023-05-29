@@ -28,10 +28,13 @@ private:
 	// This enemy has one sprite and one frame
 	// We are keeping it an animation for consistency with other enemies
 	Animation fly;
+	
 	Animation derecha;
 	Animation izquierda;
-
+	Animation damage;
+	bool life = true;
 	int temp = 0;
+	int hitcount = 0;
 };
 
 #endif // __ENEMY_BROWNSHIP_H__
