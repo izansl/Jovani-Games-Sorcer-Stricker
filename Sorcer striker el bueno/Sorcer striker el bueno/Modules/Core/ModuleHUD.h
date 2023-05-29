@@ -32,6 +32,7 @@ private:
 	int score;
 	int highScore;
 	int sizeVector;
+	int widthLetter = 20;
 
 	std::vector<abecedari> vectorABC;
 

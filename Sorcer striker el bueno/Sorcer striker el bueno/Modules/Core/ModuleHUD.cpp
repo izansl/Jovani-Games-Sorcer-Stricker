@@ -30,14 +30,14 @@ bool ModuleHUD::Start() {
 	posScore1.x = 10 + App->render->camera.x;
 	posScore1.y = 30 + App->render->camera.y;
 
-	posPlayer2.x = 280 + App->render->camera.x;
+	posPlayer2.x = 350 + App->render->camera.x;
 	posPlayer2.y = 10 + App->render->camera.y;
-	posScore2.x = 280 + App->render->camera.x;
+	posScore2.x = 350 + App->render->camera.x;
 	posScore2.y = 30 + App->render->camera.y;
 
-	posHlScrore.x = 150 + App->render->camera.x;
+	posHlScrore.x = 600 + App->render->camera.x;
 	posHlScrore.y = 10 + App->render->camera.y;
-	posScoreHl.x = 150 + App->render->camera.x;
+	posScoreHl.x = 600 + App->render->camera.x;
 	posScoreHl.y = 30 + App->render->camera.y;
 	return ret;
 }
@@ -50,14 +50,14 @@ Update_Status ModuleHUD::Update()
 	posScore1.x = 10 + App->render->camera.x;
 	posScore1.y = 30 + App->render->camera.y;
 
-	posPlayer2.x = 280 + App->render->camera.x;
+	posPlayer2.x = 350 + App->render->camera.x;
 	posPlayer2.y = 10 + App->render->camera.y;
-	posScore2.x = 280 + App->render->camera.x;
+	posScore2.x = 350 + App->render->camera.x;
 	posScore2.y = 30 + App->render->camera.y;
 
-	posHlScrore.x = 150 + App->render->camera.x;
+	posHlScrore.x = 600 + App->render->camera.x;
 	posHlScrore.y = 10 + App->render->camera.y;
-	posScoreHl.x = 150 + App->render->camera.x;
+	posScoreHl.x = 600 + App->render->camera.x;
 	posScoreHl.y = 30 + App->render->camera.y;
 
 	return Update_Status::UPDATE_CONTINUE;
@@ -157,10 +157,9 @@ int ModuleHUD::LoadVector()
 
 void ModuleHUD::PaintSentence(std::string sentenceToPaint, iPoint positionToPaint) {
 	int size = sentenceToPaint.size();
-	int writedLetters = 0;
-	int widthLetter = 8;
+	int writedLetters = 0;	
 	std::vector<int> posicions;
-	SDL_Rect cutFont = { 0, 0, 8, 7 };
+	SDL_Rect cutFont = { 0, 0, 20, 14 };
 
 	for (int i = 0; i < size; i++)
 	{
