@@ -57,7 +57,9 @@ bool SceneLevel1::Start() {
 
 #pragma region ENEMIES
 	// add chest
-	App->enemies->AddEnemy(Enemy_Type::CHESTBLUE, 200, -500, 1);
+
+	App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, 200, -500, 1);
+
 
 #pragma region Red ball
 	//add red ball
@@ -218,6 +220,21 @@ Update_Status SceneLevel1::Update() {
 	{
 		App->player->position.y = topcoll->rect.y + 5;
 	}
+
+	//Spawn cofres
+	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::CHEST_RED, App->player->position.x + 50, App->player->position.y - 800, 1);
+	}
+	if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::CHEST_GREEN, App->player->position.x + 50, App->player->position.y - 800, 1);
+	}
+	if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, App->player->position.x + 50, App->player->position.y - 800, 1);
+	}
+
 	if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
 	{
 		App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 400, App->player->position.y - 700, 1);
@@ -225,7 +242,7 @@ Update_Status SceneLevel1::Update() {
 
 
 	}
-	
+
 	return Update_Status::UPDATE_CONTINUE;
 }
 

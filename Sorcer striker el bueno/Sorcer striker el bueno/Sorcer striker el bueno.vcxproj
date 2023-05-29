@@ -42,13 +42,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -157,9 +157,9 @@
     <ClCompile Include="Application\Globals.cpp" />
     <ClCompile Include="Application\Main.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_FlyTank.cpp" />
-    <ClCompile Include="Entities\Enemies\Boss_BreathDragon.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="Entities\Enemies\Enemy_Gold.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Bomb.cpp" />
+    <ClCompile Include="Entities\Enemies\Boss_BreathDragon.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_MiniDragon.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Turtle.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_GreenChess.cpp" />
@@ -196,9 +196,9 @@
     <ClInclude Include="Application\Globals.h" />
     <ClInclude Include="Application\MemLeaks.h" />
     <ClInclude Include="Entities\Enemies\Enemy_FlyTank.h" />
-    <ClInclude Include="Entities\Enemies\Boss_BreathDragon.h">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-    </ClInclude>
+    <ClInclude Include="Entities\Enemies\Enemy_Gold.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Bomb.h" />
+    <ClInclude Include="Entities\Enemies\Boss_BreathDragon.h" />
     <ClInclude Include="Entities\Enemies\Enemy_MiniDragon.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Turtle.h" />
     <ClInclude Include="Entities\Enemies\Enemy_GreenChess.h" />

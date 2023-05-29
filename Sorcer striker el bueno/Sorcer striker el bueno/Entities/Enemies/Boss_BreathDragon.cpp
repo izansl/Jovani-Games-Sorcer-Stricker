@@ -1,9 +1,10 @@
 #include "Boss_BreathDragon.h"
 
-Boss_BreathDragon::Boss_BreathDragon(int x, int y)
-{
+
+Boss_BreathDragon::Boss_BreathDragon(int x, int y) : Enemy(x, y) {
 
 }
+
 
 void Boss_BreathDragon::Update()
 {

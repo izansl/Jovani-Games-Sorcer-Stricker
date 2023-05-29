@@ -16,8 +16,11 @@
 #include "../../Entities/Enemies/Enemy_GreenChess.h"
 #include "../../Entities/Enemies/Enemy_Turtle.h"
 #include "../../Entities/Enemies/Enemy_MiniDragon.h"
-#include "../../Entities/Enemies/Enemy_FlyTank.h"
-#define SPAWN_MARGIN 50
+#include "../../Entities/Enemies/Enemy_Bomb.h"
+#include "../../Entities/Enemies/Enemy_Gold.h"
+
+#define SPAWN_MARGIN 100
+
 
 ModuleEnemies::ModuleEnemies(bool startEnabled) : Module(startEnabled) {
 	for (uint i = 0; i < MAX_ENEMIES; ++i)
@@ -134,15 +137,24 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 	for (uint i = 0; i < MAX_ENEMIES; ++i) {
 		if (enemies[i] == nullptr) {
 			switch (info.type) {
-			case Enemy_Type::CHESTBLUE: 
+
+			case Enemy_Type::CHEST_BLUE: 
 				enemies[i] = new Enemy_CHESS(info.x, info.y); 
 				break;
-			case Enemy_Type::GreenChess:
+			case Enemy_Type::CHEST_GREEN:
 				enemies[i] = new Enemy_GreenChess(info.x, info.y);
 				break;
-			case Enemy_Type::RedChess:
+			case Enemy_Type::CHEST_RED:
 				enemies[i] = new Enemy_RedChess(info.x, info.y);
 				break;
+			case Enemy_Type::BOMB:
+				enemies[i] = new Enemy_BOMB(info.x, info.y);
+				break;
+			case Enemy_Type::GOLD:
+				enemies[i] = new Enemy_Gold(info.x, info.y);
+				break;
+
+			//Enemies
 			case Enemy_Type::DRAGON: enemies[i] = new Enemy_Dragon(info.x, info.y, info.wave);
 				break;
 			case Enemy_Type::REDWIZARD: enemies[i] = new Enemy_RedWizard(info.x, info.y, info.wave);
