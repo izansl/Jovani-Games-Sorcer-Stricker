@@ -18,6 +18,7 @@
 #include "../../Entities/Enemies/Enemy_MiniDragon.h"
 #include "../../Entities/Enemies/Enemy_Bomb.h"
 #include "../../Entities/Enemies/Enemy_Gold.h"
+#include "../../Entities/Enemies/Enemy_FlyTank.h"
 
 #define SPAWN_MARGIN 100
 
