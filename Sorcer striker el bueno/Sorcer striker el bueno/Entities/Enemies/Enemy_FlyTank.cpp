@@ -50,7 +50,6 @@ void Enemy_FlyTank::OnCollision(Collider* c1) {
 				collider = App->collisions->AddCollider({ 0, 0,279, 275 }, Collider::Type::ENEMY, (Module*)App->enemies);
 			}
 			else {
-
 				death.PushBack({ 195, 935, 329, 333 });
 				death.PushBack({ 373, 657, 329, 333 });
 				death.PushBack({ 281, 173, 329, 333 });
