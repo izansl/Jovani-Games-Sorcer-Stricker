@@ -104,6 +104,37 @@ void Enemy_RedWizard::Update() {
 
 
 void Enemy_RedWizard::OnCollision(Collider* c1) {
+	if (life)
+	{
+		hitcount++;
+		if (hitcount < 3)
+		{
+			damage.PushBack({ 0, 487, 131, 132 });
+			damage.PushBack({ 0, 798, 131, 132 });
+			damage.speed = 0.25f;
+			currentAnim = &damage;
+			collider = App->collisions->AddCollider({ 0, 0,131, 132 }, Collider::Type::ENEMY, (Module*)App->enemies);
+		}
+		else {
+
+			fly.PushBack({ 1, 136, 139, 137 });
+			fly.PushBack({ 155, 140, 139, 137 });
+			fly.PushBack({ 335, 142, 139, 137 });
+			fly.PushBack({ 586, 139, 139, 137 });
+			fly.PushBack({ 644, 142, 139, 137 });
+			fly.PushBack({ 798, 142, 139, 137 });
+			fly.PushBack({ 1000, 400, 139, 137 });
+
+			currentAnim = &fly;
+			fly.speed = 0.2;
+			fly.loop = false;
+			App->audio->PlayFx(destroyedFx);
+			life = false;
+
+		}
+
+
+	}
 	fly.PushBack({ 1, 136, 139, 137 });
 	fly.PushBack({ 155, 140, 139, 137 });
 	fly.PushBack({ 335, 142, 139, 137 });

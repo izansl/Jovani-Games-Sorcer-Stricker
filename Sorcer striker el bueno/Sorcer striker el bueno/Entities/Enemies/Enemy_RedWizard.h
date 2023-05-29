@@ -31,9 +31,10 @@ private:
 	
 	Animation derecha;
 	Animation izquierda;
-
+	Animation damage;
 	bool life = true;
 	int temp = 0;
+	int hitcount = 0;
 };
 
 #endif // __ENEMY_BROWNSHIP_H__

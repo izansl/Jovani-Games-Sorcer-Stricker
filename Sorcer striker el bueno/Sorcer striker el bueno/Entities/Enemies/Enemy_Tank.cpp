@@ -23,23 +23,49 @@ Enemy_Tank::Enemy_Tank(int x, int y, int wave) : Enemy(x, y) {
 }
 
 void Enemy_Tank::Update() {
-	path.Update();
-	position = spawnPos + path.GetRelativePosition();
+	
 
+	if (life)
+	{
+		path.Update();
+		position = spawnPos + path.GetRelativePosition();
+	}
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
 	Enemy::Update();
 }
 //
 void Enemy_Tank::OnCollision(Collider* c1) {
-	fly.PushBack({ 7, 50, 32, 32 });
-	fly.PushBack({ 42, 50, 32, 32 });
-	fly.PushBack({ 77, 51, 32, 32 });
-	fly.PushBack({ 111, 52, 32, 32 });
-	fly.PushBack({ 350, 36, 133, 128 });
+	if (life)
+	{
+		hitcount++;
+		if (hitcount < 3)
+		{
+			damage.PushBack({ 0, 487, 131, 132 });
+			damage.PushBack({ 0, 798, 131, 132 });
+			damage.speed = 0.25f;
+			currentAnim = &damage;
+			collider = App->collisions->AddCollider({ 0, 0,131, 132 }, Collider::Type::ENEMY, (Module*)App->enemies);
+		}
+		else {
 
-	currentAnim = &fly;
-	fly.speed = 0.2;
-	fly.loop = false;
-	App->audio->PlayFx(destroyedFx);
+			fly.PushBack({ 1, 136, 139, 137 });
+			fly.PushBack({ 155, 140, 139, 137 });
+			fly.PushBack({ 335, 142, 139, 137 });
+			fly.PushBack({ 586, 139, 139, 137 });
+			fly.PushBack({ 644, 142, 139, 137 });
+			fly.PushBack({ 798, 142, 139, 137 });
+			fly.PushBack({ 1000, 400, 139, 137 });
+
+			currentAnim = &fly;
+			fly.speed = 0.2;
+			fly.loop = false;
+			App->audio->PlayFx(destroyedFx);
+			life = false;
+
+		}
+
+
+	}
+	
 }
