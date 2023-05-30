@@ -109,7 +109,7 @@ Update_Status SceneIntro::PostUpdate() {
 
 	if (currentTime >= 10000) {
 
-		App->render->Blit(ArrayImagesIntro2[7], 20, 0, NULL);//holalluc
+		App->render->Blit(ArrayImagesIntro2[7], 0, -20, NULL);//holalluc
 
 	}
 
@@ -121,7 +121,7 @@ Update_Status SceneIntro::PostUpdate() {
 
 	if (currentTime >= 15000) {
 
-		App->render->Blit(ArrayImagesIntro2[0], 0, 0, NULL);//alienarribafondo
+		App->render->Blit(ArrayImagesIntro2[0], 0, 20, NULL);//alienarribafondo
 
 	}
 
