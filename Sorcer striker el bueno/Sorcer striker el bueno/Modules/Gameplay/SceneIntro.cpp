@@ -81,29 +81,47 @@ Update_Status SceneIntro::Update() {
 // Update: draw background
 Update_Status SceneIntro::PostUpdate() {
 	//DIBUJADO DE LAS IMAGENES DE LA INTRO
+	Uint32 currentTime = SDL_GetTicks() - startTime;
 	
-	
-	if ((SDL_GetTicks() - startTime) >= 3000) {
-	
+	if (currentTime >= 3000) {
+		
 		App->render->Blit(ArrayImagesIntro[0], 0, 0, NULL);//jovani
 		/*Blit(SDL_Texture * texture, int x, int y, const SDL_Rect * section, float speed, bool useCamera)*/
 	}
 
-	if ((SDL_GetTicks() - startTime) >= 6000) {
+	if (currentTime >= 6000) {
 
 		App->render->Blit(ArrayImagesIntro[1], 0, 0, NULL);//Raizing
 
 	}
 
-	if ((SDL_GetTicks() - startTime) >= 9000) {
+	if (currentTime >= 9000) {
 
 		App->render->Blit(ArrayImagesIntro2[8], 0, 0, NULL);//fondonegro
+
+	}
+
+	if (currentTime >= 9000 && currentTime < 13000) {
+
 		App->render->Blit(ArrayImagesIntro[2], -10, 0, NULL);//Primertextocolor
 
 	}
-	if ((SDL_GetTicks() - startTime) >= 11000) {
 
-		
+	if (currentTime >= 10000) {
+
+		App->render->Blit(ArrayImagesIntro2[7], 20, 0, NULL);//holalluc
+
+	}
+
+	if (currentTime >= 13000) {
+
+		App->render->Blit(ArrayImagesIntro[5], 0, 0, NULL);//segundotextocolor
+
+	}
+
+	if (currentTime >= 15000) {
+
+		App->render->Blit(ArrayImagesIntro2[0], 0, 0, NULL);//alienarribafondo
 
 	}
 
