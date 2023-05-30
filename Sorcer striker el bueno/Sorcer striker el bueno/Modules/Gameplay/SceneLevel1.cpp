@@ -79,16 +79,16 @@ bool SceneLevel1::Start() {
 	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -1980, 2);
 	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -2080, 2);
 	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -2180, 2);
-	////App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -940, 2, 7);
-	////App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -970, 2, 8);
+	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -940, 2, 7);
+	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -970, 2, 8);
 
-	////add red ball 3
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -2800, 3);
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -2900, 3);
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -3000, 3);
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -3100, 3);
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -3200, 3);
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -3300, 3);
+	//add red ball 3
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -2800, 3);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -2900, 3);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -3000, 3);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -3100, 3);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -3200, 3);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -3300, 3);
 	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 110, -1900, 3, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 110, -1950, 3, 8);*/
 
@@ -112,25 +112,25 @@ bool SceneLevel1::Start() {
 	///*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2600, 5, 7);
 	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2650, 5, 8);*/
 
-	////add red ball 6
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -8800, 6);
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -8900, 6);
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -9000, 6);
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -9100, 6);
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -9200, 6);
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -9300, 6);
-	///*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4400, 6, 7);
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4450, 6, 8);*/
+	//add red ball 6
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -8800, 6);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -8900, 6);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -9000, 6);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -9100, 6);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -9200, 6);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -9300, 6);
+	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4400, 6, 7);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4450, 6, 8);*/
 
-	////add red ball 7
-	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -6300, 7);
+	//add red ball 7
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -6300, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -6360, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -6420, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -6480, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -6540, 7);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -6600, 7);*/
-	///*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -5100, 7, 7);
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -5150, 7, 8);*/
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -6600, 7);
+	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -5100, 7, 7);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -5150, 7, 8);*/
 
 	////add red ball 8
 	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 150, -5500, 8, 1);
@@ -172,14 +172,18 @@ bool SceneLevel1::Start() {
 #pragma endregion
 #pragma region goblin
 	App->enemies->AddEnemy(Enemy_Type::FLYTANK, 100, -16000, 1);
-	App->enemies->AddEnemy(Enemy_Type::FLYTANK, 100, -100, 1);
+	
 #pragma endregion
 
 #pragma region tanks
 	
 
 	App->enemies->AddEnemy(Enemy_Type::TANK, 0, -19250, 1);
-	App->enemies->AddEnemy(Enemy_Type::TANK, 800, -19112, 1);
+	App->enemies->AddEnemy(Enemy_Type::TANK, 800, -19112, 2);
+#pragma endregion
+#pragma region turtle
+
+	App->enemies->AddEnemy(Enemy_Type::TURTLE, 10, -90, 2);
 	
 #pragma endregion
 	// POSITION INITIAL CAMERA

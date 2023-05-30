@@ -9,7 +9,7 @@
 
 Enemy_FlyTank::Enemy_FlyTank(int x, int y, int wave) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_enemiesvar_1.c_str());
-	fly.PushBack({ 17, 5, 279, 275 });
+	fly.PushBack({ 54, 38, 279, 275 });
 	currentAnim = &fly;
 	
 	if (wave == 1)
@@ -43,8 +43,8 @@ void Enemy_FlyTank::OnCollision(Collider* c1) {
 		hitcount++;
 			if (hitcount < 6)
 			{
-				damage.PushBack({ 317, 7, 279, 275 });
-				damage.PushBack({ 17, 5, 279, 275 });
+				damage.PushBack({ 350, 38, 279, 275 });
+				damage.PushBack({ 54, 38, 279, 275 });
 				damage.speed = 0.25f;
 				currentAnim = &damage;
 				collider = App->collisions->AddCollider({ 0, 0,279, 275 }, Collider::Type::ENEMY, (Module*)App->enemies);

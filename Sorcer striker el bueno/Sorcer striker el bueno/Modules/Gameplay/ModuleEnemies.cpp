@@ -19,6 +19,7 @@
 #include "../../Entities/Enemies/Enemy_Bomb.h"
 #include "../../Entities/Enemies/Enemy_Gold.h"
 #include "../../Entities/Enemies/Enemy_FlyTank.h"
+#include "../../Entities/Enemies/Enemy_RedBat.h"
 
 #define SPAWN_MARGIN 100
 
@@ -169,6 +170,8 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 			case Enemy_Type::MINIDRAGON: enemies[i] = new Enemy_MiniDragon(info.x, info.y, info.wave);
 				break;
 			case Enemy_Type::FLYTANK: enemies[i] = new Enemy_FlyTank(info.x, info.y, info.wave);
+				break;
+			case Enemy_Type::REDBAT: enemies[i] = new Enemy_RedBat(info.x, info.y, info.wave);
 				break;
 			}
 			
