@@ -16,9 +16,11 @@ enum class Enemy_Type {
 	DRAGON,
 	RED_BALL,
 	TANK,
+	BIGTANK,
 	FLYTANK,
 	TURTLE,
 	MINIDRAGON,
+	REDBAT,
 	BOSS
 };
 

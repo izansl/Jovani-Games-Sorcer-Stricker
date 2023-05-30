@@ -113,6 +113,7 @@ void Enemy_RedWizard::OnCollision(Collider* c1) {
 			damage.PushBack({ 0, 798, 131, 132 });
 			damage.speed = 0.25f;
 			currentAnim = &damage;
+			App->audio->PlayFx(destroyedFx);
 			collider = App->collisions->AddCollider({ 0, 0,131, 132 }, Collider::Type::ENEMY, (Module*)App->enemies);
 		}
 		else {

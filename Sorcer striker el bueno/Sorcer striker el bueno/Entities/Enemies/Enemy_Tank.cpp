@@ -9,14 +9,25 @@
 
 Enemy_Tank::Enemy_Tank(int x, int y, int wave) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_tank.c_str());
-	fly.PushBack({ 634, 935, 133, 128 });
-	currentAnim = &fly;
-	fly.speed = 0.2;
-	fly.loop = true;
+	//movimiento izquierda
+	iz.PushBack({ 378, 416, 133, 128 });
+	iz.PushBack({ 99, 416, 133, 128 });
+	iz.speed = 0.2;
+	iz.loop = true;
+	//movimiento derecha
+	de.PushBack({ 104, 746, 133, 128 });
+	de.PushBack({ 363, 746, 133, 128 });
+	de.speed = 0.2;
+	de.loop = true;
 	if (wave == 1)
 	{
-		path.PushBack({4, -6}, 100);
+		path.PushBack({4, -6}, 100, &de);
 	}
+	else if (wave == 2)
+	{
+		path.PushBack({ -4, -6 }, 100, &iz);
+	}
+
 
 
 	collider = App->collisions->AddCollider({ 0, 0,133, 128 }, Collider::Type::ENEMY, (Module*)App->enemies);
@@ -39,27 +50,21 @@ void Enemy_Tank::OnCollision(Collider* c1) {
 	if (life)
 	{
 		hitcount++;
-		if (hitcount < 3)
+		if (hitcount < 5 )
 		{
-			damage.PushBack({ 0, 487, 131, 132 });
-			damage.PushBack({ 0, 798, 131, 132 });
+			damage.PushBack({ 106, 579, 133, 128 });
+			damage.PushBack({ 105, 747, 133, 128 });
 			damage.speed = 0.25f;
 			currentAnim = &damage;
-			collider = App->collisions->AddCollider({ 0, 0,131, 132 }, Collider::Type::ENEMY, (Module*)App->enemies);
+			collider = App->collisions->AddCollider({ 0, 0,133, 128 }, Collider::Type::ENEMY, (Module*)App->enemies);
 		}
+		
 		else {
 
-			fly.PushBack({ 1, 136, 139, 137 });
-			fly.PushBack({ 155, 140, 139, 137 });
-			fly.PushBack({ 335, 142, 139, 137 });
-			fly.PushBack({ 586, 139, 139, 137 });
-			fly.PushBack({ 644, 142, 139, 137 });
-			fly.PushBack({ 798, 142, 139, 137 });
-			fly.PushBack({ 1000, 400, 139, 137 });
-
-			currentAnim = &fly;
-			fly.speed = 0.2;
-			fly.loop = false;
+			death.PushBack({ 350, 38, 133, 128 });
+			currentAnim = &death;
+			death.speed = 0.2;
+			death.loop = false;
 			App->audio->PlayFx(destroyedFx);
 			life = false;
 
