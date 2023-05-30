@@ -16,6 +16,7 @@ public:
 	void OnCollisionGeneral(Collider* colisionEntrante);
 	void OnCollisionHead1(Collider* colisionEntrante);
 	void OnCollisionHead2(Collider* colisionEntrante);
+	void OnCollisionHead3(Collider* colisionEntrante);
 
 
 private:
@@ -23,19 +24,25 @@ private:
 
 	bool headDestroy = false;
 	bool headDestroy2 = false;
-
-	SDL_Rect bodyCenter;
-	SDL_Rect bodyCenter_Dead;
-	SDL_Rect head1;
-	SDL_Rect head1_Dead;
-	SDL_Rect head2;
-	SDL_Rect  head2_Dead;
+	bool headDestroy3 = false;
+		
+	Animation warning;
+	Animation arrow;
+	Animation fan;
 
 	Animation head;
-	Animation fan;
+	Animation head_damaged;
+
+	Animation body_center;
+	Animation body_center_damaged;
+	Animation body_left;
+	Animation body_left_damaged;
+	Animation body_right;
+	Animation body_right_damaged;
+
 	Particle fire;
 
-	int vides[3];
+	int vides[4];
 };
 
 #endif

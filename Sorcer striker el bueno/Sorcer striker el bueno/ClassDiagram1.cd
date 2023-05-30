@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Application" Collapsed="true">
+    <Position X="40" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAgAAHAAABAAABgAAAABAAQCABAJAAACAEAQAAA=</HashCode>
+      <FileName>Application\Application.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Boss_BreathDragon" Collapsed="true">
+    <Position X="12.75" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AATAQAAAgAAAACAAAAAAQCwAAAAAAAAQDIAIAAAACAA=</HashCode>
+      <FileName>Entities\Enemies\Boss_BreathDragon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy_MiniDragon" Collapsed="true">
+    <Position X="17.5" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAAAAAAAAAAAAACAAAAAAAAAAAAIAAAgAAAAQA=</HashCode>
+      <FileName>Entities\Enemies\Enemy_MiniDragon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy_Turtle" Collapsed="true">
+    <Position X="22.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAACAAAAABAAAAAAIAAAgAAAAQA=</HashCode>
+      <FileName>Entities\Enemies\Enemy_Turtle.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy_GreenChess" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAUAAAAAIAAAACAAMAAAAAAAAAAAAAAAIAAACAAAAAA=</HashCode>
+      <FileName>Entities\Enemies\Enemy_GreenChess.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy_RedChess" Collapsed="true">
+    <Position X="8.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AA0AAAAAAAAAACAAMAIAAAAAAAAAAAAAIAAACAAAAAA=</HashCode>
+      <FileName>Entities\Enemies\Enemy_RedChess.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy_Tank" Collapsed="true">
+    <Position X="10.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAAAAAAAAAAAACAAAAAAAAAAAAIAAAgAAAAQA=</HashCode>
+      <FileName>Entities\Enemies\Enemy_Tank.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy" Collapsed="true">
+    <Position X="14" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAgAAAAAAAgAAAAQgIAAQAABAogAAIAAAEAAAAAA=</HashCode>
+      <FileName>Entities\Enemies\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy_CHESS" Collapsed="true">
+    <Position X="15.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAAAAAACAAMAAAAAAAAAAAAEAAIAAACAAAAgA=</HashCode>
+      <FileName>Entities\Enemies\Enemy_CHESTBLUE.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy_Dragon" Collapsed="true">
+    <Position X="20" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAAAAAAAAACAAACAAAAgAAAAAAAIAAAgAAAAQA=</HashCode>
+      <FileName>Entities\Enemies\Enemy_Dragon.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy_RedBall" Collapsed="true">
+    <Position X="24.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAgACAAAAAAAAAAAAIAAAgAAAAQA=</HashCode>
+      <FileName>Entities\Enemies\Enemy_RedBall.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy_RedWizard" Collapsed="true">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAEAAIAAAAgAAAAAAAAACAIAAAiAAAAQA=</HashCode>
+      <FileName>Entities\Enemies\Enemy_RedWizard.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModuleHUD" Collapsed="true">
+    <Position X="17.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAQAgAAQBCAAAAEQAAFIABgCMAAAAgACAAAAAEAAAAA=</HashCode>
+      <FileName>Modules\Core\ModuleHUD.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModuleAudio" Collapsed="true">
+    <Position X="24.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIBAAAAAgAAAAEAgAAAAAAAAAACAEAAgAA=</HashCode>
+      <FileName>Modules\Core\ModuleAudio.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModuleCollisions" Collapsed="true">
+    <Position X="31.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAAiAAAAAAAAAADAACAAAAAAAAAQAAAAEEEAAAA=</HashCode>
+      <FileName>Modules\Core\ModuleCollisions.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModuleFadeToBlack" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEgACCAAAAiAAAFhAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modules\Core\ModuleFadeToBlack.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModuleFonts" Collapsed="true">
+    <Position X="13.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgACAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAQAoA=</HashCode>
+      <FileName>Modules\Core\ModuleFonts.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModuleInput" Collapsed="true">
+    <Position X="20" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAIAKAEEAAAA=</HashCode>
+      <FileName>Modules\Core\ModuleInput.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModuleParticles" Collapsed="true">
+    <Position X="26.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAQAIAEQACIEAQAAAAjECAQAAAAABgCAIAAQBEEAAEA=</HashCode>
+      <FileName>Modules\Core\ModuleParticles.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModuleRender" Collapsed="true">
+    <Position X="33.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQQAAAAAAgAAAAAAAABAAAAAAAAAAIAAAAACgEMAgAA=</HashCode>
+      <FileName>Modules\Core\ModuleRender.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModuleTextures" Collapsed="true">
+    <Position X="6.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgACAAEAAAAIAAAAAAAAAAAAAAAAAIAACAUAAAAA=</HashCode>
+      <FileName>Modules\Core\ModuleTextures.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModuleWindow" Collapsed="true">
+    <Position X="11" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAIAIAABCAEAAAAA=</HashCode>
+      <FileName>Modules\Core\ModuleWindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModuleEnemies" Collapsed="true">
+    <Position X="22.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAACAAAAAAgABAAAAAAAAAAkABIAgAA0MQAAA=</HashCode>
+      <FileName>Modules\Gameplay\ModuleEnemies.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModulePlayer" Collapsed="true">
+    <Position X="29" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgYAABgAACAPAQACAABqIAAADBIgQwAAZRRBsIAgAQA=</HashCode>
+      <FileName>Modules\Gameplay\ModulePlayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneIntro" Collapsed="true">
+    <Position X="35.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQQAAAAAACABAAAAAAFAAAAAEAAAEAAAABAAQAEAAAA=</HashCode>
+      <FileName>Modules\Gameplay\SceneIntro.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneLevel1" Collapsed="true">
+    <Position X="8.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEIAAACQAAAAQAEJAAAABAAAAABAAAAAACEAAAIA=</HashCode>
+      <FileName>Modules\Gameplay\SceneLevel1.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Module" Collapsed="true">
+    <Position X="19.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAQAAAAFACAAAAAAAAAAAIAAiCEEAAAA=</HashCode>
+      <FileName>Modules\Module.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SceneStart" Collapsed="true">
+    <Position X="15.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQQAAAQAAGABAIAAAAFAAAAAEAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Modules\Gameplay\SceneStart.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Animation" Collapsed="true">
+    <Position X="38.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAUAAAACgAAADAAAAAgCAAAAAAAIAQgAAAAAAQAAAAA=</HashCode>
+      <FileName>Utils\Animation.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="p2Point&lt;TYPE&gt;" Collapsed="true">
+    <Position X="3.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAQAAACAAAACAAAQAAQAAAAAAAAAAAABkAAAAACA=</HashCode>
+      <FileName>Utils\p2Point.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Path" Collapsed="true">
+    <Position X="41.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBQAAAAACQAgDAAAAAAABAAAAAAAAAAACAAAAAABAAA=</HashCode>
+      <FileName>Utils\Path.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Particle" Collapsed="true">
+    <Position X="40" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAwAAAAAAAAACAAAAAEAIAAAAAAAoQAAAQAAEAFAAAA=</HashCode>
+      <FileName>Entities\Particle.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="abecedari" Collapsed="true">
+    <Position X="38.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Modules\Core\ModuleHUD.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Font" Collapsed="true">
+    <Position X="38.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAABAAAIAAAAAQgAACAAAAAAAAAA=</HashCode>
+      <FileName>Modules\Core\ModuleFonts.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="EnemySpawnpoint" Collapsed="true">
+    <Position X="41.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAABAAAAAAhgAAAAAAA=</HashCode>
+      <FileName>Modules\Gameplay\ModuleEnemies.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Collider" Collapsed="true">
+    <Position X="40" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAABAAAAAAIAAAAIABIAAQAAAAAAAAAIA=</HashCode>
+      <FileName>Utils\Collider.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="Step" Collapsed="true">
+    <Position X="41.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAIAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utils\Path.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="uint" Collapsed="true">
+    <Position X="40" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Application\Globals.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="Mix_Music" Collapsed="true">
+    <Position X="38.25" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Modules\Core\ModuleAudio.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="iPoint" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utils\p2Point.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="fPoint" Collapsed="true">
+    <Position X="3.5" Y="9.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utils\p2Point.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="Main_States" Collapsed="true">
+    <Position X="41.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAgAAACAAAAAAQAAAAAQAAAAA=</HashCode>
+      <FileName>Application\Main.cpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Update_Status" Collapsed="true">
+    <Position X="38.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Application\Globals.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Key_State" Collapsed="true">
+    <Position X="40" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Modules\Core\ModuleInput.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Enemy_Type" Collapsed="true">
+    <Position X="38.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAwAAAEAAAAAAgAQBAACAAAAgAAQAAAAAAEAAAAA=</HashCode>
+      <FileName>Modules\Gameplay\ModuleEnemies.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
