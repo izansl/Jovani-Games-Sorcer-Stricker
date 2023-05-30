@@ -20,7 +20,8 @@ public:
 
 
 private:
-	Path* currentPath;
+	Path* currentPath;	// Per totes les parts amb el mateix path pero llavors 
+						// tenir en comptes el posicionament de cada una d'elles
 
 	bool headDestroy = false;
 	bool headDestroy2 = false;
@@ -30,15 +31,11 @@ private:
 	Animation arrow;
 	Animation fan;
 
-	Animation head;
-	Animation head_damaged;
+	Animation head; // Repetit x3
+	Animation head_damaged;// Repetit x3
 
-	Animation body_center;
-	Animation body_center_damaged;
-	Animation body_left;
-	Animation body_left_damaged;
-	Animation body_right;
-	Animation body_right_damaged;
+	Animation body; // 
+	Animation body_damaged;
 
 	Particle fire;
 
