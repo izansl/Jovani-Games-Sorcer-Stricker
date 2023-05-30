@@ -96,43 +96,20 @@ Update_Status SceneIntro::PostUpdate() {
 	}
 
 	if (currentTime >= 9000) {
-
+		
 		App->render->Blit(ArrayImagesIntro2[8], 0, 0, NULL);//fondonegro
 
 	}
 
 	if (currentTime >= 9000 && currentTime < 13000) {
 
-		Uint8 alpha = static_cast<Uint8>((currentTime / 5000.0f) * 255);
+		Uint8 alpha = static_cast<Uint8>((currentTime / 3000.0f) * 255);
 		SDL_SetTextureAlphaMod(ArrayImagesIntro[2], alpha);
 
 		App->render->Blit(ArrayImagesIntro[2], -10, 0, NULL);//Primertextocolor
 
 		SDL_SetTextureAlphaMod(ArrayImagesIntro[2], 255);
 	}
-
-	/*if (currentTime >= 9000 && currentTime < 13000) {
-		Uint32 fadeStartTime = 9000;
-		Uint32 fadeEndTime = 13000;
-		Uint8 startAlpha = 255;
-		Uint8 endAlpha = 0;
-
-		Uint8 alpha;
-		if (currentTime < fadeStartTime) {
-			alpha = startAlpha;
-		}
-		else if (currentTime >= fadeEndTime) {
-			alpha = endAlpha;
-		}
-		else {
-			float fadeProgress = static_cast<float>(currentTime - fadeStartTime) / (fadeEndTime - fadeStartTime);
-			alpha = static_cast<Uint8>((1.0f - fadeProgress) * startAlpha + fadeProgress * endAlpha);
-		}
-
-		SDL_SetTextureAlphaMod(ArrayImagesIntro[currentImage], alpha);
-		App->render->Blit(ArrayImagesIntro[2], -10, 0, NULL);
-		SDL_SetTextureAlphaMod(ArrayImagesIntro[currentImage], 255);
-	}*/
 
 	if (currentTime >= 10000) {
 
