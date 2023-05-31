@@ -27,7 +27,11 @@ private:
 	// This enemy has one sprite and one frame
 	// We are keeping it an animation for consistency with other enemies
 	Animation fly;
-	Particle dragondead;
+	Animation damage;
+	Animation death;
+
+	int hitcount = 0;
+	bool vida = true;
 };
 
 #endif // __ENEMY_BROWNSHIP_H__

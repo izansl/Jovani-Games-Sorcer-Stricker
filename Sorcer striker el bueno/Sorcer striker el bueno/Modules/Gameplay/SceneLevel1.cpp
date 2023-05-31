@@ -166,12 +166,13 @@ bool SceneLevel1::Start() {
 #pragma endregion
 
 	////add dragon
-	/*App->enemies->AddEnemy(Enemy_Type::DRAGON, 50, -8800, 1);
-	App->enemies->AddEnemy(Enemy_Type::DRAGON, 200, -9500, 2);*/
+	App->enemies->AddEnemy(Enemy_Type::DRAGON, 50, -9000, 1);
+	App->enemies->AddEnemy(Enemy_Type::DRAGON, 200, -9500, 2);
 
 #pragma endregion
 #pragma region goblin
 	App->enemies->AddEnemy(Enemy_Type::FLYTANK, 100, -16000, 1);
+	App->enemies->AddEnemy(Enemy_Type::FLYTANK, 100, -100, 1);
 	
 #pragma endregion
 
@@ -180,11 +181,19 @@ bool SceneLevel1::Start() {
 
 	App->enemies->AddEnemy(Enemy_Type::TANK, 0, -19250, 1);
 	App->enemies->AddEnemy(Enemy_Type::TANK, 800, -19112, 2);
+	
 #pragma endregion
 #pragma region turtle
 
-	App->enemies->AddEnemy(Enemy_Type::TURTLE, 10, -90, 2);
+	/*App->enemies->AddEnemy(Enemy_Type::TURTLE, 10, -90, 2);*/
 	
+#pragma endregion
+#pragma region goblin
+	/*App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 100, -90, 2);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 200, -90, 2);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 300, -90, 2);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 400, -90, 2);*/
+
 #pragma endregion
 	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;
