@@ -19,9 +19,12 @@ Enemy_BigTank::Enemy_BigTank(int x, int y, int wave) : Enemy(x, y) {
 
 	if (wave == 1)
 	{
-		path.PushBack({});
+		path.PushBack({3, -6}, 200);
 	}
-
+	if (wave == 2)
+	{
+		path.PushBack({ -3, -6 }, 200);
+	}
 
 
 

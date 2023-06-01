@@ -74,7 +74,7 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 	{
 
 	
-		path.PushBack({ 0, -3 }, 10);
+		path.PushBack({ 0, -1 }, 100);
 		path.PushBack({ -2.0, -8.0f }, 40);
 		path.PushBack({ -3, -12 }, 1300);
 	
@@ -84,7 +84,7 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 	else if (wave == 7)
 	{
 
-		path.PushBack({ 0, -3 }, 10);
+		path.PushBack({ 0, -100}, 10);
 		path.PushBack({ 2.0, -8.0f }, 40);
 		path.PushBack({ 3, -12 }, 1300);
 	
