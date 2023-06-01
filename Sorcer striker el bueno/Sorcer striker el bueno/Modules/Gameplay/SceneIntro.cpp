@@ -94,7 +94,6 @@ Update_Status SceneIntro::PostUpdate() {
 	if (currentTime >= 3000) {
 		
 		App->render->Blit(ArrayImagesIntro[0], 0, 0, NULL);//jovani
-		/*Blit(SDL_Texture * texture, int x, int y, const SDL_Rect * section, float speed, bool useCamera)*/
 	}
 
 	if (currentTime >= 6000) {
@@ -105,7 +104,7 @@ Update_Status SceneIntro::PostUpdate() {
 
 	if (currentTime >= 9000) {
 		
-		App->render->Blit(ArrayImagesIntro2[8], 0, 0, NULL);//fondonegro
+		App->render->Blit(ArrayImagesIntro2[8], 0, 0, NULL);//fondonegro [sirve para no cubrir espacios]
 
 	}
 
@@ -120,8 +119,17 @@ Update_Status SceneIntro::PostUpdate() {
 	}
 
 	if (currentTime >= 10000) {
+		//Adalt
+		int x1 = (currentTime - 10000) / 90;
+		App->render->Blit(ArrayImagesIntro2[7], -x1, -20, NULL);//holalluc
+		//Abaix
+		int x2 = (currentTime - 10000) / 90;//velocidad 
+		App->render->Blit(ArrayImagesIntro2[2], -x2, -100, NULL);//alientocho
+		App->render->Blit(ArrayImagesIntro2[2], -x2 + 170, -100, NULL);//alientocho
+		App->render->Blit(ArrayImagesIntro2[2], -x2 + 320, -100, NULL);//alientocho
+		App->render->Blit(ArrayImagesIntro2[2], -x2 + 470, -100, NULL);//alientocho
+		App->render->Blit(ArrayImagesIntro2[2], -x2 + 620, -100, NULL);//alientocho
 
-		App->render->Blit(ArrayImagesIntro2[7], 0, -20, NULL);//holalluc
 
 	}
 
