@@ -43,7 +43,7 @@ public:
 	const float FADE_TIME = 1.0f;//duración del DESVANECIMIENTO en segundos
 
 	//Amb GetTicks
-	#define NUM_IMAGES2 9
+	#define NUM_IMAGES2 16
 	int startTime;
 	SDL_Texture* ArrayImagesIntro2[NUM_IMAGES2];
 

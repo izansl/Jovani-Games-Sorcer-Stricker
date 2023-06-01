@@ -40,6 +40,14 @@ const std::string FI_Introimage_24 = "../Assets/Images/sprites-lluc-intro/caratr
 const std::string FI_Introimage_25 = "../Assets/Images/sprites-lluc-intro/carauno.png";
 const std::string FI_Introimage_26 = "../Assets/Images/sprites-lluc-intro/holalluc.png";
 const std::string FI_Introimage_27 = "../Assets/Images/sprites-lluc-intro/fondonegro.png";
+const std::string FI_Introimage_28 = "../Assets/Images/sprites-lluc-intro/fuego1.png";
+const std::string FI_Introimage_29 = "../Assets/Images/sprites-lluc-intro/fuego2.png";
+const std::string FI_Introimage_30 = "../Assets/Images/sprites-lluc-intro/fuego3.png";
+const std::string FI_Introimage_31 = "../Assets/Images/sprites-lluc-intro/nave1.png";
+const std::string FI_Introimage_32 = "../Assets/Images/sprites-lluc-intro/nave2.png";
+const std::string FI_Introimage_33 = "../Assets/Images/sprites-lluc-intro/nave3.png";
+const std::string FI_Introimage_34 = "../Assets/Images/sprites-lluc-intro/nave4.png";
+
 
 //Start
 const std::string FI_Start_1 = "../Assets/Images/Intro/pantallainiciouno.png";

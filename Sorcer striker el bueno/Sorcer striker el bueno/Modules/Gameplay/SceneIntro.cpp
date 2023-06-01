@@ -53,6 +53,14 @@ bool SceneIntro::Start() {
 	ArrayImagesIntro2[6] = App->textures->Load(FI_Introimage_25.c_str());
 	ArrayImagesIntro2[7] = App->textures->Load(FI_Introimage_26.c_str());
 	ArrayImagesIntro2[8] = App->textures->Load(FI_Introimage_27.c_str());
+	ArrayImagesIntro2[9] = App->textures->Load(FI_Introimage_28.c_str());
+	ArrayImagesIntro2[10] = App->textures->Load(FI_Introimage_29.c_str());
+	ArrayImagesIntro2[11] = App->textures->Load(FI_Introimage_30.c_str());
+	ArrayImagesIntro2[12] = App->textures->Load(FI_Introimage_31.c_str());
+	ArrayImagesIntro2[13] = App->textures->Load(FI_Introimage_32.c_str());
+	ArrayImagesIntro2[14] = App->textures->Load(FI_Introimage_33.c_str());
+	ArrayImagesIntro2[15] = App->textures->Load(FI_Introimage_34.c_str());
+
 	//Carga de Audio ////TURMO MUY IMPORTANTE, TIENES QUE CUADRAR EL AUDIO CON LA INTRO SEGUN LAS IMAGENES QUE APAREZCAN///
 	App->audio->PlayMusic(FA_Music_introTitle.c_str());//esta musica hay que cambiarla turmo
 	
