@@ -120,15 +120,28 @@ Update_Status SceneIntro::PostUpdate() {
 
 	if (currentTime >= 10000) {
 		//Adalt
-		int x1 = (currentTime - 10000) / 90;
+		int x1 = (currentTime - 10000) / 100;
 		App->render->Blit(ArrayImagesIntro2[7], -x1, -20, NULL);//holalluc
+		App->render->Blit(ArrayImagesIntro2[7], -x1 + 200, -20, NULL);//holalluc
 		//Abaix
-		int x2 = (currentTime - 10000) / 90;//velocidad 
+		int x2 = (currentTime - 10000) / 100;//velocidad 
 		App->render->Blit(ArrayImagesIntro2[2], -x2, -100, NULL);//alientocho
-		App->render->Blit(ArrayImagesIntro2[2], -x2 + 170, -100, NULL);//alientocho
-		App->render->Blit(ArrayImagesIntro2[2], -x2 + 320, -100, NULL);//alientocho
-		App->render->Blit(ArrayImagesIntro2[2], -x2 + 470, -100, NULL);//alientocho
-		App->render->Blit(ArrayImagesIntro2[2], -x2 + 620, -100, NULL);//alientocho
+		App->render->Blit(ArrayImagesIntro2[2], -x2 + 180, -100, NULL);//alientocho
+		App->render->Blit(ArrayImagesIntro2[2], -x2 + 330, -100, NULL);//alientocho
+		App->render->Blit(ArrayImagesIntro2[2], -x2 + 480, -100, NULL);//alientocho
+		App->render->Blit(ArrayImagesIntro2[2], -x2 + 630, -100, NULL);//alientocho
+		
+		//foc 1
+		App->render->Blit(ArrayImagesIntro2[9], -x2 + 265, -345, NULL);//fuego1
+		App->render->Blit(ArrayImagesIntro2[9], -x2 + 115, -345, NULL);//fuego1
+		App->render->Blit(ArrayImagesIntro2[9], -x2 - 35, -345, NULL);//fuego1
+		App->render->Blit(ArrayImagesIntro2[9], -x2 - 215, -345, NULL);//fuego1
+		App->render->Blit(ArrayImagesIntro2[9], -x2 - 395, -345, NULL);//fuego1
+		
+
+		//foc 2
+
+		//foc 3
 
 
 	}
