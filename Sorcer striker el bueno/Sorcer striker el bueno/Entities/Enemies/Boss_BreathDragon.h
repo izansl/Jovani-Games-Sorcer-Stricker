@@ -20,6 +20,8 @@ public:
 
 
 private:
+	SDL_Texture* texturaBoss;
+
 	int vides[4];
 
 	bool headDestroy = false;
@@ -31,7 +33,7 @@ private:
 	Animation animationFan;
 	Animation animationHead; // Repetit x3
 	Animation animationHeadDamaged;// Repetit x3
-	Animation animationBody; // 
+	Animation animationBody;
 	Animation animaitonBodyDamaged;
 
 	Particle particleFire;

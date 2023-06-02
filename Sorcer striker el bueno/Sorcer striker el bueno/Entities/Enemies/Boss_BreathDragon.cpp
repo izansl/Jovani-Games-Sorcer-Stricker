@@ -15,12 +15,7 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	vides[2] = 5; // Cabeza 2
 	vides[3] = 5; // Cabeza 2
 
-	// General
-	texture = App->textures->Load(FI_spriteEnemy_boss.c_str());
-
-	//warning;
-	//arrow.PushBack({ 0,844, 155,155 });
-	//arrow.PushBack({ 400,844, 155,155 }); //Buit
+	texturaBoss = App->textures->Load(FI_spriteEnemy_boss.c_str());
 
 	animationFan.PushBack({ 0, 230, 115, 115 });
 	animationFan.PushBack({ 116, 230, 115, 115 });
@@ -35,6 +30,7 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	animationHead.PushBack({ 180 * 2, 502, 180, 180 });
 	animationHead.PushBack({ 180 * 4, 502, 180, 180 });
 	animationHead.speed = 0.1f;
+	animationHead.loop = true;
 	pathCabeza1.PushBack({ 0,0 }, 20, &animationHead);
 	pathCabeza2.PushBack({ 50,0 }, 20, &animationHead);
 	pathCabeza3.PushBack({ 100,0 }, 20, &animationHead);
@@ -43,6 +39,7 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	animationHeadDamaged.PushBack({ 180 * 3, 502, 180, 180 });
 	animationHeadDamaged.PushBack({ 180 * 5, 502, 180, 180 });
 	animationHeadDamaged.speed = 0.1f;
+	animationHeadDamaged.loop = true;
 
 	particleFire.anim.PushBack({ 0, 690, 157, 157 });
 	particleFire.anim.PushBack({ 157, 690, 157, 157 });
@@ -55,9 +52,6 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	particleFire.anim.speed = 0.05f;
 	particleFire.lifetime = 115;
 
-	currentAnim = &animationHeadDamaged;
-	
-
 	//collider = App->collisions->AddCollider({ 0, 0,1200, 400 }, Collider::Type::ENEMY, (Module*)App->enemies);
 	//colliderCabeza1 = App->collisions->AddCollider({ 0, 0,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
 	//colliderCabeza2 = App->collisions->AddCollider({ 0, 0,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
@@ -65,7 +59,47 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 }
 
 void Boss_BreathDragon::Update() {
-	pathFan1.Update();
+
+	/*if (currentAnim != nullptr)
+		currentAnim->Update();
+
+	if (collider != nullptr)
+		collider->SetPos(position.x, position.y);
+
+	if (currentAnim != nullptr)
+		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));*/
+
+
+	if (pathFan1.GetCurrentAnimation() != nullptr) {
+		pathFan1.Update();
+		App->render->Blit(texturaBoss, position.x, position.y, &(pathFan1.GetCurrentAnimation()->GetCurrentFrame()));
+	}
+	if (pathFan2.GetCurrentAnimation() != nullptr) { 
+		pathFan2.Update(); 
+		App->render->Blit(texturaBoss, position.x, position.y, &(pathFan2.GetCurrentAnimation()->GetCurrentFrame()));
+	}
+	if (pathFan3.GetCurrentAnimation() != nullptr) {
+		pathFan3.Update();
+		App->render->Blit(texturaBoss, position.x, position.y, &(pathFan3.GetCurrentAnimation()->GetCurrentFrame()));
+	}
+	if (pathFan4.GetCurrentAnimation() != nullptr) {
+		pathFan4.Update();
+		App->render->Blit(texturaBoss, position.x, position.y, &(pathFan4.GetCurrentAnimation()->GetCurrentFrame()));
+	}
+
+	
+
+	//App->render->Blit(texture, position.x, position.y, &(pathFan3.GetCurrentAnimation()->GetCurrentFrame()));
+	//App->render->Blit(texture, position.x, position.y, &(pathFan4.GetCurrentAnimation()->GetCurrentFrame()));
+
+	////pathCabeza1.Update();
+	////pathCabeza2.Update();
+	////pathCabeza3.Update();
+	////App->render->Blit(texture, position.x, position.y, &(pathCabeza1.GetCurrentAnimation()->GetCurrentFrame()));
+	////App->render->Blit(texture, position.x, position.y, &(pathCabeza2.GetCurrentAnimation()->GetCurrentFrame()));
+	////App->render->Blit(texture, position.x, position.y, &(pathCabeza3.GetCurrentAnimation()->GetCurrentFrame()));
+
+
 	position = spawnPos + pathFan1.GetRelativePosition();
 	Enemy::Update();
 }
