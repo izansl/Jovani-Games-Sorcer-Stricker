@@ -51,16 +51,6 @@ Enemy_CHESS::Enemy_CHESS(int x, int y) : Enemy(x, y) {
 
 void Enemy_CHESS::Update() {
 	
-	if (!activePart2)
-		pathchest.Update();
-	else
-		pathchest.Update();
-
-	//if (chestdestroy==true && collider->type != Collider::Type::CHEST)
-	//{
-	//	collider->pendingToDelete = false;
-	//	collider->type = Collider::Type::POWER_UP;
-	//}
 
 	position = spawnPos + currentPath->GetRelativePosition();
 
@@ -73,42 +63,10 @@ void Enemy_CHESS::Update() {
 void Enemy_CHESS::OnCollision(Collider* c1) {
 	if (c1->type == Collider::Type::PLAYER_SHOT)
 	{
-		//chestdestroy = true;
-
-		collider = App->collisions->AddCollider({ 0, 0, 62, 78 }, Collider::Type::POWER_UP, (Module*)App->enemies);
-
-		// Change sprite
-		pickup.PushBack({ 42, 369, 62, 78 });
-		pickup.PushBack({ 161, 365, 62, 78 });
-		pickup.speed = 0.1f;
+		chestdestroy = true;
+		pickup.PushBack({ 1400, 25100, 118, 99 });
 		currentAnim = &pickup;
 
-		////Change Collider type
-		//collider->rect = { 0, 0, 25, 35 };
-
-		pathchest.PushBack({ 0.0f, 0.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -2.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -1.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -2.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -1.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -2.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -1.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -2.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -1.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -2.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, 0.5f }, 10);
-
-		//// Active path2 update
-		activePart2 = true;
+		App->enemies->AddEnemy(Enemy_Type::Bluebook, position.x, position.y, 1);
 	}
 }

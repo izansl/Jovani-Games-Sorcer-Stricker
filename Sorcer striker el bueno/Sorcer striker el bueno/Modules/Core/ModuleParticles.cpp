@@ -26,7 +26,7 @@ bool ModuleParticles::Start() {
 	laser1.anim.PushBack({ 1951, 739, 65, 67 });
 	laser1.anim.loop = false;
 	laser1.speed = iPoint(0, -15);
-	laser1.lifetime = 100;
+	laser1.lifetime = 150;
 	laser1.anim.speed = 0.01f;
 
 	laser2.anim.PushBack({ 2048, 700, 85, 110 });
