@@ -21,7 +21,7 @@ public:
 
 private:
 	int vides[4];
-	
+
 	bool headDestroy = false;
 	bool headDestroy2 = false;
 	bool headDestroy3 = false;
@@ -36,14 +36,9 @@ private:
 
 	Particle particleFire;
 
-	Path pathFan1;
-	Path pathFan2;
-	Path pathFan3;
-	Path pathFan4;
+	Path pathFan1, pathFan2, pathFan3, pathFan4;
 	Path pathCuerpo;
-	Path pathCabeza1;
-	Path pathCabeza2;
-	Path pathCabeza3;
+	Path pathCabeza1, pathCabeza2, pathCabeza3;
 	Path pathFire;
 
 	Collider* colliderCuerpo;

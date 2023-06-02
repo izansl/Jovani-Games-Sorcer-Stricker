@@ -22,44 +22,51 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	//arrow.PushBack({ 0,844, 155,155 });
 	//arrow.PushBack({ 400,844, 155,155 }); //Buit
 
-	fan.PushBack({ 0, 230, 115, 115 });
-	fan.PushBack({ 116, 230, 115, 115 });
-	fan.speed = 0.2;
-	fan.loop = true;
+	animationFan.PushBack({ 0, 230, 115, 115 });
+	animationFan.PushBack({ 116, 230, 115, 115 });
+	animationFan.speed = 0.2;
+	animationFan.loop = true;
+	pathFan1.PushBack({ 0,0 }, 20, &animationFan);
+	pathFan2.PushBack({ 50,0 }, 20, &animationFan);
+	pathFan3.PushBack({ 100,0 }, 20, &animationFan);
+	pathFan4.PushBack({ 150,0 }, 20, &animationFan);
 
-	head.PushBack({ 0, 502, 180, 180 });
-	head.PushBack({ 180 * 2, 502, 180, 180 });
-	head.PushBack({ 180 * 4, 502, 180, 180 });
-	head.speed = 0.1f;
+	animationHead.PushBack({ 0, 502, 180, 180 });
+	animationHead.PushBack({ 180 * 2, 502, 180, 180 });
+	animationHead.PushBack({ 180 * 4, 502, 180, 180 });
+	animationHead.speed = 0.1f;
+	pathCabeza1.PushBack({ 0,0 }, 20, &animationHead);
+	pathCabeza2.PushBack({ 50,0 }, 20, &animationHead);
+	pathCabeza3.PushBack({ 100,0 }, 20, &animationHead);
 
-	head_damaged.PushBack({ 180 * 1, 502, 180, 180 });
-	head_damaged.PushBack({ 180 * 3, 502, 180, 180 });
-	head_damaged.PushBack({ 180 * 5, 502, 180, 180 });
-	head_damaged.speed = 0.1f;
+	animationHeadDamaged.PushBack({ 180 * 1, 502, 180, 180 });
+	animationHeadDamaged.PushBack({ 180 * 3, 502, 180, 180 });
+	animationHeadDamaged.PushBack({ 180 * 5, 502, 180, 180 });
+	animationHeadDamaged.speed = 0.1f;
 
-	fire.anim.PushBack({ 0, 690, 157, 157 });
-	fire.anim.PushBack({ 157, 690, 157, 157 });
-	fire.anim.PushBack({ 157 * 2, 690, 157, 157 });
-	fire.anim.PushBack({ 157 * 3, 690, 157, 157 });
-	fire.anim.PushBack({ 157 * 4, 690, 157, 157 });
-	fire.anim.PushBack({ 157 * 5, 690, 157, 157 });
-	fire.anim.PushBack({ 157 * 6, 690, 157, 157 });
-	fire.speed = iPoint(0, -12);
-	fire.anim.speed = 0.05f;
-	fire.lifetime = 115;
+	particleFire.anim.PushBack({ 0, 690, 157, 157 });
+	particleFire.anim.PushBack({ 157, 690, 157, 157 });
+	particleFire.anim.PushBack({ 157 * 2, 690, 157, 157 });
+	particleFire.anim.PushBack({ 157 * 3, 690, 157, 157 });
+	particleFire.anim.PushBack({ 157 * 4, 690, 157, 157 });
+	particleFire.anim.PushBack({ 157 * 5, 690, 157, 157 });
+	particleFire.anim.PushBack({ 157 * 6, 690, 157, 157 });
+	particleFire.speed = iPoint(0, -12);
+	particleFire.anim.speed = 0.05f;
+	particleFire.lifetime = 115;
 
-	currentAnim = &head_damaged;
-	path.PushBack({ 0, 0 }, 20);
+	currentAnim = &animationHeadDamaged;
+	
 
-	collider = App->collisions->AddCollider({ 0, 0,1200, 400 }, Collider::Type::ENEMY, (Module*)App->enemies);
-	colliderCabeza1 = App->collisions->AddCollider({ 0, 0,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
-	colliderCabeza2 = App->collisions->AddCollider({ 0, 0,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
-	colliderCabeza3 = App->collisions->AddCollider({ 0, 0,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	//collider = App->collisions->AddCollider({ 0, 0,1200, 400 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	//colliderCabeza1 = App->collisions->AddCollider({ 0, 0,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	//colliderCabeza2 = App->collisions->AddCollider({ 0, 0,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	//colliderCabeza3 = App->collisions->AddCollider({ 0, 0,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Boss_BreathDragon::Update() {
-	path.Update();
-	position = spawnPos + path.GetRelativePosition();
+	pathFan1.Update();
+	position = spawnPos + pathFan1.GetRelativePosition();
 	Enemy::Update();
 }
 
