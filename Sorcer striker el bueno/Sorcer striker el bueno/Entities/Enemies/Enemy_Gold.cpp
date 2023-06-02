@@ -46,12 +46,11 @@ Enemy_Gold::Enemy_Gold(int x, int y) : Enemy(x, y) {
 
 void Enemy_Gold::Update() {
 
-	if (!activePart2)
-		pathchest.Update();
-	else
-		pathchest.Update();
 
 	position = spawnPos + currentPath->GetRelativePosition();
+
+	// Call to the base class. It must be called at the end
+	// It will update the collider depending on the position 
 
 	Enemy::Update();
 
@@ -60,41 +59,13 @@ void Enemy_Gold::Update() {
 void Enemy_Gold::OnCollision(Collider* c1) {
 	if (c1->type == Collider::Type::PLAYER_SHOT	)
 	{
-		collider = App->collisions->AddCollider({ 0, 0, 46, 45 }, Collider::Type::POWER_UP, (Module*)App->enemies);
-
-		pickup.PushBack({ 384, 817, 46, 45 });
-		pickup.PushBack({ 459, 818, 46, 45 });
-		pickup.PushBack({ 530, 817, 46, 45 });
-		pickup.PushBack({ 601, 816, 46, 45 });
-		pickup.PushBack({ 659, 816, 46, 45 });
-		pickup.PushBack({ 725, 815, 46, 45 });
-		pickup.speed = 0.1f;
-
+		chestdestroy = true;
+		pickup.PushBack({ 1400, 25100, 118, 99 });
 		currentAnim = &pickup;
-		
-		pathchest.PushBack({ 0.0f, 0.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -2.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -1.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -2.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -1.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -2.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -1.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -2.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -1.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, -2.5f }, 10);
-		pathchest.PushBack({ 0.0f, -2.0f }, 10);
-		pathchest.PushBack({ 0.0f, 0.5f }, 10);
 
-		currentPath = &pathchest;
+		App->enemies->AddEnemy(Enemy_Type::COIN, position.x, position.y, 1);
+		App->enemies->AddEnemy(Enemy_Type::COIN, position.x-50, position.y+20, 1);
+		App->enemies->AddEnemy(Enemy_Type::COIN, position.x+50, position.y+20, 1);
 	}
 }
 

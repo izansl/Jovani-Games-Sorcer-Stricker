@@ -57,9 +57,7 @@ bool SceneLevel1::Start() {
 
 #pragma region ENEMIES
 	// add chest
-
 	App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, 200, -500, 1);
-
 
 #pragma region Red ball
 	//add red ball
@@ -99,6 +97,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 710, -4100, 4);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 710, -4200, 4);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 710, -4300, 4);
+
 //	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -2400, 4, 7);
 //	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -2450, 4, 8);*/
 //
@@ -109,6 +108,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -4800, 5);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -4900, 5);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -5000, 5);
+
 //	///*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2600, 5, 7);
 //	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -2650, 5, 8);*/
 //
@@ -119,20 +119,24 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 700, -10300, 6);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 700, -10400, 6);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 700, -10500, 6);
+
 //	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4400, 6, 7);
 //	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4450, 6, 8);*/
 //
 //	//add red ball 7
+
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -12200, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -12300, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -12400, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -12500, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -12600, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -12700, 7);
+
 //	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -5100, 7, 7);
 //	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -5150, 7, 8);*/
 //
 //	////add red ball 8
+
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -15000, 8);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -15100, 8);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -15200, 8);
@@ -212,6 +216,7 @@ bool SceneLevel1::Start() {
 
 	/*App->enemies->AddEnemy(Enemy_Type::TURTLE, 10, -90, 2);*/
 	
+
 #pragma endregion
 #pragma region goblin
 	/*App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 100, -90, 2);
@@ -270,7 +275,11 @@ Update_Status SceneLevel1::Update() {
 	}
 	if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, App->player->position.x + 50, App->player->position.y - 800, 1);
+		App->enemies->AddEnemy(Enemy_Type::CHESTBLUE, App->player->position.x + 50, App->player->position.y - 800, 1);
+	}
+	if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::GOLD, App->player->position.x + 50, App->player->position.y - 800, 1);
 	}
 	if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN)
 	{

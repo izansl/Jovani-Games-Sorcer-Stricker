@@ -8,16 +8,20 @@
 
 #include "../../Entities/Enemies/Enemy.h"
 #include "../../Entities/Enemies/Enemy_CHESTBLUE.h"
+#include "../../Entities/Enemies/Enemy_Bluebook.h"
 #include "../../Entities/Enemies/Enemy_Dragon.h"
 #include "../../Entities/Enemies/Enemy_RedWizard.h"
 #include "../../Entities/Enemies/Enemy_RedBall.h"
 #include "../../Entities/Enemies/Enemy_Tank.h"
 #include "../../Entities/Enemies/Enemy_RedChess.h"
+#include "../../Entities/Enemies/Enemy_RedBook.h"
 #include "../../Entities/Enemies/Enemy_GreenChess.h"
+#include "../../Entities/Enemies/Enemy_GreenBook.h"
 #include "../../Entities/Enemies/Enemy_Turtle.h"
 #include "../../Entities/Enemies/Enemy_MiniDragon.h"
 #include "../../Entities/Enemies/Enemy_Bomb.h"
 #include "../../Entities/Enemies/Enemy_Gold.h"
+#include "../../Entities/Enemies/Enemy_Coin.h"
 #include "../../Entities/Enemies/Enemy_FlyTank.h"
 #include "../../Entities/Enemies/Enemy_RedBat.h"
 
@@ -139,21 +143,38 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 	for (uint i = 0; i < MAX_ENEMIES; ++i) {
 		if (enemies[i] == nullptr) {
 			switch (info.type) {
-
-			case Enemy_Type::CHEST_BLUE: 
+			//Props
+			//Blue
+			case Enemy_Type::CHESTBLUE: 
 				enemies[i] = new Enemy_CHESS(info.x, info.y); 
 				break;
+			case Enemy_Type::Bluebook:
+				enemies[i] = new Enemy_Bluebook(info.x, info.y);
+				break;
+			//Green
 			case Enemy_Type::CHEST_GREEN:
 				enemies[i] = new Enemy_GreenChess(info.x, info.y);
 				break;
+			case Enemy_Type::Greenbook:
+				enemies[i] = new Enemy_GreenBook(info.x, info.y);
+				break;
+			//Red
 			case Enemy_Type::CHEST_RED:
 				enemies[i] = new Enemy_RedChess(info.x, info.y);
 				break;
+			case Enemy_Type::Redbook:
+				enemies[i] = new Enemy_Redbook(info.x, info.y);
+				break;
+			//Bomb
 			case Enemy_Type::BOMB:
 				enemies[i] = new Enemy_BOMB(info.x, info.y);
 				break;
+			//Gold
 			case Enemy_Type::GOLD:
 				enemies[i] = new Enemy_Gold(info.x, info.y);
+				break;
+			case Enemy_Type::COIN:
+				enemies[i] = new Enemy_Coin(info.x, info.y);
 				break;
 
 			//Enemies

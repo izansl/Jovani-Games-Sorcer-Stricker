@@ -157,6 +157,11 @@
     <ClCompile Include="Application\Globals.cpp" />
     <ClCompile Include="Application\Main.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_BigTank.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Coin.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_RedBat.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Redbook.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_GreenBook.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Bluebook.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_FlyTank.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Gold.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Bomb.cpp" />
@@ -198,6 +203,11 @@
     <ClInclude Include="Application\Globals.h" />
     <ClInclude Include="Application\MemLeaks.h" />
     <ClInclude Include="Entities\Enemies\Enemy_BigTank.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Coin.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_GreenBook.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_RedBat.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Redbook.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Bluebook.h" />
     <ClInclude Include="Entities\Enemies\Enemy_FlyTank.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Gold.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Bomb.h" />
