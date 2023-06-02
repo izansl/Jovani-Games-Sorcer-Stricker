@@ -129,7 +129,7 @@ void ModuleEnemies::HandleEnemiesDespawn() {
 	for (uint i = 0; i < MAX_ENEMIES; ++i) {
 		if (enemies[i] != nullptr) {
 			// Delete the enemy when it has reached the end of the screen
-			if (enemies[i]->position.x * SCREEN_SIZE < (App->render->camera.x) - SPAWN_MARGIN) {
+			if (enemies[i]->position.x < -300 && enemies[i]->position.x >1100) {
 				//LOG("DeSpawning enemy at %d", enemies[i]->position.x * SCREEN_SIZE);
 
 				enemies[i]->SetToDelete();
@@ -209,13 +209,14 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2) {
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1) {
 			enemies[i]->OnCollision(c2); //Notify the enemy of a collision
 			c1->pendingToDelete = true;
+			
 			/*if (c2->type == Collider::Type::PLAYER_SHOT)
 			{
 
 				delete enemies[i];
 				enemies[i] = nullptr;
-			}*/
-			break;
+			}
+			break;*/
 		}
 	}
 }

@@ -84,22 +84,6 @@ bool ModuleParticles::Start() {
 	axeright.speed = iPoint(4, -13);
 	axeright.lifetime = 100;
 	
-
-	
-
-	
-	
-	texture5 = App->textures->Load(FI_spriteEnemy_reds.c_str());
-	wizardshoot.anim.PushBack({ 640, 521, 99, 79 });
-	wizardshoot.anim.PushBack({ 861, 521, 99, 79 });
-	wizardshoot.anim.PushBack({ 1007, 528, 99, 79 });
-	wizardshoot.anim.PushBack({ 933, 528, 99, 79 });
-	wizardshoot.anim.PushBack({ 731, 527, 99, 79 });
-	wizardshoot.anim.speed = 0.2;
-	wizardshoot.anim.loop = false;
-
-
-	
 	//Pink
 	knifeleft.anim.PushBack({ 1713, 873, 34, 62 });
 	knifeleft.speed = iPoint(0, -16);

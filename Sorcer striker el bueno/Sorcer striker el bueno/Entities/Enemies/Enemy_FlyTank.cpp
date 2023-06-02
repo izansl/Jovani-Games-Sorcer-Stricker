@@ -50,8 +50,9 @@ void Enemy_FlyTank::OnCollision(Collider* c1) {
 				collider = App->collisions->AddCollider({ 0, 0,279, 275 }, Collider::Type::ENEMY, (Module*)App->enemies);
 			}
 			else {
-				death.PushBack({ 195, 935, 329, 333 });
-				death.PushBack({ 373, 657, 329, 333 });
+				texture = App->textures->Load(FI_particles_.c_str());
+				death.PushBack({ 961, 877, 329, 333 });
+				death.PushBack({ 1519, 501, 329, 333 });
 				death.PushBack({ 281, 173, 329, 333 });
 				death.PushBack({ 1525, 499, 329, 333 });
 				death.PushBack({ 837, 499, 329, 333 });
