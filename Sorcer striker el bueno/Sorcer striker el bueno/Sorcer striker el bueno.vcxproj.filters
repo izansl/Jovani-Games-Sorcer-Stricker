@@ -143,6 +143,9 @@
     <ClCompile Include="Entities\Enemies\Enemy_RedBat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Entities\Enemies\Enemy_Angel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application\Application.h">
@@ -278,6 +281,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Entities\Enemies\Enemy_RedBat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\Enemies\Enemy_Angel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

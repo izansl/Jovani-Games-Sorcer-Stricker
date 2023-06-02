@@ -42,7 +42,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -156,6 +156,7 @@
     <ClCompile Include="Application\Application.cpp" />
     <ClCompile Include="Application\Globals.cpp" />
     <ClCompile Include="Application\Main.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Angel.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Coin.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_RedBat.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Redbook.cpp" />
@@ -200,6 +201,7 @@
     <ClInclude Include="Application\FileNames.h" />
     <ClInclude Include="Application\Globals.h" />
     <ClInclude Include="Application\MemLeaks.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Angel.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Coin.h" />
     <ClInclude Include="Entities\Enemies\Enemy_GreenBook.h" />
     <ClInclude Include="Entities\Enemies\Enemy_RedBat.h" />
