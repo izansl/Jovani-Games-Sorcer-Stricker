@@ -4,78 +4,78 @@ body, h1, h2, h3, p, ul, ol, li, a {
 }
 
 body {
-  background-color: #008080;
-  color: #fff;
+  background: linear-gradient(to bottom, #008080, #fff 500px);
+  color: #000000;
   font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+.left-side img {
+  max-width: 100%;
+  height: auto;
+}
+
+.additional-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-}
-
-header {
-  background-color: #ff6347;
-  padding: 20px;
-  text-align: center;
-}
-
-header a {
-  color: #ff6347;
-  text-decoration: none;
-}
-
-main {
-  padding: 20px;
-  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 h1 {
-  font-size: 36px;
-  margin-bottom: 16px;
+  font-size: 96px;
   font-family: Impact, Arial, sans-serif;
-  color: #ff6347;
+  text-transform: uppercase;
+  text-align: center;
+  background: linear-gradient(#ffffff, #ffae00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorAnimation 5s infinite;
+  margin-bottom: 400px;
+  transform: translateX(-100%);
+  animation: moveFromLeft 1s ease-in-out forwards;
 }
 
-h2 {
-  font-size: 24px;
-  margin-bottom: 12px;
-  font-family: Impact, Arial, sans-serif;
-  color: #ff6347;
+@keyframes moveFromLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-70%);
+  }
 }
 
-h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
-  font-weight: bold;
-  color: #ff6347;
+.title-line {
+  display: block;
 }
 
-p {
-  font-size: 16px;
-  margin-bottom: 12px;
+
+
+h2, h3 {
+  margin-top: 20px;
 }
 
 ul, ol {
-  margin-bottom: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  list-style-position: inside;
 }
 
 li {
-  font-size: 16px;
-  margin-bottom: 6px;
-}
-
-a {
-  color: #ff6347;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
+  margin-bottom: 5px;
 }
 
 footer {
-  background-color: #008080;
+  background-color: #397575;
   color: #fff;
   padding: 10px;
   text-align: center;
