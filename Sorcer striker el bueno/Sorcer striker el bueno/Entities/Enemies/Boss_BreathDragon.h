@@ -26,9 +26,9 @@ private:
 	bool headDestroy = false;
 	bool headDestroy2 = false;
 	bool headDestroy3 = false;
-		
-	Animation warning;
-	Animation arrow;
+
+	/*Animation warning;
+	Animation arrow;*/
 	Animation fan;
 
 	Animation head; // Repetit x3
@@ -40,6 +40,16 @@ private:
 	Particle fire;
 
 	int vides[4];
+
+	Path pathCuerpo;
+
+	Collider* colliderCabeza1;
+	Collider* colliderCabeza2;
+	Collider* colliderCabeza3;
+
+	Path pathCabeza1;
+	Path pathCabeza2;
+	Path pathCabeza3;
 };
 
 #endif

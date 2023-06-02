@@ -228,9 +228,11 @@ Update_Status SceneLevel1::Update() {
 	if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
 	{
 		App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 400, App->player->position.y - 700, 1);
+	}
 
-
-
+	if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::BOSS, 400, App->player->position.y - 700, 1);
 	}
 
 	return Update_Status::UPDATE_CONTINUE;
