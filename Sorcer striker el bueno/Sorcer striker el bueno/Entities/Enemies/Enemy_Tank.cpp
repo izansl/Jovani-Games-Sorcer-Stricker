@@ -10,22 +10,24 @@
 Enemy_Tank::Enemy_Tank(int x, int y, int wave) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_tank.c_str());
 	//movimiento izquierda
-	iz.PushBack({ 378, 416, 133, 128 });
+	iz.PushBack({ 378, 580, 133, 128 });
 	iz.PushBack({ 99, 416, 133, 128 });
-	iz.speed = 0.2;
-	iz.loop = true;
+	iz.speed = 0.1;
+	iz.loop = false;
+	
 	//movimiento derecha
 	de.PushBack({ 104, 746, 133, 128 });
 	de.PushBack({ 363, 746, 133, 128 });
-	de.speed = 0.2;
-	de.loop = true;
+	de.speed = 0.1;
+	de.loop = false;
+	currentAnim = &de;
 	if (wave == 1)
 	{
-		path.PushBack({4, -6}, 100, &de);
+		path.PushBack({4, 0}, 100, &de);
 	}
 	else if (wave == 2)
 	{
-		path.PushBack({ -4, -6 }, 100, &iz);
+		path.PushBack({ -4, 0 }, 100, &iz);
 	}
 
 

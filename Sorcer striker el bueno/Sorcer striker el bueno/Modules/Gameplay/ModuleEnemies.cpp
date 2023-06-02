@@ -189,13 +189,13 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2) {
 			enemies[i]->OnCollision(c2); //Notify the enemy of a collision
 			c1->pendingToDelete = true;
 			
-			if (c2->type == Collider::Type::PLAYER_SHOT)
+			/*if (c2->type == Collider::Type::PLAYER_SHOT)
 			{
 
 				delete enemies[i];
 				enemies[i] = nullptr;
 			}
-			break;
+			break;*/
 		}
 	}
 }
