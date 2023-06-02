@@ -20,36 +20,37 @@ public:
 
 
 private:
-	Path* currentPath;	// Per totes les parts amb el mateix path pero llavors 
-						// tenir en comptes el posicionament de cada una d'elles
-
+	int vides[4];
+	
 	bool headDestroy = false;
 	bool headDestroy2 = false;
 	bool headDestroy3 = false;
 
 	/*Animation warning;
 	Animation arrow;*/
-	Animation fan;
+	Animation animationFan;
+	Animation animationHead; // Repetit x3
+	Animation animationHeadDamaged;// Repetit x3
+	Animation animationBody; // 
+	Animation animaitonBodyDamaged;
 
-	Animation head; // Repetit x3
-	Animation head_damaged;// Repetit x3
+	Particle particleFire;
 
-	Animation body; // 
-	Animation body_damaged;
-
-	Particle fire;
-
-	int vides[4];
-
+	Path pathFan1;
+	Path pathFan2;
+	Path pathFan3;
+	Path pathFan4;
 	Path pathCuerpo;
+	Path pathCabeza1;
+	Path pathCabeza2;
+	Path pathCabeza3;
+	Path pathFire;
 
+	Collider* colliderCuerpo;
 	Collider* colliderCabeza1;
 	Collider* colliderCabeza2;
 	Collider* colliderCabeza3;
 
-	Path pathCabeza1;
-	Path pathCabeza2;
-	Path pathCabeza3;
 };
 
 #endif
