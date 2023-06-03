@@ -55,6 +55,8 @@ bool SceneLevel1::Start() {
 	raightcoll = App->collisions->AddCollider({ xr, yr, wr, hr }, Collider::Type::WALL_PLAYER);
 
 
+	App->enemies->AddEnemy(Enemy_Type::BOSS, 200, -400, 1);
+
 #pragma region ENEMIES
 	// add chest
 	App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, 200, -500, 1);
@@ -291,9 +293,11 @@ Update_Status SceneLevel1::Update() {
 	if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
 	{
 		App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 400, App->player->position.y - 700, 1);
+	}
 
-
-
+	if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN)
+	{
+		App->enemies->AddEnemy(Enemy_Type::BOSS, 400, App->player->position.y - 700, 1);
 	}
 
 	return Update_Status::UPDATE_CONTINUE;

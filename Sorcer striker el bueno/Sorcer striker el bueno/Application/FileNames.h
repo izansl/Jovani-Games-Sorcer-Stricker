@@ -173,7 +173,7 @@ const std::string FI_particles_ = "../Assets/Images/castillo/particulas.png";
 */
 
 // Sprites Bosses
-const std::string FI_spriteEnemy_boss = "../Assets/Images/final-boss/finalbossnuevo.png";
+const std::string FI_spriteEnemy_boss = "../Assets/Images/final-boss/finalbossnuevoo.png";
 
 const std::string FI_spriteExplosion_enemies = "../Assets/Images/2nd_enemy.png";
 #pragma endregion

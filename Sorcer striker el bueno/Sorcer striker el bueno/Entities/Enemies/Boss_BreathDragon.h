@@ -3,30 +3,51 @@
 
 #include "Enemy.h"
 #include "../../Utils/Path.h"
+#include "../Particle.h"
 
 
 class Boss_BreathDragon : public Enemy {
 
 public:
-	Boss_BreathDragon(int x, int y);
+	Boss_BreathDragon(int x, int y, int wave);
 
 	void Update() override;
 
-	void OnCollisionGeneral(Collider* c1);
-	void OnCollisionHead1(Collider* c1);
-	void OnCollisionHead2(Collider* c1);
-	void OnCollisionHead3(Collider* c1);
+	void OnCollisionGeneral(Collider* colisionEntrante);
+	void OnCollisionHead1(Collider* colisionEntrante);
+	void OnCollisionHead2(Collider* colisionEntrante);
+	void OnCollisionHead3(Collider* colisionEntrante);
 
 
 private:
-	Path pathchest;
-	Path* currentPath;
+	SDL_Texture* texturaBoss;
+
+	int vides[4];
 
 	bool headDestroy = false;
 	bool headDestroy2 = false;
+	bool headDestroy3 = false;
 
-	Animation head;
-	Animation fan;
+	/*Animation warning;
+	Animation arrow;*/
+	Animation animationFan;
+	Animation animationHead; // Repetit x3
+	Animation animationHeadDamaged;// Repetit x3
+	Animation animationBody;
+	Animation animaitonBodyDamaged;
+
+	Particle particleFire;
+
+	Path pathFan1, pathFan2, pathFan3, pathFan4;
+	Path pathCuerpo;
+	Path pathCabeza1, pathCabeza2, pathCabeza3;
+	Path pathFire;
+
+	Collider* colliderCuerpo;
+	Collider* colliderCabeza1;
+	Collider* colliderCabeza2;
+	Collider* colliderCabeza3;
+
 };
 
 #endif

@@ -24,6 +24,7 @@
 #include "../../Entities/Enemies/Enemy_Coin.h"
 #include "../../Entities/Enemies/Enemy_FlyTank.h"
 #include "../../Entities/Enemies/Enemy_RedBat.h"
+#include "../../Entities/Enemies/Boss_BreathDragon.h"
 
 #define SPAWN_MARGIN 100
 
@@ -100,7 +101,7 @@ bool ModuleEnemies::AddEnemy(Enemy_Type type, int x, int y, int wave)
 			spawnQueue[i].x = x;
 			spawnQueue[i].y = y;
 			spawnQueue[i].wave = wave;
-			
+
 			ret = true;
 			break;
 		}
@@ -194,11 +195,12 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 				break;
 			case Enemy_Type::REDBAT: enemies[i] = new Enemy_RedBat(info.x, info.y, info.wave);
 				break;
+				case Enemy_Type::BOSS: enemies[i] = new Boss_BreathDragon(info.x, info.y, info.wave); break;
 			}
 			
 
 			enemies[i]->destroyedFx = enemyDestroyedFx;
-      
+
 			break;
 		}
 	}

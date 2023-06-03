@@ -19,7 +19,6 @@ Enemy_GreenChess::Enemy_GreenChess(int x, int y) : Enemy(x, y) {
 	currentAnim = &green;
 
 	// Path 1
-
 	pathchest.PushBack({ -1.0f, -0.5f }, 10);
 	pathchest.PushBack({ -0.9f, -0.8f }, 10);
 	pathchest.PushBack({ -0.8f, -0.2f }, 10);
