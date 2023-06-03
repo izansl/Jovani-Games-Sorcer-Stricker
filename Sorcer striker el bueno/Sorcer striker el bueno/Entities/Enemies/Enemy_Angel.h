@@ -19,7 +19,14 @@ public:
 	void OnCollision(Collider* c1);
 
 	int start_time;
-	bool dropmode = false;
+
+	bool bluebookAdded = false;
+	bool redbookAdded = false;
+	bool greenbookAdded = false;
+	bool bluebookAdded2 = false;
+	bool redbookAdded2 = false;
+	bool greenbookAdded2 = false;
+	bool pickupUpdated = false;
 
 private: //BROWNSHIP
 	// A set of steps that define the position in the screen

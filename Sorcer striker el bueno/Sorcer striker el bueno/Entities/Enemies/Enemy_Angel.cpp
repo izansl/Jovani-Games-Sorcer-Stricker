@@ -13,8 +13,11 @@
 Enemy_Angel::Enemy_Angel(int x, int y) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spritebonus_special.c_str());
 
-	blue.PushBack({ 18, 21, 223, 212 });
-	blue.speed = 0.1f;
+	blue.PushBack({ 0, 23, 223, 212 });
+	blue.PushBack({ 223, 23, 223, 212 });
+	blue.PushBack({ 465, 23, 223, 212 });
+	blue.PushBack({ 694, 23, 223, 212 });
+	blue.speed = 0.075f;
 	currentAnim = &blue;
 
 
@@ -44,7 +47,6 @@ Enemy_Angel::Enemy_Angel(int x, int y) : Enemy(x, y) {
 	pathchest.PushBack({ 2.0f, -7.0f }, 10);
 
 	currentPath = &pathchest;
-	collider = App->collisions->AddCollider({ 0, 0, 118, 99 }, Collider::Type::NONE, (Module*)App->enemies);
 
 	start_time = SDL_GetTicks();
 }
@@ -54,26 +56,32 @@ void Enemy_Angel::Update() {
 	pathchest.Update();
 	position = spawnPos + currentPath->GetRelativePosition();
 
-	if (SDL_GetTicks() - start_time == 400)
+	if (SDL_GetTicks() - start_time >= 400 && !bluebookAdded)
 	{
 		App->enemies->AddEnemy(Enemy_Type::Bluebook, position.x + 50, position.y, 1);
+		bluebookAdded = true;
 	}
-	if (SDL_GetTicks() - start_time == 800)
+	if (SDL_GetTicks() - start_time >= 800 && !redbookAdded)
 	{
 		App->enemies->AddEnemy(Enemy_Type::Redbook, position.x - 50, position.y, 1);
+		redbookAdded = true;
 	}
-	if (SDL_GetTicks() - start_time == 1200)
+	if (SDL_GetTicks() - start_time >= 1200 && !greenbookAdded)
 	{
 		App->enemies->AddEnemy(Enemy_Type::Greenbook, position.x, position.y - 50, 1);
+		greenbookAdded = true;
 	}
-	if (SDL_GetTicks() - start_time == 1600)
+	if (SDL_GetTicks() - start_time >= 1600 && !bluebookAdded2)
 	{
-		App->enemies->AddEnemy(Enemy_Type::Bluebook, position.x, position.y, 1);
+		App->enemies->AddEnemy(Enemy_Type::Bluebook, position.x+100, position.y, 1);
+		bluebookAdded2 = true;
+
 	}
-	if (SDL_GetTicks() - start_time == 2000)
+	if (SDL_GetTicks() - start_time >= 2200 && !pickupUpdated)
 	{
 		pickup.PushBack({ 500, 500, 118, 99 });
 		currentAnim = &pickup;
+		pickupUpdated = true;
 	}
 
 	// Call to the base class. It must be called at the end
@@ -83,8 +91,4 @@ void Enemy_Angel::Update() {
 }
 
 void Enemy_Angel::OnCollision(Collider* c1) {
-	if (c1->type == Collider::Type::PLAYER_SHOT)
-	{
-		dropmode = true;
-	}
 }
