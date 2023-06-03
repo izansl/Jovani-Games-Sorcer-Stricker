@@ -33,13 +33,14 @@ bool SceneStart::Start() {
 
 //NO TOCAR NADA //FadeToBlack de Intro -> primera escena
 Update_Status SceneStart::Update() {
-	if (App->input->keys[SDL_SCANCODE_C] == Key_State::KEY_DOWN) {
+	GamePad& pad = App->input->pads[0];
+	if (App->input->keys[SDL_SCANCODE_C] == Key_State::KEY_DOWN || pad.start==true) {
 		// TODO: Falta meter sonido
 		coins++;
 		LOG("+ COIN!")
 	}
 
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true) {
 		if (coins > 0)
 		{
 			LOG("Game start!")
