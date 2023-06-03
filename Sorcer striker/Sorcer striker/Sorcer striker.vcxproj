@@ -182,6 +182,7 @@
     <ClInclude Include="Entities\Enemies\Enemy_Tank.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Turtle.h" />
     <ClInclude Include="Entities\Particle.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Flag.h" />
     <ClInclude Include="Modules\Gameplay\ModuleInsertCoin.h" />
     <ClInclude Include="Modules\Core\ModuleAudio.h" />
     <ClInclude Include="Modules\Core\ModuleCollisions.h" />
@@ -199,6 +200,8 @@
     <ClInclude Include="Modules\Gameplay\SceneLevel1.h" />
     <ClInclude Include="Modules\Gameplay\SceneStart.h" />
     <ClInclude Include="Modules\Module.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Num1.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Stagename.h" />
     <ClInclude Include="Utils\Animation.h" />
     <ClInclude Include="Utils\Collider.h" />
     <ClInclude Include="Utils\p2Point.h" />
@@ -230,6 +233,7 @@
     <ClCompile Include="Entities\Enemies\Enemy_Tank.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Turtle.cpp" />
     <ClCompile Include="Entities\Particle.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Flag.cpp" />
     <ClCompile Include="Modules\Gameplay\ModuleInsertCoin.cpp" />
     <ClCompile Include="Modules\Core\ModuleAudio.cpp" />
     <ClCompile Include="Modules\Core\ModuleCollisions.cpp" />
@@ -247,6 +251,8 @@
     <ClCompile Include="Modules\Gameplay\SceneLevel1.cpp" />
     <ClCompile Include="Modules\Gameplay\SceneStart.cpp" />
     <ClCompile Include="Modules\Module.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Num1.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Stagename.cpp" />
     <ClCompile Include="Utils\Collider.cpp" />
     <ClCompile Include="Utils\Path.cpp" />
   </ItemGroup>

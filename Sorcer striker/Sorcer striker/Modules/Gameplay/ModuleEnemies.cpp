@@ -26,6 +26,10 @@
 #include "../../Entities/Enemies/Enemy_RedBat.h"
 #include "../../Entities/Enemies/Boss_BreathDragon.h"
 #include "../../Entities/Enemies/Enemy_Angel.h"
+#include "../../Entities/Enemies/Enemy_Stagename.h"
+#include "../../Entities/Enemies/Enemy_Num1.h"
+#include "../../Entities/Enemies/Enemy_Flag.h"
+
 
 #define SPAWN_MARGIN 100
 
@@ -177,7 +181,12 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 				enemies[i] = new Enemy_Coin(info.x, info.y);
 				break;
 
-				//Enemies
+			//Satge 1
+			case Enemy_Type::STAGE: enemies[i] = new Enemy_Stage(info.x, info.y); break;
+			case Enemy_Type::NUM1: enemies[i] = new Enemy_Num1(info.x, info.y); break;
+			case Enemy_Type::FLAG: enemies[i] = new Enemy_Flag(info.x, info.y); break;
+
+			//Enemies
 			case Enemy_Type::DRAGON: enemies[i] = new Enemy_Dragon(info.x, info.y, info.wave);
 				break;
 			case Enemy_Type::REDWIZARD: enemies[i] = new Enemy_RedWizard(info.x, info.y, info.wave);
@@ -195,8 +204,9 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 			case Enemy_Type::REDBAT: enemies[i] = new Enemy_RedBat(info.x, info.y, info.wave);
 				break;
 			case Enemy_Type::BOSS: enemies[i] = new Boss_BreathDragon(info.x, info.y, info.wave); break;
-			}
 
+
+			}
 
 			enemies[i]->destroyedFx = enemyDestroyedFx;
 

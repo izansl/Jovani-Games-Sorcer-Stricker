@@ -7,9 +7,9 @@
 #include "../../Modules/Core/ModuleAudio.h"
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Core/ModuleInput.h"
+#include "../Gameplay/ModuleEnemies.h"
+#include "../Gameplay/ModulePlayer.h"
 
-#include "ModuleEnemies.h"
-#include "ModulePlayer.h"
 
 SceneLevel1::SceneLevel1(bool startEnabled) : Module(startEnabled) {
 }
@@ -55,9 +55,8 @@ bool SceneLevel1::Start() {
 	raightcoll = App->collisions->AddCollider({ xr, yr, wr, hr }, Collider::Type::WALL_PLAYER);
 
 
-	App->enemies->AddEnemy(Enemy_Type::BOSS, 200, -400, 1);
-
 #pragma region ENEMIES
+	App->enemies->AddEnemy(Enemy_Type::FLAG, 500, -400, 1);
 	// add chest
 	//App->enemies->AddEnemy(Enemy_Type::CHESTBLUE, 200, -500, 1);
 	App->enemies->AddEnemy(Enemy_Type::ANGEL, 200, -500, 1);

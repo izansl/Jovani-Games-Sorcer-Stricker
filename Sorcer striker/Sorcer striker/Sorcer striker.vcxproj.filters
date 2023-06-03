@@ -167,6 +167,15 @@
     <ClInclude Include="Entities\Enemies\Enemy_Angel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Entities\Enemies\Enemy_Stagename.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\Enemies\Enemy_Flag.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entities\Enemies\Enemy_Num1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Utils\Collider.cpp">
@@ -299,6 +308,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Entities\Enemies\Enemy_Angel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Entities\Enemies\Enemy_Stagename.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Entities\Enemies\Enemy_Flag.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Entities\Enemies\Enemy_Num1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
