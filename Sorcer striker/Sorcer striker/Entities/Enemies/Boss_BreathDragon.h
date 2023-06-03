@@ -12,6 +12,7 @@ public:
 	Boss_BreathDragon(int x, int y, int wave);
 
 	void Update() override;
+	void Draw() override;
 
 	void OnCollisionGeneral(Collider* colisionEntrante);
 	void OnCollisionHead1(Collider* colisionEntrante);
@@ -38,9 +39,9 @@ private:
 
 	Particle particleFire;
 
-	Path pathFan1, pathFan2, pathFan3, pathFan4;
+	Path pathFan;
 	Path pathCuerpo;
-	Path pathCabeza1, pathCabeza2, pathCabeza3;
+	Path pathCabeza;
 	Path pathFire;
 
 	Collider* colliderCuerpo;

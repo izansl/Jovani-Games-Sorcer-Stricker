@@ -21,25 +21,26 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	animationFan.PushBack({ 116, 230, 115, 115 });
 	animationFan.speed = 0.2;
 	animationFan.loop = true;
-	pathFan1.PushBack({ 0,0 }, 20, &animationFan);
-	pathFan2.PushBack({ 50,0 }, 20, &animationFan);
-	pathFan3.PushBack({ 100,0 }, 20, &animationFan);
-	pathFan4.PushBack({ 150,0 }, 20, &animationFan);
+	pathFan.PushBack({ 0,0 }, 20, &animationFan);
 
 	animationHead.PushBack({ 0, 502, 180, 180 });
 	animationHead.PushBack({ 180 * 2, 502, 180, 180 });
 	animationHead.PushBack({ 180 * 4, 502, 180, 180 });
 	animationHead.speed = 0.1f;
 	animationHead.loop = true;
-	pathCabeza1.PushBack({ 0,0 }, 20, &animationHead);
-	pathCabeza2.PushBack({ 50,0 }, 20, &animationHead);
-	pathCabeza3.PushBack({ 100,0 }, 20, &animationHead);
+	pathCabeza.PushBack({ 0,0 }, 20, &animationHead);
+
 
 	animationHeadDamaged.PushBack({ 180 * 1, 502, 180, 180 });
 	animationHeadDamaged.PushBack({ 180 * 3, 502, 180, 180 });
 	animationHeadDamaged.PushBack({ 180 * 5, 502, 180, 180 });
 	animationHeadDamaged.speed = 0.1f;
 	animationHeadDamaged.loop = true;
+
+	animationBody.PushBack({ 0, 1045, 1200, 400 });
+	animationBody.speed = 0.1f;
+	animationBody.loop = true;
+	pathCuerpo.PushBack({ 0,0 }, 20, &animationBody);
 
 	particleFire.anim.PushBack({ 0, 690, 157, 157 });
 	particleFire.anim.PushBack({ 157, 690, 157, 157 });
@@ -64,44 +65,37 @@ void Boss_BreathDragon::Update() {
 		currentAnim->Update();
 
 	if (collider != nullptr)
-		collider->SetPos(position.x, position.y);
+		collider->SetPos(position.x, position.y);*/
 
-	if (currentAnim != nullptr)
+
+	if (pathFan.GetCurrentAnimation() != nullptr) pathFan.Update();
+	if (pathCabeza.GetCurrentAnimation() != nullptr) pathCabeza.Update();
+	if (pathCuerpo.GetCurrentAnimation() != nullptr) pathCuerpo.Update();
+
+	position = spawnPos + pathCuerpo.GetRelativePosition();
+}
+
+void Boss_BreathDragon::Draw() {
+	/*if (currentAnim != nullptr)
 		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));*/
 
-
-	if (pathFan1.GetCurrentAnimation() != nullptr) {
-		pathFan1.Update();
-		App->render->Blit(texturaBoss, position.x, position.y, &(pathFan1.GetCurrentAnimation()->GetCurrentFrame()));
-	}
-	if (pathFan2.GetCurrentAnimation() != nullptr) { 
-		pathFan2.Update(); 
-		App->render->Blit(texturaBoss, position.x, position.y, &(pathFan2.GetCurrentAnimation()->GetCurrentFrame()));
-	}
-	if (pathFan3.GetCurrentAnimation() != nullptr) {
-		pathFan3.Update();
-		App->render->Blit(texturaBoss, position.x, position.y, &(pathFan3.GetCurrentAnimation()->GetCurrentFrame()));
-	}
-	if (pathFan4.GetCurrentAnimation() != nullptr) {
-		pathFan4.Update();
-		App->render->Blit(texturaBoss, position.x, position.y, &(pathFan4.GetCurrentAnimation()->GetCurrentFrame()));
+	if (pathCuerpo.GetCurrentAnimation() != nullptr) {
+		App->render->Blit(texturaBoss, position.x - 600, position.y, &(pathCuerpo.GetCurrentAnimation()->GetCurrentFrame()));
 	}
 
-	
 
-	//App->render->Blit(texture, position.x, position.y, &(pathFan3.GetCurrentAnimation()->GetCurrentFrame()));
-	//App->render->Blit(texture, position.x, position.y, &(pathFan4.GetCurrentAnimation()->GetCurrentFrame()));
+	if (pathCabeza.GetCurrentAnimation() != nullptr) {
+		App->render->Blit(texturaBoss, position.x - 300, position.y + 200, &(pathCabeza.GetCurrentAnimation()->GetCurrentFrame()));
+		App->render->Blit(texturaBoss, position.x - 85, position.y + 230, &(pathCabeza.GetCurrentAnimation()->GetCurrentFrame()));
+		App->render->Blit(texturaBoss, position.x + 130, position.y + 200, &(pathCabeza.GetCurrentAnimation()->GetCurrentFrame()));
+	}
 
-	////pathCabeza1.Update();
-	////pathCabeza2.Update();
-	////pathCabeza3.Update();
-	////App->render->Blit(texture, position.x, position.y, &(pathCabeza1.GetCurrentAnimation()->GetCurrentFrame()));
-	////App->render->Blit(texture, position.x, position.y, &(pathCabeza2.GetCurrentAnimation()->GetCurrentFrame()));
-	////App->render->Blit(texture, position.x, position.y, &(pathCabeza3.GetCurrentAnimation()->GetCurrentFrame()));
-
-
-	position = spawnPos + pathFan1.GetRelativePosition();
-	Enemy::Update();
+	if (pathFan.GetCurrentAnimation() != nullptr) {
+		App->render->Blit(texturaBoss, position.x - 400, position.y + 250, &(pathFan.GetCurrentAnimation()->GetCurrentFrame()));
+		App->render->Blit(texturaBoss, position.x - 150, position.y + 200, &(pathFan.GetCurrentAnimation()->GetCurrentFrame()));
+		App->render->Blit(texturaBoss, position.x + 40, position.y + 200, &(pathFan.GetCurrentAnimation()->GetCurrentFrame()));
+		App->render->Blit(texturaBoss, position.x + 270, position.y + 230, &(pathFan.GetCurrentAnimation()->GetCurrentFrame()));
+	}
 }
 
 void Boss_BreathDragon::OnCollisionGeneral(Collider* c1) {
