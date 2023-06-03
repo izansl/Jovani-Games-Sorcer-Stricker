@@ -10,14 +10,22 @@
 
 
 Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
-
+	// Set vides
 	vides[0] = 15; // Cuerpo 0
 	vides[1] = 5; // Cabeza 1
 	vides[2] = 5; // Cabeza 2
 	vides[3] = 5; // Cabeza 2
 
+	// Reset temporitzadors
+	temporitzador_CosDanyat = 0;
+	temporitzador_Cap1Danyat = 0;
+	temporitzador_Cap2Danyat = 0;
+	temporitzador_Cap3Danyat = 0;
+
+	// Load texture
 	texturaBoss = App->textures->Load(FI_spriteEnemy_boss.c_str());
 
+	// Load animations and load path
 	animationFan.PushBack({ 0, 230, 115, 115 });
 	animationFan.PushBack({ 116, 230, 115, 115 });
 	animationFan.speed = 0.2;
@@ -31,7 +39,6 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	animationHead.loop = true;
 	pathCabeza.PushBack({ 0,(float)App->sceneLevel_1->velocitatNivell }, 20, &animationHead);
 
-
 	animationHeadDamaged.PushBack({ 180 * 1, 502, 180, 180 });
 	animationHeadDamaged.PushBack({ 180 * 3, 502, 180, 180 });
 	animationHeadDamaged.PushBack({ 180 * 5, 502, 180, 180 });
@@ -43,6 +50,7 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	animationBody.loop = true;
 	pathCuerpo.PushBack({ 0,(float)App->sceneLevel_1->velocitatNivell }, 20, &animationBody);
 
+	// Load particles
 	particleFire.anim.PushBack({ 0, 690, 157, 157 });
 	particleFire.anim.PushBack({ 157, 690, 157, 157 });
 	particleFire.anim.PushBack({ 157 * 2, 690, 157, 157 });
@@ -54,6 +62,7 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	particleFire.anim.speed = 0.05f;
 	particleFire.lifetime = 115;
 
+	// Collisions
 	colliderCuerpo = App->collisions->AddCollider({ 0, 0,1200, 400 }, Collider::Type::ENEMY, (Module*)App->enemies);
 	colliderCabeza1 = App->collisions->AddCollider({ -300, 200,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
 	colliderCabeza2 = App->collisions->AddCollider({ -85, 230,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
@@ -61,23 +70,20 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 }
 
 void Boss_BreathDragon::Update() {
-
-	/*if (currentAnim != nullptr)
-		currentAnim->Update();
-
-	if (collider != nullptr)
-		collider->SetPos(position.x, position.y);*/
-
+	// Update path position
 	pathFan.Update();
 	pathCabeza.Update();
 	pathCuerpo.Update();
 
+	// Update animations
 	pathFan.GetCurrentAnimation()->Update();
 	pathCabeza.GetCurrentAnimation()->Update();
 	pathCuerpo.GetCurrentAnimation()->Update();
 
+	// Update object position
 	position = spawnPos + pathCuerpo.GetRelativePosition();
 
+	// Update colliders positions
 	colliderCuerpo->SetPos(position.x - 600, position.y);
 	colliderCabeza1->SetPos(position.x - 300 - 600, position.y + 200);
 	colliderCabeza1->SetPos(position.x - 85 - 600, position.y + 230);

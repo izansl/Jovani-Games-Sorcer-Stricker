@@ -49,6 +49,11 @@ private:
 	Collider* colliderCabeza2;
 	Collider* colliderCabeza3;
 
+	int temporitzador_CosDanyat;
+	int temporitzador_Cap1Danyat;
+	int temporitzador_Cap2Danyat;
+	int temporitzador_Cap3Danyat;
+
 };
 
 #endif
