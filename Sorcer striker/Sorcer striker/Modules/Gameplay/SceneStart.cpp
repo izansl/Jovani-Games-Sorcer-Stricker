@@ -33,16 +33,22 @@ bool SceneStart::Start() {
 
 //NO TOCAR NADA //FadeToBlack de Intro -> primera escena
 Update_Status SceneStart::Update() {
-	if (App->input->keys[SDL_SCANCODE_KP_ENTER] == Key_State::KEY_DOWN) {
+	if (App->input->keys[SDL_SCANCODE_C] == Key_State::KEY_DOWN) {
 		// TODO: Falta meter sonido
 		coins++;
+		LOG("+ COIN!")
 	}
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
 		if (coins > 0)
 		{
+			LOG("Game start!")
 			App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 60);
 			coins--;
+		}
+		else
+		{
+			LOG("No tens monedes!")
 		}
 	}
 	if (App->input->keys[SDL_SCANCODE_LSHIFT] == Key_State::KEY_DOWN)
