@@ -55,8 +55,6 @@ bool SceneLevel1::Start() {
 	raightcoll = App->collisions->AddCollider({ xr, yr, wr, hr }, Collider::Type::WALL_PLAYER);
 
 
-	App->enemies->AddEnemy(Enemy_Type::BOSS, 200, -400, 1);
-
 #pragma region ENEMIES
 	// add chest
 	//App->enemies->AddEnemy(Enemy_Type::CHESTBLUE, 200, -500, 1);

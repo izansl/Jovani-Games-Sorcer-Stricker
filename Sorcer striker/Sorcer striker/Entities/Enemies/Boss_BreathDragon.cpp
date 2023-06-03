@@ -77,13 +77,10 @@ void Boss_BreathDragon::Update() {
 }
 
 void Boss_BreathDragon::Draw() {
-	/*if (currentAnim != nullptr)
-		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));*/
 
 	if (pathCuerpo.GetCurrentAnimation() != nullptr) {
 		App->render->Blit(texturaBoss, position.x - 600, position.y, &(pathCuerpo.GetCurrentAnimation()->GetCurrentFrame()));
 	}
-
 
 	if (pathCabeza.GetCurrentAnimation() != nullptr) {
 		App->render->Blit(texturaBoss, position.x - 300, position.y + 200, &(pathCabeza.GetCurrentAnimation()->GetCurrentFrame()));
