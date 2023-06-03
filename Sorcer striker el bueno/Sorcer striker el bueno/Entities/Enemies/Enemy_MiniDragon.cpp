@@ -8,36 +8,47 @@
 #include"../../Modules/Core/ModuleAudio.h"
 
 Enemy_MiniDragon::Enemy_MiniDragon(int x, int y, int wave) : Enemy(x, y) {
-	texture = App->textures->Load(FI_spriteEnemy_reds.c_str());
-	fly.PushBack({ 29, 357, 82, 104 });
-	fly.PushBack({ 140, 357, 82, 104 });
-	currentAnim = &fly;
-	fly.speed = 0.2;
-	fly.loop = true;
+	//movimiento hacie abajo
+	texture = App->textures->Load(FI_spriteEnemy_enemiesvar_1.c_str());
+	down.PushBack({ 621, 327, 93, 85 });
+	currentAnim = &down;
+	up.speed = 1;
+	up.loop = false;
+	//movimiento hacia arriba
+	up.PushBack({ 759, 327, 93, 85 });
+	up.PushBack({ 892, 327, 93, 85 });
+	up.PushBack({ 1053, 327, 93, 85 });
+	up.PushBack({ 1196, 327, 93, 85 });
+	up.speed = 1;
+	down.loop = false;
 
+	path.PushBack({ 0, -4 }, 100, &down);
+	path.PushBack({ 1, -12 }, 600, &up);
 
-
-	collider = App->collisions->AddCollider({ 0, 0,82, 104 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0, 93, 85}, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_MiniDragon::Update() {
-	path.Update();
-	position = spawnPos + path.GetRelativePosition();
-
+	
+	if (life)
+	{
+		path.Update();
+		position = spawnPos + path.GetRelativePosition();
+	}
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
 	Enemy::Update();
 }
 //
 void Enemy_MiniDragon::OnCollision(Collider* c1) {
-	fly.PushBack({ 7, 50, 32, 32 });
-	fly.PushBack({ 42, 50, 32, 32 });
-	fly.PushBack({ 77, 51, 32, 32 });
-	fly.PushBack({ 111, 52, 32, 32 });
-	fly.PushBack({ 200, 200, 32, 32 });
+	death.PushBack({ 683, 106, 34, 33 });
+	death.PushBack({ 683, 188, 32, 32 });
+	death.PushBack({ 683, 106, 34, 33 });
+	death.PushBack({ 0, 0, 0, 0 });
 
-	currentAnim = &fly;
-	fly.speed = 0.2;
-	fly.loop = false;
+	currentAnim = &death;
+	death.speed = 0.2;
+	death.loop = false;
 	App->audio->PlayFx(destroyedFx);
+	life = false;
 }

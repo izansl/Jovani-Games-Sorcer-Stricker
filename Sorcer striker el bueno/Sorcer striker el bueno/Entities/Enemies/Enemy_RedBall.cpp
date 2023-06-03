@@ -74,7 +74,7 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 	{
 
 	
-		path.PushBack({ 0, -3 }, 10);
+		path.PushBack({ 0, -1 }, 100);
 		path.PushBack({ -2.0, -8.0f }, 40);
 		path.PushBack({ -3, -12 }, 1300);
 	
@@ -84,7 +84,7 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 	else if (wave == 7)
 	{
 
-		path.PushBack({ 0, -3 }, 10);
+		path.PushBack({ 0, -100}, 10);
 		path.PushBack({ 2.0, -8.0f }, 40);
 		path.PushBack({ 3, -12 }, 1300);
 	
@@ -107,9 +107,13 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 }
 
 void Enemy_RedBall::Update() {
-	path.Update();
-	position = spawnPos + path.GetRelativePosition();
+	
 
+	if (life)
+	{
+		path.Update();
+		position = spawnPos + path.GetRelativePosition();
+	}
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
 	Enemy::Update();
@@ -128,4 +132,5 @@ void Enemy_RedBall::OnCollision(Collider* c1) {
 	fly.speed = 0.2;
 	fly.loop = false;
 	App->audio->PlayFx(destroyedFx);
+	life = false;
 }

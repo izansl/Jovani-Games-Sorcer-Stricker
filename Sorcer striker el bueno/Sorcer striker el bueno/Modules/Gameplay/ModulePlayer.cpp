@@ -167,7 +167,7 @@ Update_Status ModulePlayer::Update() {
 				App->particles->AddParticle(App->particles->laser1, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
 			}
 		}
-		if (SDL_GetTicks() - start_time >= 250)
+		if (SDL_GetTicks() - start_time >= 200)
 		{
 			canshootlaser = true;
 		}
@@ -367,25 +367,36 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 	//Cuan colisiona amb Power up
 	if (c1->type == Collider::Type::PLAYER && c2->type == Collider::Type::POWER_UP)
 	{
+		//Green
 		if (c2->rect.w == 63)
 		{
 			Powerupgreen = true;
 			Powerupblue = false;
 			Powerupred = false;
 		}
-    
+		//Blue
 		if (c2->rect.w==62)
 		{
 			Powerupblue = true;
 			Powerupgreen = false;
 			Powerupred = false;
 		}
-    
+		//Red
 		if (c2->rect.w==64)
 		{
 			Powerupred = true;
 			Powerupgreen = false;
 			Powerupblue = false;
+		}
+		//+1 bomba
+		if (c2->rect.w == 122)
+		{
+			LOG("Turmo");
+		}
+		// + Score
+		if (c2->rect.w == 45)
+		{
+			LOG("Turmo");
 		}
 	}
 }

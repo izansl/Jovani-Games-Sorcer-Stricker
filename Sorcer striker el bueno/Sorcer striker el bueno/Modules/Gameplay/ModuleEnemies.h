@@ -3,19 +3,28 @@
 
 #include "../../Modules/Module.h"
 
-#define MAX_ENEMIES 100
+#define MAX_ENEMIES 200
 
 enum class Enemy_Type {
 	NO_TYPE,
-	CHEST_BLUE,
+	BOMB,
+	GOLD,
+	COIN,
+	CHESTBLUE,
+	Bluebook,
 	CHEST_GREEN,
+	Greenbook,
 	CHEST_RED,
+	Redbook,
 	REDWIZARD,
 	DRAGON,
 	RED_BALL,
 	TANK,
+	BIGTANK,
+	FLYTANK,
 	TURTLE,
 	MINIDRAGON,
+	REDBAT,
 	BOSS
 };
 

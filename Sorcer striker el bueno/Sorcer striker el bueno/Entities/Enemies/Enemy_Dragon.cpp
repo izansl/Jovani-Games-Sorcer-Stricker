@@ -10,22 +10,27 @@
 Enemy_Dragon::Enemy_Dragon(int x, int y, int wave) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_dragon.c_str());
 
-	fly.PushBack({ 16, 24 , 85, 89 });
-	fly.PushBack({ 117, 27 , 85, 89 });
+	fly.PushBack({ 1121, 1503 , 381, 451 });
+	fly.PushBack({ 1579, 1503 , 381, 451 });
+	fly.PushBack({ 2041, 1503 , 381, 451 });
+	fly.PushBack({ 1579, 1503 , 381, 451 });
+	fly.PushBack({ 1121, 1503 , 381, 451 });
+	fly.PushBack({ 659, 1503 , 381, 451 });
+	fly.PushBack({ 201, 1503 , 381, 451 });
 	fly.loop = true;
 	currentAnim = &fly;
 	fly.speed = 0.1f;
 	if (wave == 1)
 	{
 		
-			path.PushBack({ 0, -2.5 }, 1590);
+			path.PushBack({ 0, -2.5 }, 30);
 			path.PushBack({ 0, -8.0 }, 150);
 			path.PushBack({ 2, -8.0 }, 10);
 			path.PushBack({ 0, -8.0 }, 70);
 			path.PushBack({ -0.75, -10.0 }, 50);
 			path.PushBack({ 0, -8.0 }, 30);
 			path.PushBack({ 0, -3.0 }, 50);
-			path.PushBack({ -1, -12.0 }, 200);
+			path.PushBack({ -2, -12.0 }, 400);
 	
 		
 
@@ -34,46 +39,77 @@ Enemy_Dragon::Enemy_Dragon(int x, int y, int wave) : Enemy(x, y) {
 	{
 		
 			
-			path.PushBack({ 0, -3 }, 1900);
+			path.PushBack({ 0, -2.5 }, 30);
 			path.PushBack({ 0, -8.0 }, 100);
 			path.PushBack({ -2, -8.0 }, 10);
 			path.PushBack({ 0, -8.0 }, 50);
 			path.PushBack({ 0.75, -10.0 }, 50);
 			path.PushBack({ 0, -8.0 }, 10);
 			path.PushBack({ 0, -3.0 }, 50);
-			path.PushBack({ 1, -12.0 }, 200);
+			path.PushBack({ 1, -12.0 }, 400);
 		
 	}
-	// Describe a path in the screen
-	path.PushBack({ 0, 0.5f }, 100);
+	
 	
 
-	collider = App->collisions->AddCollider({ 0, 0, 85, 89 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0, 381, 451 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_Dragon::Update() {
-	path.Update();
-	position = spawnPos + path.GetRelativePosition();
-
+		
+	if (vida)
+	{
+		path.Update();
+		position = spawnPos + path.GetRelativePosition();
+	}
+	
+	
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
 	Enemy::Update();
 }
-//void Enemy_Dragon::Draw()
-//{
-//	if (currentAnim != nullptr)
-//	{
-//		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));
-//	}
-//}
 
 void Enemy_Dragon::OnCollision(Collider* c1) {	
-		fly.PushBack({ 20, 121, 85, 89 });
-		fly.PushBack({ 113, 125, 85, 89 });
-		fly.PushBack({ 207, 122, 85, 89 });
-		fly.PushBack({ 15,211,85,89 });
-		currentAnim = &fly;
-		fly.speed = 0.2;
-		fly.loop = false;
-		App->audio->PlayFx(destroyedFx);
+		
+	if (vida)
+	{
+		hitcount++;
+		if (hitcount < 6)
+		{
+			damage.PushBack({ 1121, 1503 , 381, 451 });
+			damage.PushBack({ 1121, 869 , 381, 451 });
+			damage.PushBack({ 1579, 1503 , 381, 451 });
+			damage.PushBack({ 1579, 869 , 381, 451 });
+			damage.PushBack({ 1121, 1503 , 381, 451 });
+			damage.PushBack({ 1121, 869 , 381, 451 });
+			damage.PushBack({ 659, 1503 , 381, 451 });
+			damage.PushBack({ 659, 869 , 381, 451 });
+			damage.speed = 0.25f;
+			damage.loop = true;
+			currentAnim = &damage;
+			collider = App->collisions->AddCollider({ 0, 0,481, 451 }, Collider::Type::ENEMY, (Module*)App->enemies);
+		}
+		else {
+			death.PushBack({ 973, 339, 331, 329 });
+			death.PushBack({ 1405, 339, 331, 329 });
+			death.PushBack({ 1789, 339, 331, 329 });
+			death.PushBack({ 973, 339, 331, 329 });
+			death.PushBack({ 1405, 339, 331, 329 });
+			death.PushBack({ 1789, 339, 331, 329 });
+			death.PushBack({ 0, 0, 0, 0 });
+			death.speed = 0.3f;
+			death.loop = false;
+			App->audio->PlayFx(destroyedFx);
+			currentAnim = &death;
+			vida = false;
+
+		}
+
+
+	}
+	
+
+
+
 }
+	
