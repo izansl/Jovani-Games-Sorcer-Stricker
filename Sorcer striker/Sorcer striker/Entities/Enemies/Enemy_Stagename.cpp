@@ -28,7 +28,7 @@ Enemy_Stage::Enemy_Stage(int x, int y) : Enemy(x, y) {
 	pathchest.PushBack({ -100.0f, -8.0f }, 10);
 
 	currentPath = &pathchest;
-	collider = App->collisions->AddCollider({ 0, 0, 118, 99 }, Collider::Type::CHEST, (Module*)App->enemies);
+
 
 }
 

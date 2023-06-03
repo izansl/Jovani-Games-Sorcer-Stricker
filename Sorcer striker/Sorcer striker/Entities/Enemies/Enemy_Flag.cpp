@@ -28,7 +28,6 @@ Enemy_Flag::Enemy_Flag(int x, int y) : Enemy(x, y) {
 	pathchest.PushBack({ 100.0f, -8.0f }, 10);
 
 	currentPath = &pathchest;
-	collider = App->collisions->AddCollider({ 0, 0, 350, 124 }, Collider::Type::CHEST, (Module*)App->enemies);
 
 }
 
