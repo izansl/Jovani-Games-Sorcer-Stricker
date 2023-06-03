@@ -108,17 +108,32 @@ Update_Status SceneIntro::PostUpdate() {
 
 	}
 
-	if (currentTime >= 9000 && currentTime < 13000) {
+	if (currentTime >= 28500) {
+		int y = (currentTime - 28500) / 1.1;
+		App->render->Blit(ArrayImagesIntro[15], 0, y - 3000, NULL);//fondobatman 1
 
-		/*Uint8 alpha = static_cast<Uint8>((currentTime / 3000.0f) * 255);
-		SDL_SetTextureAlphaMod(ArrayImagesIntro[2], alpha);*/
-
-		App->render->Blit(ArrayImagesIntro[2], -10, 0, NULL);//Primertextocolor
-
-		/*SDL_SetTextureAlphaMod(ArrayImagesIntro[2], 255);*/
 	}
 
-	if (currentTime >= 10000) {
+	if (currentTime >= 28500) {
+		int y = (currentTime - 28500) / 1.1;
+		App->render->Blit(ArrayImagesIntro[15], 0, y - 6000, NULL);//fondobatman 2
+
+	}
+
+	if (currentTime >= 9000 && currentTime < 13000) {
+
+	
+		Uint8 alpha = static_cast<Uint8>((currentTime / 3000.0f) * 255);
+		SDL_SetTextureAlphaMod(ArrayImagesIntro[2], alpha);
+		
+		App->render->Blit(ArrayImagesIntro[2], -10, 0, NULL);//Primertextocolor
+
+		SDL_SetTextureAlphaMod(ArrayImagesIntro[2], 255);
+		
+
+	}
+
+	if (currentTime >= 10000 && currentTime < 18000) {
 		//Adalt
 		int x1 = (currentTime - 10000) / 100;
 		App->render->Blit(ArrayImagesIntro2[7], -x1, -20, NULL);//holalluc
@@ -149,19 +164,20 @@ Update_Status SceneIntro::PostUpdate() {
 
 	}
 
-	if (currentTime >= 13000) {
+	if (currentTime >= 13000 && currentTime < 18000) {
 
 		App->render->Blit(ArrayImagesIntro[5], 0, 0, NULL);//segundotextocolor
 
 	}
 
-	if (currentTime >= 14000) {
+	if (currentTime >= 14000 && currentTime < 18000) {
 
 		App->render->Blit(ArrayImagesIntro2[0], 0, 20, NULL);//alienarribafondo
 
 		//nave1
 		int x = (currentTime - 14000) / 100;
-		App->render->Blit(ArrayImagesIntro2[12], -x - 200, 400, NULL);
+		App->render->Blit(ArrayImagesIntro2[12], -x - 230, 460, NULL);
+		App->render->Blit(ArrayImagesIntro2[12], -x - 300, 340, NULL);
 		//nave2
 		App->render->Blit(ArrayImagesIntro2[13], -x + 200, 400, NULL);
 		//nave3
@@ -171,7 +187,77 @@ Update_Status SceneIntro::PostUpdate() {
 
 	}
 
+	if (currentTime >= 18500 && currentTime < 22500) {
 
+		App->render->Blit(ArrayImagesIntro[8], 0, 0, NULL);//tercertextocolor
+
+	}
+
+	if (currentTime >= 23000 && currentTime < 26000) {
+
+		App->render->Blit(ArrayImagesIntro[10], 0, 0, NULL); //cuartotextocolor
+		
+	}
+	//hasta 26000
+	if (currentTime >= 23200) {
+		//carauno
+		int x = 0;
+		int y = 0;
+		if (currentTime >= 26000) {
+			x = ((currentTime - 26000) / 1.5) * -1;
+			y = ((currentTime - 26000) / 1.5) * -1;
+		}
+		App->render->Blit(ArrayImagesIntro2[6], x, y, NULL);
+		
+	}
+
+	if (currentTime >= 23800) {
+		//carados
+		int x = 0;
+		int y = 0;
+		if (currentTime >= 26000) {
+			x = ((currentTime - 26000) / 1.5);
+			y = ((currentTime - 26000) / 1.5) * -1;
+		}
+		App->render->Blit(ArrayImagesIntro2[4], x, y, NULL);
+	}
+
+	if (currentTime >= 23400) {
+		//caratres
+		int x = 0;
+		int y = 0;
+		if (currentTime >= 26000) {
+			x = ((currentTime - 26000) / 1.5);
+			y = ((currentTime - 26000) / 1.5);
+		}
+		App->render->Blit(ArrayImagesIntro2[5], x, y, NULL);
+	}
+
+	if (currentTime >= 23600) {
+		//caracuatro
+		int x = 0;
+		int y = 0;
+		if (currentTime >= 26000) {
+			x = ((currentTime - 26000) / 1.5) * -1;
+			y = ((currentTime - 26000) / 1.5);
+		}
+		App->render->Blit(ArrayImagesIntro2[3], x, y, NULL);
+	}
+
+	if (currentTime >= 27500) {
+
+		App->render->Blit(ArrayImagesIntro[13], 0, 0, NULL);//quintotextocolor
+
+	}
+
+	if (currentTime >= 28500) {
+
+		App->render->Blit(ArrayImagesIntro[16], 0, 0, NULL);//Batman
+
+	}
+
+
+	
 	return Update_Status::UPDATE_CONTINUE;
 	
 }
