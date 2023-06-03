@@ -20,7 +20,7 @@ ModulePlayer::ModulePlayer(bool startEnabled) : Module(startEnabled) {
 	// idle animation - just one sprite
 	idleAnim.PushBack({ 97, 687, 119, 111 });
 
-	// move right
+	// move rightF
 	rightAnim.PushBack({ 97, 363, 119, 111 });
 	rightAnim.loop = false;
 	rightAnim.speed = 0.5f;

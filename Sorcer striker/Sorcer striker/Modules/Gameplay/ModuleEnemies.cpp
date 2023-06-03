@@ -25,6 +25,7 @@
 #include "../../Entities/Enemies/Enemy_FlyTank.h"
 #include "../../Entities/Enemies/Enemy_RedBat.h"
 #include "../../Entities/Enemies/Boss_BreathDragon.h"
+#include "../../Entities/Enemies/Enemy_Angel.h"
 
 #define SPAWN_MARGIN 100
 
@@ -144,33 +145,31 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 	for (uint i = 0; i < MAX_ENEMIES; ++i) {
 		if (enemies[i] == nullptr) {
 			switch (info.type) {
-			//Props
-			//Blue
-			case Enemy_Type::CHEST_BLUE: 
-				enemies[i] = new Enemy_CHESS(info.x, info.y); 
+				// props
+			case Enemy_Type::CHEST_BLUE:
+				enemies[i] = new Enemy_CHESS(info.x, info.y);
 				break;
 			case Enemy_Type::Bluebook:
 				enemies[i] = new Enemy_Bluebook(info.x, info.y);
 				break;
-			//Green
 			case Enemy_Type::CHEST_GREEN:
 				enemies[i] = new Enemy_GreenChess(info.x, info.y);
 				break;
 			case Enemy_Type::Greenbook:
 				enemies[i] = new Enemy_GreenBook(info.x, info.y);
 				break;
-			//Red
 			case Enemy_Type::CHEST_RED:
 				enemies[i] = new Enemy_RedChess(info.x, info.y);
 				break;
 			case Enemy_Type::Redbook:
 				enemies[i] = new Enemy_Redbook(info.x, info.y);
 				break;
-			//Bomb
+			case Enemy_Type::ANGEL:
+				enemies[i] = new Enemy_Angel(info.x, info.y);
+				break;
 			case Enemy_Type::BOMB:
 				enemies[i] = new Enemy_BOMB(info.x, info.y);
 				break;
-			//Gold
 			case Enemy_Type::GOLD:
 				enemies[i] = new Enemy_Gold(info.x, info.y);
 				break;
@@ -178,7 +177,7 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 				enemies[i] = new Enemy_Coin(info.x, info.y);
 				break;
 
-			//Enemies
+				//Enemies
 			case Enemy_Type::DRAGON: enemies[i] = new Enemy_Dragon(info.x, info.y, info.wave);
 				break;
 			case Enemy_Type::REDWIZARD: enemies[i] = new Enemy_RedWizard(info.x, info.y, info.wave);
@@ -195,9 +194,9 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 				break;
 			case Enemy_Type::REDBAT: enemies[i] = new Enemy_RedBat(info.x, info.y, info.wave);
 				break;
-				case Enemy_Type::BOSS: enemies[i] = new Boss_BreathDragon(info.x, info.y, info.wave); break;
+			case Enemy_Type::BOSS: enemies[i] = new Boss_BreathDragon(info.x, info.y, info.wave); break;
 			}
-			
+
 
 			enemies[i]->destroyedFx = enemyDestroyedFx;
 
@@ -211,7 +210,7 @@ void ModuleEnemies::OnCollision(Collider* c1, Collider* c2) {
 		if (enemies[i] != nullptr && enemies[i]->GetCollider() == c1) {
 			enemies[i]->OnCollision(c2); //Notify the enemy of a collision
 			c1->pendingToDelete = true;
-			
+
 			/*if (c2->type == Collider::Type::PLAYER_SHOT)
 			{
 

@@ -59,7 +59,8 @@ bool SceneLevel1::Start() {
 
 #pragma region ENEMIES
 	// add chest
-	App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, 200, -500, 1);
+	//App->enemies->AddEnemy(Enemy_Type::CHESTBLUE, 200, -500, 1);
+	App->enemies->AddEnemy(Enemy_Type::ANGEL, 200, -500, 1);
 
 #pragma region Red ball
 	//add red ball
@@ -281,14 +282,8 @@ Update_Status SceneLevel1::Update() {
 	}
 	if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN)
 	{
-		App->enemies->AddEnemy(Enemy_Type::GOLD, App->player->position.x + 50, App->player->position.y - 800, 1);
-	}
-	if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN)
-	{
-		App->enemies->AddEnemy(Enemy_Type::TANK, 400, App->player->position.y - 700, 1);
-
-
-
+		//App->enemies->AddEnemy(Enemy_Type::GOLD, App->player->position.x + 50, App->player->position.y - 800, 1);
+		App->enemies->AddEnemy(Enemy_Type::ANGEL, App->player->position.x + 50, App->player->position.y - 800, 1);
 	}
 	if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
 	{

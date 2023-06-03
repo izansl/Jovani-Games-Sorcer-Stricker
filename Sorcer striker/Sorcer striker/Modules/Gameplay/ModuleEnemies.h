@@ -7,6 +7,7 @@
 
 enum class Enemy_Type {
 	NO_TYPE,
+	ANGEL,
 	BOMB,
 	GOLD,
 	COIN,

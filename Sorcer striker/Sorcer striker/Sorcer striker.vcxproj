@@ -162,6 +162,7 @@
     <ClInclude Include="Application\MemLeaks.h" />
     <ClInclude Include="Entities\Enemies\Boss_BreathDragon.h" />
     <ClInclude Include="Entities\Enemies\Enemy.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Angel.h" />
     <ClInclude Include="Entities\Enemies\Enemy_BigTank.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Bluebook.h" />
     <ClInclude Include="Entities\Enemies\Enemy_BOMB.h" />
@@ -209,6 +210,7 @@
     <ClCompile Include="Application\Main.cpp" />
     <ClCompile Include="Entities\Enemies\Boss_BreathDragon.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Angel.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_BigTank.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Bluebook.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_BOMB.cpp" />

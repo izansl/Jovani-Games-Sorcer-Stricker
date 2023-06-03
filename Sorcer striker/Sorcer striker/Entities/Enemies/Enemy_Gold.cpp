@@ -17,27 +17,28 @@ Enemy_Gold::Enemy_Gold(int x, int y) : Enemy(x, y) {
 	currentAnim = &blue;
 
 	// Path 1
-	pathchest.PushBack({ 0.0f, 0.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -2.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -1.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -2.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -1.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -2.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -1.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -2.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -1.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -2.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, 0.5f }, 10);
+	pathchest.PushBack({ -2.0f, -6.5f }, 10);
+	pathchest.PushBack({ -1.9f, -6.8f }, 10);
+	pathchest.PushBack({ -1.8f, -6.2f }, 10);
+	pathchest.PushBack({ -1.7f, -7.0f }, 10);
+	pathchest.PushBack({ -1.6f, -6.4f }, 10);
+	pathchest.PushBack({ -1.5f, -6.9f }, 10);
+	pathchest.PushBack({ -1.4f, -6.3f }, 10);
+	pathchest.PushBack({ -1.3f, -7.0f }, 10);
+	pathchest.PushBack({ -1.2f, -6.5f }, 10);
+	pathchest.PushBack({ -1.1f, -6.1f }, 10);
+	pathchest.PushBack({ 1.0f, -7.0f }, 10);
+	pathchest.PushBack({ 1.1f, -6.2f }, 10);
+	pathchest.PushBack({ 1.2f, -6.8f }, 10);
+	pathchest.PushBack({ 1.3f, -6.4f }, 10);
+	pathchest.PushBack({ 1.4f, -6.9f }, 10);
+	pathchest.PushBack({ 1.5f, -6.3f }, 10);
+	pathchest.PushBack({ 1.6f, -7.0f }, 10);
+	pathchest.PushBack({ 1.7f, -6.5f }, 10);
+	pathchest.PushBack({ 1.8f, -6.1f }, 10);
+	pathchest.PushBack({ 1.9f, -6.6f }, 10);
+	pathchest.PushBack({ 2.0f, -6.2f }, 10);
+	pathchest.PushBack({ 2.0f, -7.0f }, 10);
 
 	currentPath = &pathchest;
 	collider = App->collisions->AddCollider({ 0, 0, 114, 103 }, Collider::Type::CHEST, (Module*)App->enemies);
@@ -46,7 +47,7 @@ Enemy_Gold::Enemy_Gold(int x, int y) : Enemy(x, y) {
 
 void Enemy_Gold::Update() {
 
-
+	pathchest.Update();
 	position = spawnPos + currentPath->GetRelativePosition();
 
 	// Call to the base class. It must be called at the end
