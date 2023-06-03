@@ -9,7 +9,7 @@
 
 Enemy_Turtle::Enemy_Turtle(int x, int y, int wave) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_enemiesvar_1.c_str());
-	fly.PushBack({ 15, 498, 196, 167});
+	fly.PushBack({ 15, 498, 196, 167 });
 	fly.PushBack({ 252, 498, 196, 167 });
 	fly.PushBack({ 488, 498, 196, 167 });
 	fly.PushBack({ 722, 498, 196, 167 });
@@ -20,10 +20,18 @@ Enemy_Turtle::Enemy_Turtle(int x, int y, int wave) : Enemy(x, y) {
 	fly.speed = 0.075;
 	fly.loop = false;
 
-	path.PushBack({ 3, -6 }, 60);
-	path.PushBack({ 0, -6 }, 60);
+	if (wave == 1)
+	{
+		path.PushBack({ 3, -0 }, 60);
+		path.PushBack({ 0, -0 }, 200);
+	}
+	if (wave == 2)
+	{
+		path.PushBack({ 0, 0 }, 100);
+	}
+	
 
-	collider = App->collisions->AddCollider({ 0, 0,82, 104 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0, 196, 167 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_Turtle::Update() {

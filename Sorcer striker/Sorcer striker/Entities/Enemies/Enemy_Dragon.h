@@ -32,6 +32,9 @@ private:
 
 	int hitcount = 0;
 	bool vida = true;
+	bool canshoot = true;
+	int temp = 0;
+	int pausa = 0;
 };
 
 #endif // __ENEMY_BROWNSHIP_H__

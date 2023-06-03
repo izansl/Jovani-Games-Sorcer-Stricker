@@ -176,56 +176,119 @@ bool SceneLevel1::Start() {
 	//add wizard 5
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 520, -8100, 5);
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 580, -8100, 5);
-#pragma endregion
 
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, -100, -20500, 6);
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 800, -20650, 7);
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, -100, -20800, 6);
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 800, -20950, 7);
+
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, -100, -23750, 6);
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 800, -23950, 7);
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, -100, -24150, 6);
+	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 800, -24350, 7);
+#pragma endregion
+#pragma region dragon
 	////add dragon
 	App->enemies->AddEnemy(Enemy_Type::DRAGON, 50, -9800, 1);
 	App->enemies->AddEnemy(Enemy_Type::DRAGON, 450, -12000, 2);
 
 #pragma endregion
 #pragma region goblin
-	App->enemies->AddEnemy(Enemy_Type::FLYTANK, 100, -18000, 1);
-	App->enemies->AddEnemy(Enemy_Type::FLYTANK, 100, -28000, 1);
+	App->enemies->AddEnemy(Enemy_Type::FLYTANK, 100, -15500, 1);
+	App->enemies->AddEnemy(Enemy_Type::FLYTANK, 100, -26000, 1);
 	
 #pragma endregion
 
 #pragma region tanks
 	
-	App->enemies->AddEnemy(Enemy_Type::TANK, 800, -100, 2);
-	App->enemies->AddEnemy(Enemy_Type::TANK, 0, -19250, 1);
-	App->enemies->AddEnemy(Enemy_Type::TANK, -150, -19250, 1);
-	App->enemies->AddEnemy(Enemy_Type::TANK, -300, -19250, 1);
-	App->enemies->AddEnemy(Enemy_Type::TANK, 800, -19112, 2);
-	App->enemies->AddEnemy(Enemy_Type::TANK, 950, -19112, 2);
-	App->enemies->AddEnemy(Enemy_Type::TANK, 1100, -19112, 2);
-	App->enemies->AddEnemy(Enemy_Type::TANK, -150, -22350, 1);
-	App->enemies->AddEnemy(Enemy_Type::TANK, 950, -22350, 2);
-	App->enemies->AddEnemy(Enemy_Type::TANK, -150, -22500, 1);
-	App->enemies->AddEnemy(Enemy_Type::TANK, 950, -22500, 2);
-	App->enemies->AddEnemy(Enemy_Type::TANK, -150, -22650, 1);
-	App->enemies->AddEnemy(Enemy_Type::TANK, 950, -22650, 2);
-	App->enemies->AddEnemy(Enemy_Type::TANK, -150, -22800, 1);
-	App->enemies->AddEnemy(Enemy_Type::TANK, 950, -22800, 2);
-	/*App->enemies->AddEnemy(Enemy_Type::TANK, -0, -24600, 1);
-	App->enemies->AddEnemy(Enemy_Type::TANK, -150, -24600, 1);
-	App->enemies->AddEnemy(Enemy_Type::TANK, -0, -24750, 1);
-	App->enemies->AddEnemy(Enemy_Type::TANK, -0, -24900, 1);
-	App->enemies->AddEnemy(Enemy_Type::TANK, -0, -25050, 1);*/
 	
+	App->enemies->AddEnemy(Enemy_Type::TANK, 0, -17250, 1);
+	App->enemies->AddEnemy(Enemy_Type::TANK, -150, -17250, 1);
+	App->enemies->AddEnemy(Enemy_Type::TANK, -300, -17250, 1);
+	App->enemies->AddEnemy(Enemy_Type::TANK, 800, -17112, 2);
+	App->enemies->AddEnemy(Enemy_Type::TANK, 950, -17112, 2);
+	App->enemies->AddEnemy(Enemy_Type::TANK, 1100, -17112, 2);
+
+	App->enemies->AddEnemy(Enemy_Type::TANK, -150, -20350, 3);
+	App->enemies->AddEnemy(Enemy_Type::TANK, 950, -20350, 4);
+	App->enemies->AddEnemy(Enemy_Type::TANK, -150, -20500, 3);
+	App->enemies->AddEnemy(Enemy_Type::TANK, 950, -20500, 4);
+	App->enemies->AddEnemy(Enemy_Type::TANK, -150, -20650, 3);
+	App->enemies->AddEnemy(Enemy_Type::TANK, 950, -20650, 4);
+	App->enemies->AddEnemy(Enemy_Type::TANK, -150, -20800, 3);
+	App->enemies->AddEnemy(Enemy_Type::TANK, 950, -20800, 4);
+
+	App->enemies->AddEnemy(Enemy_Type::TANK, -0, -21600, 5);
+	App->enemies->AddEnemy(Enemy_Type::TANK, -100, -21600, 5);
+	App->enemies->AddEnemy(Enemy_Type::TANK, -0, -21750, 5);
+	App->enemies->AddEnemy(Enemy_Type::TANK, -0, -21900, 5);
+	App->enemies->AddEnemy(Enemy_Type::TANK, -800, -22050, 5);
+	App->enemies->AddEnemy(Enemy_Type::TANK, -100, -22550, 7);
+	App->enemies->AddEnemy(Enemy_Type::TANK, -100, -23050, 6);
+	App->enemies->AddEnemy(Enemy_Type::TANK, -100, -24350, 6);
+	App->enemies->AddEnemy(Enemy_Type::TANK, -250, -24350, 6);
 	
+
 #pragma endregion
 #pragma region turtle
 
-	/*App->enemies->AddEnemy(Enemy_Type::TURTLE, 10, -90, 2);*/
-	
+	App->enemies->AddEnemy(Enemy_Type::TURTLE, -100, -22650, 1);
+	App->enemies->AddEnemy(Enemy_Type::TURTLE, -100, -22850, 1);
+	App->enemies->AddEnemy(Enemy_Type::TURTLE, 100, -23750, 2);
+	App->enemies->AddEnemy(Enemy_Type::TURTLE, 400, -23750, 2);
 
 #pragma endregion
 #pragma region goblin
-	/*App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 100, -90, 2);
-	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 200, -90, 2);
-	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 300, -90, 2);
-	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 400, -90, 2);*/
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 150, -18350, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 540, -18350, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 240, -18550, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 630, -18550, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 150, -18750, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 540, -18750, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 240, -18950, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 630, -18950, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 150, -19150, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 540, -19150, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 240, -19350, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 630, -19350, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 150, -19550, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 540, -19550, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 240, -19750, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 630, -19750, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 150, -19950, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 540, -19950, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 240, -20150, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 630, -20350, 1);
+	
 
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 720, -23550, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 630, -23550, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 540, -23550, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 720, -23700, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 630, -23700, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 540, -23700, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 720, -23850, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 630, -23850, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 540, -23850, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 720, -24000, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 630, -24000, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 540, -24000, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 720, -24150, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 630, -24150, 1);
+	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 540, -24150, 1);
+	
+
+#pragma endregion
+#pragma region bigtank
+	App->enemies->AddEnemy(Enemy_Type::BIGTANK, 0, -23250, 1);
+	App->enemies->AddEnemy(Enemy_Type::BIGTANK, -277, -25550, 2);
+	App->enemies->AddEnemy(Enemy_Type::BIGTANK, 1000, -25550, 3);
+#pragma endregion
+#pragma region redbat
+	App->enemies->AddEnemy(Enemy_Type::REDBAT, 600, -22050, 1);
+	App->enemies->AddEnemy(Enemy_Type::REDBAT, 600, -22050, 1);
+	App->enemies->AddEnemy(Enemy_Type::REDBAT, 550, -22250, 1);
+	App->enemies->AddEnemy(Enemy_Type::REDBAT, 500, -22450, 1);
 #pragma endregion
 	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;
@@ -300,6 +363,7 @@ Update_Status SceneLevel1::Update() {
 		App->enemies->AddEnemy(Enemy_Type::BOSS, 400, App->player->position.y - 700, 1);
 	}
 
+	
 	return Update_Status::UPDATE_CONTINUE;
 }
 

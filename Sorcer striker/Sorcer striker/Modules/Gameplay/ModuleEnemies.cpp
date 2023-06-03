@@ -25,6 +25,8 @@
 #include "../../Entities/Enemies/Enemy_FlyTank.h"
 #include "../../Entities/Enemies/Enemy_RedBat.h"
 #include "../../Entities/Enemies/Boss_BreathDragon.h"
+#include "../../Entities/Enemies/Enemy_BigTank.h"
+
 
 #define SPAWN_MARGIN 100
 
@@ -130,7 +132,7 @@ void ModuleEnemies::HandleEnemiesDespawn() {
 	for (uint i = 0; i < MAX_ENEMIES; ++i) {
 		if (enemies[i] != nullptr) {
 			// Delete the enemy when it has reached the end of the screen
-			if (enemies[i]->position.x < -300 && enemies[i]->position.x >1100) {
+			if (enemies[i]->position.x < -300 && enemies[i]->position.x >1200) {
 				//LOG("DeSpawning enemy at %d", enemies[i]->position.x * SCREEN_SIZE);
 
 				enemies[i]->SetToDelete();
@@ -193,13 +195,15 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 				break;
 			case Enemy_Type::FLYTANK: enemies[i] = new Enemy_FlyTank(info.x, info.y, info.wave);
 				break;
+			case Enemy_Type::BIGTANK: enemies[i] = new Enemy_BigTank(info.x, info.y, info.wave);
+				break;
 			case Enemy_Type::REDBAT: enemies[i] = new Enemy_RedBat(info.x, info.y, info.wave);
 				break;
 				case Enemy_Type::BOSS: enemies[i] = new Boss_BreathDragon(info.x, info.y, info.wave); break;
 			}
 			
 
-			enemies[i]->destroyedFx = enemyDestroyedFx;
+ 			enemies[i]->destroyedFx = enemyDestroyedFx;
 
 			break;
 		}

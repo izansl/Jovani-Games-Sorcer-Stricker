@@ -11,19 +11,23 @@ Enemy_MiniDragon::Enemy_MiniDragon(int x, int y, int wave) : Enemy(x, y) {
 	//movimiento hacie abajo
 	texture = App->textures->Load(FI_spriteEnemy_enemiesvar_1.c_str());
 	down.PushBack({ 621, 327, 93, 85 });
+	down.PushBack({ 759, 327, 93, 85 });
+	down.PushBack({ 892, 327, 93, 85 });
+	down.PushBack({ 1053, 327, 93, 85 });
+	down.PushBack({ 1196, 327, 93, 85 });
 	currentAnim = &down;
-	up.speed = 1;
-	up.loop = false;
+	down.speed = 0.075;
+	down.loop = false;
 	//movimiento hacia arriba
-	up.PushBack({ 759, 327, 93, 85 });
+	/*up.PushBack({ 759, 327, 93, 85 });
 	up.PushBack({ 892, 327, 93, 85 });
 	up.PushBack({ 1053, 327, 93, 85 });
 	up.PushBack({ 1196, 327, 93, 85 });
 	up.speed = 1;
-	down.loop = false;
+	up.loop = false;*/
 
-	path.PushBack({ 0, -4 }, 100, &down);
-	path.PushBack({ 1, -12 }, 600, &up);
+	path.PushBack({ 0, 0 }, 70, &down);
+	path.PushBack({ 1, -12 }, 600, &down);
 
 	collider = App->collisions->AddCollider({ 0, 0, 93, 85}, Collider::Type::ENEMY, (Module*)App->enemies);
 }
