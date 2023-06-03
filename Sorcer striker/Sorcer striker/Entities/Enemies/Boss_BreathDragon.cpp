@@ -54,10 +54,10 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	particleFire.anim.speed = 0.05f;
 	particleFire.lifetime = 115;
 
-	//collider = App->collisions->AddCollider({ 0, 0,1200, 400 }, Collider::Type::ENEMY, (Module*)App->enemies);
-	//colliderCabeza1 = App->collisions->AddCollider({ 0, 0,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
-	//colliderCabeza2 = App->collisions->AddCollider({ 0, 0,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
-	//colliderCabeza3 = App->collisions->AddCollider({ 0, 0,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	colliderCuerpo = App->collisions->AddCollider({ 0, 0,1200, 400 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	colliderCabeza1 = App->collisions->AddCollider({ -300, 200,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	colliderCabeza2 = App->collisions->AddCollider({ -85, 230,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	colliderCabeza3 = App->collisions->AddCollider({ 130, 200,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Boss_BreathDragon::Update() {
@@ -68,12 +68,16 @@ void Boss_BreathDragon::Update() {
 	if (collider != nullptr)
 		collider->SetPos(position.x, position.y);*/
 
-
-	if (pathFan.GetCurrentAnimation() != nullptr) pathFan.Update();
-	if (pathCabeza.GetCurrentAnimation() != nullptr) pathCabeza.Update();
-	if (pathCuerpo.GetCurrentAnimation() != nullptr) pathCuerpo.Update();
+	pathFan.GetCurrentAnimation()->Update();
+	pathCabeza.GetCurrentAnimation()->Update();
+	pathCuerpo.GetCurrentAnimation()->Update();
 
 	position = spawnPos + pathCuerpo.GetRelativePosition();
+
+	colliderCuerpo->SetPos(position.x-600, position.y);
+	colliderCabeza1->SetPos(position.x - 300 - 600, position.y + 200);
+	colliderCabeza1->SetPos(position.x - 85 - 600, position.y + 230);
+	colliderCabeza1->SetPos(position.x + 130 - 600, position.y + 200);
 }
 
 void Boss_BreathDragon::Draw() {
