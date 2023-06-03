@@ -106,15 +106,17 @@ bool ModulePlayer::Start() {
 }
 
 Update_Status ModulePlayer::Update() {
+
+	GamePad& pad = App->input->pads[0];
 	
 	// Moving the player with the camera scroll
 	App->player->position.y -= 8;
-	if (App->input->keys[SDL_SCANCODE_F1] == KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_F1] == KEY_DOWN || pad.l1==true)
 		godMode = !godMode;
 
-	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT) position.y -= speed;
-	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT) position.y += speed;
-	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
+	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT || pad.l_y < 0.0f) position.y -= speed;
+	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT || pad.l_y > 0.0f) position.y += speed;
+	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
 
 	{
 		position.x += speed;
@@ -124,7 +126,7 @@ Update_Status ModulePlayer::Update() {
 			currentAnimation = &rightAnim;
 		}
 	}
-	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
+	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
 	{
 		position.x -= speed;
 		if (currentAnimation != &leftAnim)
@@ -134,7 +136,7 @@ Update_Status ModulePlayer::Update() {
 		}
 	}
 
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true)
 	{
 		if (canshootlaser)
 		{
@@ -173,8 +175,8 @@ Update_Status ModulePlayer::Update() {
 		}
 	}
 
-	// Spawn explosion particles when pressing X
-	if (App->input->keys[SDL_SCANCODE_X] == Key_State::KEY_DOWN)
+	// Spawn explosion particles when pressing B
+	if (App->input->keys[SDL_SCANCODE_B] == Key_State::KEY_DOWN || pad.x == true)
 	{
 		if (canshootbomb)
 		{
@@ -204,7 +206,12 @@ Update_Status ModulePlayer::Update() {
 	}
 
 	// If no up/down movement detected, set the current animation back to idle
-	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE && App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE)
+	if (pad.enabled)
+	{
+		if (pad.l_x == 0.0f && pad.l_y == 0.0f)
+			currentAnimation = &idleAnim;
+	}
+	else if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE && App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE)
 		currentAnimation = &idleAnim;
 
 	//update collider
@@ -217,7 +224,7 @@ Update_Status ModulePlayer::Update() {
 		collider->rect.w = 217;
 		collider->rect.h = 118;
 
-  if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
 
 		{
 			position.x += speed;
@@ -227,7 +234,7 @@ Update_Status ModulePlayer::Update() {
 				currentAnimation = &blueright;
 			}
 		}
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
 
 		{
 			position.x -= speed;
@@ -244,7 +251,7 @@ Update_Status ModulePlayer::Update() {
 		collider->rect.w = 217;
 		collider->rect.h = 118;
 
-		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
 		{
 			position.x += speed;
 			if (currentAnimation != &greenright)
@@ -253,7 +260,7 @@ Update_Status ModulePlayer::Update() {
 				currentAnimation = &greenright;
 			}
 		}
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
 		{
 			position.x -= speed;
 			if (currentAnimation != &greenleft)
@@ -269,7 +276,7 @@ Update_Status ModulePlayer::Update() {
 		collider->rect.w = 217;
 		collider->rect.h = 118;
 
-		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT)
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
 		{
 			position.x += speed;
 			if (currentAnimation != &pinkright)
@@ -278,7 +285,7 @@ Update_Status ModulePlayer::Update() {
 				currentAnimation = &pinkright;
 			}
 		}
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT)
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
 		{
 			position.x -= speed;
 			if (currentAnimation != &pinkleft)
