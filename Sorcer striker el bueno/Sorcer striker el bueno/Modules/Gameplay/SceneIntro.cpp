@@ -110,12 +110,12 @@ Update_Status SceneIntro::PostUpdate() {
 
 	if (currentTime >= 9000 && currentTime < 13000) {
 
-		Uint8 alpha = static_cast<Uint8>((currentTime / 3000.0f) * 255);
-		SDL_SetTextureAlphaMod(ArrayImagesIntro[2], alpha);
+		/*Uint8 alpha = static_cast<Uint8>((currentTime / 3000.0f) * 255);
+		SDL_SetTextureAlphaMod(ArrayImagesIntro[2], alpha);*/
 
 		App->render->Blit(ArrayImagesIntro[2], -10, 0, NULL);//Primertextocolor
 
-		SDL_SetTextureAlphaMod(ArrayImagesIntro[2], 255);
+		/*SDL_SetTextureAlphaMod(ArrayImagesIntro[2], 255);*/
 	}
 
 	if (currentTime >= 10000) {
@@ -124,19 +124,22 @@ Update_Status SceneIntro::PostUpdate() {
 		App->render->Blit(ArrayImagesIntro2[7], -x1, -20, NULL);//holalluc
 		App->render->Blit(ArrayImagesIntro2[7], -x1 + 200, -20, NULL);//holalluc
 		//Abaix
-		int x2 = (currentTime - 10000) / 100;//velocidad 
-		App->render->Blit(ArrayImagesIntro2[2], -x2, -100, NULL);//alientocho
-		App->render->Blit(ArrayImagesIntro2[2], -x2 + 180, -100, NULL);//alientocho
-		App->render->Blit(ArrayImagesIntro2[2], -x2 + 330, -100, NULL);//alientocho
-		App->render->Blit(ArrayImagesIntro2[2], -x2 + 480, -100, NULL);//alientocho
-		App->render->Blit(ArrayImagesIntro2[2], -x2 + 630, -100, NULL);//alientocho
+		int x2 = (currentTime - 10000) / 100;//velocidad
+		App->render->Blit(ArrayImagesIntro2[2], -x2 - 180, -100, NULL);//alientocho
+		App->render->Blit(ArrayImagesIntro2[2], -x2 + 20, -100, NULL);//alientocho
+		App->render->Blit(ArrayImagesIntro2[2], -x2 + 200, -100, NULL);//alientocho
+		App->render->Blit(ArrayImagesIntro2[2], -x2 + 350, -100, NULL);//alientocho
+		App->render->Blit(ArrayImagesIntro2[2], -x2 + 500, -100, NULL);//alientocho
+		App->render->Blit(ArrayImagesIntro2[2], -x2 + 650, -100, NULL);//alientocho
+		App->render->Blit(ArrayImagesIntro2[2], -x2 + 800, -100, NULL);//alientocho
 		
 		//foc 1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 + 265, -345, NULL);//fuego1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 + 115, -345, NULL);//fuego1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 - 35, -345, NULL);//fuego1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 - 215, -345, NULL);//fuego1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 - 395, -345, NULL);//fuego1
+		App->render->Blit(ArrayImagesIntro2[9], -x2 + 435, -345, NULL);//fuego1
+		App->render->Blit(ArrayImagesIntro2[9], -x2 + 285, -345, NULL);//fuego1
+		App->render->Blit(ArrayImagesIntro2[9], -x2 + 135, -345, NULL);//fuego1
+		App->render->Blit(ArrayImagesIntro2[9], -x2 - 15, -345, NULL);//fuego1
+		App->render->Blit(ArrayImagesIntro2[9], -x2 - 195, -345, NULL);//fuego1
+		App->render->Blit(ArrayImagesIntro2[9], -x2 - 375, -345, NULL);//fuego1
 		
 
 		//foc 2
@@ -152,9 +155,18 @@ Update_Status SceneIntro::PostUpdate() {
 
 	}
 
-	if (currentTime >= 15000) {
+	if (currentTime >= 14000) {
 
 		App->render->Blit(ArrayImagesIntro2[0], 0, 20, NULL);//alienarribafondo
+
+		//nave1
+		App->render->Blit(ArrayImagesIntro2[12], 0, 20, NULL);
+		//nave2
+		App->render->Blit(ArrayImagesIntro2[13], 0, 20, NULL);
+		//nave3
+		App->render->Blit(ArrayImagesIntro2[14], 0, 20, NULL);
+		//nave4
+		App->render->Blit(ArrayImagesIntro2[15], 0, 20, NULL);
 
 	}
 
