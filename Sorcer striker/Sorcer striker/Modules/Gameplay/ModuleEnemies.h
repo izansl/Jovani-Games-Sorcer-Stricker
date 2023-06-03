@@ -26,7 +26,10 @@ enum class Enemy_Type {
 	TURTLE,
 	MINIDRAGON,
 	REDBAT,
-	BOSS
+	BOSS,
+	STAGE,
+	FLAG,
+	NUM1,
 };
 
 struct EnemySpawnpoint {
