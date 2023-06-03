@@ -3,6 +3,7 @@
 #include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Gameplay/ModuleEnemies.h"
+#include "../../Modules/Gameplay/SceneLevel1.h"
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include"../../Modules/Core/ModuleTextures.h"
@@ -21,7 +22,7 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	animationFan.PushBack({ 116, 230, 115, 115 });
 	animationFan.speed = 0.2;
 	animationFan.loop = true;
-	pathFan.PushBack({ 0,0 }, 20, &animationFan);
+	pathFan.PushBack({ 0, App->sceneLevel_1->velocitatNivell }, 20, &animationFan);
 
 	animationHead.PushBack({ 0, 502, 180, 180 });
 	animationHead.PushBack({ 180 * 2, 502, 180, 180 });
