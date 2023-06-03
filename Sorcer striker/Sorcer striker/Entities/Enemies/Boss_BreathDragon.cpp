@@ -68,13 +68,17 @@ void Boss_BreathDragon::Update() {
 	if (collider != nullptr)
 		collider->SetPos(position.x, position.y);*/
 
+	pathFan.Update();
+	pathCabeza.Update();
+	pathCuerpo.Update();
+
 	pathFan.GetCurrentAnimation()->Update();
 	pathCabeza.GetCurrentAnimation()->Update();
 	pathCuerpo.GetCurrentAnimation()->Update();
 
 	position = spawnPos + pathCuerpo.GetRelativePosition();
 
-	colliderCuerpo->SetPos(position.x-600, position.y);
+	colliderCuerpo->SetPos(position.x - 600, position.y);
 	colliderCabeza1->SetPos(position.x - 300 - 600, position.y + 200);
 	colliderCabeza1->SetPos(position.x - 85 - 600, position.y + 230);
 	colliderCabeza1->SetPos(position.x + 130 - 600, position.y + 200);
