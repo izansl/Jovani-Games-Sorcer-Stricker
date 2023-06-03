@@ -93,22 +93,13 @@ Update_Status SceneIntro::PostUpdate() {
 	
 	if (currentTime >= 3000 && currentTime < 5500) {
 
-		/*Uint8 alpha = static_cast<Uint8>((currentTime / 3000.0f) * 255);
-		SDL_SetTextureAlphaMod(ArrayImagesIntro[0], alpha);*/
-
 		App->render->Blit(ArrayImagesIntro[0], 0, 0, NULL);//jovani
-
-		/*SDL_SetTextureAlphaMod(ArrayImagesIntro[0], 255);*/
 
 	}
 
 	if (currentTime >= 6000 && currentTime < 9000) {
-		/*Uint8 alpha = static_cast<Uint8>((currentTime / 3000.0f) * 255);
-		SDL_SetTextureAlphaMod(ArrayImagesIntro[1], alpha);*/
 
 		App->render->Blit(ArrayImagesIntro[1], 0, 0, NULL);//Raizing
-
-		/*SDL_SetTextureAlphaMod(ArrayImagesIntro[1], 255);*/
 
 	}
 
