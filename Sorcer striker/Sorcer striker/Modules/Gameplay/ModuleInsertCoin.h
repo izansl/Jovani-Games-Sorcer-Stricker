@@ -1,5 +1,5 @@
-#ifndef __MODULE_HUD_H__
-#define __MODULE_HUD_H__
+#ifndef __MODULE_INSERTCOIN_H__
+#define __MODULE_INSERTCOIN_H__
 
 #include <vector>
 #include <string>
@@ -10,17 +10,17 @@
 #include "../Module.h"
 #include "../../Utils/p2Point.h"
 
-struct abecedari {
+struct abecedari2 {
 	char lletra;
 	int posicio;
 };
 
 
-class ModuleHUD : public Module {
+class ModuleInsertCoin : public Module {
 
 public:
-	ModuleHUD(bool startEnabled);
-	~ModuleHUD();
+	ModuleInsertCoin(bool startEnabled);
+	~ModuleInsertCoin();
 
 	bool Start() override;
 	Update_Status Update() override;
@@ -29,16 +29,14 @@ public:
 
 
 private:
-	int score;
-	int highScore;
+	int coins;
 	int sizeVector;
 	int widthLetter = 18;
 
-	std::vector<abecedari> vectorABC;
+	std::vector<abecedari2> vectorABC;
 
-	std::string player1 = "Player 1";
-	std::string player2 = "Player 2";
-	std::string hlScore = "Hl-Score";
+	//std::string str_insertCoin = "INSERT A COIN ";
+	std::string str_insertCoin = "CREDIT ";
 
 	SDL_Texture* texture = nullptr;
 
@@ -48,8 +46,6 @@ private:
 
 	iPoint posPlayer1, posPlayer2, posHlScrore;
 	iPoint posScore1, posScore2, posScoreHl;
-
-	//IMPRIMEIX ELS CARÀCTER DEL VECTOR 
 };
 
 #endif

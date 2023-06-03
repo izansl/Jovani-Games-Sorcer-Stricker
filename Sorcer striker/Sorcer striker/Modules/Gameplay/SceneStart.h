@@ -31,7 +31,7 @@ public:
 public:
 	// The scene sprite sheet loaded into an SDL_Texture
 
-
+	int coins = 0;
 
 	#define NUM_IMAGES 2
 	SDL_Texture* ArrayImagesStart[NUM_IMAGES];

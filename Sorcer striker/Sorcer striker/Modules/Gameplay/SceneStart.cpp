@@ -21,7 +21,7 @@ bool SceneStart::Start() {
 	bool ret = true;
 	//Carga de texturas(imagenes)
 
-	
+
 	ArrayImagesStart[0] = App->textures->Load(FI_Start_1.c_str());
 	ArrayImagesStart[1] = App->textures->Load(FI_Start_2.c_str());
 
@@ -33,13 +33,22 @@ bool SceneStart::Start() {
 
 //NO TOCAR NADA //FadeToBlack de Intro -> primera escena
 Update_Status SceneStart::Update() {
+	if (App->input->keys[SDL_SCANCODE_KP_ENTER] == Key_State::KEY_DOWN) {
+		// TODO: Falta meter sonido
+		coins++;
+	}
+
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
-		App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 60);
+		if (coins > 0)
+		{
+			App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 60);
+			coins--;
+		}
 	}
 	if (App->input->keys[SDL_SCANCODE_LSHIFT] == Key_State::KEY_DOWN)
 	{
 		tokenFx = App->audio->LoadFx(FA_Fx_token.c_str());
-	};
+	}
 	return Update_Status::UPDATE_CONTINUE;
 }
 
@@ -59,7 +68,7 @@ Update_Status SceneStart::PostUpdate() {
 
 	App->render->Blit(ArrayImagesStart[currentImage], 0, 0, NULL);
 
-	
+
 
 	return Update_Status::UPDATE_CONTINUE;
 

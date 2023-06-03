@@ -13,6 +13,7 @@
 #include "../Modules/Core/ModuleFonts.h"
 #include "../Modules/Core/ModuleRender.h"
 #include "../Modules/Core/ModuleHUD.h"
+#include "../Modules/Gameplay/ModuleInsertCoin.h"
 #include "../Modules/Gameplay/ModulePlayer.h"
 #include "../Modules/Gameplay/SceneIntro.h"
 #include "../Modules/Gameplay/SceneLevel1.h"
@@ -45,7 +46,8 @@ Application::Application() {
 	modules[11] = fade = new ModuleFadeToBlack(true);
 	modules[12] = fonts = new ModuleFonts(true);
 	modules[13] = hud = new ModuleHUD(true);
-	modules[14] = render = new ModuleRender(true);
+	modules[14] = insertCoins = new ModuleInsertCoin(true);
+	modules[15] = render = new ModuleRender(true);
 }
 
 Application::~Application() {

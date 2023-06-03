@@ -1,4 +1,4 @@
-#include "ModuleHUD.h"
+#include "ModuleInsertCoin.h"
 #include <cctype>
 #include "../../Application/Application.h"
 #include "../../Application/FileNames.h"
@@ -6,86 +6,40 @@
 #include "../../Modules/Core/ModuleInput.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include "../../Modules/Gameplay/ModulePlayer.h"
+#include "../../Modules/Gameplay/SceneStart.h"
 
-ModuleHUD::ModuleHUD(bool startEnabled) : Module(startEnabled) {
-
+ModuleInsertCoin::ModuleInsertCoin(bool startEnabled) : Module(startEnabled) {
 }
 
-ModuleHUD::~ModuleHUD() {
-	// Destructor
+ModuleInsertCoin::~ModuleInsertCoin() {
 }
 
-bool ModuleHUD::Start() {
+bool ModuleInsertCoin::Start() {
 	// Inicializa las variables de puntuación
-	score = 0;
-	highScore = 0;
+
 	sizeVector = LoadVector();
 
-	LOG("Loading HUD textures");
 	bool ret = true;
 	texture = App->textures->Load(FI_HUD_font1.c_str());
 
-	posPlayer1.x = 10 + App->render->camera.x;
-	posPlayer1.y = 10 + App->render->camera.y;
-	posScore1.x = 10 + App->render->camera.x;
-	posScore1.y = 30 + App->render->camera.y;
-
-	posPlayer2.x = 350 + App->render->camera.x;
-	posPlayer2.y = 10 + App->render->camera.y;
-	posScore2.x = 350 + App->render->camera.x;
-	posScore2.y = 30 + App->render->camera.y;
-
-	posHlScrore.x = 600 + App->render->camera.x;
-	posHlScrore.y = 10 + App->render->camera.y;
-	posScoreHl.x = 600 + App->render->camera.x;
-	posScoreHl.y = 30 + App->render->camera.y;
 	return ret;
 }
 
-
-Update_Status ModuleHUD::Update()
-{
-	posPlayer1.x = 10 + App->render->camera.x;
-	posPlayer1.y = 10 + App->render->camera.y;
-	posScore1.x = 10 + App->render->camera.x;
-	posScore1.y = 30 + App->render->camera.y;
-
-	posPlayer2.x = 350 + App->render->camera.x;
-	posPlayer2.y = 10 + App->render->camera.y;
-	posScore2.x = 350 + App->render->camera.x;
-	posScore2.y = 30 + App->render->camera.y;
-
-	posHlScrore.x = 600 + App->render->camera.x;
-	posHlScrore.y = 10 + App->render->camera.y;
-	posScoreHl.x = 600 + App->render->camera.x;
-	posScoreHl.y = 30 + App->render->camera.y;
-
+Update_Status ModuleInsertCoin::Update() {
 	return Update_Status::UPDATE_CONTINUE;
 }
 
-Update_Status ModuleHUD::PostUpdate() {
-	PaintSentence(player1, { posPlayer1.x, posPlayer1.y });
-	PaintSentence(std::to_string(App->player->score), { posScore1.x, posScore1.y });
-
-	PaintSentence(player2, { posPlayer2.x, posPlayer2.y });
-	PaintSentence(std::to_string(App->player->score), { posScore2.x, posScore2.y });
-
-	PaintSentence(hlScore, { posHlScrore.x, posHlScrore.y });
-	PaintSentence(std::to_string(655000), { posScoreHl.x, posScoreHl.y });
-
-	//PaintSentence("LOADING...", { 150,550 });
-
-
+Update_Status ModuleInsertCoin::PostUpdate() {
+	int patata = App->sceneStart->coins;
+	PaintSentence(str_insertCoin + std::to_string(patata), { 350,950 });
 	return Update_Status::UPDATE_CONTINUE;
 }
 
-bool ModuleHUD::CleanUp()
-{
+bool ModuleInsertCoin::CleanUp() {
 	return true;
 }
 
-int ModuleHUD::PosLetter(char leterToSearch) {
-
+int ModuleInsertCoin::PosLetter(char leterToSearch) {
 	char upperLetter = static_cast<char>(toupper(leterToSearch)); //  Converts the letter to uppercase
 
 	for (int i = 0; i < sizeVector; i++)
@@ -98,7 +52,7 @@ int ModuleHUD::PosLetter(char leterToSearch) {
 	return 0;
 }
 
-int ModuleHUD::LoadVector() {
+int ModuleInsertCoin::LoadVector() {
 
 	vectorABC.push_back({ '!', 0 });
 	vectorABC.push_back({ '$', 1 });
@@ -156,7 +110,8 @@ int ModuleHUD::LoadVector() {
 	return vectorABC.size();
 }
 
-void ModuleHUD::PaintSentence(std::string sentenceToPaint, iPoint positionToPaint) {
+void ModuleInsertCoin::PaintSentence(std::string sentenceToPaint, iPoint positionToPaint) {
+
 	int size = sentenceToPaint.size();
 	int writedLetters = 0;
 	std::vector<int> posicions;
@@ -173,5 +128,4 @@ void ModuleHUD::PaintSentence(std::string sentenceToPaint, iPoint positionToPain
 		App->render->Blit(texture, positionToPaint.x + (writedLetters * widthLetter), positionToPaint.y, &cutFont);
 		writedLetters++;
 	}
-
 }
