@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{e2c7127b-f0a9-4500-afde-e858da48217a}</ProjectGuid>
+    <RootNamespace>Sorcerstriker</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>..\SDLs\SDL\include;..\SDLs\SDL_image\include;..\SDLs\SDL_mixer\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\SDLs\SDL\lib\x64;..\SDLs\SDL_image\lib\x64;..\SDLs\SDL_mixer\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>..\SDLs\SDL\include;..\SDLs\SDL_image\include;..\SDLs\SDL_mixer\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\SDLs\SDL\lib\x64;..\SDLs\SDL_image\lib\x64;..\SDLs\SDL_mixer\lib\x64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;SDL_image.lib;SDL_mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="Assets\Audios\Hud-music\character selection.ogg" />
+    <None Include="Assets\Audios\Hud-music\game over.ogg" />
+    <None Include="Assets\Audios\Hud-music\musica-menu.ogg" />
+    <None Include="Assets\Audios\Hud-music\ronda completada.ogg" />
+    <None Include="Assets\Audios\Stage-1\boss stage1.ogg" />
+    <None Include="Assets\Audios\Stage-1\stage1.ogg" />
+    <None Include="SDL2.dll" />
+    <None Include="SDL2_image.dll" />
+    <None Include="SDL2_mixer.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application\Application.h" />
+    <ClInclude Include="Application\FileNames.h" />
+    <ClInclude Include="Application\Globals.h" />
+    <ClInclude Include="Application\MemLeaks.h" />
+    <ClInclude Include="Entities\Enemies\Boss_BreathDragon.h" />
+    <ClInclude Include="Entities\Enemies\Enemy.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_BigTank.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Bluebook.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_BOMB.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_CHESTBLUE.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Coin.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Dragon.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_FlyTank.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Gold.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_GreenBook.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_GreenChess.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_MiniDragon.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_RedBall.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_RedBat.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Redbook.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_RedChess.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_RedWizard.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Tank.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Turtle.h" />
+    <ClInclude Include="Entities\Particle.h" />
+    <ClInclude Include="Modules\Gameplay\ModuleInsertCoin.h" />
+    <ClInclude Include="Modules\Core\ModuleAudio.h" />
+    <ClInclude Include="Modules\Core\ModuleCollisions.h" />
+    <ClInclude Include="Modules\Core\ModuleFadeToBlack.h" />
+    <ClInclude Include="Modules\Core\ModuleFonts.h" />
+    <ClInclude Include="Modules\Core\ModuleHUD.h" />
+    <ClInclude Include="Modules\Core\ModuleInput.h" />
+    <ClInclude Include="Modules\Core\ModuleParticles.h" />
+    <ClInclude Include="Modules\Core\ModuleRender.h" />
+    <ClInclude Include="Modules\Core\ModuleTextures.h" />
+    <ClInclude Include="Modules\Core\ModuleWindow.h" />
+    <ClInclude Include="Modules\Gameplay\ModuleEnemies.h" />
+    <ClInclude Include="Modules\Gameplay\ModulePlayer.h" />
+    <ClInclude Include="Modules\Gameplay\SceneIntro.h" />
+    <ClInclude Include="Modules\Gameplay\SceneLevel1.h" />
+    <ClInclude Include="Modules\Gameplay\SceneStart.h" />
+    <ClInclude Include="Modules\Module.h" />
+    <ClInclude Include="Utils\Animation.h" />
+    <ClInclude Include="Utils\Collider.h" />
+    <ClInclude Include="Utils\p2Point.h" />
+    <ClInclude Include="Utils\Path.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Application\Application.cpp" />
+    <ClCompile Include="Application\Globals.cpp" />
+    <ClCompile Include="Application\Main.cpp" />
+    <ClCompile Include="Entities\Enemies\Boss_BreathDragon.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_BigTank.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Bluebook.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_BOMB.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_CHESTBLUE.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Coin.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Dragon.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_FlyTank.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Gold.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_GreenBook.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_GreenChess.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_MiniDragon.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_RedBall.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_RedBat.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Redbook.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_RedChess.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_RedWizard.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Tank.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Turtle.cpp" />
+    <ClCompile Include="Entities\Particle.cpp" />
+    <ClCompile Include="Modules\Gameplay\ModuleInsertCoin.cpp" />
+    <ClCompile Include="Modules\Core\ModuleAudio.cpp" />
+    <ClCompile Include="Modules\Core\ModuleCollisions.cpp" />
+    <ClCompile Include="Modules\Core\ModuleFadeToBlack.cpp" />
+    <ClCompile Include="Modules\Core\ModuleFonts.cpp" />
+    <ClCompile Include="Modules\Core\ModuleHUD.cpp" />
+    <ClCompile Include="Modules\Core\ModuleInput.cpp" />
+    <ClCompile Include="Modules\Core\ModuleParticles.cpp" />
+    <ClCompile Include="Modules\Core\ModuleRender.cpp" />
+    <ClCompile Include="Modules\Core\ModuleTextures.cpp" />
+    <ClCompile Include="Modules\Core\ModuleWindow.cpp" />
+    <ClCompile Include="Modules\Gameplay\ModuleEnemies.cpp" />
+    <ClCompile Include="Modules\Gameplay\ModulePlayer.cpp" />
+    <ClCompile Include="Modules\Gameplay\SceneIntro.cpp" />
+    <ClCompile Include="Modules\Gameplay\SceneLevel1.cpp" />
+    <ClCompile Include="Modules\Gameplay\SceneStart.cpp" />
+    <ClCompile Include="Modules\Module.cpp" />
+    <ClCompile Include="Utils\Collider.cpp" />
+    <ClCompile Include="Utils\Path.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Images\castillo\enemigos_varios.png" />
+    <Image Include="Assets\Images\castillo\particulas.png" />
+    <Image Include="Assets\Images\castillo\tanque.png" />
+    <Image Include="Assets\Images\final-boss\finalbossnuevoo.png" />
+    <Image Include="Assets\Images\final-boss\kill.png" />
+    <Image Include="Assets\Images\Fonts\rtype_font.png" />
+    <Image Include="Assets\Images\Fonts\rtype_font2.png" />
+    <Image Include="Assets\Images\Fonts\stage1.png" />
+    <Image Include="Assets\Images\Intro\alienabajofondo.png" />
+    <Image Include="Assets\Images\Intro\alienarribafondo.png" />
+    <Image Include="Assets\Images\Intro\Batman.png" />
+    <Image Include="Assets\Images\Intro\Caras_de_los_personajes.png" />
+    <Image Include="Assets\Images\Intro\cuartotextoBlanco.png" />
+    <Image Include="Assets\Images\Intro\cuartotextoColor.png" />
+    <Image Include="Assets\Images\Intro\explosiones.png" />
+    <Image Include="Assets\Images\Intro\fondobatman.png" />
+    <Image Include="Assets\Images\Intro\intropro.png" />
+    <Image Include="Assets\Images\Intro\jovani.png" />
+    <Image Include="Assets\Images\Intro\onepcolor.png" />
+    <Image Include="Assets\Images\Intro\pantallainiciodos.png" />
+    <Image Include="Assets\Images\Intro\pantallainiciouno.png" />
+    <Image Include="Assets\Images\Intro\playerpick.png" />
+    <Image Include="Assets\Images\Intro\primertextoBlanco.png" />
+    <Image Include="Assets\Images\Intro\PrimertextoColor.png" />
+    <Image Include="Assets\Images\Intro\quintotextoBlanco.png" />
+    <Image Include="Assets\Images\Intro\quintotextoColor.png" />
+    <Image Include="Assets\Images\Intro\Raizing.png" />
+    <Image Include="Assets\Images\Intro\segundotextoBlanco.png" />
+    <Image Include="Assets\Images\Intro\segundotextoColor.png" />
+    <Image Include="Assets\Images\Intro\tercertextoBlanco.png" />
+    <Image Include="Assets\Images\Intro\tercertextoColor.png" />
+    <Image Include="Assets\Images\Outro\customone.png" />
+    <Image Include="Assets\Images\Outro\customtwo.png" />
+    <Image Include="Assets\Images\Outro\drugs.png" />
+    <Image Include="Assets\Images\Outro\outroeight.png" />
+    <Image Include="Assets\Images\Outro\outrofive.png" />
+    <Image Include="Assets\Images\Outro\outrofour.png" />
+    <Image Include="Assets\Images\Outro\outronine.png" />
+    <Image Include="Assets\Images\Outro\outroone.png" />
+    <Image Include="Assets\Images\Outro\outroseven.png" />
+    <Image Include="Assets\Images\Outro\outrosix.png" />
+    <Image Include="Assets\Images\Outro\outrothree.png" />
+    <Image Include="Assets\Images\Outro\outrotwo.png" />
+    <Image Include="Assets\Images\Outro\outrozero.png" />
+    <Image Include="Assets\Images\Outro\special.png" />
+    <Image Include="Assets\Images\pre-castillo\allprops.png" />
+    <Image Include="Assets\Images\pre-castillo\arboles.png" />
+    <Image Include="Assets\Images\pre-castillo\bosque.png" />
+    <Image Include="Assets\Images\pre-castillo\castillo.png" />
+    <Image Include="Assets\Images\pre-castillo\columnas_inicio.png" />
+    <Image Include="Assets\Images\pre-castillo\comienzojuegofondo.png" />
+    <Image Include="Assets\Images\pre-castillo\disparos_nave.png" />
+    <Image Include="Assets\Images\pre-castillo\dragon.png" />
+    <Image Include="Assets\Images\pre-castillo\enemies.png" />
+    <Image Include="Assets\Images\pre-castillo\Explosions.png" />
+    <Image Include="Assets\Images\pre-castillo\mar.png" />
+    <Image Include="Assets\Images\pre-castillo\naves.png" />
+    <Image Include="Assets\Images\pre-castillo\personas.png" />
+    <Image Include="Assets\Images\sprites-lluc-intro\alienarribafondo.png" />
+    <Image Include="Assets\Images\sprites-lluc-intro\alienepicardo.png" />
+    <Image Include="Assets\Images\sprites-lluc-intro\alientocho.png" />
+    <Image Include="Assets\Images\sprites-lluc-intro\caracuatro.png" />
+    <Image Include="Assets\Images\sprites-lluc-intro\carados.png" />
+    <Image Include="Assets\Images\sprites-lluc-intro\caratres.png" />
+    <Image Include="Assets\Images\sprites-lluc-intro\carauno.png" />
+    <Image Include="Assets\Images\sprites-lluc-intro\holalluc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Assets\Audios\FX\bomba-jugador.wav" />
+    <Media Include="Assets\Audios\FX\boss-dragon-stage-1.wav" />
+    <Media Include="Assets\Audios\FX\choque-colision-efectoextra(por-identificar).wav" />
+    <Media Include="Assets\Audios\FX\colision(revisar).wav" />
+    <Media Include="Assets\Audios\FX\explosion(.wav" />
+    <Media Include="Assets\Audios\FX\explosion(jugador-muerto).wav" />
+    <Media Include="Assets\Audios\FX\explosion-muerte-enemiga.wav" />
+    <Media Include="Assets\Audios\FX\explosion-objeto(terrestre-torreta).wav" />
+    <Media Include="Assets\Audios\FX\mejora-recogida.wav" />
+    <Media Include="Assets\Audios\FX\moneda.wav" />
+    <Media Include="Assets\Audios\FX\pasos-tortuga-castillo.wav" />
+    <Media Include="Assets\Audios\FX\token-insertado.wav" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
