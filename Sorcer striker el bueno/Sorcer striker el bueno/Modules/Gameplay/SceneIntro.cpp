@@ -160,9 +160,10 @@ Update_Status SceneIntro::PostUpdate() {
 		App->render->Blit(ArrayImagesIntro2[0], 0, 20, NULL);//alienarribafondo
 
 		//nave1
-		App->render->Blit(ArrayImagesIntro2[12], 0, 20, NULL);
+		int x = (currentTime - 14000) / 100;
+		App->render->Blit(ArrayImagesIntro2[12], -x - 200, 400, NULL);
 		//nave2
-		App->render->Blit(ArrayImagesIntro2[13], 0, 20, NULL);
+		App->render->Blit(ArrayImagesIntro2[13], -x + 200, 400, NULL);
 		//nave3
 		App->render->Blit(ArrayImagesIntro2[14], 0, 20, NULL);
 		//nave4
