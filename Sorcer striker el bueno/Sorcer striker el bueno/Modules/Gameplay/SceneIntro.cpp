@@ -177,14 +177,22 @@ Update_Status SceneIntro::PostUpdate() {
 
 		//nave1
 		int x = (currentTime - 14000) / 100;
-		App->render->Blit(ArrayImagesIntro2[12], -x - 230, 460, NULL);
-		App->render->Blit(ArrayImagesIntro2[12], -x - 300, 340, NULL);
+		int y = (currentTime - 14000) / 120;
+		App->render->Blit(ArrayImagesIntro2[12], -x - 230, -y + 460, NULL);
+		App->render->Blit(ArrayImagesIntro2[12], -x - 300, -y + 340, NULL);
 		//nave2
-		App->render->Blit(ArrayImagesIntro2[13], -x + 200, 400, NULL);
+		App->render->Blit(ArrayImagesIntro2[13], -x - 100, -y + 400, NULL);
+
+			//rápidas
+		int z = (currentTime - 14000) / 100;
+		int u = (currentTime - 14000) / 120;
+		App->render->Blit(ArrayImagesIntro2[13], -z + 100, -u + 400, NULL);
+		App->render->Blit(ArrayImagesIntro2[13], -z + 200, -u + 400, NULL);
+		App->render->Blit(ArrayImagesIntro2[13], -z + 250, -u + 400, NULL);
 		//nave3
-		App->render->Blit(ArrayImagesIntro2[14], 0, 20, NULL);
+		App->render->Blit(ArrayImagesIntro2[14], -x + 300, -y + 400, NULL);
 		//nave4
-		App->render->Blit(ArrayImagesIntro2[15], 0, 20, NULL);
+		App->render->Blit(ArrayImagesIntro2[15], -x + 300, -y + 270, NULL);
 
 	}
 
