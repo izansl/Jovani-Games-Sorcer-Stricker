@@ -80,7 +80,7 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	particleFire.anim.PushBack({ 2791, 1122, 157, 157 });
 	particleFire.anim.PushBack({ 2951, 1117, 157, 157 });
 	particleFire.anim.PushBack({ 3111, 1113, 157, 157 });
-	particleFire.speed = iPoint(0, -12);
+	particleFire.speed = iPoint(0, -10);
 	particleFire.anim.speed = 0.25f;
 	particleFire.lifetime = 115;
 
@@ -131,6 +131,9 @@ void Boss_BreathDragon::Update() {
 		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
 		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
 		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
 		canshoot = false;
 
 	}
