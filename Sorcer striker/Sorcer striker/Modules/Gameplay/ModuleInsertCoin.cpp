@@ -31,7 +31,7 @@ Update_Status ModuleInsertCoin::Update() {
 
 Update_Status ModuleInsertCoin::PostUpdate() {
 	int patata = App->sceneStart->coins;
-	PaintSentence(str_insertCoin + std::to_string(patata), { 350,950 });
+	PaintSentence(str_insertCoin + std::to_string(patata), { 300,900 });
 	return Update_Status::UPDATE_CONTINUE;
 }
 
@@ -115,7 +115,7 @@ void ModuleInsertCoin::PaintSentence(std::string sentenceToPaint, iPoint positio
 	int size = sentenceToPaint.size();
 	int writedLetters = 0;
 	std::vector<int> posicions;
-	SDL_Rect cutFont = { 0, 0, 18, 18 };
+	SDL_Rect cutFont = { 0, 0, 25, 29 };
 
 	for (int i = 0; i < size; i++)
 	{

@@ -10,6 +10,11 @@
 
 
 #pragma region IMAGES -> FI
+// BORRAR
+const std::string BORRAR_1 = "Assets/Images/BORRAR/parece-polla.png";
+const std::string BORRAR_2 = "Assets/Images/BORRAR/hombre-visto-desde-debajo-barbilla-parece-pene-con-branquias-620x418-2618047271.png";
+const std::string BORRAR_3 = "Assets/Images/BORRAR/sub-buzz-13831-1519757269-2.png";
+
 // ICONOS
 const std::string FI_Iconos = "Assets/Images/iconos.png";
 
@@ -78,10 +83,11 @@ const std::string FI_imageplayer_kill = "Assets/Images/final-boss/kill.png";
 // Backgrounds
 //const std::string FI_background_beach = "Assets/Images/Beach.png";//revisar
 const std::string FI_background_sea = "Assets/Images/pre-castillo/mar.png";
+const std::string FI_background_sea2 = "Assets/Images/pre-castillo/mar2.png";
 const std::string FI_background_forest1 = "Assets/Images/pre-castillo/bosque.png";
 const std::string FI_background_castle = "Assets/Images/pre-castillo/castillo.png";
-const std::string FI_background_pre = "Assets/Images/pre-castillo/comienzodeljuegofondo.png";
-const std::string FI_background_precolumnas = "Assets/Images/pre-castillo/columnas-inicio.png";
+const std::string FI_background_pre = "Assets/Images/pre-castillo/start.png";
+const std::string FI_background_precolumnas = "Assets/Images/pre-castillo/start2.png";
 const std::string FI_background_arboles = "Assets/Images/pre-castillo/arboles.png";
 //const std::string FI_background_playerpick = "Assets/Images/pre-castillo/playerpick.png";
 const std::string FI_background_personas = "Assets/Images/pre-castillo/personas.png";
