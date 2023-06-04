@@ -23,13 +23,13 @@ bool ModuleHUD::Start() {
 
 	tamanyIconaVida.x = 0;
 	tamanyIconaVida.y = 0;
-	tamanyIconaVida.w = 45;
-	tamanyIconaVida.h = 45;
+	tamanyIconaVida.w = 56;
+	tamanyIconaVida.h = 50;
 
-	tamanyIconaBombes.x = 45;
+	tamanyIconaBombes.x = 60;
 	tamanyIconaBombes.y = 0;
-	tamanyIconaBombes.w = 45;
-	tamanyIconaBombes.h = 45;
+	tamanyIconaBombes.w = 60;
+	tamanyIconaBombes.h = 50;
 
 	LOG("Loading HUD textures");
 	bool ret = true;
@@ -42,29 +42,29 @@ bool ModuleHUD::Start() {
 
 Update_Status ModuleHUD::Update()
 {
-	posIconVides.x = 10 + App->render->camera.x;
-	posIconVides.y = 50 + App->render->camera.y;
-	posContadorVides.x = 50 + App->render->camera.x;
-	posContadorVides.y = 50 + App->render->camera.y;
+	posIconVides.x = 30 + App->render->camera.x;
+	posIconVides.y = 70 + App->render->camera.y;
+	posContadorVides.x = 90 + App->render->camera.x;
+	posContadorVides.y = 80 + App->render->camera.y;
 
-	posIconBombes.x = 100 + App->render->camera.x;
-	posIconBombes.y = 50 + App->render->camera.y;
-	posContadorBombes.x = 150 + App->render->camera.x;
-	posContadorBombes.y = 50 + App->render->camera.y;
+	posIconBombes.x = 140 + App->render->camera.x;
+	posIconBombes.y = 70 + App->render->camera.y;
+	posContadorBombes.x = 200 + App->render->camera.x;
+	posContadorBombes.y = 80 + App->render->camera.y;
 
-	posPlayer1.x = 10 + App->render->camera.x;
-	posPlayer1.y = 10 + App->render->camera.y;
-	posScore1.x = 10 + App->render->camera.x;
+	posPlayer1.x = 30 + App->render->camera.x;
+	posPlayer1.y = 0 + App->render->camera.y;
+	posScore1.x = 110 + App->render->camera.x;
 	posScore1.y = 30 + App->render->camera.y;
 
-	posPlayer2.x = 350 + App->render->camera.x;
-	posPlayer2.y = 10 + App->render->camera.y;
-	posScore2.x = 350 + App->render->camera.x;
+	posPlayer2.x = 570 + App->render->camera.x;
+	posPlayer2.y = 0 + App->render->camera.y;
+	posScore2.x = 650 + App->render->camera.x;
 	posScore2.y = 30 + App->render->camera.y;
 
-	posHlScrore.x = 600 + App->render->camera.x;
-	posHlScrore.y = 10 + App->render->camera.y;
-	posScoreHl.x = 600 + App->render->camera.x;
+	posHlScrore.x = 300 + App->render->camera.x;
+	posHlScrore.y = 0 + App->render->camera.y;
+	posScoreHl.x = 320 + App->render->camera.x;
 	posScoreHl.y = 30 + App->render->camera.y;
 
 	return Update_Status::UPDATE_CONTINUE;
@@ -175,7 +175,7 @@ void ModuleHUD::PaintSentence(std::string sentenceToPaint, iPoint positionToPain
 	int size = sentenceToPaint.size();
 	int writedLetters = 0;
 	std::vector<int> posicions;
-	SDL_Rect cutFont = { 0, 0, 18, 18 };
+	SDL_Rect cutFont = { 0, 0, 25, 29 };
 
 	for (int i = 0; i < size; i++)
 	{
