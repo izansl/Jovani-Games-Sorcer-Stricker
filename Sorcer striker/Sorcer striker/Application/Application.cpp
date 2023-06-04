@@ -93,6 +93,12 @@ Update_Status Application::Update() {
 				ret = modules[7]->PostUpdate();
 			}
 		}
+		else if (i == 15)
+		{
+			if (modules[5]->IsEnabled()) {
+				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;				
+			}
+		}
 		else
 			ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
 

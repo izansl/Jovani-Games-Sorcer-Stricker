@@ -30,8 +30,7 @@ Update_Status ModuleInsertCoin::Update() {
 }
 
 Update_Status ModuleInsertCoin::PostUpdate() {
-	int patata = App->sceneStart->coins;
-	PaintSentence(str_insertCoin + std::to_string(patata), { 300,900 });
+	PaintSentence(str_insertCoin + std::to_string(App->sceneStart->coins), { 300,900 });
 	return Update_Status::UPDATE_CONTINUE;
 }
 
