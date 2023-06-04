@@ -50,7 +50,7 @@ public:
 
 	int start_time;
 
-		int velocitatNivell = -15;
+		int velocitatNivell = 0;
 
 	int xt = 0;
 	int yt = 3000;
