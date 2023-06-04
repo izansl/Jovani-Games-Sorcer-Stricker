@@ -3,6 +3,7 @@
 
 #include "Enemy.h"
 #include "../../Utils/Path.h"
+#include "../../Modules/Core/ModuleParticles.h"
 
 class Enemy_BigTank : public Enemy {
 
@@ -33,6 +34,7 @@ private:
 	Animation death;
 	int hitcount = 0;
 	bool life = true;
+	int temp = 0;
 };
 
 #endif // __ENEMY_BROWNSHIP_H__
