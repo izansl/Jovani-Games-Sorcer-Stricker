@@ -31,7 +31,7 @@ public:
 private:
 	int coins;
 	int sizeVector;
-	int widthLetter = 18;
+	int widthLetter = 25;
 
 	std::vector<abecedari2> vectorABC;
 
