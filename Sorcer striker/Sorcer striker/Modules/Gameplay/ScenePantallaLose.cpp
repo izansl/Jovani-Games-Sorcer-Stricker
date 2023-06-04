@@ -10,9 +10,17 @@
 #include "../Gameplay/ModuleEnemies.h"
 #include "../Gameplay/ModulePlayer.h"
 
-SceneIntro::SceneIntro(bool startEnabled) : Module(startEnabled) {
+ScenePantallaLose::ScenePantallaLose(bool startEnabled) : Module(startEnabled) {
 }
 
-SceneIntro::~SceneIntro() {
+ScenePantallaLose::~ScenePantallaLose() {
 }
 
+bool ScenePantallaLose::Start() {
+	LOG("Loading background assets SCENE INTRO");
+
+	bool ret = true;
+
+
+	return ret;
+}
