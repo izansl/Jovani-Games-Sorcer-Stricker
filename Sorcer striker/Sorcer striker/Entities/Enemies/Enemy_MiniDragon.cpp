@@ -27,7 +27,8 @@ Enemy_MiniDragon::Enemy_MiniDragon(int x, int y, int wave) : Enemy(x, y) {
 	up.loop = false;*/
 
 	path.PushBack({ 0, 0 }, 70, &down);
-	path.PushBack({ 1, -12 }, 600, &down);
+	path.PushBack({ 1, -12 }, 300, &down);
+	path.PushBack({ 5, -12 }, 600, &down);
 
 	collider = App->collisions->AddCollider({ 0, 0, 93, 85}, Collider::Type::ENEMY, (Module*)App->enemies);
 }
