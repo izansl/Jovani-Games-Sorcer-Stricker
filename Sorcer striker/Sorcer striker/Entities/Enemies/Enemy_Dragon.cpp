@@ -64,10 +64,10 @@ void Enemy_Dragon::Update() {
 		position = spawnPos + path.GetRelativePosition();
 		if (temp >= 150)
 		{
-			Particle* fireball = App->particles->AddParticle(App->particles->minifireshot, position.x + 119, position.y + 278, Collider::Type::ENEMY_SHOOT, 0);
-			Particle* fireball2 = App->particles->AddParticle(App->particles->minifireshot, position.x + 254, position.y + 280, Collider::Type::ENEMY_SHOOT, 0);
-			Particle* fireball3 = App->particles->AddParticle(App->particles->minifireshot, position.x + 132, position.y + 244, Collider::Type::ENEMY_SHOOT, 0);
-			Particle* fireball4 = App->particles->AddParticle(App->particles->minifireshot, position.x + 238, position.y + 244, Collider::Type::ENEMY_SHOOT, 0);
+			Particle* fireball = App->particles->AddParticle(App->particles->minifireshot, position.x + 119, position.y + 278, Collider::Type::ENEMY, 0);
+			Particle* fireball2 = App->particles->AddParticle(App->particles->minifireshot, position.x + 254, position.y + 280, Collider::Type::ENEMY, 0);
+			Particle* fireball3 = App->particles->AddParticle(App->particles->minifireshot, position.x + 132, position.y + 244, Collider::Type::ENEMY, 0);
+			Particle* fireball4 = App->particles->AddParticle(App->particles->minifireshot, position.x + 238, position.y + 244, Collider::Type::ENEMY, 0);
 
 
 

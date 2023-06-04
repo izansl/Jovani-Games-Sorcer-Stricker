@@ -32,9 +32,9 @@ void Enemy_FlyTank::Update() {
 	{
 		path.Update();
 		position = spawnPos + path.GetRelativePosition();
-		if (temp >= 70)
+		if (temp >= 40)
 		{
-			Particle* fireball = App->particles->AddParticle(App->particles->goblinshot, position.x + 52, position.y + 90, Collider::Type::ENEMY_SHOOT, 0);
+			Particle* fireball = App->particles->AddParticle(App->particles->goblinshot, position.x + 52, position.y + 90, Collider::Type::ENEMY, 0);
 			/*if (fireball == nullptr)
 			{
 

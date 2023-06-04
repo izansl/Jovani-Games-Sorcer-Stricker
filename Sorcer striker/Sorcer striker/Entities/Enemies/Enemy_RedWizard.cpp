@@ -104,8 +104,8 @@ void Enemy_RedWizard::Update() {
 
 		if (temp >= 100)
 		{
-			Particle* fireball = App->particles->AddParticle(App->particles->wizardshoot, position.x + 30, position.y + 65, Collider::Type::ENEMY_SHOOT, 0);
-				
+			Particle* fireball = App->particles->AddParticle(App->particles->wizardshoot, position.x + 30, position.y + 65, Collider::Type::ENEMY, 0);
+			temp = 0;
 		}
 		
 

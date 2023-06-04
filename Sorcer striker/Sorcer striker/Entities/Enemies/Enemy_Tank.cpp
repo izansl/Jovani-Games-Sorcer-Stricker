@@ -68,9 +68,10 @@ void Enemy_Tank::Update() {
 	{
 		path.Update();
 		position = spawnPos + path.GetRelativePosition();
-		if (temp >= 180)
+		currentAnim = path.GetCurrentAnimation();
+		if (temp >= 100)
 		{
-			Particle* fireball = App->particles->AddParticle(App->particles->minifireshot, position.x + 56, position.y + 78, Collider::Type::ENEMY_SHOOT, 0);
+			Particle* fireball = App->particles->AddParticle(App->particles->minifireshot, position.x + 56, position.y + 78, Collider::Type::ENEMY, 0);
 			/*if (fireball == nullptr)
 			{
 

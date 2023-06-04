@@ -41,6 +41,19 @@ void Enemy_Turtle::Update() {
 	{
 		path.Update();
 		position = spawnPos + path.GetRelativePosition();
+		if (temp >= 120)
+		{
+			Particle* fireball1 = App->particles->AddParticle(App->particles->minifireshot1, position.x + 98, position.y + 78, Collider::Type::ENEMY, 0);
+			Particle* fireball2 = App->particles->AddParticle(App->particles->minifireshot2, position.x + 125, position.y + 69, Collider::Type::ENEMY, 0);
+			Particle* fireball3 = App->particles->AddParticle(App->particles->minifireshot3, position.x + 125, position.y + 32, Collider::Type::ENEMY, 0);
+			Particle* fireball6 = App->particles->AddParticle(App->particles->minifireshot5, position.x + 98, position.y + 27, Collider::Type::ENEMY, 0);
+			Particle* fireball4 = App->particles->AddParticle(App->particles->minifireshot4, position.x + 45, position.y + 32, Collider::Type::ENEMY, 0);
+			Particle* fireball5 = App->particles->AddParticle(App->particles->minifireshot6, position.x + 45, position.y + 69, Collider::Type::ENEMY, 0);
+			
+			
+			temp = 0;
+		}
+		temp++;
 	}
 	
 
