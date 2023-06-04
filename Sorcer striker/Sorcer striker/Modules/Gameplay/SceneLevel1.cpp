@@ -289,6 +289,11 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::REDBAT, 600, -22050, 1);
 	App->enemies->AddEnemy(Enemy_Type::REDBAT, 550, -22250, 1);
 	App->enemies->AddEnemy(Enemy_Type::REDBAT, 500, -22450, 1);
+
+	App->enemies->AddEnemy(Enemy_Type::REDBAT, 50, -25850, 1);
+	App->enemies->AddEnemy(Enemy_Type::REDBAT, 250, -25850, 1);
+	App->enemies->AddEnemy(Enemy_Type::REDBAT, 450, -25850, 1);
+	App->enemies->AddEnemy(Enemy_Type::REDBAT, 650, -25850, 1);
 #pragma endregion
 	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;
