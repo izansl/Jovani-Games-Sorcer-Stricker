@@ -94,8 +94,8 @@ bool ModulePlayer::Start() {
 
 	explosionjugadorFx = App->audio->LoadFx(FA_Fx_explosionJ.c_str()); ;
 
-	position.x = 150;
-	position.y = 3150;
+	position.x = 183;
+	position.y = 3665;
 
 	destroyed = false;
 
@@ -110,7 +110,7 @@ Update_Status ModulePlayer::Update() {
 	GamePad& pad = App->input->pads[0];
 	
 	// Moving the player with the camera scroll
-	App->player->position.y -= 8;
+	App->player->position.y += App->sceneLevel_1->velocitatNivell;
 	if (App->input->keys[SDL_SCANCODE_F1] == KEY_DOWN || pad.l1==true)
 		godMode = !godMode;
 
