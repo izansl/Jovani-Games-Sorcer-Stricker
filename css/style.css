@@ -4,7 +4,7 @@ body, h1, h2, h3, p, ul, ol, li, a {
 }
 
 body {
-  background: linear-gradient(to bottom, #008080, #fff 500px);
+  background: linear-gradient(to bottom, #339191, #fff 1200px);
   color: #000000;
   font-family: Arial, sans-serif;
 }
@@ -12,66 +12,62 @@ body {
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 20px;
 }
 
 .left-side img {
-  max-width: 100%;
+  max-width: 300%;
   height: auto;
+  animation: moveFromTop 1s ease-in-out forwards;
+  margin-left: 100px;
 }
 
-.additional-info {
+.right-side {
+  animation: moveFromTop 2s ease-in-out forwards;
+}
+
+.title-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  max-width: 800px;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
-h1 {
-  font-size: 96px;
-  font-family: Impact, Arial, sans-serif;
+h1#title {
+  font-size: 80px;
+  font-family: 'Open Sans', sans-serif;
+font-family: 'Press Start 2P', cursive;
   text-transform: uppercase;
-  text-align: center;
-  background: linear-gradient(#ffffff, #ffae00);
+  background: linear-gradient(#ffffff, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: colorAnimation 5s infinite;
-  margin-bottom: 400px;
-  transform: translateX(-100%);
-  animation: moveFromLeft 1s ease-in-out forwards;
+  margin-bottom: 20px;
 }
 
-@keyframes moveFromLeft {
+h2#subtitle {
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+font-family: 'Press Start 2P', cursive;
+  background: linear-gradient(#ffffff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorAnimation 5s infinite;
+  margin-left:1000px;
+}
+
+@keyframes moveFromTop {
   0% {
-    transform: translateX(100%);
+    transform: translateY(-100%);
   }
   100% {
-    transform: translateX(-70%);
+    transform: translateY(0);
   }
 }
 
 .title-line {
   display: block;
-}
-
-
-
-h2, h3 {
-  margin-top: 20px;
-}
-
-ul, ol {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  list-style-position: inside;
-}
-
-li {
-  margin-bottom: 5px;
 }
 
 footer {
