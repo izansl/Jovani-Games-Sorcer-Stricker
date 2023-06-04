@@ -36,30 +36,6 @@ bool ModuleHUD::Start() {
 	textureFont = App->textures->Load(FI_HUD_font1.c_str());
 	textureIcons = App->textures->Load(FI_Iconos.c_str());
 
-	posIconVides.x = 10 + App->render->camera.x;
-	posIconVides.y = 50 + App->render->camera.y;
-	posContadorVides.x = 50 + App->render->camera.y;
-	posContadorVides.y = 50 + App->render->camera.y;
-
-	posIconBombes.x = 100 + App->render->camera.x;
-	posIconBombes.y = 50 + App->render->camera.y;
-	posContadorBombes.x = 150 + App->render->camera.x;
-	posContadorBombes.y = 50 + App->render->camera.y;
-
-	posPlayer1.x = 10 + App->render->camera.x;
-	posPlayer1.y = 10 + App->render->camera.y;
-	posScore1.x = 10 + App->render->camera.x;
-	posScore1.y = 30 + App->render->camera.y;
-
-	posPlayer2.x = 350 + App->render->camera.x;
-	posPlayer2.y = 10 + App->render->camera.y;
-	posScore2.x = 350 + App->render->camera.x;
-	posScore2.y = 30 + App->render->camera.y;
-
-	posHlScrore.x = 600 + App->render->camera.x;
-	posHlScrore.y = 10 + App->render->camera.y;
-	posScoreHl.x = 600 + App->render->camera.x;
-	posScoreHl.y = 30 + App->render->camera.y;
 	return ret;
 }
 
