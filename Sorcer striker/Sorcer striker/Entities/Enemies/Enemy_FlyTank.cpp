@@ -4,6 +4,7 @@
 #include "../../Modules/Gameplay/ModuleEnemies.h"
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleRender.h"
+#include "../../Modules/Gameplay/SceneLevel1.h"
 #include"../../Modules/Core/ModuleTextures.h"
 #include"../../Modules/Core/ModuleAudio.h"
 
@@ -14,9 +15,9 @@ Enemy_FlyTank::Enemy_FlyTank(int x, int y, int wave) : Enemy(x, y) {
 	
 	if (wave == 1)
 	{
-		path.PushBack({ 0, -2 }, 20);
-		path.PushBack({ 2, -8 }, 200);
-		path.PushBack({ -2, -8 }, 200);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell + 6 }, 20);
+		path.PushBack({ 2, (float)App->sceneLevel_1->velocitatNivell }, 200);
+		path.PushBack({ -2, (float)App->sceneLevel_1->velocitatNivell }, 200);
 
 	}
 
@@ -31,6 +32,16 @@ void Enemy_FlyTank::Update() {
 	{
 		path.Update();
 		position = spawnPos + path.GetRelativePosition();
+		if (temp >= 40)
+		{
+			Particle* fireball = App->particles->AddParticle(App->particles->goblinshot, position.x + 52, position.y + 90, Collider::Type::ENEMY, 0);
+			/*if (fireball == nullptr)
+			{
+
+			}*/
+			temp = 0;
+		}
+		temp++;
 	}
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
@@ -62,10 +73,9 @@ void Enemy_FlyTank::OnCollision(Collider* c1) {
 				App->audio->PlayFx(destroyedFx);
 				currentAnim = &death;
 				life = false;
-
+				App->player->score += 1000;
+				App->enemies->AddEnemy(Enemy_Type::BOMB, position.x, position.y, 1);
 			}
-		
-
 	}
 	
 	

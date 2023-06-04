@@ -3,6 +3,7 @@
 
 #include "Enemy.h"
 #include "../../Utils/Path.h"
+#include "../../Modules/Core/ModuleParticles.h"
 
 class Enemy_FlyTank : public Enemy {
 
@@ -32,6 +33,8 @@ private:
 	Animation fly;
 	Animation damage;
 	Animation death;
+
+	int temp = 0;
 };
 
 #endif // __ENEMY_BROWNSHIP_H__

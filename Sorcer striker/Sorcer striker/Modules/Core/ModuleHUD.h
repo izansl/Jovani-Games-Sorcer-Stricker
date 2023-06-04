@@ -27,9 +27,9 @@ public:
 	Update_Status PostUpdate() override;
 	bool CleanUp();
 
+	int score;
 
 private:
-	int score;
 	int highScore;
 	int sizeVector;
 	int widthLetter = 25;

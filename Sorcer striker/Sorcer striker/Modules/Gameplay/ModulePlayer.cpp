@@ -94,8 +94,8 @@ bool ModulePlayer::Start() {
 
 	explosionjugadorFx = App->audio->LoadFx(FA_Fx_explosionJ.c_str()); ;
 
-	position.x = 150;
-	position.y = 3150;
+	position.x = 183;
+	position.y = 3665;
 
 	destroyed = false;
 
@@ -110,7 +110,7 @@ Update_Status ModulePlayer::Update() {
 	GamePad& pad = App->input->pads[0];
 	
 	// Moving the player with the camera scroll
-	App->player->position.y -= 8;
+	App->player->position.y += App->sceneLevel_1->velocitatNivell;
 	if (App->input->keys[SDL_SCANCODE_F1] == KEY_DOWN || pad.l1==true)
 		godMode = !godMode;
 
@@ -303,6 +303,8 @@ Update_Status ModulePlayer::Update() {
 		{
 			destroyed = false;
 			destroyedCountdown = 120;
+			canshootbomb = false;
+			canshootlaser = false;
 			collider->type = Collider::Type::PLAYER;
 		}
 	}
@@ -316,6 +318,8 @@ Update_Status ModulePlayer::PostUpdate() {
 	}
 	else
 	{
+		canshootbomb = false;
+		canshootlaser = false;
 		if (destroyedCountdown <= 0)
 		{
 			position.x = backupPosition.x;
@@ -324,22 +328,12 @@ Update_Status ModulePlayer::PostUpdate() {
 		}
 	}
 
-	// WIN CONDITION
-	if (kills == 58 || App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
-	{
-		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
-
-
-
-	}
-
 	// LOSE CONDITION
 	if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
 	{
-	
 		App->sceneLevel_1->velocitatNivell = 0;
 		App->scenePantallaLose, 60;
-
+		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
 	}
 
 	return Update_Status::UPDATE_CONTINUE;

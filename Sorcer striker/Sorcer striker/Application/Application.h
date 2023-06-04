@@ -14,6 +14,7 @@ class ModulePlayer;
 class SceneIntro;
 class SceneLevel1;
 class ScenePantallaLose;
+class SceneLevel1_Foreground;
 class SceneStart;
 class ModuleParticles;
 class ModuleCollisions;
@@ -56,6 +57,7 @@ public:
 	SceneIntro* sceneIntro = nullptr;
 	SceneLevel1* sceneLevel_1 = nullptr;
 	ScenePantallaLose* scenePantallaLose = nullptr;
+	SceneLevel1_Foreground* sceneLevel_1_foreground = nullptr;
 	SceneStart* sceneStart = nullptr;
 	ModuleEnemies* enemies = nullptr;
 	ModuleParticles* particles = nullptr;

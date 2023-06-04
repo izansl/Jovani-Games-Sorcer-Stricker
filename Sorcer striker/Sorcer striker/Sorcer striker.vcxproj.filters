@@ -177,6 +177,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Modules\Gameplay\ScenePantallaLose.h">
+    <ClInclude Include="Modules\Gameplay\SceneLevel1_Foreground.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -323,6 +324,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Modules\Gameplay\ScenePantallaLose.cpp">
+    <ClCompile Include="Modules\Gameplay\SceneLevel1_Foreground.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
