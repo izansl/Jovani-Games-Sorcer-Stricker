@@ -22,8 +22,9 @@ bool SceneOutro::Start() {
 	//Carga de texturas(imagenes)
 
 
-	ArrayImagesStart[0] = App->textures->Load(FI_Start_1.c_str());
-	ArrayImagesStart[1] = App->textures->Load(FI_Start_2.c_str());
+	ArrayImagesOutro[0] = App->textures->Load(FI_Outroimage_0.c_str());
+	ArrayImagesOutro[1] = App->textures->Load(FI_Outroimage_1.c_str());
+	ArrayImagesOutro[2] = App->textures->Load(FI_Outroimage_2.c_str());
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -31,9 +32,13 @@ bool SceneOutro::Start() {
 	return ret;
 }
 
-//NO TOCAR NADA //FadeToBlack de Intro -> primera escena
+//NO TOCAR NADA 
 Update_Status SceneOutro::Update() {
-	
+
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
+		App->fade->FadeToBlack(this, (Module*)App->sceneStart, 60);
+	}
+
 	return Update_Status::UPDATE_CONTINUE;
 }
 
@@ -43,15 +48,15 @@ Update_Status SceneOutro::PostUpdate() {
 
 	timer += 1.0f / 60.0f; // Suma 1 segundo//Funciona a 60 fps
 
-	if (timer >= 0.05f) { // Mostramos cada imagen durante 3 segundos
+	if (timer >= 3.0f) { // Mostramos cada imagen durante 3 segundos
 		currentImage++;
 		if (currentImage == NUM_IMAGES) {
-			currentImage = 0;
+			App->fade->FadeToBlack(this, (Module*)App->sceneStart, 60);
 		}
 		timer = 0.0f;
 	}
 
-	App->render->Blit(ArrayImagesStart[currentImage], 0, 0, NULL);
+	App->render->Blit(ArrayImagesOutro[currentImage], 0, 0, NULL);
 
 
 
