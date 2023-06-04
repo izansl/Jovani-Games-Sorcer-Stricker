@@ -147,7 +147,7 @@ void Enemy_RedWizard::OnCollision(Collider* c1) {
 			fly.loop = false;
 			App->audio->PlayFx(destroyedFx);
 			life = false;
-
+			App->player->score += 200;
 		}
 
 

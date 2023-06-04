@@ -54,4 +54,5 @@ void Enemy_MiniDragon::OnCollision(Collider* c1) {
 	death.loop = false;
 	App->audio->PlayFx(destroyedFx);
 	life = false;
+	App->player->score += 30;
 }

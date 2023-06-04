@@ -3,6 +3,7 @@
 
 #include "../../Utils/p2Point.h"
 #include "../../Utils/Animation.h"
+#include "../../Modules/Gameplay/ModulePlayer.h"
 
 struct SDL_Texture;
 struct Collider;

@@ -303,6 +303,8 @@ Update_Status ModulePlayer::Update() {
 		{
 			destroyed = false;
 			destroyedCountdown = 120;
+			canshootbomb = false;
+			canshootlaser = false;
 			collider->type = Collider::Type::PLAYER;
 		}
 	}
@@ -316,6 +318,8 @@ Update_Status ModulePlayer::PostUpdate() {
 	}
 	else
 	{
+		canshootbomb = false;
+		canshootlaser = false;
 		if (destroyedCountdown <= 0)
 		{
 			position.x = backupPosition.x;
@@ -324,22 +328,10 @@ Update_Status ModulePlayer::PostUpdate() {
 		}
 	}
 
-	// WIN CONDITION
-	if (kills == 58 || App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
-	{
-		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
-
-
-
-	}
-
 	// LOSE CONDITION
 	if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
 	{
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
-
-
-
 	}
 
 	return Update_Status::UPDATE_CONTINUE;
