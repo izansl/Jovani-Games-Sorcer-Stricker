@@ -17,7 +17,8 @@ Enemy_RedBat::Enemy_RedBat(int x, int y, int wave) : Enemy(x, y) {
 	fly.speed = 0.2;
 	fly.loop = false;
 
-	path.PushBack({ 0, 0 }, 200);
+	path.PushBack({ 0, 0 }, 250);
+	path.PushBack({ 5, 0 }, 250);
 
 
 	collider = App->collisions->AddCollider({ 0, 0,158, 158 }, Collider::Type::ENEMY, (Module*)App->enemies);

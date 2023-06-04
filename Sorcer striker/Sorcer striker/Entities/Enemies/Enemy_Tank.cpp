@@ -22,8 +22,7 @@ Enemy_Tank::Enemy_Tank(int x, int y, int wave) : Enemy(x, y) {
 	de.loop = false;
 	
 	if (wave == 1)
-	{
-		
+	{	
 		path.PushBack({4, 0}, 100, &de);
 	}
 	else if (wave == 2)
