@@ -30,6 +30,7 @@ public:
 	// Disables the player and the enemies
 	bool CleanUp();
 
+	
 
 public:
 	// The scene sprite sheet loaded into an SDL_Texture
@@ -45,6 +46,8 @@ public:
 	Collider* raightcoll = nullptr;
 
 	int velocitatNivell = -8;
+
+	bool stopGame = false;
 };
 
 #endif

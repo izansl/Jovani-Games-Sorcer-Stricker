@@ -46,16 +46,18 @@ bool ScenePantallaLose::Start() {
 
 Update_Status ScenePantallaLose::Update() {
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {//continuar partida
-
+		
 		App->player->lives = 1;
-		App->sceneLevel_1->velocitatNivell = -8;
+		App->scenePantallaLose->Disable();
+		App->sceneLevel_1->stopGame = false;
+		
 	};
 
 
-	if (App->input->keys[SDL_SCANCODE_C] == Key_State::KEY_DOWN)
-	{
-		/*tokenFx = App->audio->LoadFx(FA_Fx_token.c_str());*/
-	};
+	//if (App->input->keys[SDL_SCANCODE_C] == Key_State::KEY_DOWN)
+	//{
+	//	/*tokenFx = App->audio->LoadFx(FA_Fx_token.c_str());*/
+	//};
 
 
 	return Update_Status::UPDATE_CONTINUE;

@@ -11,6 +11,7 @@
 #include "../../Modules/Core/ModuleFadeToBlack.h"
 #include "../../Modules/Core/ModuleFonts.h"
 #include "../../Modules/Gameplay/SceneLevel1.h"
+#include "../../Modules/Gameplay/ScenePantallaLose.h"
 
 #include <stdio.h>
 #include <SDL_timer.h>
@@ -337,9 +338,9 @@ Update_Status ModulePlayer::PostUpdate() {
 	if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
 	{
 		
-		App->sceneLevel_1->velocitatNivell = 0;
-		App->scenePantallaLose, 60; //Menu start no intro
-		/*App->scenePantallaLose, 60;*/
+		App->sceneLevel_1->stopGame = true;
+		//App->sceneLevel_1->Disable();
+		App->scenePantallaLose->Enable();
 
 	}
 
