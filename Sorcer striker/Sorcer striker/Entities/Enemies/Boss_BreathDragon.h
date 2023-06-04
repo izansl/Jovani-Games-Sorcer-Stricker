@@ -3,7 +3,7 @@
 
 #include "Enemy.h"
 #include "../../Utils/Path.h"
-#include "../Particle.h"
+#include "../../Modules/Core/ModuleParticles.h"
 
 
 class Boss_BreathDragon : public Enemy {
@@ -65,6 +65,7 @@ private:
 	bool spawned6 = false;
 	bool spawned7 = false;
 	bool spawned8 = false;
+	bool canshoot = true;
 
 };
 
