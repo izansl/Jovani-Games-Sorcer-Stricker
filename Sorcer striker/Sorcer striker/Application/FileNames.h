@@ -56,6 +56,8 @@ const std::string FI_Introimage_32 = "Assets/Images/sprites-lluc-intro/nave2.png
 const std::string FI_Introimage_33 = "Assets/Images/sprites-lluc-intro/nave3.png";//14
 const std::string FI_Introimage_34 = "Assets/Images/sprites-lluc-intro/nave4.png";//15
 
+//PreIntro
+const std::string FI_Introimage_34 = "Assets/Images/sprites-lluc-intro/nave4.png";//15
 
 //OutroImage
 const std::string FI_Outroimage_0 = "Assets/Images/Outro/customone.png";

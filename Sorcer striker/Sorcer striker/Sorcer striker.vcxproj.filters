@@ -191,6 +191,9 @@
     <ClInclude Include="Entities\Enemies\Enemy_Stageclear.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Modules\Gameplay\ScenePreintro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Utils\Collider.cpp">
@@ -347,6 +350,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Entities\Enemies\Enemy_Stageclear.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Gameplay\ScenePreintro.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
