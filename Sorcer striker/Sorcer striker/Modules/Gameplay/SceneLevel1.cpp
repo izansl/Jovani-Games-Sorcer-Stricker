@@ -1,6 +1,5 @@
 #include "SceneLevel1.h"
 
-#include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include "../../Modules/Core/ModuleAudio.h"
@@ -364,7 +363,8 @@ Update_Status SceneLevel1::Update() {
 	{
 		velocitatNivell = -4;
 	}
-	if (SDL_GetTicks() - start_time >= 93500)
+
+	if (SDL_GetTicks() - start_time >= 89000)
 	{
 		velocitatNivell = -15;
 	}
@@ -406,15 +406,23 @@ Update_Status SceneLevel1::Update() {
 	{
 		App->enemies->AddEnemy(Enemy_Type::ANGEL, App->player->position.x + 50, App->player->position.y - 800, 1);
 	}
-	if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
-	{
-		App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 400, App->player->position.y - 700, 1);
-	}
 
 	if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN)
 	{
 		App->enemies->AddEnemy(Enemy_Type::BOSS, 400, App->player->position.y - 700, 1);
 	}
+
+
+	if (App->input->keys[SDL_SCANCODE_T] == Key_State::KEY_DOWN)
+	{
+		topcoll->rect.y = TP;
+		botcoll->rect.y = TP + 1080;
+		leftcoll->rect.y = TP;
+		raightcoll->rect.y = TP;
+		App->render->camera.y =TP;
+	}
+
+
 
 	
 	return Update_Status::UPDATE_CONTINUE;
@@ -439,6 +447,13 @@ Update_Status SceneLevel1::PostUpdate() {
 	App->render->Blit(texture_forest1, 0, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea + Height_background_sea + Height_background_castle + Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
 	App->render->Blit(texture_forest1, 0, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea + Height_background_sea + Height_background_castle + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
 	App->render->Blit(texture_forest1, 0, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea + Height_background_sea + Height_background_castle + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_forest1, 0, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea + Height_background_sea + Height_background_castle + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_forest1, 0, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea + Height_background_sea + Height_background_castle + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_forest1, 0, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea + Height_background_sea + Height_background_castle + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_forest1, 0, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea + Height_background_sea + Height_background_castle + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_forest1, 0, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea + Height_background_sea + Height_background_castle + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_forest1, 0, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea + Height_background_sea + Height_background_castle + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
+	App->render->Blit(texture_forest1, 0, (Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea + Height_background_sea + Height_background_castle + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
 
 	return Update_Status::UPDATE_CONTINUE;
 }

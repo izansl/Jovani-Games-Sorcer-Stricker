@@ -3,6 +3,7 @@
 
 #include "../../Modules/Module.h"
 #include "../../Utils/Animation.h"
+#include "../../Application/FileNames.h"
 
 struct SDL_Texture;
 
@@ -56,6 +57,7 @@ public:
 	int yt = 3000;
 	int wt = SCREEN_WIDTH;
 	int ht = 10;
+	int TP = -(Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_forest1 + Height_background_sea + Height_background_sea + Height_background_castle-2000);
 
 	int xb = 0;
 	int yb = 4070;
