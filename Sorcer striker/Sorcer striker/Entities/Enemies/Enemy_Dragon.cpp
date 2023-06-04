@@ -75,15 +75,35 @@ void Enemy_Dragon::Update() {
 			temp = 0;
 		}
 		temp++;
-	/*if (!canshoot)
+
+	if (hitcount < 6)
 	{
-		if (pausa >= 120)
-		{
-			canshoot = true;
-		}
-		pausa++;
-	}*/
-	
+		damage.PushBack({ 1121, 1503 , 381, 451 });
+		damage.PushBack({ 1121, 869 , 381, 451 });
+		damage.PushBack({ 1579, 1503 , 381, 451 });
+		damage.PushBack({ 1579, 869 , 381, 451 });
+		damage.PushBack({ 1121, 1503 , 381, 451 });
+		damage.PushBack({ 1121, 869 , 381, 451 });
+		damage.PushBack({ 659, 1503 , 381, 451 });
+		damage.PushBack({ 659, 869 , 381, 451 });
+		damage.speed = 0.25f;
+		damage.loop = true;
+		currentAnim = &damage;
+	}
+	if (!vida)
+	{
+		death.PushBack({ 973, 339, 331, 329 });
+		death.PushBack({ 1405, 339, 331, 329 });
+		death.PushBack({ 1789, 339, 331, 329 });
+		death.PushBack({ 973, 339, 331, 329 });
+		death.PushBack({ 1405, 339, 331, 329 });
+		death.PushBack({ 1789, 339, 331, 329 });
+		death.PushBack({ 0, 0, 0, 0 });
+		death.speed = 0.3f;
+		death.loop = false;
+		App->audio->PlayFx(destroyedFx);
+		currentAnim = &death;
+	}
 	
 	
 	
@@ -97,42 +117,14 @@ void Enemy_Dragon::OnCollision(Collider* c1) {
 	if (vida)
 	{
 		hitcount++;
-		if (hitcount < 6)
+		if (hitcount>6)
 		{
-			damage.PushBack({ 1121, 1503 , 381, 451 });
-			damage.PushBack({ 1121, 869 , 381, 451 });
-			damage.PushBack({ 1579, 1503 , 381, 451 });
-			damage.PushBack({ 1579, 869 , 381, 451 });
-			damage.PushBack({ 1121, 1503 , 381, 451 });
-			damage.PushBack({ 1121, 869 , 381, 451 });
-			damage.PushBack({ 659, 1503 , 381, 451 });
-			damage.PushBack({ 659, 869 , 381, 451 });
-			damage.speed = 0.25f;
-			damage.loop = true;
-			currentAnim = &damage;
+			vida = false;
+		}
+		else
+		{
 			collider = App->collisions->AddCollider({ 0, 0, 381, 451 }, Collider::Type::ENEMY, (Module*)App->enemies);
 		}
-		else {
-			death.PushBack({ 973, 339, 331, 329 });
-			death.PushBack({ 1405, 339, 331, 329 });
-			death.PushBack({ 1789, 339, 331, 329 });
-			death.PushBack({ 973, 339, 331, 329 });
-			death.PushBack({ 1405, 339, 331, 329 });
-			death.PushBack({ 1789, 339, 331, 329 });
-			death.PushBack({ 0, 0, 0, 0 });
-			death.speed = 0.3f;
-			death.loop = false;
-			App->audio->PlayFx(destroyedFx);
-			currentAnim = &death;
-			vida = false;
-
-		}
-
-
 	}
-	
-
-
-
 }
 	

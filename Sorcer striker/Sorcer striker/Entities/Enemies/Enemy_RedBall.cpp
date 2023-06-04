@@ -1,11 +1,13 @@
 #include "Enemy_RedBall.h"
 
-#include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleAudio.h"
+#include "../../Modules/Core/ModuleHUD.h"
+#include "../../Application/Application.h"
+#include "../../Modules/Gameplay/ModulePlayer.h"
 
 Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_reds.c_str());
@@ -107,7 +109,6 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 }
 
 void Enemy_RedBall::Update() {
-	
 
 	if (life)
 	{
@@ -127,6 +128,8 @@ void Enemy_RedBall::OnCollision(Collider* c1) {
 	fly.PushBack({ 644, 142, 139, 137 });
 	fly.PushBack({ 798, 142, 139, 137 });
 	fly.PushBack({ 1000, 300, 139, 137 });
+	
+	App->player->score += 23;
 
 	currentAnim = &fly;
 	fly.speed = 0.2;
