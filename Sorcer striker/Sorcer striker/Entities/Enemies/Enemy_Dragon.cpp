@@ -74,6 +74,7 @@ void Enemy_Dragon::Update() {
 			temp = 0;
 		}
 		temp++;
+
 	}
 
 	// Call to the base class. It must be called at the end
