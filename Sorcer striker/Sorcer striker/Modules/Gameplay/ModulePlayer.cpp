@@ -198,6 +198,7 @@ Update_Status ModulePlayer::Update() {
 			{
 				App->particles->AddParticle(App->particles->bomb, position.x - 150, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
 			}
+			bombs--;
 		}
 		if (SDL_GetTicks()-start_time>=3000)
 		{
@@ -390,12 +391,12 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 		//+1 bomba
 		if (c2->rect.w == 122)
 		{
-			LOG("Turmo");
+			bombs++;
 		}
 		// + Score
 		if (c2->rect.w == 45)
 		{
-			LOG("Turmo");
+			score += 23;
 		}
 	}
 }
