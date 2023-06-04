@@ -83,6 +83,7 @@ public:
 	Particle goblinshot;
 	//dragonshoot / turtle shoot
 	Particle minifireshot;
+	Particle minifireshottank;
 
 	//disparos para tortuga
 	Particle minifireshot1;

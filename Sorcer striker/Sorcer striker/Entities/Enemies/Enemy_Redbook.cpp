@@ -6,6 +6,7 @@
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include"../../Modules/Core/ModuleTextures.h"
+#include "../../Modules/Gameplay/SceneLevel1.h"
 
 
 Enemy_Redbook::Enemy_Redbook(int x, int y) : Enemy(x, y) {
@@ -17,31 +18,31 @@ Enemy_Redbook::Enemy_Redbook(int x, int y) : Enemy(x, y) {
 	currentAnim = &book;
 
 	// Path 1
-	pathbook.PushBack({ 0.0f, -12.0f }, 10);
-	pathbook.PushBack({ 0.0f, -11.0f }, 10);
-	pathbook.PushBack({ 0.0f, -10.0f }, 10);
-	pathbook.PushBack({ 0.0f, -9.0f }, 10);
-	pathbook.PushBack({ 0.0f, -8.0f }, 10);
-	pathbook.PushBack({ 0.0f, -1.2f }, 10);
-	pathbook.PushBack({ 0.0f, -1.2f }, 10);
-	pathbook.PushBack({ 0.0f, -1.2f }, 10);
-	pathbook.PushBack({ 0.0f, -1.0f }, 10);
-	pathbook.PushBack({ 0.0f, -1.0f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 10);
-	pathbook.PushBack({ 0.0f, -0.8f }, 0);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell - 4 }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell - 3 }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell - 2 }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell - 1 }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 6.8f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 6.8f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 6.8f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7 }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7 }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathbook.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 0);
 
 	currentPath = &pathbook;
 

@@ -44,10 +44,10 @@ Enemy_Dragon::Enemy_Dragon(int x, int y, int wave) : Enemy(x, y) {
 		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell }, 150);
 		path.PushBack({ 2, (float)App->sceneLevel_1->velocitatNivell }, 10);
 		path.PushBack({ 0,(float)App->sceneLevel_1->velocitatNivell }, 70);
-		path.PushBack({ -0.75,(float)App->sceneLevel_1->velocitatNivell - 2 }, 50);
+		path.PushBack({ 0.75,(float)App->sceneLevel_1->velocitatNivell - 2 }, 50);
 		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell }, 30);
 		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell + 4 }, 50);
-		path.PushBack({ -2, (float)App->sceneLevel_1->velocitatNivell - 4 }, 400);
+		path.PushBack({ 2, (float)App->sceneLevel_1->velocitatNivell - 4 }, 400);
 		
 	}
 	
@@ -62,6 +62,7 @@ void Enemy_Dragon::Update() {
 	{
 		path.Update();
 		position = spawnPos + path.GetRelativePosition();
+		
 		if (temp >= 150)
 		{
 			Particle* fireball = App->particles->AddParticle(App->particles->minifireshot, position.x + 119, position.y + 278, Collider::Type::ENEMY, 0);
