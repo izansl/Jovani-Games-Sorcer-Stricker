@@ -10,6 +10,9 @@
 
 
 #pragma region IMAGES -> FI
+// ICONOS
+const std::string FI_Iconos = "Assets/Images/iconos.png";
+
 //IntroImages
 //primera carpeta
 const std::string FI_Introimage_1 = "Assets/Images/Intro/jovani.png";//0

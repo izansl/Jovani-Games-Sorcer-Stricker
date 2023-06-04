@@ -21,9 +21,30 @@ bool ModuleHUD::Start() {
 	highScore = 0;
 	sizeVector = LoadVector();
 
+	tamanyIconaVida.x = 0;
+	tamanyIconaVida.y = 0;
+	tamanyIconaVida.w = 45;
+	tamanyIconaVida.h = 45;
+
+	tamanyIconaBombes.x = 45;
+	tamanyIconaBombes.y = 0;
+	tamanyIconaBombes.w = 45;
+	tamanyIconaBombes.h = 45;
+
 	LOG("Loading HUD textures");
 	bool ret = true;
-	texture = App->textures->Load(FI_HUD_font1.c_str());
+	textureFont = App->textures->Load(FI_HUD_font1.c_str());
+	textureIcons = App->textures->Load(FI_Iconos.c_str());
+
+	posIconVides.x = 10 + App->render->camera.x;
+	posIconVides.y = 50 + App->render->camera.y;
+	posContadorVides.x = 50 + App->render->camera.y;
+	posContadorVides.y = 50 + App->render->camera.y;
+
+	posIconBombes.x = 100 + App->render->camera.x;
+	posIconBombes.y = 50 + App->render->camera.y;
+	posContadorBombes.x = 150 + App->render->camera.x;
+	posContadorBombes.y = 50 + App->render->camera.y;
 
 	posPlayer1.x = 10 + App->render->camera.x;
 	posPlayer1.y = 10 + App->render->camera.y;
@@ -45,6 +66,16 @@ bool ModuleHUD::Start() {
 
 Update_Status ModuleHUD::Update()
 {
+	posIconVides.x = 10 + App->render->camera.x;
+	posIconVides.y = 50 + App->render->camera.y;
+	posContadorVides.x = 50 + App->render->camera.x;
+	posContadorVides.y = 50 + App->render->camera.y;
+
+	posIconBombes.x = 100 + App->render->camera.x;
+	posIconBombes.y = 50 + App->render->camera.y;
+	posContadorBombes.x = 150 + App->render->camera.x;
+	posContadorBombes.y = 50 + App->render->camera.y;
+
 	posPlayer1.x = 10 + App->render->camera.x;
 	posPlayer1.y = 10 + App->render->camera.y;
 	posScore1.x = 10 + App->render->camera.x;
@@ -64,6 +95,14 @@ Update_Status ModuleHUD::Update()
 }
 
 Update_Status ModuleHUD::PostUpdate() {
+	// ICONES
+	App->render->Blit(textureIcons, posIconVides.x, posIconVides.y, &tamanyIconaVida);
+	PaintSentence(std::to_string(App->player->lives), { posContadorVides.x, posContadorVides.y });
+
+	App->render->Blit(textureIcons, posIconBombes.x, posIconBombes.y, &tamanyIconaBombes);
+	PaintSentence(std::to_string(App->player->bombs), { posContadorBombes.x, posContadorBombes.y });
+
+	// TEXTOS
 	PaintSentence(player1, { posPlayer1.x, posPlayer1.y });
 	PaintSentence(std::to_string(App->player->score), { posScore1.x, posScore1.y });
 
@@ -170,7 +209,7 @@ void ModuleHUD::PaintSentence(std::string sentenceToPaint, iPoint positionToPain
 	for (int i = 0; i < size; i++)
 	{
 		cutFont.x = widthLetter * posicions[i];
-		App->render->Blit(texture, positionToPaint.x + (writedLetters * widthLetter), positionToPaint.y, &cutFont);
+		App->render->Blit(textureFont, positionToPaint.x + (writedLetters * widthLetter), positionToPaint.y, &cutFont);
 		writedLetters++;
 	}
 

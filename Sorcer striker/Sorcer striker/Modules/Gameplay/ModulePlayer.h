@@ -36,6 +36,7 @@ public:
 
 	int kills = 0;
 	int lives = 3;
+	int bombs = 1;
 	bool godMode = false;
 
 	bool Powerupblue = false;
@@ -54,8 +55,8 @@ public:
 
 public:
 	// Position of the player in the map
-	iPoint position;	
-	
+	iPoint position;
+
 	iPoint backupPosition;
 
 	// The speed in which we move the player (pixels per frame)
@@ -98,7 +99,7 @@ public:
 	uint laserFx = 0;
 	uint explosionbombaFx = 0;
 	uint explosionjugadorFx = 0;
-	
+
 	// Font score index
 	uint score = 000;
 	int scoreFont = 10;
