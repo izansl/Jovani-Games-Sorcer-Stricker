@@ -70,7 +70,20 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave) : Enemy(x, y) {
 			de.PushBack({ 3, -12.0 }, 650, &derecha);
 
 		}
-	
+		if (wave == 6)
+		{
+			de.PushBack({ 0, 0 }, 25, &fly);
+			de.PushBack({ 5, -12 }, 45, &fly);
+			de.PushBack({ 0, -8 }, 40, &fly);
+			de.PushBack({ -5, -14 }, 100, &izquierda);
+	}
+		if (wave == 7)
+		{
+			de.PushBack({ 0, 0 }, 45, &fly);
+			de.PushBack({ -5, -12 }, 45, &fly);
+			de.PushBack({ 0, -8 }, 40, &fly);
+			de.PushBack({ 5, -14 }, 100, &derecha);
+		}
 	
 	
 	
@@ -89,14 +102,19 @@ void Enemy_RedWizard::Update() {
 		currentAnim = de.GetCurrentAnimation();
 
 	}
-	if (temp >= 30)
+	if (canshoot)
 	{
-		Particle* fireball = App->particles->AddParticle(App->particles->wizardshoot, position.x, position.y, Collider::Type::ENEMY_SHOOT, 0) ;
+		if (temp >= 100)
+		{
+			Particle* fireball = App->particles->AddParticle(App->particles->wizardshoot, position.x + 30, position.y+ 65, Collider::Type::ENEMY_SHOOT, 0);
 			/*if (fireball == nullptr)
 			{
 
 			}*/
+			canshoot = false;
+		}
 	}
+	
 	temp++;
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
@@ -137,18 +155,6 @@ void Enemy_RedWizard::OnCollision(Collider* c1) {
 
 
 	}
-	fly.PushBack({ 1, 136, 139, 137 });
-	fly.PushBack({ 155, 140, 139, 137 });
-	fly.PushBack({ 335, 142, 139, 137 });
-	fly.PushBack({ 586, 139, 139, 137 });
-	fly.PushBack({ 644, 142, 139, 137 });
-	fly.PushBack({ 798, 142, 139, 137 });
-	fly.PushBack({ 1000, 400, 139, 137 });
-
-	currentAnim = &fly;
-	fly.speed = 0.2;
-	fly.loop = false;
-	App->audio->PlayFx(destroyedFx);
-	life = false;
+	
 	
 }

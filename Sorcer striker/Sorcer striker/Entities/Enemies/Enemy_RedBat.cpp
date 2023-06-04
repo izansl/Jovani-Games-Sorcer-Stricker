@@ -9,15 +9,15 @@
 
 Enemy_RedBat::Enemy_RedBat(int x, int y, int wave) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_boss.c_str());
-	fly.PushBack({ 0, 344, 158, 158});
-	fly.PushBack({ 158, 344, 158, 158});
-	fly.PushBack({ 310, 344, 158, 158 });
-	fly.PushBack({ 466, 344, 158, 158 });
+	fly.PushBack({ 0, 344, 156, 156});
+	fly.PushBack({ 158, 344, 156, 156});
+	fly.PushBack({ 310, 344, 156, 156 });
+	fly.PushBack({ 466, 344, 156, 156 });
 	currentAnim = &fly;
 	fly.speed = 0.2;
 	fly.loop = false;
 
-	path.PushBack({ 0, -4 }, 200);
+	path.PushBack({ 0, 0 }, 200);
 
 
 	collider = App->collisions->AddCollider({ 0, 0,158, 158 }, Collider::Type::ENEMY, (Module*)App->enemies);

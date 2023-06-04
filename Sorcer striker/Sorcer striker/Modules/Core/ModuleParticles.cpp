@@ -122,7 +122,33 @@ bool ModuleParticles::Start() {
 	sword.anim.speed = 0.35f;
 	sword.lifetime = 60;
 
+	//wizard
+	wizardshoot.anim.PushBack({ 2699, 197, 95,81 });
+	wizardshoot.anim.PushBack({ 2921, 199, 95,81 });
+	wizardshoot.anim.PushBack({ 3067, 199, 95,81 });
+	wizardshoot.anim.PushBack({ 2989, 199, 95,81 });
+	wizardshoot.anim.PushBack({ 2789, 199, 95,81 });
+	wizardshoot.anim.speed = 0.20;
+	wizardshoot.lifetime = 100;
 
+	//goblin
+	goblinshot.anim.PushBack({ 2651, 497, 45, 145 });
+	goblinshot.anim.PushBack({ 2727, 497, 45, 145 });
+	goblinshot.anim.PushBack({ 2801, 497, 45, 145 });
+	goblinshot.anim.PushBack({ 2869, 497, 45, 145 });
+	goblinshot.anim.PushBack({ 3049, 497, 45, 145 });
+	goblinshot.anim.PushBack({ 3167, 497, 45, 145 });
+	goblinshot.anim.speed = 0.20;
+	goblinshot.lifetime = 100;
+	goblinshot.speed = iPoint(0, 0);
+	//minifireshot
+	minifireshot.anim.PushBack({ 2699, 457, 31, 35 });
+	minifireshot.anim.PushBack({ 2761, 457,31, 35 });
+	minifireshot.anim.PushBack({ 2821, 457, 31, 35 });
+	minifireshot.anim.PushBack({ 2883, 457, 31, 35 });
+	minifireshot.anim.speed = 0.20;
+	minifireshot.lifetime = 100;
+	minifireshot.speed = iPoint(0, 0);
 	return true;
 }
 
