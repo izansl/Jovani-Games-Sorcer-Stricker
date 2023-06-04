@@ -6,14 +6,14 @@
 
 struct SDL_Texture;
 
-class SceneLevel1 : public Module {
+class ScenePantallaLose : public Module {
 
 public:
 	//Constructor
-	SceneLevel1(bool startEnabled);
+	ScenePantallaLose(bool startEnabled);
 
 	//Destructor
-	~SceneLevel1();
+	~ScenePantallaLose();
 
 	// Called when the module is activated
 	// Loads the necessary textures for the map background
@@ -27,24 +27,15 @@ public:
 	// Performs the render call of all the parts of the scene's background
 	Update_Status PostUpdate() override;
 
-	// Disables the player and the enemies
-	bool CleanUp();
-
 
 public:
-	// The scene sprite sheet loaded into an SDL_Texture
-	/*SDL_Texture* texture_beach = nullptr;
-	SDL_Texture* texture_sea = nullptr;
-	SDL_Texture* texture_forest1 = nullptr;
-	SDL_Texture* texture_forest2 = nullptr;
-	SDL_Texture* texture_castle = nullptr;
+	#define NUM_IMAGES 9
+	SDL_Texture* ArrayImagesContinue[NUM_IMAGES];
+	int currentImage = 0;
+	float timer = 0.0f;
+	
 
-	Collider* botcoll = nullptr;
-	Collider* topcoll = nullptr;
-	Collider* leftcoll = nullptr;
-	Collider* raightcoll = nullptr;*/
 
-	int velocitatNivell = -8;
 };
 
 #endif

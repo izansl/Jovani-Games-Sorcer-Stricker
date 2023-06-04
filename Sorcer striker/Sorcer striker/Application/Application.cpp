@@ -18,6 +18,7 @@
 #include "../Modules/Gameplay/SceneIntro.h"
 #include "../Modules/Gameplay/SceneLevel1.h"
 #include "../Modules/Gameplay/SceneStart.h"
+#include "../Modules/Gameplay/ScenePantallaLose.h"
 #include "../Modules/Gameplay/ModuleEnemies.h"
 
 int start_time = SDL_GetTicks();
@@ -37,17 +38,18 @@ Application::Application() {
 
 	modules[4] = sceneIntro = new SceneIntro(true);
 	modules[5] = sceneStart = new SceneStart(false);
-	modules[6] = sceneLevel_1 = new SceneLevel1(false);		//Gameplay scene starts disabled
-	modules[7] = player = new ModulePlayer(false);	//Player starts disabled
-	modules[8]= enemies = new ModuleEnemies(false);	//Enemies start disabled
-	modules[9] = particles = new ModuleParticles(true);
+	modules[6] = sceneLevel_1 = new SceneLevel1(false);	//Gameplay scene starts disabled
+	modules[7] = scenePantallaLose = new ScenePantallaLose(false); //PantallaLose scene starts disabled
+	modules[8] = player = new ModulePlayer(false);	//Player starts disabled
+	modules[9]= enemies = new ModuleEnemies(false);	//Enemies start disabled
+	modules[10] = particles = new ModuleParticles(true);
 
-	modules[10] = collisions = new ModuleCollisions(false);
-	modules[11] = fade = new ModuleFadeToBlack(true);
-	modules[12] = fonts = new ModuleFonts(true);
-	modules[13] = hud = new ModuleHUD(true);
-	modules[14] = insertCoins = new ModuleInsertCoin(true);
-	modules[15] = render = new ModuleRender(true);
+	modules[11] = collisions = new ModuleCollisions(false);
+	modules[12] = fade = new ModuleFadeToBlack(true);
+	modules[13] = fonts = new ModuleFonts(true);
+	modules[14] = hud = new ModuleHUD(true);
+	modules[15] = insertCoins = new ModuleInsertCoin(true);
+	modules[16] = render = new ModuleRender(true);
 }
 
 Application::~Application() {
