@@ -79,6 +79,10 @@ public:
 	Particle FlyTankdead;
 	//wizard shoot
 	Particle wizardshoot;
+	//goblinship shoot
+	Particle goblinshot;
+	//dragonshoot / turtle shoot
+	Particle minifireshot;
 
 private:
 	// Particles spritesheet loaded into an SDL Texture

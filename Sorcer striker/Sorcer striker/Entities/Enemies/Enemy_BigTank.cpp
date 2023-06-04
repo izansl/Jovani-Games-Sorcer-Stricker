@@ -7,7 +7,7 @@
 #include "../../Modules/Core/ModuleAudio.h"
 
 Enemy_BigTank::Enemy_BigTank(int x, int y, int wave) : Enemy(x, y) {
-	texture = App->textures->Load(FI_spriteEnemy_reds.c_str());
+	texture = App->textures->Load(FI_spriteEnemy_enemiesvar_1.c_str());
 	de.PushBack({ 1627, 562, 277, 168 });
 	currentAnim = &de;
 	de.speed = 0.2;
@@ -19,11 +19,15 @@ Enemy_BigTank::Enemy_BigTank(int x, int y, int wave) : Enemy(x, y) {
 
 	if (wave == 1)
 	{
-		path.PushBack({3, -6}, 200);
+		path.PushBack({5, -0}, 40);
 	}
 	if (wave == 2)
 	{
-		path.PushBack({ -3, -6 }, 200);
+		path.PushBack({ 5, -0 }, 30);
+	}
+	if (wave == 3)
+	{
+		path.PushBack({ -5, -0 }, 30);
 	}
 
 
@@ -59,11 +63,10 @@ void Enemy_BigTank::OnCollision(Collider* c1) {
 		}
 		else {
 			texture = App->textures->Load(FI_particles_.c_str());
-			death.PushBack({ 961, 877, 329, 333 });
-			death.PushBack({ 1519, 501, 329, 333 });
-			death.PushBack({ 281, 173, 329, 333 });
-			death.PushBack({ 1525, 499, 329, 333 });
-			death.PushBack({ 837, 499, 329, 333 });
+			death.PushBack({ 145, 651, 329, 333 });
+			death.PushBack({ 1293, 493, 329, 333 });
+			death.PushBack({ 53, 157, 329, 333 });
+			death.PushBack({ 1299, 485, 329, 333 });
 			death.PushBack({ 0, 0, 0, 0 });
 			death.speed = 0.3f;
 			death.loop = false;

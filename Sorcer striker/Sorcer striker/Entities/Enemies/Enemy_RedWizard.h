@@ -33,6 +33,7 @@ private:
 	Animation izquierda;
 	Animation damage;
 	bool life = true;
+	bool canshoot = true;
 	int temp = 0;
 	int hitcount = 0;
 };

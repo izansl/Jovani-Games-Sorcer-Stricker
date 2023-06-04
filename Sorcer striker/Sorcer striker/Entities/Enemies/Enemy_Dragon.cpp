@@ -63,6 +63,29 @@ void Enemy_Dragon::Update() {
 		position = spawnPos + path.GetRelativePosition();
 	}
 	
+		if (temp >= 150)
+		{
+			Particle* fireball = App->particles->AddParticle(App->particles->minifireshot, position.x + 119, position.y + 278, Collider::Type::ENEMY_SHOOT, 0);
+			Particle* fireball2 = App->particles->AddParticle(App->particles->minifireshot, position.x + 254, position.y + 280, Collider::Type::ENEMY_SHOOT, 0);
+			Particle* fireball3 = App->particles->AddParticle(App->particles->minifireshot, position.x + 132, position.y + 244, Collider::Type::ENEMY_SHOOT, 0);
+			Particle* fireball4 = App->particles->AddParticle(App->particles->minifireshot, position.x + 238, position.y + 244, Collider::Type::ENEMY_SHOOT, 0);
+
+			
+			
+			temp = 0;
+		}
+		temp++;
+	/*if (!canshoot)
+	{
+		if (pausa >= 120)
+		{
+			canshoot = true;
+		}
+		pausa++;
+	}*/
+	
+	
+	
 	
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
@@ -87,7 +110,7 @@ void Enemy_Dragon::OnCollision(Collider* c1) {
 			damage.speed = 0.25f;
 			damage.loop = true;
 			currentAnim = &damage;
-			collider = App->collisions->AddCollider({ 0, 0,481, 451 }, Collider::Type::ENEMY, (Module*)App->enemies);
+			collider = App->collisions->AddCollider({ 0, 0, 381, 451 }, Collider::Type::ENEMY, (Module*)App->enemies);
 		}
 		else {
 			death.PushBack({ 973, 339, 331, 329 });
