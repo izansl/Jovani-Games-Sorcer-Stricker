@@ -2,6 +2,7 @@
 #include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Gameplay/ModuleEnemies.h"
+#include "../../Modules/Gameplay/SceneLevel1.h"
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include"../../Modules/Core/ModuleTextures.h"
@@ -26,8 +27,8 @@ Enemy_MiniDragon::Enemy_MiniDragon(int x, int y, int wave) : Enemy(x, y) {
 	up.speed = 1;
 	up.loop = false;*/
 
-	path.PushBack({ 0, 0 }, 70, &down);
-	path.PushBack({ 1, -12 }, 300, &down);
+	path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell }, 70, &down);
+	path.PushBack({ 1, (float)App->sceneLevel_1->velocitatNivell -7 }, 300, &down);
 	path.PushBack({ 5, -12 }, 600, &down);
 
 	collider = App->collisions->AddCollider({ 0, 0, 93, 85}, Collider::Type::ENEMY, (Module*)App->enemies);

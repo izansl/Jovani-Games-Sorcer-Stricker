@@ -9,6 +9,7 @@
 #include "../../Modules/Core/ModuleInput.h"
 #include "../Gameplay/ModuleEnemies.h"
 #include "../Gameplay/ModulePlayer.h"
+#include "../Gameplay/SceneLevel1.h"
 
 
 SceneLevel1::SceneLevel1(bool startEnabled) : Module(startEnabled) {
@@ -63,6 +64,7 @@ bool SceneLevel1::Start() {
 
 #pragma region Red ball
 	//add red ball
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -50, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -340, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -440, 1);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -540, 1);
@@ -148,12 +150,12 @@ bool SceneLevel1::Start() {
 //	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 150, -5600, 8, 7);
 //	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 150, -5650, 8, 8);*/
 //	////add red ball 9
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -16000, 8);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -16100, 8);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -16200, 8);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -16300, 8);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -16400, 8);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -16500, 8);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -16000, 9);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -16100, 9);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -16200, 9);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -16300, 9);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -16400, 9);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -16500, 9);
 #pragma endregion
 
 #pragma region Wizard
@@ -382,5 +384,6 @@ bool SceneLevel1::CleanUp() {
 	App->player->Disable();
 	App->enemies->Disable();
 	App->collisions->Disable();
+	App->player->lives = 3;
 	return true;
 }

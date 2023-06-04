@@ -2,6 +2,7 @@
 #include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Gameplay/ModuleEnemies.h"
+#include "../../Modules/Gameplay/SceneLevel1.h"
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include"../../Modules/Core/ModuleTextures.h"
@@ -22,12 +23,12 @@ Enemy_Turtle::Enemy_Turtle(int x, int y, int wave) : Enemy(x, y) {
 
 	if (wave == 1)
 	{
-		path.PushBack({ 3, -0 }, 60);
-		path.PushBack({ 0, -0 }, 200);
+		path.PushBack({ 3, (float)App->sceneLevel_1->velocitatNivell * 0 }, 60);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 200);
 	}
 	if (wave == 2)
 	{
-		path.PushBack({ 0, 0 }, 100);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0}, 100);
 	}
 	
 
@@ -65,6 +66,7 @@ void Enemy_Turtle::OnCollision(Collider* c1) {
 
 		else {
 
+			texture = App->textures->Load(FI_spriteEnemy_tank.c_str());
 			death.PushBack({ 350, 38, 133, 128 });
 			currentAnim = &death;
 			death.speed = 0.2;

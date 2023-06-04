@@ -2,6 +2,7 @@
 #include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Core/ModuleRender.h"
+#include "../../Modules/Gameplay/SceneLevel1.h"
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleAudio.h"
@@ -19,15 +20,15 @@ Enemy_BigTank::Enemy_BigTank(int x, int y, int wave) : Enemy(x, y) {
 
 	if (wave == 1)
 	{
-		path.PushBack({5, -0}, 40);
+		path.PushBack({5, (float)App->sceneLevel_1->velocitatNivell * 0}, 40);
 	}
 	if (wave == 2)
 	{
-		path.PushBack({ 5, -0 }, 30);
+		path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell * 0}, 30);
 	}
 	if (wave == 3)
 	{
-		path.PushBack({ -5, -0 }, 30);
+		path.PushBack({ -5, (float)App->sceneLevel_1->velocitatNivell * 0}, 30);
 	}
 
 
