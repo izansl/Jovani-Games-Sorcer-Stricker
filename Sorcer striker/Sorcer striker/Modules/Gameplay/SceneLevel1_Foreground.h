@@ -33,7 +33,7 @@ public:
 
 public:
 	// The scene sprite sheet loaded into an SDL_Texture
-	SDL_Texture* texture_bonita = nullptr;
+	SDL_Texture* texture_columna = nullptr;
 	SDL_Texture* texture_hermosa = nullptr;
 	SDL_Texture* texture_adorable = nullptr;
 	

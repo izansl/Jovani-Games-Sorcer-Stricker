@@ -25,7 +25,7 @@ bool SceneLevel1_Foreground::Start(){
 
 	velocitatNivell = App->sceneLevel_1->velocitatNivell;
 
-	//texture_adorable = App->textures->Load(BORRAR_1.c_str());
+	texture_columna = App->textures->Load(FI_background_precolumnas.c_str());
 	//texture_bonita = App->textures->Load(BORRAR_2.c_str());
 	//texture_hermosa = App->textures->Load(BORRAR_3.c_str());
 
@@ -37,6 +37,7 @@ Update_Status SceneLevel1_Foreground::Update(){
 }
 
 Update_Status SceneLevel1_Foreground::PostUpdate(){
+	App->render->Blit(texture_columna, 0, -SCREEN_HEIGHT * -1, NULL);
 	 //Aqui pintem totes les imatges que van sobre de enemics i scena1, pero no de player
 	//App->render->Blit(texture_adorable, 0, (Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
 	//App->render->Blit(texture_bonita, 0, (Height_background_forest1 + Height_background_forest1 - SCREEN_HEIGHT) * -1, NULL);
