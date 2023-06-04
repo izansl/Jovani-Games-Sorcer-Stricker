@@ -36,6 +36,9 @@ bool ScenePantallaLose::Start() {
 	ArrayImagesContinue[7] = App->textures->Load(FI_continue_8.c_str());
 	ArrayImagesContinue[8] = App->textures->Load(FI_continue_9.c_str());
 
+	App->render->camera.x = 0;
+	App->render->camera.y = 0;
+
 	return ret;
 }
 
