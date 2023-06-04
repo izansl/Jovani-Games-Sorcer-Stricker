@@ -24,7 +24,6 @@ bool ScenePantallaLose::Start() {
 
 	bool ret = true;
 
-
 	startTime = SDL_GetTicks();
 
 	ArrayImagesContinue[0] = App->textures->Load(FI_continue_1.c_str());
@@ -37,101 +36,65 @@ bool ScenePantallaLose::Start() {
 	ArrayImagesContinue[7] = App->textures->Load(FI_continue_8.c_str());
 	ArrayImagesContinue[8] = App->textures->Load(FI_continue_9.c_str());
 
-	App->render->camera.x = 0;
-	App->render->camera.y = 0;
-
-
 	return ret;
 }
 
 Update_Status ScenePantallaLose::Update() {
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {//continuar partida
-		
-		App->player->lives = 1;
+
+		App->player->lives += 1;
 		App->scenePantallaLose->Disable();
 		App->sceneLevel_1->stopGame = false;
 		App->player->stopGame = false;
-
-
-
-		
-	};
-
-
-	//if (App->input->keys[SDL_SCANCODE_C] == Key_State::KEY_DOWN)
-	//{
-	//	/*tokenFx = App->audio->LoadFx(FA_Fx_token.c_str());*/
-	//};
-
+		App->enemies->stopGame = false;
+	}
 
 	return Update_Status::UPDATE_CONTINUE;
-
 }
 
 Update_Status ScenePantallaLose::PostUpdate() {
-	
+
 	Uint32 currentTime = SDL_GetTicks() - startTime;
-	
+
 	if (currentTime >= 1000 && currentTime < 2000) {
-
 		App->render->Blit(ArrayImagesContinue[0], 0, 0, NULL);//1
-
 	}
 
 	if (currentTime >= 2000 && currentTime < 3000) {
-
 		App->render->Blit(ArrayImagesContinue[1], 0, 0, NULL);//1
-
 	}
 
 	if (currentTime >= 3000 && currentTime < 4000) {
-
 		App->render->Blit(ArrayImagesContinue[2], 0, 0, NULL);//1
-
 	}
 
 	if (currentTime >= 4000 && currentTime < 5000) {
-
 		App->render->Blit(ArrayImagesContinue[3], 0, 0, NULL);//1
-
 	}
 
 	if (currentTime >= 5000 && currentTime < 6000) {
-
 		App->render->Blit(ArrayImagesContinue[4], 0, 0, NULL);//1
-
 	}
 
 	if (currentTime >= 6000 && currentTime < 7000) {
-
 		App->render->Blit(ArrayImagesContinue[5], 0, 0, NULL);//1
-
 	}
 
 	if (currentTime >= 7000 && currentTime < 8000) {
-
 		App->render->Blit(ArrayImagesContinue[6], 0, 0, NULL);//1
-
 	}
 
 	if (currentTime >= 8000 && currentTime < 9000) {
-
 		App->render->Blit(ArrayImagesContinue[7], 0, 0, NULL);//1
-
 	}
 
 	if (currentTime >= 9000 && currentTime < 12000) {
-
 		App->render->Blit(ArrayImagesContinue[8], 0, 0, NULL);//1
-
 	}
-	
-	if (currentTime >= 10000) {
 
+	if (currentTime >= 10000) {
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStart, 60); //Menu start no intro
 	}
-	
 
 	return Update_Status::UPDATE_CONTINUE;
-
 }

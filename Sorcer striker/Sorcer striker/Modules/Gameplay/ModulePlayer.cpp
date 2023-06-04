@@ -1,4 +1,5 @@
 #include "ModulePlayer.h"
+#include "ModuleEnemies.h"
 
 #include "../../Application/Application.h"
 #include "../../Application/FileNames.h"
@@ -107,6 +108,7 @@ bool ModulePlayer::Start() {
 }
 
 Update_Status ModulePlayer::Update() {
+
 	if (!stopGame) {
 
 		GamePad& pad = App->input->pads[0];
@@ -308,14 +310,31 @@ Update_Status ModulePlayer::Update() {
 				collider->type = Collider::Type::PLAYER;
 			}
 		}
+
+
+		// WIN CONDITION
+		if (kills == 58 || App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
+		{
+			App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
+		}
+
+		// LOSE CONDITION
+		if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
+		{
+			App->sceneLevel_1->stopGame = true;
+			App->player->stopGame = true;
+			App->enemies->stopGame = true;
+			App->scenePantallaLose->Enable();
+		}
+
 	}
 	return Update_Status::UPDATE_CONTINUE;
 }
 
 Update_Status ModulePlayer::PostUpdate() {
+
 	if (!destroyed) {
-		SDL_Rect rect = currentAnimation->GetCurrentFrame();
-		App->render->Blit(texture, position.x, position.y, &rect);
+		App->render->Blit(texture, position.x, position.y, &currentAnimation->GetCurrentFrame());
 	}
 	else
 	{
@@ -327,25 +346,6 @@ Update_Status ModulePlayer::PostUpdate() {
 		}
 	}
 
-	// WIN CONDITION
-	if (kills == 58 || App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
-	{
-		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
-
-
-
-	}
-
-	// LOSE CONDITION
-	if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
-	{
-		
-		App->sceneLevel_1->stopGame = true;
-		App->player->stopGame = true;
-		//App->sceneLevel_1->Disable();
-		App->scenePantallaLose->Enable();
-
-	}
 
 	return Update_Status::UPDATE_CONTINUE;
 }
@@ -387,14 +387,14 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 			Powerupred = false;
 		}
 		//Blue
-		if (c2->rect.w==62)
+		if (c2->rect.w == 62)
 		{
 			Powerupblue = true;
 			Powerupgreen = false;
 			Powerupred = false;
 		}
 		//Red
-		if (c2->rect.w==64)
+		if (c2->rect.w == 64)
 		{
 			Powerupred = true;
 			Powerupgreen = false;

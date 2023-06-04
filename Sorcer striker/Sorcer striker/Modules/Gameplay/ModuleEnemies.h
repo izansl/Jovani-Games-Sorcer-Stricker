@@ -51,6 +51,8 @@ public:
 	// Destructor
 	~ModuleEnemies();
 
+	bool stopGame = false;
+
 	// Called when the module is activated
 	// Loads the necessary textures for the enemies
 	bool Start() override;
@@ -102,6 +104,8 @@ private:
 
 	// The audio fx for destroying an enemy
 	int enemyDestroyedFx = 0;
+
+	
 };
 
 #endif // __MODULE_ENEMIES_H__
