@@ -128,8 +128,7 @@ Update_Status ScenePantallaLose::PostUpdate() {
 	
 	if (currentTime >= 10000) {
 
-		App->fade->FadeToBlack(this, (Module*)App->sceneStart, 60);
-
+		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStart, 60); //Menu start no intro
 	}
 	
 
