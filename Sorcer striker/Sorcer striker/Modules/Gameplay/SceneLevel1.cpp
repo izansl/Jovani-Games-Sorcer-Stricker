@@ -67,7 +67,6 @@ bool SceneLevel1::Start() {
 
 #pragma region ENEMIES
 
-	App->enemies->AddEnemy(Enemy_Type::STAGECLEAR, 0, -400, 1);
 
 	// add chest
 	App->enemies->AddEnemy(Enemy_Type::GOLD, 100, -2150, 1);

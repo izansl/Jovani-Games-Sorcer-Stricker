@@ -67,8 +67,8 @@ void Enemy_Coin::Update() {
 void Enemy_Coin::OnCollision(Collider* c1) {
 	if (c1->type == Collider::Type::PLAYER)
 	{
-		pickup.PushBack({ 1400, 25100, 118, 99 });
-		currentAnim = &pickup;
+		book.PushBack({ 1400, 25100, 118, 99 });
+		currentAnim = &book;
 	}
 }
 
