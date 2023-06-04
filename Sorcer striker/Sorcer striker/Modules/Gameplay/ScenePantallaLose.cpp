@@ -57,39 +57,39 @@ Update_Status ScenePantallaLose::PostUpdate() {
 	Uint32 currentTime = SDL_GetTicks() - startTime;
 
 	if (currentTime >= 1000 && currentTime < 2000) {
-		App->render->Blit(ArrayImagesContinue[0], 0, 0, NULL);//1
+		App->render->Blit(ArrayImagesContinue[0], App->render->camera.x, App->render->camera.y, NULL);
 	}
 
 	if (currentTime >= 2000 && currentTime < 3000) {
-		App->render->Blit(ArrayImagesContinue[1], 0, 0, NULL);//1
+		App->render->Blit(ArrayImagesContinue[1], App->render->camera.x, App->render->camera.y, NULL);
 	}
 
 	if (currentTime >= 3000 && currentTime < 4000) {
-		App->render->Blit(ArrayImagesContinue[2], 0, 0, NULL);//1
+		App->render->Blit(ArrayImagesContinue[2], App->render->camera.x, App->render->camera.y, NULL);
 	}
 
 	if (currentTime >= 4000 && currentTime < 5000) {
-		App->render->Blit(ArrayImagesContinue[3], 0, 0, NULL);//1
+		App->render->Blit(ArrayImagesContinue[3], App->render->camera.x, App->render->camera.y, NULL);
 	}
 
 	if (currentTime >= 5000 && currentTime < 6000) {
-		App->render->Blit(ArrayImagesContinue[4], 0, 0, NULL);//1
+		App->render->Blit(ArrayImagesContinue[4], App->render->camera.x, App->render->camera.y, NULL);
 	}
 
 	if (currentTime >= 6000 && currentTime < 7000) {
-		App->render->Blit(ArrayImagesContinue[5], 0, 0, NULL);//1
+		App->render->Blit(ArrayImagesContinue[5], App->render->camera.x, App->render->camera.y, NULL);
 	}
 
 	if (currentTime >= 7000 && currentTime < 8000) {
-		App->render->Blit(ArrayImagesContinue[6], 0, 0, NULL);//1
+		App->render->Blit(ArrayImagesContinue[6], App->render->camera.x, App->render->camera.y, NULL);
 	}
 
 	if (currentTime >= 8000 && currentTime < 9000) {
-		App->render->Blit(ArrayImagesContinue[7], 0, 0, NULL);//1
+		App->render->Blit(ArrayImagesContinue[7], App->render->camera.x, App->render->camera.y, NULL);
 	}
 
 	if (currentTime >= 9000 && currentTime < 12000) {
-		App->render->Blit(ArrayImagesContinue[8], 0, 0, NULL);//1
+		App->render->Blit(ArrayImagesContinue[8], App->render->camera.x, App->render->camera.y, NULL);
 	}
 
 	if (currentTime >= 10000) {
