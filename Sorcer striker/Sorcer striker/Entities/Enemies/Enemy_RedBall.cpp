@@ -121,6 +121,7 @@ void Enemy_RedBall::Update() {
 	{
 		path.Update();
 		position = spawnPos + path.GetRelativePosition();
+
 	}
 	
 	

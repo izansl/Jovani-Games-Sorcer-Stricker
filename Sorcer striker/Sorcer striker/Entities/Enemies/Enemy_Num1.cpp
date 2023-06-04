@@ -19,16 +19,10 @@ Enemy_Num1::Enemy_Num1(int x, int y) : Enemy(x, y) {
 	// Path 1
 	float centerX = 0.0f; // Valor constante en el eje X (centro de la pantalla)
 
-	pathchest.PushBack({ centerX, 8.0f }, 10);
-	pathchest.PushBack({ centerX, 6.0f }, 10);
-	pathchest.PushBack({ centerX, 4.0f }, 10);
-	pathchest.PushBack({ centerX, 2.0f }, 10);
-	pathchest.PushBack({ centerX, -8.0f }, 200);
-	pathchest.PushBack({ centerX, -25.0f }, 10);
-	pathchest.PushBack({ centerX, -50.0f }, 10);
-	pathchest.PushBack({ centerX, -75.0f }, 10);
-	pathchest.PushBack({ centerX, -100.0f }, 10);
-
+	pathchest.PushBack({ 0.0, -8.0 }, 20);
+	pathchest.PushBack({ 0.0, -15.0 }, 80);
+	pathchest.PushBack({ 0.0, -40.0 }, 100);
+	pathchest.PushBack({ 40.0, -40.0 }, 400);
 	currentPath = &pathchest;
 
 }

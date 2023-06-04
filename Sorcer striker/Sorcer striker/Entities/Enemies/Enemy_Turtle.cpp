@@ -28,7 +28,8 @@ Enemy_Turtle::Enemy_Turtle(int x, int y, int wave) : Enemy(x, y) {
 	}
 	if (wave == 2)
 	{
-		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0}, 100);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0}, 400);
+		path.PushBack({ -15, (float)App->sceneLevel_1->velocitatNivell * 0 }, 200);
 	}
 	
 

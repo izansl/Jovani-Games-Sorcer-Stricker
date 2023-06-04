@@ -14,7 +14,7 @@ Enemy_BigTank::Enemy_BigTank(int x, int y, int wave) : Enemy(x, y) {
 	de.speed = 0.2;
 	de.loop = true;
 	
-	iz.PushBack({ 2012, 115, 82, 104 });
+	iz.PushBack({ 2012, 115, 277, 168 });
 	iz.speed = 1;
 	iz.loop = true;
 
@@ -25,16 +25,21 @@ Enemy_BigTank::Enemy_BigTank(int x, int y, int wave) : Enemy(x, y) {
 	if (wave == 2)
 	{
 		path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell * 0}, 30, &de);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 200, &de);
+		path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell * 0 }, 300, &de);
+
 	}
 	if (wave == 3)
 	{
 		path.PushBack({ -5, (float)App->sceneLevel_1->velocitatNivell * 0}, 30,&iz);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 200, &de);
+		path.PushBack({ -5, (float)App->sceneLevel_1->velocitatNivell * 0 }, 300, &de);
 	}
 
 
 
 
-	collider = App->collisions->AddCollider({ 0, 0,82, 104 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	collider = App->collisions->AddCollider({ 0, 0,277, 168 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Enemy_BigTank::Update() {
@@ -48,8 +53,8 @@ void Enemy_BigTank::Update() {
 
 		if (temp >= 120)
 		{
-			Particle* fireball = App->particles->AddParticle(App->particles->minifireshot, position.x + 83, position.y + 88, Collider::Type::ENEMY_SHOOT, 0);
-			Particle* fireball2 = App->particles->AddParticle(App->particles->minifireshot, position.x + 226, position.y + 88, Collider::Type::ENEMY_SHOOT, 0);
+			Particle* fireball = App->particles->AddParticle(App->particles->minifireshottank, position.x + 83, position.y + 88, Collider::Type::ENEMY_SHOOT, 0);
+			Particle* fireball2 = App->particles->AddParticle(App->particles->minifireshottank, position.x + 226, position.y + 88, Collider::Type::ENEMY_SHOOT, 0);
 
 			temp = 0;
 		}

@@ -6,6 +6,7 @@
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include"../../Modules/Core/ModuleTextures.h"
+#include "../../Modules/Gameplay/SceneLevel1.h"
 
 
 Enemy_BOMB::Enemy_BOMB(int x, int y) : Enemy(x, y) {
@@ -19,27 +20,31 @@ Enemy_BOMB::Enemy_BOMB(int x, int y) : Enemy(x, y) {
 
 	// Path 1
 
-	pathchest.PushBack({ 0.0f, 0.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -2.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -1.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -2.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -1.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -2.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -1.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -2.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -1.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, -2.5f }, 10);
-	pathchest.PushBack({ 0.0f, -2.0f }, 10);
-	pathchest.PushBack({ 0.0f, 0.5f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell - 4 }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell - 3 }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell - 2 }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell - 1 }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 6.8f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 6.8f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 6.8f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7 }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7 }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 10);
+	pathchest.PushBack({ 0.0f, (float)App->sceneLevel_1->velocitatNivell + 7.2f }, 0);
 
 	currentPath = &pathchest;
 	collider = App->collisions->AddCollider({ 0, 0, 116, 122 }, Collider::Type::POWER_UP, (Module*)App->enemies);

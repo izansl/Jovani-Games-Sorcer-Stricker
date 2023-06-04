@@ -73,15 +73,15 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave) : Enemy(x, y) {
 		}
 		if (wave == 6)
 		{
-			de.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0}, 25, &fly);
-			de.PushBack({ 5, 9 }, 45, &fly);
+			de.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0}, 50, &fly);
+			de.PushBack({ 5, -8 }, 45, &fly);
 			de.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell }, 40, &fly);
 			de.PushBack({ -5, -14 }, 100, &izquierda);
 	}
 		if (wave == 7)
 		{
-			de.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0}, 45, &fly);
-			de.PushBack({ -5, 9 }, 45, &fly);
+			de.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0}, 50, &fly);
+			de.PushBack({ -5, -8 }, 45, &fly);
 			de.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell }, 40, &fly);
 			de.PushBack({ 5, -14 }, 100, &derecha);
 		}
@@ -102,11 +102,17 @@ void Enemy_RedWizard::Update() {
 		position = spawnPos + de.GetRelativePosition();
 		currentAnim = de.GetCurrentAnimation();
 
-		if (temp >= 100)
+		if (canshoot)
 		{
-			Particle* fireball = App->particles->AddParticle(App->particles->wizardshoot, position.x + 30, position.y + 65, Collider::Type::ENEMY, 0);
-			temp = 0;
+			if (temp >= 100)
+			{
+				Particle* fireball = App->particles->AddParticle(App->particles->wizardshoot, position.x + 30, position.y + 65, Collider::Type::ENEMY, 0);
+				temp = 0;
+				canshoot = false;
+			}
+			
 		}
+		
 		
 
 	}

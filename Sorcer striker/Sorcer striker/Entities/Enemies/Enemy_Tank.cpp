@@ -8,6 +8,7 @@
 #include"../../Modules/Core/ModuleTextures.h"
 #include"../../Modules/Core/ModuleAudio.h"
 
+
 Enemy_Tank::Enemy_Tank(int x, int y, int wave) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spriteEnemy_tank.c_str());
 	//movimiento izquierda
@@ -33,27 +34,29 @@ Enemy_Tank::Enemy_Tank(int x, int y, int wave) : Enemy(x, y) {
 	if (wave == 3)
 	{
 		path.PushBack({ 4, (float)App->sceneLevel_1->velocitatNivell * 0 }, 35, &de);
-		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 100, &de);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 500, &de);
+		path.PushBack({ -8, (float)App->sceneLevel_1->velocitatNivell * 0 }, 200, &de);
 	}
 	if (wave == 4)
 	{
 		path.PushBack({ -4, (float)App->sceneLevel_1->velocitatNivell * 0 }, 35, &iz);
-		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 100, &iz);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 500, &iz);
+		path.PushBack({ 8, (float)App->sceneLevel_1->velocitatNivell * 0 }, 200, &de);
 	}
 	if (wave == 5)
 	{
 		path.PushBack({ 4, (float)App->sceneLevel_1->velocitatNivell * 0 }, 35, &de);
-		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 100, &iz);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 500, &iz);
 	}
 	if (wave == 6)
 	{
 		path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell * 0 }, 65, &de);
-		path.PushBack({ 0, 2 }, 100, &iz);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 200, &iz);
 	}
 	if (wave == 7)
 	{
 		path.PushBack({ -4, (float)App->sceneLevel_1->velocitatNivell * 0 }, 45, &de);
-		path.PushBack({ 0, 2 }, 100, &iz);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 200, &iz);
 	}
 
 
@@ -71,11 +74,12 @@ void Enemy_Tank::Update() {
 		currentAnim = path.GetCurrentAnimation();
 		if (temp >= 100)
 		{
-			Particle* fireball = App->particles->AddParticle(App->particles->minifireshot, position.x + 56, position.y + 78, Collider::Type::ENEMY, 0);
+			Particle* fireball = App->particles->AddParticle(App->particles->minifireshottank, position.x + 56, position.y + 78, Collider::Type::ENEMY, 0);
 			/*if (fireball == nullptr)
 			{
 
 			}*/
+			
 			temp = 0;
 		}
 		temp++;
@@ -109,6 +113,7 @@ void Enemy_Tank::OnCollision(Collider* c1) {
 			death.loop = false;
 			App->audio->PlayFx(destroyedFx);
 			life = false;
+
 
 		}
 
