@@ -40,7 +40,8 @@ private:
 	std::string player2 = "Player 2";
 	std::string hlScore = "Hl-Score";
 
-	SDL_Texture* texture = nullptr;
+	SDL_Texture* textureFont = nullptr;
+	SDL_Texture* textureIcons = nullptr;
 
 	int PosLetter(char leterToSearch);
 	int LoadVector();
@@ -48,6 +49,11 @@ private:
 
 	iPoint posPlayer1, posPlayer2, posHlScrore;
 	iPoint posScore1, posScore2, posScoreHl;
+	iPoint posIconVides, posIconBombes;
+	iPoint posContadorVides, posContadorBombes;
+
+	SDL_Rect tamanyIconaVida;
+	SDL_Rect tamanyIconaBombes;
 
 	//IMPRIMEIX ELS CARÀCTER DEL VECTOR 
 };

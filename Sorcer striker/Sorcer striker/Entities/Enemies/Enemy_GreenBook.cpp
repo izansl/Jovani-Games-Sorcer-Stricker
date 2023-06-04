@@ -17,29 +17,31 @@ Enemy_GreenBook::Enemy_GreenBook(int x, int y) : Enemy(x, y) {
 	currentAnim = &book;
 
 	// Path 1
-
-	pathbook.PushBack({ -1.0f, -0.5f }, 10);
-	pathbook.PushBack({ -0.9f, -0.8f }, 10);
-	pathbook.PushBack({ -0.8f, -0.2f }, 10);
-	pathbook.PushBack({ -0.7f, -1.0f }, 10);
-	pathbook.PushBack({ -0.6f, -0.4f }, 10);
-	pathbook.PushBack({ -0.5f, -0.9f }, 10);
-	pathbook.PushBack({ -0.4f, -0.3f }, 10);
-	pathbook.PushBack({ -0.3f, -1.0f }, 10);
-	pathbook.PushBack({ -0.2f, -0.5f }, 10);
-	pathbook.PushBack({ -0.1f, -0.1f }, 10);
-	pathbook.PushBack({ 0.0f, -0.6f }, 10);
-	pathbook.PushBack({ 0.1f, -0.2f }, 10);
-	pathbook.PushBack({ 0.2f, -0.8f }, 10);
-	pathbook.PushBack({ 0.3f, -0.4f }, 10);
-	pathbook.PushBack({ 0.4f, -0.9f }, 10);
-	pathbook.PushBack({ 0.5f, -0.3f }, 10);
-	pathbook.PushBack({ 0.6f, -1.0f }, 10);
-	pathbook.PushBack({ 0.7f, -0.5f }, 10);
-	pathbook.PushBack({ 0.8f, -0.1f }, 10);
-	pathbook.PushBack({ 0.9f, -0.6f }, 10);
-	pathbook.PushBack({ 1.0f, -0.2f }, 10);
-	pathbook.PushBack({ 1.0f, -1.0f }, 0);
+	pathbook.PushBack({ 0.0f, -12.0f }, 10);
+	pathbook.PushBack({ 0.0f, -11.0f }, 10);
+	pathbook.PushBack({ 0.0f, -10.0f }, 10);
+	pathbook.PushBack({ 0.0f, -9.0f }, 10);
+	pathbook.PushBack({ 0.0f, -8.0f }, 10);
+	pathbook.PushBack({ 0.0f, -1.2f }, 10);
+	pathbook.PushBack({ 0.0f, -1.2f }, 10);
+	pathbook.PushBack({ 0.0f, -1.2f }, 10);
+	pathbook.PushBack({ 0.0f, -1.0f }, 10);
+	pathbook.PushBack({ 0.0f, -1.0f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 10);
+	pathbook.PushBack({ 0.0f, -0.8f }, 0);
 
 	currentPath = &pathbook;
 
@@ -48,7 +50,7 @@ Enemy_GreenBook::Enemy_GreenBook(int x, int y) : Enemy(x, y) {
 }
 
 void Enemy_GreenBook::Update() {
-
+	pathbook.Update();
 	position = spawnPos + currentPath->GetRelativePosition();
 
 	// Call to the base class. It must be called at the end

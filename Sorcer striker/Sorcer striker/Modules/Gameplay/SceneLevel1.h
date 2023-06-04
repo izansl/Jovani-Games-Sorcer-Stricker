@@ -44,7 +44,6 @@ public:
 	Collider* leftcoll = nullptr;
 	Collider* raightcoll = nullptr;
 
-private:
 	int velocitatNivell = -8;
 };
 

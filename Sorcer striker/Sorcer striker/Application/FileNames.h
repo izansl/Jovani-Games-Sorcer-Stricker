@@ -10,35 +10,47 @@
 
 
 #pragma region IMAGES -> FI
+// ICONOS
+const std::string FI_Iconos = "Assets/Images/iconos.png";
+
 //IntroImages
-//cambiar a png //cambiar ruta a ImagenesIntro2
-const std::string FI_Introimage_0 = "Assets/Images/Intro/intropro.png";
-const std::string FI_Introimage_1 = "Assets/Images/Intro/jovani.png";
-const std::string FI_Introimage_2 = "Assets/Images/Intro/Raizing.png";
-const std::string FI_Introimage_3 = "Assets/Images/Intro/PrimertextoColor.png";
-const std::string FI_Introimage_4 = "Assets/Images/Intro/primertextoBlanco.png";
-const std::string FI_Introimage_5 = "Assets/Images/Intro/alienarribafondo.png";
-const std::string FI_Introimage_6 = "Assets/Images/Intro/segundotextoColor.png";
-const std::string FI_Introimage_7 = "Assets/Images/Intro/segundotextoBlanco.png";
-const std::string FI_Introimage_8 = "Assets/Images/Intro/alienabajofondo.png";
-const std::string FI_Introimage_9 = "Assets/Images/Intro/tercertextoColor.png";
-const std::string FI_Introimage_10 = "Assets/Images/Intro/tercertextoBlanco.png";
-const std::string FI_Introimage_11 = "Assets/Images/Intro/cuartotextoColor.png";
-const std::string FI_Introimage_12 = "Assets/Images/Intro/cuartotextoBlanco.png";
-const std::string FI_Introimage_13 = "Assets/Images/Intro/Caras_de_los_personajes.png";
-const std::string FI_Introimage_14 = "Assets/Images/Intro/quintotextoColor.png";
-const std::string FI_Introimage_15 = "Assets/Images/Intro/quintotextoBlanco.png";
-const std::string FI_Introimage_16 = "Assets/Images/Intro/fondobatman.png";
-const std::string FI_Introimage_17 = "Assets/Images/Intro/Batman.png";
-const std::string FI_Introimage_18 = "Assets/Images/Intro/explosiones.png";
-const std::string FI_Introimage_space = "Assets/Images/Intro/alienabajofondo.png";
-const std::string FI_Introimage_goblingroup = "Assets/Images/Intro/holalluc.png";
-const std::string FI_Introimage_goblin= "Assets/Images/Intro/alientocho.png";
-const std::string FI_Introimage_spacealiens = "Assets/Images/Intro/alienepicardo.png";
-const std::string FI_Introimage_face1 = "Assets/Images/Intro/carauno.png";
-const std::string FI_Introimage_face2 = "Assets/Images/Intro/carados.png";
-const std::string FI_Introimage_face3 = "Assets/Images/Intro/caratres.png";
-const std::string FI_Introimage_face4 = "Assets/Images/Intro/caracuatro.png";
+//primera carpeta
+const std::string FI_Introimage_1 = "Assets/Images/Intro/jovani.png";//0
+const std::string FI_Introimage_2 = "Assets/Images/Intro/Raizing.png";//1
+const std::string FI_Introimage_3 = "Assets/Images/Intro/PrimertextoColor.png";//2
+const std::string FI_Introimage_4 = "Assets/Images/Intro/primertextoBlanco.png";//3
+const std::string FI_Introimage_5 = "Assets/Images/Intro/alienarribafondo.png";//4
+const std::string FI_Introimage_6 = "Assets/Images/Intro/segundotextoColor.png";//5
+const std::string FI_Introimage_7 = "Assets/Images/Intro/segundotextoBlanco.png";//6
+const std::string FI_Introimage_8 = "Assets/Images/Intro/alienabajofondo.png";//7
+const std::string FI_Introimage_9 = "Assets/Images/Intro/tercertextoColor.png";//8
+const std::string FI_Introimage_10 = "Assets/Images/Intro/tercertextoBlanco.png";//9
+const std::string FI_Introimage_11 = "Assets/Images/Intro/cuartotextoColor.png";//10
+const std::string FI_Introimage_12 = "Assets/Images/Intro/cuartotextoBlanco.png";//11
+const std::string FI_Introimage_13 = "Assets/Images/Intro/Caras_de_los_personajes.png";//12
+const std::string FI_Introimage_14 = "Assets/Images/Intro/quintotextoColor.png";//13
+const std::string FI_Introimage_15 = "Assets/Images/Intro/quintotextoBlanco.png";//14
+const std::string FI_Introimage_16 = "Assets/Images/Intro/fondobatman.png";//15
+const std::string FI_Introimage_17 = "Assets/Images/Intro/Batman.png";//16
+const std::string FI_Introimage_18 = "Assets/Images/Intro/explosiones.png";//17
+//segunda carpeta (sin fondo)
+const std::string FI_Introimage_19 = "Assets/Images/sprites-lluc-intro/alienarribafondo.png";//0
+const std::string FI_Introimage_20 = "Assets/Images/sprites-lluc-intro/alienepicardo.png";//1
+const std::string FI_Introimage_21 = "Assets/Images/sprites-lluc-intro/alientocho.png";//2
+const std::string FI_Introimage_22 = "Assets/Images/sprites-lluc-intro/caracuatro.png";//3
+const std::string FI_Introimage_23 = "Assets/Images/sprites-lluc-intro/carados.png";//4
+const std::string FI_Introimage_24 = "Assets/Images/sprites-lluc-intro/caratres.png";//5
+const std::string FI_Introimage_25 = "Assets/Images/sprites-lluc-intro/carauno.png";//6
+const std::string FI_Introimage_26 = "Assets/Images/sprites-lluc-intro/holalluc.png";//7
+const std::string FI_Introimage_27 = "Assets/Images/sprites-lluc-intro/fondonegro.png";//8
+const std::string FI_Introimage_28 = "Assets/Images/sprites-lluc-intro/fuego1.png";//9
+const std::string FI_Introimage_29 = "Assets/Images/sprites-lluc-intro/fuego2.png";//10
+const std::string FI_Introimage_30 = "Assets/Images/sprites-lluc-intro/fuego3.png";//11
+const std::string FI_Introimage_31 = "Assets/Images/sprites-lluc-intro/nave1.png";//12
+const std::string FI_Introimage_32 = "Assets/Images/sprites-lluc-intro/nave2.png";//13
+const std::string FI_Introimage_33 = "Assets/Images/sprites-lluc-intro/nave3.png";//14
+const std::string FI_Introimage_34 = "Assets/Images/sprites-lluc-intro/nave4.png";//15
+
 
 //OutroImage
 const std::string FI_Outroimage_0 = "Assets/Images/Outro/customone.png";

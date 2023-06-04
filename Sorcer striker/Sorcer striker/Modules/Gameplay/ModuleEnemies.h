@@ -7,6 +7,7 @@
 
 enum class Enemy_Type {
 	NO_TYPE,
+	ANGEL,
 	BOMB,
 	GOLD,
 	COIN,
@@ -25,7 +26,10 @@ enum class Enemy_Type {
 	TURTLE,
 	MINIDRAGON,
 	REDBAT,
-	BOSS
+	BOSS,
+	STAGE,
+	FLAG,
+	NUM1,
 };
 
 struct EnemySpawnpoint {

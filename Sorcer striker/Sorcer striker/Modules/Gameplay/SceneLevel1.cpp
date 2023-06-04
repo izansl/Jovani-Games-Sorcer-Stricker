@@ -7,9 +7,9 @@
 #include "../../Modules/Core/ModuleAudio.h"
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Core/ModuleInput.h"
+#include "../Gameplay/ModuleEnemies.h"
+#include "../Gameplay/ModulePlayer.h"
 
-#include "ModuleEnemies.h"
-#include "ModulePlayer.h"
 
 SceneLevel1::SceneLevel1(bool startEnabled) : Module(startEnabled) {
 }
@@ -55,11 +55,11 @@ bool SceneLevel1::Start() {
 	raightcoll = App->collisions->AddCollider({ xr, yr, wr, hr }, Collider::Type::WALL_PLAYER);
 
 
-	App->enemies->AddEnemy(Enemy_Type::BOSS, 200, -400, 1);
-
 #pragma region ENEMIES
+	App->enemies->AddEnemy(Enemy_Type::FLAG, 500, -400, 1);
 	// add chest
-	App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, 200, -500, 1);
+	//App->enemies->AddEnemy(Enemy_Type::CHESTBLUE, 200, -500, 1);
+	App->enemies->AddEnemy(Enemy_Type::ANGEL, 200, -500, 1);
 
 #pragma region Red ball
 	//add red ball
@@ -307,6 +307,7 @@ bool SceneLevel1::Start() {
 }
 
 Update_Status SceneLevel1::Update() {
+	GamePad& pad = App->input->pads[0];
 	App->render->camera.y += velocitatNivell;
 
 	topcoll->rect.y += velocitatNivell;
@@ -335,28 +336,21 @@ Update_Status SceneLevel1::Update() {
 	}
 
 	//Spawn cofres
-	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN || pad.up==true)
 	{
 		App->enemies->AddEnemy(Enemy_Type::CHEST_RED, App->player->position.x + 50, App->player->position.y - 800, 1);
 	}
-	if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN || pad.down == true)
 	{
 		App->enemies->AddEnemy(Enemy_Type::CHEST_GREEN, App->player->position.x + 50, App->player->position.y - 800, 1);
 	}
-	if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN || pad.right == true)
 	{
 		App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, App->player->position.x + 50, App->player->position.y - 800, 1);
 	}
-	if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN || pad.left == true)
 	{
-		App->enemies->AddEnemy(Enemy_Type::GOLD, App->player->position.x + 50, App->player->position.y - 800, 1);
-	}
-	if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN)
-	{
-		App->enemies->AddEnemy(Enemy_Type::TANK, 400, App->player->position.y - 700, 1);
-
-
-
+		App->enemies->AddEnemy(Enemy_Type::ANGEL, App->player->position.x + 50, App->player->position.y - 800, 1);
 	}
 	if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
 	{

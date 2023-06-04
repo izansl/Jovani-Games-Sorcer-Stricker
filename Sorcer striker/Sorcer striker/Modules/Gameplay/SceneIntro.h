@@ -31,17 +31,21 @@ public:
 public:
 	// The scene sprite sheet loaded into an SDL_Texture
 
-	
-	#define NUM_IMAGES 18		
+
+#define NUM_IMAGES 18		
 	SDL_Texture* ArrayImagesIntro[NUM_IMAGES];
 	float timer = 0.0f;
-	float timer2 = 0.0f;
-	int currentImage = 0;	
+	int currentImage = 0;
 	uint musica = 0;
 	//Prueba efecto fade en imagenes
 	bool fadingOut = false;
 	float fadeTimer = 0.0f;
 	const float FADE_TIME = 1.0f;//duración del DESVANECIMIENTO en segundos
+
+	//Amb GetTicks
+#define NUM_IMAGES2 16
+	int startTime;
+	SDL_Texture* ArrayImagesIntro2[NUM_IMAGES2];
 
 	uint tokenFx = 0;
 };

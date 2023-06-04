@@ -3,37 +3,41 @@
 #include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Gameplay/ModuleEnemies.h"
+#include "../../Modules/Gameplay/SceneLevel1.h"
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include"../../Modules/Core/ModuleTextures.h"
 
 
 Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
-
+	// Set vides
 	vides[0] = 15; // Cuerpo 0
 	vides[1] = 5; // Cabeza 1
 	vides[2] = 5; // Cabeza 2
 	vides[3] = 5; // Cabeza 2
 
+	// Reset temporitzadors
+	temporitzador_CosDanyat = 0;
+	temporitzador_Cap1Danyat = 0;
+	temporitzador_Cap2Danyat = 0;
+	temporitzador_Cap3Danyat = 0;
+
+	// Load texture
 	texturaBoss = App->textures->Load(FI_spriteEnemy_boss.c_str());
 
+	// Load animations and load path
 	animationFan.PushBack({ 0, 230, 115, 115 });
 	animationFan.PushBack({ 116, 230, 115, 115 });
 	animationFan.speed = 0.2;
 	animationFan.loop = true;
-	pathFan1.PushBack({ 0,0 }, 20, &animationFan);
-	pathFan2.PushBack({ 50,0 }, 20, &animationFan);
-	pathFan3.PushBack({ 100,0 }, 20, &animationFan);
-	pathFan4.PushBack({ 150,0 }, 20, &animationFan);
+	pathFan.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell }, 20, &animationFan);
 
 	animationHead.PushBack({ 0, 502, 180, 180 });
 	animationHead.PushBack({ 180 * 2, 502, 180, 180 });
 	animationHead.PushBack({ 180 * 4, 502, 180, 180 });
 	animationHead.speed = 0.1f;
 	animationHead.loop = true;
-	pathCabeza1.PushBack({ 0,0 }, 20, &animationHead);
-	pathCabeza2.PushBack({ 50,0 }, 20, &animationHead);
-	pathCabeza3.PushBack({ 100,0 }, 20, &animationHead);
+	pathCabeza.PushBack({ 0,(float)App->sceneLevel_1->velocitatNivell }, 20, &animationHead);
 
 	animationHeadDamaged.PushBack({ 180 * 1, 502, 180, 180 });
 	animationHeadDamaged.PushBack({ 180 * 3, 502, 180, 180 });
@@ -41,6 +45,12 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	animationHeadDamaged.speed = 0.1f;
 	animationHeadDamaged.loop = true;
 
+	animationBody.PushBack({ 0, 1045, 1200, 400 });
+	animationBody.speed = 0.1f;
+	animationBody.loop = true;
+	pathCuerpo.PushBack({ 0,(float)App->sceneLevel_1->velocitatNivell }, 20, &animationBody);
+
+	// Load particles
 	particleFire.anim.PushBack({ 0, 690, 157, 157 });
 	particleFire.anim.PushBack({ 157, 690, 157, 157 });
 	particleFire.anim.PushBack({ 157 * 2, 690, 157, 157 });
@@ -52,56 +62,52 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	particleFire.anim.speed = 0.05f;
 	particleFire.lifetime = 115;
 
-	//collider = App->collisions->AddCollider({ 0, 0,1200, 400 }, Collider::Type::ENEMY, (Module*)App->enemies);
-	//colliderCabeza1 = App->collisions->AddCollider({ 0, 0,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
-	//colliderCabeza2 = App->collisions->AddCollider({ 0, 0,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
-	//colliderCabeza3 = App->collisions->AddCollider({ 0, 0,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	// Collisions
+	colliderCuerpo = App->collisions->AddCollider({ 0, 0,1200, 400 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	colliderCabeza1 = App->collisions->AddCollider({ -300, 200,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	colliderCabeza2 = App->collisions->AddCollider({ -85, 230,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	colliderCabeza3 = App->collisions->AddCollider({ 130, 200,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
 }
 
 void Boss_BreathDragon::Update() {
+	// Update path position
+	pathFan.Update();
+	pathCabeza.Update();
+	pathCuerpo.Update();
 
-	/*if (currentAnim != nullptr)
-		currentAnim->Update();
+	// Update animations
+	pathFan.GetCurrentAnimation()->Update();
+	pathCabeza.GetCurrentAnimation()->Update();
+	pathCuerpo.GetCurrentAnimation()->Update();
 
-	if (collider != nullptr)
-		collider->SetPos(position.x, position.y);
+	// Update object position
+	position = spawnPos + pathCuerpo.GetRelativePosition();
 
-	if (currentAnim != nullptr)
-		App->render->Blit(texture, position.x, position.y, &(currentAnim->GetCurrentFrame()));*/
+	// Update colliders positions
+	colliderCuerpo->SetPos(position.x - 600, position.y);
+	colliderCabeza1->SetPos(position.x - 300 - 600, position.y + 200);
+	colliderCabeza1->SetPos(position.x - 85 - 600, position.y + 230);
+	colliderCabeza1->SetPos(position.x + 130 - 600, position.y + 200);
+}
 
+void Boss_BreathDragon::Draw() {
 
-	if (pathFan1.GetCurrentAnimation() != nullptr) {
-		pathFan1.Update();
-		App->render->Blit(texturaBoss, position.x, position.y, &(pathFan1.GetCurrentAnimation()->GetCurrentFrame()));
-	}
-	if (pathFan2.GetCurrentAnimation() != nullptr) { 
-		pathFan2.Update(); 
-		App->render->Blit(texturaBoss, position.x, position.y, &(pathFan2.GetCurrentAnimation()->GetCurrentFrame()));
-	}
-	if (pathFan3.GetCurrentAnimation() != nullptr) {
-		pathFan3.Update();
-		App->render->Blit(texturaBoss, position.x, position.y, &(pathFan3.GetCurrentAnimation()->GetCurrentFrame()));
-	}
-	if (pathFan4.GetCurrentAnimation() != nullptr) {
-		pathFan4.Update();
-		App->render->Blit(texturaBoss, position.x, position.y, &(pathFan4.GetCurrentAnimation()->GetCurrentFrame()));
+	if (pathCuerpo.GetCurrentAnimation() != nullptr) {
+		App->render->Blit(texturaBoss, position.x - 600, position.y, &(pathCuerpo.GetCurrentAnimation()->GetCurrentFrame()));
 	}
 
-	
+	if (pathCabeza.GetCurrentAnimation() != nullptr) {
+		App->render->Blit(texturaBoss, position.x - 300, position.y + 200, &(pathCabeza.GetCurrentAnimation()->GetCurrentFrame()));
+		App->render->Blit(texturaBoss, position.x - 85, position.y + 230, &(pathCabeza.GetCurrentAnimation()->GetCurrentFrame()));
+		App->render->Blit(texturaBoss, position.x + 130, position.y + 200, &(pathCabeza.GetCurrentAnimation()->GetCurrentFrame()));
+	}
 
-	//App->render->Blit(texture, position.x, position.y, &(pathFan3.GetCurrentAnimation()->GetCurrentFrame()));
-	//App->render->Blit(texture, position.x, position.y, &(pathFan4.GetCurrentAnimation()->GetCurrentFrame()));
-
-	////pathCabeza1.Update();
-	////pathCabeza2.Update();
-	////pathCabeza3.Update();
-	////App->render->Blit(texture, position.x, position.y, &(pathCabeza1.GetCurrentAnimation()->GetCurrentFrame()));
-	////App->render->Blit(texture, position.x, position.y, &(pathCabeza2.GetCurrentAnimation()->GetCurrentFrame()));
-	////App->render->Blit(texture, position.x, position.y, &(pathCabeza3.GetCurrentAnimation()->GetCurrentFrame()));
-
-
-	position = spawnPos + pathFan1.GetRelativePosition();
-	Enemy::Update();
+	if (pathFan.GetCurrentAnimation() != nullptr) {
+		App->render->Blit(texturaBoss, position.x - 400, position.y + 250, &(pathFan.GetCurrentAnimation()->GetCurrentFrame()));
+		App->render->Blit(texturaBoss, position.x - 150, position.y + 200, &(pathFan.GetCurrentAnimation()->GetCurrentFrame()));
+		App->render->Blit(texturaBoss, position.x + 40, position.y + 200, &(pathFan.GetCurrentAnimation()->GetCurrentFrame()));
+		App->render->Blit(texturaBoss, position.x + 270, position.y + 230, &(pathFan.GetCurrentAnimation()->GetCurrentFrame()));
+	}
 }
 
 void Boss_BreathDragon::OnCollisionGeneral(Collider* c1) {
