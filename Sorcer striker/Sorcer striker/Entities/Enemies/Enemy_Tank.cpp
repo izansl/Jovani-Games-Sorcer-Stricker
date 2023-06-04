@@ -114,10 +114,9 @@ void Enemy_Tank::OnCollision(Collider* c1) {
 			App->audio->PlayFx(destroyedFx);
 			life = false;
 
+			App->player->score += 150;
 
 		}
-
-
 	}
 	
 }

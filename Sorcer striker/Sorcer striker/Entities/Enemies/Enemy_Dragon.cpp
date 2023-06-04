@@ -75,25 +75,20 @@ void Enemy_Dragon::Update() {
 			temp = 0;
 		}
 		temp++;
+
 	}
-	
-		
-	
-	
-	
-	
-	
+
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
 	Enemy::Update();
 }
 
 void Enemy_Dragon::OnCollision(Collider* c1) {	
-		
 	if (vida)
 	{
-		hitcount++;
-		if (hitcount < 6)
+	hitcount++;
+	if (hitcount < 6)
+		if (hitcount > 6)
 		{
 			damage.PushBack({ 1121, 1503 , 381, 451 });
 			damage.PushBack({ 1121, 869 , 381, 451 });
@@ -121,14 +116,10 @@ void Enemy_Dragon::OnCollision(Collider* c1) {
 			App->audio->PlayFx(destroyedFx);
 			currentAnim = &death;
 			vida = false;
-
+			App->player->score += 1000;
+			
 		}
-
-
 	}
-	
-
-
 
 }
 	

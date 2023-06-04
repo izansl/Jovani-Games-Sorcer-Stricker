@@ -45,4 +45,5 @@ void Enemy_RedBat::OnCollision(Collider* c1) {
 	fly.speed = 0.2;
 	fly.loop = false;
 	App->audio->PlayFx(destroyedFx);
+	App->player->score += 50;
 }

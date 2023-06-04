@@ -89,7 +89,7 @@ void Enemy_BigTank::OnCollision(Collider* c1) {
 			App->audio->PlayFx(destroyedFx);
 			currentAnim = &death;
 			life = false;
-
+			App->player->score += 500;
 		}
 
 

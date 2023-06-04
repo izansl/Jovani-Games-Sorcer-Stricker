@@ -73,10 +73,9 @@ void Enemy_FlyTank::OnCollision(Collider* c1) {
 				App->audio->PlayFx(destroyedFx);
 				currentAnim = &death;
 				life = false;
-
+				App->player->score += 1000;
+				App->enemies->AddEnemy(Enemy_Type::BOMB, position.x, position.y, 1);
 			}
-		
-
 	}
 	
 	

@@ -1,6 +1,5 @@
 #include "SceneLevel1.h"
 
-#include "../../Application/Application.h"
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Modules/Core/ModuleRender.h"
@@ -11,7 +10,7 @@
 #include "../Gameplay/ModulePlayer.h"
 #include "../Gameplay/ModuleInsertCoin.h"
 #include "../Gameplay/SceneLevel1.h"
-
+#include "../../Application/Application.h"
 
 #include <SDL_timer.h>
 
@@ -67,7 +66,9 @@ bool SceneLevel1::Start() {
 	start_time = SDL_GetTicks();
 
 #pragma region ENEMIES
-	
+
+	App->enemies->AddEnemy(Enemy_Type::STAGECLEAR, 0, -400, 1);
+
 	// add chest
 	App->enemies->AddEnemy(Enemy_Type::GOLD, 100, -2150, 1);
 	App->enemies->AddEnemy(Enemy_Type::CHEST_RED, 450, -2600, 1);
