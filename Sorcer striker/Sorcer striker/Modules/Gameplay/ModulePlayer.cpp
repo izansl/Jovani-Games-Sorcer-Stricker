@@ -336,9 +336,8 @@ Update_Status ModulePlayer::PostUpdate() {
 	// LOSE CONDITION
 	if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
 	{
-		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
-
-
+		//App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
+		App->sceneLevel_1->velocitatNivell = 0;
 
 	}
 

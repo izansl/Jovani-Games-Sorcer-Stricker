@@ -8,6 +8,9 @@
 #include "../../Modules/Core/ModuleAudio.h"
 #include "../../Modules/Core/ModuleInput.h"
 #include "../../Modules/Core/ModuleFadeToBlack.h"
+#include "../../Utils/p2Point.h"
+#include "../../Utils/Animation.h"
+
 
 SceneIntro::SceneIntro(bool startEnabled) : Module(startEnabled) {
 }
@@ -150,12 +153,14 @@ Update_Status SceneIntro::PostUpdate() {
 		App->render->Blit(ArrayImagesIntro2[2], -x2 + 800, -100, NULL);//alientocho
 
 		//foc 1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 + 435, -345, NULL);//fuego1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 + 285, -345, NULL);//fuego1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 + 135, -345, NULL);//fuego1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 - 15, -345, NULL);//fuego1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 - 195, -345, NULL);//fuego1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 - 375, -345, NULL);//fuego1
+
+
+		//App->render->Blit(ArrayImagesIntro2[9], -x2 + 435, -345, NULL);//fuego1
+		//App->render->Blit(ArrayImagesIntro2[9], -x2 + 285, -345, NULL);//fuego1
+		//App->render->Blit(ArrayImagesIntro2[9], -x2 + 135, -345, NULL);//fuego1
+		//App->render->Blit(ArrayImagesIntro2[9], -x2 - 15, -345, NULL);//fuego1
+		//App->render->Blit(ArrayImagesIntro2[9], -x2 - 195, -345, NULL);//fuego1
+		//App->render->Blit(ArrayImagesIntro2[9], -x2 - 375, -345, NULL);//fuego1
 
 
 		//foc 2
