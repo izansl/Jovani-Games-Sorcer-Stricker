@@ -50,10 +50,21 @@ private:
 	Collider* colliderCabeza2;
 	Collider* colliderCabeza3;
 
+	int start_Time;	
+
 	int temporitzador_CosDanyat;
 	int temporitzador_Cap1Danyat;
 	int temporitzador_Cap2Danyat;
 	int temporitzador_Cap3Danyat;
+
+	bool spawned1 = false;
+	bool spawned2 = false;
+	bool spawned3 = false;
+	bool spawned4 = false;
+	bool spawned5 = false;
+	bool spawned6 = false;
+	bool spawned7 = false;
+	bool spawned8 = false;
 
 };
 
