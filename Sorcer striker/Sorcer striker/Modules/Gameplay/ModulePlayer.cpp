@@ -338,7 +338,7 @@ Update_Status ModulePlayer::PostUpdate() {
 	{
 		
 		App->sceneLevel_1->velocitatNivell = 0;
-		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->scenePantallaLose, 60); //Menu start no intro
+		App->scenePantallaLose, 60; //Menu start no intro
 		/*App->scenePantallaLose, 60;*/
 
 	}
