@@ -36,6 +36,7 @@ bool SceneLevel1::Start() {
 	texture_arboles = App->textures->Load(FI_background_arboles.c_str());
 
 	App->audio->PlayMusic(FA_Music_stage1.c_str(), 1.0f);
+	
 
 	//Wall colliders
 	int xt = 0;
@@ -66,7 +67,7 @@ bool SceneLevel1::Start() {
 
 #pragma region ENEMIES
 
-
+	
 	// add chest
 	App->enemies->AddEnemy(Enemy_Type::GOLD, 100, -2150, 1);
 	App->enemies->AddEnemy(Enemy_Type::CHEST_RED, 450, -2600, 1);
@@ -82,7 +83,7 @@ bool SceneLevel1::Start() {
 	
 #pragma region STAGE
 	
-	App->enemies->AddEnemy(Enemy_Type::FLAG, 1200, -200, 1);
+	App->enemies->AddEnemy(Enemy_Type::FLAG, 500, -200, 1);
 	App->enemies->AddEnemy(Enemy_Type::NUM1, 500, -200, 1);
 	App->enemies->AddEnemy(Enemy_Type::STAGE, -350, -200, 1);
 	
@@ -304,7 +305,7 @@ bool SceneLevel1::Start() {
 #pragma region bigtank
 	App->enemies->AddEnemy(Enemy_Type::BIGTANK, 0, 39490, 1);
 	App->enemies->AddEnemy(Enemy_Type::BIGTANK, -277, -41600, 2);
-	App->enemies->AddEnemy(Enemy_Type::BIGTANK, 1000, -41600, 3);
+	App->enemies->AddEnemy(Enemy_Type::BIGTANK, 800, -41600, 3);
 #pragma endregion
 #pragma region redbat
 	/*App->enemies->AddEnemy(Enemy_Type::REDBAT, 600, -22050, 1);
@@ -317,6 +318,10 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::REDBAT, 450, -42000, 1);
 	App->enemies->AddEnemy(Enemy_Type::REDBAT, 650, -42000, 1);
 #pragma endregion
+	App->enemies->AddEnemy(Enemy_Type::WARL, 30, -44000, 1);
+	App->enemies->AddEnemy(Enemy_Type::WARR, 330, -44000, 1);
+	App->enemies->AddEnemy(Enemy_Type::FLECH, 349, -44000, 1);
+
 	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;
 	App->render->camera.y = 2850;
@@ -364,7 +369,7 @@ Update_Status SceneLevel1::Update() {
 		velocitatNivell = -4;
 	}
 
-	if (SDL_GetTicks() - start_time >= 89000)
+	if (SDL_GetTicks() - start_time >= 93000)
 	{
 		velocitatNivell = -15;
 	}

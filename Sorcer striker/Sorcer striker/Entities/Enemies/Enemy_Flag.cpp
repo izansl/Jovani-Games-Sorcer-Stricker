@@ -17,13 +17,13 @@ Enemy_Flag::Enemy_Flag(int x, int y) : Enemy(x, y) {
 
 
 	// Path 1
-	pathchest.PushBack({ 0.0f, -8.0f }, 30);
+	pathchest.PushBack({ 0.0f, -8.5f }, 30);
 	pathchest.PushBack({ -6.0f, -15.0f }, 42);
 	pathchest.PushBack({ 0.0f, -15.0f }, 40);
 	pathchest.PushBack({ 12.0f, -15.0f }, 300);
 
 	currentPath = &pathchest;
-
+	collider = App->collisions->AddCollider({ 0, 0, 1200, 200 }, Collider::Type::PLAYER, (Module*)App->enemies);
 }
 
 void Enemy_Flag::Update() {

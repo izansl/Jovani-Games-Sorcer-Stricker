@@ -24,14 +24,14 @@ Enemy_BigTank::Enemy_BigTank(int x, int y, int wave) : Enemy(x, y) {
 	}
 	if (wave == 2)
 	{
-		path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell * 0}, 30, &de);
+		path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell * 0}, 50, &de);
 		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 200, &de);
 		path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell * 0 }, 300, &de);
 
 	}
 	if (wave == 3)
 	{
-		path.PushBack({ -5, (float)App->sceneLevel_1->velocitatNivell * 0}, 30,&iz);
+		path.PushBack({ -5, (float)App->sceneLevel_1->velocitatNivell * 0}, 50,&iz);
 		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 200, &de);
 		path.PushBack({ -5, (float)App->sceneLevel_1->velocitatNivell * 0 }, 300, &de);
 	}
