@@ -160,6 +160,9 @@
     <ClInclude Include="Application\FileNames.h" />
     <ClInclude Include="Application\Globals.h" />
     <ClInclude Include="Application\MemLeaks.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_Flecha.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_WarnL.h" />
+    <ClInclude Include="Entities\Enemies\Enemy_WarR.h" />
     <ClInclude Include="Entities\Enemies\Boss_BreathDragon.h" />
     <ClInclude Include="Entities\Enemies\Enemy.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Angel.h" />
@@ -212,6 +215,9 @@
     <ClCompile Include="Application\Application.cpp" />
     <ClCompile Include="Application\Globals.cpp" />
     <ClCompile Include="Application\Main.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_Flecha.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_WarnL.cpp" />
+    <ClCompile Include="Entities\Enemies\Enemy_WarR.cpp" />
     <ClCompile Include="Entities\Enemies\Boss_BreathDragon.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Angel.cpp" />

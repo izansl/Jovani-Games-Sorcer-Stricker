@@ -30,6 +30,9 @@ enum class Enemy_Type {
 	STAGE,
 	FLAG,
 	NUM1,
+	WARL,
+	WARR,
+	FLECH,
 };
 
 struct EnemySpawnpoint {
