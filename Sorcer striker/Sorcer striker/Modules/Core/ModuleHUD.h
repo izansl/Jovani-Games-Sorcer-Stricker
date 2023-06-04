@@ -27,9 +27,11 @@ public:
 	Update_Status PostUpdate() override;
 	bool CleanUp();
 
-	int score;
+
 
 private:
+	int score;
+	int score2;
 	int highScore;
 	int sizeVector;
 	int widthLetter = 25;
@@ -39,6 +41,7 @@ private:
 	std::string player1 = "Player 1";
 	std::string player2 = "Player 2";
 	std::string hlScore = "Hi-Score";
+	std::string X = "x";
 
 	SDL_Texture* textureFont = nullptr;
 	SDL_Texture* textureIcons = nullptr;
