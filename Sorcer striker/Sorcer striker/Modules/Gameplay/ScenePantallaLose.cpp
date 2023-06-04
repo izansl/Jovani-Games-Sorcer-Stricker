@@ -120,12 +120,17 @@ Update_Status ScenePantallaLose::PostUpdate() {
 
 	}
 
-	if (currentTime >= 9000 && currentTime < 10000) {
+	if (currentTime >= 9000 && currentTime < 12000) {
 
 		App->render->Blit(ArrayImagesContinue[8], 0, 0, NULL);//1
 
 	}
 	
+	if (currentTime >= 10000) {
+
+		App->fade->FadeToBlack(this, (Module*)App->sceneStart, 60);
+
+	}
 	
 
 	return Update_Status::UPDATE_CONTINUE;

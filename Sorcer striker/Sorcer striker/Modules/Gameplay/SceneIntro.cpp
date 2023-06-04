@@ -270,6 +270,11 @@ Update_Status SceneIntro::PostUpdate() {
 
 	}
 
+	if (currentTime >= 32000) {
+
+		App->fade->FadeToBlack(this, (Module*)App->sceneStart, 60);
+
+	}
 
 
 	return Update_Status::UPDATE_CONTINUE;
