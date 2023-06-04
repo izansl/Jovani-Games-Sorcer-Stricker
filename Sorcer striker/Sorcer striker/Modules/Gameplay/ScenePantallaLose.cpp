@@ -50,6 +50,10 @@ Update_Status ScenePantallaLose::Update() {
 		App->player->lives = 1;
 		App->scenePantallaLose->Disable();
 		App->sceneLevel_1->stopGame = false;
+		App->player->stopGame = false;
+
+
+
 		
 	};
 

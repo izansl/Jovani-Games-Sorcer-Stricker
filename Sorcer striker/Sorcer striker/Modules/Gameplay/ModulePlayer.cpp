@@ -107,204 +107,206 @@ bool ModulePlayer::Start() {
 }
 
 Update_Status ModulePlayer::Update() {
+	if (!stopGame) {
 
-	GamePad& pad = App->input->pads[0];
-	
-	// Moving the player with the camera scroll
-	App->player->position.y -= 8;
-	if (App->input->keys[SDL_SCANCODE_F1] == KEY_DOWN || pad.l1==true)
-		godMode = !godMode;
+		GamePad& pad = App->input->pads[0];
 
-	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT || pad.l_y < 0.0f) position.y -= speed;
-	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT || pad.l_y > 0.0f) position.y += speed;
-	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
+		// Moving the player with the camera scroll
+		App->player->position.y -= 8;
+		if (App->input->keys[SDL_SCANCODE_F1] == KEY_DOWN || pad.l1 == true)
+			godMode = !godMode;
 
-	{
-		position.x += speed;
-		if (currentAnimation != &rightAnim)
+		if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT || pad.l_y < 0.0f) position.y -= speed;
+		if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT || pad.l_y > 0.0f) position.y += speed;
+		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
+
 		{
-			rightAnim.Reset();
-			currentAnimation = &rightAnim;
-		}
-	}
-	if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
-	{
-		position.x -= speed;
-		if (currentAnimation != &leftAnim)
-		{
-			leftAnim.Reset();
-			currentAnimation = &leftAnim;
-		}
-	}
-
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true)
-	{
-		if (canshootlaser)
-		{
-			start_time = SDL_GetTicks();
-			canshootlaser = false;
-			if (Powerupred)
+			position.x += speed;
+			if (currentAnimation != &rightAnim)
 			{
-				App->particles->AddParticle(App->particles->knifeleft, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
-				App->particles->AddParticle(App->particles->kniferight, position.x + 150, position.y, Collider::Type::PLAYER_SHOT, 0);
-				App->particles->AddParticle(App->particles->knifeleft, position.x + 0, position.y, Collider::Type::PLAYER_SHOT, 0);
-				App->particles->AddParticle(App->particles->kniferight, position.x + 175, position.y, Collider::Type::PLAYER_SHOT, 0);
-				App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
-			}
-			if (Powerupblue)
-			{
-				App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
-
-				App->particles->AddParticle(App->particles->axeleft, position.x - 5, position.y, Collider::Type::PLAYER_SHOT, 0);
-
-				App->particles->AddParticle(App->particles->axeright, position.x + 140, position.y, Collider::Type::PLAYER_SHOT, 0);
-			}
-			if (Powerupgreen)
-			{
-				App->particles->AddParticle(App->particles->sword, position.x - 20, position.y - 720, Collider::Type::PLAYER_SHOT, 0);
-				App->particles->AddParticle(App->particles->sword, position.x + 160, position.y - 720, Collider::Type::PLAYER_SHOT, 0);
-				App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
-			}
-			if (!Powerupblue && !Powerupgreen && !Powerupred)
-			{
-				App->particles->AddParticle(App->particles->laser1, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+				rightAnim.Reset();
+				currentAnimation = &rightAnim;
 			}
 		}
-		if (SDL_GetTicks() - start_time >= 200)
+		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
 		{
-			canshootlaser = true;
+			position.x -= speed;
+			if (currentAnimation != &leftAnim)
+			{
+				leftAnim.Reset();
+				currentAnimation = &leftAnim;
+			}
 		}
-	}
 
-	// Spawn explosion particles when pressing B
-	if (App->input->keys[SDL_SCANCODE_B] == Key_State::KEY_DOWN || pad.x == true)
-	{
-		if (canshootbomb)
+		if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true)
 		{
-			start_time = SDL_GetTicks();
-			canshootbomb = false;
-			if (Powerupblue)
+			if (canshootlaser)
 			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
-			}
-			if (Powerupred)
-			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
-			}
-			if (Powerupgreen)
-			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
-			}
-			if (!Powerupblue && !Powerupgreen && !Powerupred)
-			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 150, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
-			}
-		}
-		if (SDL_GetTicks()-start_time>=3000)
-		{
-			canshootbomb = true;
-		}
-	}
+				start_time = SDL_GetTicks();
+				canshootlaser = false;
+				if (Powerupred)
+				{
+					App->particles->AddParticle(App->particles->knifeleft, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+					App->particles->AddParticle(App->particles->kniferight, position.x + 150, position.y, Collider::Type::PLAYER_SHOT, 0);
+					App->particles->AddParticle(App->particles->knifeleft, position.x + 0, position.y, Collider::Type::PLAYER_SHOT, 0);
+					App->particles->AddParticle(App->particles->kniferight, position.x + 175, position.y, Collider::Type::PLAYER_SHOT, 0);
+					App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
+				}
+				if (Powerupblue)
+				{
+					App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
 
-	// If no up/down movement detected, set the current animation back to idle
-	if (pad.enabled)
-	{
-		if (pad.l_x == 0.0f && pad.l_y == 0.0f)
+					App->particles->AddParticle(App->particles->axeleft, position.x - 5, position.y, Collider::Type::PLAYER_SHOT, 0);
+
+					App->particles->AddParticle(App->particles->axeright, position.x + 140, position.y, Collider::Type::PLAYER_SHOT, 0);
+				}
+				if (Powerupgreen)
+				{
+					App->particles->AddParticle(App->particles->sword, position.x - 20, position.y - 720, Collider::Type::PLAYER_SHOT, 0);
+					App->particles->AddParticle(App->particles->sword, position.x + 160, position.y - 720, Collider::Type::PLAYER_SHOT, 0);
+					App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
+				}
+				if (!Powerupblue && !Powerupgreen && !Powerupred)
+				{
+					App->particles->AddParticle(App->particles->laser1, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+				}
+			}
+			if (SDL_GetTicks() - start_time >= 200)
+			{
+				canshootlaser = true;
+			}
+		}
+
+		// Spawn explosion particles when pressing B
+		if (App->input->keys[SDL_SCANCODE_B] == Key_State::KEY_DOWN || pad.x == true)
+		{
+			if (canshootbomb)
+			{
+				start_time = SDL_GetTicks();
+				canshootbomb = false;
+				if (Powerupblue)
+				{
+					App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+				}
+				if (Powerupred)
+				{
+					App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+				}
+				if (Powerupgreen)
+				{
+					App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+				}
+				if (!Powerupblue && !Powerupgreen && !Powerupred)
+				{
+					App->particles->AddParticle(App->particles->bomb, position.x - 150, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+				}
+			}
+			if (SDL_GetTicks() - start_time >= 3000)
+			{
+				canshootbomb = true;
+			}
+		}
+
+		// If no up/down movement detected, set the current animation back to idle
+		if (pad.enabled)
+		{
+			if (pad.l_x == 0.0f && pad.l_y == 0.0f)
+				currentAnimation = &idleAnim;
+		}
+		else if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE && App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE)
 			currentAnimation = &idleAnim;
-	}
-	else if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_IDLE && App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_IDLE)
-		currentAnimation = &idleAnim;
 
-	//update collider
-	collider->SetPos(position.x, position.y);
-	currentAnimation->Update();
+		//update collider
+		collider->SetPos(position.x, position.y);
+		currentAnimation->Update();
 
-	if (Powerupblue == true)
-	{
-		currentAnimation = &blueBUFF;
-		collider->rect.w = 217;
-		collider->rect.h = 118;
-
-		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
-
+		if (Powerupblue == true)
 		{
-			position.x += speed;
-			if (currentAnimation != &blueright)
+			currentAnimation = &blueBUFF;
+			collider->rect.w = 217;
+			collider->rect.h = 118;
+
+			if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
+
 			{
-				blueright.Reset();
-				currentAnimation = &blueright;
+				position.x += speed;
+				if (currentAnimation != &blueright)
+				{
+					blueright.Reset();
+					currentAnimation = &blueright;
+				}
+			}
+			if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
+
+			{
+				position.x -= speed;
+				if (currentAnimation != &blueleft)
+				{
+					blueleft.Reset();
+					currentAnimation = &blueleft;
+				}
 			}
 		}
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
+		if (Powerupgreen == true)
+		{
+			currentAnimation = &greenBUFF;
+			collider->rect.w = 217;
+			collider->rect.h = 118;
 
-		{
-			position.x -= speed;
-			if (currentAnimation != &blueleft)
+			if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
 			{
-				blueleft.Reset();
-				currentAnimation = &blueleft;
+				position.x += speed;
+				if (currentAnimation != &greenright)
+				{
+					blueright.Reset();
+					currentAnimation = &greenright;
+				}
+			}
+			if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
+			{
+				position.x -= speed;
+				if (currentAnimation != &greenleft)
+				{
+					blueleft.Reset();
+					currentAnimation = &greenleft;
+				}
 			}
 		}
-	}
-	if (Powerupgreen == true)
-	{
-		currentAnimation = &greenBUFF;
-		collider->rect.w = 217;
-		collider->rect.h = 118;
+		if (Powerupred == true)
+		{
+			currentAnimation = &pinkBUFF;
+			collider->rect.w = 217;
+			collider->rect.h = 118;
 
-		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
-		{
-			position.x += speed;
-			if (currentAnimation != &greenright)
+			if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
 			{
-				blueright.Reset();
-				currentAnimation = &greenright;
+				position.x += speed;
+				if (currentAnimation != &pinkright)
+				{
+					blueright.Reset();
+					currentAnimation = &pinkright;
+				}
+			}
+			if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
+			{
+				position.x -= speed;
+				if (currentAnimation != &pinkleft)
+				{
+					blueleft.Reset();
+					currentAnimation = &pinkleft;
+				}
 			}
 		}
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
-		{
-			position.x -= speed;
-			if (currentAnimation != &greenleft)
-			{
-				blueleft.Reset();
-				currentAnimation = &greenleft;
-			}
-		}
-	}
-	if (Powerupred == true)
-	{
-		currentAnimation = &pinkBUFF;
-		collider->rect.w = 217;
-		collider->rect.h = 118;
 
-		if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
+		if (destroyed)
 		{
-			position.x += speed;
-			if (currentAnimation != &pinkright)
+			destroyedCountdown--;
+			if (destroyedCountdown == 0)
 			{
-				blueright.Reset();
-				currentAnimation = &pinkright;
+				destroyed = false;
+				destroyedCountdown = 120;
+				collider->type = Collider::Type::PLAYER;
 			}
-		}
-		if (App->input->keys[SDL_SCANCODE_A] == Key_State::KEY_REPEAT || pad.l_x < 0.0f)
-		{
-			position.x -= speed;
-			if (currentAnimation != &pinkleft)
-			{
-				blueleft.Reset();
-				currentAnimation = &pinkleft;
-			}
-		}
-	}
-
-	if (destroyed)
-	{
-		destroyedCountdown--;
-		if (destroyedCountdown == 0)
-		{
-			destroyed = false;
-			destroyedCountdown = 120;
-			collider->type = Collider::Type::PLAYER;
 		}
 	}
 	return Update_Status::UPDATE_CONTINUE;
@@ -339,6 +341,7 @@ Update_Status ModulePlayer::PostUpdate() {
 	{
 		
 		App->sceneLevel_1->stopGame = true;
+		App->player->stopGame = true;
 		//App->sceneLevel_1->Disable();
 		App->scenePantallaLose->Enable();
 

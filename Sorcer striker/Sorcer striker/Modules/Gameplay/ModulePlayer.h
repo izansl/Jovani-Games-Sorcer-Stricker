@@ -51,6 +51,8 @@ public:
 
 	bool alive = true;
 
+	bool stopGame = false;
+
 
 
 
