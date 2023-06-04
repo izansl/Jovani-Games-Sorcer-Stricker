@@ -2,6 +2,7 @@
 #include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Core/ModuleRender.h"
+#include "../../Modules/Gameplay/SceneLevel1.h"
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleAudio.h"
@@ -19,15 +20,15 @@ Enemy_BigTank::Enemy_BigTank(int x, int y, int wave) : Enemy(x, y) {
 
 	if (wave == 1)
 	{
-		path.PushBack({5, -0}, 40);
+		path.PushBack({5, (float)App->sceneLevel_1->velocitatNivell * 0}, 40, &de);
 	}
 	if (wave == 2)
 	{
-		path.PushBack({ 5, -0 }, 30);
+		path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell * 0}, 30, &de);
 	}
 	if (wave == 3)
 	{
-		path.PushBack({ -5, -0 }, 30);
+		path.PushBack({ -5, (float)App->sceneLevel_1->velocitatNivell * 0}, 30,&iz);
 	}
 
 
@@ -43,6 +44,16 @@ void Enemy_BigTank::Update() {
 	{
 		path.Update();
 		position = spawnPos + path.GetRelativePosition();
+		currentAnim = path.GetCurrentAnimation();
+
+		if (temp >= 120)
+		{
+			Particle* fireball = App->particles->AddParticle(App->particles->minifireshot, position.x + 83, position.y + 88, Collider::Type::ENEMY_SHOOT, 0);
+			Particle* fireball2 = App->particles->AddParticle(App->particles->minifireshot, position.x + 226, position.y + 88, Collider::Type::ENEMY_SHOOT, 0);
+
+			temp = 0;
+		}
+		temp++;
 	}
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position

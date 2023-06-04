@@ -3,6 +3,7 @@
 #include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Core/ModuleRender.h"
+#include "../../Modules/Gameplay/SceneLevel1.h"
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleAudio.h"
@@ -19,19 +20,19 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 	if (wave == 1)
 	{
 
-			path.PushBack({0, -3}, 20);
-			path.PushBack({ 7.0, 0 },80);
-			path.PushBack({ -5, -8.0 }, 80);
-			path.PushBack({ 5, -16.0 }, 600);
+			path.PushBack({0, (float)App->sceneLevel_1->velocitatNivell + 5 }, 20);
+			path.PushBack({ 7.0, (float)App->sceneLevel_1->velocitatNivell + 8 },80);
+			path.PushBack({ -6, (float)App->sceneLevel_1->velocitatNivell }, 80);
+			path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell*2 }, 600);
 		
 	}
 	else if (wave == 2)
 	{
 		
-			path.PushBack({ 0, -3 }, 20);
-			path.PushBack({ -7.0, 0 }, 80);
-			path.PushBack({ 5, -8.0 }, 80);
-			path.PushBack({ -5, -16.0 }, 600);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell + 5 }, 20);
+		path.PushBack({ -7.0, (float)App->sceneLevel_1->velocitatNivell + 8 }, 80);
+		path.PushBack({ 6, (float)App->sceneLevel_1->velocitatNivell }, 80);
+		path.PushBack({ -5, (float)App->sceneLevel_1->velocitatNivell * 2 }, 600);
 		
 		
 	}
@@ -39,13 +40,13 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 	{
 
 	
-		path.PushBack({ 0, -3 }, 10);
-		path.PushBack({ 8.0, -4 }, 60);
-		path.PushBack({ -8.0, -4 }, 60);
-		path.PushBack({ 8.0, -4 }, 60);
-		path.PushBack({ -8.0, -4 }, 60);
-		path.PushBack({ 8.0, -4 }, 60);
-		path.PushBack({ -8.0, -4 }, 100);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell + 5  /*-3*/ }, 10);
+		path.PushBack({ 8.0, (float)App->sceneLevel_1->velocitatNivell + 4 }, 60);
+		path.PushBack({ -8.0,(float)App->sceneLevel_1->velocitatNivell + 4 }, 60);
+		path.PushBack({ 8.0, (float)App->sceneLevel_1->velocitatNivell + 4 }, 60);
+		path.PushBack({ -8.0,(float)App->sceneLevel_1->velocitatNivell + 4 }, 60);
+		path.PushBack({ 8.0, (float)App->sceneLevel_1->velocitatNivell + 4 }, 60);
+		path.PushBack({ -8.0,(float)App->sceneLevel_1->velocitatNivell + 4 }, 100);
 	
 		
 	}
@@ -53,20 +54,20 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 	{
 
 	
-		path.PushBack({ 0, -1 }, 100);
-		path.PushBack({ -6.0, -8.0 }, 20);
-		path.PushBack({ 0, -16.0 }, 70);
-		path.PushBack({ -8, -4 }, 300);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell +7 }, 100);
+		path.PushBack({ -6.0, (float)App->sceneLevel_1->velocitatNivell }, 20);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell -8 }, 70);
+		path.PushBack({ -8, (float)App->sceneLevel_1->velocitatNivell + 4 }, 300);
 		
 	}
 	else if (wave == 5)
 	{
 
 	
-		path.PushBack({ 0, -3 }, 10);
-		path.PushBack({ 7.0, 0 }, 80);
-		path.PushBack({ -5, -8.0 }, 80);
-		path.PushBack({ 5, -16.0 }, 600);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell + 5 }, 20);
+		path.PushBack({ 7.0, (float)App->sceneLevel_1->velocitatNivell + 8 }, 80);
+		path.PushBack({ -6, (float)App->sceneLevel_1->velocitatNivell }, 80);
+		path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell * 2 }, 600);
 	
 		
 	}
@@ -74,9 +75,9 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 	{
 
 	
-		path.PushBack({ 0, -1 }, 100);
-		path.PushBack({ -2.0, -8.0f }, 40);
-		path.PushBack({ -3, -12 }, 1300);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell +8  }, 90);
+		path.PushBack({ -2.0, (float)App->sceneLevel_1->velocitatNivell }, 40);
+		path.PushBack({ -4, (float)App->sceneLevel_1->velocitatNivell - 4 }, 1300);
 	
 	
 		
@@ -84,19 +85,26 @@ Enemy_RedBall::Enemy_RedBall(int x, int y, int wave) : Enemy(x, y) {
 	else if (wave == 7)
 	{
 
-		path.PushBack({ 0, -100}, 10);
-		path.PushBack({ 2.0, -8.0f }, 40);
-		path.PushBack({ 3, -12 }, 1300);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell + 8 }, 90);
+		path.PushBack({ 2.0, (float)App->sceneLevel_1->velocitatNivell }, 40);
+		path.PushBack({ 4, (float)App->sceneLevel_1->velocitatNivell - 4 }, 1300);
 	
 	}
 	else if (wave == 8)
 	{
 
-		path.PushBack({ 0, -3 }, 10);
-		path.PushBack({ -1.0, 0.5 }, 100);
-		path.PushBack({ 1.0, -0.5 }, 50);
-		path.PushBack({ -1.5 , -6.0 }, 600);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell + 5 }, 20);
+		path.PushBack({ 7.0, (float)App->sceneLevel_1->velocitatNivell + 8 }, 80);
+		path.PushBack({ -6, (float)App->sceneLevel_1->velocitatNivell }, 80);
+		path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell * 2 }, 600);
 
+	}
+	else if (wave == 9)
+	{
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell + 5 }, 20);
+		path.PushBack({ -7.0, (float)App->sceneLevel_1->velocitatNivell + 8 }, 80);
+		path.PushBack({ 6, (float)App->sceneLevel_1->velocitatNivell }, 80);
+		path.PushBack({ -5, (float)App->sceneLevel_1->velocitatNivell * 2 }, 600);
 	}
 	
 	
@@ -114,6 +122,8 @@ void Enemy_RedBall::Update() {
 		path.Update();
 		position = spawnPos + path.GetRelativePosition();
 	}
+	
+	
 	// Call to the base class. It must be called at the end
 	// It will update the collider depending on the position
 	Enemy::Update();

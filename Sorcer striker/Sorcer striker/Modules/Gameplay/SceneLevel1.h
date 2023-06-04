@@ -50,7 +50,7 @@ public:
 
 	int start_time;
 
-	int velocitatNivell = 0;
+		int velocitatNivell = -15;
 
 	int xt = 0;
 	int yt = 3000;
@@ -72,6 +72,7 @@ public:
 	int yr = 3000;
 	int wr = 10;
 	int hr = SCREEN_HEIGHT;
+
 };
 
 #endif

@@ -4,6 +4,7 @@
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include "../../Modules/Core/ModuleTextures.h"
+#include "../../Modules/Gameplay/SceneLevel1.h"
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleAudio.h"
 
@@ -23,14 +24,14 @@ Enemy_Dragon::Enemy_Dragon(int x, int y, int wave) : Enemy(x, y) {
 	if (wave == 1)
 	{
 		
-			path.PushBack({ 0, -2.5 }, 30);
-			path.PushBack({ 0, -8.0 }, 150);
-			path.PushBack({ 2, -8.0 }, 10);
-			path.PushBack({ 0, -8.0 }, 70);
-			path.PushBack({ -0.75, -10.0 }, 50);
-			path.PushBack({ 0, -8.0 }, 30);
-			path.PushBack({ 0, -3.0 }, 50);
-			path.PushBack({ -2, -12.0 }, 400);
+			path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell + 5 }, 30);
+			path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell }, 150);
+			path.PushBack({ 2, (float)App->sceneLevel_1->velocitatNivell }, 10);
+			path.PushBack({ 0,(float)App->sceneLevel_1->velocitatNivell }, 70);
+			path.PushBack({ -0.75,(float)App->sceneLevel_1->velocitatNivell - 2 }, 50);
+			path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell }, 30);
+			path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell + 4 }, 50);
+			path.PushBack({ -2, (float)App->sceneLevel_1->velocitatNivell - 4 }, 400);
 	
 		
 
@@ -39,14 +40,14 @@ Enemy_Dragon::Enemy_Dragon(int x, int y, int wave) : Enemy(x, y) {
 	{
 		
 			
-			path.PushBack({ 0, -2.5 }, 30);
-			path.PushBack({ 0, -8.0 }, 100);
-			path.PushBack({ -2, -8.0 }, 10);
-			path.PushBack({ 0, -8.0 }, 50);
-			path.PushBack({ 0.75, -10.0 }, 50);
-			path.PushBack({ 0, -8.0 }, 10);
-			path.PushBack({ 0, -3.0 }, 50);
-			path.PushBack({ 1, -12.0 }, 400);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell + 5 }, 30);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell }, 150);
+		path.PushBack({ 2, (float)App->sceneLevel_1->velocitatNivell }, 10);
+		path.PushBack({ 0,(float)App->sceneLevel_1->velocitatNivell }, 70);
+		path.PushBack({ -0.75,(float)App->sceneLevel_1->velocitatNivell - 2 }, 50);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell }, 30);
+		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell + 4 }, 50);
+		path.PushBack({ -2, (float)App->sceneLevel_1->velocitatNivell - 4 }, 400);
 		
 	}
 	
@@ -61,28 +62,22 @@ void Enemy_Dragon::Update() {
 	{
 		path.Update();
 		position = spawnPos + path.GetRelativePosition();
-	}
-	
 		if (temp >= 150)
 		{
-			Particle* fireball = App->particles->AddParticle(App->particles->minifireshot, position.x + 119, position.y + 278, Collider::Type::ENEMY_SHOOT, 0);
-			Particle* fireball2 = App->particles->AddParticle(App->particles->minifireshot, position.x + 254, position.y + 280, Collider::Type::ENEMY_SHOOT, 0);
-			Particle* fireball3 = App->particles->AddParticle(App->particles->minifireshot, position.x + 132, position.y + 244, Collider::Type::ENEMY_SHOOT, 0);
-			Particle* fireball4 = App->particles->AddParticle(App->particles->minifireshot, position.x + 238, position.y + 244, Collider::Type::ENEMY_SHOOT, 0);
+			Particle* fireball = App->particles->AddParticle(App->particles->minifireshot, position.x + 119, position.y + 278, Collider::Type::ENEMY, 0);
+			Particle* fireball2 = App->particles->AddParticle(App->particles->minifireshot, position.x + 254, position.y + 280, Collider::Type::ENEMY, 0);
+			Particle* fireball3 = App->particles->AddParticle(App->particles->minifireshot, position.x + 132, position.y + 244, Collider::Type::ENEMY, 0);
+			Particle* fireball4 = App->particles->AddParticle(App->particles->minifireshot, position.x + 238, position.y + 244, Collider::Type::ENEMY, 0);
 
-			
-			
+
+
 			temp = 0;
 		}
 		temp++;
-	/*if (!canshoot)
-	{
-		if (pausa >= 120)
-		{
-			canshoot = true;
-		}
-		pausa++;
-	}*/
+	}
+	
+		
+	
 	
 	
 	

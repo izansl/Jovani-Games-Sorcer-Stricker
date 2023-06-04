@@ -10,6 +10,11 @@
 
 
 #pragma region IMAGES -> FI
+// BORRAR
+const std::string BORRAR_1 = "Assets/Images/BORRAR/parece-polla.png";
+const std::string BORRAR_2 = "Assets/Images/BORRAR/hombre-visto-desde-debajo-barbilla-parece-pene-con-branquias-620x418-2618047271.png";
+const std::string BORRAR_3 = "Assets/Images/BORRAR/sub-buzz-13831-1519757269-2.png";
+
 // ICONOS
 const std::string FI_Iconos = "Assets/Images/iconos.png";
 

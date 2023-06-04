@@ -149,6 +149,55 @@ bool ModuleParticles::Start() {
 	minifireshot.anim.speed = 0.20;
 	minifireshot.lifetime = 100;
 	minifireshot.speed = iPoint(0, 0);
+
+	//disparos para tortuga diagonales
+	minifireshot1.anim.PushBack({ 2699, 457, 31, 35 });
+	minifireshot1.anim.PushBack({ 2761, 457,31, 35 });
+	minifireshot1.anim.PushBack({ 2821, 457, 31, 35 });
+	minifireshot1.anim.PushBack({ 2883, 457, 31, 35 });
+	minifireshot1.anim.speed = 0.20;
+	minifireshot1.lifetime = 100;
+	minifireshot1.speed = iPoint(0, -2);
+
+	minifireshot2.anim.PushBack({ 2699, 457, 31, 35 });
+	minifireshot2.anim.PushBack({ 2761, 457,31, 35 });
+	minifireshot2.anim.PushBack({ 2821, 457, 31, 35 });
+	minifireshot2.anim.PushBack({ 2883, 457, 31, 35 });
+	minifireshot2.anim.speed = 0.20;
+	minifireshot2.lifetime = 100;
+	minifireshot2.speed = iPoint(4, -2);
+
+	minifireshot3.anim.PushBack({ 2699, 457, 31, 35 });
+	minifireshot3.anim.PushBack({ 2761, 457,31, 35 });
+	minifireshot3.anim.PushBack({ 2821, 457, 31, 35 });
+	minifireshot3.anim.PushBack({ 2883, 457, 31, 35 });
+	minifireshot3.anim.speed = 0.20;
+	minifireshot3.lifetime = 100;
+	minifireshot3.speed = iPoint(4, 7);
+
+	minifireshot4.anim.PushBack({ 2699, 457, 31, 35 });
+	minifireshot4.anim.PushBack({ 2761, 457,31, 35 });
+	minifireshot4.anim.PushBack({ 2821, 457, 31, 35 });
+	minifireshot4.anim.PushBack({ 2883, 457, 31, 35 });
+	minifireshot4.anim.speed = 0.20;
+	minifireshot4.lifetime = 100;
+	minifireshot4.speed = iPoint(-4, 7);
+
+	minifireshot5.anim.PushBack({ 2699, 457, 31, 35 });
+	minifireshot5.anim.PushBack({ 2761, 457,31, 35 });
+	minifireshot5.anim.PushBack({ 2821, 457, 31, 35 });
+	minifireshot5.anim.PushBack({ 2883, 457, 31, 35 });
+	minifireshot5.anim.speed = 0.20;
+	minifireshot5.lifetime = 100;
+	minifireshot5.speed = iPoint(0, 7);
+
+	minifireshot6.anim.PushBack({ 2699, 457, 31, 35 });
+	minifireshot6.anim.PushBack({ 2761, 457,31, 35 });
+	minifireshot6.anim.PushBack({ 2821, 457, 31, 35 });
+	minifireshot6.anim.PushBack({ 2883, 457, 31, 35 });
+	minifireshot6.anim.speed = 0.20;
+	minifireshot6.lifetime = 100;
+	minifireshot6.speed = iPoint(-4, -2);
 	return true;
 }
 

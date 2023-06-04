@@ -3,6 +3,7 @@
 #include "../../Application/Application.h"
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Core/ModuleRender.h"
+#include "../../Modules/Gameplay/SceneLevel1.h"
 #include "../../Modules/Core/ModuleTextures.h"
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleAudio.h"
@@ -32,56 +33,56 @@ Enemy_RedWizard::Enemy_RedWizard(int x, int y, int wave) : Enemy(x, y) {
 		if (wave == 1)
 		{
 
-			de.PushBack({ 0.0, -0.25 }, 20, &fly);
-			de.PushBack({ 0.0, -8.0 }, 120, &fly);
-			de.PushBack({ 3, -12.0 }, 650, &derecha);
+			de.PushBack({ 0.0,(float)App->sceneLevel_1->velocitatNivell + 8 }, 20, &fly);
+			de.PushBack({ 0.0, (float)App->sceneLevel_1->velocitatNivell }, 120, &fly);
+			de.PushBack({ 3,  (float)App->sceneLevel_1->velocitatNivell - 7}, 650, &derecha);
 
 		}
 		else if (wave == 2)
 		{
 
-			de.PushBack({ 0.0, -0.25 }, 20, &fly);
-			de.PushBack({ 0.0, -8.0 }, 120, &fly);
-			de.PushBack({ -3, -12.0 }, 650, &izquierda);
+			de.PushBack({ 0.0,(float)App->sceneLevel_1->velocitatNivell +8}, 20, &fly);
+			de.PushBack({ 0.0, (float)App->sceneLevel_1->velocitatNivell }, 120, &fly);
+			de.PushBack({ -3, (float)App->sceneLevel_1->velocitatNivell - 7 }, 650, &izquierda);
 
 		}
 		else if (wave == 3)
 		{
 
-			de.PushBack({ 0.0, -0.25 }, 20, &fly);
-			de.PushBack({ 0.0, -8.0 }, 120, &fly);
-			de.PushBack({ 3, -12.0 }, 650, &derecha);
+			de.PushBack({ 0.0,(float)App->sceneLevel_1->velocitatNivell +8}, 20, &fly);
+			de.PushBack({ 0.0, (float)App->sceneLevel_1->velocitatNivell }, 120, &fly);
+			de.PushBack({ 3, (float)App->sceneLevel_1->velocitatNivell - 7 }, 650, &derecha);
 
 		}
 		else if (wave == 4)
 		{
 
-			de.PushBack({ 0.0, -0.25 }, 20, &fly);
-			de.PushBack({ 0.0, -8.0 }, 120, &fly);
-			de.PushBack({ -3, -12.0 }, 650, &izquierda);
+			de.PushBack({ 0.0,(float)App->sceneLevel_1->velocitatNivell +8}, 20, &fly);
+			de.PushBack({ 0.0, (float)App->sceneLevel_1->velocitatNivell }, 120, &fly);
+			de.PushBack({ -3,(float)App->sceneLevel_1->velocitatNivell - 7 }, 650, &izquierda);
 
 
 		}
 		else if (wave == 5)
 		{
 
-			de.PushBack({ 0.0, -0.25 }, 20, &fly);
-			de.PushBack({ 0.0, -8.0 }, 120, &fly);
-			de.PushBack({ 3, -12.0 }, 650, &derecha);
+			de.PushBack({ 0.0, (float)App->sceneLevel_1->velocitatNivell +8 }, 20, &fly);
+			de.PushBack({ 0.0, (float)App->sceneLevel_1->velocitatNivell }, 120, &fly);
+			de.PushBack({ 3, (float)App->sceneLevel_1->velocitatNivell - 7 }, 650, &derecha);
 
 		}
 		if (wave == 6)
 		{
-			de.PushBack({ 0, 0 }, 25, &fly);
-			de.PushBack({ 5, -12 }, 45, &fly);
-			de.PushBack({ 0, -8 }, 40, &fly);
+			de.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0}, 25, &fly);
+			de.PushBack({ 5, 9 }, 45, &fly);
+			de.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell }, 40, &fly);
 			de.PushBack({ -5, -14 }, 100, &izquierda);
 	}
 		if (wave == 7)
 		{
-			de.PushBack({ 0, 0 }, 45, &fly);
-			de.PushBack({ -5, -12 }, 45, &fly);
-			de.PushBack({ 0, -8 }, 40, &fly);
+			de.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0}, 45, &fly);
+			de.PushBack({ -5, 9 }, 45, &fly);
+			de.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell }, 40, &fly);
 			de.PushBack({ 5, -14 }, 100, &derecha);
 		}
 	
@@ -101,19 +102,15 @@ void Enemy_RedWizard::Update() {
 		position = spawnPos + de.GetRelativePosition();
 		currentAnim = de.GetCurrentAnimation();
 
-	}
-	if (canshoot)
-	{
 		if (temp >= 100)
 		{
-			Particle* fireball = App->particles->AddParticle(App->particles->wizardshoot, position.x + 30, position.y+ 65, Collider::Type::ENEMY_SHOOT, 0);
-			/*if (fireball == nullptr)
-			{
-
-			}*/
-			canshoot = false;
+			Particle* fireball = App->particles->AddParticle(App->particles->wizardshoot, position.x + 30, position.y + 65, Collider::Type::ENEMY, 0);
+			temp = 0;
 		}
+		
+
 	}
+	
 	
 	temp++;
 	// Call to the base class. It must be called at the end
