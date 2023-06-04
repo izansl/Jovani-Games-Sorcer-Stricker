@@ -129,7 +129,7 @@ void Enemy_RedBall::OnCollision(Collider* c1) {
 	fly.PushBack({ 798, 142, 139, 137 });
 	fly.PushBack({ 1000, 300, 139, 137 });
 	
-	App->player->score += 23;
+	App->player->score += 100;
 
 	currentAnim = &fly;
 	fly.speed = 0.2;
