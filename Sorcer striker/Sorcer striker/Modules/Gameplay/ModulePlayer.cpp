@@ -146,8 +146,8 @@ Update_Status ModulePlayer::Update() {
 			{
 				App->particles->AddParticle(App->particles->knifeleft, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
 				App->particles->AddParticle(App->particles->kniferight, position.x + 150, position.y, Collider::Type::PLAYER_SHOT, 0);
-				App->particles->AddParticle(App->particles->knifeleft, position.x + 0, position.y, Collider::Type::PLAYER_SHOT, 0);
-				App->particles->AddParticle(App->particles->kniferight, position.x + 175, position.y, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->knifeleft, position.x - 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->kniferight, position.x + 200, position.y, Collider::Type::PLAYER_SHOT, 0);
 				App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
 			}
 			if (Powerupblue)
@@ -169,7 +169,7 @@ Update_Status ModulePlayer::Update() {
 				App->particles->AddParticle(App->particles->laser1, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
 			}
 		}
-		if (SDL_GetTicks() - start_time >= 200)
+		if (SDL_GetTicks() - start_time >= 100)
 		{
 			canshootlaser = true;
 		}
