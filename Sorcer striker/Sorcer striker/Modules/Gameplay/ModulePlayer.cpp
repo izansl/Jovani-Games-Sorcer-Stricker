@@ -389,12 +389,12 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 			Powerupblue = false;
 		}
 		//+1 bomba
-		if (c2->rect.w == 122)
+		if (c2->rect.w == 116)
 		{
 			bombs++;
 		}
 		// + Score
-		if (c2->rect.w == 45)
+		if (c2->rect.w == 46)
 		{
 			score += 23;
 		}

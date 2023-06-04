@@ -51,14 +51,18 @@ bool ModuleParticles::Start() {
 	playerdead.lifetime = 80;
 
 	bomb.anim.PushBack({ 53, 1418, 424, 424 });
+	bomb.anim.PushBack({ 53, 1418, 424, 424 });
+	bomb.anim.PushBack({ 89, 600, 424, 424 });
 	bomb.anim.PushBack({ 89, 600, 424, 424 });
 	bomb.anim.PushBack({ 1002, 109, 424, 424 });
 	bomb.anim.PushBack({ 1249, 447, 424, 424 });
 	bomb.anim.PushBack({ 691, 815, 424, 424 });
+	bomb.anim.PushBack({ 691, 815, 424, 424 });
+	bomb.anim.PushBack({ 977, 1360, 424, 424 });
 	bomb.anim.PushBack({ 977, 1360, 424, 424 });
 	bomb.speed = iPoint(0, -23);
 	bomb.anim.speed = 0.1f;
-	bomb.lifetime = 115;
+	bomb.lifetime = 100;
 
 	//Powe up atacks
 	//Blue
