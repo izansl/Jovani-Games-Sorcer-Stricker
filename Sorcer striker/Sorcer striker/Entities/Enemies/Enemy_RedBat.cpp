@@ -3,6 +3,7 @@
 #include "../../Modules/Core/ModuleCollisions.h"
 #include "../../Modules/Gameplay/ModuleEnemies.h"
 #include "../../Application/FileNames.h"
+#include "../../Modules/Gameplay/scenelevel1.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include"../../Modules/Core/ModuleTextures.h"
 #include"../../Modules/Core/ModuleAudio.h"
@@ -17,8 +18,8 @@ Enemy_RedBat::Enemy_RedBat(int x, int y, int wave) : Enemy(x, y) {
 	fly.speed = 0.2;
 	fly.loop = false;
 
-	path.PushBack({ 0, 0 }, 250);
-	path.PushBack({ 5, 0 }, 250);
+	path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell +7 }, 250);
+	path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell +7 }, 250);
 
 
 	collider = App->collisions->AddCollider({ 0, 0,158, 158 }, Collider::Type::ENEMY, (Module*)App->enemies);

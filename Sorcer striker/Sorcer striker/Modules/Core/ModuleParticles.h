@@ -84,6 +84,16 @@ public:
 	//dragonshoot / turtle shoot
 	Particle minifireshot;
 
+	//disparos para tortuga
+	Particle minifireshot1;
+	Particle minifireshot2;
+	Particle minifireshot3;
+	Particle minifireshot4;
+	Particle minifireshot5;
+	Particle minifireshot6;
+
+
+
 private:
 	// Particles spritesheet loaded into an SDL Texture
 	SDL_Texture* texture = nullptr;
