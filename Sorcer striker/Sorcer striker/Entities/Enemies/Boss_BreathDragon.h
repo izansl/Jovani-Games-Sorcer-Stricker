@@ -13,6 +13,7 @@ public:
 
 	void Update() override;
 	void Draw() override;
+	void SetToDelete() override;
 
 	void OnCollisionGeneral(Collider* colisionEntrante);
 	void OnCollisionHead1(Collider* colisionEntrante);

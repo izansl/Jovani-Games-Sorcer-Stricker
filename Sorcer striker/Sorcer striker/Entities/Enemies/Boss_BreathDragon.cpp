@@ -63,7 +63,7 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	particleFire.lifetime = 115;
 
 	// Collisions
-	colliderCuerpo = App->collisions->AddCollider({ 0, 0,1200, 400 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	colliderCuerpo = App->collisions->AddCollider({ 0, -200,1200, 200 }, Collider::Type::ENEMY, (Module*)App->enemies);
 	colliderCabeza1 = App->collisions->AddCollider({ -300, 200,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
 	colliderCabeza2 = App->collisions->AddCollider({ -85, 230,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
 	colliderCabeza3 = App->collisions->AddCollider({ 130, 200,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
@@ -110,6 +110,13 @@ void Boss_BreathDragon::Draw() {
 	}
 }
 
+void Boss_BreathDragon::SetToDelete() {
+	/*pendingToDelete = true;
+
+	if (collider != nullptr)
+		collider->pendingToDelete = true;*/
+}
+
 void Boss_BreathDragon::OnCollisionGeneral(Collider* c1) {
 	if (c1->type == Collider::Type::PLAYER_SHOT)
 	{
@@ -122,8 +129,8 @@ void Boss_BreathDragon::OnCollisionGeneral(Collider* c1) {
 }
 
 void Boss_BreathDragon::OnCollisionHead1(Collider* c1) {
-	if (c1->type == Collider::Type::PLAYER_SHOT && !headDestroy) {
-
+	if (c1->type == Collider::Type::PLAYER_SHOT && !headDestroy)
+	{
 		if ((vides[0] <= 0) || (vides[1] <= 0 && vides[2] <= 0 && vides[3] <= 0))
 			this->SetToDelete();
 		else {
