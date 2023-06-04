@@ -62,7 +62,7 @@ bool ModuleParticles::Start() {
 	bomb.anim.PushBack({ 977, 1360, 424, 424 });
 	bomb.speed = iPoint(0, -23);
 	bomb.anim.speed = 0.1f;
-	bomb.lifetime = 100;
+	bomb.lifetime = 110;
 
 	//Powe up atacks
 	//Blue
