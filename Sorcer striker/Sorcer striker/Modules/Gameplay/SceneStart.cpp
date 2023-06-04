@@ -19,6 +19,7 @@ bool SceneStart::Start() {
 	LOG("Loading background assets SCENE INTRO");
 
 	bool ret = true;
+
 	//Carga de texturas(imagenes)
 
 
@@ -74,6 +75,9 @@ Update_Status SceneStart::PostUpdate() {
 	}
 
 	App->render->Blit(ArrayImagesStart[currentImage], 0, 0, NULL);
+
+
+
 
 
 

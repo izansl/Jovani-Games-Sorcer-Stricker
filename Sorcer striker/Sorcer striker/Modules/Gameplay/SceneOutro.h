@@ -44,6 +44,7 @@ public:
 	float fadeTimer = 0.0f;
 	const float FADE_TIME = 1.0f;//duración del DESVANECIMIENTO en segundos
 
+	int startTime;
 	uint tokenFx = 0;
 };
 

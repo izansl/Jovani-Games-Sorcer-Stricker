@@ -21,6 +21,7 @@ bool SceneOutro::Start() {
 	bool ret = true;
 	//Carga de texturas(imagenes)
 
+	startTime = SDL_GetTicks();
 
 	ArrayImagesOutro[0] = App->textures->Load(FI_Outroimage_0.c_str());
 	ArrayImagesOutro[1] = App->textures->Load(FI_Outroimage_1.c_str());
@@ -46,18 +47,30 @@ Update_Status SceneOutro::Update() {
 Update_Status SceneOutro::PostUpdate() {
 	//DIBUJADO DE LAS IMAGENES DE LA INTRO
 
-	timer += 1.0f / 60.0f; // Suma 1 segundo//Funciona a 60 fps
+	Uint32 currentTime = SDL_GetTicks() - startTime;
 
-	if (timer >= 3.0f) { // Mostramos cada imagen durante 3 segundos
-		currentImage++;
-		if (currentImage == NUM_IMAGES) {
-			App->fade->FadeToBlack(this, (Module*)App->sceneStart, 60);
-		}
-		timer = 0.0f;
+	if (currentTime >= 1000 && currentTime < 3000) {
+
+		App->render->Blit(ArrayImagesOutro[0], 0, 0, NULL);//jovani
+
 	}
 
-	App->render->Blit(ArrayImagesOutro[currentImage], 0, 0, NULL);
+	if (currentTime >= 3000 && currentTime < 5000) {
 
+		App->render->Blit(ArrayImagesOutro[1], 0, 0, NULL);//jovani
+
+	}
+
+	if (currentTime >= 5000) {
+
+		App->render->Blit(ArrayImagesOutro[2], 0, 0, NULL);//jovani
+	}
+
+	if (currentTime >= 7000) {
+
+		App->fade->FadeToBlack(this, (Module*)App->sceneStart, 60);
+		
+	}
 
 
 	return Update_Status::UPDATE_CONTINUE;
