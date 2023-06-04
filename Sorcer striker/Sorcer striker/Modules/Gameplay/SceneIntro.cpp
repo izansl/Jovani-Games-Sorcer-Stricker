@@ -8,6 +8,7 @@
 #include "../../Modules/Core/ModuleAudio.h"
 #include "../../Modules/Core/ModuleInput.h"
 #include "../../Modules/Core/ModuleFadeToBlack.h"
+#include "../Gameplay/ModuleInsertCoin.h"
 
 SceneIntro::SceneIntro(bool startEnabled) : Module(startEnabled) {
 }
@@ -66,6 +67,8 @@ bool SceneIntro::Start() {
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
+
+	
 
 	return ret;
 }

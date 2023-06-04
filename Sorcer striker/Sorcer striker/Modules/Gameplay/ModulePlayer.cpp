@@ -169,7 +169,7 @@ Update_Status ModulePlayer::Update() {
 				App->particles->AddParticle(App->particles->laser1, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
 			}
 		}
-		if (SDL_GetTicks() - start_time >= 100)
+		if (SDL_GetTicks() - start_time >= 50)
 		{
 			canshootlaser = true;
 		}
