@@ -33,8 +33,7 @@ public:
 	SDL_Texture* ArrayImagesContinue[NUM_IMAGES];
 	int currentImage = 0;
 	float timer = 0.0f;
-	
-
+	int startTime;
 
 };
 

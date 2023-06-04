@@ -1,4 +1,5 @@
 #include "ScenePantallaLose.h"
+#include <SDL_image.h>
 
 #include "../../Application/Application.h"
 #include "../../Application/FileNames.h"
@@ -22,6 +23,10 @@ bool ScenePantallaLose::Start() {
 	LOG("Loading assets SCENE PantallaLose");
 
 	bool ret = true;
+
+
+	startTime = SDL_GetTicks();
+
 	ArrayImagesContinue[0] = App->textures->Load(FI_continue_1.c_str());
 	ArrayImagesContinue[1] = App->textures->Load(FI_continue_2.c_str());
 	ArrayImagesContinue[2] = App->textures->Load(FI_continue_3.c_str());
@@ -44,9 +49,8 @@ Update_Status ScenePantallaLose::Update() {
 		/*App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 60);*/
 		App->player->lives = 1;
 		App->sceneLevel_1->velocitatNivell = -8;
-	}
+	};
 
-	
 
 	if (App->input->keys[SDL_SCANCODE_C] == Key_State::KEY_DOWN)
 	{
@@ -60,18 +64,8 @@ Update_Status ScenePantallaLose::Update() {
 
 Update_Status ScenePantallaLose::PostUpdate() {
 	
-	//App->render->Blit(ArrayImagesContinue[0], 0, 0, NULL);//1
-	timer += 1.0f / 60.0f; // Suma 1 segundo//Funciona a 60 fps
-
-	if (timer >= 1.0f) { // Mostramos cada imagen durante 3 segundos
-		currentImage++;
-		if (currentImage == NUM_IMAGES) {
-			currentImage = 0;
-		}
-		timer = 0.0f;
-	}
-
-	App->render->Blit(ArrayImagesContinue[currentImage], 0, 0, NULL);
+	Uint32 currentTime = SDL_GetTicks() - startTime;
+	App->render->Blit(ArrayImagesContinue[0], 0, 0, NULL);//1
 	
 
 	return Update_Status::UPDATE_CONTINUE;
