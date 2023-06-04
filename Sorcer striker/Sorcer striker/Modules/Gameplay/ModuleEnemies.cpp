@@ -33,6 +33,7 @@
 #include "../../Entities/Enemies/Enemy_WarnL.h"
 #include "../../Entities/Enemies/Enemy_WarR.h"
 #include "../../Entities/Enemies/Enemy_Flecha.h"
+#include "../../Entities/Enemies/Enemy_Stageclear.h"
 
 
 #define SPAWN_MARGIN 100
@@ -193,7 +194,8 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 			case Enemy_Type::WARL: enemies[i] = new Enemy_WarnL(info.x, info.y); break;
 			case Enemy_Type::WARR: enemies[i] = new Enemy_WarnR(info.x, info.y); break;
 			case Enemy_Type::FLECH: enemies[i] = new Enemy_Flecha(info.x, info.y); break;
-
+			//Stageclear
+			case Enemy_Type::STAGECLEAR: enemies[i] = new Enemy_Sclear(info.x, info.y); break;
 			//Enemies
 			case Enemy_Type::DRAGON: enemies[i] = new Enemy_Dragon(info.x, info.y, info.wave);
 				break;

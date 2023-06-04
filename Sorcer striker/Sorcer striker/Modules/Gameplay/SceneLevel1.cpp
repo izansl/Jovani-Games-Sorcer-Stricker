@@ -65,9 +65,7 @@ bool SceneLevel1::Start() {
 	start_time = SDL_GetTicks();
 
 #pragma region ENEMIES
-	App->enemies->AddEnemy(Enemy_Type::WARL, 0, -400, 1);
-	App->enemies->AddEnemy(Enemy_Type::WARR, 0, -400, 1);
-	App->enemies->AddEnemy(Enemy_Type::FLECH, 0, -400, 1);
+	App->enemies->AddEnemy(Enemy_Type::STAGECLEAR, 0, -400, 1);
 	// add chest
 	//App->enemies->AddEnemy(Enemy_Type::CHESTBLUE, 200, -500, 1);
 	App->enemies->AddEnemy(Enemy_Type::ANGEL, 200, -500, 1);
