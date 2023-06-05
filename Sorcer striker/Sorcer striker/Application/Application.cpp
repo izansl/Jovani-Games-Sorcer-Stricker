@@ -48,8 +48,8 @@ Application::Application() {
 	modules.push_back(sceneLevel_1 = new SceneLevel1(false));
 	modules.push_back(sceneLevel_1_foreground = new SceneLevel1_Foreground(true));
 
-	modules.push_back(player = new ModulePlayer(false));
 	modules.push_back(enemies = new ModuleEnemies(false));
+	modules.push_back(player = new ModulePlayer(false));
 	modules.push_back(particles = new ModuleParticles(true));
 	modules.push_back(collisions = new ModuleCollisions(false));
 	modules.push_back(fade = new ModuleFadeToBlack(true));

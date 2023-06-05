@@ -49,6 +49,7 @@ Update_Status ScenePantallaLose::Update() {
 		App->sceneLevel_1->stopGame = false;
 		App->player->stopGame = false;
 		App->enemies->stopGame = false;
+		App->audio->PlayMusic(FA_Music_stage1.c_str(), 1.0f);
 	}
 
 	return Update_Status::UPDATE_CONTINUE;
@@ -93,6 +94,7 @@ Update_Status ScenePantallaLose::PostUpdate() {
 	if (currentTime >= 9000 && currentTime < 11000) {
 		App->render->Blit(ArrayImagesContinue[8], App->render->camera.x, App->render->camera.y, NULL);
 	}
+
 
 	if (currentTime >= 10000 && currentTime < 12000) {
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStart, 60); //Menu start no intro
