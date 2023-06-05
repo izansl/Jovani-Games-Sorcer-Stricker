@@ -40,7 +40,7 @@ public:
 	int bombs = 3;
 	bool godMode = false;
 
-	bool Powerupblue = true;
+	bool Powerupblue = false;
 	bool Powerupred = false;
 	bool Powerupgreen = false;
 
