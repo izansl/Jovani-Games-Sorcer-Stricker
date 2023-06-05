@@ -169,7 +169,7 @@ if (!stopGame) {
 			}
 			if (!Powerupblue && !Powerupgreen && !Powerupred)
 			{
-				App->particles->AddParticle(App->particles->laser1, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->laser1, position.x + 35, position.y, Collider::Type::PLAYER_SHOT, 0);
 			}
 		}
 		if (SDL_GetTicks() - start_time >= 50)
@@ -181,29 +181,29 @@ if (!stopGame) {
 	// Spawn explosion particles when pressing B
 	if (App->input->keys[SDL_SCANCODE_B] == Key_State::KEY_DOWN || pad.x == true)
 	{
-		if (canshootbomb)
+		if (canshootbomb && bombs > 0)
 		{
 			start_time = SDL_GetTicks();
 			canshootbomb = false;
 			if (Powerupblue)
 			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->bomb, position.x-40, position.y - 130, Collider::Type::PLAYER_SHOT, 0);
 			}
 			if (Powerupred)
 			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->bomb, position.x-40 , position.y - 130, Collider::Type::PLAYER_SHOT, 0);
 			}
 			if (Powerupgreen)
 			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->bomb, position.x-40, position.y - 130, Collider::Type::PLAYER_SHOT, 0);
 			}
 			if (!Powerupblue && !Powerupgreen && !Powerupred)
 			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 150, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->bomb, position.x-85, position.y - 130, Collider::Type::PLAYER_SHOT, 0);
 			}
 			bombs--;
 		}
-		if (SDL_GetTicks()-start_time>=3000)
+		if (SDL_GetTicks()-start_time>=2000)
 		{
 			canshootbomb = true;
 		}
