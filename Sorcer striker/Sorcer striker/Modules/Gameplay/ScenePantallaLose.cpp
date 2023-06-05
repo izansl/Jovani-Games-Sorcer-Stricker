@@ -40,7 +40,9 @@ bool ScenePantallaLose::Start() {
 }
 
 Update_Status ScenePantallaLose::Update() {
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {//continuar partida
+	GamePad& pad = App->input->pads[0];
+
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true) {//continuar partida
 
 		App->player->lives += 1;
 		App->scenePantallaLose->Disable();
@@ -88,11 +90,11 @@ Update_Status ScenePantallaLose::PostUpdate() {
 		App->render->Blit(ArrayImagesContinue[7], App->render->camera.x, App->render->camera.y, NULL);
 	}
 
-	if (currentTime >= 9000 && currentTime < 12000) {
+	if (currentTime >= 9000 && currentTime < 11000) {
 		App->render->Blit(ArrayImagesContinue[8], App->render->camera.x, App->render->camera.y, NULL);
 	}
 
-	if (currentTime >= 10000) {
+	if (currentTime >= 10000 && currentTime < 12000) {
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStart, 60); //Menu start no intro
 	}
 

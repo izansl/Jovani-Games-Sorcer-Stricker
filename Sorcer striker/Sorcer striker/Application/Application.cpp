@@ -21,6 +21,7 @@
 #include "../Modules/Gameplay/SceneStart.h"
 #include "../Modules/Gameplay/ScenePantallaLose.h"
 #include "../Modules/Gameplay/ModuleEnemies.h"
+#include "../Modules/Gameplay/SceneEscoger.h"
 #include "../Modules/Gameplay/SceneOutro.h"
 #include "../Modules/Gameplay/ScenePreintro.h"
 
@@ -34,53 +35,31 @@ Application::Application() {
 	// The order in which the modules are added is very important.
 	// It will define the order in which Pre/Update/Post will be called
 	// Render should always be last, as our last action should be updating the screen
-	//modules[0] = window = new ModuleWindow(true);
-	//modules[1] = input = new ModuleInput(true);
-	//modules[2] = textures = new ModuleTextures(true);
-	//modules[3] = audio = new ModuleAudio(true);
-	//modules[4] = sceneIntro = new SceneIntro(true);
-
-
-	//modules[5] = sceneStart = new SceneStart(false);
-	//modules[6] = sceneOutro = new SceneOutro(false);
-	//modules[7] = sceneLevel_1 = new SceneLevel1(false);		//Gameplay scene starts disabled
-	//modules[8] = sceneLevel_1_foreground = new SceneLevel1_Foreground(true);		//Gameplay scene starts disabled
-	//modules[9] = player = new ModulePlayer(false);	//Player starts disabled
-	//modules[10] = enemies = new ModuleEnemies(false);	//Enemies start disabled
-	//modules[11] = particles = new ModuleParticles(true);
-
-	//modules[12] = collisions = new ModuleCollisions(false);
-	//modules[13] = fade = new ModuleFadeToBlack(true);
-	//modules[14] = fonts = new ModuleFonts(true);
-	//modules[15] = hud = new ModuleHUD(true);
-	//modules[16] = scenePantallaLose = new ScenePantallaLose(false);
-	//modules[17] = insertCoins = new ModuleInsertCoin(true);
-	//modules[18] = render = new ModuleRender(true);
 
 	modules.push_back(window = new ModuleWindow(true));
 	modules.push_back(input = new ModuleInput(true));
 	modules.push_back(textures = new ModuleTextures(true));
 	modules.push_back(audio = new ModuleAudio(true));
 	modules.push_back(scenePreintro = new ScenePreintro(true));
-	modules.push_back(sceneIntro = new SceneIntro(false));
-	
-	//modules.push_back(sceneIntro = new SceneIntro(true));
 
+	modules.push_back(sceneIntro = new SceneIntro(false));
 	modules.push_back(sceneStart = new SceneStart(false));
-	modules.push_back(sceneOutro = new SceneOutro(false));
+	modules.push_back(sceneEscoger = new SceneEscoger(false));
 	modules.push_back(sceneLevel_1 = new SceneLevel1(false));
 	modules.push_back(sceneLevel_1_foreground = new SceneLevel1_Foreground(true));
-	modules.push_back(player = new ModulePlayer(false));
 
+	modules.push_back(player = new ModulePlayer(false));
 	modules.push_back(enemies = new ModuleEnemies(false));
 	modules.push_back(particles = new ModuleParticles(true));
 	modules.push_back(collisions = new ModuleCollisions(false));
 	modules.push_back(fade = new ModuleFadeToBlack(true));
-	modules.push_back(fonts = new ModuleFonts(true));
 
+	modules.push_back(fonts = new ModuleFonts(true));
 	modules.push_back(hud = new ModuleHUD(true));
 	modules.push_back(insertCoins = new ModuleInsertCoin(true));
 	modules.push_back(scenePantallaLose = new ScenePantallaLose(false));
+	modules.push_back(sceneOutro = new SceneOutro(false));
+
 	modules.push_back(render = new ModuleRender(true));
 
 	sizeVector = modules.size();
@@ -120,14 +99,14 @@ Update_Status Application::Update() {
 
 	for (int i = 0; i < sizeVector && ret == Update_Status::UPDATE_CONTINUE; ++i)
 		// Only paint is Scene1 is eneabled
-		if (i == 16) // HUD
+		if (dynamic_cast<ModuleHUD*>(modules[i]))
 		{
 			if (modules[8]->IsEnabled()) { // SCene1
 				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
 				ret = modules[9]->PostUpdate(); // Foreground
 			}
 		}
-		else if (i == 17) // HUD coins
+		else if (dynamic_cast<ModuleInsertCoin*>(modules[i]))
 		{
 			if (modules[6]->IsEnabled()) { // start
 				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;

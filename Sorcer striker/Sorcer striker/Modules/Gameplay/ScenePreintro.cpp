@@ -34,7 +34,9 @@ bool ScenePreintro::Start() {
 
 //NO TOCAR NADA //FadeToBlack de Intro -> Juego
 Update_Status ScenePreintro::Update() {
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
+	GamePad& pad = App->input->pads[0];
+
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true) {
 		App->fade->FadeToBlack(this, (Module*)App->sceneIntro, 60);
 	}
 

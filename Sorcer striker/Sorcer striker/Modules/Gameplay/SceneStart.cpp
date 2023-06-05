@@ -44,7 +44,7 @@ Update_Status SceneStart::Update() {
 		if (coins > 0)
 		{
 			LOG("Game start!")
-			App->fade->FadeToBlack(this, (Module*)App->sceneLevel_1, 60);
+			App->fade->FadeToBlack(this, (Module*)App->sceneEscoger, 60);
 			coins--;
 		}
 		else
