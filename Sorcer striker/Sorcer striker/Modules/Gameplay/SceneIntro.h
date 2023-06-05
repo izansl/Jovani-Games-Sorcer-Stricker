@@ -3,6 +3,8 @@
 
 #include "../../Modules/Module.h"
 #include "../../Utils/Animation.h"
+#include "../../Utils/Path.h"
+#include "../../Entities/Enemies/Enemy.h"
 
 struct SDL_Texture;
 
@@ -47,6 +49,10 @@ public:
 	int startTime;
 	SDL_Texture* ArrayImagesIntro2[NUM_IMAGES2];
 	bool play = true;
+
+
+	Animation fuegos;
+	Animation* currentAnim = nullptr;
 
 	//Animation* currentAnim = nullptr; //creado acceso a aniamcion //viene de enemy.h
 	/*Animation fuego;*/
