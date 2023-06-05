@@ -96,7 +96,7 @@ void Enemy_Tank::OnCollision(Collider* c1) {
 	if (life)
 	{
 		hitcount++;
-		if (hitcount < 4 )
+		if (hitcount < 2 )
 		{
 			damage.PushBack({ 106, 579, 133, 128 });
 			damage.PushBack({ 105, 747, 133, 128 });

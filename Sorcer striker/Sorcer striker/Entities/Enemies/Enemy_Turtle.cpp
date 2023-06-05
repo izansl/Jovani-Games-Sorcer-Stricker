@@ -67,7 +67,7 @@ void Enemy_Turtle::OnCollision(Collider* c1) {
 	if (life)
 	{
 		hitcount++;
-		if (hitcount < 5)
+		if (hitcount < 3)
 		{
 			damage.PushBack({ 14, 764, 198, 167});
 			damage.PushBack({ 252, 498, 196, 167 });

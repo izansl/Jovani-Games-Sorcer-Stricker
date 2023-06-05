@@ -33,7 +33,7 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	animationFan.loop = true;
 	pathFan.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell }, 20, &animationFan);
 	pathFan.PushBack({ 1.0 ,(float)App->sceneLevel_1->velocitatNivell + 3 }, 20, &animationFan);
-	pathFan.PushBack({ -1.0 ,(float)App->sceneLevel_1->velocitatNivell + 4 }, 30, &animationFan);
+	pathFan.PushBack({ -1.0 ,(float)App->sceneLevel_1->velocitatNivell + 3 }, 30, &animationFan);
 	pathFan.PushBack({ 1.0,(float)App->sceneLevel_1->velocitatNivell - 1 }, 20, &animationFan);
 	pathFan.PushBack({ -2.0,(float)App->sceneLevel_1->velocitatNivell - 4 }, 20, &animationFan);
 	pathFan.PushBack({ 1.0,(float)App->sceneLevel_1->velocitatNivell + 2 }, 20, &animationFan);
@@ -48,7 +48,7 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 
 	pathCabeza.PushBack({ 0,(float)App->sceneLevel_1->velocitatNivell }, 20, &animationHead);
 	pathCabeza.PushBack({ 1.0 ,(float)App->sceneLevel_1->velocitatNivell + 3 }, 20, &animationHead);
-	pathCabeza.PushBack({ -1.0 ,(float)App->sceneLevel_1->velocitatNivell + 4 }, 30, &animationHead);
+	pathCabeza.PushBack({ -1.0 ,(float)App->sceneLevel_1->velocitatNivell + 3 }, 30, &animationHead);
 	pathCabeza.PushBack({ 1.0,(float)App->sceneLevel_1->velocitatNivell - 1 }, 20, &animationHead);
 	pathCabeza.PushBack({ -2.0,(float)App->sceneLevel_1->velocitatNivell -4 }, 20, &animationHead);
 	pathCabeza.PushBack({ 1.0,(float)App->sceneLevel_1->velocitatNivell +2  }, 20, &animationHead);
@@ -65,7 +65,7 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	animationBody.loop = true;
 	pathCuerpo.PushBack({ 0,(float)App->sceneLevel_1->velocitatNivell }, 20, &animationBody);
 	pathCuerpo.PushBack({ 1.0 ,(float)App->sceneLevel_1->velocitatNivell + 3 }, 20, &animationBody);
-	pathCuerpo.PushBack({ -1.0 ,(float)App->sceneLevel_1->velocitatNivell + 4 }, 30, &animationBody);
+	pathCuerpo.PushBack({ -1.0 ,(float)App->sceneLevel_1->velocitatNivell + 3 }, 30, &animationBody);
 	pathCuerpo.PushBack({ 1.0,(float)App->sceneLevel_1->velocitatNivell - 1 }, 20, &animationBody);
 	pathCuerpo.PushBack({ -2.0,(float)App->sceneLevel_1->velocitatNivell - 4 }, 20, &animationBody);
 	pathCuerpo.PushBack({ 1.0,(float)App->sceneLevel_1->velocitatNivell + 2 }, 20, &animationBody);
@@ -128,6 +128,7 @@ void Boss_BreathDragon::Update() {
 	if (SDL_GetTicks() - start_Time >= 7000 && canshoot1)
 	{
 		// TODO: lanzar particulas de fuego al mismo tiempo que path va para atras y luego para adelante
+		pathCuerpo.PushBack({ 0,(float)App->sceneLevel_1->velocitatNivell - 4 }, 20, &animationBody);
 		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
 		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
 		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);

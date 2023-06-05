@@ -34,7 +34,7 @@ public:
 	int currentImage = 0;
 	float timer = 0.0f;
 	int startTime;
-
+	bool play = true;
 };
 
 #endif

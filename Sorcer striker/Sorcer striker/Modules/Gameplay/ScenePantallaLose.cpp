@@ -97,6 +97,10 @@ Update_Status ScenePantallaLose::PostUpdate() {
 	if (currentTime >= 10000 && currentTime < 12000) {
 		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneStart, 60); //Menu start no intro
 	}
-
+	if (play)
+	{
+		App->audio->PlayMusic(FA_Music_GameOver.c_str(), 1.0f);
+		play = false;
+	}
 	return Update_Status::UPDATE_CONTINUE;
 }

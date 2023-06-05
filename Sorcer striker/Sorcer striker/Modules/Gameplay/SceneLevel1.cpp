@@ -91,86 +91,67 @@ bool SceneLevel1::Start() {
 #pragma endregion
 
 #pragma region Red ball 
-	//18000
-	//add red ball
-
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2200, 1);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2300, 1);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2400, 1);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2500, 1);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2600, 1);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2700, 1);
-	///*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -680, 1, 7);
-	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -710, 1, 8);*/
-
-	////add red ball 2
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4500, 2);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4600, 2);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4700, 2);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4800, 2);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4900, 2);
-	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -5000, 2);
+	
+	
+	
+		//add red ball
+		
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2200, 1);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2300, 1);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2400, 1);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2500, 1);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2600, 1);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2700, 1);
+		///*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -680, 1, 7);
+		//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -710, 1, 8);*/
+	
+		////add red ball 2
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4500, 2);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4600, 2);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4700, 2);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4800, 2);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4900, 2);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -5000, 2);
 	//	////App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -940, 2, 7);
 	//	////App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -970, 2, 8);
 	//
-	//	// add chest
-	//	App->enemies->AddEnemy(Enemy_Type::GOLD, 100, -2150, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::CHEST_RED, 450, -2600, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, 100, -7300, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::CHEST_GREEN, 450, -13400, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::GOLD, 450, -32000, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::CHEST_RED, 450, -32500, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::CHEST_RED, 450, -39200, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::GOLD, 450, -39480, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::CHEST_GREEN, 450, -40000, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, 100, -42500, 1);
-	//
-	//	
-	//#pragma region STAGE
-	//	
-	//	App->enemies->AddEnemy(Enemy_Type::FLAG, 1200, -200, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::NUM1, 500, -200, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::STAGE, -350, -200, 1);
-	//	
-	//	
-	//#pragma endregion
-	//#pragma region Red ball 
-	//	//18000
-	//	//add red ball
-	//	
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2200, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2300, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2400, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2500, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2600, 1);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 120, -2700, 1);
-	//	///*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -680, 1, 7);
-	//	//App->enemies->AddEnemy(Enemy_Type::RED_BALL, 50, -710, 1, 8);*/
-	//
-	//	////add red ball 2
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4500, 2);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4600, 2);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4700, 2);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4800, 2);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -4900, 2);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 640, -5000, 2);
-	////	////App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -940, 2, 7);
-	////	////App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -970, 2, 8);
-	////
-	////	////add red ball 3
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -6800, 3);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -6900, 3);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -7000, 3);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -7100, 3);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -7200, 3);
-	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -7300, 3);
-	////	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 110, -1900, 3, 7);
-	////	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 110, -1950, 3, 8);*/
-	//
+	//	////add red ball 3
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -6800, 3);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -6900, 3);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -7000, 3);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -7100, 3);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -7200, 3);
+		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 180, -7300, 3);
+	//	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 110, -1900, 3, 7);
+	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 110, -1950, 3, 8);*/
+	
+		
+		//add red ball 4
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 710, -9100, 4);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 710, -9200, 4);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 710, -9300, 4);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 710, -9400, 4);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 710, -9500, 4);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 710, -9600, 4);
 
-		/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4400, 6, 7);
-		App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4450, 6, 8);*/
+	//	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -2400, 4, 7);
+	//	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -2450, 4, 8);*/
+	
+	//add red ball 5
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -11400, 5);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -11500, 5);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -11600, 5);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -11700, 5);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -11800, 5);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -11900, 5);
 
+	//add red ball 6
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 700, -20000, 6);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 700, -20100, 6);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 700, -20200, 6);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 700, -20300, 6);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 700, -20400, 6);
+	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 700, -20500, 6);
 
 		//add red ball 7
 
@@ -260,7 +241,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::TANK, -0, -37400, 5);
 	App->enemies->AddEnemy(Enemy_Type::TANK, -100, -37400, 5);
 	App->enemies->AddEnemy(Enemy_Type::TANK, -0, -37550, 5);
-	App->enemies->AddEnemy(Enemy_Type::TANK, -0, -37700, 5);
+	
 
 	App->enemies->AddEnemy(Enemy_Type::TANK, -800, -38050, 5);
 	App->enemies->AddEnemy(Enemy_Type::TANK, -100, -38550, 7);
@@ -275,8 +256,8 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::TURTLE, 200, -34650, 2);
 	App->enemies->AddEnemy(Enemy_Type::TURTLE, 450, -35850, 2);
 
-	App->enemies->AddEnemy(Enemy_Type::TURTLE, -100, -38400, 1);
-	App->enemies->AddEnemy(Enemy_Type::TURTLE, -100, -38600, 1);
+	
+	App->enemies->AddEnemy(Enemy_Type::TURTLE, -100, -38800, 1);
 
 	App->enemies->AddEnemy(Enemy_Type::TURTLE, 100, -39250, 2);
 	App->enemies->AddEnemy(Enemy_Type::TURTLE, 400, -39250, 2);
@@ -348,7 +329,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::FLECH, 349, -44000, 1);
 
 #pragma endregion
-
+	App->enemies->AddEnemy(Enemy_Type::BOSS, 400, -48000, 1);
 
 	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;
@@ -387,7 +368,7 @@ Update_Status SceneLevel1::Update() {
 		if (SDL_GetTicks() - start_time >= 43000 && !controlLlegadaCastillo2) { velocitatNivell = -4; controlLlegadaCastillo2 = true; }
 
 		// Control velocidad BOSS
-		if (SDL_GetTicks() - start_time >= 93000 && !controlLlegadaBoss) { velocitatNivell = -15; controlLlegadaBoss = true; }
+		if (SDL_GetTicks() - start_time >= 91000 && !controlLlegadaBoss) { velocitatNivell = -15; controlLlegadaBoss = true; }
 
 		if ((App->player->position.x + 5 + App->player->collider->rect.w) >= raightcoll->rect.x)
 			App->player->position.x = raightcoll->rect.x - (5 + App->player->collider->rect.w);
@@ -396,53 +377,55 @@ Update_Status SceneLevel1::Update() {
 		if (App->player->position.x - 5 <= leftcoll->rect.x)
 			App->player->position.x = leftcoll->rect.x + 5;
 
-
 		if ((App->player->position.y + 5 + App->player->collider->rect.h) >= botcoll->rect.y)
-		{
-			// TODO: declarar gamepad a .h, no creem un objecte nou en cada volta
-			GamePad& pad = App->input->pads[0];
-			App->render->camera.y += velocitatNivell;
+			App->player->position.y = botcoll->rect.y - (5 + App->player->collider->rect.h); 
 
-			topcoll->rect.y += velocitatNivell;
-			botcoll->rect.y += velocitatNivell;
-			leftcoll->rect.y += velocitatNivell;
-			raightcoll->rect.y += velocitatNivell;
+		//if ((App->player->position.y + 5 + App->player->collider->rect.h) >= botcoll->rect.y)// este if es el problema
+		//{
+		//	// TODO: declarar gamepad a .h, no creem un objecte nou en cada volta
+		//	GamePad& pad = App->input->pads[0];
+		//	/*App->render->camera.y += velocitatNivell;
 
-			if ((App->player->position.x + 5 + App->player->collider->rect.w) >= raightcoll->rect.x)
-				App->player->position.x = raightcoll->rect.x - (5 + App->player->collider->rect.w);
+		//	topcoll->rect.y += velocitatNivell;
+		//	botcoll->rect.y += velocitatNivell;
+		//	leftcoll->rect.y += velocitatNivell;
+		//	raightcoll->rect.y += velocitatNivell;*/
 
-
-			if (App->player->position.x - 5 <= leftcoll->rect.x)
-				App->player->position.x = leftcoll->rect.x + 5;
-
-
-			if ((App->player->position.y + 5 + App->player->collider->rect.h) >= botcoll->rect.y)
-				App->player->position.y = botcoll->rect.y - (5 + App->player->collider->rect.h);
+		//	if ((App->player->position.x + 5 + App->player->collider->rect.w) >= raightcoll->rect.x)
+		//		App->player->position.x = raightcoll->rect.x - (5 + App->player->collider->rect.w);
 
 
-			if (App->player->position.y - 5 <= topcoll->rect.y)
-				App->player->position.y = topcoll->rect.y + 5;
+		//	if (App->player->position.x - 5 <= leftcoll->rect.x)
+		//		App->player->position.x = leftcoll->rect.x + 5;
 
 
-			//Spawn cofres
-			if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN || pad.up == true)
-				App->enemies->AddEnemy(Enemy_Type::CHEST_RED, App->player->position.x + 50, App->player->position.y - 800, 1);
+		//	if ((App->player->position.y + 5 + App->player->collider->rect.h) >= botcoll->rect.y)
+		//		App->player->position.y = botcoll->rect.y - (5 + App->player->collider->rect.h);
 
-			if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN || pad.down == true)
-				App->enemies->AddEnemy(Enemy_Type::CHEST_GREEN, App->player->position.x + 50, App->player->position.y - 800, 1);
 
-			if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN || pad.right == true)
-				App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, App->player->position.x + 50, App->player->position.y - 800, 1);
+		//	if (App->player->position.y - 5 <= topcoll->rect.y)
+		//		App->player->position.y = topcoll->rect.y + 5;
 
-			if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN || pad.left == true)
-				App->enemies->AddEnemy(Enemy_Type::ANGEL, App->player->position.x + 50, App->player->position.y - 800, 1);
 
-			if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
-				App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 400, App->player->position.y - 700, 1);
+		//	//Spawn cofres
+		//	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN || pad.up == true)
+		//		App->enemies->AddEnemy(Enemy_Type::CHEST_RED, App->player->position.x + 50, App->player->position.y - 800, 1);
 
-			if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN)
-				App->enemies->AddEnemy(Enemy_Type::BOSS, 400, App->player->position.y - 700, 1);
-		}
+		//	if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN || pad.down == true)
+		//		App->enemies->AddEnemy(Enemy_Type::CHEST_GREEN, App->player->position.x + 50, App->player->position.y - 800, 1);
+
+		//	if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN || pad.right == true)
+		//		App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, App->player->position.x + 50, App->player->position.y - 800, 1);
+
+		//	if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN || pad.left == true)
+		//		App->enemies->AddEnemy(Enemy_Type::ANGEL, App->player->position.x + 50, App->player->position.y - 800, 1);
+
+		//	if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
+		//		App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 400, App->player->position.y - 700, 1);
+
+		//	if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN)
+		//		App->enemies->AddEnemy(Enemy_Type::BOSS, 400, App->player->position.y - 700, 1);
+		//}
 
 
 		//Spawn cofres
