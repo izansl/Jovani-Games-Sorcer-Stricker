@@ -314,13 +314,13 @@ if (!stopGame) {
 	}
 
 	// WIN CONDITION
-		if (kills == 58 || App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
+		if (App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN || pad.r2 == true)
 		{
-			App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
+			App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneOutro, 60); //Menu start no intro
 		}
 
 		// LOSE CONDITION
-		if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
+		if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN || pad.l2 == true)
 		{
 			App->sceneLevel_1->stopGame = true;
 			App->player->stopGame = true;

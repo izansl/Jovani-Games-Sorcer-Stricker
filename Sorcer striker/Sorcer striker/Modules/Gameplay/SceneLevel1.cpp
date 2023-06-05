@@ -460,15 +460,12 @@ Update_Status SceneLevel1::Update() {
 		if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN || pad.left == true)
 			App->enemies->AddEnemy(Enemy_Type::ANGEL, App->player->position.x + 50, App->player->position.y - 800, 1);
 
-		if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
-			App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 400, App->player->position.y - 700, 1);
-
-		if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN)
+		if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN || pad.y == true)
 			App->enemies->AddEnemy(Enemy_Type::BOSS, 400, App->player->position.y - 700, 1);
 
 
 
-		if (App->input->keys[SDL_SCANCODE_T] == Key_State::KEY_DOWN)
+		if (App->input->keys[SDL_SCANCODE_T] == Key_State::KEY_DOWN || pad.b == true)
 		{
 			topcoll->rect.y = TP;
 			botcoll->rect.y = TP + 1080;
