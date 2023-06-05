@@ -11,6 +11,8 @@
 #include "../../Modules/Core/ModuleFadeToBlack.h"
 #include "../../Modules/Core/ModuleFonts.h"
 #include "../../Modules/Gameplay/SceneLevel1.h"
+#include "../../Modules/Gameplay/ScenePantallaLose.h"
+#include "../../Modules/Gameplay/ModuleEnemies.h"
 
 #include <stdio.h>
 #include <SDL_timer.h>
