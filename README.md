@@ -9,38 +9,48 @@
 - Miguel Iglesias Abarca ([@MiguelIglesiasAbarca](https://github.com/MiguelIglesiasAbarca))
 - Lluc Cid I Bernal ([@lluccib](https://github.com/lluccib))
 
-## Description
-Jovani Games is presenting the first version of our project: a copy of the ideo game Sorcer Striker. Inspired by the original game, Jovani Games is working to recreate the gameplay, storyline, and immersive world of Sorcer Striker.
+## How to play:
+Pre-Intro:
 
-It is an action-fantasy game where players take on the role of powerful sorcerers who must defend the realm against hordes of dark creatures. As a sorcerer, you will unleash devastating spells, summon magical creatures, and explore mystical realms in an epic quest to restore peace.
+- To Skip: Keyboard = SPACE | Gamepad = A
 
-## How to Play
-1. **Controls**
--Preintro:
-	Para sartartelo-> Con teclado y raton = SPACE | Gamepad = A
--Intro:
-	Para sartartelo-> Con teclado y raton = SPACE | Gamepad = A
--Start:
-	Para insertarcoin-> Con teclado y raton = C | Gamepad = Start
-	Para sartartelo-> Con teclado y raton = SPACE | Gamepad = A
--Pantalla escoger personaje:
-	Para avanzar-> Con teclado y raton = SPACE | Gamepad = A
--Gameplay:
-	Player:
-		-Movimiento-> Con teclado y raton = W,S,D,A | Gamepad= Joystick izquierdo
-		-Ataques->Bomba->Con t y r = B | Gmp = X
-			->Laser->Con t y r = SPACE | Gmp = A
-		-SPAWN enemigos->Cofre azul->Con t y r = 3 | Gmp = Flecha de derecha
-				->Cofre verde->Con t y r = 2 | Gmp = Flecha de abajo
-				->Cofre rojo->Con t y r = 1 | Gmp = Flecha de arriba
-				->Angel que tira powerups->Con t y r = 4 | Gmp = Flecha de izquierda
-				->Boss->Con t y r = Q | Gmp = Y
-		-TP->Con t y r = T | Gmp = B
-	Modes:
-		-Insta Win ->Con t y r = F3 | Gmp = L2
-		-Insta Lose ->Con t y r = F4 | Gmp = R2
-		-Godmode ->Con t y r = F1 | Gmp = L1
-		-Seecolliders ->Con t y r = Q | Gmp = R1
+Intro:
+
+- To Skip: Keyboard = SPACE | Gamepad = A
+
+Start:
+
+- To Add Coins: Keyboard = C | Gamepad = Start
+- To Skip: Keyboard = SPACE | Gamepad = A
+
+Player Selection Screen:
+
+- To Advance: Keyboard = SPACE | Gamepad = A
+
+Gameplay:
+
+- Player:
+
+- Movement: 
+	- Keyboard = W, S, D, A | Gamepad = Left Joystick
+- Attacks:
+	- Bombs: Keyboard = B | Gamepad = X
+	- Laser: Keyboard = SPACE | Gamepad = A
+- Enemies Spawner:
+	- Blue Chest: Keyboard = 3 | Gamepad = Right Directional Pad
+	- Green Chest: Keyboard = 2 | Gamepad = Down Right Directional Pad
+	- Red Chest: Keyboard = 1 | Gamepad = Up Directional Pad
+	- Power-up Angel: Keyboard = 4 | Gamepad = Left Directional Pad
+	- Boss: Keyboard = Q | Gamepad = Y
+- Teleport: Keyboard = T | Gamepad = B
+
+Modes:
+
+- Instant Win: Keyboard = F3 | Gamepad = L2
+- Instant Lose: Keyboard = F4 | Gamepad = R2
+- God Mode: Keyboard = F1 | Gamepad = L1
+- See the Colliders: Keyboard = Q | Gamepad = R1
+
 
 2. **Objective**
    - Defeat Enemies: Engage in fast-paced battles with various types of dark creatures. Aim your spells accurately and use your special abilities wisely to defeat them.
