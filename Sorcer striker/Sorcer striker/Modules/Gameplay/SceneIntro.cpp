@@ -10,6 +10,7 @@
 #include "../../Modules/Core/ModuleFadeToBlack.h"
 #include "../../Utils/p2Point.h"
 #include "../../Utils/Animation.h"
+#include "../Gameplay/ModuleInsertCoin.h"
 
 
 SceneIntro::SceneIntro(bool startEnabled) : Module(startEnabled) {
@@ -69,6 +70,8 @@ bool SceneIntro::Start() {
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
+
+	
 
 	return ret;
 }
@@ -188,7 +191,7 @@ Update_Status SceneIntro::PostUpdate() {
 		//nave2
 		App->render->Blit(ArrayImagesIntro2[13], -x - 100, -y + 400, NULL);
 
-		//rápidas
+		//rÃ¡pidas
 		int z = (currentTime - 14000) / 100;
 		int u = (currentTime - 14000) / 120;
 		App->render->Blit(ArrayImagesIntro2[13], -z + 100, -u + 400, NULL);

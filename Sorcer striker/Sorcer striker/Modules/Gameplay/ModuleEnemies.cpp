@@ -30,6 +30,10 @@
 #include "../../Entities/Enemies/Enemy_Stagename.h"
 #include "../../Entities/Enemies/Enemy_Num1.h"
 #include "../../Entities/Enemies/Enemy_Flag.h"
+#include "../../Entities/Enemies/Enemy_WarnL.h"
+#include "../../Entities/Enemies/Enemy_WarR.h"
+#include "../../Entities/Enemies/Enemy_Flecha.h"
+#include "../../Entities/Enemies/Enemy_Stageclear.h"
 
 
 #define SPAWN_MARGIN 100
@@ -189,7 +193,14 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 			case Enemy_Type::NUM1: enemies[i] = new Enemy_Num1(info.x, info.y); break;
 			case Enemy_Type::FLAG: enemies[i] = new Enemy_Flag(info.x, info.y); break;
 
-				//Enemies
+			//Warning
+			case Enemy_Type::WARL: enemies[i] = new Enemy_WarnL(info.x, info.y); break;
+			case Enemy_Type::WARR: enemies[i] = new Enemy_WarnR(info.x, info.y); break;
+			case Enemy_Type::FLECH: enemies[i] = new Enemy_Flecha(info.x, info.y); break;
+			//Stageclear
+			case Enemy_Type::STAGECLEAR: enemies[i] = new Enemy_Sclear(info.x, info.y); break;
+			//Enemies
+
 			case Enemy_Type::DRAGON: enemies[i] = new Enemy_Dragon(info.x, info.y, info.wave);
 				break;
 			case Enemy_Type::REDWIZARD: enemies[i] = new Enemy_RedWizard(info.x, info.y, info.wave);

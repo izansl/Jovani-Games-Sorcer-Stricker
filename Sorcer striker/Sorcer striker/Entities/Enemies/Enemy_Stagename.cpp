@@ -17,15 +17,19 @@ Enemy_Stage::Enemy_Stage(int x, int y) : Enemy(x, y) {
 
 
 	// Path 1
-	pathchest.PushBack({ 2.0f, -8.0f }, 10);
-	pathchest.PushBack({ 4.0f, -8.0f }, 10);
-	pathchest.PushBack({ 6.0f, -8.0f }, 10);
-	pathchest.PushBack({ 8.0f, -8.0f }, 10);
-	pathchest.PushBack({ 0.0f, -8.0f }, 100);
-	pathchest.PushBack({ -25.0f, -8.0f }, 10);
-	pathchest.PushBack({ -50.0f, -8.0f }, 10);
-	pathchest.PushBack({ -75.0f, -8.0f }, 10);
-	pathchest.PushBack({ -100.0f, -8.0f }, 10);
+	//pathchest.PushBack({ 2.0f, -8.0f }, 10);
+	//pathchest.PushBack({ 4.0f, -8.0f }, 10);
+	//pathchest.PushBack({ 6.0f, -8.0f }, 10);
+	//pathchest.PushBack({ 8.0f, -8.0f }, 10);
+	//pathchest.PushBack({ 0.0f, -8.0f }, 100);
+	//pathchest.PushBack({ -25.0f, -8.0f }, 10);
+	//pathchest.PushBack({ -50.0f, -8.0f }, 10);
+	//pathchest.PushBack({ -75.0f, -8.0f }, 10);
+	//pathchest.PushBack({ -100.0f, -8.0f }, 10);
+	pathchest.PushBack({ 0.0f, -8.0f }, 20);
+	pathchest.PushBack({ 8.0f, -15.0f }, 70);
+	pathchest.PushBack({ 0.0f, -15.0f }, 50);
+	pathchest.PushBack({ -12.0f, -15.0f }, 300);
 
 	currentPath = &pathchest;
 

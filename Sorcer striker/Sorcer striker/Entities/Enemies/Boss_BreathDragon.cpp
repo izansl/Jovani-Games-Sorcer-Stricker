@@ -7,6 +7,7 @@
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include"../../Modules/Core/ModuleTextures.h"
+#include <SDL_timer.h>
 
 
 Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
@@ -63,10 +64,12 @@ Boss_BreathDragon::Boss_BreathDragon(int x, int y, int wave) : Enemy(x, y) {
 	particleFire.lifetime = 115;
 
 	// Collisions
-	colliderCuerpo = App->collisions->AddCollider({ 0, 0,1200, 400 }, Collider::Type::ENEMY, (Module*)App->enemies);
-	colliderCabeza1 = App->collisions->AddCollider({ -300, 200,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
-	colliderCabeza2 = App->collisions->AddCollider({ -85, 230,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
-	colliderCabeza3 = App->collisions->AddCollider({ 130, 200,180, 180 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	colliderCuerpo = App->collisions->AddCollider({ 0, 0, 1200, 200 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	colliderCabeza1 = App->collisions->AddCollider({ 0, 0, 110, 150 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	colliderCabeza2 = App->collisions->AddCollider({ 0, 0, 110, 150 }, Collider::Type::ENEMY, (Module*)App->enemies);
+	colliderCabeza3 = App->collisions->AddCollider({ 0, 0, 110, 150 }, Collider::Type::ENEMY, (Module*)App->enemies);
+
+	start_Time = SDL_GetTicks();
 }
 
 void Boss_BreathDragon::Update() {
@@ -84,10 +87,28 @@ void Boss_BreathDragon::Update() {
 	position = spawnPos + pathCuerpo.GetRelativePosition();
 
 	// Update colliders positions
-	colliderCuerpo->SetPos(position.x - 600, position.y);
-	colliderCabeza1->SetPos(position.x - 300 - 600, position.y + 200);
-	colliderCabeza1->SetPos(position.x - 85 - 600, position.y + 230);
-	colliderCabeza1->SetPos(position.x + 130 - 600, position.y + 200);
+	colliderCuerpo->SetPos(position.x - 600, position.y + 50);
+	colliderCabeza1->SetPos(position.x - 270, position.y + 220);
+	colliderCabeza2->SetPos(position.x - 50, position.y + 250);
+	colliderCabeza3->SetPos(position.x + 165, position.y + 220);
+
+
+	// Primer atac - EJAMBREEE
+	if (SDL_GetTicks() - start_Time >= 1000 && !spawned1) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 50, position.y, 1); spawned1 = true; }
+	if (SDL_GetTicks() - start_Time >= 1500 && !spawned2) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 50, position.y, 1); spawned2 = true; }
+	if (SDL_GetTicks() - start_Time >= 2000 && !spawned3) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 100, position.y, 1); spawned3 = true; }
+	if (SDL_GetTicks() - start_Time >= 2500 && !spawned4) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 100, position.y, 1); spawned4 = true; }
+	if (SDL_GetTicks() - start_Time >= 3000 && !spawned5) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 150, position.y, 1); spawned5 = true; }
+	if (SDL_GetTicks() - start_Time >= 3500 && !spawned6) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 150, position.y, 1); spawned6 = true; }
+	if (SDL_GetTicks() - start_Time >= 4000 && !spawned7) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 200, position.y, 1); spawned7 = true; }
+	if (SDL_GetTicks() - start_Time >= 4500 && !spawned8) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 200, position.y, 1); spawned8 = true; }
+
+	// Segon atac - FUEEEEGO 
+	if (SDL_GetTicks() - start_Time >= 7000)
+	{
+		// TODO: lanzar particulas de fuego al mismo tiempo que path va para atras y luego para adelante
+
+	}
 }
 
 void Boss_BreathDragon::Draw() {
@@ -110,6 +131,13 @@ void Boss_BreathDragon::Draw() {
 	}
 }
 
+void Boss_BreathDragon::SetToDelete() {
+	/*pendingToDelete = true;
+
+	if (collider != nullptr)
+		collider->pendingToDelete = true;*/
+}
+
 void Boss_BreathDragon::OnCollisionGeneral(Collider* c1) {
 	if (c1->type == Collider::Type::PLAYER_SHOT)
 	{
@@ -122,8 +150,8 @@ void Boss_BreathDragon::OnCollisionGeneral(Collider* c1) {
 }
 
 void Boss_BreathDragon::OnCollisionHead1(Collider* c1) {
-	if (c1->type == Collider::Type::PLAYER_SHOT && !headDestroy) {
-
+	if (c1->type == Collider::Type::PLAYER_SHOT && !headDestroy)
+	{
 		if ((vides[0] <= 0) || (vides[1] <= 0 && vides[2] <= 0 && vides[3] <= 0))
 			this->SetToDelete();
 		else {

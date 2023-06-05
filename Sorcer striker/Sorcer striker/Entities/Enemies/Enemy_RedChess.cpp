@@ -6,6 +6,7 @@
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include"../../Modules/Core/ModuleTextures.h"
+#include "../../Modules/Gameplay/SceneLevel1.h"
 
 Enemy_RedChess::Enemy_RedChess(int x, int y) : Enemy(x, y) {
 	texture = App->textures->Load(FI_spritebonus_pickups.c_str());
@@ -18,28 +19,28 @@ Enemy_RedChess::Enemy_RedChess(int x, int y) : Enemy(x, y) {
 	currentAnim = &red;
 
 	// Path 1
-	pathchest.PushBack({ -2.0f, -6.5f }, 10);
-	pathchest.PushBack({ -1.9f, -6.8f }, 10);
-	pathchest.PushBack({ -1.8f, -6.2f }, 10);
-	pathchest.PushBack({ -1.7f, -7.0f }, 10);
-	pathchest.PushBack({ -1.6f, -6.4f }, 10);
-	pathchest.PushBack({ -1.5f, -6.9f }, 10);
-	pathchest.PushBack({ -1.4f, -6.3f }, 10);
-	pathchest.PushBack({ -1.3f, -7.0f }, 10);
-	pathchest.PushBack({ -1.2f, -6.5f }, 10);
-	pathchest.PushBack({ -1.1f, -6.1f }, 10);
-	pathchest.PushBack({ 1.0f, -7.0f }, 10);
-	pathchest.PushBack({ 1.1f, -6.2f }, 10);
-	pathchest.PushBack({ 1.2f, -6.8f }, 10);
-	pathchest.PushBack({ 1.3f, -6.4f }, 10);
-	pathchest.PushBack({ 1.4f, -6.9f }, 10);
-	pathchest.PushBack({ 1.5f, -6.3f }, 10);
-	pathchest.PushBack({ 1.6f, -7.0f }, 10);
-	pathchest.PushBack({ 1.7f, -6.5f }, 10);
-	pathchest.PushBack({ 1.8f, -6.1f }, 10);
-	pathchest.PushBack({ 1.9f, -6.6f }, 10);
-	pathchest.PushBack({ 2.0f, -6.2f }, 10);
-	pathchest.PushBack({ 2.0f, -7.0f }, 10);
+	pathchest.PushBack({ -2.0f, (float)App->sceneLevel_1->velocitatNivell + 1.5f }, 10);
+	pathchest.PushBack({ -1.9f, (float)App->sceneLevel_1->velocitatNivell + 1.8f }, 10);
+	pathchest.PushBack({ -1.8f, (float)App->sceneLevel_1->velocitatNivell + 1.2f }, 10);
+	pathchest.PushBack({ -1.7f, (float)App->sceneLevel_1->velocitatNivell + 1.0f }, 10);
+	pathchest.PushBack({ -1.6f, (float)App->sceneLevel_1->velocitatNivell + 1.4f }, 10);
+	pathchest.PushBack({ -1.5f, (float)App->sceneLevel_1->velocitatNivell + 1.9f }, 10);
+	pathchest.PushBack({ -1.4f, (float)App->sceneLevel_1->velocitatNivell + 1.3f }, 10);
+	pathchest.PushBack({ -1.3f, (float)App->sceneLevel_1->velocitatNivell + 1.0f }, 10);
+	pathchest.PushBack({ -1.2f, (float)App->sceneLevel_1->velocitatNivell + 1.5f }, 10);
+	pathchest.PushBack({ -1.1f, (float)App->sceneLevel_1->velocitatNivell + 1.1f }, 10);
+	pathchest.PushBack({ 1.0f, (float)App->sceneLevel_1->velocitatNivell + 1.0f }, 10);
+	pathchest.PushBack({ 1.1f, (float)App->sceneLevel_1->velocitatNivell + 1.2f }, 10);
+	pathchest.PushBack({ 1.2f, (float)App->sceneLevel_1->velocitatNivell + 1.8f }, 10);
+	pathchest.PushBack({ 1.3f, (float)App->sceneLevel_1->velocitatNivell + 1.4f }, 10);
+	pathchest.PushBack({ 1.4f, (float)App->sceneLevel_1->velocitatNivell + 1.9f }, 10);
+	pathchest.PushBack({ 1.5f, (float)App->sceneLevel_1->velocitatNivell + 1.3f }, 10);
+	pathchest.PushBack({ 1.6f, (float)App->sceneLevel_1->velocitatNivell + 1.0f }, 10);
+	pathchest.PushBack({ 1.7f, (float)App->sceneLevel_1->velocitatNivell + 1.5f }, 10);
+	pathchest.PushBack({ 1.8f, (float)App->sceneLevel_1->velocitatNivell + 1.1f }, 10);
+	pathchest.PushBack({ 1.9f, (float)App->sceneLevel_1->velocitatNivell + 1.6f }, 10);
+	pathchest.PushBack({ 2.0f, (float)App->sceneLevel_1->velocitatNivell + 1.2f }, 10);
+	pathchest.PushBack({ 2.0f, (float)App->sceneLevel_1->velocitatNivell + 1.0f }, 10);
 
 	currentPath = &pathchest;
 

@@ -4,74 +4,152 @@ body, h1, h2, h3, p, ul, ol, li, a {
 }
 
 body {
-  background: linear-gradient(to bottom, #008080, #fff 500px);
+  background: linear-gradient(to bottom, #339191, #fff 1200px);
   color: #000000;
   font-family: Arial, sans-serif;
 }
 
+/* Estilos generales */
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.left-side img {
+  width: 300px; /* Tamaño personalizado */
+}
+
+.title-container {
+  text-align: center;
+}
+
+.additional-info {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.additional-info h3 {
+  margin-bottom: 10px;
+}
+
+.additional-info p {
+  margin-bottom: 10px;
+}
+
+footer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Estilos del encabezado */
+header {
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 50px; /* Tamaño personalizado */
+  height: 50px; /* Tamaño personalizado */
+}
+
+.header-title {
+  margin-left: 10px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+}
+
+.header-nav {
+  list-style: none;
+  display: flex;
+  margin-left: auto;
+  padding: 0;
+}
+
+.header-nav li {
+  margin-right: 10px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+
 .container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 20px;
 }
 
 .left-side img {
-  max-width: 100%;
+  max-width: 300%;
   height: auto;
+  animation: moveFromTop 1s ease-in-out forwards;
+  margin-left: 100px;
 }
 
-.additional-info {
+.right-side {
+  animation: moveFromTop 2s ease-in-out forwards;
+}
+
+.title-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  max-width: 800px;
-  margin: 0 auto;
-  margin-bottom: 20px;
+  text-align: center;
 }
 
-h1 {
-  font-size: 96px;
-  font-family: Impact, Arial, sans-serif;
+h1#title {
+  font-size: 80px;
+  font-family: 'Open Sans', sans-serif;
+font-family: 'Press Start 2P', cursive;
   text-transform: uppercase;
-  text-align: center;
-  background: linear-gradient(#ffffff, #ffae00);
+  background: linear-gradient(#ffffff, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: colorAnimation 5s infinite;
-  margin-bottom: 400px;
-  transform: translateX(-100%);
-  animation: moveFromLeft 1s ease-in-out forwards;
+  margin-bottom: 20px;
 }
 
-@keyframes moveFromLeft {
+h2#subtitle {
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+font-family: 'Press Start 2P', cursive;
+  background: linear-gradient(#ffffff, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorAnimation 5s infinite;
+  margin-left:1000px;
+}
+
+@keyframes moveFromTop {
   0% {
-    transform: translateX(100%);
+    transform: translateY(-100%);
   }
   100% {
-    transform: translateX(-70%);
+    transform: translateY(0);
   }
 }
 
 .title-line {
   display: block;
-}
-
-
-
-h2, h3 {
-  margin-top: 20px;
-}
-
-ul, ol {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  list-style-position: inside;
-}
-
-li {
-  margin-bottom: 5px;
 }
 
 footer {
@@ -80,4 +158,38 @@ footer {
   padding: 10px;
   text-align: center;
   font-size: 14px;
+}
+
+.additional-info details {
+  margin-bottom: 20px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.additional-info details summary {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.additional-info details summary::marker {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  border-bottom: 2px solid #000;
+  border-right: 2px solid #000;
+  transform: rotate(45deg);
+}
+
+.additional-info details summary::-webkit-details-marker {
+  display: none;
+}
+
+.additional-info details p {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
 }

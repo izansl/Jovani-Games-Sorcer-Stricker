@@ -3,6 +3,7 @@
 
 #include "../../Utils/p2Point.h"
 #include "../../Utils/Animation.h"
+#include "../../Modules/Gameplay/ModulePlayer.h"
 
 struct SDL_Texture;
 struct Collider;
@@ -40,6 +41,9 @@ public:
 
 	// The enemy's texture
 	SDL_Texture* texture = nullptr;
+
+	bool hurt = false;
+	int start_time;
 
 	// Sound fx when destroyed
 	int destroyedFx = 0;

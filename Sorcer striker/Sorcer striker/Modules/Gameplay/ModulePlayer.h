@@ -37,7 +37,7 @@ public:
 
 	int kills = 0;
 	int lives = 3;
-	int bombs = 1;
+	int bombs = 3;
 	bool godMode = false;
 
 	bool Powerupblue = false;
