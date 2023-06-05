@@ -129,12 +129,12 @@ void Boss_BreathDragon::Update() {
 	{
 		// TODO: lanzar particulas de fuego al mismo tiempo que path va para atras y luego para adelante
 		pathCuerpo.PushBack({ 0,(float)App->sceneLevel_1->velocitatNivell - 4 }, 20, &animationBody);
-		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY, 0);
+		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY, 0);
+		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY, 0);
 		canshoot1 = false;
 
 	}
@@ -152,12 +152,12 @@ void Boss_BreathDragon::Update() {
 	if (SDL_GetTicks() - start_Time >= 14000 && canshoot2)
 	{
 		// TODO: lanzar particulas de fuego al mismo tiempo que path va para atras y luego para adelante
-		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY, 0);
+		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY, 0);
+		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY, 0);
 		canshoot2 = false;
 
 	}
@@ -175,12 +175,12 @@ void Boss_BreathDragon::Update() {
 	if (SDL_GetTicks() - start_Time >= 21000 && canshoot3)
 	{
 		// TODO: lanzar particulas de fuego al mismo tiempo que path va para atras y luego para adelante
-		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY, 0);
+		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY, 0);
+		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY, 0);
 		canshoot3 = false;
 
 	}
@@ -198,12 +198,12 @@ void Boss_BreathDragon::Update() {
 	if (SDL_GetTicks() - start_Time >= 28000 && canshoot4)
 	{
 		// TODO: lanzar particulas de fuego al mismo tiempo que path va para atras y luego para adelante
-		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY, 0);
+		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY, 0);
+		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY, 0);
 		canshoot4 = false;
 
 	}
@@ -221,12 +221,12 @@ void Boss_BreathDragon::Update() {
 	if (SDL_GetTicks() - start_Time >= 33000 && canshoot5)
 	{
 		// TODO: lanzar particulas de fuego al mismo tiempo que path va para atras y luego para adelante
-		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
-		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY, 0);
+		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY, 0);
+		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY, 0);
+		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY, 0);
 		canshoot5 = false;
 
 	}
