@@ -50,19 +50,27 @@ bool ModuleParticles::Start() {
 	playerdead.anim.speed = 0.1f;
 	playerdead.lifetime = 80;
 
-	bomb.anim.PushBack({ 53, 1418, 424, 424 });
-	bomb.anim.PushBack({ 53, 1418, 424, 424 });
-	bomb.anim.PushBack({ 89, 600, 424, 424 });
-	bomb.anim.PushBack({ 89, 600, 424, 424 });
-	bomb.anim.PushBack({ 1002, 109, 424, 424 });
-	bomb.anim.PushBack({ 1249, 447, 424, 424 });
-	bomb.anim.PushBack({ 691, 815, 424, 424 });
-	bomb.anim.PushBack({ 691, 815, 424, 424 });
-	bomb.anim.PushBack({ 977, 1360, 424, 424 });
-	bomb.anim.PushBack({ 977, 1360, 424, 424 });
-	bomb.speed = iPoint(0, -20);
-	bomb.anim.speed = 0.2f;
-	bomb.lifetime = 110;
+	bomb.anim.PushBack({ 199, 1185, 287, 278 });
+	bomb.anim.PushBack({ 199, 1185, 287, 278 });
+	bomb.anim.PushBack({ 227, 649, 287, 278 });
+	bomb.anim.PushBack({ 227, 649, 287, 278 });
+	bomb.anim.PushBack({ 163, 327, 287, 278});
+	bomb.anim.PushBack( {841, 313, 287, 278 });
+	bomb.anim.PushBack({ 1003, 551, 287, 278 });
+	bomb.anim.PushBack({ 631, 793 , 287, 278 });
+	bomb.anim.PushBack({ 829, 1161, 287, 278 });
+	bomb.anim.PushBack({ 829, 1161, 287, 278 });
+	bomb.anim.PushBack({ 829, 1161, 287, 278 });
+	bomb.anim.PushBack({ 829, 1161, 287, 278 });
+	bomb.anim.PushBack({ 829, 1161, 287, 278 });
+	bomb.anim.PushBack({ 829, 1161, 287, 278 });
+	bomb.anim.PushBack({ 829, 1161, 287, 278 });
+	bomb.anim.PushBack({ 829, 1161, 287, 278 });
+	bomb.anim.PushBack({ 829, 1161, 287, 278 });
+	bomb.speed = iPoint(0, -23);
+	bomb.anim.speed = 0.15f;
+	bomb.lifetime = 100;
+	bomb.pendingToDelete = false;
 
 	//Powe up atacks
 	//Blue
@@ -255,6 +263,10 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2) {
 }
 
 Update_Status ModuleParticles::Update() {
+	if (bomb.lifetime==0)
+	{
+		bomb.pendingToDelete = true;
+	}
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i) {
 		Particle* particle = particles[i];
 

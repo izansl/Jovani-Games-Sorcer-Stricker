@@ -168,7 +168,7 @@ if (!stopGame) {
 			}
 			if (!Powerupblue && !Powerupgreen && !Powerupred)
 			{
-				App->particles->AddParticle(App->particles->laser1, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->laser1, position.x + 35, position.y, Collider::Type::PLAYER_SHOT, 0);
 			}
 		}
 		if (SDL_GetTicks() - start_time >= 50)
@@ -180,25 +180,25 @@ if (!stopGame) {
 	// Spawn explosion particles when pressing B
 	if (App->input->keys[SDL_SCANCODE_B] == Key_State::KEY_DOWN || pad.x == true)
 	{
-		if (canshootbomb)
+		if (canshootbomb && bombs > 0)
 		{
 			start_time = SDL_GetTicks();
 			canshootbomb = false;
 			if (Powerupblue)
 			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::NONE, 0);
+				App->particles->AddParticle(App->particles->bomb, position.x-40, position.y - 130, Collider::Type::PLAYER_SHOT, 0);
 			}
 			if (Powerupred)
 			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::NONE, 0);
+				App->particles->AddParticle(App->particles->bomb, position.x-40 , position.y - 130, Collider::Type::PLAYER_SHOT, 0);
 			}
 			if (Powerupgreen)
 			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::NONE, 0);
+				App->particles->AddParticle(App->particles->bomb, position.x-40, position.y - 130, Collider::Type::PLAYER_SHOT, 0);
 			}
 			if (!Powerupblue && !Powerupgreen && !Powerupred)
 			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::NONE, 0);
+				App->particles->AddParticle(App->particles->bomb, position.x-85, position.y - 130, Collider::Type::PLAYER_SHOT, 0);
 			}
 			bombs--;
 		}
@@ -313,13 +313,13 @@ if (!stopGame) {
 	}
 
 	// WIN CONDITION
-		if (kills == 58 || App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
+		if (App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN || pad.r2 == true)
 		{
-			App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
+			App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneOutro, 60); //Menu start no intro
 		}
 
 		// LOSE CONDITION
-		if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
+		if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN || pad.l2 == true)
 		{
 			App->sceneLevel_1->stopGame = true;
 			App->player->stopGame = true;
