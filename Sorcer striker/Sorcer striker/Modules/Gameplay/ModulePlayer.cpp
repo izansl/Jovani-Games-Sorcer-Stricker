@@ -305,7 +305,7 @@ if (!stopGame) {
 		if (destroyedCountdown == 0)
 		{
 			destroyed = false;
-			destroyedCountdown = 120;
+			destroyedCountdown = 50;
 			canshootbomb = false;
 			canshootlaser = false;
 			collider->type = Collider::Type::PLAYER;
