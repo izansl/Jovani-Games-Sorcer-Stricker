@@ -75,7 +75,7 @@ void Enemy_Turtle::OnCollision(Collider* c1) {
 			damage.PushBack({ 722, 498, 196, 167 });
 			damage.speed = 0.25f;
 			currentAnim = &damage;
-			collider = App->collisions->AddCollider({ 0, 0,133, 128 }, Collider::Type::ENEMY, (Module*)App->enemies);
+			collider = App->collisions->AddCollider({ 0, 0, 196, 167 }, Collider::Type::ENEMY, (Module*)App->enemies);
 		}
 
 		else {

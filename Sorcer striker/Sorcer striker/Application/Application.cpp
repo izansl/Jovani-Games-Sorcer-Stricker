@@ -19,6 +19,7 @@
 #include "../Modules/Gameplay/SceneLevel1.h"
 #include "../Modules/Gameplay/SceneLevel1_Foreground.h"
 #include "../Modules/Gameplay/SceneStart.h"
+#include "../Modules/Gameplay/ScenePantallaLose.h"
 #include "../Modules/Gameplay/ModuleEnemies.h"
 #include "../Modules/Gameplay/SceneOutro.h"
 
@@ -36,8 +37,8 @@ Application::Application() {
 	modules[1] = input = new ModuleInput(true);
 	modules[2] = textures = new ModuleTextures(true);
 	modules[3] = audio = new ModuleAudio(true);
-
 	modules[4] = sceneIntro = new SceneIntro(true);
+
 	
 	modules[5] = sceneStart = new SceneStart(false);
 	modules[6] = sceneOutro = new SceneOutro(false);
@@ -51,9 +52,9 @@ Application::Application() {
 	modules[13] = fade = new ModuleFadeToBlack(true);
 	modules[14] = fonts = new ModuleFonts(true);
 	modules[15] = hud = new ModuleHUD(true);
-	modules[16] = insertCoins = new ModuleInsertCoin(true);
-	modules[17] = render = new ModuleRender(true);
-	
+  modules[16] = scenePantallaLose = new ScenePantallaLose(false);
+	modules[17] = insertCoins = new ModuleInsertCoin(true);
+	modules[18] = render = new ModuleRender(true);
 }
 
 Application::~Application() {
@@ -90,17 +91,17 @@ Update_Status Application::Update() {
 
 	for (int i = 0; i < NUM_MODULES && ret == Update_Status::UPDATE_CONTINUE; ++i)
 		// Only paint is Scene1 is eneabled
-		if (i == 14)
+		if (i == 15)
 		{
 			if (modules[6]->IsEnabled()) {
 				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
 				ret = modules[7]->PostUpdate();
 			}
 		}
-		else if (i == 15)
+		else if (i == 16)
 		{
 			if (modules[5]->IsEnabled()) {
-				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;				
+				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
 			}
 		}
 		else

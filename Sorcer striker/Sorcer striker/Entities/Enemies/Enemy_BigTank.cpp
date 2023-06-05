@@ -24,14 +24,14 @@ Enemy_BigTank::Enemy_BigTank(int x, int y, int wave) : Enemy(x, y) {
 	}
 	if (wave == 2)
 	{
-		path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell * 0}, 30, &de);
+		path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell * 0}, 50, &de);
 		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 200, &de);
 		path.PushBack({ 5, (float)App->sceneLevel_1->velocitatNivell * 0 }, 300, &de);
 
 	}
 	if (wave == 3)
 	{
-		path.PushBack({ -5, (float)App->sceneLevel_1->velocitatNivell * 0}, 30,&iz);
+		path.PushBack({ -5, (float)App->sceneLevel_1->velocitatNivell * 0}, 50,&iz);
 		path.PushBack({ 0, (float)App->sceneLevel_1->velocitatNivell * 0 }, 200, &de);
 		path.PushBack({ -5, (float)App->sceneLevel_1->velocitatNivell * 0 }, 300, &de);
 	}
@@ -75,7 +75,7 @@ void Enemy_BigTank::OnCollision(Collider* c1) {
 			damage.PushBack({ 54, 38, 279, 275 });
 			damage.speed = 0.25f;
 			currentAnim = &damage;
-			collider = App->collisions->AddCollider({ 0, 0,279, 275 }, Collider::Type::ENEMY, (Module*)App->enemies);
+			collider = App->collisions->AddCollider({ 0, 0,277, 168 }, Collider::Type::ENEMY, (Module*)App->enemies);
 		}
 		else {
 			texture = App->textures->Load(FI_particles_.c_str());
