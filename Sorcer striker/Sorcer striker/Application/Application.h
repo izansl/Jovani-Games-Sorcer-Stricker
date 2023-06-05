@@ -2,9 +2,7 @@
 #define __APPLICATION_H__
 
 #include "Globals.h"
-
-
-#define NUM_MODULES 19
+#include <vector>
 
 
 class Module;
@@ -51,7 +49,7 @@ public:
 
 public:
 	// An array to store all modules
-	Module* modules[NUM_MODULES];
+	std::vector<Module*> modules;
 
 	// All the modules stored individually
 	ModuleWindow* window = nullptr;
@@ -75,7 +73,11 @@ public:
 	ScenePreintro* scenePreintro = nullptr;
 	SceneOutro* sceneOutro = nullptr;
 
+
+private:
+	int vectorSize;
 };
+
 
 // Global var made extern for Application ---
 extern Application* App;
