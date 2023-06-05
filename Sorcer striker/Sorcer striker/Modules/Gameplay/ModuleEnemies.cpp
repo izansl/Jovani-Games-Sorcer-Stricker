@@ -66,15 +66,17 @@ Update_Status ModuleEnemies::PreUpdate() {
 }
 
 Update_Status ModuleEnemies::Update() {
-	HandleEnemiesSpawn();
+	if (!stopGame)
+	{
+		HandleEnemiesSpawn();
 
-	for (uint i = 0; i < MAX_ENEMIES; ++i) {
-		if (enemies[i] != nullptr)
-			enemies[i]->Update();
+		for (uint i = 0; i < MAX_ENEMIES; ++i) {
+			if (enemies[i] != nullptr)
+				enemies[i]->Update();
+		}
+
+		HandleEnemiesDespawn();
 	}
-
-	HandleEnemiesDespawn();
-
 	return Update_Status::UPDATE_CONTINUE;
 }
 
@@ -186,10 +188,11 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 				enemies[i] = new Enemy_Coin(info.x, info.y);
 				break;
 
-			//Satge 1
+				//Satge 1
 			case Enemy_Type::STAGE: enemies[i] = new Enemy_Stage(info.x, info.y); break;
 			case Enemy_Type::NUM1: enemies[i] = new Enemy_Num1(info.x, info.y); break;
 			case Enemy_Type::FLAG: enemies[i] = new Enemy_Flag(info.x, info.y); break;
+
 			//Warning
 			case Enemy_Type::WARL: enemies[i] = new Enemy_WarnL(info.x, info.y); break;
 			case Enemy_Type::WARR: enemies[i] = new Enemy_WarnR(info.x, info.y); break;
@@ -197,6 +200,7 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 			//Stageclear
 			case Enemy_Type::STAGECLEAR: enemies[i] = new Enemy_Sclear(info.x, info.y); break;
 			//Enemies
+
 			case Enemy_Type::DRAGON: enemies[i] = new Enemy_Dragon(info.x, info.y, info.wave);
 				break;
 			case Enemy_Type::REDWIZARD: enemies[i] = new Enemy_RedWizard(info.x, info.y, info.wave);
@@ -220,7 +224,7 @@ void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 
 			}
 
- 			enemies[i]->destroyedFx = enemyDestroyedFx;
+			enemies[i]->destroyedFx = enemyDestroyedFx;
 
 			break;
 		}

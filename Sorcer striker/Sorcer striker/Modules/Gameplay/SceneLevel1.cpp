@@ -155,6 +155,7 @@ bool SceneLevel1::Start() {
 	/*App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4400, 6, 7);
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 290, -4450, 6, 8);*/
 
+
 	//add red ball 7
 
 	App->enemies->AddEnemy(Enemy_Type::RED_BALL, 100, -25000, 7);
@@ -199,6 +200,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 800, -38100, 7);
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, -100, -38250, 6);
 	App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 800, -38400, 7);
+
 #pragma endregion
 #pragma region dragon
 	////add dragon
@@ -207,6 +209,7 @@ bool SceneLevel1::Start() {
 
 #pragma endregion
 #pragma region goblin
+
 	App->enemies->AddEnemy(Enemy_Type::FLYTANK, 100, -31500, 1);
 	App->enemies->AddEnemy(Enemy_Type::FLYTANK, 100, -42000, 1);
 	
@@ -246,7 +249,6 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::TANK, -100, -39050, 6);
 	App->enemies->AddEnemy(Enemy_Type::TANK, -100, -40350, 6);
 	App->enemies->AddEnemy(Enemy_Type::TANK, -250, -40350, 6);
-	
 
 #pragma endregion
 #pragma region turtle
@@ -262,6 +264,7 @@ bool SceneLevel1::Start() {
 
 #pragma endregion
 #pragma region goblin
+
 	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 150, -34350, 1);
 	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 540, -34350, 1);
 	App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 240, -34550, 1);
@@ -299,7 +302,6 @@ bool SceneLevel1::Start() {
 	//App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 720, -24150, 1);
 	//App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 630, -24150, 1);
 	//App->enemies->AddEnemy(Enemy_Type::MINIDRAGON, 540, -24150, 1);
-	
 
 #pragma endregion-39480
 #pragma region bigtank
@@ -318,6 +320,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::REDBAT, 450, -42000, 1);
 	App->enemies->AddEnemy(Enemy_Type::REDBAT, 650, -42000, 1);
 #pragma endregion
+
 	App->enemies->AddEnemy(Enemy_Type::WARL, 30, -44000, 1);
 	App->enemies->AddEnemy(Enemy_Type::WARR, 330, -44000, 1);
 	App->enemies->AddEnemy(Enemy_Type::FLECH, 349, -44000, 1);
@@ -335,6 +338,8 @@ bool SceneLevel1::Start() {
 }
 
 Update_Status SceneLevel1::Update() {
+	if (!stopGame){
+
 	GamePad& pad = App->input->pads[0];
 
 	App->render->camera.y += velocitatNivell;
@@ -385,14 +390,66 @@ Update_Status SceneLevel1::Update() {
 	}
 
 	if ((App->player->position.y + 5 + App->player->collider->rect.h) >= botcoll->rect.y)
+
 	{
-		App->player->position.y = botcoll->rect.y - (5 + App->player->collider->rect.h);
+		// TODO: declarar gamepad a .h, no creem un objecte nou en cada volta
+		GamePad& pad = App->input->pads[0];
+		App->render->camera.y += velocitatNivell;
+
+		topcoll->rect.y += velocitatNivell;
+		botcoll->rect.y += velocitatNivell;
+		leftcoll->rect.y += velocitatNivell;
+		raightcoll->rect.y += velocitatNivell;
+
+		if ((App->player->position.x + 5 + App->player->collider->rect.w) >= raightcoll->rect.x)
+		{
+			App->player->position.x = raightcoll->rect.x - (5 + App->player->collider->rect.w);
+		}
+
+		if (App->player->position.x - 5 <= leftcoll->rect.x)
+		{
+			App->player->position.x = leftcoll->rect.x + 5;
+		}
+
+		if ((App->player->position.y + 5 + App->player->collider->rect.h) >= botcoll->rect.y)
+		{
+			App->player->position.y = botcoll->rect.y - (5 + App->player->collider->rect.h);
+		}
+
+		if (App->player->position.y - 5 <= topcoll->rect.y)
+		{
+			App->player->position.y = topcoll->rect.y + 5;
+		}
+
+		//Spawn cofres
+		if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN || pad.up == true)
+		{
+			App->enemies->AddEnemy(Enemy_Type::CHEST_RED, App->player->position.x + 50, App->player->position.y - 800, 1);
+		}
+		if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN || pad.down == true)
+		{
+			App->enemies->AddEnemy(Enemy_Type::CHEST_GREEN, App->player->position.x + 50, App->player->position.y - 800, 1);
+		}
+		if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN || pad.right == true)
+		{
+			App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, App->player->position.x + 50, App->player->position.y - 800, 1);
+		}
+		if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN || pad.left == true)
+		{
+			App->enemies->AddEnemy(Enemy_Type::ANGEL, App->player->position.x + 50, App->player->position.y - 800, 1);
+		}
+		if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
+		{
+			App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 400, App->player->position.y - 700, 1);
+		}
+
+		if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN)
+		{
+			App->enemies->AddEnemy(Enemy_Type::BOSS, 400, App->player->position.y - 700, 1);
+		}
+
 	}
 
-	if (App->player->position.y - 5 <= topcoll->rect.y)
-	{
-		App->player->position.y = topcoll->rect.y + 5;
-	}
 
 	//Spawn cofres
 	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN || pad.up==true)
@@ -426,10 +483,8 @@ Update_Status SceneLevel1::Update() {
 		raightcoll->rect.y = TP;
 		App->render->camera.y =TP;
 	}
+  }
 
-
-
-	
 	return Update_Status::UPDATE_CONTINUE;
 }
 

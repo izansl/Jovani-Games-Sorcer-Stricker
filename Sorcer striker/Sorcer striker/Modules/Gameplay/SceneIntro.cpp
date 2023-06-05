@@ -8,7 +8,10 @@
 #include "../../Modules/Core/ModuleAudio.h"
 #include "../../Modules/Core/ModuleInput.h"
 #include "../../Modules/Core/ModuleFadeToBlack.h"
+#include "../../Utils/p2Point.h"
+#include "../../Utils/Animation.h"
 #include "../Gameplay/ModuleInsertCoin.h"
+
 
 SceneIntro::SceneIntro(bool startEnabled) : Module(startEnabled) {
 }
@@ -153,12 +156,14 @@ Update_Status SceneIntro::PostUpdate() {
 		App->render->Blit(ArrayImagesIntro2[2], -x2 + 800, -100, NULL);//alientocho
 
 		//foc 1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 + 435, -345, NULL);//fuego1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 + 285, -345, NULL);//fuego1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 + 135, -345, NULL);//fuego1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 - 15, -345, NULL);//fuego1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 - 195, -345, NULL);//fuego1
-		App->render->Blit(ArrayImagesIntro2[9], -x2 - 375, -345, NULL);//fuego1
+
+
+		//App->render->Blit(ArrayImagesIntro2[9], -x2 + 435, -345, NULL);//fuego1
+		//App->render->Blit(ArrayImagesIntro2[9], -x2 + 285, -345, NULL);//fuego1
+		//App->render->Blit(ArrayImagesIntro2[9], -x2 + 135, -345, NULL);//fuego1
+		//App->render->Blit(ArrayImagesIntro2[9], -x2 - 15, -345, NULL);//fuego1
+		//App->render->Blit(ArrayImagesIntro2[9], -x2 - 195, -345, NULL);//fuego1
+		//App->render->Blit(ArrayImagesIntro2[9], -x2 - 375, -345, NULL);//fuego1
 
 
 		//foc 2
@@ -186,7 +191,7 @@ Update_Status SceneIntro::PostUpdate() {
 		//nave2
 		App->render->Blit(ArrayImagesIntro2[13], -x - 100, -y + 400, NULL);
 
-		//rápidas
+		//rÃ¡pidas
 		int z = (currentTime - 14000) / 100;
 		int u = (currentTime - 14000) / 120;
 		App->render->Blit(ArrayImagesIntro2[13], -z + 100, -u + 400, NULL);
@@ -268,6 +273,11 @@ Update_Status SceneIntro::PostUpdate() {
 
 	}
 
+	if (currentTime >= 32000) {
+
+		App->fade->FadeToBlack(this, (Module*)App->sceneStart, 60);
+
+	}
 
 
 	return Update_Status::UPDATE_CONTINUE;

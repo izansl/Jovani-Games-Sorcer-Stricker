@@ -5,6 +5,7 @@
 #include "../../Utils/Animation.h"
 #include "../../Utils/p2Point.h"
 
+
 struct SDL_Texture;
 struct Collider;
 
@@ -49,6 +50,8 @@ public:
 	int start_time;
 
 	bool alive = true;
+
+	bool stopGame = false;
 
 
 
