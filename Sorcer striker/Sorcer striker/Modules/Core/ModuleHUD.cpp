@@ -82,11 +82,9 @@ Update_Status ModuleHUD::PostUpdate() {
 
 	// TEXTOS
 	PaintSentence(player1, { posPlayer1.x, posPlayer1.y });
-	PaintSentence(X, { posScore1.x-30, posScore1.y });
 	PaintSentence(std::to_string(App->player->score), { posScore1.x, posScore1.y });
 
 	PaintSentence(player2, { posPlayer2.x, posPlayer2.y });
-	PaintSentence(X, { posScore2.x - 30, posScore2.y });
 	PaintSentence("0", {posScore2.x, posScore2.y});
 
 	PaintSentence(hlScore, { posHlScrore.x, posHlScrore.y });

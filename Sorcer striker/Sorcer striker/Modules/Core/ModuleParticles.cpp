@@ -100,41 +100,17 @@ bool ModuleParticles::Start() {
 	
 	//Pink
 	knifeleft.anim.PushBack({ 1713, 873, 34, 62 });
-	knifeleft.speed = iPoint(0, -33);
+	knifeleft.speed = iPoint(0, -30);
 	knifeleft.lifetime = 90;
 
 	kniferight.anim.PushBack({ 1864, 873, 34, 64 });
-	kniferight.speed = iPoint(0, -33);
+	kniferight.speed = iPoint(0, -30);
 	kniferight.lifetime = 90;
 
 	//Green
-	sword.anim.PushBack({ 1617, 744, 80, 765 });
-	sword.anim.PushBack({ 1618, 849, 80, 765 });
-	sword.anim.PushBack({ 1617, 976, 80, 765});
-	sword.anim.PushBack({ 1617, 1166, 80, 765});
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.anim.PushBack({ 1617, 1166, 80, 765 });
-	sword.speed = iPoint(0, -30);
-	sword.anim.speed = 0.35f;
-	sword.lifetime = 60;
+	sword.anim.PushBack({ 1846, 1224, 52, 217 });
+	sword.speed = iPoint(0, -28);
+	sword.lifetime = 200;
 
 	//wizard
 	wizardshoot.anim.PushBack({ 2775, 193, 120, 82 });

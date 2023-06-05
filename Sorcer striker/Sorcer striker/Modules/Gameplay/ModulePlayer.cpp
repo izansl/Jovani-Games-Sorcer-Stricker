@@ -162,8 +162,8 @@ if (!stopGame) {
 			}
 			if (Powerupgreen)
 			{
-				App->particles->AddParticle(App->particles->sword, position.x - 20, position.y - 720, Collider::Type::PLAYER_SHOT, 0);
-				App->particles->AddParticle(App->particles->sword, position.x + 160, position.y - 720, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->sword, position.x, position.y-150, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->sword, position.x + 165, position.y-150, Collider::Type::PLAYER_SHOT, 0);
 				App->particles->AddParticle(App->particles->laser2, position.x + 60, position.y - 50, Collider::Type::PLAYER_SHOT, 0);
 			}
 			if (!Powerupblue && !Powerupgreen && !Powerupred)
@@ -305,7 +305,7 @@ if (!stopGame) {
 		if (destroyedCountdown == 0)
 		{
 			destroyed = false;
-			destroyedCountdown = 120;
+			destroyedCountdown = 50;
 			canshootbomb = false;
 			canshootlaser = false;
 			collider->type = Collider::Type::PLAYER;
