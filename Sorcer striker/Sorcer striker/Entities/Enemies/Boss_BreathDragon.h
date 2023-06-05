@@ -13,7 +13,7 @@ public:
 
 	void Update() override;
 	void Draw() override;
-	void SetToDelete() override;
+	void OnCollision(Collider* collider) override;
 
 	void OnCollisionGeneral(Collider* colisionEntrante);
 	void OnCollisionHead1(Collider* colisionEntrante);
@@ -36,12 +36,16 @@ private:
 	Animation animationHead; // Repetit x3
 	Animation animationHeadDamaged;// Repetit x3
 	Animation animationBody;
+	Animation animationBody2;
+	Animation animationBody3;
 	Animation animaitonBodyDamaged;
 
 	Particle particleFire;
 
 	Path pathFan;
 	Path pathCuerpo;
+	Path pathCuerpo2;
+	Path pathCuerpo3;
 	Path pathCabeza;
 	Path pathFire;
 
@@ -103,6 +107,9 @@ private:
 	bool canshoot4 = true;
 	bool canshoot5 = true;
 
+	int hitcount = 0;
+	bool life = true;
+	int temp = 0;
 };
 
 #endif
