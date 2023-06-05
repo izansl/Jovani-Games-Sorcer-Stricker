@@ -11,6 +11,8 @@
 #include "../../Utils/p2Point.h"
 #include "../../Utils/Animation.h"
 #include "../Gameplay/ModuleInsertCoin.h"
+#include "../../Modules/Core/ModuleCollisions.h"
+#include "../../Modules/Gameplay/ModuleEnemies.h"
 
 
 SceneIntro::SceneIntro(bool startEnabled) : Module(startEnabled) {
@@ -33,7 +35,15 @@ bool SceneIntro::Start() {
 	ArrayImagesIntro[1] = App->textures->Load(FI_Introimage_2.c_str());
 	ArrayImagesIntro[2] = App->textures->Load(FI_Introimage_3.c_str());
 	ArrayImagesIntro[3] = App->textures->Load(FI_Introimage_4.c_str());
-	ArrayImagesIntro[4] = App->textures->Load(FI_Introimage_5.c_str());
+	//carga de la vaina
+	ArrayImagesIntro[4] = App->textures->Load(FI_Introimage_5.c_str());//fuegos
+
+	fuegos.PushBack({ 281, 286, 30, 76 });
+	fuegos.PushBack({ 326, 285, 30, 76 });
+	fuegos.PushBack({ 232, 285, 30, 76 });
+	fuegos.speed = 0.2f;
+	currentAnim = &fuegos;
+	///////////////
 	ArrayImagesIntro[5] = App->textures->Load(FI_Introimage_6.c_str());
 	ArrayImagesIntro[6] = App->textures->Load(FI_Introimage_7.c_str());
 	ArrayImagesIntro[7] = App->textures->Load(FI_Introimage_8.c_str());
@@ -65,6 +75,10 @@ bool SceneIntro::Start() {
 	ArrayImagesIntro2[14] = App->textures->Load(FI_Introimage_33.c_str());
 	ArrayImagesIntro2[15] = App->textures->Load(FI_Introimage_34.c_str());
 
+	
+
+	
+
 	//Carga de Audio ////TURMO MUY IMPORTANTE, TIENES QUE CUADRAR EL AUDIO CON LA INTRO SEGUN LAS IMAGENES QUE APAREZCAN///
 	//esta musica hay que cambiarla turmo
 
@@ -89,7 +103,10 @@ Update_Status SceneIntro::Update() {
 	{
 		tokenFx = App->audio->LoadFx(FA_Fx_token.c_str());
 	};
-
+	////Update path positions
+	//fuegos.Update();
+	////Update Animations
+	//fuegos.GetCurrentAnimation()->Update();
 
 	return Update_Status::UPDATE_CONTINUE;
 
@@ -132,14 +149,7 @@ Update_Status SceneIntro::PostUpdate() {
 
 	if (currentTime >= 9000 && currentTime < 13000) {
 
-
-		Uint8 alpha = static_cast<Uint8>((currentTime / 3000.0f) * 255);
-		SDL_SetTextureAlphaMod(ArrayImagesIntro[2], alpha);
-
 		App->render->Blit(ArrayImagesIntro[2], -10, 0, NULL);//Primertextocolor
-
-		SDL_SetTextureAlphaMod(ArrayImagesIntro[2], 255);
-
 
 	}
 
@@ -165,6 +175,8 @@ Update_Status SceneIntro::PostUpdate() {
 
 		//foc 1
 
+	
+		//App->render->Blit(ArrayImagesIntro[4], -x2 + 285, -345, &(fuegos.GetCurrentAnimation()->GetCurrentFrame()));//fuego1
 
 		App->render->Blit(ArrayImagesIntro2[9], -x2 + 435, -345, NULL);//fuego1
 		App->render->Blit(ArrayImagesIntro2[9], -x2 + 285, -345, NULL);//fuego1
