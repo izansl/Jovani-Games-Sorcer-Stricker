@@ -21,6 +21,7 @@
 #include "../Modules/Gameplay/SceneStart.h"
 #include "../Modules/Gameplay/ScenePantallaLose.h"
 #include "../Modules/Gameplay/ModuleEnemies.h"
+#include "../Modules/Gameplay/SceneOutro.h"
 
 int start_time = SDL_GetTicks();
 int last_frame_time = start_time;
@@ -38,21 +39,22 @@ Application::Application() {
 	modules[3] = audio = new ModuleAudio(true);
 	modules[4] = sceneIntro = new SceneIntro(true);
 
+	
 	modules[5] = sceneStart = new SceneStart(false);
-	modules[6] = sceneLevel_1 = new SceneLevel1(false);	//Gameplay scene starts disabled
-	modules[7] = sceneLevel_1_foreground = new SceneLevel1_Foreground(true);		//Gameplay scene starts disabled
-	modules[8] = player = new ModulePlayer(false);	//Player starts disabled
-	modules[9] = enemies = new ModuleEnemies(false);	//Enemies start disabled
+	modules[6] = sceneOutro = new SceneOutro(false);
+	modules[7] = sceneLevel_1 = new SceneLevel1(false);		//Gameplay scene starts disabled
+	modules[8] = sceneLevel_1_foreground = new SceneLevel1_Foreground(true);		//Gameplay scene starts disabled
+	modules[9] = player = new ModulePlayer(false);	//Player starts disabled
+	modules[10]= enemies = new ModuleEnemies(false);	//Enemies start disabled
+	modules[11] = particles = new ModuleParticles(true);
 
-	modules[10] = particles = new ModuleParticles(true);
-	modules[11] = collisions = new ModuleCollisions(false);
-	modules[12] = fade = new ModuleFadeToBlack(true);
-	modules[13] = fonts = new ModuleFonts(true);
-	modules[14] = scenePantallaLose = new ScenePantallaLose(false);
-
+	modules[12] = collisions = new ModuleCollisions(false);
+	modules[13] = fade = new ModuleFadeToBlack(true);
+	modules[14] = fonts = new ModuleFonts(true);
 	modules[15] = hud = new ModuleHUD(true);
-	modules[16] = insertCoins = new ModuleInsertCoin(true);
-	modules[17] = render = new ModuleRender(true);
+  modules[16] = scenePantallaLose = new ScenePantallaLose(false);
+	modules[17] = insertCoins = new ModuleInsertCoin(true);
+	modules[18] = render = new ModuleRender(true);
 }
 
 Application::~Application() {
