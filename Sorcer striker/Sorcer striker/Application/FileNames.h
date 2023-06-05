@@ -75,10 +75,10 @@ const std::string FI_continue_7 = "Assets/Images/Outro/outrotwo.png";
 const std::string FI_continue_8 = "Assets/Images/Outro/outroone.png";
 const std::string FI_continue_9 = "Assets/Images/Outro/outrozero.png";
 //Menu Player
-const std::string FI_choseplayer_1 = "Assets/Images/Intro/playerpcik.png";
-const std::string FI_choseplayer_2 = "Assets/Images/Intro/playerpcik1.png";
-const std::string FI_choseplayer_3 = "Assets/Images/Intro/playerpcik2.png";
-const std::string FI_choseplayer_4 = "Assets/Images/Intro/playerpcik3.png";
+const std::string FI_choseplayer_1 = "Assets/Images/Intro/playerpick.png";
+const std::string FI_choseplayer_2 = "Assets/Images/Intro/playerpick1.png";
+const std::string FI_choseplayer_3 = "Assets/Images/Intro/playerpick2.png";
+const std::string FI_choseplayer_4 = "Assets/Images/Intro/playerpick3.png";
 //after boss death
 const std::string FI_imageplayer_kill = "Assets/Images/final-boss/kill.png";
 
