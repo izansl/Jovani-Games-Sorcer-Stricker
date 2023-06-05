@@ -125,7 +125,7 @@ void Boss_BreathDragon::Update() {
 	if (SDL_GetTicks() - start_Time >= 4500 && !spawned8) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 200, position.y, 1); spawned8 = true; }
 
 	// Segon atac - FUEEEEGO 
-	if (SDL_GetTicks() - start_Time >= 7000 && canshoot)
+	if (SDL_GetTicks() - start_Time >= 7000 && canshoot1)
 	{
 		// TODO: lanzar particulas de fuego al mismo tiempo que path va para atras y luego para adelante
 		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
@@ -134,7 +134,99 @@ void Boss_BreathDragon::Update() {
 		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
 		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
 		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
-		canshoot = false;
+		canshoot1 = false;
+
+	}
+	// Primer atac - EJAMBREEE
+	if (SDL_GetTicks() - start_Time >= 8000 && !spawned9) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 50, position.y, 1); spawned9 = true; }
+	if (SDL_GetTicks() - start_Time >= 8500 && !spawned10) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 50, position.y, 1); spawned10 = true; }
+	if (SDL_GetTicks() - start_Time >= 9000 && !spawned11) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 100, position.y, 1); spawned11 = true; }
+	if (SDL_GetTicks() - start_Time >= 9500 && !spawned12) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 100, position.y, 1); spawned12 = true; }
+	if (SDL_GetTicks() - start_Time >= 10000 && !spawned13) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 150, position.y, 1); spawned13 = true; }
+	if (SDL_GetTicks() - start_Time >= 10500 && !spawned14) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 150, position.y, 1); spawned14 = true; }
+	if (SDL_GetTicks() - start_Time >= 11000 && !spawned15) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 200, position.y, 1); spawned15 = true; }
+	if (SDL_GetTicks() - start_Time >= 11500 && !spawned16) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 200, position.y, 1); spawned16 = true; }
+
+	// Segon atac - FUEEEEGO 
+	if (SDL_GetTicks() - start_Time >= 14000 && canshoot2)
+	{
+		// TODO: lanzar particulas de fuego al mismo tiempo que path va para atras y luego para adelante
+		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		canshoot2 = false;
+
+	}
+	// Primer atac - EJAMBREEE
+	if (SDL_GetTicks() - start_Time >= 15000 && !spawned17) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 50, position.y, 1); spawned17 = true; }
+	if (SDL_GetTicks() - start_Time >= 15500 && !spawned18) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 50, position.y, 1); spawned18 = true; }
+	if (SDL_GetTicks() - start_Time >= 16000 && !spawned19) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 100, position.y, 1); spawned19 = true; }
+	if (SDL_GetTicks() - start_Time >= 16500 && !spawned20) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 100, position.y, 1); spawned20 = true; }
+	if (SDL_GetTicks() - start_Time >= 17000 && !spawned21) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 150, position.y, 1); spawned21 = true; }
+	if (SDL_GetTicks() - start_Time >= 17500 && !spawned22) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 150, position.y, 1); spawned22 = true; }
+	if (SDL_GetTicks() - start_Time >= 18000 && !spawned23) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 200, position.y, 1); spawned23 = true; }
+	if (SDL_GetTicks() - start_Time >= 18500 && !spawned24) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 200, position.y, 1); spawned24 = true; }
+
+	// Segon atac - FUEEEEGO 
+	if (SDL_GetTicks() - start_Time >= 21000 && canshoot3)
+	{
+		// TODO: lanzar particulas de fuego al mismo tiempo que path va para atras y luego para adelante
+		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		canshoot3 = false;
+
+	}
+	// Primer atac - EJAMBREEE
+	if (SDL_GetTicks() - start_Time >= 22000 && !spawned25) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 50, position.y, 1); spawned25 = true; }
+	if (SDL_GetTicks() - start_Time >= 22500 && !spawned26) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 50, position.y, 1); spawned26 = true; }
+	if (SDL_GetTicks() - start_Time >= 23000 && !spawned27) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 100, position.y, 1); spawned27 = true; }
+	if (SDL_GetTicks() - start_Time >= 23500 && !spawned28) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 100, position.y, 1); spawned28 = true; }
+	if (SDL_GetTicks() - start_Time >= 24000 && !spawned29) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 150, position.y, 1); spawned29 = true; }
+	if (SDL_GetTicks() - start_Time >= 24500 && !spawned30) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 150, position.y, 1); spawned30 = true; }
+	if (SDL_GetTicks() - start_Time >= 25000 && !spawned31) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 200, position.y, 1); spawned31 = true; }
+	if (SDL_GetTicks() - start_Time >= 25500 && !spawned32) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 200, position.y, 1); spawned32 = true; }
+
+	// Segon atac - FUEEEEGO 
+	if (SDL_GetTicks() - start_Time >= 28000 && canshoot4)
+	{
+		// TODO: lanzar particulas de fuego al mismo tiempo que path va para atras y luego para adelante
+		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		canshoot4 = false;
+
+	}
+	// Primer atac - EJAMBREEE
+	if (SDL_GetTicks() - start_Time >= 27000 && !spawned33) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 50, position.y, 1); spawned33 = true; }
+	if (SDL_GetTicks() - start_Time >= 27500 && !spawned34) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 50, position.y, 1); spawned34 = true; }
+	if (SDL_GetTicks() - start_Time >= 28000 && !spawned35) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 100, position.y, 1); spawned35 = true; }
+	if (SDL_GetTicks() - start_Time >= 28500 && !spawned36) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 100, position.y, 1); spawned36 = true; }
+	if (SDL_GetTicks() - start_Time >= 29000 && !spawned37) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 150, position.y, 1); spawned37 = true; }
+	if (SDL_GetTicks() - start_Time >= 29500 && !spawned38) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 150, position.y, 1); spawned38 = true; }
+	if (SDL_GetTicks() - start_Time >= 30000 && !spawned39) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x - 200, position.y, 1); spawned39 = true; }
+	if (SDL_GetTicks() - start_Time >= 30500 && !spawned40) { App->enemies->AddEnemy(Enemy_Type::REDBAT, position.x + 200, position.y, 1); spawned40 = true; }
+
+	// Segon atac - FUEEEEGO 
+	if (SDL_GetTicks() - start_Time >= 33000 && canshoot5)
+	{
+		// TODO: lanzar particulas de fuego al mismo tiempo que path va para atras y luego para adelante
+		Particle* fuego = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego2 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego3 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego4 = App->particles->AddParticle(particleFire, position.x + 200, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego5 = App->particles->AddParticle(particleFire, position.x + -20, position.y + 350, Collider::Type::ENEMY_SHOOT, 0);
+		Particle* fuego6 = App->particles->AddParticle(particleFire, position.x + -300, position.y + 381, Collider::Type::ENEMY_SHOOT, 0);
+		canshoot5 = false;
 
 	}
 }
