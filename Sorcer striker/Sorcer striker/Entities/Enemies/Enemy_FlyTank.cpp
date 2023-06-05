@@ -62,12 +62,11 @@ void Enemy_FlyTank::OnCollision(Collider* c1) {
 			}
 			else {
 				texture = App->textures->Load(FI_particles_.c_str());
-				death.PushBack({ 1293, 485, 329, 333 });
-				death.PushBack({ 151, 641, 329, 333 });
-				death.PushBack({ 57, 163, 329, 333 });
-				death.PushBack({ 1299, 487, 329, 333 });
-				death.PushBack({ 735, 863, 329, 333 });
-				death.PushBack({ 0, 0, 0, 0 });
+				death.PushBack({ 181, 326, 279, 275 });
+				death.PushBack({ 847, 323, 279, 275 });
+				death.PushBack({ 630, 792, 279, 275 });
+				death.PushBack({ 2285, 376, 279, 275 });
+				death.PushBack({ 2287, 615, 279, 275 });
 				death.speed = 0.3f;
 				death.loop = false;
 				App->audio->PlayFx(destroyedFx);
