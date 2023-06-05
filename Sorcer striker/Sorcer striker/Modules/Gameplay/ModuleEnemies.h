@@ -3,7 +3,7 @@
 
 #include "../../Modules/Module.h"
 
-#define MAX_ENEMIES 300
+#define MAX_ENEMIES 200
 
 enum class Enemy_Type {
 	NO_TYPE,
