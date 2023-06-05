@@ -7,6 +7,12 @@ body {
   background: linear-gradient(to bottom, #339191, #fff 1400px);
   color: #000000;
   font-family: Arial, sans-serif;
+  animation: fade-in 2s;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /* Estilos generales */
@@ -167,7 +173,7 @@ font-family: 'Press Start 2P', cursive;
 /* Resto del código CSS... */
 
 .additional-info details {
-  margin-bottom: 40px; /* Margen inferior de 40px */
+  margin-bottom: 50px; /* Margen inferior de 40px */
   padding: 1px; /* Espacio interno de 1px */
   border-radius: 100px; /* Borde redondeado de 100px */
   border: 6px solid #ffd167; /* Borde sólido de 6px de color #ffd167 */
@@ -215,9 +221,22 @@ font-family: 'Press Start 2P', cursive;
   
   margin-top: 10px; /* Margen superior de 10px */
   font-size: 16px; /* Tamaño de fuente de 16px */
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   text-align: center; /* Alineación centrada del texto */
 }
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
 
 .team-members {
   list-style-type: none;
@@ -272,11 +291,14 @@ font-family: 'Press Start 2P', cursive;
 }
 
 .team-members li {
-  margin-bottom: 30px; /* Espacio inferior entre los elementos de la lista */
+  
+  margin-bottom: 10px; /* Espacio inferior entre los elementos de la lista */
   margin-right: 20px; /* Espacio derecho entre los elementos de la lista */
+ 
 }
 
 .team-member-image {
+  border-radius: 100px;
   max-width: 250px; /* Tamaño máximo de las imágenes */
   height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
   padding:25px;
