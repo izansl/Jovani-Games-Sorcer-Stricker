@@ -208,6 +208,7 @@
     <ClInclude Include="Modules\Gameplay\ScenePantallaLose.h" />
     <ClInclude Include="Modules\Gameplay\SceneLevel1_Foreground.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Stageclear.h" />
+    <ClInclude Include="Modules\Gameplay\ScenePreintro.h" />
     <ClInclude Include="Modules\Gameplay\SceneOutro.h" />
     <ClInclude Include="Utils\Animation.h" />
     <ClInclude Include="Utils\Collider.h" />
@@ -266,6 +267,7 @@
     <ClCompile Include="Modules\Gameplay\ScenePantallaLose.cpp" />
     <ClCompile Include="Modules\Gameplay\SceneLevel1_Foreground.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Stageclear.cpp" />
+    <ClCompile Include="Modules\Gameplay\ScenePreintro.cpp" />
     <ClCompile Include="Modules\Gameplay\SceneOutro.cpp" />
     <ClCompile Include="Utils\Collider.cpp" />
     <ClCompile Include="Utils\Path.cpp" />
