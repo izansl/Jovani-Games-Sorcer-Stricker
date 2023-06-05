@@ -61,9 +61,10 @@ Application::Application() {
 	modules.push_back(input = new ModuleInput(true));
 	modules.push_back(textures = new ModuleTextures(true));
 	modules.push_back(audio = new ModuleAudio(true));
-	//modules.push_back(scenePreintro = new ScenePreintro(true));
-	//modules.push_back(sceneIntro = new SceneIntro(false));
-	modules.push_back(sceneIntro = new SceneIntro(true));
+	modules.push_back(scenePreintro = new ScenePreintro(true));
+	modules.push_back(sceneIntro = new SceneIntro(false));
+	
+	//modules.push_back(sceneIntro = new SceneIntro(true));
 
 	modules.push_back(sceneStart = new SceneStart(false));
 	modules.push_back(sceneOutro = new SceneOutro(false));
@@ -119,16 +120,16 @@ Update_Status Application::Update() {
 
 	for (int i = 0; i < sizeVector && ret == Update_Status::UPDATE_CONTINUE; ++i)
 		// Only paint is Scene1 is eneabled
-		if (i == 15) // HUD
+		if (i == 16) // HUD
 		{
-			if (modules[7]->IsEnabled()) { // SCene1
+			if (modules[8]->IsEnabled()) { // SCene1
 				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
-				ret = modules[8]->PostUpdate(); // Foreground
+				ret = modules[9]->PostUpdate(); // Foreground
 			}
 		}
-		else if (i == 16) // HUD coins
+		else if (i == 17) // HUD coins
 		{
-			if (modules[5]->IsEnabled()) { // start
+			if (modules[6]->IsEnabled()) { // start
 				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
 			}
 		}
