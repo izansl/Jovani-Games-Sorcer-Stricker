@@ -79,11 +79,10 @@ void Enemy_BigTank::OnCollision(Collider* c1) {
 		}
 		else {
 			texture = App->textures->Load(FI_particles_.c_str());
-			death.PushBack({ 145, 651, 329, 333 });
-			death.PushBack({ 1293, 493, 329, 333 });
-			death.PushBack({ 53, 157, 329, 333 });
-			death.PushBack({ 1299, 485, 329, 333 });
-			death.PushBack({ 0, 0, 0, 0 });
+			death.PushBack({ 239, 706, 277, 168 });
+			death.PushBack({ 843, 386, 277, 168 });
+			death.PushBack({ 1003, 601, 277, 168 });
+			death.PushBack({ 2165, 613, 277, 168 });
 			death.speed = 0.3f;
 			death.loop = false;
 			App->audio->PlayFx(destroyedFx);
