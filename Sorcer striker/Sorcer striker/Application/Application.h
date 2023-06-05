@@ -26,6 +26,7 @@ class ModuleRender;
 class ModuleHUD;
 class ModuleInsertCoin;
 class SceneOutro;
+class ScenePreintro;
 
 class Application {
 
@@ -71,6 +72,7 @@ public:
 	ModuleHUD* hud = nullptr;
 	ModuleInsertCoin* insertCoins = nullptr;
 	SceneOutro* sceneOutro = nullptr;
+	ScenePreintro* scenePreintro = nullptr;
 
 private:
 	int sizeVector = 0;

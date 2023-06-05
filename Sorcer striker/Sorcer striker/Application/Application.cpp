@@ -22,6 +22,7 @@
 #include "../Modules/Gameplay/ScenePantallaLose.h"
 #include "../Modules/Gameplay/ModuleEnemies.h"
 #include "../Modules/Gameplay/SceneOutro.h"
+#include "../Modules/Gameplay/ScenePreintro.h"
 
 int start_time = SDL_GetTicks();
 int last_frame_time = start_time;
@@ -60,20 +61,25 @@ Application::Application() {
 	modules.push_back(input = new ModuleInput(true));
 	modules.push_back(textures = new ModuleTextures(true));
 	modules.push_back(audio = new ModuleAudio(true));
+	//modules.push_back(scenePreintro = new ScenePreintro(true));
+	//modules.push_back(sceneIntro = new SceneIntro(false));
 	modules.push_back(sceneIntro = new SceneIntro(true));
+
 	modules.push_back(sceneStart = new SceneStart(false));
 	modules.push_back(sceneOutro = new SceneOutro(false));
 	modules.push_back(sceneLevel_1 = new SceneLevel1(false));
 	modules.push_back(sceneLevel_1_foreground = new SceneLevel1_Foreground(true));
 	modules.push_back(player = new ModulePlayer(false));
+
 	modules.push_back(enemies = new ModuleEnemies(false));
 	modules.push_back(particles = new ModuleParticles(true));
 	modules.push_back(collisions = new ModuleCollisions(false));
 	modules.push_back(fade = new ModuleFadeToBlack(true));
 	modules.push_back(fonts = new ModuleFonts(true));
+
 	modules.push_back(hud = new ModuleHUD(true));
-	modules.push_back(scenePantallaLose = new ScenePantallaLose(false));
 	modules.push_back(insertCoins = new ModuleInsertCoin(true));
+	modules.push_back(scenePantallaLose = new ScenePantallaLose(false));
 	modules.push_back(render = new ModuleRender(true));
 
 	sizeVector = modules.size();
@@ -115,12 +121,12 @@ Update_Status Application::Update() {
 		// Only paint is Scene1 is eneabled
 		if (i == 15)
 		{
-			if (modules[6]->IsEnabled()) {
+			if (modules[7]->IsEnabled()) {
 				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
-				ret = modules[7]->PostUpdate();
+				ret = modules[8]->PostUpdate();
 			}
 		}
-		else if (i == 17)
+		else if (i == 16)
 		{
 			if (modules[5]->IsEnabled()) {
 				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
