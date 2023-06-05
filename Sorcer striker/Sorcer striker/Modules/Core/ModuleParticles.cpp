@@ -52,9 +52,6 @@ bool ModuleParticles::Start() {
 
 	bomb.anim.PushBack({ 53, 1418, 424, 424 });
 	bomb.anim.PushBack({ 53, 1418, 424, 424 });
-	bomb.speed = iPoint(0, -20);
-	bomb.anim.speed = 0.1f;
-	bomb.lifetime = 80;
 	bomb.anim.PushBack({ 89, 600, 424, 424 });
 	bomb.anim.PushBack({ 89, 600, 424, 424 });
 	bomb.anim.PushBack({ 1002, 109, 424, 424 });
@@ -63,7 +60,7 @@ bool ModuleParticles::Start() {
 	bomb.anim.PushBack({ 691, 815, 424, 424 });
 	bomb.anim.PushBack({ 977, 1360, 424, 424 });
 	bomb.anim.PushBack({ 977, 1360, 424, 424 });
-	bomb.speed = iPoint(0, -15);
+	bomb.speed = iPoint(0, -20);
 	bomb.anim.speed = 0.2f;
 	bomb.lifetime = 110;
 
