@@ -40,17 +40,17 @@ Application::Application() {
 
 	modules[5] = sceneStart = new SceneStart(false);
 	modules[6] = sceneLevel_1 = new SceneLevel1(false);	//Gameplay scene starts disabled
-  modules[7] = sceneLevel_1_foreground = new SceneLevel1_Foreground(true);		//Gameplay scene starts disabled
+	modules[7] = sceneLevel_1_foreground = new SceneLevel1_Foreground(true);		//Gameplay scene starts disabled
 	modules[8] = player = new ModulePlayer(false);	//Player starts disabled
 	modules[9] = enemies = new ModuleEnemies(false);	//Enemies start disabled
-  
+
 	modules[10] = particles = new ModuleParticles(true);
 	modules[11] = collisions = new ModuleCollisions(false);
 	modules[12] = fade = new ModuleFadeToBlack(true);
 	modules[13] = fonts = new ModuleFonts(true);
 	modules[14] = scenePantallaLose = new ScenePantallaLose(false);
-	
-  modules[15] = hud = new ModuleHUD(true);
+
+	modules[15] = hud = new ModuleHUD(true);
 	modules[16] = insertCoins = new ModuleInsertCoin(true);
 	modules[17] = render = new ModuleRender(true);
 }
@@ -99,7 +99,7 @@ Update_Status Application::Update() {
 		else if (i == 15)
 		{
 			if (modules[5]->IsEnabled()) {
-				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;				
+				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
 			}
 		}
 		else
