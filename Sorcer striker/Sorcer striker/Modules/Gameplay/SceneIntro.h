@@ -46,7 +46,7 @@ public:
 #define NUM_IMAGES2 16
 	int startTime;
 	SDL_Texture* ArrayImagesIntro2[NUM_IMAGES2];
-
+	bool play = true;
 
 	//Animation* currentAnim = nullptr; //creado acceso a aniamcion //viene de enemy.h
 	/*Animation fuego;*/
