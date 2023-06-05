@@ -49,6 +49,7 @@ Update_Status ScenePantallaLose::Update() {
 		App->sceneLevel_1->stopGame = false;
 		App->player->stopGame = false;
 		App->enemies->stopGame = false;
+		App->audio->PlayMusic(FA_Music_stage1.c_str(), 1.0f);
 	}
 
 	return Update_Status::UPDATE_CONTINUE;

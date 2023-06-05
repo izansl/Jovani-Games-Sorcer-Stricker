@@ -83,9 +83,9 @@ bool SceneLevel1::Start() {
 
 #pragma region STAGE
 
-	App->enemies->AddEnemy(Enemy_Type::FLAG, 500, -200, 1);
-	App->enemies->AddEnemy(Enemy_Type::NUM1, 500, -200, 1);
-	App->enemies->AddEnemy(Enemy_Type::STAGE, -350, -200, 1);
+	App->enemies->AddEnemy(Enemy_Type::FLAG, 500, -100, 1);
+	App->enemies->AddEnemy(Enemy_Type::NUM1, 500, -100, 1);
+	App->enemies->AddEnemy(Enemy_Type::STAGE, -350, -100, 1);
 
 
 #pragma endregion
@@ -318,10 +318,10 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::REDBAT, 550, -22250, 1);
 	App->enemies->AddEnemy(Enemy_Type::REDBAT, 500, -22450, 1);*/
 
-	App->enemies->AddEnemy(Enemy_Type::REDBAT, 50, -42000, 1);
+	/*App->enemies->AddEnemy(Enemy_Type::REDBAT, 50, -42000, 1);
 	App->enemies->AddEnemy(Enemy_Type::REDBAT, 250, -42000, 1);
 	App->enemies->AddEnemy(Enemy_Type::REDBAT, 450, -42000, 1);
-	App->enemies->AddEnemy(Enemy_Type::REDBAT, 650, -42000, 1);
+	App->enemies->AddEnemy(Enemy_Type::REDBAT, 650, -42000, 1);*/
 #pragma endregion
 
 	App->enemies->AddEnemy(Enemy_Type::WARL, 30, -44000, 1);
@@ -329,7 +329,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::FLECH, 349, -44000, 1);
 
 #pragma endregion
-	App->enemies->AddEnemy(Enemy_Type::BOSS, 400, -48000, 1);
+	App->enemies->AddEnemy(Enemy_Type::BOSS, 420, -48000, 1);
 
 	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;
@@ -368,7 +368,7 @@ Update_Status SceneLevel1::Update() {
 		if (SDL_GetTicks() - start_time >= 43000 && !controlLlegadaCastillo2) { velocitatNivell = -4; controlLlegadaCastillo2 = true; }
 
 		// Control velocidad BOSS
-		if (SDL_GetTicks() - start_time >= 91000 && !controlLlegadaBoss) { velocitatNivell = -15; controlLlegadaBoss = true; }
+		if (SDL_GetTicks() - start_time >= 93500 && !controlLlegadaBoss) { velocitatNivell = -15; controlLlegadaBoss = true; }
 
 		if ((App->player->position.x + 5 + App->player->collider->rect.w) >= raightcoll->rect.x)
 			App->player->position.x = raightcoll->rect.x - (5 + App->player->collider->rect.w);
