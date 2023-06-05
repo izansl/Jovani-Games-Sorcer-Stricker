@@ -42,7 +42,7 @@ public:
 
 	bool Powerupblue = false;
 	bool Powerupred = false;
-	bool Powerupgreen = true;
+	bool Powerupgreen = false;
 
 	bool canshootbomb = true;
 	bool canshootlaser = true;
