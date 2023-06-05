@@ -226,6 +226,10 @@ const std::string FA_Music_Selection = "Assets/Audios/Hud-music/character_select
 
 //musica clear
 const std::string FA_Music_Clear = "Assets/Audios/Hud-music/ronda_completada.ogg";
+
+//musica game over
+const std::string FA_Music_GameOver = "Assets/Audios/Hud-music/game_over.ogg";
+
 // Level 2
 
 // Level 3
