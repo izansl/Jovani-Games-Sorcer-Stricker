@@ -5,17 +5,12 @@
 #include <vector>
 
 class Module;
+
 class ModuleWindow;
 class ModuleInput;
 class ModuleTextures;
 class ModuleAudio;
 class ModulePlayer;
-class ScenePantallaLose;
-class SceneIntro;
-class SceneEscoger;
-class SceneLevel1;
-class SceneLevel1_Foreground;
-class SceneStart;
 class ModuleParticles;
 class ModuleCollisions;
 class ModuleEnemies;
@@ -24,8 +19,15 @@ class ModuleFonts;
 class ModuleRender;
 class ModuleHUD;
 class ModuleInsertCoin;
-class SceneOutro;
+
 class ScenePreintro;
+class SceneIntro;
+class SceneStart;
+class SceneEscoger;
+class SceneLevel1;
+class SceneLevel1_Foreground;
+class ScenePantallaLose;
+class SceneOutro;
 
 class Application {
 
@@ -57,12 +59,6 @@ public:
 	ModuleTextures* textures = nullptr;
 	ModuleAudio* audio = nullptr;
 	ModulePlayer* player = nullptr;
-	ScenePantallaLose* scenePantallaLose = nullptr;
-	SceneIntro* sceneIntro = nullptr;
-	SceneEscoger* sceneEscoger = nullptr;
-	SceneLevel1* sceneLevel_1 = nullptr;
-	SceneLevel1_Foreground* sceneLevel_1_foreground = nullptr;
-	SceneStart* sceneStart = nullptr;
 	ModuleEnemies* enemies = nullptr;
 	ModuleParticles* particles = nullptr;
 	ModuleCollisions* collisions = nullptr;
@@ -71,8 +67,15 @@ public:
 	ModuleRender* render = nullptr;
 	ModuleHUD* hud = nullptr;
 	ModuleInsertCoin* insertCoins = nullptr;
-	SceneOutro* sceneOutro = nullptr;
+
 	ScenePreintro* scenePreintro = nullptr;
+	SceneIntro* sceneIntro = nullptr;
+	SceneStart* sceneStart = nullptr;
+	SceneEscoger* sceneEscoger = nullptr;
+	SceneLevel1* sceneLevel_1 = nullptr;
+	SceneLevel1_Foreground* sceneLevel_1_foreground = nullptr;
+	ScenePantallaLose* scenePantallaLose = nullptr;
+	SceneOutro* sceneOutro = nullptr;
 
 private:
 	int sizeVector = 0;
