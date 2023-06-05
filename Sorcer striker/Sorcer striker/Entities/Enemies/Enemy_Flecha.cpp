@@ -17,15 +17,11 @@ Enemy_Flecha::Enemy_Flecha(int x, int y) : Enemy(x, y) {
 
 
 	// Path 1
-	pathchest.PushBack({ -2.0f, -8.0f }, 10);
-	pathchest.PushBack({ -4.0f, -8.0f }, 10);
-	pathchest.PushBack({ -6.0f, -8.0f }, 10);
-	pathchest.PushBack({ -8.0f, -8.0f }, 10);
-	pathchest.PushBack({ 0.0f, -8.0f }, 100);
-	pathchest.PushBack({ 25.0f, -8.0f }, 10);
-	pathchest.PushBack({ 50.0f, -8.0f }, 10);
-	pathchest.PushBack({ 75.0f, -8.0f }, 10);
-	pathchest.PushBack({ 100.0f, -8.0f }, 10);
+	pathchest.PushBack({ 0.0, -8 }, 60);
+	pathchest.PushBack({ 0.0, -15 }, 100);
+	pathchest.PushBack({ 0.0, -30 }, 300);
+	pathchest.PushBack({ -20, -30 }, 400);
+
 
 	currentPath = &pathchest;
 
