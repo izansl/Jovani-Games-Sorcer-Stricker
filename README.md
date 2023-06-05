@@ -10,16 +10,37 @@
 - Lluc Cid I Bernal ([@lluccib](https://github.com/lluccib))
 
 ## Description
-Jovani Games is presenting the pre-alpha version of our project: a copy of the ideo game Sorcer Striker. Inspired by the original game, Jovani Games is working to recreate the gameplay, storyline, and immersive world of Sorcer Striker.
+Jovani Games is presenting the first version of our project: a copy of the ideo game Sorcer Striker. Inspired by the original game, Jovani Games is working to recreate the gameplay, storyline, and immersive world of Sorcer Striker.
 
 It is an action-fantasy game where players take on the role of powerful sorcerers who must defend the realm against hordes of dark creatures. As a sorcerer, you will unleash devastating spells, summon magical creatures, and explore mystical realms in an epic quest to restore peace.
 
 ## How to Play
 1. **Controls**
-   - Movement: Use WASD to move your character.
-   - Attack: Press the Spacebar for the basic attack.
-   - Special Abilities: Press X to deploy a bomb.
-   - Debug funcionality: Press F1 to enable God Mode, press F2 for the Debug mode, and F3/F4 for the instant win/lose.
+-Preintro:
+	Para sartartelo-> Con teclado y raton = SPACE | Gamepad = A
+-Intro:
+	Para sartartelo-> Con teclado y raton = SPACE | Gamepad = A
+-Start:
+	Para insertarcoin-> Con teclado y raton = C | Gamepad = Start
+	Para sartartelo-> Con teclado y raton = SPACE | Gamepad = A
+-Pantalla escoger personaje:
+	Para avanzar-> Con teclado y raton = SPACE | Gamepad = A
+-Gameplay:
+	Player:
+		-Movimiento-> Con teclado y raton = W,S,D,A | Gamepad= Joystick izquierdo
+		-Ataques->Bomba->Con t y r = B | Gmp = X
+			->Laser->Con t y r = SPACE | Gmp = A
+		-SPAWN enemigos->Cofre azul->Con t y r = 3 | Gmp = Flecha de derecha
+				->Cofre verde->Con t y r = 2 | Gmp = Flecha de abajo
+				->Cofre rojo->Con t y r = 1 | Gmp = Flecha de arriba
+				->Angel que tira powerups->Con t y r = 4 | Gmp = Flecha de izquierda
+				->Boss->Con t y r = Q | Gmp = Y
+		-TP->Con t y r = T | Gmp = B
+	Modes:
+		-Insta Win ->Con t y r = F3 | Gmp = L2
+		-Insta Lose ->Con t y r = F4 | Gmp = R2
+		-Godmode ->Con t y r = F1 | Gmp = L1
+		-Seecolliders ->Con t y r = Q | Gmp = R1
 
 2. **Objective**
    - Defeat Enemies: Engage in fast-paced battles with various types of dark creatures. Aim your spells accurately and use your special abilities wisely to defeat them.
