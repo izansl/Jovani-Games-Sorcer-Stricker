@@ -24,7 +24,7 @@ body {
 }
 
 .left-side img {
-  width: 300px; /* Tamaño personalizado */
+  width: 800px; /* Tamaño personalizado */
 }
 
 .title-container {
@@ -32,9 +32,9 @@ body {
 }
 
 .additional-info {
-  margin-top: 50px;
+  margin-top: 0px;
   padding: 20px;
-  background-color: #f2f2f2;
+  
 }
 
 .additional-info h3 {
@@ -52,6 +52,10 @@ footer {
 }
 
 /* Estilos del encabezado */
+html {
+  scroll-behavior: smooth;
+}
+
 header {
   background-color: #f2f2f2;
   padding: 10px;
@@ -68,7 +72,9 @@ header {
 }
 
 .header-title {
-  margin-left: 10px;
+  margin-left: 20px;
+  margin-bottom: 8px;
+  margin-right: 1200px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
 }
@@ -81,7 +87,8 @@ header {
 }
 
 .header-nav li {
-  margin-right: 10px;
+  justify-content: right;
+  margin-left: 100px;
 }
 
 .header-nav a {
@@ -91,9 +98,10 @@ header {
 }
 
 
+
 .container {
   display: flex;
-  justify-content: space-between;
+  
   align-items: center;
   padding-top: 20px;
 }
@@ -126,6 +134,7 @@ font-family: 'Press Start 2P', cursive;
   -webkit-text-fill-color: transparent;
   animation: colorAnimation 5s infinite;
   margin-bottom: 20px;
+  margin-left: 400px;
 }
 
 h2#subtitle {
@@ -136,7 +145,8 @@ font-family: 'Press Start 2P', cursive;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: colorAnimation 5s infinite;
-  margin-left:1000px;
+  margin-left:700px;
+  margin-right: 300px;
 }
 
 @keyframes moveFromTop {
@@ -152,44 +162,101 @@ font-family: 'Press Start 2P', cursive;
   display: block;
 }
 
-footer {
-  background-color: #397575;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
-}
+
+
+/* Resto del código CSS... */
 
 .additional-info details {
-  margin-bottom: 20px;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 5px;
+  margin-bottom: 40px; /* Margen inferior de 40px */
+  padding: 1px; /* Espacio interno de 1px */
+  border-radius: 100px; /* Borde redondeado de 100px */
+  border: 6px solid #ffd167; /* Borde sólido de 6px de color #ffd167 */
+  background-color: #ffd1673b; /* Fondo transparente */
+  margin-left: 100px; /* Margen izquierdo de 100px */
+  margin-right: 100px; /* Margen derecho de 100px */
+  text-align: center; /* Alineación centrada del texto */
+  transition: transform 0.3s; /* Añade una transición suave al cambio de escala */
 }
 
+.additional-info details:hover {
+  transform: scale(1.02); /* Hace el desplegable 10% más grande al pasar el ratón por encima */
+}
+
+
 .additional-info details summary {
-  font-size: 24px;
-  font-weight: bold;
-  cursor: pointer;
+  
+  font-size: 44px; /* Tamaño de fuente de 44px */
+  font-weight: bold; /* Negrita */
+  cursor: pointer; /* Cambio de cursor al puntero */
+  text-align: center; /* Alineación centrada del texto */
+  border: none; /* Sin borde */
+  outline: none; /* Sin contorno al enfocar */
+  background-color: transparent; /* Fondo transparente */
 }
 
 .additional-info details summary::marker {
-  content: "";
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin-right: 5px;
-  border-bottom: 2px solid #000;
-  border-right: 2px solid #000;
-  transform: rotate(45deg);
+  content: ""; /* Contenido vacío */
+  display: inline-block; /* Mostrar como bloque en línea */
+  width: 10px; /* Ancho de 10px */
+  height: 10px; /* Altura de 10px */
+  margin-right: 5px; /* Margen derecho de 5px */
+  border-bottom: 2px solid #000000; /* Borde inferior sólido de 2px de color #000000 */
+  border-right: 2px solid #000; /* Borde derecho sólido de 2px de color #000 */
+  transform: rotate(45deg); /* Rotación de 45 grados */
 }
 
 .additional-info details summary::-webkit-details-marker {
-  display: none;
+  display: none; /* Ocultar el marcador del elemento details en navegadores webkit */
+  text-align: center; /* Alineación centrada del texto */
 }
 
 .additional-info details p {
-  margin-top: 10px;
-  font-size: 16px;
-  text-align: center;
+  
+  margin-top: 10px; /* Margen superior de 10px */
+  font-size: 16px; /* Tamaño de fuente de 16px */
+  margin-bottom: 50px;
+  text-align: center; /* Alineación centrada del texto */
+}
+
+.team-members {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row; /* Mostrar en una línea horizontal */
+}
+
+.team-members li {
+  margin-bottom: 70px;
+  font-size: 26px;
+  margin-left: 10px;
+  margin-right:40px; /* Espacio entre los elementos de la lista */
+}
+
+.team-members img {
+  margin-left: 100px;
+  margin-right: -100px;
+  width: 50px; /* Tamaño personalizado */
+  height: 50px; /* Tamaño personalizado */
+  transition: transform 0.3s; /* Añade una transición suave al cambio de escala */
+}
+
+.team-members img:hover {
+  transform: scale(1.2); /* Hace la imagen 20% más grande al pasar el ratón por encima */
+}
+
+
+.team-member a {
+  display: flex; /* Establece un diseño flexible */
+  align-items: center; /* Centra verticalmente los elementos */
+  text-decoration: none; /* Quita la decoración de texto predeterminada */
+}
+
+.github-link-text {
+  
+  margin-left: 10px; /* Añade un margen entre la imagen y el texto */
+  transition: opacity 0.3s; /* Añade una transición suave al cambio de opacidad */
+}
+
+.team-member a:hover .github-link-text {
+  opacity: 0; /* Oculta el texto al pasar el ratón por encima */
 }

@@ -23,6 +23,8 @@
 #include "../Modules/Gameplay/ModuleEnemies.h"
 #include "../Modules/Gameplay/SceneOutro.h"
 
+#include "../Modules/Gameplay/ScenePreintro.h"
+
 int start_time = SDL_GetTicks();
 int last_frame_time = start_time;
 int frame_counter = 0;
@@ -37,6 +39,7 @@ Application::Application() {
 	modules[1] = input = new ModuleInput(true);
 	modules[2] = textures = new ModuleTextures(true);
 	modules[3] = audio = new ModuleAudio(true);
+
 	modules[4] = sceneIntro = new SceneIntro(true);
 
 
@@ -46,15 +49,18 @@ Application::Application() {
 	modules[8] = sceneLevel_1_foreground = new SceneLevel1_Foreground(true);		//Gameplay scene starts disabled
 	modules[9] = player = new ModulePlayer(false);	//Player starts disabled
 	modules[10] = enemies = new ModuleEnemies(false);	//Enemies start disabled
+
 	modules[11] = particles = new ModuleParticles(true);
 
 	modules[12] = collisions = new ModuleCollisions(false);
 	modules[13] = fade = new ModuleFadeToBlack(true);
 	modules[14] = fonts = new ModuleFonts(true);
 	modules[15] = hud = new ModuleHUD(true);
+
 	modules[16] = scenePantallaLose = new ScenePantallaLose(false);
 	modules[17] = insertCoins = new ModuleInsertCoin(true);
 	modules[18] = render = new ModuleRender(true);
+
 }
 
 Application::~Application() {
