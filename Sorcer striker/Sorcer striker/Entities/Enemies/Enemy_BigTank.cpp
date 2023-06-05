@@ -75,7 +75,7 @@ void Enemy_BigTank::OnCollision(Collider* c1) {
 			damage.PushBack({ 54, 38, 279, 275 });
 			damage.speed = 0.25f;
 			currentAnim = &damage;
-			collider = App->collisions->AddCollider({ 0, 0,279, 275 }, Collider::Type::ENEMY, (Module*)App->enemies);
+			collider = App->collisions->AddCollider({ 0, 0,277, 168 }, Collider::Type::ENEMY, (Module*)App->enemies);
 		}
 		else {
 			texture = App->textures->Load(FI_particles_.c_str());

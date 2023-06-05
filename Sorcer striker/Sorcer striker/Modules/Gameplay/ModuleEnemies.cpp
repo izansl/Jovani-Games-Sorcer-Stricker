@@ -1,4 +1,4 @@
-#include "ModuleEnemies.h"
+﻿#include "ModuleEnemies.h"
 
 #include "../../Application/Application.h"
 #include "../../Application/FileNames.h"
@@ -150,6 +150,7 @@ void ModuleEnemies::HandleEnemiesDespawn() {
 		}
 	}
 }
+
 
 void ModuleEnemies::SpawnEnemy(const EnemySpawnpoint& info) {
 	// Find an empty slot in the enemies array
