@@ -41,7 +41,7 @@ const std::string FI_Introimage_18 = "Assets/Images/Intro/explosiones.png";//17
 //segunda carpeta (sin fondo)
 const std::string FI_Introimage_19 = "Assets/Images/sprites-lluc-intro/alienarribafondo.png";//0
 const std::string FI_Introimage_20 = "Assets/Images/sprites-lluc-intro/alienepicardo.png";//1
-const std::string FI_Introimage_21 = "Assets/Images/sprites-lluc-intro/alientocho.png";//2
+const std::string FI_Introimage_21 = "Assets/Images/sprites-lluc-intro/alientocho.png";//2F
 const std::string FI_Introimage_22 = "Assets/Images/sprites-lluc-intro/caracuatro.png";//3
 const std::string FI_Introimage_23 = "Assets/Images/sprites-lluc-intro/carados.png";//4
 const std::string FI_Introimage_24 = "Assets/Images/sprites-lluc-intro/caratres.png";//5
@@ -77,8 +77,10 @@ const std::string FI_continue_7 = "Assets/Images/Outro/outrotwo.png";//6
 const std::string FI_continue_8 = "Assets/Images/Outro/outroone.png";//7
 const std::string FI_continue_9 = "Assets/Images/Outro/outrozero.png";//8
 //Menu Player
-const std::string FI_choseplayer_1 = "Assets/Images/Intro/playerpcik.png";
-const std::string FI_choseplayer_2 = "Assets/Images/Intro/onepcolor.png";
+const std::string FI_choseplayer_1 = "Assets/Images/Intro/playerpick.png";
+const std::string FI_choseplayer_2 = "Assets/Images/Intro/playerpick1.png";
+const std::string FI_choseplayer_3 = "Assets/Images/Intro/playerpick2.png";
+const std::string FI_choseplayer_4 = "Assets/Images/Intro/playerpick3.png";
 //after boss death
 const std::string FI_imageplayer_kill = "Assets/Images/final-boss/kill.png";
 

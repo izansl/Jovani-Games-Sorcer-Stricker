@@ -21,6 +21,7 @@
 #include "../Modules/Gameplay/SceneStart.h"
 #include "../Modules/Gameplay/ScenePantallaLose.h"
 #include "../Modules/Gameplay/ModuleEnemies.h"
+#include "../Modules/Gameplay/SceneEscoger.h"
 #include "../Modules/Gameplay/SceneOutro.h"
 #include "../Modules/Gameplay/ScenePreintro.h"
 
@@ -34,6 +35,7 @@ Application::Application() {
 	// The order in which the modules are added is very important.
 	// It will define the order in which Pre/Update/Post will be called
 	// Render should always be last, as our last action should be updating the screen
+
 	//modules[0] = window = new ModuleWindow(true);
 	//modules[1] = input = new ModuleInput(true);
 	//modules[2] = textures = new ModuleTextures(true);
