@@ -76,6 +76,15 @@ public:
 	int yr = 3000;
 	int wr = 10;
 	int hr = SCREEN_HEIGHT;
+
+private:
+	bool controlSalidaAeropuerco1 = false;
+	bool controlSalidaAeropuerco2 = false;
+	bool controlSalidaAeropuerco3 = false;
+	bool controlSalidaAeropuerco4 = false;
+	bool controlLlegadaCastillo1 = false;
+	bool controlLlegadaCastillo2 = false;
+	bool controlLlegadaBoss = false;
 };
 
 #endif
