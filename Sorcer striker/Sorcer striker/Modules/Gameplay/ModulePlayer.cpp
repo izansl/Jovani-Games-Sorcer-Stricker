@@ -187,23 +187,23 @@ if (!stopGame) {
 			canshootbomb = false;
 			if (Powerupblue)
 			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::NONE, 0);
 			}
 			if (Powerupred)
 			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::NONE, 0);
 			}
 			if (Powerupgreen)
 			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::NONE, 0);
 			}
 			if (!Powerupblue && !Powerupgreen && !Powerupred)
 			{
-				App->particles->AddParticle(App->particles->bomb, position.x - 150, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
+				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::NONE, 0);
 			}
 			bombs--;
 		}
-		if (SDL_GetTicks()-start_time>=3000)
+		if (SDL_GetTicks()-start_time>=2000)
 		{
 			canshootbomb = true;
 		}

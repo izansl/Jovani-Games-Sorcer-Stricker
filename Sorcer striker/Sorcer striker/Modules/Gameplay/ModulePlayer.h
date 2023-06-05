@@ -46,7 +46,7 @@ public:
 
 	bool canshootbomb = true;
 	bool canshootlaser = true;
-
+	
 	int start_time;
 
 	bool alive = true;
