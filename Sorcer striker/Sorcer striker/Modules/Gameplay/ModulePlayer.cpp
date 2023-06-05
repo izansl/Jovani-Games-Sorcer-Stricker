@@ -11,6 +11,8 @@
 #include "../../Modules/Core/ModuleFadeToBlack.h"
 #include "../../Modules/Core/ModuleFonts.h"
 #include "../../Modules/Gameplay/SceneLevel1.h"
+#include "../../Modules/Gameplay/ScenePantallaLose.h"
+#include "../../Modules/Gameplay/ModuleEnemies.h"
 
 #include <stdio.h>
 #include <SDL_timer.h>
@@ -107,6 +109,7 @@ bool ModulePlayer::Start() {
 
 Update_Status ModulePlayer::Update() {
 
+if (!stopGame) {
 	GamePad& pad = App->input->pads[0];
 	
 	// Moving the player with the camera scroll
@@ -169,7 +172,7 @@ Update_Status ModulePlayer::Update() {
 				App->particles->AddParticle(App->particles->laser1, position.x + 25, position.y, Collider::Type::PLAYER_SHOT, 0);
 			}
 		}
-		if (SDL_GetTicks() - start_time >= 100)
+		if (SDL_GetTicks() - start_time >= 50)
 		{
 			canshootlaser = true;
 		}
@@ -309,6 +312,23 @@ Update_Status ModulePlayer::Update() {
 			collider->type = Collider::Type::PLAYER;
 		}
 	}
+
+	// WIN CONDITION
+		if (kills == 58 || App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
+		{
+			App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
+		}
+
+		// LOSE CONDITION
+		if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
+		{
+			App->sceneLevel_1->stopGame = true;
+			App->player->stopGame = true;
+			App->enemies->stopGame = true;
+			App->scenePantallaLose->Enable();
+		}
+
+}
 	return Update_Status::UPDATE_CONTINUE;
 }
 
@@ -329,11 +349,7 @@ Update_Status ModulePlayer::PostUpdate() {
 		}
 	}
 
-	// LOSE CONDITION
-	if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
-	{
-		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
-	}
+	
 
 	return Update_Status::UPDATE_CONTINUE;
 }
@@ -389,12 +405,12 @@ void ModulePlayer::OnCollision(Collider* c1, Collider* c2) {
 			Powerupblue = false;
 		}
 		//+1 bomba
-		if (c2->rect.w == 122)
+		if (c2->rect.w == 116)
 		{
 			bombs++;
 		}
 		// + Score
-		if (c2->rect.w == 45)
+		if (c2->rect.w == 46)
 		{
 			score += 23;
 		}

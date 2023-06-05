@@ -18,24 +18,18 @@ Enemy_WarnL::Enemy_WarnL(int x, int y) : Enemy(x, y) {
 
 
 	// Path 1
-	pathchest.PushBack({ 2.0f, -8.0f }, 10);
-	pathchest.PushBack({ 4.0f, -8.0f }, 10);
-	pathchest.PushBack({ 6.0f, -8.0f }, 10);
-	pathchest.PushBack({ 8.0f, -8.0f }, 10);
-	pathchest.PushBack({ 0.0f, -8.0f }, 100);
-	pathchest.PushBack({ -25.0f, -8.0f }, 10);
-	pathchest.PushBack({ -50.0f, -8.0f }, 10);
-	pathchest.PushBack({ -75.0f, -8.0f }, 10);
-	pathchest.PushBack({ -100.0f, -8.0f }, 10);
+	path.PushBack({0.0, -8}, 40);
+	path.PushBack({ 0.0, -15 }, 100);
+	path.PushBack({ -6.0, -8 }, 400);
 
-	currentPath = &pathchest;
+	currentPath = &path;
 
 
 }
 
 void Enemy_WarnL::Update() {
 
-	pathchest.Update();
+	path.Update();
 	position = spawnPos + currentPath->GetRelativePosition();
 
 	// Call to the base class. It must be called at the end

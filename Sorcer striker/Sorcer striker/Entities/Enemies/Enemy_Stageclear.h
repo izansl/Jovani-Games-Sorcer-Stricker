@@ -18,6 +18,7 @@ public:
 
 	void OnCollision(Collider* c1);
 
+	int start_time;
 
 private: //BROWNSHIP
 	// A set of steps that define the position in the screen
