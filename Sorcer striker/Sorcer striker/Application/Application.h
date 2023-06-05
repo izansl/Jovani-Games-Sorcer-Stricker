@@ -2,8 +2,7 @@
 #define __APPLICATION_H__
 
 #include "Globals.h"
-
-#define NUM_MODULES 18
+#include <vector>
 
 class Module;
 class ModuleWindow;
@@ -11,6 +10,7 @@ class ModuleInput;
 class ModuleTextures;
 class ModuleAudio;
 class ModulePlayer;
+class ScenePantallaLose;
 class SceneIntro;
 class SceneEscoger;
 class SceneLevel1;
@@ -24,6 +24,8 @@ class ModuleFonts;
 class ModuleRender;
 class ModuleHUD;
 class ModuleInsertCoin;
+class SceneOutro;
+class ScenePreintro;
 
 class Application {
 
@@ -46,7 +48,8 @@ public:
 
 public:
 	// An array to store all modules
-	Module* modules[NUM_MODULES];
+	//Module* modules[NUM_MODULES];
+	std::vector<Module*> modules;
 
 	// All the modules stored individually
 	ModuleWindow* window = nullptr;
@@ -54,6 +57,7 @@ public:
 	ModuleTextures* textures = nullptr;
 	ModuleAudio* audio = nullptr;
 	ModulePlayer* player = nullptr;
+	ScenePantallaLose* scenePantallaLose = nullptr;
 	SceneIntro* sceneIntro = nullptr;
 	SceneEscoger* sceneEscoger = nullptr;
 	SceneLevel1* sceneLevel_1 = nullptr;
@@ -67,6 +71,11 @@ public:
 	ModuleRender* render = nullptr;
 	ModuleHUD* hud = nullptr;
 	ModuleInsertCoin* insertCoins = nullptr;
+	SceneOutro* sceneOutro = nullptr;
+	ScenePreintro* scenePreintro = nullptr;
+
+private:
+	int sizeVector = 0;
 };
 
 // Global var made extern for Application ---

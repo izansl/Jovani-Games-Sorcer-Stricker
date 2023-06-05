@@ -205,9 +205,12 @@
     <ClInclude Include="Modules\Module.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Num1.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Stagename.h" />
+    <ClInclude Include="Modules\Gameplay\ScenePantallaLose.h" />
     <ClInclude Include="Modules\Gameplay\SceneLevel1_Foreground.h" />
     <ClInclude Include="Entities\Enemies\Enemy_Stageclear.h" />
     <ClInclude Include="Modules\Gameplay\SceneEscoger.h" />
+    <ClInclude Include="Modules\Gameplay\ScenePreintro.h" />
+    <ClInclude Include="Modules\Gameplay\SceneOutro.h" />
     <ClInclude Include="Utils\Animation.h" />
     <ClInclude Include="Utils\Collider.h" />
     <ClInclude Include="Utils\p2Point.h" />
@@ -262,9 +265,12 @@
     <ClCompile Include="Modules\Module.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Num1.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Stagename.cpp" />
+    <ClCompile Include="Modules\Gameplay\ScenePantallaLose.cpp" />
     <ClCompile Include="Modules\Gameplay\SceneLevel1_Foreground.cpp" />
     <ClCompile Include="Entities\Enemies\Enemy_Stageclear.cpp" />
     <ClCompile Include="Modules\Gameplay\SceneEscoger.cpp" />
+    <ClCompile Include="Modules\Gameplay\ScenePreintro.cpp" />
+    <ClCompile Include="Modules\Gameplay\SceneOutro.cpp" />
     <ClCompile Include="Utils\Collider.cpp" />
     <ClCompile Include="Utils\Path.cpp" />
   </ItemGroup>

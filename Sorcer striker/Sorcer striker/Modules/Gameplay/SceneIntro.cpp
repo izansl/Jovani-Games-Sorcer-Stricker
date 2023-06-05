@@ -8,7 +8,10 @@
 #include "../../Modules/Core/ModuleAudio.h"
 #include "../../Modules/Core/ModuleInput.h"
 #include "../../Modules/Core/ModuleFadeToBlack.h"
+#include "../../Utils/p2Point.h"
+#include "../../Utils/Animation.h"
 #include "../Gameplay/ModuleInsertCoin.h"
+
 
 SceneIntro::SceneIntro(bool startEnabled) : Module(startEnabled) {
 }
@@ -63,7 +66,7 @@ bool SceneIntro::Start() {
 	ArrayImagesIntro2[15] = App->textures->Load(FI_Introimage_34.c_str());
 
 	//Carga de Audio ////TURMO MUY IMPORTANTE, TIENES QUE CUADRAR EL AUDIO CON LA INTRO SEGUN LAS IMAGENES QUE APAREZCAN///
-	App->audio->PlayMusic(FA_Music_introTitle.c_str());//esta musica hay que cambiarla turmo
+	//esta musica hay que cambiarla turmo
 
 	App->render->camera.x = 0;
 	App->render->camera.y = 0;
@@ -77,6 +80,8 @@ bool SceneIntro::Start() {
 Update_Status SceneIntro::Update() {
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
 		App->fade->FadeToBlack(this, (Module*)App->sceneStart, 60);
+		/*App->fade->FadeToBlack(this, (Module*)App->sceneOutro, 60); */          //OUTRO --> descomentar para probar, comentar arriba.
+
 	}
 
 	if (App->input->keys[SDL_SCANCODE_LSHIFT] == Key_State::KEY_DOWN)
@@ -142,6 +147,11 @@ Update_Status SceneIntro::PostUpdate() {
 		int x1 = (currentTime - 10000) / 100;
 		App->render->Blit(ArrayImagesIntro2[7], -x1, -20, NULL);//holalluc
 		App->render->Blit(ArrayImagesIntro2[7], -x1 + 200, -20, NULL);//holalluc
+		if(play)
+			{
+			App->audio->PlayMusic(FA_Music_introTitle.c_str());
+			play = false;
+			}
 		//Abaix
 		int x2 = (currentTime - 10000) / 100;//velocidad
 		App->render->Blit(ArrayImagesIntro2[2], -x2 - 180, -100, NULL);//alientocho
@@ -153,6 +163,8 @@ Update_Status SceneIntro::PostUpdate() {
 		App->render->Blit(ArrayImagesIntro2[2], -x2 + 800, -100, NULL);//alientocho
 
 		//foc 1
+
+
 		App->render->Blit(ArrayImagesIntro2[9], -x2 + 435, -345, NULL);//fuego1
 		App->render->Blit(ArrayImagesIntro2[9], -x2 + 285, -345, NULL);//fuego1
 		App->render->Blit(ArrayImagesIntro2[9], -x2 + 135, -345, NULL);//fuego1
@@ -186,7 +198,7 @@ Update_Status SceneIntro::PostUpdate() {
 		//nave2
 		App->render->Blit(ArrayImagesIntro2[13], -x - 100, -y + 400, NULL);
 
-		//rápidas
+		//rÃ¡pidas
 		int z = (currentTime - 14000) / 100;
 		int u = (currentTime - 14000) / 120;
 		App->render->Blit(ArrayImagesIntro2[13], -z + 100, -u + 400, NULL);
@@ -268,6 +280,11 @@ Update_Status SceneIntro::PostUpdate() {
 
 	}
 
+	if (currentTime >= 32000) {
+
+		App->fade->FadeToBlack(this, (Module*)App->sceneStart, 60);
+
+	}
 
 
 	return Update_Status::UPDATE_CONTINUE;

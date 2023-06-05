@@ -19,8 +19,11 @@
 #include "../Modules/Gameplay/SceneLevel1.h"
 #include "../Modules/Gameplay/SceneLevel1_Foreground.h"
 #include "../Modules/Gameplay/SceneStart.h"
+#include "../Modules/Gameplay/ScenePantallaLose.h"
 #include "../Modules/Gameplay/ModuleEnemies.h"
 #include "../Modules/Gameplay/SceneEscoger.h"
+#include "../Modules/Gameplay/SceneOutro.h"
+#include "../Modules/Gameplay/ScenePreintro.h"
 
 int start_time = SDL_GetTicks();
 int last_frame_time = start_time;
@@ -32,30 +35,61 @@ Application::Application() {
 	// The order in which the modules are added is very important.
 	// It will define the order in which Pre/Update/Post will be called
 	// Render should always be last, as our last action should be updating the screen
-	modules[0] = window = new ModuleWindow(true);
-	modules[1] = input = new ModuleInput(true);
-	modules[2] = textures = new ModuleTextures(true);
-	modules[3] = audio = new ModuleAudio(true);
 
-	modules[4] = sceneIntro = new SceneIntro(true);
-	modules[5] = sceneStart = new SceneStart(false);
-	modules[6] = sceneEscoger = new SceneEscoger(false);
-	modules[7] = sceneLevel_1 = new SceneLevel1(false);		//Gameplay scene starts disabled
-	modules[8] = sceneLevel_1_foreground = new SceneLevel1_Foreground(true);		//Gameplay scene starts disabled
-	modules[9] = player = new ModulePlayer(false);	//Player starts disabled
-	modules[10]= enemies = new ModuleEnemies(false);	//Enemies start disabled
-	modules[11] = particles = new ModuleParticles(true);
+	//modules[0] = window = new ModuleWindow(true);
+	//modules[1] = input = new ModuleInput(true);
+	//modules[2] = textures = new ModuleTextures(true);
+	//modules[3] = audio = new ModuleAudio(true);
+	//modules[4] = sceneIntro = new SceneIntro(true);
 
-	modules[12] = collisions = new ModuleCollisions(false);
-	modules[13] = fade = new ModuleFadeToBlack(true);
-	modules[14] = fonts = new ModuleFonts(true);
-	modules[15] = hud = new ModuleHUD(true);
-	modules[16] = insertCoins = new ModuleInsertCoin(true);
-	modules[17] = render = new ModuleRender(true);
+
+	//modules[5] = sceneStart = new SceneStart(false);
+	//modules[6] = sceneOutro = new SceneOutro(false);
+	//modules[7] = sceneLevel_1 = new SceneLevel1(false);		//Gameplay scene starts disabled
+	//modules[8] = sceneLevel_1_foreground = new SceneLevel1_Foreground(true);		//Gameplay scene starts disabled
+	//modules[9] = player = new ModulePlayer(false);	//Player starts disabled
+	//modules[10] = enemies = new ModuleEnemies(false);	//Enemies start disabled
+	//modules[11] = particles = new ModuleParticles(true);
+
+	//modules[12] = collisions = new ModuleCollisions(false);
+	//modules[13] = fade = new ModuleFadeToBlack(true);
+	//modules[14] = fonts = new ModuleFonts(true);
+	//modules[15] = hud = new ModuleHUD(true);
+	//modules[16] = scenePantallaLose = new ScenePantallaLose(false);
+	//modules[17] = insertCoins = new ModuleInsertCoin(true);
+	//modules[18] = render = new ModuleRender(true);
+
+	modules.push_back(window = new ModuleWindow(true));
+	modules.push_back(input = new ModuleInput(true));
+	modules.push_back(textures = new ModuleTextures(true));
+	modules.push_back(audio = new ModuleAudio(true));
+	modules.push_back(scenePreintro = new ScenePreintro(true));
+	modules.push_back(sceneIntro = new SceneIntro(false));
+	
+	//modules.push_back(sceneIntro = new SceneIntro(true));
+
+	modules.push_back(sceneStart = new SceneStart(false));
+	modules.push_back(sceneOutro = new SceneOutro(false));
+	modules.push_back(sceneLevel_1 = new SceneLevel1(false));
+	modules.push_back(sceneLevel_1_foreground = new SceneLevel1_Foreground(true));
+	modules.push_back(player = new ModulePlayer(false));
+
+	modules.push_back(enemies = new ModuleEnemies(false));
+	modules.push_back(particles = new ModuleParticles(true));
+	modules.push_back(collisions = new ModuleCollisions(false));
+	modules.push_back(fade = new ModuleFadeToBlack(true));
+	modules.push_back(fonts = new ModuleFonts(true));
+
+	modules.push_back(hud = new ModuleHUD(true));
+	modules.push_back(insertCoins = new ModuleInsertCoin(true));
+	modules.push_back(scenePantallaLose = new ScenePantallaLose(false));
+	modules.push_back(render = new ModuleRender(true));
+
+	sizeVector = modules.size();
 }
 
 Application::~Application() {
-	for (int i = 0; i < NUM_MODULES; ++i) {
+	for (int i = 0; i < sizeVector; ++i) {
 		//Important: when deleting a pointer, set it to nullptr afterwards
 		//It allows us for null check in other parts of the code
 		delete modules[i];
@@ -67,11 +101,11 @@ bool Application::Init() {
 	bool ret = true;
 
 	// All modules (active and disabled) will be initialized
-	for (int i = 0; i < NUM_MODULES && ret; ++i)
+	for (int i = 0; i < sizeVector && ret; ++i)
 		ret = modules[i]->Init();
 
 	// Only active modules will be 'started'
-	for (int i = 0; i < NUM_MODULES && ret; ++i)
+	for (int i = 0; i < sizeVector && ret; ++i)
 		ret = modules[i]->IsEnabled() ? modules[i]->Start() : true;
 
 	return ret;
@@ -80,25 +114,25 @@ bool Application::Init() {
 Update_Status Application::Update() {
 	Update_Status ret = Update_Status::UPDATE_CONTINUE;
 
-	for (int i = 0; i < NUM_MODULES && ret == Update_Status::UPDATE_CONTINUE; ++i)
+	for (int i = 0; i < sizeVector && ret == Update_Status::UPDATE_CONTINUE; ++i)
 		ret = modules[i]->IsEnabled() ? modules[i]->PreUpdate() : Update_Status::UPDATE_CONTINUE;
 
-	for (int i = 0; i < NUM_MODULES && ret == Update_Status::UPDATE_CONTINUE; ++i)
+	for (int i = 0; i < sizeVector && ret == Update_Status::UPDATE_CONTINUE; ++i)
 		ret = modules[i]->IsEnabled() ? modules[i]->Update() : Update_Status::UPDATE_CONTINUE;
 
-	for (int i = 0; i < NUM_MODULES && ret == Update_Status::UPDATE_CONTINUE; ++i)
+	for (int i = 0; i < sizeVector && ret == Update_Status::UPDATE_CONTINUE; ++i)
 		// Only paint is Scene1 is eneabled
-		if (i == 14)
+		if (i == 16) // HUD
 		{
-			if (modules[6]->IsEnabled()) {
+			if (modules[8]->IsEnabled()) { // SCene1
 				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
-				ret = modules[7]->PostUpdate();
+				ret = modules[9]->PostUpdate(); // Foreground
 			}
 		}
-		else if (i == 15)
+		else if (i == 17) // HUD coins
 		{
-			if (modules[5]->IsEnabled()) {
-				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;				
+			if (modules[6]->IsEnabled()) { // start
+				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
 			}
 		}
 		else
@@ -128,7 +162,7 @@ Update_Status Application::Update() {
 bool Application::CleanUp() {
 	bool ret = true;
 
-	for (int i = NUM_MODULES - 1; i >= 0 && ret; --i)
+	for (int i = sizeVector - 1; i >= 0 && ret; --i)
 		ret = modules[i]->IsEnabled() ? modules[i]->CleanUp() : true;
 
 	return ret;

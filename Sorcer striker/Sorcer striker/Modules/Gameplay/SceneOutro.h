@@ -1,5 +1,5 @@
-#ifndef __SCENE_INTRO_H__
-#define __SCENE_INTRO_H__
+#ifndef __SCENE_OUTRO_H__
+#define __SCENE_OUTRO_H__
 
 #include "../../Modules/Module.h"
 #include "../../Utils/Animation.h"
@@ -7,13 +7,13 @@
 struct SDL_Texture;
 
 
-class SceneIntro : public Module {
+class SceneOutro : public Module {
 
 public:
 	//Constructor
-	SceneIntro(bool startEnabled);
+	SceneOutro(bool startEnabled);
 	//Destructor
-	~SceneIntro();
+	~SceneOutro();
 
 	// Called when the module is activated
 	// Loads the necessary textures for the map background
@@ -32,25 +32,19 @@ public:
 	// The scene sprite sheet loaded into an SDL_Texture
 
 
-#define NUM_IMAGES 18		
-	SDL_Texture* ArrayImagesIntro[NUM_IMAGES];
+#define NUM_IMAGES 3
+	SDL_Texture* ArrayImagesOutro[NUM_IMAGES];
 	float timer = 0.0f;
+
 	int currentImage = 0;
 	uint musica = 0;
+	
 	//Prueba efecto fade en imagenes
 	bool fadingOut = false;
 	float fadeTimer = 0.0f;
 	const float FADE_TIME = 1.0f;//duración del DESVANECIMIENTO en segundos
 
-	//Amb GetTicks
-#define NUM_IMAGES2 16
 	int startTime;
-	SDL_Texture* ArrayImagesIntro2[NUM_IMAGES2];
-	bool play = true;
-
-	//Animation* currentAnim = nullptr; //creado acceso a aniamcion //viene de enemy.h
-	/*Animation fuego;*/
-
 	uint tokenFx = 0;
 };
 

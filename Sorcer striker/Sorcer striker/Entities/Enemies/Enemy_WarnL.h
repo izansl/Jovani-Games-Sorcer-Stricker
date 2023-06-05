@@ -22,7 +22,7 @@ public:
 private: //BROWNSHIP
 	// A set of steps that define the position in the screen
 		// And an animation for each step
-	Path pathchest;
+	Path path;
 	Path* currentPath;
 	bool activePart2 = false;
 
