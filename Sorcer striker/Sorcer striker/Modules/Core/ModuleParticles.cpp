@@ -137,11 +137,13 @@ bool ModuleParticles::Start() {
 	sword.lifetime = 60;
 
 	//wizard
-	wizardshoot.anim.PushBack({ 2699, 197, 95,81 });
-	wizardshoot.anim.PushBack({ 2921, 199, 95,81 });
-	wizardshoot.anim.PushBack({ 3067, 199, 95,81 });
-	wizardshoot.anim.PushBack({ 2989, 199, 95,81 });
-	wizardshoot.anim.PushBack({ 2789, 199, 95,81 });
+	wizardshoot.anim.PushBack({ 2775, 193, 120, 82 });
+	wizardshoot.anim.PushBack({ 2875, 72, 95, 81 });
+	wizardshoot.anim.PushBack({ 2920, 200, 95,81 });
+	wizardshoot.anim.PushBack({ 3050, 200, 95, 81 });
+	wizardshoot.anim.PushBack({ 2875, 72, 95, 81 });
+	wizardshoot.anim.PushBack({ 2920, 200, 95,81 });
+	wizardshoot.anim.PushBack({ 3050, 200, 95, 81 });
 	wizardshoot.anim.speed = 0.20;
 	wizardshoot.lifetime = 100;
 	minifireshot.speed = iPoint(0,  2);
