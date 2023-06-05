@@ -35,9 +35,10 @@ bool SceneOutro::Start() {
 
 //NO TOCAR NADA 
 Update_Status SceneOutro::Update() {
+	GamePad& pad = App->input->pads[0];
 
 	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {
-		App->fade->FadeToBlack(this, (Module*)App->sceneStart, 60);
+		App->fade->FadeToBlack(this, (Module*)App->sceneStart, 60 || pad.a == true);
 	}
 
 	return Update_Status::UPDATE_CONTINUE;

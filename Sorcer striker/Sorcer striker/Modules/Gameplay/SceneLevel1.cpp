@@ -377,7 +377,7 @@ Update_Status SceneLevel1::Update() {
 	}
 	if (SDL_GetTicks() - start_time >= 6600)
 	{
-		velocitatNivell = -15;
+		velocitatNivell = -10;
 	}
 	if (SDL_GetTicks() - start_time >= 40500)
 	{
@@ -452,12 +452,8 @@ Update_Status SceneLevel1::Update() {
 		{
 			App->enemies->AddEnemy(Enemy_Type::ANGEL, App->player->position.x + 50, App->player->position.y - 800, 1);
 		}
-		if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
-		{
-			App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 400, App->player->position.y - 700, 1);
-		}
 
-		if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN)
+		if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN || pad.y == true)
 		{
 			App->enemies->AddEnemy(Enemy_Type::BOSS, 400, App->player->position.y - 700, 1);
 		}
@@ -483,12 +479,7 @@ Update_Status SceneLevel1::Update() {
 		App->enemies->AddEnemy(Enemy_Type::ANGEL, App->player->position.x + 50, App->player->position.y - 800, 1);
 	}
 
-	if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
-	{
-		App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 400, App->player->position.y - 700, 1);
-	}
-
-	if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN)
+	if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN || pad.y == true)
 	{
 		App->enemies->AddEnemy(Enemy_Type::BOSS, 400, App->player->position.y - 700, 1);
 	}

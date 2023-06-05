@@ -40,7 +40,9 @@ bool ScenePantallaLose::Start() {
 }
 
 Update_Status ScenePantallaLose::Update() {
-	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN) {//continuar partida
+	GamePad& pad = App->input->pads[0];
+
+	if (App->input->keys[SDL_SCANCODE_SPACE] == Key_State::KEY_DOWN || pad.a == true) {//continuar partida
 
 		App->player->lives += 1;
 		App->scenePantallaLose->Disable();
