@@ -101,11 +101,11 @@ bool ModuleParticles::Start() {
 	//Pink
 	knifeleft.anim.PushBack({ 1713, 873, 34, 62 });
 	knifeleft.speed = iPoint(0, -33);
-	knifeleft.lifetime = 115;
+	knifeleft.lifetime = 90;
 
 	kniferight.anim.PushBack({ 1864, 873, 34, 64 });
 	kniferight.speed = iPoint(0, -33);
-	kniferight.lifetime = 115;
+	kniferight.lifetime = 90;
 
 	//Green
 	sword.anim.PushBack({ 1617, 744, 80, 765 });
