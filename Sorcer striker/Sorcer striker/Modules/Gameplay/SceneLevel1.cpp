@@ -329,7 +329,7 @@ bool SceneLevel1::Start() {
 	App->enemies->AddEnemy(Enemy_Type::FLECH, 349, -44000, 1);
 
 #pragma endregion
-
+	App->enemies->AddEnemy(Enemy_Type::BOSS, 400, -48000, 1);
 
 	// POSITION INITIAL CAMERA
 	App->render->camera.x = 0;
@@ -368,7 +368,7 @@ Update_Status SceneLevel1::Update() {
 		if (SDL_GetTicks() - start_time >= 43000 && !controlLlegadaCastillo2) { velocitatNivell = -4; controlLlegadaCastillo2 = true; }
 
 		// Control velocidad BOSS
-		if (SDL_GetTicks() - start_time >= 93000 && !controlLlegadaBoss) { velocitatNivell = -15; controlLlegadaBoss = true; }
+		if (SDL_GetTicks() - start_time >= 91000 && !controlLlegadaBoss) { velocitatNivell = -15; controlLlegadaBoss = true; }
 
 		if ((App->player->position.x + 5 + App->player->collider->rect.w) >= raightcoll->rect.x)
 			App->player->position.x = raightcoll->rect.x - (5 + App->player->collider->rect.w);
@@ -377,53 +377,55 @@ Update_Status SceneLevel1::Update() {
 		if (App->player->position.x - 5 <= leftcoll->rect.x)
 			App->player->position.x = leftcoll->rect.x + 5;
 
-
 		if ((App->player->position.y + 5 + App->player->collider->rect.h) >= botcoll->rect.y)
-		{
-			// TODO: declarar gamepad a .h, no creem un objecte nou en cada volta
-			GamePad& pad = App->input->pads[0];
-			App->render->camera.y += velocitatNivell;
+			App->player->position.y = botcoll->rect.y - (5 + App->player->collider->rect.h); 
 
-			topcoll->rect.y += velocitatNivell;
-			botcoll->rect.y += velocitatNivell;
-			leftcoll->rect.y += velocitatNivell;
-			raightcoll->rect.y += velocitatNivell;
+		//if ((App->player->position.y + 5 + App->player->collider->rect.h) >= botcoll->rect.y)// este if es el problema
+		//{
+		//	// TODO: declarar gamepad a .h, no creem un objecte nou en cada volta
+		//	GamePad& pad = App->input->pads[0];
+		//	/*App->render->camera.y += velocitatNivell;
 
-			if ((App->player->position.x + 5 + App->player->collider->rect.w) >= raightcoll->rect.x)
-				App->player->position.x = raightcoll->rect.x - (5 + App->player->collider->rect.w);
+		//	topcoll->rect.y += velocitatNivell;
+		//	botcoll->rect.y += velocitatNivell;
+		//	leftcoll->rect.y += velocitatNivell;
+		//	raightcoll->rect.y += velocitatNivell;*/
 
-
-			if (App->player->position.x - 5 <= leftcoll->rect.x)
-				App->player->position.x = leftcoll->rect.x + 5;
-
-
-			if ((App->player->position.y + 5 + App->player->collider->rect.h) >= botcoll->rect.y)
-				App->player->position.y = botcoll->rect.y - (5 + App->player->collider->rect.h);
+		//	if ((App->player->position.x + 5 + App->player->collider->rect.w) >= raightcoll->rect.x)
+		//		App->player->position.x = raightcoll->rect.x - (5 + App->player->collider->rect.w);
 
 
-			if (App->player->position.y - 5 <= topcoll->rect.y)
-				App->player->position.y = topcoll->rect.y + 5;
+		//	if (App->player->position.x - 5 <= leftcoll->rect.x)
+		//		App->player->position.x = leftcoll->rect.x + 5;
 
 
-			//Spawn cofres
-			if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN || pad.up == true)
-				App->enemies->AddEnemy(Enemy_Type::CHEST_RED, App->player->position.x + 50, App->player->position.y - 800, 1);
+		//	if ((App->player->position.y + 5 + App->player->collider->rect.h) >= botcoll->rect.y)
+		//		App->player->position.y = botcoll->rect.y - (5 + App->player->collider->rect.h);
 
-			if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN || pad.down == true)
-				App->enemies->AddEnemy(Enemy_Type::CHEST_GREEN, App->player->position.x + 50, App->player->position.y - 800, 1);
 
-			if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN || pad.right == true)
-				App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, App->player->position.x + 50, App->player->position.y - 800, 1);
+		//	if (App->player->position.y - 5 <= topcoll->rect.y)
+		//		App->player->position.y = topcoll->rect.y + 5;
 
-			if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN || pad.left == true)
-				App->enemies->AddEnemy(Enemy_Type::ANGEL, App->player->position.x + 50, App->player->position.y - 800, 1);
 
-			if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
-				App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 400, App->player->position.y - 700, 1);
+		//	//Spawn cofres
+		//	if (App->input->keys[SDL_SCANCODE_1] == Key_State::KEY_DOWN || pad.up == true)
+		//		App->enemies->AddEnemy(Enemy_Type::CHEST_RED, App->player->position.x + 50, App->player->position.y - 800, 1);
 
-			if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN)
-				App->enemies->AddEnemy(Enemy_Type::BOSS, 400, App->player->position.y - 700, 1);
-		}
+		//	if (App->input->keys[SDL_SCANCODE_2] == Key_State::KEY_DOWN || pad.down == true)
+		//		App->enemies->AddEnemy(Enemy_Type::CHEST_GREEN, App->player->position.x + 50, App->player->position.y - 800, 1);
+
+		//	if (App->input->keys[SDL_SCANCODE_3] == Key_State::KEY_DOWN || pad.right == true)
+		//		App->enemies->AddEnemy(Enemy_Type::CHEST_BLUE, App->player->position.x + 50, App->player->position.y - 800, 1);
+
+		//	if (App->input->keys[SDL_SCANCODE_4] == Key_State::KEY_DOWN || pad.left == true)
+		//		App->enemies->AddEnemy(Enemy_Type::ANGEL, App->player->position.x + 50, App->player->position.y - 800, 1);
+
+		//	if (App->input->keys[SDL_SCANCODE_F5] == Key_State::KEY_DOWN)
+		//		App->enemies->AddEnemy(Enemy_Type::REDWIZARD, 400, App->player->position.y - 700, 1);
+
+		//	if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN)
+		//		App->enemies->AddEnemy(Enemy_Type::BOSS, 400, App->player->position.y - 700, 1);
+		//}
 
 
 		//Spawn cofres
