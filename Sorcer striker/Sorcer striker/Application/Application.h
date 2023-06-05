@@ -4,8 +4,6 @@
 #include "Globals.h"
 #include <vector>
 
-//#define NUM_MODULES 19
-
 class Module;
 class ModuleWindow;
 class ModuleInput;
@@ -14,6 +12,7 @@ class ModuleAudio;
 class ModulePlayer;
 class ScenePantallaLose;
 class SceneIntro;
+class SceneEscoger;
 class SceneLevel1;
 class SceneLevel1_Foreground;
 class SceneStart;
@@ -60,6 +59,7 @@ public:
 	ModulePlayer* player = nullptr;
 	ScenePantallaLose* scenePantallaLose = nullptr;
 	SceneIntro* sceneIntro = nullptr;
+	SceneEscoger* sceneEscoger = nullptr;
 	SceneLevel1* sceneLevel_1 = nullptr;
 	SceneLevel1_Foreground* sceneLevel_1_foreground = nullptr;
 	SceneStart* sceneStart = nullptr;
