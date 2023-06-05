@@ -188,34 +188,18 @@ if (!stopGame) {
 			if (Powerupblue)
 			{
 				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::NONE, 0);
-				if (App->particles->bomb.lifetime==0)
-				{
-					App->particles->AddParticle(App->particles->bomb2, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
-				}
 			}
 			if (Powerupred)
 			{
 				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::NONE, 0);
-				if (App->particles->bomb.lifetime == 0)
-				{
-					App->particles->AddParticle(App->particles->bomb2, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
-				}
 			}
 			if (Powerupgreen)
 			{
 				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::NONE, 0);
-				if (App->particles->bomb.lifetime == 0)
-				{
-					App->particles->AddParticle(App->particles->bomb2, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
-				}
 			}
 			if (!Powerupblue && !Powerupgreen && !Powerupred)
 			{
 				App->particles->AddParticle(App->particles->bomb, position.x - 100, position.y - 220, Collider::Type::NONE, 0);
-				if (App->particles->bomb.lifetime <=40)
-				{
-					App->particles->AddParticle(App->particles->bomb2, position.x - 100, position.y - 220, Collider::Type::PLAYER_SHOT, 0);
-				}
 			}
 			bombs--;
 		}
