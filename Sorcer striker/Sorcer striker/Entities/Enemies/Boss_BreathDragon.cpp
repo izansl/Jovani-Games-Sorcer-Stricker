@@ -234,7 +234,7 @@ void Boss_BreathDragon::Update() {
 	}
 
 	// KILL BOSS
-	if (SDL_GetTicks() - start_Time >= 34000) {
+	if (SDL_GetTicks() - start_Time >= 20000) {
 		SetToDelete();
 	}
 }
