@@ -212,8 +212,8 @@ Update_Status SceneIntro::PostUpdate() {
 		App->render->Blit(ArrayImagesIntro2[13], -x - 100, -y + 400, NULL);
 
 		//rápidas
-		int z = (currentTime - 14000) / 100;
-		int u = (currentTime - 14000) / 120;
+		int z = (currentTime - 14000) / 20;
+		int u = (currentTime - 14000) / 25;
 		App->render->Blit(ArrayImagesIntro2[13], -z + 100, -u + 400, NULL);
 		App->render->Blit(ArrayImagesIntro2[13], -z + 200, -u + 400, NULL);
 		App->render->Blit(ArrayImagesIntro2[13], -z + 250, -u + 400, NULL);
