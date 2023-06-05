@@ -119,16 +119,16 @@ Update_Status Application::Update() {
 
 	for (int i = 0; i < sizeVector && ret == Update_Status::UPDATE_CONTINUE; ++i)
 		// Only paint is Scene1 is eneabled
-		if (i == 15)
+		if (i == 15) // HUD
 		{
-			if (modules[7]->IsEnabled()) {
+			if (modules[7]->IsEnabled()) { // SCene1
 				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
-				ret = modules[8]->PostUpdate();
+				ret = modules[8]->PostUpdate(); // Foreground
 			}
 		}
-		else if (i == 16)
+		else if (i == 16) // HUD coins
 		{
-			if (modules[5]->IsEnabled()) {
+			if (modules[5]->IsEnabled()) { // start
 				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
 			}
 		}
