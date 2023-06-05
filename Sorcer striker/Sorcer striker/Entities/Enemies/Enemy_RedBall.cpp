@@ -132,13 +132,12 @@ void Enemy_RedBall::Update() {
 }
 //
 void Enemy_RedBall::OnCollision(Collider* c1) {
-	fly.PushBack({ 1, 136, 139, 137 });
-	fly.PushBack({ 155, 140, 139, 137 });
-	fly.PushBack({ 335, 142, 139, 137 });
-	fly.PushBack({ 586, 139, 139, 137 });
-	fly.PushBack({ 644, 142, 139, 137 });
-	fly.PushBack({ 798, 142, 139, 137 });
-	fly.PushBack({ 1000, 300, 139, 137 });
+	fly.PushBack({346, 314, 82, 104 });
+	fly.PushBack({ 448, 311, 82, 105 });
+	fly.PushBack({ 549, 310, 82, 105 });
+	fly.PushBack({ 651, 312, 82, 105 });
+	fly.PushBack({ 757, 308, 82, 105 });
+	fly.PushBack({ 1000, 1000, 139, 137 });
 	
 	App->player->score += 100;
 
