@@ -89,14 +89,14 @@ Update_Status Application::Update() {
 
 	for (int i = 0; i < NUM_MODULES && ret == Update_Status::UPDATE_CONTINUE; ++i)
 		// Only paint is Scene1 is eneabled
-		if (i == 14)
+		if (i == 15)
 		{
 			if (modules[6]->IsEnabled()) {
 				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
 				ret = modules[7]->PostUpdate();
 			}
 		}
-		else if (i == 15)
+		else if (i == 16)
 		{
 			if (modules[5]->IsEnabled()) {
 				ret = modules[i]->IsEnabled() ? modules[i]->PostUpdate() : Update_Status::UPDATE_CONTINUE;
