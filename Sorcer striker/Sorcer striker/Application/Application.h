@@ -11,6 +11,7 @@ class ModuleInput;
 class ModuleTextures;
 class ModuleAudio;
 class ModulePlayer;
+class ScenePantallaLose;
 class SceneIntro;
 class SceneLevel1;
 class SceneLevel1_Foreground;
@@ -53,6 +54,7 @@ public:
 	ModuleTextures* textures = nullptr;
 	ModuleAudio* audio = nullptr;
 	ModulePlayer* player = nullptr;
+	ScenePantallaLose* scenePantallaLose = nullptr;
 	SceneIntro* sceneIntro = nullptr;
 	SceneLevel1* sceneLevel_1 = nullptr;
 	SceneLevel1_Foreground* sceneLevel_1_foreground = nullptr;

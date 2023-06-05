@@ -47,6 +47,10 @@ public:
 	int startTime;
 	SDL_Texture* ArrayImagesIntro2[NUM_IMAGES2];
 
+
+	//Animation* currentAnim = nullptr; //creado acceso a aniamcion //viene de enemy.h
+	/*Animation fuego;*/
+
 	uint tokenFx = 0;
 };
 

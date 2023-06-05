@@ -65,15 +65,15 @@ const std::string FI_Outroimage_2 = "Assets/Images/Outro/drugs.png";
 const std::string FI_Start_1 = "Assets/Images/Intro/pantallainiciouno.png";
 const std::string FI_Start_2 = "Assets/Images/Intro/pantallainiciodos.png";
 //continue
-const std::string FI_continue_1 = "Assets/Images/Outro/outroeight.png";
-const std::string FI_continue_2 = "Assets/Images/Outro/outroseven.png"; 
-const std::string FI_continue_3 = "Assets/Images/Outro/outrosix.png";
-const std::string FI_continue_4 = "Assets/Images/Outro/outrofive.png";
-const std::string FI_continue_5 = "Assets/Images/Outro/outrofour.png";
-const std::string FI_continue_6 = "Assets/Images/Outro/outrothree.png";
-const std::string FI_continue_7 = "Assets/Images/Outro/outrotwo.png";
-const std::string FI_continue_8 = "Assets/Images/Outro/outroone.png";
-const std::string FI_continue_9 = "Assets/Images/Outro/outrozero.png";
+const std::string FI_continue_1 = "Assets/Images/Outro/outroeight.png";//0
+const std::string FI_continue_2 = "Assets/Images/Outro/outroseven.png";//1 
+const std::string FI_continue_3 = "Assets/Images/Outro/outrosix.png";//2
+const std::string FI_continue_4 = "Assets/Images/Outro/outrofive.png";//3
+const std::string FI_continue_5 = "Assets/Images/Outro/outrofour.png";//4
+const std::string FI_continue_6 = "Assets/Images/Outro/outrothree.png";//5
+const std::string FI_continue_7 = "Assets/Images/Outro/outrotwo.png";//6
+const std::string FI_continue_8 = "Assets/Images/Outro/outroone.png";//7
+const std::string FI_continue_9 = "Assets/Images/Outro/outrozero.png";//8
 //Menu Player
 const std::string FI_choseplayer_1 = "Assets/Images/Intro/playerpcik.png";
 const std::string FI_choseplayer_2 = "Assets/Images/Intro/onepcolor.png";

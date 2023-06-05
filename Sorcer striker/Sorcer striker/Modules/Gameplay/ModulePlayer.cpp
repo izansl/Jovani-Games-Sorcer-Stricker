@@ -107,6 +107,7 @@ bool ModulePlayer::Start() {
 
 Update_Status ModulePlayer::Update() {
 
+if (!stopGame) {
 	GamePad& pad = App->input->pads[0];
 	
 	// Moving the player with the camera scroll
@@ -309,6 +310,23 @@ Update_Status ModulePlayer::Update() {
 			collider->type = Collider::Type::PLAYER;
 		}
 	}
+
+	// WIN CONDITION
+		if (kills == 58 || App->input->keys[SDL_SCANCODE_F3] == Key_State::KEY_DOWN)
+		{
+			App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
+		}
+
+		// LOSE CONDITION
+		if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
+		{
+			App->sceneLevel_1->stopGame = true;
+			App->player->stopGame = true;
+			App->enemies->stopGame = true;
+			App->scenePantallaLose->Enable();
+		}
+
+}
 	return Update_Status::UPDATE_CONTINUE;
 }
 
@@ -329,11 +347,7 @@ Update_Status ModulePlayer::PostUpdate() {
 		}
 	}
 
-	// LOSE CONDITION
-	if (lives == 0 || App->input->keys[SDL_SCANCODE_F4] == Key_State::KEY_DOWN)
-	{
-		App->fade->FadeToBlack((Module*)App->sceneLevel_1, (Module*)App->sceneIntro, 60); //Menu start no intro
-	}
+	
 
 	return Update_Status::UPDATE_CONTINUE;
 }
