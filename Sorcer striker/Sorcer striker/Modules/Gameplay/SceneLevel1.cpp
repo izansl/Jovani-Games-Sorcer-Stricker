@@ -442,8 +442,6 @@ Update_Status SceneLevel1::Update() {
 
 			if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN)
 				App->enemies->AddEnemy(Enemy_Type::BOSS, 400, App->player->position.y - 700, 1);
-
-
 		}
 
 
@@ -465,7 +463,6 @@ Update_Status SceneLevel1::Update() {
 
 		if (App->input->keys[SDL_SCANCODE_Q] == Key_State::KEY_DOWN)
 			App->enemies->AddEnemy(Enemy_Type::BOSS, 400, App->player->position.y - 700, 1);
-
 
 
 		if (App->input->keys[SDL_SCANCODE_T] == Key_State::KEY_DOWN)

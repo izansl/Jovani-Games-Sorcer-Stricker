@@ -120,7 +120,6 @@ if (!stopGame) {
 	if (App->input->keys[SDL_SCANCODE_W] == Key_State::KEY_REPEAT || pad.l_y < 0.0f) position.y -= speed;
 	if (App->input->keys[SDL_SCANCODE_S] == Key_State::KEY_REPEAT || pad.l_y > 0.0f) position.y += speed;
 	if (App->input->keys[SDL_SCANCODE_D] == Key_State::KEY_REPEAT || pad.l_x > 0.0f)
-
 	{
 		position.x += speed;
 		if (currentAnimation != &rightAnim)
