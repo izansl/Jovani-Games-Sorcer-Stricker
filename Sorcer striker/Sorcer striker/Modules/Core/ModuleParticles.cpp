@@ -60,9 +60,12 @@ bool ModuleParticles::Start() {
 	bomb.anim.PushBack({ 691, 815, 424, 424 });
 	bomb.anim.PushBack({ 977, 1360, 424, 424 });
 	bomb.anim.PushBack({ 977, 1360, 424, 424 });
+	bomb.anim.PushBack({ 977, 1360, 424, 424 });
+	bomb.anim.PushBack({ 977, 1360, 424, 424 });
 	bomb.speed = iPoint(0, -23);
-	bomb.anim.speed = 0.1f;
-	bomb.lifetime = 110;
+	bomb.anim.speed = 0.2f;
+	bomb.lifetime = 60;
+	bomb.pendingToDelete = false;
 
 	//Powe up atacks
 	//Blue
@@ -255,6 +258,10 @@ void ModuleParticles::OnCollision(Collider* c1, Collider* c2) {
 }
 
 Update_Status ModuleParticles::Update() {
+	if (bomb.lifetime==0)
+	{
+		bomb.pendingToDelete = true;
+	}
 	for (uint i = 0; i < MAX_ACTIVE_PARTICLES; ++i) {
 		Particle* particle = particles[i];
 
