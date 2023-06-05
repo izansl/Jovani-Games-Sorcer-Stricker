@@ -213,6 +213,15 @@ const std::string FA_Fx_explosion = "Assets/Audios/FX/explosion-muerte-enemiga.w
 
 //Explosion jugador
 const std::string FA_Fx_explosionJ = "Assets/Audios/FX/explosion(jugador-muerto).wav";
+
+//musica boss
+const std::string FA_Music_Boss1 = "Assets/Audios/Stage-1/boss_stage1.ogg";
+
+//musica character
+const std::string FA_Music_Selection = "Assets/Audios/Hud-music/character_selection.ogg";
+
+//musica clear
+const std::string FA_Music_Clear = "Assets/Audios/Hud-music/ronda_completada.ogg";
 // Level 2
 
 // Level 3

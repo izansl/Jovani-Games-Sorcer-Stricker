@@ -6,6 +6,7 @@
 #include "../../Application/FileNames.h"
 #include "../../Modules/Core/ModuleRender.h"
 #include"../../Modules/Core/ModuleTextures.h"
+#include "../../Modules/Core/ModuleAudio.h"
 
 
 #include <SDL_timer.h>
@@ -18,6 +19,7 @@ Enemy_Sclear::Enemy_Sclear(int x, int y) : Enemy(x, y) {
 	blue.PushBack({ 47, 1037, 688, 875 });
 	blue.speed = 0.1f;
 	currentAnim = &blue;
+	App->audio->PlayMusic(FA_Music_Clear.c_str(), 1.0f);
 
 
 	// Path 1
