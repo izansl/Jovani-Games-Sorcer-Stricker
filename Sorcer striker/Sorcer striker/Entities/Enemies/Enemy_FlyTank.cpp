@@ -62,11 +62,11 @@ void Enemy_FlyTank::OnCollision(Collider* c1) {
 			}
 			else {
 				texture = App->textures->Load(FI_particles_.c_str());
-				death.PushBack({ 1293, 485, 329, 333 });
-				death.PushBack({ 151, 641, 329, 333 });
-				death.PushBack({ 57, 163, 329, 333 });
-				death.PushBack({ 1299, 487, 329, 333 });
-				death.PushBack({ 735, 863, 329, 333 });
+				death.PushBack({ 1005, 547, 279, 273 });
+				death.PushBack({ 167, 331, 279, 273 });
+				death.PushBack({ 235, 675, 279, 273 });
+				death.PushBack({ 1005, 547, 279, 273 });
+				death.PushBack({ 635, 793, 279, 273 });
 				death.PushBack({ 0, 0, 0, 0 });
 				death.speed = 0.3f;
 				death.loop = false;
