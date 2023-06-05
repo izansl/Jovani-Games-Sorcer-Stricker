@@ -4,7 +4,7 @@ body, h1, h2, h3, p, ul, ol, li, a {
 }
 
 body {
-  background: linear-gradient(to bottom, #339191, #fff 1200px);
+  background: linear-gradient(to bottom, #339191, #fff 1400px);
   color: #000000;
   font-family: Arial, sans-serif;
 }
@@ -53,7 +53,7 @@ footer {
 
 /* Estilos del encabezado */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior:smooth;
 }
 
 header {
@@ -203,6 +203,7 @@ font-family: 'Press Start 2P', cursive;
   border-bottom: 2px solid #000000; /* Borde inferior sólido de 2px de color #000000 */
   border-right: 2px solid #000; /* Borde derecho sólido de 2px de color #000 */
   transform: rotate(45deg); /* Rotación de 45 grados */
+ 
 }
 
 .additional-info details summary::-webkit-details-marker {
@@ -260,3 +261,26 @@ font-family: 'Press Start 2P', cursive;
 .team-member a:hover .github-link-text {
   opacity: 0; /* Oculta el texto al pasar el ratón por encima */
 }
+
+.team-members {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+}
+
+.team-members li {
+  margin-bottom: 30px; /* Espacio inferior entre los elementos de la lista */
+  margin-right: 20px; /* Espacio derecho entre los elementos de la lista */
+}
+
+.team-member-image {
+  max-width: 250px; /* Tamaño máximo de las imágenes */
+  height: auto; /* Ajusta la altura automáticamente para mantener la proporción */
+  padding:25px;
+}
+
+
+
